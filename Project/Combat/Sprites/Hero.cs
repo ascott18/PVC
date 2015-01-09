@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	class MonsterPack : Sprite
+	class Hero : CombatSprite
 	{
 	}
 }

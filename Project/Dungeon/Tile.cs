@@ -15,7 +15,7 @@ namespace Project
 		public readonly int X;
 		public readonly int Y;
 
-		private TileObject tileObject;
+		private IInteractible tileObject;
 
 		public Tile(int X, int Y)
 		{
@@ -23,7 +23,7 @@ namespace Project
 			this.Y = Y;
 		}
 
-		public TileObject TileObject
+		public IInteractible TileObject
 		{
 			get { return tileObject; }
 			set { tileObject = value; }

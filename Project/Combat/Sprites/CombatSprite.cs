@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	class TileObject
+	class CombatSprite : Sprite
 	{
-		// TODO: Make me private
-		public Tile tile;
 
-		public virtual void Draw(Graphics graphics)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }
