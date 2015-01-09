@@ -55,7 +55,7 @@
     </Compile>
     <Compile Include="Dungeon\DungeonMap.cs" />
     <Compile Include="Dungeon\IInteractible.cs" />
-    <Compile Include="Shared\Sprite.cs" />
+    <Compile Include="Shared\ISprite.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

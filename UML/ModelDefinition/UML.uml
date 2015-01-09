@@ -36,6 +36,174 @@
         LastKnownName="System"
         LastKnownLocation="Package1_1921.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3e179fca-c54d-4e31-b1eb-40e98cf2ae10"
+        name="Game"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="5fced0f2-c0fe-436c-ad16-e931c456a53e"
+            isDerived="false"
+            sourceEndRoleName="Game"
+            targetEndRoleName="Dungeon"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6c03d8d3-0b20-4904-a547-b13b05f70798"
+              LastKnownName="Dungeon"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="32b05f1b-7ad4-41f0-ae31-8d9ca1da8852"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f81e2de2-77cd-4541-9c3e-aa295fad3760"
+                  name="Dungeon"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="72d0f202-2033-4bde-bbe7-b4a8619b7593"
+            isDerived="false"
+            sourceEndRoleName="Game"
+            targetEndRoleName="Party"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7209ef5e-a4f9-4e62-998e-5da21aac809f"
+              LastKnownName="Party"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e0cc1495-30b3-4843-b43c-659513acc67a"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c714e27-b17a-4aa4-a2af-9803ccc83888"
+                  name="Party"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6c03d8d3-0b20-4904-a547-b13b05f70798"
+        name="Dungeon"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7209ef5e-a4f9-4e62-998e-5da21aac809f"
+        name="Party"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="4d8ff570-c321-4b26-8d94-865aa0411c54"
+            isDerived="false"
+            sourceEndRoleName="Party"
+            targetEndRoleName="Hero"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="5b861b1f-e6a8-46da-a184-a4ab58635eb9"
+              LastKnownName="Hero"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="93aa965e-619a-4769-97f0-d8815d52ea0d"
+                  name="Party"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3433e820-7f78-4976-b1f1-b7f940c49fe3"
+                  name="Hero"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="c1f00417-51a3-4947-a8f3-cfdb59fb0aee"
+            name="Heroes"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5b861b1f-e6a8-46da-a184-a4ab58635eb9"
+        name="Hero"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

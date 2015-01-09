@@ -78,6 +78,47 @@
               LastKnownLocation="Package_1921.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="77acc252-a4c9-4245-bb22-018228a75c51"
+            isDerived="false"
+            sourceEndRoleName="Hero"
+            targetEndRoleName="Inventory"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9e2b1b7d-0297-439d-940c-f757bd20e6d8"
+              LastKnownName="Inventory"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="57ab33b6-2f14-4452-81f8-320e6919e9e2"
+                  name="Hero"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="01089a45-c630-4b5c-a0c5-e4388b3d5c44"
+                  name="Inventory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="8137be42-20a5-4cd2-9552-4c2c6a1d38bf"
@@ -494,6 +535,47 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="5260f8cc-f79b-4618-8f57-8e443fe45cb9"
+            isDerived="false"
+            sourceEndRoleName="Inventory"
+            targetEndRoleName="Items"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b7230ff3-3458-40f6-9e56-df270713a036"
+              LastKnownName="Item"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="db3e7b0f-83ff-4663-a95b-ed1d35e72292"
+                  name="Inventory"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="526c7a62-33a5-47a5-a295-6cdb9cc203db"
+                  name="Items"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="9bf15836-3448-492d-9039-ae8ba60f3f7f"
@@ -1521,6 +1603,47 @@
               LastKnownLocation="Package_1921.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="a5abf336-4aae-4568-84cf-0044055ff78b"
+            isDerived="false"
+            sourceEndRoleName="MonsterPack"
+            targetEndRoleName="Monsters"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a10f0d30-510c-413a-bdb6-7f6e16c4dc5a"
+              LastKnownName="Monster"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b8d90166-106c-43f0-8dd5-2d7f0c373972"
+                  name="MonsterPack"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1f19de86-4d0e-42e9-a669-fc0c1c8a1ddf"
+                  name="Monsters"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="4174bb8b-5433-4d19-a7bd-5da90f78f5b7"
@@ -1793,6 +1916,47 @@
               LastKnownLocation="Package_1921.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="6492cbd6-fde5-4348-aa55-2b2fe6c47a5d"
+            isDerived="false"
+            sourceEndRoleName="Party"
+            targetEndRoleName="Heroes"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8e8eea30-9383-4b89-9962-c6a66f0454cb"
+              LastKnownName="Hero"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="80b55859-3790-447d-af8b-0cea103e026b"
+                  name="Party"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e41ebe98-a6ae-47ce-807f-4202290778ec"
+                  name="Heroes"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="7497ada4-9dbf-4233-b8c1-5f4e9e640771"
@@ -2791,6 +2955,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="c752d813-7513-4b64-8757-ac0e73e59f1c"
+            isDerived="false"
+            sourceEndRoleName="Tile"
+            targetEndRoleName="IInteractible"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="66e62646-6220-4238-af12-9bf60d83d50e"
+              LastKnownName="IInteractible"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="43ee3524-258c-4351-a070-41a37bb3ee6b"
+                  name="Tile"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fc9516dc-a766-4359-ad81-8e1d38dcfa34"
+                  name="IInteractible"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -3454,20 +3657,10 @@
               LastKnownLocation="Package_1921.uml" />
           </interfaceRealization>
         </suppliersInternal>
-        <generalsInternal>
-          <generalization
-            Id="2aef4866-cee4-47e7-861f-48231afbd1a9"
-            isSubstitutable="false">
-            <classMoniker
-              Id="73645b7f-e1e3-48ac-987a-5aeec78e5ab6"
-              LastKnownName="TileObject"
-              LastKnownLocation="Package_1921.uml" />
-          </generalization>
-        </generalsInternal>
         <ownedOperationsInternal>
           <operation
-            Id="b8e8df4d-6f71-439e-a4b6-2678a283fb6a"
-            name="Door"
+            Id="09627bb5-5f8d-4719-a97e-93c99c9f98db"
+            name="Interact"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -3475,54 +3668,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="d44a1e88-ee97-494f-a744-1356fbbc4dfe"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DDoor Member%3D.ctor"
+                Id="c99b1fb3-bb12-4218-ba0b-2be61ad261b5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DDoor Member%3DInteract"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="012cde9c-9504-43f9-a76f-ce41c79babcd"
+                Id="8ad649a0-388e-4123-ab23-8198782a9b27"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="cd6b4f02-09be-4138-a3f8-43eeb7f27ff9">
+                    Id="90b7ecfb-84d3-4ce8-86cb-fac45094e32a">
                     <propertyInstance
-                      Id="1df30791-f0db-4b41-922c-ca9ed40a44ba"
+                      Id="24cf0fd6-b3b9-498f-9ff5-c3a11938c858"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="94c6a0a7-8e49-4637-9d81-5c2467224d38">
+                    Id="7b2eb673-2c3e-4117-9878-404964064d07">
                     <propertyInstance
-                      Id="dabc957a-213e-4181-8e9c-fbc957153438"
+                      Id="997abe42-5fbf-4c78-baa7-9bcfc6525d84"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="95207071-f188-4858-9e59-23f29b2206fa">
+                    Id="a15039d4-9dd3-4a5f-9c7d-ba4be667e74a">
                     <propertyInstance
-                      Id="ea9808fa-7c16-4a17-9b8a-301d1f2e3abc"
+                      Id="68b207ef-4d62-46a1-aeb3-8a08e6bf080c"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="182b9ebc-1f6f-4c01-befe-564437a6bf66">
+                    Id="868c7949-9491-452d-a925-2921fe7ab490">
                     <propertyInstance
-                      Id="a26fcd18-9728-41c2-8126-cb9be7c65fc9"
+                      Id="0044c133-5171-4890-90e3-748f2094fb5f"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="2e554da7-7892-4234-bcec-d5cb747321c5">
+                    Id="8523cff1-ca9a-4591-8982-1fb1b6001a44">
                     <propertyInstance
-                      Id="88c08e7d-ff96-4e6c-90b8-66d51aa0c1a5"
+                      Id="e6a4a92e-2934-45e2-b381-903a7e91ff10"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="2f039249-0c7f-4c77-b920-942c95c31b16">
+                    Id="1262230e-d1df-4dc9-a1f1-296ad39cdd10">
                     <propertyInstance
-                      Id="9f65e854-eb28-4e2b-a0f1-56269424ee8c"
+                      Id="0356c551-7220-48a4-84dc-7a039edfdaf6"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -3531,37 +3724,70 @@
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="6e5828ce-313d-4960-b4e0-c05692c56b30"
-            name="Draw"
+            Id="230c31aa-dd76-4bae-ac00-1757632fd8f4"
+            name="Door"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="9b2943eb-3e35-468d-8932-82303583b9d0"
-                  name="graphics"
-                  direction="In">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="b9447201-2500-4004-89b0-c8930eed89d0"
-                      LastKnownName="Graphics"
-                      LastKnownLocation="Package5_1921.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
+            <referencesInternal>
+              <reference
+                Id="9e361a5f-29bb-4bd9-868d-3c44a1341951"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DDoor Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a5de9530-d45d-4e7d-8304-8ecb83beb045"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8ecc63c-2cec-4274-bd4d-7245a55ee1d4">
+                    <propertyInstance
+                      Id="651e61e1-efe0-445b-b763-a3a7d259d6dc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d3abfbf-c9fe-4615-98e9-be77afd6b8aa">
+                    <propertyInstance
+                      Id="bc7a7fa8-600c-4e44-9088-91b6a77a19bc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d86ce6f6-e68c-4633-aedb-7940989132e2">
+                    <propertyInstance
+                      Id="f9afe135-6f46-4898-b0fc-aba1471db6f9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d20396cd-da9c-49d5-8403-3cd893137f04">
+                    <propertyInstance
+                      Id="f5640f86-29a4-4cfa-8459-764bf43c9f4f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="19480e0d-2902-468d-8b34-10793be1886d">
+                    <propertyInstance
+                      Id="254f7fa7-7296-483b-9fc7-5e08d545a7ce"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf20a413-7967-440f-bada-d0ad2c4e9410">
+                    <propertyInstance
+                      Id="3f188ea5-1df0-4543-ad6f-2ed25a828792"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
           </operation>
-          <operation
-            Id="09627bb5-5f8d-4719-a97e-93c99c9f98db"
-            name="Interact"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3622,6 +3848,86 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="4708c8b8-e04d-4a2c-a194-55fb93604b4a"
+            isDerived="false"
+            sourceEndRoleName="Dungeon"
+            targetEndRoleName="DungeonMaps"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="39d9f89f-c0eb-449b-9421-f5b0719e06a3"
+              LastKnownName="DungeonMap"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="68f4c2ed-2784-40fb-b62d-040412e4a8bf"
+                  name="Dungeon"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b5282e16-9990-40c4-b2d2-cee9c89765a6"
+                  name="DungeonMaps"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7a77d7be-34ea-43eb-8b3b-59efc513ab05"
+            isDerived="false"
+            sourceEndRoleName="Dungeon"
+            targetEndRoleName="Party"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b33aa4c2-0fe0-412d-8e8b-b18e41ab25cc"
+              LastKnownName="Party"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dbd60053-ec59-4b85-96ad-4abcb053eca2"
+                  name="Dungeon"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="710a7794-02b0-4b6a-b77f-528cd456cb97"
+                  name="Party"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="b0a4bee4-22d8-4d4e-8ddd-79b2601dc97b"
@@ -3757,6 +4063,47 @@
               LastKnownLocation="Package4_1921.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="8b2478b8-b1fe-4751-ad5b-5b7f9c8287a7"
+            isDerived="false"
+            sourceEndRoleName="DungeonContainer"
+            targetEndRoleName="DungeonMap"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="39d9f89f-c0eb-449b-9421-f5b0719e06a3"
+              LastKnownName="DungeonMap"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="34b898cf-9920-4973-a8bd-6a3ed169f333"
+                  name="DungeonContainer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="47607d54-88dc-445f-8a8f-62b612860eac"
+                  name="DungeonMap"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="7c50e374-2f4b-4c42-af77-48f152509728"
@@ -4359,6 +4706,47 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="fc480757-0ee5-4cbd-80c4-42398c2b6b65"
+            isDerived="false"
+            sourceEndRoleName="DungeonMap"
+            targetEndRoleName="Tiles"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bd95dc9e-df93-4396-b4e4-c9b79983ac5f"
+              LastKnownName="Tile"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="40b47f20-18d4-45a1-bdfa-af18bacc2d1f"
+                  name="DungeonMap"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="96294123-2266-433e-9c2b-a341bca459cc"
+                  name="Tiles"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="d2a0035e-7889-4b9e-b25f-5ca4931eccdd"
@@ -4773,6 +5161,15 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="d23d0b57-32e0-4f01-be58-e2e3b0db1e06">
+            <interfaceMoniker
+              Id="806000fe-c580-4416-a0ba-2df6fbe24ac2"
+              LastKnownName="ISprite"
+              LastKnownLocation="Package_1921.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
         <generalsInternal>
           <generalization
             Id="6b9ee981-6cea-4762-bd3c-6841c111236e"
@@ -4783,6 +5180,47 @@
               LastKnownLocation="Package_1921.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="b229632d-c3b2-4bb3-9be9-e11fd893552a"
+            isDerived="false"
+            sourceEndRoleName="CombatSprite"
+            targetEndRoleName="Spell"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eb0741d3-d47f-4f25-b44f-34968ced55d4"
+              LastKnownName="Spell"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fcea9bba-33c5-41a3-a119-ac9aa06af54e"
+                  name="CombatSprite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="611f243e-da03-4b6c-965d-2167e437c626"
+                  name="Spell"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedOperationsInternal>
           <operation
             Id="dc3f0b2d-c68f-4e01-bfa2-7ceb6c2647db"
@@ -4848,6 +5286,30 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="2526f1d6-3923-413e-805c-0cfa3c8ed3bb"
+            name="Draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d9f2b89-a2b3-4ec4-8153-cc6e20462fe6"
+                  name="graphics"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="b9447201-2500-4004-89b0-c8930eed89d0"
+                      LastKnownName="Graphics"
+                      LastKnownLocation="Package5_1921.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -4915,6 +5377,13 @@
             <interfaceMoniker
               Id="66e62646-6220-4238-af12-9bf60d83d50e"
               LastKnownName="IInteractible"
+              LastKnownLocation="Package_1921.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="667292d7-ae69-47e1-ba76-0e951d455372">
+            <interfaceMoniker
+              Id="806000fe-c580-4416-a0ba-2df6fbe24ac2"
+              LastKnownName="ISprite"
               LastKnownLocation="Package_1921.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -5080,92 +5549,6 @@
         </appliedStereotypesInternal>
         <ownedOperations>
           <operation
-            Id="22115fd9-83cd-4662-90cf-f8b80fcfb562"
-            name="Draw"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="962ffa13-dbfd-4b1b-a922-d3970ba50a5c"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DIInteractible Member%3D(Name%3DDraw OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DGraphics)])"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="549a2e38-c789-4a8d-9c6c-e0f06c63bde4"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="7cebadf5-8e14-4fe9-a908-e772e9260691">
-                    <propertyInstance
-                      Id="1bcf3148-979a-4bb9-852a-cc3545b38896"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="a8123b37-b81b-4f89-af65-c9945534fdc5">
-                    <propertyInstance
-                      Id="1f4a5526-01d6-4b24-8a48-4fb0815dcbfc"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="cd169c8e-6c19-462c-8313-4f7b4c6c23bb">
-                    <propertyInstance
-                      Id="d5fa9e43-aae9-4cbf-98e8-d385b676a759"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="fbe741b9-5c1a-45b6-bb0a-0a6634f1d2c3">
-                    <propertyInstance
-                      Id="f587cc45-97c8-4e45-b590-bbbc8a4624c1"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e8bb7393-3fed-4561-a425-c0e8fe85e06e">
-                    <propertyInstance
-                      Id="98466170-73ca-4178-89c8-7f95f84025ce"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="6d0ba767-e889-4a8e-8e70-9ba8247673bd">
-                    <propertyInstance
-                      Id="3a50cbc8-d690-4458-8a40-620147ed39e9"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="dde16238-75b5-4ca9-8c49-0884b0806b14"
-                  name="graphics"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="db6ae77b-d161-407f-844b-01158be29727"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DIInteractible Member%3D(Name%3DDraw OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DGraphics)]) ParameterIdentifier%3Dgraphics"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="b9447201-2500-4004-89b0-c8930eed89d0"
-                      LastKnownName="Graphics"
-                      LastKnownLocation="Package5_1921.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="d7f10d07-0db6-4934-8c8a-9d7e6d8de85c"
             name="Interact"
             isLeaf="false"
@@ -5229,6 +5612,145 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="806000fe-c580-4416-a0ba-2df6fbe24ac2"
+        name="ISprite"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="611a1362-abc1-457e-8c15-66beb8a2fe0e"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DISprite"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="99a52447-9bce-4119-94b5-b9ae1831b7c9"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="45e95dd7-bdb5-42d2-8762-9ea40a4dac65">
+                <propertyInstance
+                  Id="80bed145-19c3-4bef-9f60-2dbad068ea4f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48afe42a-850f-4641-b752-98e4c17ca53a">
+                <propertyInstance
+                  Id="3d1493bf-04f4-4f46-985d-7a209743ce42"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48c92f5d-1db7-4c4e-97eb-cef8345c316f">
+                <propertyInstance
+                  Id="40b81036-b1b5-464d-b1ce-ede0bee2b4ca"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b674e8a9-afa6-42b2-8fe2-56ec1796b021">
+                <propertyInstance
+                  Id="03b7722c-f8d4-4e86-8c17-a9c44a0a21ec"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperations>
+          <operation
+            Id="fbf3432f-b147-4210-a2d6-0e9d0b42f34a"
+            name="Draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f11c158a-0b58-4306-9e04-378a7f004b49"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DISprite Member%3D(Name%3DDraw OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DGraphics)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c06b3cf4-3dd8-4aec-b390-47eb4893985d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03a95ebd-1872-4ecc-b372-0f90d87ebc46">
+                    <propertyInstance
+                      Id="f30b8263-5adb-4901-a072-19015b443d9f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb2b8db6-3578-4914-951f-3f3ded7509dd">
+                    <propertyInstance
+                      Id="6ec4252e-4442-4bb3-867c-aafa660e4d1c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f051151-f4fe-42c6-b312-ad86676ea9bd">
+                    <propertyInstance
+                      Id="11f7db0a-75c9-4615-aa0c-14757dce72c2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="124fcf07-9656-4685-b184-1c25a4763f2e">
+                    <propertyInstance
+                      Id="33297368-61de-4968-a6f2-ce372251aff3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ccdf06ed-30c3-4356-9500-6b28f9a6f399">
+                    <propertyInstance
+                      Id="e80e1ea8-c72d-4fef-aa28-58290b7928b1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3758779d-dd1d-47db-bd60-bcb61baa9eaa">
+                    <propertyInstance
+                      Id="bf3c06ff-dc0f-41a3-b529-8f96a69e5f39"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2620c6f7-3c0c-40c4-9561-41b4677d7fd4"
+                  name="graphics"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="0179727f-226f-42ec-94ee-9e550345cf56"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DISprite Member%3D(Name%3DDraw OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DGraphics)]) ParameterIdentifier%3Dgraphics"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="b9447201-2500-4004-89b0-c8930eed89d0"
+                      LastKnownName="Graphics"
+                      LastKnownLocation="Package5_1921.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperations>
       </Interface>

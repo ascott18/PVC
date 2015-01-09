@@ -9,8 +9,6 @@ namespace Project
 {
 	interface IInteractible
 	{
-		void Draw(Graphics graphics);
-
 		void Interact();
 	}
 }

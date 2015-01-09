@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	class Sprite : TileObject
+	class Door : IInteractible
 	{
-		public readonly Image image;
-		public virtual void Draw(Graphics graphics)
+		public void Interact()
 		{
-			graphics.DrawImage(image, tile.X, tile.Y, Tile.DIM_X, Tile.DIM_Y);
+			throw new NotImplementedException();
 		}
 	}
 }

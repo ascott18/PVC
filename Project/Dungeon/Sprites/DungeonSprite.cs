@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	class DungeonSprite : Sprite, IInteractible
+	class DungeonSprite : ISprite, IInteractible
 	{
+		public void Draw(Graphics graphics)
+		{
+			throw new NotImplementedException();
+		}
+
 		public void Interact()
 		{
 			throw new NotImplementedException();
