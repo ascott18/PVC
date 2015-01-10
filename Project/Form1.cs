@@ -15,6 +15,9 @@ namespace Project
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			MapData.ParseMapData(1);
+			Console.ReadLine();
 		}
 	}
 }

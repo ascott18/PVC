@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	class CombatSprite : ISprite
+	interface ISprite
 	{
-		public void Draw(Graphics graphics)
-		{
-			throw new NotImplementedException();
-		}
+		void Draw(Graphics graphics);
+
 	}
 }

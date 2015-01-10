@@ -2956,7 +2956,7 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="c752d813-7513-4b64-8757-ac0e73e59f1c"
+            Id="53e7149e-8801-4683-a3e6-31257ca6caed"
             isDerived="false"
             sourceEndRoleName="Tile"
             targetEndRoleName="IInteractible"
@@ -2969,20 +2969,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="43ee3524-258c-4351-a070-41a37bb3ee6b"
+                  Id="272f9948-0f78-4ebf-9b08-8780907d71d7"
                   name="Tile"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="fc9516dc-a766-4359-ad81-8e1d38dcfa34"
+                  Id="3af1712f-bcf5-47f5-ad19-54791874c410"
                   name="IInteractible"
                   isLeaf="false"
                   isStatic="false"
@@ -2990,7 +2990,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -3884,7 +3884,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f1e0476c-ff21-453b-946b-a5de6eed29a2"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5df7d11f-a4e0-4903-893d-eb705fe978ad"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -4742,7 +4755,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="462bc1ad-35b8-4868-81ff-1bf81c43bf3e"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2ae37ae4-e1eb-4658-9b4c-a477cd796ad7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -5216,7 +5242,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1bbd6c7d-3d9b-4d4a-be61-dc25998c406b"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="63b1fe56-39ac-49fd-9c4c-c059d48a4b2c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>

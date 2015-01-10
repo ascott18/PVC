@@ -1540,21 +1540,21 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="bd95dc9e-df93-4396-b4e4-c9b79983ac5f" />
         <targetEnds>
-          <association Id="a4acf0a9-d4ae-4820-9425-dc100a9a8462" isDerived="false" sourceEndRoleName="Tile" targetEndRoleName="IInteractible" isLeaf="false" isAbstract="false">
+          <association Id="6380b1e1-ee58-46bc-a918-5fedc93df699" isDerived="false" sourceEndRoleName="Tile" targetEndRoleName="IInteractible" isLeaf="false" isAbstract="false">
             <interfaceMoniker Id="06e2053c-8e55-486c-b9a3-aad33024f5a6" LastKnownName="IInteractible" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="a7575df3-4d5f-4c4f-a1c5-e01020572219" name="Tile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="43ee3524-258c-4351-a070-41a37bb3ee6b" />
+                <memberEnd Id="1a9aa8d8-6f99-4b26-8476-6a2b07efe07a" name="Tile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="272f9948-0f78-4ebf-9b08-8780907d71d7" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="267696a7-dceb-4821-98da-e9d8da2b383a" name="IInteractible" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="fc9516dc-a766-4359-ad81-8e1d38dcfa34" />
+                <memberEnd Id="6c01b95f-1363-4811-840c-b78c96cb4510" name="IInteractible" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3af1712f-bcf5-47f5-ad19-54791874c410" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="c752d813-7513-4b64-8757-ac0e73e59f1c" />
+            <elementDefinition Id="53e7149e-8801-4683-a3e6-31257ca6caed" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -2345,6 +2345,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="ceb23d08-6013-4ea4-b376-a2c1b92ec0ab" name="DungeonMaps" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="a07001a5-997f-4937-85b1-3fc9e62c257c" name="Lower" value="*">
+                      <elementDefinition Id="f1e0476c-ff21-453b-946b-a5de6eed29a2" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="9995fbc2-1661-4ed3-b1eb-0faba60ab6fb" name="Upper" value="*">
+                      <elementDefinition Id="5df7d11f-a4e0-4903-893d-eb705fe978ad" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="b5282e16-9990-40c4-b2d2-cee9c89765a6" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -2972,6 +2982,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="6b41b679-b3b4-464d-a32a-51dc67433e46" name="Tiles" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="38498556-8a35-4d77-8d20-e1806b796c2b" name="Lower" value="*">
+                      <elementDefinition Id="462bc1ad-35b8-4868-81ff-1bf81c43bf3e" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="b911ad28-2612-487c-a2ed-43b8c3be47b5" name="Upper" value="*">
+                      <elementDefinition Id="2ae37ae4-e1eb-4658-9b4c-a477cd796ad7" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="96294123-2266-433e-9c2b-a341bca459cc" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -3359,6 +3379,16 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="cda3c76b-0876-4845-9b5b-690a1489f6d0" name="Spell" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="7cc32360-ef01-407c-ab7b-7d65859f128b" name="Lower" value="*">
+                      <elementDefinition Id="1bbd6c7d-3d9b-4d4a-be61-dc25998c406b" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="b721e862-6329-4c46-ad9a-6a7654d9224f" name="Upper" value="*">
+                      <elementDefinition Id="63b1fe56-39ac-49fd-9c4c-c059d48a4b2c" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="611f243e-da03-4b6c-965d-2167e437c626" />
                 </memberEnd>
               </associationHasOwnedEnds>

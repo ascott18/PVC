@@ -15,23 +15,17 @@ namespace Project
 		public readonly int X;
 		public readonly int Y;
 
-		private IInteractible tileObject;
-
 		public Tile(int X, int Y)
 		{
 			this.X = X;
 			this.Y = Y;
 		}
 
-		public IInteractible TileObject
-		{
-			get { return tileObject; }
-			set { tileObject = value; }
-		}
+		public IInteractible TileObject { get; set; }
 
 		public void Draw(Graphics graphics)
 		{
-			tileObject.Draw(graphics);
+			
 		}
 	}
 }
