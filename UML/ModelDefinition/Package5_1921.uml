@@ -73,8 +73,7 @@
       <class
         Id="af5bdbe3-fe0c-4423-ba7b-55cb4e27ebd3"
         name="Image"
-        visibility="Private"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>

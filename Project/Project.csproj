@@ -68,7 +68,6 @@
     <Compile Include="Dungeon\TileData.cs" />
     <Compile Include="Dungeon\TileObject.cs" />
     <Compile Include="Dungeon\XMLData.cs" />
-    <Compile Include="Shared\ISprite.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

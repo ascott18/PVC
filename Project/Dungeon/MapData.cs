@@ -11,14 +11,22 @@ namespace Project
 {
 	internal class MapData : XMLData
 	{
+		/// <summary>
+		/// The number of tiles in a map in the horizonal direction.
+		/// </summary>
 		public const int DIM_X = 14;
-		public const int DIM_Y = 14;
-		private static MapData[] data = new MapData[128];
 
 		/// <summary>
-		///     The cached result of GetXmlParserMethods(). Don't read this field - always call GetXmlParserMethods().
+		/// The number of tiles in a map in the vertical direction.
 		/// </summary>
-		private static Dictionary<string, Func<XElement, TileObject>> parserMethods;
+		public const int DIM_Y = 14;
+
+		/// <summary>
+		/// Holds cached MapData instances, keyed by their mapID.
+		/// This array is dynamically resized as needed.
+		/// </summary>
+		private static MapData[] data = new MapData[128];
+
 
 
 		public readonly int MapID;
@@ -36,12 +44,11 @@ namespace Project
 		/// <summary>
 		///     Returns the TileData object for the requested map coordinates.
 		/// </summary>
-		/// <param name="x">The x coordinate to request.</param>
-		/// <param name="y">The y coordinate to request.</param>
+		/// <param name="loc">The coordinates of the tile to request.</param>
 		/// <returns>The requested TileData object.</returns>
-		public TileData GetTileData(int x, int y)
+		public TileData GetTileData(Point loc)
 		{
-			return tiles[x, y];
+			return tiles[loc.X, loc.Y];
 		}
 
 
@@ -133,6 +140,12 @@ namespace Project
 		}
 
 
+
+		/// <summary>
+		///     The cached result of GetXmlParserMethods(). Don't read this field - always call GetXmlParserMethods().
+		/// </summary>
+		private static Dictionary<string, Func<XElement, TileObject>> parserMethods;
+
 		/// <summary>
 		///     Gets a dictionary of all methods that have been marked with [XmlParserAttribute(elementName)],
 		///     with the keys of the dictionary as elementName and the values as Func&lt;XElement, TileObject&gt;
@@ -170,20 +183,6 @@ namespace Project
 					}) as TileObject);
 
 			return parserMethods = methods;
-		}
-	}
-
-	internal class DoorData
-	{
-		public readonly int DestinationMapID;
-		public readonly Point DestinationPoint;
-		public readonly Point Location;
-
-		public DoorData(Point loc, Point dest, int mapID)
-		{
-			Location = loc;
-			DestinationPoint = dest;
-			DestinationMapID = mapID;
 		}
 	}
 }

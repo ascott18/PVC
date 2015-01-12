@@ -25,7 +25,7 @@ namespace Project
 			{
 				for (int y = 0; y < DIM_Y; y++)
 				{
-					var tile = new Tile(this, x, y);
+					var tile = new Tile(this, new Point(x, y));
 					tiles[x, y] = tile;
 				}
 			}

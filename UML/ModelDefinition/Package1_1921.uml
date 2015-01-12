@@ -99,5 +99,173 @@
         LastKnownName="Collections"
         LastKnownLocation="Package2_2110.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f46feaca-3072-41ff-9059-1e86fcaeaed8"
+        name="Func&lt;XElement‎, TileObject‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="96a2995f-2d68-4efb-811a-7947692a2a99"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c2e9c5dc-4767-4490-ae49-bfcedb7f83f0">
+                <propertyInstance
+                  Id="706bf5e1-0dcd-44c4-bbb0-f873f48eaad7"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="84e0a7bf-3aa8-48ab-9d03-d7389a24c1d0">
+                <propertyInstance
+                  Id="cddfc1a3-0eeb-4032-b7c6-e44dee8ee667"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b6fd3a3-4590-49c8-bc52-f4d58641edda">
+                <propertyInstance
+                  Id="d77916f7-be48-4137-9f53-18d1da637600"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="5fba88c5-1f69-4c00-a6ea-7b7dfbc963d0">
+            <redefinableTemplateSignatureMoniker
+              Id="27fd5bf9-47ef-45c9-b6b4-cfc14bde62b2"
+              LastKnownLocation="Package1_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="f15be2f4-0a4e-4aa7-9e93-8fffcb9e6f59">
+                  <actuals>
+                    <classMoniker
+                      Id="828c223c-41c8-4c89-add0-ab7dd5c491f7"
+                      LastKnownName="XElement"
+                      LastKnownLocation="Package1_2110.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="549c214b-639d-40a1-ba07-02803999f6a9"
+                      LastKnownLocation="Package1_1921.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="232dff41-a2c8-4910-98f5-c93bdbda49a6">
+                  <actuals>
+                    <classMoniker
+                      Id="73645b7f-e1e3-48ac-987a-5aeec78e5ab6"
+                      LastKnownName="TileObject"
+                      LastKnownLocation="Package_1921.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="f5d57dce-49c2-4d3a-ba95-8ce9c2ee081d"
+                      LastKnownLocation="Package1_1921.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="51bc0874-63bf-4161-a486-e5d4eb6f4a26"
+        name="Func"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="441ed6c8-fc56-4371-b925-5ec3e665f416"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DFunc GenericParameterCount%3D2)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6f96f1cf-3ef1-4aed-9f2d-53d92f8d69d1"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fc584617-2c2e-446f-b290-cb2d64003ab4">
+                <propertyInstance
+                  Id="8fa59f0a-3108-458a-820d-b8e95db3c096"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="000f7b0f-0cdb-459c-a8e5-29b54f54b8c7">
+                <propertyInstance
+                  Id="36652f3c-4c96-4cae-b85c-890399842fe6"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b51671e9-4b00-45e8-acf6-aba65928f0e1">
+                <propertyInstance
+                  Id="c68b9fe6-9d22-4be0-9666-ca179dd0a273"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="27fd5bf9-47ef-45c9-b6b4-cfc14bde62b2"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="549c214b-639d-40a1-ba07-02803999f6a9">
+                <referencesInternal>
+                  <reference
+                    Id="50c27e61-90cf-4622-ad0c-7d926a21f6f2"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DFunc GenericParameterCount%3D2) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="4b919b39-1073-4bbc-b755-8fa6b1fd2be4"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+              <classifierTemplateParameter
+                Id="f5d57dce-49c2-4d3a-ba95-8ce9c2ee081d">
+                <referencesInternal>
+                  <reference
+                    Id="ba098e34-00e7-40a4-8c97-a21654b2c97a"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DFunc GenericParameterCount%3D2) ParameterIdentifier%3D1"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="025a8299-3968-421d-8e75-b2d3bff30ceb"
+                    name="TResult"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
 </package>

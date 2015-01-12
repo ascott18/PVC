@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	class CombatSprite : ISprite
+	class CombatSprite
 	{
 		public void Draw(Graphics graphics)
 		{

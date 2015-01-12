@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	abstract class DungeonSprite : TileObject, ISprite
+	abstract class DungeonSprite : TileObject
 	{
-		public void Draw(Graphics graphics)
-		{
-			throw new NotImplementedException();
-		}
 
-		public void Interact()
+		public override void Interact()
 		{
 			throw new NotImplementedException();
 		}
