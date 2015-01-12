@@ -9,6 +9,12 @@ using Project.Properties;
 
 namespace Project
 {
+	/// <summary>
+	/// TileObject represends some entity that can occupy a Tile of a Map.
+	/// This might include the player, an enemy, or a door, and can be extended to be anthing else.
+	/// TileObjects are represented in Maps.xml inside the Objects element, and are constructed from XML
+	/// using methods that are marked with XmlParserAttribute.
+	/// </summary>
 	class TileObject
 	{
 		public Point Location { get; private set; }

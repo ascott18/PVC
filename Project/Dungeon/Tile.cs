@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Project
 {
+	/// <summary>
+	/// Tile represents an actual tile in a DungeonMap.
+	/// It contains information about what occupies that spot on the map,
+	/// and it draws anything that occupies that tile.
+	/// </summary>
 	class Tile
 	{
 		public const int DimPixels = 50;

@@ -9,6 +9,11 @@ using System.Xml.XPath;
 
 namespace Project
 {
+	/// <summary>
+	/// MapData represents a complete Map element parsed from Maps.xml.
+	/// It is immutable, but the TileObjects that it contains may be modified as needed
+	/// as gameplay progresses.
+	/// </summary>
 	internal class MapData : XMLData
 	{
 		/// <summary>
@@ -28,11 +33,23 @@ namespace Project
 		private static MapData[] data = new MapData[128];
 
 
-
+		/// <summary>
+		/// The mapID that uniquely identifies this MapData from all other maps.
+		/// </summary>
 		public readonly int MapID;
 
 
+		/// <summary>
+		/// The TileObjects that were constructed as this MapData was parsed from XML.
+		/// These should be set on the appropriate Tiles of the DungeonMap that this MapData corresponds to,
+		/// and may be modified as needed as gameplay progresses.
+		/// </summary>
 		private readonly TileObject[,] objects = new TileObject[DIM_X, DIM_Y];
+
+		/// <summary>
+		/// The TileData objects that represent the base data of each tile of this map,
+		/// pased from the Tiles element of this MapData's corresponding Map element.
+		/// </summary>
 		private readonly TileData[,] tiles = new TileData[DIM_X, DIM_Y];
 
 
@@ -161,14 +178,10 @@ namespace Project
 			// Inspired by http://stackoverflow.com/questions/3467765/get-method-details-using-reflection-and-decorated-attribute
 			var methods = Assembly.GetExecutingAssembly()
 			                      .GetTypes()
-			                      .SelectMany(x => x.GetMethods())
+			                      .SelectMany(type => type.GetMethods())
 
 								  // Filter out only methods that are marked with [XmlParserAttribute]
-			                      .Where(
-				                      y =>
-					                      y
-					                      .GetCustomAttributes
-					                      <TileObject.XmlParserAttribute>().Any())
+			                      .Where(info => info.GetCustomAttributes<TileObject.XmlParserAttribute>().Any())
 
 									// Create a Dictionary from the methods that were marked with this attribute.
 			                      .ToDictionary
@@ -177,10 +190,8 @@ namespace Project
 					info => info.GetCustomAttributes<TileObject.XmlParserAttribute>().First().ElementName,
 
 					// Create a Func<XElement, TileObject> as the value of the dictionary.
-					info => element => info.Invoke(null, new object[]
-					{
-						element
-					}) as TileObject);
+					info => element => info.Invoke(null, new object[] { element }) as TileObject
+				);
 
 			return parserMethods = methods;
 		}

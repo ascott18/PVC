@@ -9,6 +9,11 @@ using System.Xml.Linq;
 
 namespace Project
 {
+	/// <summary>
+	/// Represents a door in a dungeon. When the player interacts with a door,
+	/// it will take the player to a certain point on a certain map.
+	/// Created by parsing Maps.xml for Door elements.
+	/// </summary>
 	class Door : TileObject
 	{
 		public override void Interact()
@@ -20,7 +25,7 @@ namespace Project
 		public readonly Point DestinationPoint;
 		public readonly int DestinationMapID;
 
-		public Door(Point loc, Point dest, int mapID) : base(loc)
+		private Door(Point loc, Point dest, int mapID) : base(loc)
 		{
 			DestinationPoint = dest;
 			DestinationMapID = mapID;

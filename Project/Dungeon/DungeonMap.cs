@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace Project
 {
+	/// <summary>
+	/// DungeonMap represents a single map in a dungeon.
+	/// For our purposes, the whole game is a single dungeon.
+	/// Maps are 14x14 grids of Tiles.
+	/// </summary>
+	//(TODO: Consider renaming the Dungeon class?)
 	class DungeonMap
 	{
 		public const int DIM_X = 14;

@@ -9,6 +9,11 @@ using Project.Properties;
 
 namespace Project
 {
+	/// <summary>
+	/// XMLData is an abstract class that is the foundation for immutable data objects parsed from XML.
+	/// It contains functionality for loading XML files from the project's resx file and storing these as
+	/// XDocuments for repeated use.
+	/// </summary>
 	abstract class XMLData
 	{
 		private static readonly Dictionary<string, XDocument> Documents = new Dictionary<string, XDocument>();
