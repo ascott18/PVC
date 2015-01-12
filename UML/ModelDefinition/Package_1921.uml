@@ -2570,7 +2570,7 @@
         <referencesInternal>
           <reference
             Id="f0a97bbf-b486-4380-a21d-8f606d19dad0"
-            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DTileObject"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DTileObject"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -2618,8 +2618,9 @@
         </appliedStereotypesInternal>
         <ownedAttributesInternal>
           <property
-            Id="854bcb11-e744-40d8-bef6-18457fb96fce"
-            name="tile"
+            Id="ef7bc0c5-f2d0-42ca-9e00-480efe9f2a53"
+            name="X"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2629,47 +2630,47 @@
             isComposite="false">
             <referencesInternal>
               <reference
-                Id="6615e2fc-9ee8-42f9-b735-f04c00478b9a"
-                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DTileObject Member%3Dtile"
+                Id="621027f4-b2ad-4533-afa5-bac5982d2859"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DTileObject Member%3DX"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="440f24d5-79e2-44e6-becc-c2bb5a8248cc"
+                Id="aa1009eb-4904-4cb3-9993-82d067bc9a20"
                 name="field"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ae268bc1-986c-4075-b868-086c83b98eb3">
+                    Id="c65e953e-ff99-4e09-a5b2-232f3dd16b56">
                     <propertyInstance
-                      Id="b6d91f02-fc38-4191-8a84-400351299ea9"
+                      Id="92125b80-1cff-42da-9d1e-2cba831a274c"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="fb75e993-fb1d-4f88-ae17-37a3feeb5781">
+                    Id="3e30128b-aba3-4a4e-9777-9cb256d791f8">
                     <propertyInstance
-                      Id="fb2ac18c-4646-4936-9b31-ed906b21ed9e"
+                      Id="f2d328d9-35d8-4413-856d-af367a65090c"
                       name="IsConst"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="14bc32c4-7de8-4e04-8998-12221348d620">
+                    Id="740d2cb7-5512-4ce7-ad55-f6f44e61a7be">
                     <propertyInstance
-                      Id="9dae9e32-89b1-4039-a04b-160dc98abd25"
+                      Id="886b5793-575d-4df4-812a-e5a8cfd8f6e1"
                       name="IsNullable"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="76f75061-ad93-42d7-b05d-7cdd2bc24667">
+                    Id="4769372b-2d5b-4e86-bd10-abacdf590021">
                     <propertyInstance
-                      Id="13f300b9-1e5b-459b-83f4-31248e955e10"
+                      Id="c64732fb-edd2-4522-ac49-b91fdbc24de7"
                       name="IsVolatile"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="dbdb802b-238f-45af-883a-754dfdfd5763">
+                    Id="7058266a-39a9-4800-a44c-c4083b9d5fb0">
                     <propertyInstance
-                      Id="fc8b2f5a-7835-4c5e-9611-f1566114ac43"
+                      Id="5627ae69-289f-48ef-aca3-9a9a09b642bb"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -2677,17 +2678,84 @@
               </stereotypeInstance>
             </appliedStereotypesInternal>
             <type_NamedElement>
-              <classMoniker
-                Id="bd95dc9e-df93-4396-b4e4-c9b79983ac5f"
-                LastKnownName="Tile"
-                LastKnownLocation="Package_1921.uml" />
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="64497cba-7bf1-4107-9005-5fc6a7a0734e"
+            name="Y"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="fd682f10-aaba-47be-86f8-1df3beb10107"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DTileObject Member%3DY"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4741ad7c-d73b-464d-981e-8386095e403e"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f67d2032-c4b0-47a4-ac30-e33162ef40cb">
+                    <propertyInstance
+                      Id="5cb6e36a-1aff-42e6-b0e5-8ff530f3298f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da3ae1ae-2320-49e1-9162-24681b16aa32">
+                    <propertyInstance
+                      Id="5a30ed97-0a42-40ce-9ac1-79521e3b32b9"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4819005f-b7d7-4211-9623-ba6cfa7514d7">
+                    <propertyInstance
+                      Id="96c5f4a3-0c8f-4511-b66e-05a082abbe73"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="146b625c-719f-4b2a-b9a6-1ac25869fa36">
+                    <propertyInstance
+                      Id="d8b45583-8889-4dcf-8e56-a5a2dd8bdefa"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f3696f2-9f6d-4a43-ba1e-3c00f4aa7ce2">
+                    <propertyInstance
+                      Id="51b5f108-874a-4a0e-8bad-780b36ea5af9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="8b564fa8-8edb-4b5b-bda1-799d21676df2"
-            name="Draw"
+            Id="c38c6ed3-7afc-4e9e-a1b5-44c219231ee4"
+            name="Interact"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -2695,84 +2763,63 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="c7b737a2-3ad6-4f87-a1c7-c9491b3ca50a"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DTileObject Member%3D(Name%3DDraw OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DGraphics)])"
+                Id="65ebd067-ee40-4c63-9343-d5e555aef487"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DTileObject Member%3DInteract"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="43bb5e88-9dc4-46d5-b1d4-963bf0c56b57"
+                Id="8b30bbee-658a-4ecf-9c26-59f1b6d468dc"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e1ef1d0c-fbb7-4e0d-a444-22e9e7258f24">
+                    Id="a479a5be-5511-41d8-858c-8bfc9614e56d">
                     <propertyInstance
-                      Id="9ecd1347-3975-4a0e-a45e-7082ed4c5c46"
+                      Id="3b257399-4413-4e0d-9fae-8ee1c2b98c78"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="4ce0a5b5-7ff0-47ad-a0ee-42ff6b0518db">
+                    Id="65731446-879a-4ffa-8677-c4019f88c778">
                     <propertyInstance
-                      Id="aa1878ef-13ae-4e66-8d71-7072c8d36b31"
+                      Id="0f1548a8-cfe5-4f06-932f-d863236a363b"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="6d0de663-0192-4740-9955-1483974cda41">
+                    Id="c8abea14-56e5-4f4d-8e61-4051589352d8">
                     <propertyInstance
-                      Id="1cf116c8-6642-48a9-9922-537cc031820b"
+                      Id="25d372f6-671d-42ed-bbac-cead745b3276"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="8dd8094a-c510-4383-b634-2d9ba9d619a0">
+                    Id="a8f8b2b6-f61a-4995-9598-7f6c6b120a4a">
                     <propertyInstance
-                      Id="86888b78-d0e0-4640-87a5-2110beefc695"
+                      Id="be319305-12f7-4ae2-8c63-99ce2f5c38eb"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="b2f6c9ae-ea9c-48fc-ad98-820293f232f7">
+                    Id="e22eb1da-ff82-4fad-8de4-12e7f08d2090">
                     <propertyInstance
-                      Id="acb3e03d-20e0-4e45-9cc3-da3ebb4cf54a"
+                      Id="63d73d30-868f-43cc-b56b-bb4de12105f6"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="fe832db1-998c-4c48-8e01-d6acb43df838">
+                    Id="78b1f3a4-0af0-42f7-846e-c186ac1c9c14">
                     <propertyInstance
-                      Id="3c4a3daa-aa82-431a-b318-42b086ded095"
+                      Id="4f9b256e-cd8a-4914-8f58-b059c157f4a6"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="18bbaec1-63bd-437f-89c1-4d87e0b0b398"
-                  name="graphics"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="fb5340d6-032e-4f39-ac3f-1c317a433097"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DTileObject Member%3D(Name%3DDraw OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DGraphics)]) ParameterIdentifier%3Dgraphics"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="b9447201-2500-4004-89b0-c8930eed89d0"
-                      LastKnownName="Graphics"
-                      LastKnownLocation="Package5_1921.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
           <operation
-            Id="ed550b35-c892-4fad-b466-fc8954745d46"
+            Id="ba7d1752-7669-47cf-b2be-1e3c22377e6d"
             name="TileObject"
             isLeaf="false"
             isStatic="false"
@@ -2781,54 +2828,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="25a0662e-04c0-4925-9b5b-a84410cf5f19"
-                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FAndrew%2FGoogle Drive%2F14-15%2FCSCD 349 - DP%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe&quot; Namespace%3DProject Type%3DTileObject Member%3D.ctor"
+                Id="b28eb9ea-f341-4d6c-b631-c951278d7331"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DTileObject Member%3D.ctor"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="ac15fadd-b754-4f59-94a9-f36ab2674e12"
+                Id="c97bf14a-f2f5-488a-ad54-204706e2a6c5"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="d51317b1-f8b6-4f3f-a256-69c843b7b14d">
+                    Id="8938ea88-f670-4fd0-b1a5-a1ee51d8a9fa">
                     <propertyInstance
-                      Id="465e1ff3-8ac0-4a57-99a1-43410e46c3d4"
+                      Id="39c48fdf-a7b9-443a-95c5-9180660c1c6d"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="a2cf2fb9-5c6a-427a-8112-9bd2f4b04cf0">
+                    Id="fc011a1a-1a08-4b15-a7e9-221d8ea97452">
                     <propertyInstance
-                      Id="3b7a33ff-c269-48da-87b1-aee7f8535528"
+                      Id="24b877ce-9dba-4ace-865a-b784a8ccd633"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="85030309-140a-462e-bebf-aaf34813b1c5">
+                    Id="95a30cda-037f-4a74-937a-3b4624fc53e8">
                     <propertyInstance
-                      Id="23ee0201-8a81-43b4-ada2-d1919d73397f"
+                      Id="0c3a2b81-64be-492b-96dc-c1ff5d56d0d4"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="7440d963-068d-458e-9b12-6256d6f595f0">
+                    Id="7a3d54bf-c837-4fa7-8e84-5976a2ce2c0e">
                     <propertyInstance
-                      Id="33fe2b12-e581-4733-aeea-cf5334a7c41c"
+                      Id="66f7cbce-992c-4e94-b0f0-9abdf0dbe768"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="87e4dbdd-7377-4112-9b4e-e96409ccb6d3">
+                    Id="8cbb7675-f0ed-48c5-be66-e8ff7a9230b1">
                     <propertyInstance
-                      Id="1d3212f5-fd3b-445f-8c76-8be74a07af3b"
+                      Id="d9196bc3-9f21-49fb-93a0-ce18b69e38a0"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ad865c3e-49e6-473e-a5a1-dbcabf9a3a0c">
+                    Id="ec36ff73-52e4-4576-b2cc-eba38a325d63">
                     <propertyInstance
-                      Id="578fed06-5fa5-43d3-baf5-fc15ffe38b8e"
+                      Id="80bfe13d-e022-43aa-919e-2f0535f9bad1"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -2898,72 +2945,6 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="a77bbf01-db79-47df-827b-c1ad90cf1acc"
-            isDerived="false"
-            sourceEndRoleName="Tile"
-            targetEndRoleName="TileObject"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="73645b7f-e1e3-48ac-987a-5aeec78e5ab6"
-              LastKnownName="TileObject"
-              LastKnownLocation="Package_1921.uml" />
-            <description>Property TileObject references type TileObject.</description>
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="6dec0c74-d42f-4d80-b55a-6aecc8a72e68"
-                  name="Tile"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="30c256b1-98e4-4a20-8856-bd406df94f46"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="9501033e-bc41-4ac4-abaf-02ff954f3199"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8e345960-54e7-4413-8e79-711e075f7d39"
-                  name="TileObject"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="a0861f0e-cf48-4821-ae2a-61d11c8539b5"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="5128e884-936a-4722-a49f-0a2d92b8c409"
-                      name="Upper"
-                      value="1" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="53e7149e-8801-4683-a3e6-31257ca6caed"
             isDerived="false"
             sourceEndRoleName="Tile"
@@ -3031,6 +3012,45 @@
                 <memberEnd
                   Id="38ec968a-7975-443e-a591-bb9114e50f12"
                   name="TileData"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="fa70fc50-2a4f-42fb-9b72-04d92da6c64f"
+            isDerived="false"
+            sourceEndRoleName="Tile"
+            targetEndRoleName="TileObject"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="73645b7f-e1e3-48ac-987a-5aeec78e5ab6"
+              LastKnownName="TileObject"
+              LastKnownLocation="Package_1921.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4d852356-fdc0-41e4-885a-1f8fc58676de"
+                  name="Tile"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c256c134-c5ac-4c63-a880-08a0b2da11de"
+                  name="TileObject"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -3704,6 +3724,16 @@
               LastKnownLocation="Package_1921.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="8ec828fa-25e4-47ae-ac0b-c62f5a9160bb"
+            isSubstitutable="false">
+            <classMoniker
+              Id="73645b7f-e1e3-48ac-987a-5aeec78e5ab6"
+              LastKnownName="TileObject"
+              LastKnownLocation="Package_1921.uml" />
+          </generalization>
+        </generalsInternal>
         <targetEnds>
           <association
             Id="cc47900b-003a-499a-b30b-cba7aa1b4dea"
@@ -5560,6 +5590,14 @@
             <classMoniker
               Id="b43485f2-35c1-4cf1-8027-25167a49f286"
               LastKnownName="Sprite"
+              LastKnownLocation="Package_1921.uml" />
+          </generalization>
+          <generalization
+            Id="bbd9c913-e23f-486e-b56f-8dfb52124006"
+            isSubstitutable="false">
+            <classMoniker
+              Id="73645b7f-e1e3-48ac-987a-5aeec78e5ab6"
+              LastKnownName="TileObject"
               LastKnownLocation="Package_1921.uml" />
           </generalization>
         </generalsInternal>

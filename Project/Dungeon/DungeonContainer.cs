@@ -17,11 +17,13 @@ namespace Project
 		public DungeonContainer()
 		{
 			InitializeComponent();
+			CurrentMap = new DungeonMap(1);
 		}
 
 		DungeonMap CurrentMap
 		{
 			get { return currentMap; }
+			set { currentMap = value; }
 		}
 
 		private void DungeonContainer_Paint(object sender, PaintEventArgs e)

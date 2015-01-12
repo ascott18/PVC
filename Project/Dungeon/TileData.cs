@@ -17,15 +17,15 @@ namespace Project
 
 		public readonly int TileID;
 		public readonly bool IsObstable;
-		public readonly Image Texture;
+		public readonly Image Image;
 
 		private TileData(int id, bool isObstable, string imageName)
 		{
 			TileID = id;
 			IsObstable = isObstable;
 
-			Texture = Resources.ResourceManager.GetObject(imageName) as Bitmap;
-			if (Texture == null)
+			Image = Resources.ResourceManager.GetObject(imageName) as Bitmap;
+			if (Image == null)
 				throw new FileNotFoundException("Resource not found", imageName);
 		}
 

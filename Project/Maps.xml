@@ -17,18 +17,19 @@
 	  00 00 00 00 00 00 00 00 00 00 00 00 00 00
 	  00 00 00 00 00 00 00 00 00 00 00 00 00 00
 	</Tiles>
-	<Doors>
-	  <Door x="" y="" toMap="" toX="" toY=""/>
-	</Doors>
+	
 	<AdjacentMaps>
 	  <AdjacentMap dir="W" id="2"/>
 	</AdjacentMaps>
-	<MonsterPacks>
-	  <MonsterPack id="1" x="" y="">
+	
+	<Objects>
+	  <Door x="1" y="1" toMap="1" toX="2" toY="2"/>
+	  <!--<MonsterPack id="000101" x="5" y="5">
 		<Monster id="1"/>
 		<Monster id="2"/>
 		<Monster id="3"/>
-	  </MonsterPack>
-	</MonsterPacks>
+	  </MonsterPack>-->
+	</Objects>
+	
   </Map>
 </Maps>

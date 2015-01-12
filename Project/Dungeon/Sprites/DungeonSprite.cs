@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	class DungeonSprite : ISprite, IInteractible
+	abstract class DungeonSprite : TileObject, ISprite
 	{
 		public void Draw(Graphics graphics)
 		{
@@ -17,6 +17,11 @@ namespace Project
 		public void Interact()
 		{
 			throw new NotImplementedException();
+		}
+
+		public DungeonSprite(Point loc) : base(loc)
+		{
+			
 		}
 	}
 }

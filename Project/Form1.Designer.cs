@@ -28,35 +28,33 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.dungeonContainer1 = new Project.DungeonContainer();
 			this.SuspendLayout();
 			// 
-			// pictureBox1
+			// dungeonContainer1
 			// 
-			this.pictureBox1.Image = global::Project.Properties.Resources.lumbergh;
-			this.pictureBox1.Location = new System.Drawing.Point(305, 189);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			this.dungeonContainer1.Location = new System.Drawing.Point(0, 0);
+			this.dungeonContainer1.Name = "dungeonContainer1";
+			this.dungeonContainer1.Size = new System.Drawing.Size(700, 700);
+			this.dungeonContainer1.TabIndex = 0;
 			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(724, 539);
-			this.Controls.Add(this.pictureBox1);
+			this.ClientSize = new System.Drawing.Size(705, 705);
+			this.Controls.Add(this.dungeonContainer1);
 			this.Name = "MainWindow";
 			this.Text = "Form1";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private DungeonContainer dungeonContainer1;
+
+
 	}
 }
 

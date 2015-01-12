@@ -12,20 +12,28 @@ namespace Project
 		public const int DIM_X = 50;
 		public const int DIM_Y = 50;
 
+		public readonly DungeonMap DungeonMap;
 		public readonly int X;
 		public readonly int Y;
 
-		public Tile(int X, int Y)
+		public Tile(DungeonMap dungeonMap, int x, int y)
 		{
-			this.X = X;
-			this.Y = Y;
+			X = x;
+			Y = y;
+
+			DungeonMap = dungeonMap;
+			TileData = DungeonMap.MapData.GetTileData(x, y);
 		}
 
-		public IInteractible TileObject { get; set; }
+		public TileObject TileObject { get; set; }
+		public TileData TileData { get; private set; }
 
 		public void Draw(Graphics graphics)
 		{
-			
+			graphics.DrawImage(TileData.Image, X * DIM_X, Y * DIM_Y, DIM_X, DIM_Y);
+
+			if (TileObject != null)
+				graphics.DrawImage(TileObject.Image, X * DIM_X, Y * DIM_Y, DIM_X, DIM_Y);
 		}
 	}
 }
