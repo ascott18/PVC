@@ -17,7 +17,7 @@ namespace Project
 		/// Gets the XML Document for the specified embedded resource.
 		/// Loads it if it isn't already loaded.
 		/// </summary>
-		/// <returns>The XDocument representing the game's map data.</returns>
+		/// <returns>The XDocument representing the requested resources.</returns>
 		protected static XDocument GetDataXmlDocument(string resourceName)
 		{
 			XDocument doc;

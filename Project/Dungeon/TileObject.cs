@@ -43,7 +43,7 @@ namespace Project
 		/// An attribute to be used on methods that will parse an incoming
 		/// XElement with name elementName that is a child of an Object element
 		/// in Maps.xml. The method must return a new TileObject based on the data
-		/// in the XElement provided.
+		/// in the XElement.
 		/// </summary>
 		public class XmlParserAttribute : Attribute
 		{
