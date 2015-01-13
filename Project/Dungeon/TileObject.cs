@@ -32,19 +32,6 @@ namespace Project
 			Location = loc;
 		}
 
-		private static readonly Dictionary<string, Func<XElement, TileObject>> Parsers = new Dictionary<string, Func<XElement, TileObject>>();
-
-		public static TileObject ParseXmlTileObject(XElement element)
-		{
-			var elementName = element.Name.ToString();
-			if (!Parsers.ContainsKey(elementName))
-				return null;
-
-			var parser = Parsers[elementName];
-
-			return parser(element);
-		}
-
 		/// <summary>
 		/// An attribute to be used on methods that will parse an incoming
 		/// XElement with name elementName that is a child of an Object element
