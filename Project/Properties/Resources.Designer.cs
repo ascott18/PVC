@@ -63,6 +63,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fancydoor {
+            get {
+                object obj = ResourceManager.GetObject("fancydoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lumbergh {
             get {
                 object obj = ResourceManager.GetObject("lumbergh", resourceCulture);
@@ -125,6 +135,7 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Tiles&gt;
+        ///  &lt;Tile id=&quot;0&quot; texture=&quot;&quot; obstacle=&quot;false&quot;/&gt;
         ///  &lt;Tile id=&quot;1&quot; texture=&quot;lumbergh&quot; obstacle=&quot;false&quot;/&gt;
         ///&lt;/Tiles&gt;.
         /// </summary>

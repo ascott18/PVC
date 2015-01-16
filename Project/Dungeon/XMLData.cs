@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,22 @@ namespace Project
 
 			// Save it, and return it.
 			return Documents[resourceName] = doc;
+		}
+
+		internal static Image LoadImage(string imageName)
+		{
+			if (imageName == "")
+			{
+				return null;
+			}
+
+			// Try and get the embedded resource represented by the provided name.
+			// Embedded resources are defined in Resources.resx
+			var Image = Resources.ResourceManager.GetObject(imageName) as Bitmap;
+			if (Image == null)
+				throw new FileNotFoundException("Resource not found", imageName);
+
+			return Image;
 		}
 	}
 }

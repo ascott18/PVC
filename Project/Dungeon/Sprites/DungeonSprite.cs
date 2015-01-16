@@ -10,7 +10,7 @@ namespace Project
 	abstract class DungeonSprite : TileObject
 	{
 
-		public override void Interact()
+		public override void Interact(Game game)
 		{
 			throw new NotImplementedException();
 		}

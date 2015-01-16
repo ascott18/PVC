@@ -73,8 +73,13 @@ namespace Project
 			Point location = Party.CurrentTile.Location + offset;
 			Tile destination = CurrentMap.GetTile(location);
 
-			if (destination != null && destination.CanBeOccupied())
+			if (destination == null)
+				return;
+
+			if (destination.CanBeOccupied())
 				Party.SetLocation(destination);
+			else if (destination.TileObject != null)
+				destination.TileObject.Interact(this);
 
 			Redraw();
 		}

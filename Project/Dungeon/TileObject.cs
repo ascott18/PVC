@@ -22,7 +22,7 @@ namespace Project
 
 		public Image Image { get; protected set; }
 
-		public virtual void Interact()
+		public virtual void Interact(Game game)
 		{
 			throw new NotImplementedException();
 		}

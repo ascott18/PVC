@@ -16,9 +16,9 @@ namespace Project
 	/// </summary>
 	class Door : TileObject
 	{
-		public override void Interact()
+		public override void Interact(Game game)
 		{
-			throw new NotImplementedException();
+			game.SetPartyLocation(DestinationMapID, DestinationPoint);
 		}
 
 
@@ -45,7 +45,10 @@ namespace Project
 			var dest = new Point(int.Parse(doorElement.Attribute("toX").Value), int.Parse(doorElement.Attribute("toY").Value));
 			var destMapID = int.Parse(doorElement.Attribute("toMap").Value);
 
-			return new Door(loc, dest, destMapID);
+			return new Door(loc, dest, destMapID)
+			{
+				Image = XMLData.LoadImage(doorElement.Attribute("texture").Value)
+			};
 		}
 	}
 }
