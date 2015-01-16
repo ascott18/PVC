@@ -9,8 +9,16 @@ namespace Project
 {
 	class Party : DungeonSprite
 	{
+		private readonly List<Hero> Heroes = new List<Hero>(); 
 		public Party(Point loc) : base(loc)
 		{
+		}
+
+		public void AddHero(Hero hero)
+		{
+			if (Heroes.Count == 0)
+				Image = hero.Image;
+			Heroes.Add(hero);
 		}
 	}
 }

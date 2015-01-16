@@ -38,20 +38,13 @@ namespace Project
 		/// </summary>
 		public readonly int MapID;
 
-
-		/// <summary>
-		/// The TileObjects that were constructed as this MapData was parsed from XML.
-		/// These should be set on the appropriate Tiles of the DungeonMap that this MapData corresponds to,
-		/// and may be modified as needed as gameplay progresses.
-		/// </summary>
-		private readonly TileObject[,] objects = new TileObject[DIM_X, DIM_Y];
-
 		/// <summary>
 		/// The TileData objects that represent the base data of each tile of this map,
 		/// pased from the Tiles element of this MapData's corresponding Map element.
 		/// </summary>
 		private readonly TileData[,] tiles = new TileData[DIM_X, DIM_Y];
 
+		private XElement mapElement;
 
 		private MapData(int id)
 		{
@@ -88,47 +81,11 @@ namespace Project
 			return ParseMapData(mapID);
 		}
 
-		/// <summary>
-		///     Parses the XML document and creates a MapData object.
-		/// </summary>
-		/// <param name="mapID">The MapID to parse from the XML document.</param>
-		/// <returns>The parsed MapData</returns>
-		private static MapData ParseMapData(int mapID)
+		public List<TileObject> GetTileObjects()
 		{
-			XDocument xml = GetDataXmlDocument("Maps");
-
-			// Get the XML element for the requested mapID.
-			XElement mapElement = xml.XPathSelectElement(String.Format("Maps/Map[@id='{0}']", mapID));
-			if (mapElement == null)
-				throw new Exception(String.Format("No Map with id {0} found", mapID));
-
-			// Create the new MapData if one didn't already exist.
-			var mapData = new MapData(mapID);
-
-
-
-			// Populate mapData.tiles with the TileData objects for this map.
-			string tileDataRaw = mapElement.Element("Tiles").Value;
-			int index = 0;
-			foreach (Match match in Regex.Matches(tileDataRaw, @"[0-9]+"))
-			{
-				if (index >= DIM_X * DIM_Y)
-					throw new IndexOutOfRangeException(String.Format("Too many tiles defined for map ID {0}", mapID));
-
-				mapData.tiles[index % DIM_X, index / DIM_X] = TileData.GetTileData(int.Parse(match.Value));
-
-				index++;
-			}
-
-			// Make sure there were as many tiles as there should have been.
-			if (index != DIM_X * DIM_Y)
-				throw new IndexOutOfRangeException(String.Format("Not enough tiles defined for map ID {0}", mapID));
-
-
-
 			var parserMethods = GetXmlParserMethods();
 
-
+			var objects = new List<TileObject>();
 
 			// Create TileObjects for all the map's objects
 			foreach (XElement objectElement in mapElement.Element("Objects").Elements())
@@ -148,11 +105,50 @@ namespace Project
 					throw new Exception(String.Format("Could not parse element {0}", elementName));
 
 
-				// Store the parsed TileObject in the array at the correct location.
-				Point loc = parsedTileObject.Location;
-				mapData.objects[loc.X, loc.Y] = parsedTileObject;
+				objects.Add(parsedTileObject);
 			}
 
+			return objects;
+		} 
+
+		/// <summary>
+		///     Parses the XML document and creates a MapData object.
+		/// </summary>
+		/// <param name="mapID">The MapID to parse from the XML document.</param>
+		/// <returns>The parsed MapData</returns>
+		private static MapData ParseMapData(int mapID)
+		{
+			XDocument xml = GetDataXmlDocument("Maps");
+
+			// Get the XML element for the requested mapID.
+			XElement mapElement = xml.XPathSelectElement(String.Format("Maps/Map[@id='{0}']", mapID));
+			if (mapElement == null)
+				throw new Exception(String.Format("No Map with id {0} found", mapID));
+
+			// Create the new MapData if one didn't already exist.
+			var mapData = new MapData(mapID)
+			{
+				mapElement = mapElement
+			};
+
+
+
+			// Populate mapData.tiles with the TileData objects for this map.
+			string tileDataRaw = mapElement.Element("Tiles").Value;
+			int index = 0;
+			foreach (Match match in Regex.Matches(tileDataRaw, @"[0-9]+"))
+			{
+				if (index >= DIM_X * DIM_Y)
+					throw new IndexOutOfRangeException(String.Format("Too many tiles defined for map ID {0}", mapID));
+
+				mapData.tiles[index % DIM_X, index / DIM_X] = TileData.GetTileData(int.Parse(match.Value));
+
+				index++;
+			}
+
+			if (index != DIM_X * DIM_Y)
+				throw new IndexOutOfRangeException(String.Format("Not enough tiles defined for map ID {0}", mapID));
+			
 			return data[mapID] = mapData;
 		}
 
@@ -181,7 +177,7 @@ namespace Project
 			                      .SelectMany(type => type.GetMethods())
 
 								  // Filter out only methods that are marked with [XmlParserAttribute]
-			                      .Where(info => info.GetCustomAttributes<TileObject.TileObjectXmlParserAttribute>().Any())
+								  .Where(info => info.GetCustomAttributes<TileObject.TileObjectXmlParserAttribute>().Any())
 
 									// Create a Dictionary from the methods that were marked with this attribute.
 			                      .ToDictionary

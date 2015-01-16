@@ -12,12 +12,20 @@ namespace Project
 {
 	public partial class MainWindow : Form
 	{
+		internal Game Game { get; private set; }
+		
 		public MainWindow()
 		{
 			InitializeComponent();
 
-			MapData.GetMapData(1);
-			Console.ReadLine();
+			Game = new Game(this);
+		}
+		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+		{
+			if (Game.ProcessKey(keyData))
+				return true;
+			else
+				return base.ProcessCmdKey(ref msg, keyData);
 		}
 	}
 }

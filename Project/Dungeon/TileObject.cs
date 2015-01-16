@@ -17,8 +17,10 @@ namespace Project
 	/// </summary>
 	class TileObject
 	{
-		public Point Location { get; private set; }
-		public Image Image { get; private set; }
+		public Tile CurrentTile { get; private set; }
+		public Point InitialLocation { get; private set; }
+
+		public Image Image { get; protected set; }
 
 		public virtual void Interact()
 		{
@@ -29,7 +31,23 @@ namespace Project
 		protected TileObject(Point loc)
 		{
 			Image = Resources.lumbergh; // TODO: temp
-			Location = loc;
+			InitialLocation = loc;
+		}
+
+		public void SetLocation(Tile tile)
+		{
+			if (CurrentTile != null)
+			{
+				CurrentTile.TileObject = null;
+			}
+
+			CurrentTile = tile;
+			if (tile != null)
+			{
+				tile.TileObject = this;
+			}
+
+
 		}
 
 		/// <summary>

@@ -20,7 +20,7 @@ namespace Project
 		public readonly int MapID;
 		public readonly MapData MapData;
 
-		private Tile[,] tiles = new Tile[DIM_X,DIM_Y];
+		private readonly Tile[,] tiles = new Tile[DIM_X,DIM_Y];
 
 		public DungeonMap(int mapId)
 		{
@@ -35,6 +35,14 @@ namespace Project
 					tiles[x, y] = tile;
 				}
 			}
+
+			// Create a new set of initial TileObjects from the XML,
+			// and place them where they need to be.
+			foreach (var tileObject in MapData.GetTileObjects())
+			{
+				var loc = tileObject.InitialLocation;
+				tileObject.SetLocation(tiles[loc.X, loc.Y]);
+			}
 		}
 
 		public void Draw(Graphics graphics)
@@ -43,6 +51,14 @@ namespace Project
 			{
 				tile.Draw(graphics);
 			}
+		}
+
+		public Tile GetTile(Point point)
+		{
+			if (point.X >= 0 && point.Y >= 0 && point.X < DIM_X && point.Y < DIM_Y)
+				return tiles[point.X, point.Y];
+
+			return null;
 		}
 	}
 }

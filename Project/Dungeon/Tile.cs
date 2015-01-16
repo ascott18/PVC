@@ -62,5 +62,10 @@ namespace Project
 			if (TileObject != null)
 				graphics.DrawImage(TileObject.Image, Location.X * DimPixels, Location.Y * DimPixels, DimPixels, DimPixels);
 		}
+
+		public bool CanBeOccupied()
+		{
+			return TileObject == null && !TileData.IsObstable;
+		}
 	}
 }

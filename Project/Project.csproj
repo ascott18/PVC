@@ -56,7 +56,7 @@
   <ItemGroup>
     <Compile Include="Combat\Sprites\CombatSprite.cs" />
     <Compile Include="Dungeon\Door.cs" />
-    <Compile Include="Dungeon\Dungeon.cs" />
+    <Compile Include="Dungeon\Game.cs" />
     <Compile Include="Dungeon\DungeonContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>

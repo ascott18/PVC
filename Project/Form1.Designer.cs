@@ -28,22 +28,23 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dungeonContainer1 = new Project.DungeonContainer();
+			this.dungeonContainer = new Project.DungeonContainer();
 			this.SuspendLayout();
 			// 
-			// dungeonContainer1
+			// dungeonContainer
 			// 
-			this.dungeonContainer1.Location = new System.Drawing.Point(0, 0);
-			this.dungeonContainer1.Name = "dungeonContainer1";
-			this.dungeonContainer1.Size = new System.Drawing.Size(700, 700);
-			this.dungeonContainer1.TabIndex = 0;
+			this.dungeonContainer.Location = new System.Drawing.Point(0, 0);
+			this.dungeonContainer.Name = "dungeonContainer";
+			this.dungeonContainer.Size = new System.Drawing.Size(700, 700);
+			this.dungeonContainer.TabIndex = 0;
 			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(705, 705);
-			this.Controls.Add(this.dungeonContainer1);
+			this.Controls.Add(this.dungeonContainer);
+			this.KeyPreview = true;
 			this.Name = "MainWindow";
 			this.Text = "Form1";
 			this.ResumeLayout(false);
@@ -52,7 +53,12 @@
 
 		#endregion
 
-		private DungeonContainer dungeonContainer1;
+		internal DungeonContainer dungeonContainer;
+
+
+
+
+
 
 
 	}
