@@ -26,6 +26,8 @@ namespace Project
 		/// </summary>
 		public readonly Point Location;
 
+		private TileObject tileObject;
+
 		/// <summary>
 		/// Create a Tile for the specified DungeonMap at the specified coordinates within that map.
 		/// </summary>
@@ -42,8 +44,19 @@ namespace Project
 		/// <summary>
 		/// The TileObject currently occupying this tile, if there is one.
 		/// </summary>
-		// TODO: Do stuff when this property gets set, including requesting a redraw of the current map.
-		public TileObject TileObject { get; set; }
+		public TileObject TileObject
+		{
+			get { return tileObject; }
+			set
+			{
+				if (tileObject != null && value != null)
+					throw new InvalidOperationException("Clobbered a TileObject");
+
+				tileObject = value;
+
+				DungeonMap.Game.Redraw();
+			}
+		}
 
 		/// <summary>
 		/// The TileData instance that represents static information about this tile.

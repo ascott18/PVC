@@ -18,14 +18,20 @@ namespace Project
 
 		internal DungeonMap CurrentMap { get; private set; }
 
-		public void SetPartyLocation(int mapID, Point point)
+		private DungeonMap LoadDungeonMap(int mapID)
 		{
 			DungeonMap map;
 
 			if (!maps.TryGetValue(mapID, out map))
 			{
-				map = maps[mapID] = new DungeonMap(mapID);
+				map = maps[mapID] = new DungeonMap(mapID, this);
 			}
+			return map;
+		}
+
+		public void SetPartyLocation(int mapID, Point point)
+		{
+			DungeonMap map = LoadDungeonMap(mapID);
 
 			Party.SetLocation(map.GetTile(point));
 			CurrentMap = map;
@@ -74,14 +80,53 @@ namespace Project
 			Tile destination = CurrentMap.GetTile(location);
 
 			if (destination == null)
+			{
+				// We are trying to go off the edge of the current map if 
+				// GetTile returned null. Try to go to an adjacent map.
+				string dir = null;
+				if (location.X < 0)
+				{
+					dir = "W";
+					location.X = MapData.DIM_X-1;
+				}
+				else if (location.X >= MapData.DIM_X)
+				{
+					dir = "E";
+					location.X = 0;
+				}
+				else if (location.Y < 0)
+				{
+					dir = "N";
+					location.Y = MapData.DIM_Y-1;
+				}
+				else if (location.Y >= MapData.DIM_Y)
+				{
+					dir = "S";
+					location.Y = 0;
+				}
+
+				if (dir == null)
+					throw new Exception("Didn't determine out-of-bound direction");
+
+				var newMapID = CurrentMap.MapData.GetAdjacentMapID(dir);
+
+				// If there is no adjacent map defined, don't do anything.
+				if (newMapID == null) return;
+
+				// Peek at the adjacent map and see if we can actually go to that spot.
+				var newMap = LoadDungeonMap((int)newMapID);
+				destination = newMap.GetTile(location);
+
+				if (destination.CanBeOccupied())
+					SetPartyLocation((int)newMapID, location);
+
 				return;
+			}
 
 			if (destination.CanBeOccupied())
 				Party.SetLocation(destination);
 			else if (destination.TileObject != null)
 				destination.TileObject.Interact(this);
-
-			Redraw();
 		}
 
 		public void Redraw()

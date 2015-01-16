@@ -81,6 +81,11 @@ namespace Project
 			return ParseMapData(mapID);
 		}
 
+		/// <summary>
+		/// Parses the XML data for the map and creates a new set of TileObjects
+		/// as defined by the children of the Objects XMl element.
+		/// </summary>
+		/// <returns>A list of the created TileObjects. They are not cached.</returns>
 		public List<TileObject> GetTileObjects()
 		{
 			var parserMethods = GetXmlParserMethods();
@@ -148,16 +153,38 @@ namespace Project
 
 			if (index != DIM_X * DIM_Y)
 				throw new IndexOutOfRangeException(String.Format("Not enough tiles defined for map ID {0}", mapID));
+
+
+			// Populate mapData.adjacencies with the defined AdjacentMaps.
+			foreach (var xElement in mapElement.XPathSelectElements("AdjacentMaps/AdjacentMap"))
+			{
+				mapData.adjacencies[xElement.Attribute("dir").Value] = int.Parse(xElement.Attribute("id").Value);
+			}
 			
 			return data[mapID] = mapData;
 		}
 
+		private readonly Dictionary<string, int> adjacencies = new Dictionary<string, int>();
+
+		/// <summary>
+		/// Returns the id of the adjacent map to this map in the indicated direction.
+		/// </summary>
+		/// <param name="direction">The direction, either "N", "S", "E", or "W".</param>
+		/// <returns>The mapID of the adjacent map.</returns>
+		public int? GetAdjacentMapID(string direction)
+		{
+			if (adjacencies.ContainsKey(direction))
+				return adjacencies[direction];
+
+			return null;
+		}
 
 
 		/// <summary>
 		///     The cached result of GetXmlParserMethods(). Don't read this field - always call GetXmlParserMethods().
 		/// </summary>
 		private static Dictionary<string, Func<XElement, TileObject>> parserMethods;
+
 
 		/// <summary>
 		///     Gets a dictionary of all methods that have been marked with [XmlParserAttribute(elementName)],

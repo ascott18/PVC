@@ -46,8 +46,6 @@ namespace Project
 			{
 				tile.TileObject = this;
 			}
-
-
 		}
 
 		/// <summary>

@@ -19,12 +19,15 @@ namespace Project
 		public const int DIM_Y = 14;
 		public readonly int MapID;
 		public readonly MapData MapData;
+		public readonly Game Game;
 
 		private readonly Tile[,] tiles = new Tile[DIM_X,DIM_Y];
 
-		public DungeonMap(int mapId)
+		public DungeonMap(int mapId, Game game)
 		{
 			MapID = mapId;
+			Game = game;
+
 			MapData = MapData.GetMapData(mapId);
 
 			for (int x = 0; x < DIM_X; x++)
