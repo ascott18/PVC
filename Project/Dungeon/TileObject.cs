@@ -38,7 +38,7 @@ namespace Project
 		/// in Maps.xml. The method must return a new TileObject based on the data
 		/// in the XElement.
 		/// </summary>
-		public class XmlParserAttribute : Attribute
+		public class TileObjectXmlParserAttribute : Attribute
 		{
 			public readonly string ElementName;
 			/// <summary>
@@ -46,7 +46,7 @@ namespace Project
 			/// and return a new TileObject instance.
 			/// </summary>
 			/// <param name="elementName">The XElement.Name that this method will parse.</param>
-			public XmlParserAttribute(string elementName)
+			public TileObjectXmlParserAttribute(string elementName)
 			{
 				ElementName = elementName;
 			}

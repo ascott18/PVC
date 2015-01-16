@@ -37,7 +37,7 @@ namespace Project
 		/// </summary>
 		/// <param name="doorElement">The XElement to parse</param>
 		/// <returns>The Door object parsed from the XML.</returns>
-		[XmlParser("Door")]
+		[TileObjectXmlParser("Door")]
 		public static TileObject DoorXmlParser(XElement doorElement)
 		{
 

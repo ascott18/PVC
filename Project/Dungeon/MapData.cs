@@ -181,13 +181,13 @@ namespace Project
 			                      .SelectMany(type => type.GetMethods())
 
 								  // Filter out only methods that are marked with [XmlParserAttribute]
-			                      .Where(info => info.GetCustomAttributes<TileObject.XmlParserAttribute>().Any())
+			                      .Where(info => info.GetCustomAttributes<TileObject.TileObjectXmlParserAttribute>().Any())
 
 									// Create a Dictionary from the methods that were marked with this attribute.
 			                      .ToDictionary
 				<MethodInfo, string, Func<XElement, TileObject>>(
 					// The key to the Dictionary should be the elementName defined by the attribute.
-					info => info.GetCustomAttributes<TileObject.XmlParserAttribute>().First().ElementName,
+					info => info.GetCustomAttributes<TileObject.TileObjectXmlParserAttribute>().First().ElementName,
 
 					// Create a Func<XElement, TileObject> as the value of the dictionary.
 					info => element => info.Invoke(null, new object[] { element }) as TileObject
