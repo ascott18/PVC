@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2a7816f3-aa8b-4d4e-b0cf-3bafb5793d8a" name="UMLClassDiagram" linkedPackageId="5996e746-5ac3-4211-abe7-5f8967f8af23" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2a7816f3-aa8b-4d4e-b0cf-3bafb5793d8a" name="UMLClassDiagram" linkedPackageId="5996e746-5ac3-4211-abe7-5f8967f8af23" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="d1c57eb5-0b0e-4dd9-94e2-17be93caf17d" name="Inventory" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -1254,7 +1254,7 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="19706fe0-ea7e-4f3b-9104-75dcadb6d438" name="Door" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
         <referencesInternal>
-          <reference Id="ca42d689-17f2-4f10-8541-923b24a25daa" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor" tag="ViewCode">
+          <reference Id="ca42d689-17f2-4f10-8541-923b24a25daa" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor" tag="ViewCode">
             <elementDefinition Id="0fe403ad-9ae8-402d-afcc-70b609f81495" />
           </reference>
         </referencesInternal>
@@ -1305,7 +1305,7 @@
         <ownedAttributesInternal>
           <property Id="98ed4736-8bc5-4729-8c6d-668da1d46563" name="DestinationPoint" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="18dddbf5-f11e-4a74-803b-f1c80bc9b58c" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3DDestinationPoint" tag="ViewCode">
+              <reference Id="18dddbf5-f11e-4a74-803b-f1c80bc9b58c" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3DDestinationPoint" tag="ViewCode">
                 <elementDefinition Id="749ac5da-3e8e-4615-b4a6-25ac8253d928" />
               </reference>
             </referencesInternal>
@@ -1353,7 +1353,7 @@
           </property>
           <property Id="947c6c05-5702-4210-99ed-a488be9b53e8" name="DestinationMapID" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <referencesInternal>
-              <reference Id="f63cac14-acc9-4510-9319-2cb23084f116" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3DDestinationMapID" tag="ViewCode">
+              <reference Id="f63cac14-acc9-4510-9319-2cb23084f116" handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3DDestinationMapID" tag="ViewCode">
                 <elementDefinition Id="40c0feab-8d30-4173-aa4e-0c4ab0d8a905" />
               </reference>
             </referencesInternal>
@@ -1401,60 +1401,9 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="d70fe8aa-094d-40a1-89a0-2e9d804068b5" name="Interact" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="c82a9ff2-9ace-4a12-9e43-791fca1e2193" name="Door" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <referencesInternal>
-              <reference Id="2bc56079-7626-469c-886b-481f79b59750" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3DInteract" tag="ViewCode">
-                <elementDefinition Id="c99b1fb3-bb12-4218-ba0b-2be61ad261b5" />
-              </reference>
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance Id="5eb20aa9-220b-4418-9c0b-3a7c1ee6db59" name="method" profile="CSharpProfile">
-                <elementDefinition Id="8ad649a0-388e-4123-ab23-8198782a9b27" />
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="bc25db2b-265e-4c90-8a84-ba6ce7836167">
-                    <propertyInstance Id="681eb134-e116-44fe-b33e-ae189ca88d5f" name="ClrAttributes">
-                      <elementDefinition Id="24cf0fd6-b3b9-498f-9ff5-c3a11938c858" />
-                    </propertyInstance>
-                    <elementDefinition Id="90b7ecfb-84d3-4ce8-86cb-fac45094e32a" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="dda48632-fbf9-476d-a15d-9f87a6929ea2">
-                    <propertyInstance Id="ca70afe3-2d15-4a94-ba42-1614325652ce" name="IsPartial" value="false">
-                      <elementDefinition Id="997abe42-5fbf-4c78-baa7-9bcfc6525d84" />
-                    </propertyInstance>
-                    <elementDefinition Id="7b2eb673-2c3e-4117-9878-404964064d07" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="aca170b3-cedc-4f0a-95c0-b037c3ac2ede">
-                    <propertyInstance Id="afef9d6e-23c6-4f31-85c5-0451410f7bc2" name="IsUnsafe" value="false">
-                      <elementDefinition Id="68b207ef-4d62-46a1-aeb3-8a08e6bf080c" />
-                    </propertyInstance>
-                    <elementDefinition Id="a15039d4-9dd3-4a5f-9c7d-ba4be667e74a" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="1914f018-c71c-44b0-8688-6d101b00c866">
-                    <propertyInstance Id="975a0495-5826-456d-815d-830f917cbdb8" name="Inheritance" value="none">
-                      <elementDefinition Id="0044c133-5171-4890-90e3-748f2094fb5f" />
-                    </propertyInstance>
-                    <elementDefinition Id="868c7949-9491-452d-a925-2921fe7ab490" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="0f89dea3-33b2-4cc0-a91b-f1db7e8221dc">
-                    <propertyInstance Id="58dad525-2b42-437e-9853-b87f2c2bf1d0" name="PackageVisibility" value="internal">
-                      <elementDefinition Id="e6a4a92e-2934-45e2-b381-903a7e91ff10" />
-                    </propertyInstance>
-                    <elementDefinition Id="8523cff1-ca9a-4591-8982-1fb1b6001a44" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances Id="2aa7da9c-c7b2-4d1f-b72f-b0c5e3c0991c">
-                    <propertyInstance Id="60fd1305-08c0-4c0d-b079-9c9cce9db2d5" name="params" value="false">
-                      <elementDefinition Id="0356c551-7220-48a4-84dc-7a039edfdaf6" />
-                    </propertyInstance>
-                    <elementDefinition Id="1262230e-d1df-4dc9-a1f1-296ad39cdd10" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <elementDefinition Id="09627bb5-5f8d-4719-a97e-93c99c9f98db" />
-          </operation>
-          <operation Id="c82a9ff2-9ace-4a12-9e43-791fca1e2193" name="Door" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <referencesInternal>
-              <reference Id="de9e9170-2251-4961-ba7a-7a54c8f97e18" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])" tag="ViewCode">
+              <reference Id="de9e9170-2251-4961-ba7a-7a54c8f97e18" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])" tag="ViewCode">
                 <elementDefinition Id="1807958e-a455-418a-8ca9-b5ae5662dcd9" />
               </reference>
             </referencesInternal>
@@ -1506,7 +1455,7 @@
               <operationHasOwnedParameters>
                 <parameter Id="2842fa49-7e63-460b-933b-356a01da2d1d" name="loc" direction="In">
                   <referencesInternal>
-                    <reference Id="b6228ad3-5fb2-46a8-b4f5-7ecc80bb4f3f" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dloc" tag="ViewCode">
+                    <reference Id="b6228ad3-5fb2-46a8-b4f5-7ecc80bb4f3f" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dloc" tag="ViewCode">
                       <elementDefinition Id="9bcc45a0-87c7-4f58-a156-085c17e6d5e1" />
                     </reference>
                   </referencesInternal>
@@ -1519,7 +1468,7 @@
               <operationHasOwnedParameters>
                 <parameter Id="f0584229-88bc-4728-b7b8-d98a559da0c3" name="dest" direction="In">
                   <referencesInternal>
-                    <reference Id="d87645a8-1708-429e-b284-ad58553e3fac" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Ddest" tag="ViewCode">
+                    <reference Id="d87645a8-1708-429e-b284-ad58553e3fac" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Ddest" tag="ViewCode">
                       <elementDefinition Id="e108aa08-4c21-4b7a-887d-e1ec8ccdce82" />
                     </reference>
                   </referencesInternal>
@@ -1532,7 +1481,7 @@
               <operationHasOwnedParameters>
                 <parameter Id="e292e649-418c-44c8-adec-fd9faf2f93b4" name="mapID" direction="In">
                   <referencesInternal>
-                    <reference Id="c26e6b04-821e-43f2-a589-64e70e541227" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DmapID" tag="ViewCode">
+                    <reference Id="c26e6b04-821e-43f2-a589-64e70e541227" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Drawing.dll&quot; Namespace%3DSystem.Drawing Type%3DPoint)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DmapID" tag="ViewCode">
                       <elementDefinition Id="61c812b3-82d4-4ccd-878f-69536c070435" />
                     </reference>
                   </referencesInternal>
@@ -1546,7 +1495,7 @@
           </operation>
           <operation Id="4e9ef6d2-8fb3-493f-a8dd-b15173e78875" name="DoorXmlParser" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
             <referencesInternal>
-              <reference Id="1b66f0d1-d0f1-4c6e-98f8-09297928e972" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3DDoorXmlParser OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.Linq.dll&quot; Namespace%3DSystem.Xml.Linq Type%3DXElement)])" tag="ViewCode">
+              <reference Id="1b66f0d1-d0f1-4c6e-98f8-09297928e972" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3DDoorXmlParser OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.Linq.dll&quot; Namespace%3DSystem.Xml.Linq Type%3DXElement)])" tag="ViewCode">
                 <elementDefinition Id="655f44d4-2d28-4bf4-b571-437c13d7a63e" />
               </reference>
             </referencesInternal>
@@ -1606,13 +1555,79 @@
               <operationHasOwnedParameters>
                 <parameter Id="837486f4-4f99-4c8a-82a5-616935e1901f" name="doorElement" direction="In">
                   <referencesInternal>
-                    <reference Id="d75e012a-734c-4e9e-b84e-6efb2dc5e843" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3DDoorXmlParser OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.Linq.dll&quot; Namespace%3DSystem.Xml.Linq Type%3DXElement)]) ParameterIdentifier%3DdoorElement" tag="ViewCode">
+                    <reference Id="d75e012a-734c-4e9e-b84e-6efb2dc5e843" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3DDoorXmlParser OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.Linq.dll&quot; Namespace%3DSystem.Xml.Linq Type%3DXElement)]) ParameterIdentifier%3DdoorElement" tag="ViewCode">
                       <elementDefinition Id="7e8d7c34-5674-4503-8016-b6c4004dfbce" />
                     </reference>
                   </referencesInternal>
                   <elementDefinition Id="4d830620-c627-4ac1-a7fd-59bee5d07e27" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="d690c86b-670d-443e-bb8e-eeec5371a9da" LastKnownName="XElement" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="094e17ad-5e61-4d92-9599-0b549761eb16" name="Interact" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="b919be67-f456-467c-b480-3c55df951b76" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3DInteract OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame)])" tag="ViewCode">
+                <elementDefinition Id="80f3f5d3-53ed-4b40-8c96-db5daae1cad1" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="f223b4fd-9114-41b0-a8c1-6c82238f4c26" name="method" profile="CSharpProfile">
+                <elementDefinition Id="ab11f703-57b7-448c-b7ad-e6cb25b39d1b" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6056724a-fe7d-43ca-bdb5-5209a8f539b3">
+                    <propertyInstance Id="d4b9cef6-ff2d-4690-b0af-068a02026d64" name="ClrAttributes">
+                      <elementDefinition Id="3badd770-4c85-4799-be07-33a62b64f184" />
+                    </propertyInstance>
+                    <elementDefinition Id="cf3b3ac1-9cf0-47ca-a2ef-4ddf0bcb5b8f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="257dd3aa-5bc9-48fb-9f0b-215daf6ae85e">
+                    <propertyInstance Id="1c03dec6-13a1-4ae4-92b5-f28b25059885" name="IsPartial" value="false">
+                      <elementDefinition Id="56f6d5f9-0c37-4181-b5f3-30d7ab9fa73e" />
+                    </propertyInstance>
+                    <elementDefinition Id="91997af2-294a-42b2-b363-93282bb342df" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6ce8d94b-c81a-4fd7-82bb-cd0026160cf6">
+                    <propertyInstance Id="fc17bc65-c6b7-4aa2-b85e-151c550cf3bf" name="IsUnsafe" value="false">
+                      <elementDefinition Id="4b2e1728-56cd-46e2-a345-ce5702a50744" />
+                    </propertyInstance>
+                    <elementDefinition Id="2aea84ff-c79e-43db-a593-045a6e9bd1a1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7025348d-6df8-4675-b89e-6c586ce6e05b">
+                    <propertyInstance Id="4b94850c-07e4-4005-a5ee-75c2e2221547" name="Inheritance" value="none">
+                      <elementDefinition Id="43651e81-c042-4912-baed-f2fd8c215439" />
+                    </propertyInstance>
+                    <elementDefinition Id="91d35254-68a8-4046-93cc-cbcef948bdad" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="49b4284b-bc6a-4b5d-aa5d-33e5e9c3b677">
+                    <propertyInstance Id="8fe092fd-ebec-475a-bb4d-866f103a87b8" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="2d7816a2-7f62-414a-ab08-47955746ed77" />
+                    </propertyInstance>
+                    <elementDefinition Id="ea7b9832-d76b-4877-a3c8-c53b23970450" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d9bb7eb9-851f-494b-b22f-13d2cf65e69e">
+                    <propertyInstance Id="1ea3fb87-2f15-439b-a072-9d42d900254c" name="params" value="false">
+                      <elementDefinition Id="3186ca17-34d2-4c10-a55b-4874df933eef" />
+                    </propertyInstance>
+                    <elementDefinition Id="892864a8-a86d-4869-90e9-5aa9acf0b4cf" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="530e1af6-6adf-460b-9ac7-c3f20b399433" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8b95392f-cc76-43c9-b54d-cd0de4733d39" name="game" direction="In">
+                  <referencesInternal>
+                    <reference Id="859a4f67-534e-4112-979c-791765f5a59a" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDoor Member%3D(Name%3DInteract OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame)]) ParameterIdentifier%3Dgame" tag="ViewCode">
+                      <elementDefinition Id="ccb76bff-537f-4858-bb6d-99a53ae60fc4" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="1cfa85ef-7c26-45ee-bdea-7391b900f22b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="83ca8d03-3fe8-4d20-8d4f-e11275132a00" LastKnownName="Game" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -5339,7 +5354,7 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="ee8f8ab9-9b06-42c3-acf7-ac0cffffa546" name="TileObject" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
         <referencesInternal>
-          <reference Id="78167994-a09b-4c98-9df6-92e32cdd6589" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DTileObject" tag="ViewCode">
+          <reference Id="78167994-a09b-4c98-9df6-92e32cdd6589" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DTileObject" tag="ViewCode">
             <elementDefinition Id="f0a97bbf-b486-4380-a21d-8f606d19dad0" />
           </reference>
         </referencesInternal>
@@ -5759,6 +5774,11 @@
     <packageHasNamedElement>
       <referencedType Id="48771613-6a4a-49d1-9cfe-76c259ed04ab" name="Dictionary&lt;String‎, Func‎&lt;XElement‎, TileObject‎&gt;‎&gt;" isAbstract="false" isLeaf="false" cachedFullName="UML::System::Collections::Generic::Dictionary&lt;String‎, Func‎&lt;XElement‎, TileObject‎&gt;‎&gt;">
         <elementDefinition Id="48f562ad-9c48-4da1-8b60-78291a515e3a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="83ca8d03-3fe8-4d20-8d4f-e11275132a00" name="Game" isAbstract="false" isLeaf="false" cachedFullName="UML::Project::Game">
+        <elementDefinition Id="c5c6cccc-107b-40fc-9a52-4dc98498e678" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
