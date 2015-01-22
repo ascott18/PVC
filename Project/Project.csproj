@@ -119,6 +119,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Monsters.xml" />
     <Content Include="Maps.xml" />
     <None Include="Resources\stu.png" />
     <None Include="Resources\shoerner.png" />

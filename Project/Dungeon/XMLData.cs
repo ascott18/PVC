@@ -24,7 +24,7 @@ namespace Project
 		/// Loads it if it isn't already loaded.
 		/// </summary>
 		/// <returns>The XDocument representing the requested resources.</returns>
-		protected static XDocument GetDataXmlDocument(string resourceName)
+		internal static XDocument GetDataXmlDocument(string resourceName)
 		{
 			XDocument doc;
 

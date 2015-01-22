@@ -9,6 +9,8 @@ namespace Project
 {
 	class CombatSprite
 	{
+		public Image Image { get; protected set; }
+
 		public void Draw(Graphics graphics)
 		{
 			throw new NotImplementedException();

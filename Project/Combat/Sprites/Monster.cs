@@ -3,10 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.XPath;
 
 namespace Project
 {
 	class Monster : CombatSprite
 	{
+		public readonly int MonsterID;
+
+		public Monster(int monsterId)
+		{
+			MonsterID = monsterId;
+
+			var xDoc = XMLData.GetDataXmlDocument("Monsters");
+
+			var monsterElement = xDoc.XPathSelectElement(String.Format("Monsters/Monster[@id='{0}']", monsterId));
+
+			Image = XMLData.LoadImage(monsterElement.Attribute("texture").Value);
+		}
 	}
 }
