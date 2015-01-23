@@ -126,6 +126,7 @@
     <None Include="Resources\milton.png" />
     <None Include="Resources\lumbergh.png" />
     <None Include="Resources\fancydoor.png" />
+    <Content Include="Shared\Items\Items.xml" />
     <Content Include="Tiles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

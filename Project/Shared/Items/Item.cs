@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-	class Item
+	abstract class Item
 	{
+		public readonly int ItemID;
+
+		public Item(int itemId)
+		{
+			ItemID = itemId;
+		}
 	}
 }

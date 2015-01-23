@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Equippable>
+	<Item id="1" name="Amazing Thing" slot="Chest"/>
+  </Equippable>
+  <Books>
+	
+  </Books>
+</Items>

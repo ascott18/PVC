@@ -9,6 +9,6 @@ namespace Project
 {
 	class Hero : CombatSprite
 	{
-		public Image Image { get; set; }
+		private readonly ItemEquippable[] equipment = new ItemEquippable[ItemEquippable.MAX_SLOTS];
 	}
 }
