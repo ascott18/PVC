@@ -75,7 +75,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Combat\Sprites\Hero.cs" />
-    <Compile Include="Shared\Items\Inventory.cs" />
     <Compile Include="Shared\Items\Item.cs" />
     <Compile Include="Shared\Items\ItemBook.cs" />
     <Compile Include="Shared\Items\ItemEquippable.cs" />
