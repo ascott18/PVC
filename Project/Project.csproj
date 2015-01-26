@@ -87,7 +87,6 @@
     <Compile Include="Shared\Items\CombatSpriteContainer.Designer.cs">
       <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shared\Items\Inventory.cs" />
     <Compile Include="Shared\Items\Item.cs" />
     <Compile Include="Shared\Items\ItemBook.cs" />
     <Compile Include="Shared\Items\ItemEquippable.cs" />
