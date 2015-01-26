@@ -9,7 +9,7 @@ namespace Project
 {
 	class CombatSprite
 	{
-		public Image Image { get; protected set; }
+		public Image Image { get;  set; } // TODO: Make this protected set
 
 		public void Draw(Graphics graphics)
 		{

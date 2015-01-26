@@ -8,5 +8,8 @@ namespace Project
 {
 	class ItemBook : Item
 	{
+		public ItemBook(int itemId) : base(itemId)
+		{
+		}
 	}
 }
