@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Project
 {
@@ -25,6 +26,12 @@ namespace Project
 		{
 			Name = name;
 			Slot = (SlotID) Enum.Parse(typeof (SlotID), slotName, true);
+		}
+
+		[ItemXmlParser("Equippable")]
+		public static Item ParseItem(XElement itemElement)
+		{
+			return null;
 		}
 	}
 }

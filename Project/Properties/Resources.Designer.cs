@@ -71,6 +71,19 @@ namespace Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;Items&gt;
+        ///	&lt;Equippable id=&quot;1&quot; name=&quot;Amazing Thing&quot; slot=&quot;Chest&quot;/&gt;
+        ///&lt;/Items&gt;
+        ///.
+        /// </summary>
+        internal static string Items {
+            get {
+                return ResourceManager.GetString("Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap lumbergh {

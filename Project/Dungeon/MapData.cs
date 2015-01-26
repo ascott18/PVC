@@ -187,7 +187,7 @@ namespace Project
 
 
 		/// <summary>
-		///     Gets a dictionary of all methods that have been marked with [XmlParserAttribute(elementName)],
+		///     Gets a dictionary of all methods that have been marked with [TileObjectXmlParserAttribute(elementName)],
 		///     with the keys of the dictionary as elementName and the values as Func&lt;XElement, TileObject&gt;
 		/// </summary>
 		/// <returns>The dictionary of XML pasing methods</returns>
