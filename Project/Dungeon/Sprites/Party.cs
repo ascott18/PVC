@@ -9,7 +9,10 @@ namespace Project
 {
 	class Party : DungeonSprite
 	{
-		private readonly List<Hero> Heroes = new List<Hero>(); 
+		private readonly List<Hero> Heroes = new List<Hero>();
+        private List<Item> _partyInventory = new List<Item>();
+
+
 		public Party(Point loc) : base(loc)
 		{
 		}
