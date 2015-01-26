@@ -75,16 +75,16 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Combat\Sprites\Hero.cs" />
-    <Compile Include="Shared\Items\CombatArena.cs">
+    <Compile Include="Combat\CombatArena.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Shared\Items\CombatArena.Designer.cs">
+    <Compile Include="Combat\CombatArena.Designer.cs">
       <DependentUpon>CombatArena.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shared\Items\CombatSpriteContainer.cs">
+    <Compile Include="Combat\CombatSpriteContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Shared\Items\CombatSpriteContainer.Designer.cs">
+    <Compile Include="Combat\CombatSpriteContainer.Designer.cs">
       <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="Shared\Items\Item.cs" />
@@ -116,10 +116,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Shared\Items\CombatArena.resx">
+    <EmbeddedResource Include="Combat\CombatArena.resx">
       <DependentUpon>CombatArena.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shared\Items\CombatSpriteContainer.resx">
+    <EmbeddedResource Include="Combat\CombatSpriteContainer.resx">
       <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
