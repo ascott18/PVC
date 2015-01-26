@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,11 @@ namespace Project
 		[ItemXmlParser("Equippable")]
 		public static Item ParseItem(XElement itemElement)
 		{
-			return null;
+            var id = int.Parse(itemElement.Attribute("id").Value);
+            var name = itemElement.Attribute("name").Value;
+            var slot = itemElement.Attribute("slot").Value;
+
+            return new ItemEquippable(id, slot, name);
 		}
 	}
 }
