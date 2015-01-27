@@ -38,8 +38,8 @@ namespace Project
 		/// </summary>
 		/// <param name="mpElement">The XElement to parse</param>
 		/// <returns>The MonsterPack object parsed from the XML.</returns>
-		[XmlData.XmlParser(typeof(TileObject), "MonsterPack")]
-		public static TileObject XmlParser(XElement mpElement)
+		[XmlData.XmlParser("MonsterPack")]
+		public static MonsterPack XmlParser(XElement mpElement)
 		{
 
 			var loc = new Point(int.Parse(mpElement.Attribute("x").Value), int.Parse(mpElement.Attribute("y").Value));

@@ -71,18 +71,15 @@ namespace Project
 		internal class XmlParserAttribute : Attribute
 		{
 			public readonly string ElementName;
-			public readonly Type ReturnType;
 
 			/// <summary>
 			/// Declare a method as one that will take an incoming XElement, parse it,
-			/// and return a new instance of the specified type.
+			/// and return a new instance of an appropriate type.
 			/// </summary>
-			/// <param name="returnType">The type that will be rturned by the parser method.</param>
 			/// <param name="elementName">The XElement.Name that this method will parse.</param>
-			public XmlParserAttribute(Type returnType, string elementName)
+			public XmlParserAttribute(string elementName)
 			{
 				ElementName = elementName;
-				ReturnType = returnType;
 			}
 		}
 
@@ -90,7 +87,8 @@ namespace Project
 		{ 
 			private static Dictionary<string, Func<XElement, T>> parsers;
 			/// <summary>
-			///     Gets a dictionary of all methods that have been marked with [XmlParserAttribute(T, elementName)],
+			///     Gets a dictionary of all methods that have been marked with
+			///		[XmlParserAttribute(elementName)] and have return type T,
 			///     with the keys of the dictionary as elementName and the values as Func&lt;XElement, T&gt;
 			/// </summary>
 			/// <returns>The dictionary of XML pasing methods</returns>
@@ -107,15 +105,14 @@ namespace Project
 									  .SelectMany(type => type.GetMethods())
 
 									  // Filter out only methods that are marked with [XmlParserAttribute]
-									  .Where(info => info.GetCustomAttributes<XmlParserAttribute>().Any())
+									  // that return the requested type.
+									  .Where(info => info.GetCustomAttributes<XmlParserAttribute>().Count() == 1
+										&& typeof(T).IsAssignableFrom(info.ReturnType))
 
-									  // Make sure that the method is only marked once, and that it is the desired type.
-									  .Where(info => info.GetCustomAttributes<XmlParserAttribute>().Single().ReturnType == typeof(T))
-
-										// Create a Dictionary from the methods that were marked with this attribute.
+									  // Create a Dictionary from the methods that were marked with this attribute.
 									  .ToDictionary
 					<MethodInfo, string, Func<XElement, T>>(
-					// The key to the Dictionary should be the elementName defined by the attribute.
+						// The key to the Dictionary should be the elementName defined by the attribute.
 						info => info.GetCustomAttributes<XmlParserAttribute>().First().ElementName,
 
 						// Create a Func<XElement, TileObject> as the value of the dictionary.
