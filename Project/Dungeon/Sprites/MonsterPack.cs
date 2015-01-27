@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,14 @@ namespace Project
 	{
 		public readonly int UniqueID;
 
-		public readonly List<Monster> Monsters = new List<Monster>();
+		private readonly List<Monster> monsters = new List<Monster>();
+		public readonly ReadOnlyCollection<Monster> Monsters;
 		public const int MaxMonsters = 3;
 
 		public MonsterPack(Point loc, int uniqueId) : base(loc)
 		{
+			Monsters = monsters.AsReadOnly();
+
 			UniqueID = uniqueId;
 		}
 
@@ -25,7 +29,8 @@ namespace Project
 		public override void Interact(Game game)
 		{
 			//TODO: Enter combat mode with the monster pack.
-			CurrentTile.TileObject = null;
+			game.Window.combatArena.MonsterPack = this;
+			//CurrentTile.TileObject = null;
 		}
 
 		/// <summary>
@@ -44,8 +49,11 @@ namespace Project
 
 			foreach (var monsterElement in mpElement.XPathSelectElements("Monster"))
 			{
+				if (mp.monsters.Count > MaxMonsters)
+					throw new Exception("Too many monsters for this monster pack");
+
 				var monsterID = int.Parse(monsterElement.Attribute("id").Value);
-				mp.Monsters.Add(new Monster(monsterID));
+				mp.monsters.Add(new Monster(monsterID));
 			}
 
 			mp.Image = mp.Monsters.First().Image;
