@@ -17,7 +17,7 @@ namespace Project
 		{
 			HeroID = heroId;
 
-			var xDoc = XMLData.GetDataXmlDocument("Heroes");
+			var xDoc = XmlData.GetDocument("Heroes");
 			var monsterElement = xDoc.XPathSelectElement(String.Format("Heroes/Hero[@id='{0}']", heroId));
 
 			ParseCommonAttributes(monsterElement);

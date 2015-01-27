@@ -20,7 +20,7 @@ namespace Project
 		/// <param name="element">The XElement to parse the shared data from.</param>
 		protected void ParseCommonAttributes(XElement element)
 		{
-			Image = XMLData.LoadImage(element.Attribute("texture").Value);
+			Image = XmlData.LoadImage(element.Attribute("texture").Value);
 
 			Name = element.Attribute("name").Value;
 		}

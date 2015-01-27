@@ -14,7 +14,7 @@ namespace Project
 	/// It is immutable, but the TileObjects that it contains may be modified as needed
 	/// as gameplay progresses.
 	/// </summary>
-	internal class MapData : XMLData
+	internal class MapData
 	{
 		/// <summary>
 		/// The number of tiles in a map in the horizonal direction.
@@ -88,7 +88,7 @@ namespace Project
 		/// <returns>A list of the created TileObjects. They are not cached.</returns>
 		public List<TileObject> GetTileObjects()
 		{
-			var parserMethods = GetXmlParserMethods();
+			var parserMethods = XmlData.XmlParsable<TileObject>.GetParsers();
 
 			var objects = new List<TileObject>();
 
@@ -123,7 +123,7 @@ namespace Project
 		/// <returns>The parsed MapData</returns>
 		private static MapData ParseMapData(int mapID)
 		{
-			XDocument xml = GetDataXmlDocument("Maps");
+			XDocument xml = XmlData.GetDocument("Maps");
 
 			// Get the XML element for the requested mapID.
 			XElement mapElement = xml.XPathSelectElement(String.Format("Maps/Map[@id='{0}']", mapID));
@@ -177,46 +177,6 @@ namespace Project
 				return adjacencies[direction];
 
 			return null;
-		}
-
-
-		/// <summary>
-		///     The cached result of GetXmlParserMethods(). Don't read this field - always call GetXmlParserMethods().
-		/// </summary>
-		private static Dictionary<string, Func<XElement, TileObject>> parserMethods;
-
-
-		/// <summary>
-		///     Gets a dictionary of all methods that have been marked with [TileObjectXmlParserAttribute(elementName)],
-		///     with the keys of the dictionary as elementName and the values as Func&lt;XElement, TileObject&gt;
-		/// </summary>
-		/// <returns>The dictionary of XML pasing methods</returns>
-		private static Dictionary<string, Func<XElement, TileObject>> GetXmlParserMethods()
-		{
-			// The dictionary is cached since new parsers won't be added after it is first created,
-			// and creating it is a pretty involved process that we don't want to do repeatedly.
-			if (parserMethods != null)
-				return parserMethods;
-
-			// Inspired by http://stackoverflow.com/questions/3467765/get-method-details-using-reflection-and-decorated-attribute
-			var methods = Assembly.GetExecutingAssembly()
-			                      .GetTypes()
-			                      .SelectMany(type => type.GetMethods())
-
-								  // Filter out only methods that are marked with [XmlParserAttribute]
-								  .Where(info => info.GetCustomAttributes<TileObject.TileObjectXmlParserAttribute>().Any())
-
-									// Create a Dictionary from the methods that were marked with this attribute.
-			                      .ToDictionary
-				<MethodInfo, string, Func<XElement, TileObject>>(
-					// The key to the Dictionary should be the elementName defined by the attribute.
-					info => info.GetCustomAttributes<TileObject.TileObjectXmlParserAttribute>().First().ElementName,
-
-					// Create a Func<XElement, TileObject> as the value of the dictionary.
-					info => element => info.Invoke(null, new object[] { element }) as TileObject
-				);
-
-			return parserMethods = methods;
 		}
 	}
 }

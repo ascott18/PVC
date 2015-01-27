@@ -38,7 +38,7 @@ namespace Project
 		/// </summary>
 		/// <param name="mpElement">The XElement to parse</param>
 		/// <returns>The MonsterPack object parsed from the XML.</returns>
-		[TileObjectXmlParser("MonsterPack")]
+		[XmlData.XmlParser(typeof(TileObject), "MonsterPack")]
 		public static TileObject XmlParser(XElement mpElement)
 		{
 

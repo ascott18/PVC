@@ -29,7 +29,7 @@ namespace Project
 			Slot = (SlotID) Enum.Parse(typeof (SlotID), slotName, true);
 		}
 
-		[ItemXmlParser("Equippable")]
+		[XmlData.XmlParser(typeof(Item), "Equippable")]
 		public static Item ParseItem(XElement itemElement)
 		{
             var id = int.Parse(itemElement.Attribute("id").Value);

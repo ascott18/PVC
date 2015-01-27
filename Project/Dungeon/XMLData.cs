@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -11,11 +12,11 @@ using Project.Properties;
 namespace Project
 {
 	/// <summary>
-	/// XMLData is an abstract class that is the foundation for immutable data objects parsed from XML.
-	/// It contains functionality for loading XML files from the project's resx file and storing these as
-	/// XDocuments for repeated use.
+	/// XmlData is a utility class for parsing data from XML.
+	/// It contains functionality for loading XML files from the project's resx
+	/// file and storing these as XDocuments for repeated use.
 	/// </summary>
-	abstract class XMLData
+	static class XmlData
 	{
 		private static readonly Dictionary<string, XDocument> Documents = new Dictionary<string, XDocument>();
 
@@ -24,7 +25,7 @@ namespace Project
 		/// Loads it if it isn't already loaded.
 		/// </summary>
 		/// <returns>The XDocument representing the requested resources.</returns>
-		internal static XDocument GetDataXmlDocument(string resourceName)
+		internal static XDocument GetDocument(string resourceName)
 		{
 			XDocument doc;
 
@@ -34,6 +35,9 @@ namespace Project
 
 			// convert string to stream
 			var res = Resources.ResourceManager.GetString(resourceName);
+			if (res == null)
+				throw new FileNotFoundException("Could not find resource", resourceName);
+
 			var stream = new MemoryStream(Encoding.UTF8.GetBytes(res));
 
 			// Load up the document
@@ -43,6 +47,12 @@ namespace Project
 			return Documents[resourceName] = doc;
 		}
 
+		/// <summary>
+		/// Try and get the embedded image represented by the provided name.
+		/// Embedded resources are defined in Resources.resx
+		/// </summary>
+		/// <param name="imageName">The name of the embedded image to retrive</param>
+		/// <returns>The image, or null if the input parameter was the empty string.</returns>
 		internal static Image LoadImage(string imageName)
 		{
 			if (imageName == "")
@@ -50,13 +60,70 @@ namespace Project
 				return null;
 			}
 
-			// Try and get the embedded resource represented by the provided name.
-			// Embedded resources are defined in Resources.resx
-			var Image = Resources.ResourceManager.GetObject(imageName) as Bitmap;
-			if (Image == null)
+			var image = Resources.ResourceManager.GetObject(imageName) as Bitmap;
+			if (image == null)
 				throw new FileNotFoundException("Resource not found", imageName);
 
-			return Image;
+			return image;
+		}
+
+		[AttributeUsage(AttributeTargets.Method)]
+		internal class XmlParserAttribute : Attribute
+		{
+			public readonly string ElementName;
+			public readonly Type ReturnType;
+
+			/// <summary>
+			/// Declare a method as one that will take an incoming XElement, parse it,
+			/// and return a new instance of the specified type.
+			/// </summary>
+			/// <param name="returnType">The type that will be rturned by the parser method.</param>
+			/// <param name="elementName">The XElement.Name that this method will parse.</param>
+			public XmlParserAttribute(Type returnType, string elementName)
+			{
+				ElementName = elementName;
+				ReturnType = returnType;
+			}
+		}
+
+		internal static class XmlParsable<T>
+		{ 
+			private static Dictionary<string, Func<XElement, T>> parsers;
+			/// <summary>
+			///     Gets a dictionary of all methods that have been marked with [XmlParserAttribute(T, elementName)],
+			///     with the keys of the dictionary as elementName and the values as Func&lt;XElement, T&gt;
+			/// </summary>
+			/// <returns>The dictionary of XML pasing methods</returns>
+			public static Dictionary<string, Func<XElement, T>> GetParsers()
+			{
+				// The dictionary is cached since new parsers won't be added after it is first created,
+				// and creating it is a pretty involved process that we don't want to do repeatedly.
+				if (parsers != null)
+					return parsers;
+
+				// Inspired by http://stackoverflow.com/questions/3467765/get-method-details-using-reflection-and-decorated-attribute
+				var methods = Assembly.GetExecutingAssembly()
+									  .GetTypes()
+									  .SelectMany(type => type.GetMethods())
+
+									  // Filter out only methods that are marked with [XmlParserAttribute]
+									  .Where(info => info.GetCustomAttributes<XmlParserAttribute>().Any())
+
+									  // Make sure that the method is only marked once, and that it is the desired type.
+									  .Where(info => info.GetCustomAttributes<XmlParserAttribute>().Single().ReturnType == typeof(T))
+
+										// Create a Dictionary from the methods that were marked with this attribute.
+									  .ToDictionary
+					<MethodInfo, string, Func<XElement, T>>(
+					// The key to the Dictionary should be the elementName defined by the attribute.
+						info => info.GetCustomAttributes<XmlParserAttribute>().First().ElementName,
+
+						// Create a Func<XElement, TileObject> as the value of the dictionary.
+						info => element => (T)info.Invoke(null, new object[] { element })
+					);
+
+				return parsers = methods;
+			}
 		}
 	}
 }
