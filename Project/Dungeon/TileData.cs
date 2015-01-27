@@ -16,7 +16,7 @@ namespace Project
 	/// that was parsed from XML. A single TileData instance will be used for all Tiles that
 	/// use that tileID.
 	/// </summary>
-	class TileData : XMLData
+	class TileData
 	{
 		private static TileData[] data = new TileData[128];
 
@@ -73,7 +73,7 @@ namespace Project
 				Array.Resize(ref data, tileID + 50);
 
 
-			var xml = GetDataXmlDocument("Tiles");
+			var xml = XmlData.GetDocument("Tiles");
 
 			// Get the XML element that holds the data for the requested tileID.
 			var tileElement = xml.XPathSelectElement(String.Format("Tiles/Tile[@id='{0}']", tileID));

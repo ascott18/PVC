@@ -37,7 +37,7 @@ namespace Project
 		/// </summary>
 		/// <param name="doorElement">The XElement to parse</param>
 		/// <returns>The Door object parsed from the XML.</returns>
-		[TileObjectXmlParser("Door")]
+		[XmlData.XmlParser("Door")]
 		public static TileObject DoorXmlParser(XElement doorElement)
 		{
 
@@ -47,7 +47,7 @@ namespace Project
 
 			return new Door(loc, dest, destMapID)
 			{
-				Image = XMLData.LoadImage(doorElement.Attribute("texture").Value)
+				Image = XmlData.LoadImage(doorElement.Attribute("texture").Value)
 			};
 		}
 	}

@@ -4,16 +4,25 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Project
 {
 	class CombatSprite
 	{
-		public Image Image { get;  set; } // TODO: Make this protected set
+		public Image Image { get; protected set; }
+		public string Name { get; protected set; }
 
-		public void Draw(Graphics graphics)
+		/// <summary>
+		/// Parses data from an XElement that are shared between all CombatSprite subclasses.
+		/// </summary>
+		/// <param name="element">The XElement to parse the shared data from.</param>
+		protected void ParseCommonAttributes(XElement element)
 		{
-			throw new NotImplementedException();
+			Image = XmlData.LoadImage(element.Attribute("texture").Value);
+
+			Name = element.Attribute("name").Value;
 		}
 	}
 }

@@ -75,6 +75,18 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Combat\Sprites\Hero.cs" />
+    <Compile Include="Combat\CombatArena.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combat\CombatArena.Designer.cs">
+      <DependentUpon>CombatArena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Combat\CombatSpriteContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Combat\CombatSpriteContainer.Designer.cs">
+      <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shared\Items\Item.cs" />
     <Compile Include="Shared\Items\ItemBook.cs" />
     <Compile Include="Shared\Items\ItemEquippable.cs" />
@@ -104,6 +116,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Combat\CombatArena.resx">
+      <DependentUpon>CombatArena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Combat\CombatSpriteContainer.resx">
+      <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,8 +136,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Heroes.xml" />
     <Content Include="Monsters.xml" />
-    <Content Include="Maps.xml" />
+    <Content Include="Maps.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Resources\stu.png" />
     <None Include="Resources\shoerner.png" />
     <None Include="Resources\milton.png" />

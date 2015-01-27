@@ -26,7 +26,12 @@
 	  <Door x="1" y="1" toMap="2" toX="12" toY="13" texture="fancydoor"/>
 	  <MonsterPack id="000101" x="5" y="2">
 		<Monster id="1"/>
+		<Monster id="2"/>
 		<Monster id="1"/>
+	  </MonsterPack>
+	  <MonsterPack id="000102" x="6" y="2">
+		<Monster id="2"/>
+		<Monster id="2"/>
 		<Monster id="1"/>
 	  </MonsterPack>
 	</Objects>

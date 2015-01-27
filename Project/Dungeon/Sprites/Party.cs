@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,19 +10,30 @@ namespace Project
 {
 	class Party : DungeonSprite
 	{
-		private readonly List<Hero> Heroes = new List<Hero>();
-        private List<Item> _partyInventory = new List<Item>();
+		public const int MaxHeroes = 3;
+
+		private readonly List<Hero> heroes = new List<Hero>(MaxHeroes);
+		public ReadOnlyCollection<Hero> Heroes;
+
+		private readonly List<Item> inventory = new List<Item>();
+		public ReadOnlyCollection<Item> Inventory;
 
 
 		public Party(Point loc) : base(loc)
 		{
+			Heroes = heroes.AsReadOnly();
+			Inventory = inventory.AsReadOnly();
 		}
 
 		public void AddHero(Hero hero)
 		{
-			if (Heroes.Count == 0)
+			if (heroes.Count > MaxHeroes)
+				throw new Exception("Party has too many heroes");
+
+			if (heroes.Count == 0)
 				Image = hero.Image;
-			Heroes.Add(hero);
+
+			heroes.Add(hero);
 		}
 	}
 }

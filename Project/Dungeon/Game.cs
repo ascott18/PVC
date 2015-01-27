@@ -44,9 +44,12 @@ namespace Project
 
 			// TODO: Temp code
 			Party = new Party(new Point(7, 7));
-			Party.AddHero(new Hero() { Image = Resources.milton });
+			Party.AddHero(new Hero(1));
+			Party.AddHero(new Hero(2));
 
 			SetPartyLocation(1, Party.InitialLocation);
+
+			window.combatArena.Party = Party;
 		}
 
 		public bool ProcessKey(Keys keyData)

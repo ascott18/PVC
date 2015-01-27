@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Monsters>
-  <Monster id="1" texture ="lumbergh">
+  <Monster id="1" texture="lumbergh" name="Boss">
+	<Spell/>
+  </Monster>
+  <Monster id="2" texture="shoerner" name="Pestering Student">
 	<Spell/>
   </Monster>
 </Monsters>

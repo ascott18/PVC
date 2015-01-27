@@ -15,11 +15,10 @@ namespace Project
 		{
 			MonsterID = monsterId;
 
-			var xDoc = XMLData.GetDataXmlDocument("Monsters");
-
+			var xDoc = XmlData.GetDocument("Monsters");
 			var monsterElement = xDoc.XPathSelectElement(String.Format("Monsters/Monster[@id='{0}']", monsterId));
 
-			Image = XMLData.LoadImage(monsterElement.Attribute("texture").Value);
+			ParseCommonAttributes(monsterElement);
 		}
 	}
 }

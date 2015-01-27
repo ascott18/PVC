@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Heroes>
+  <Hero id="1" texture="milton" name="Milton">
+	<Spell/>
+  </Hero>
+  <Hero id="2" texture="stu" name="Stu Steiner">
+	<Spell/>
+  </Hero>
+</Heroes>
