@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Monsters>
   <Monster id="1" texture="lumbergh" name="Boss">
+	<Attributes stamina="10" strength="11" intellect="8" dexterity="15"/>
 	<Spell/>
   </Monster>
   <Monster id="2" texture="shoerner" name="Pestering Student">
+	<Attributes stamina="8" strength="9" intellect="16" dexterity="9"/>
 	<Spell/>
   </Monster>
 </Monsters>

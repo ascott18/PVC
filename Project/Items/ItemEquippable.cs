@@ -10,7 +10,7 @@ namespace Project
 {
 	class ItemEquippable : Item
 	{
-		public const int MAX_SLOTS = 3;
+		public const int MaxSlotId = 3;
 
 		public enum SlotID
 		{
@@ -29,6 +29,8 @@ namespace Project
 			Slot = (SlotID) Enum.Parse(typeof (SlotID), slotName, true);
 		}
 
+		public Attributes Attributes { get; private set; }
+
 		[XmlData.XmlParser("Equippable")]
 		public static Item ParseItem(XElement itemElement)
 		{
@@ -36,7 +38,10 @@ namespace Project
             var name = itemElement.Attribute("name").Value;
             var slot = itemElement.Attribute("slot").Value;
 
-            return new ItemEquippable(id, slot, name);
+            return new ItemEquippable(id, slot, name)
+            {
+	            Attributes = Attributes.ParseAttributes(itemElement.Element("Attributes"))
+            };
 		}
 	}
 }

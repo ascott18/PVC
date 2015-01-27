@@ -31,8 +31,6 @@
 	  </MonsterPack>
 	  <MonsterPack id="000102" x="6" y="2">
 		<Monster id="2"/>
-		<Monster id="2"/>
-		<Monster id="1"/>
 	  </MonsterPack>
 	</Objects>
 	

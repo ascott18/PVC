@@ -10,7 +10,7 @@ namespace Project
 {
 	class Hero : CombatSprite
 	{
-		private readonly ItemEquippable[] equipment = new ItemEquippable[ItemEquippable.MAX_SLOTS];
+		private readonly ItemEquippable[] equipment = new ItemEquippable[ItemEquippable.MaxSlotId];
 		public readonly int HeroID;
 
 		public Hero(int heroId)
@@ -21,6 +21,20 @@ namespace Project
 			var monsterElement = xDoc.XPathSelectElement(String.Format("Heroes/Hero[@id='{0}']", heroId));
 
 			ParseCommonAttributes(monsterElement);
+		}
+
+		public override Attributes Attributes
+		{
+			get
+			{
+				var attr = BaseAttributes;
+				foreach (var itemEquippable in equipment)
+				{
+					attr = itemEquippable.Attributes;
+				}
+
+				return attr;
+			}
 		}
 	}
 }
