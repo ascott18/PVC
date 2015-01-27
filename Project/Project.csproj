@@ -54,56 +54,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Combat\Sprites\CombatSprite.cs" />
+    <Compile Include="Sprites\CombatSprite.cs" />
     <Compile Include="Dungeon\Door.cs" />
-    <Compile Include="Dungeon\Game.cs" />
-    <Compile Include="Dungeon\DungeonContainer.cs">
+    <Compile Include="Game.cs" />
+    <Compile Include="Controls\DungeonContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dungeon\DungeonContainer.Designer.cs">
+    <Compile Include="Controls\DungeonContainer.Designer.cs">
       <DependentUpon>DungeonContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="Dungeon\DungeonMap.cs" />
     <Compile Include="Dungeon\MapData.cs" />
     <Compile Include="Dungeon\TileData.cs" />
     <Compile Include="Dungeon\TileObject.cs" />
-    <Compile Include="Dungeon\XMLData.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Data\XMLData.cs" />
+    <Compile Include="Controls\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Controls\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Combat\Sprites\Hero.cs" />
-    <Compile Include="Combat\CombatArena.cs">
+    <Compile Include="Sprites\Hero.cs" />
+    <Compile Include="Controls\CombatArena.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Combat\CombatArena.Designer.cs">
+    <Compile Include="Controls\CombatArena.Designer.cs">
       <DependentUpon>CombatArena.cs</DependentUpon>
     </Compile>
-    <Compile Include="Combat\CombatSpriteContainer.cs">
+    <Compile Include="Controls\CombatSpriteContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Combat\CombatSpriteContainer.Designer.cs">
+    <Compile Include="Controls\CombatSpriteContainer.Designer.cs">
       <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shared\Items\Item.cs" />
-    <Compile Include="Shared\Items\ItemBook.cs" />
-    <Compile Include="Shared\Items\ItemEquippable.cs" />
-    <Compile Include="Combat\Sprites\Monster.cs" />
-    <Compile Include="Dungeon\Sprites\MonsterPack.cs" />
-    <Compile Include="Dungeon\Sprites\Party.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\ItemBook.cs" />
+    <Compile Include="Items\ItemEquippable.cs" />
+    <Compile Include="Sprites\Monster.cs" />
+    <Compile Include="Sprites\MonsterPack.cs" />
+    <Compile Include="Sprites\Party.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Combat\Spells\Spell.cs" />
-    <Compile Include="Combat\Spells\SpellFriendly.cs" />
-    <Compile Include="Combat\Spells\SpellHostile.cs" />
-    <Compile Include="Dungeon\Sprites\DungeonSprite.cs" />
+    <Compile Include="Spells\Spell.cs" />
+    <Compile Include="Spells\SpellFriendly.cs" />
+    <Compile Include="Spells\SpellHostile.cs" />
+    <Compile Include="Sprites\DungeonSprite.cs" />
     <Compile Include="Dungeon\Tile.cs" />
-    <EmbeddedResource Include="Dungeon\DungeonContainer.resx">
+    <EmbeddedResource Include="Controls\DungeonContainer.resx">
       <DependentUpon>DungeonContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Controls\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -116,12 +116,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Combat\CombatArena.resx">
+    <EmbeddedResource Include="Controls\CombatArena.resx">
       <DependentUpon>CombatArena.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Combat\CombatSpriteContainer.resx">
+    <EmbeddedResource Include="Controls\CombatSpriteContainer.resx">
       <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Data\Heroes.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,9 +139,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Heroes.xml" />
-    <Content Include="Monsters.xml" />
-    <Content Include="Maps.xml">
+    <Content Include="Data\Heroes.xml" />
+    <Content Include="Data\Monsters.xml" />
+    <Content Include="Data\Maps.xml">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Resources\stu.png" />
@@ -146,8 +149,8 @@
     <None Include="Resources\milton.png" />
     <None Include="Resources\lumbergh.png" />
     <None Include="Resources\fancydoor.png" />
-    <Content Include="Shared\Items\Items.xml" />
-    <Content Include="Tiles.xml" />
+    <Content Include="Data\Items.xml" />
+    <Content Include="Data\Tiles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
