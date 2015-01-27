@@ -10,14 +10,15 @@ namespace Project
 {
 	class ItemEquippable : Item
 	{
-		public const int MaxSlotId = 3;
+		public const int MaxSlotId = 4;
 
 		public enum SlotID
 		{
-			Helm,
-			Chest,
-			Gloves,
-			Boots,
+			Weapon,
+			Head,
+			Body,
+			Hands,
+			Feet,
 		}
 
 		public readonly SlotID Slot;
