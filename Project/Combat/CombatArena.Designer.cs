@@ -1,6 +1,6 @@
 ﻿using Project.Combat;
 
-namespace Project.Shared.Items
+namespace Project
 {
 	partial class CombatArena
 	{

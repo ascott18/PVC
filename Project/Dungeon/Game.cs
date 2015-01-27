@@ -49,7 +49,7 @@ namespace Project
 
 			SetPartyLocation(1, Party.InitialLocation);
 
-			window.combatArena1.Party = Party;
+			window.combatArena.Party = Party;
 		}
 
 		public bool ProcessKey(Keys keyData)

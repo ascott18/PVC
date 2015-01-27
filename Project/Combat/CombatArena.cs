@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project.Combat;
 
-namespace Project.Shared.Items
+namespace Project
 {
 	public partial class CombatArena : UserControl
 	{
@@ -44,7 +44,17 @@ namespace Project.Shared.Items
 		internal MonsterPack MonsterPack
 		{
 			get { return monsterPack; }
-			set { monsterPack = value; }
+			set
+			{
+				monsterPack = value;
+				for (int i = 0; i < monsterContainers.Length; i++)
+				{
+					if (monsterPack.Monsters.Count > i)
+						monsterContainers[i].Sprite = monsterPack.Monsters[i];
+					else
+						monsterContainers[i].Sprite = null;
+				}
+			}
 		}
 
 		internal Party Party
