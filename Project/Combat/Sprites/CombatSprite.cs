@@ -4,12 +4,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project
 {
 	class CombatSprite
 	{
-		public Image Image { get;  set; } // TODO: Make this protected set
+		// TODO: Make these protected set
+		public Image Image { get; set; }
+		public string Name { get; set; }
+
 
 		public void Draw(Graphics graphics)
 		{

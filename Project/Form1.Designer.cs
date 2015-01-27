@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.dungeonContainer = new Project.DungeonContainer();
+			this.combatArena1 = new Project.Shared.Items.CombatArena();
 			this.SuspendLayout();
 			// 
 			// dungeonContainer
@@ -38,11 +39,19 @@
 			this.dungeonContainer.Size = new System.Drawing.Size(700, 700);
 			this.dungeonContainer.TabIndex = 0;
 			// 
+			// combatArena1
+			// 
+			this.combatArena1.Location = new System.Drawing.Point(777, 96);
+			this.combatArena1.Name = "combatArena1";
+			this.combatArena1.Size = new System.Drawing.Size(386, 424);
+			this.combatArena1.TabIndex = 1;
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(705, 705);
+			this.ClientSize = new System.Drawing.Size(1200, 705);
+			this.Controls.Add(this.combatArena1);
 			this.Controls.Add(this.dungeonContainer);
 			this.KeyPreview = true;
 			this.Name = "MainWindow";
@@ -54,6 +63,7 @@
 		#endregion
 
 		internal DungeonContainer dungeonContainer;
+		internal Shared.Items.CombatArena combatArena1;
 
 
 

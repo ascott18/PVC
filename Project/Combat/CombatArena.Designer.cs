@@ -1,4 +1,6 @@
-﻿namespace Project.Shared.Items
+﻿using Project.Combat;
+
+namespace Project.Shared.Items
 {
 	partial class CombatArena
 	{
@@ -35,11 +37,15 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Name = "CombatArena";
-			this.Size = new System.Drawing.Size(386, 283);
+			this.Size = new System.Drawing.Size(386, 424);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
+
+
+
+
 	}
 }

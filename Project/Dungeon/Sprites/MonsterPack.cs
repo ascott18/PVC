@@ -14,6 +14,7 @@ namespace Project
 		public readonly int UniqueID;
 
 		public readonly List<Monster> Monsters = new List<Monster>();
+		public const int MaxMonsters = 3;
 
 		public MonsterPack(Point loc, int uniqueId) : base(loc)
 		{
