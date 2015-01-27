@@ -44,8 +44,8 @@ namespace Project
 
 			// TODO: Temp code
 			Party = new Party(new Point(7, 7));
-			Party.AddHero(new Hero() { Image = Resources.milton, Name = "Milton" });
-			Party.AddHero(new Hero() { Image = Resources.stu, Name = "Stu" });
+			Party.AddHero(new Hero(1));
+			Party.AddHero(new Hero(2));
 
 			SetPartyLocation(1, Party.InitialLocation);
 
