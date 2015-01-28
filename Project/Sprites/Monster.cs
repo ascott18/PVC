@@ -22,12 +22,14 @@ namespace Project
 			ParseCommonAttributes(monsterElement);
 		}
 
-		public void DoAction(CombatSession arena, Stopwatch gameTimer)
+		public void DoAction(CombatSession arena)
 		{
-			var target = arena.AutoAcquireTarget(this);
-			if (target == null) return;
-
-			target.Health -= 5;
+			if (CurrentCast == null)
+			{
+				var spellToCast = Spells.First(spell => !spell.IsCasting);
+				if (spellToCast != null)
+					spellToCast.Start(arena, this);
+			}
 		}
 	}
 }

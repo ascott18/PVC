@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CombatSession.cs" />
+    <Compile Include="Spells\SpellTargetedDamage.cs" />
     <Compile Include="Sprites\CombatSprite.cs" />
     <Compile Include="Dungeon\Door.cs" />
     <Compile Include="Game.cs" />
@@ -148,6 +149,7 @@
     <None Include="Resources\lumbergh.png" />
     <None Include="Resources\fancydoor.png" />
     <Content Include="Data\Items.xml" />
+    <Content Include="Data\Spells.xml" />
     <Content Include="Data\Tiles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

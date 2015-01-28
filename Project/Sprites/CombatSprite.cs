@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace Project
 {
@@ -14,6 +15,12 @@ namespace Project
 		public Image Image { get; protected set; }
 		public string Name { get; protected set; }
 
+		public readonly List<Spell> Spells = new List<Spell>();
+
+		public Spell CurrentCast
+		{
+			get { return Spells.FirstOrDefault(spell => spell.IsCasting); }
+		}
 
 		private int _health = 1;
 		private Attributes _attributes;
@@ -78,11 +85,14 @@ namespace Project
 		protected void ParseCommonAttributes(XElement element)
 		{
 			Image = XmlData.LoadImage(element.Attribute("texture").Value);
-
 			Name = element.Attribute("name").Value;
 
-
 			BaseAttributes = Attributes.ParseAttributes(element.Element("Attributes"));
+
+			foreach (var spellElement in element.XPathSelectElements("Spell"))
+			{
+				Spells.Add(Spell.GetSpell((int)spellElement.Attribute("id")));
+			}
 		}
 	}
 

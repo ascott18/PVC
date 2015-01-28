@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,10 @@ namespace Project
 		private readonly Stopwatch _gameTimer = new Stopwatch();
 		private readonly Timer _combatTimer = new Timer();
 
+		public event CombatEvent Started;
+		public event CombatEvent Paused;
+		public event CombatEvent Resumed;
+		public event CombatEvent Ended;
 		public void StartCombat()
 		{
 			AutoAcquireTargets();
@@ -32,18 +37,38 @@ namespace Project
 			_combatTimer.Interval = 100;
 			_combatTimer.Tick += CombatTimerOnTick;
 			_combatTimer.Start();
+
+			if (Started != null) Started(this);
 		}
 
 		public void PauseCombat()
 		{
 			_gameTimer.Stop();
 			_combatTimer.Stop();
+
+			if (Paused != null) Paused(this);
 		}
 
 		public void ResumeCombat()
 		{
 			_gameTimer.Start();
-			_gameTimer.Start();
+			_combatTimer.Start();
+
+			if (Resumed != null) Resumed(this);
+		}
+
+		public void EndCombat()
+		{
+			_gameTimer.Stop();
+			_combatTimer.Stop();
+			
+			if (Ended != null) Ended(this);
+		}
+
+
+		public double GetTime()
+		{
+			return (double)_gameTimer.ElapsedMilliseconds / 1000;
 		}
 
 		public void AutoAcquireTargets()
@@ -104,10 +129,16 @@ namespace Project
 
 		private void CombatTimerOnTick(object sender, EventArgs eventArgs)
 		{
+			if (Update != null) Update(this);
+
 			foreach (var monster in MonsterPack.Members)
 			{
-				(monster as Monster).DoAction(this, _gameTimer);
+				(monster as Monster).DoAction(this);
 			}
 		}
+
+		public event CombatEvent Update;
 	}
+
+	internal delegate void CombatEvent(CombatSession sender);
 }
