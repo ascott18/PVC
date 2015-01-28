@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Project.Combat
 {
@@ -16,6 +17,11 @@ namespace Project.Combat
 			get { return sprite; }
 			set
 			{
+				if (sprite != null)
+				{
+					sprite.HealthChanged -= sprite_HealthChanged;
+				}
+
 				sprite = value;
 				if (sprite == null)
 				{
@@ -26,8 +32,14 @@ namespace Project.Combat
 					Show();
 					image.Image = sprite.Image;
 					nameText.Text = sprite.Name;
+					sprite.HealthChanged += sprite_HealthChanged;
 				}
 			}
+		}
+
+		void sprite_HealthChanged(CombatSprite sender)
+		{
+			healthText.Text = String.Format("{0}/{1}", sender.Health, sender.MaxHealth);
 		}
 	}
 }

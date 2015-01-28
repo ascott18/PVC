@@ -35,7 +35,13 @@ namespace Project
 
 			Party.SetLocation(map.GetTile(point));
 			CurrentMap = map;
+		}
 
+		public void EnterCombat(MonsterPack enemy)
+		{
+			var session = new CombatSession(Party, enemy);
+			Window.combatArena.CombatSession = session;
+			session.StartCombat();
 		}
 
 		internal Game(MainWindow window)
@@ -48,8 +54,6 @@ namespace Project
 			Party.AddHero(new Hero(2));
 
 			SetPartyLocation(1, Party.InitialLocation);
-
-			window.combatArena.Party = Party;
 		}
 
 		public bool ProcessKey(Keys keyData)

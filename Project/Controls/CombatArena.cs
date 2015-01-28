@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
@@ -13,11 +11,9 @@ namespace Project
 {
 	public partial class CombatArena : UserControl
 	{
-		private Party party;
-		private MonsterPack monsterPack;
-
 		private readonly CombatSpriteContainer[] heroContainers = new CombatSpriteContainer[Party.MaxHeroes];
 		private readonly CombatSpriteContainer[] monsterContainers = new CombatSpriteContainer[MonsterPack.MaxMonsters];
+		private CombatSession _combatSession;
 
 		public CombatArena()
 		{
@@ -41,35 +37,32 @@ namespace Project
 			Controls.AddRange(monsterContainers);
 		}
 
-		internal MonsterPack MonsterPack
+		internal CombatSession CombatSession
 		{
-			get { return monsterPack; }
+			get { return _combatSession; }
 			set
 			{
-				monsterPack = value;
-				for (int i = 0; i < monsterContainers.Length; i++)
-				{
-					if (monsterPack.Monsters.Count > i)
-						monsterContainers[i].Sprite = monsterPack.Monsters[i];
-					else
-						monsterContainers[i].Sprite = null;
-				}
+				// Stop old session if there was one
+				PopulateContainers(heroContainers, null);
+				PopulateContainers(monsterContainers, null);
+				if (_combatSession != null)
+					_combatSession.PauseCombat();
+
+				// Wire in the new session.
+				_combatSession = value;
+				PopulateContainers(heroContainers, _combatSession.Party);
+				PopulateContainers(monsterContainers, _combatSession.MonsterPack);
 			}
 		}
 
-		internal Party Party
+		private static void PopulateContainers(CombatSpriteContainer[] containers, DungeonSprite parent)
 		{
-			get { return party; }
-			set
+			for (int i = 0; i < containers.Length; i++)
 			{
-				party = value;
-				for (int i = 0; i < heroContainers.Length; i++)
-				{
-					if (party.Heroes.Count > i)
-						heroContainers[i].Sprite = party.Heroes[i];
-					else
-						heroContainers[i].Sprite = null;
-				}
+				if (parent != null && parent.Members.Count > i)
+					containers[i].Sprite = parent.Members[i];
+				else
+					containers[i].Sprite = null;
 			}
 		}
 	}
