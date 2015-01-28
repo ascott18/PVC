@@ -11,7 +11,6 @@ namespace Project
 {
 	class Hero : CombatSprite
 	{
-		private readonly ItemEquippable[] equipment = new ItemEquippable[ItemEquippable.MaxSlotId];
 		public readonly int HeroID;
 
 		public Hero(int heroId)
@@ -23,6 +22,8 @@ namespace Project
 
 			ParseCommonAttributes(monsterElement);
 
+			// Parse the items that the hero is equipped with by default,
+			// and equip them on the hero.
 			foreach (var xElement in monsterElement.Elements("Item"))
 			{
 				var item = Item.GetItem(int.Parse(xElement.Attribute("id").Value));
@@ -31,6 +32,23 @@ namespace Project
 
 				Equip(item as ItemEquippable);
 			}
+
+			EquipmentChanged += Hero_EquipmentChanged;
+			RecalculateAttributes();
+		}
+
+
+
+		#region Equipment
+
+		/// <summary>
+		/// Holds the items that the hero has equipped. Each index is the integer representation of a ItemEquippable.SlotId.
+		/// </summary>
+		private readonly ItemEquippable[] equipment = new ItemEquippable[ItemEquippable.MaxSlotId];
+
+		void Hero_EquipmentChanged(CombatSprite sender)
+		{
+			sender.RecalculateAttributes();
 		}
 
 		/// <summary>
@@ -42,6 +60,9 @@ namespace Project
 		{
 			var oldItem = equipment[(int)item.Slot];
 			equipment[(int)item.Slot] = item;
+
+			if (EquipmentChanged != null) EquipmentChanged(this);
+
 			return oldItem;
 		}
 
@@ -54,21 +75,31 @@ namespace Project
 		{
 			var oldItem = equipment[(int) slot];
 			equipment[(int) slot] = null;
+
+			if (EquipmentChanged != null) EquipmentChanged(this);
+
 			return oldItem;
 		}
 
-		public override Attributes Attributes
-		{
-			get
-			{
-				var attr = BaseAttributes;
-				foreach (var itemEquippable in equipment)
-				{
-					attr = itemEquippable.Attributes;
-				}
+		public event SpriteEvent EquipmentChanged;
 
-				return attr;
+		#endregion
+
+
+		/// <summary>
+		/// Recalculates the hero's current attributes,
+		/// taking into account base attributes and attributes from equipment.
+		/// </summary>
+		public override sealed void RecalculateAttributes()
+		{
+			var attr = BaseAttributes;
+			foreach (var itemEquippable in equipment)
+			{
+				if (itemEquippable != null)
+					attr = attr + itemEquippable.Attributes;
 			}
+
+			Attributes = attr;
 		}
 	}
 }

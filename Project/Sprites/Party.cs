@@ -13,15 +13,14 @@ namespace Project
 		public const int MaxHeroes = 3;
 
 		private readonly List<Hero> heroes = new List<Hero>(MaxHeroes);
-		public ReadOnlyCollection<Hero> Heroes;
 
 		private readonly List<Item> inventory = new List<Item>();
-		public ReadOnlyCollection<Item> Inventory;
+		public readonly IReadOnlyList<Item> Inventory;
 
 
 		public Party(Point loc) : base(loc)
 		{
-			Heroes = heroes.AsReadOnly();
+			Members = heroes.AsReadOnly();
 			Inventory = inventory.AsReadOnly();
 		}
 

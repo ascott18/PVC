@@ -9,6 +9,7 @@ namespace Project
 {
 	abstract class DungeonSprite : TileObject
 	{
+		public IReadOnlyList<CombatSprite> Members { get; protected set; } 
 
 		public override void Interact(Game game)
 		{

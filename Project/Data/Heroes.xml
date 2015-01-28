@@ -6,7 +6,7 @@
 	<Spell/>
   </Hero>
   <Hero id="2" texture="stu" name="Stu Steiner">
-	<Attributes stamina="10" strength="12" intellect="15" dexterity="8"/>
+	<Attributes stamina="11" strength="12" intellect="15" dexterity="7"/>
 	<Spell/>
   </Hero>
 </Heroes>

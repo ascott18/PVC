@@ -15,22 +15,18 @@ namespace Project
 		public readonly int UniqueID;
 
 		private readonly List<Monster> monsters = new List<Monster>();
-		public readonly ReadOnlyCollection<Monster> Monsters;
 		public const int MaxMonsters = 3;
 
 		public MonsterPack(Point loc, int uniqueId) : base(loc)
 		{
-			Monsters = monsters.AsReadOnly();
+			Members = monsters.AsReadOnly();
 
 			UniqueID = uniqueId;
 		}
 
-
 		public override void Interact(Game game)
 		{
-			//TODO: Enter combat mode with the monster pack.
-			game.Window.combatArena.MonsterPack = this;
-			//CurrentTile.TileObject = null;
+			game.EnterCombat(this);
 		}
 
 		/// <summary>
@@ -53,10 +49,12 @@ namespace Project
 					throw new Exception("Too many monsters for this monster pack");
 
 				var monsterID = int.Parse(monsterElement.Attribute("id").Value);
-				mp.monsters.Add(new Monster(monsterID));
+				var monster = new Monster(monsterID);
+
+				mp.monsters.Add(monster);
 			}
 
-			mp.Image = mp.Monsters.First().Image;
+			mp.Image = mp.Members.First().Image;
 
 			return mp;
 		}

@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CombatSession.cs" />
     <Compile Include="Sprites\CombatSprite.cs" />
     <Compile Include="Dungeon\Door.cs" />
     <Compile Include="Game.cs" />

@@ -52,7 +52,7 @@
 			this.healthText.Name = "healthText";
 			this.healthText.Size = new System.Drawing.Size(94, 13);
 			this.healthText.TabIndex = 1;
-			this.healthText.Text = "100/100";
+			this.healthText.Text = "0/0";
 			this.healthText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// nameText

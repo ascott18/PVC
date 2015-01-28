@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,12 @@ namespace Project
 		public readonly SlotID Slot;
 		public readonly string Name;
 
-		public ItemEquippable(int itemID, string slotName, string name) : base(itemID)
+		public ItemEquippable(int itemId, string slotName, string name) : base(itemId)
 		{
 			Name = name;
-			Slot = (SlotID) Enum.Parse(typeof (SlotID), slotName, true);
+
+			if(!Enum.TryParse(slotName, true, out Slot))
+				throw new InvalidDataException("Invalid slot for itemID " + itemId);
 		}
 
 		public Attributes Attributes { get; private set; }

@@ -15,24 +15,60 @@ namespace Project
 		public string Name { get; protected set; }
 
 
-		private int _health;
+		private int _health = 1;
+		private Attributes _attributes;
+		private int _maxHealth = 1;
+
 		public int Health
 		{
 			get { return _health; }
 			set
 			{
-				_health = value;
+				_health = Math.Max(value, 0); // Health can't be < 0
 				if (HealthChanged != null) HealthChanged(this);
 			}
 		}
 		public event SpriteEvent HealthChanged;
 
-		public int MaxHealth { get; private set; }
+		public int MaxHealth
+		{
+			get { return _maxHealth; }
+			private set
+			{
+				if (value < 1)
+					throw new ArgumentOutOfRangeException("value", value, "MaxHealth cannot be less than 1");
 
-		public Attributes BaseAttributes { get; private set; }
+				_maxHealth = value;
+				if (HealthChanged != null) HealthChanged(this);
+			}
+		}
 
-		public virtual Attributes Attributes {
-			get { return BaseAttributes; }
+		protected Attributes BaseAttributes { get; set; }
+
+		public Attributes Attributes
+		{
+			get { return _attributes; }
+			protected set
+			{
+				_attributes = value;
+				const int healthPerStamina = 10;
+
+				// Scale up the current health so that the percent health remains the same
+				// before and after the adjustment to it.
+				var newMaxHealth = _attributes.Stamina*healthPerStamina;
+				var healthScaleFactor = (double)newMaxHealth/MaxHealth;
+				Health = (int)(Health * healthScaleFactor);
+
+				MaxHealth = newMaxHealth;
+			}
+		}
+
+		/// <summary>
+		/// Recalculates the attributes of the sprite. Should be overridden by subclasses.
+		/// </summary>
+		public virtual void RecalculateAttributes()
+		{
+			Attributes = BaseAttributes;
 		}
 
 		/// <summary>
@@ -70,6 +106,8 @@ namespace Project
 
 		public static Attributes ParseAttributes(XElement element)
 		{
+			if (element == null) throw new ArgumentNullException("element");
+
 			return new Attributes()
 			{
 				Stamina = int.Parse(element.Attribute("stamina").Value),
