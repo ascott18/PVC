@@ -20,6 +20,8 @@ namespace Project
 			var monsterElement = xDoc.XPathSelectElement(String.Format("Monsters/Monster[@id='{0}']", monsterId));
 
 			ParseCommonAttributes(monsterElement);
+
+			RecalculateAttributes();
 		}
 
 		public void DoAction(CombatSession arena)

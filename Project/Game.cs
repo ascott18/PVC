@@ -16,6 +16,8 @@ namespace Project
 		public readonly Party Party;
 		private readonly Dictionary<int, DungeonMap> maps = new Dictionary<int, DungeonMap>();
 
+		private CombatSession currentSession;
+
 		internal DungeonMap CurrentMap { get; private set; }
 
 		private DungeonMap LoadDungeonMap(int mapID)
@@ -39,10 +41,36 @@ namespace Project
 
 		public void EnterCombat(MonsterPack enemy)
 		{
-			var session = new CombatSession(Party, enemy);
-			Window.combatArena.CombatSession = session;
-			session.StartCombat();
+			if (InCombat)
+				throw new InvalidOperationException("Can't enter combat while in combat");
+
+			currentSession = new CombatSession(Party, enemy);
+			Window.dungeonContainer.Hide();
+			Window.combatArena.Show();
+			Window.combatArena.CombatSession = currentSession;
+
+			currentSession.Ended += currentSession_Ended;
+
+			currentSession.StartCombat();
 		}
+
+		void currentSession_Ended(CombatSession sender)
+		{
+			Window.dungeonContainer.Show();
+			Window.combatArena.Hide();
+
+			foreach (var hero in Party.Members.Cast<Hero>())
+			{
+				if (hero.IsRetreated)
+					hero.Health = hero.MaxHealth/10;
+			}
+		}
+
+		public bool InCombat
+		{
+			get { return (currentSession != null && currentSession.State != CombatSession.CombatState.Ended); }
+		}
+
 
 		internal Game(MainWindow window)
 		{
@@ -58,6 +86,9 @@ namespace Project
 
 		public bool ProcessKey(Keys keyData)
 		{
+			if (InCombat)
+				return false;
+
 			switch (keyData)
 			{
 				case Keys.Up:

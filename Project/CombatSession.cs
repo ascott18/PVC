@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Deployment.Application;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,12 +16,18 @@ namespace Project
 		public readonly Party Party;
 		public readonly MonsterPack MonsterPack;
 
+		private readonly IEnumerable<CombatSprite> AllSprites;
+
 		public readonly Dictionary<CombatSprite, CombatSprite> Targets = new Dictionary<CombatSprite, CombatSprite>(); 
 
 		public CombatSession(Party party, MonsterPack monsterPack)
 		{
+			State = CombatState.New;
+			
 			Party = party;
 			MonsterPack = monsterPack;
+
+			AllSprites = Party.Members.Concat(MonsterPack.Members);
 		}
 
 		private readonly Stopwatch _gameTimer = new Stopwatch();
@@ -30,15 +37,50 @@ namespace Project
 		public event CombatEvent Paused;
 		public event CombatEvent Resumed;
 		public event CombatEvent Ended;
+
+		public CombatState State { get; private set; }
+
+		public enum CombatState
+		{
+			New,
+			Acitve,
+			Paused,
+			Ended
+		}
+
 		public void StartCombat()
 		{
+			if (State != CombatState.New)
+				throw new InvalidOperationException("Can't start an already-started combat session.");
+
 			AutoAcquireTargets();
 			_gameTimer.Restart();
-			_combatTimer.Interval = 100;
+			_combatTimer.Interval = 10;
 			_combatTimer.Tick += CombatTimerOnTick;
 			_combatTimer.Start();
 
+			foreach (var sprite in AllSprites)
+			{
+				sprite.HealthChanged += sprite_HealthChanged;
+			}
+
+			State = CombatState.Acitve;
+
 			if (Started != null) Started(this);
+		}
+
+		private void sprite_HealthChanged(CombatSprite sender)
+		{
+			if (Party.Members.Cast<Hero>().All(sprite => sprite.IsRetreated))
+			{
+				EndCombat();
+			}
+			if (MonsterPack.Members.All(sprite => sprite.IsDead))
+			{
+				EndCombat();
+			}
+
+
 		}
 
 		public void PauseCombat()
@@ -46,22 +88,38 @@ namespace Project
 			_gameTimer.Stop();
 			_combatTimer.Stop();
 
+			State = CombatState.Paused;
+
 			if (Paused != null) Paused(this);
 		}
 
 		public void ResumeCombat()
 		{
+			if (State != CombatState.Paused)
+				return;
+
 			_gameTimer.Start();
 			_combatTimer.Start();
+
+			State = CombatState.Acitve;
 
 			if (Resumed != null) Resumed(this);
 		}
 
 		public void EndCombat()
 		{
+			Debug.WriteLine("Combat Ended");
+
+			if (State != CombatState.Acitve && State != CombatState.Paused)
+				return;
+
 			_gameTimer.Stop();
 			_combatTimer.Stop();
-			
+
+			_combatTimer.Tick -= CombatTimerOnTick;
+
+			State = CombatState.Ended;
+
 			if (Ended != null) Ended(this);
 		}
 
@@ -73,7 +131,7 @@ namespace Project
 
 		public void AutoAcquireTargets()
 		{
-			foreach (var sprite in Party.Members.Concat(MonsterPack.Members))
+			foreach (var sprite in AllSprites)
 			{
 				AutoAcquireTarget(sprite);
 			}
@@ -95,7 +153,7 @@ namespace Project
 			CombatSprite target;
 			Targets.TryGetValue(sprite, out target);
 
-			if (target == null || target.Health == 0)
+			if (target == null || !target.IsActive)
 			{
 				// We have to do IndexOf manually for IReadOnlyLists.
 				var index = -1;
@@ -108,7 +166,7 @@ namespace Project
 					}
 				}
 
-				var aliveEnemies = enemies.Members.Where(enemy => enemy.Health > 0);
+				var aliveEnemies = enemies.Members.Where(enemy => enemy.IsActive);
 
 				if (!aliveEnemies.Any())
 				{

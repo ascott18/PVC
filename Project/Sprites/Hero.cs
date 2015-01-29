@@ -13,6 +13,12 @@ namespace Project
 	{
 		public readonly int HeroID;
 
+		public override int MinHealth { get { return 1; } }
+
+		public bool IsRetreated { get { return Health == 1; } }
+
+		public override bool IsActive { get { return !IsRetreated; } }
+
 		public Hero(int heroId)
 		{
 			HeroID = heroId;

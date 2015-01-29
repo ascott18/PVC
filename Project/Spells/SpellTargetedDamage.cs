@@ -21,17 +21,18 @@ namespace Project.Spells
 
 		void SpellTargetedDamage_StateChanged(Spell sender)
 		{
-			if (State == CastState.Starting)
+			switch (State)
 			{
-				target = Session.AutoAcquireTarget(Caster);
-				if (target == null)
-					Cancel();
-			}
+				case CastState.Starting:
+					target = Session.AutoAcquireTarget(Caster);
+					if (target == null)
+						Cancel();
+					break;
 
-			else if (State == CastState.Finishing)
-			{
-				target.Health -= damage;
-				target = null;
+				case CastState.Finishing:
+					target.Health -= damage;
+					target = null;
+					break;
 			}
 		}
 

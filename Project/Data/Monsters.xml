@@ -2,6 +2,8 @@
 <Monsters>
   <Monster id="1" texture="lumbergh" name="Boss">
 	<Attributes stamina="10" strength="11" intellect="8" dexterity="15"/>
+	<Spell id="2"/>
+	<Spell id="2"/>
 	<Spell id="1"/>
   </Monster>
   <Monster id="2" texture="shoerner" name="Pestering Student">

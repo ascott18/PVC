@@ -26,16 +26,25 @@ namespace Project
 		private Attributes _attributes;
 		private int _maxHealth = 1;
 
+		public virtual int MinHealth
+		{
+			get { return 0; }
+		}
+
 		public int Health
 		{
 			get { return _health; }
 			set
 			{
-				_health = Math.Max(value, 0); // Health can't be < 0
+				_health = Math.Max(value, MinHealth); // Health can't be < MinHealth
 				if (HealthChanged != null) HealthChanged(this);
 			}
 		}
 		public event SpriteEvent HealthChanged;
+
+		public bool IsDead { get { return Health == 0; } }
+
+		public virtual bool IsActive { get { return !IsDead; } }
 
 		public int MaxHealth
 		{

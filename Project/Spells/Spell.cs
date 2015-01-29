@@ -118,8 +118,6 @@ namespace Project
 
 		private void Spell_StateChanged(Spell sender)
 		{
-			Debug.WriteLine(Caster.Name + " " + State + " " + spellID);
-
 			switch (State)
 			{
 				case CastState.Finishing:
@@ -141,6 +139,7 @@ namespace Project
 					break;
 
 				case CastState.Unused:
+					LastCastTime = 0;
 					Session.Ended -= session_Ended;
 					Session = null;
 					Caster = null;
@@ -199,9 +198,29 @@ namespace Project
 
 		private void session_Ended(CombatSession sender)
 		{
-			Cancel();
+			if (State == CastState.Finishing)
+				StateChanged += SetUnusedUponReady;
+			else
+			{
+				Cancel();
 
-			State = CastState.Unused;
+				State = CastState.Unused;
+			}
+		}
+
+		void SetUnusedUponReady(Spell sender)
+		{
+			if (State == CastState.Ready)
+			{
+				StateChanged -= SetUnusedUponReady;
+				State = CastState.Unused;
+			}
+			else
+			{
+				throw new Exception("Expected state change from finishing to ready");
+			}
+
+
 		}
 
 		/// <summary>
@@ -228,6 +247,9 @@ namespace Project
 		/// <returns>True if the spell successfully started, otherwise false.</returns>
 		public bool Start(CombatSession session, CombatSprite caster)
 		{
+			if (session.State == CombatSession.CombatState.Ended)
+				return false;
+
 			if (State == CastState.Unused)
 			{
 				Session = session;
