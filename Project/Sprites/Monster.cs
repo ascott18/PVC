@@ -26,9 +26,12 @@ namespace Project
 		{
 			if (CurrentCast == null)
 			{
-				var spellToCast = Spells.First(spell => !spell.IsCasting);
-				if (spellToCast != null)
-					spellToCast.Start(arena, this);
+				foreach (var spell in Spells)
+				{
+					if (spell.Start(arena, this))
+						return;
+				}
+
 			}
 		}
 	}

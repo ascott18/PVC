@@ -12,30 +12,34 @@ namespace Project.Spells
 		private CombatSprite target;
 		private int damage;
 
+		protected SpellTargetedDamage(XElement data) : base(data)
+		{
+			damage = (int)data.Attribute("damage");
+
+			StateChanged += SpellTargetedDamage_StateChanged;
+		}
+
+		void SpellTargetedDamage_StateChanged(Spell sender)
+		{
+			if (State == CastState.Starting)
+			{
+				target = Session.AutoAcquireTarget(Caster);
+				if (target == null)
+					Cancel();
+			}
+
+			else if (State == CastState.Finishing)
+			{
+				target.Health -= damage;
+				target = null;
+			}
+		}
+
 
 		[XmlData.XmlParser("TargetedDamage")]
 		public static Spell Create(XElement data)
 		{
-			return new SpellTargetedDamage()
-			{
-				damage = (int)data.Attribute("damage"),
-				CastDuration = (int)data.Attribute("castTime")
-			};
+			return new SpellTargetedDamage(data);
 		}
-
-		protected override void OnCastStart(CombatSession session, CombatSprite caster)
-		{
-			base.OnCastStart(session, caster);
-			target = session.AutoAcquireTarget(caster);
-		}
-
-		protected override void OnCastFinish()
-		{
-			target.Health -= damage;
-			target = null;
-
-			base.OnCastFinish();
-		}
-
 	}
 }

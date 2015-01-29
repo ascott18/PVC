@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Spells>
-  <TargetedDamage id="1" damage="5" castTime="1"/>
+  <TargetedDamage id="1" damage="5" castTime="1" cooldown="0"/>
+  <TargetedDamage id="2" damage="50" castTime="2" cooldown="5"/>
 </Spells>

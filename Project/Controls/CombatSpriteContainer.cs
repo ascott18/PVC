@@ -33,6 +33,7 @@ namespace Project.Combat
 					image.Image = sprite.Image;
 					nameText.Text = sprite.Name;
 					sprite.HealthChanged += sprite_HealthChanged;
+					sprite_HealthChanged(sprite);
 				}
 			}
 		}

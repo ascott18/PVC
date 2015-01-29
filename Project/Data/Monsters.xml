@@ -6,6 +6,7 @@
   </Monster>
   <Monster id="2" texture="shoerner" name="Pestering Student">
 	<Attributes stamina="8" strength="9" intellect="16" dexterity="9"/>
+	<Spell id="2"/>
 	<Spell id="1"/>
   </Monster>
 </Monsters>

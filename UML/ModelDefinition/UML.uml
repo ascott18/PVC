@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="9f96fb70-1629-4bad-908e-383f924aff7d"
   name="UML" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="6920d1f2-214d-4257-bbfb-55fe5ff4c1f1">
+      <body>Represents the possible state transitions for Cast.State</body>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -209,6 +215,170 @@
         Id="07a1e0f4-3c68-44c5-8c12-369ebed3899c"
         LastKnownName="Package1"
         LastKnownLocation="Package_2112.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="74288c62-1872-41a1-8c84-37c4ee024d02"
+        name="CastStates"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <opaqueAction
+            Id="b6c414fd-b40b-4582-9761-82d840aef18a"
+            name="Unused"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f5fb89aa-fa2e-413f-8437-2b576445d0c4"
+                guard="Start() (Session == null)"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="3cd4a6fb-7b61-423f-99a6-5f313e510a12"
+                  LastKnownName="Used"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="518c2975-07ab-4910-9723-82b77055cc02"
+            name="Ready"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="907c91b6-4a66-4c0b-94e6-40cd9d33595d"
+                guard="Session.Ended()"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b6c414fd-b40b-4582-9761-82d840aef18a"
+                  LastKnownName="Unused"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="472ff1ac-f277-4aa9-8722-82c49f984540"
+                guard="Start()"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="04a4ff2c-cb1d-4a5a-86fe-6e5d4414874a"
+                  LastKnownName="Starting"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="04a4ff2c-cb1d-4a5a-86fe-6e5d4414874a"
+            name="Starting"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="78478b46-3b2b-4bb0-b1e6-19d01e2ff6ad"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e86e75c3-9ace-4af0-9699-28017f79122f"
+                  LastKnownName="Started"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e126a56c-ab82-4e80-a40d-27afeb28b44a"
+                guard="Cancel()"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2afb261c-b351-4595-9485-7e6bfd93d030"
+                  LastKnownName="Canceling"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e86e75c3-9ace-4af0-9699-28017f79122f"
+            name="Started"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="da73664f-a356-4fab-abad-0af52cdbba82"
+                guard="Cancel()"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2afb261c-b351-4595-9485-7e6bfd93d030"
+                  LastKnownName="Canceling"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="d714529c-1d46-4eda-9a45-f34d6cde5513"
+                guard="Cast Completes"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c7f1e403-cda4-4bb8-bb9c-270ce9dde66b"
+                  LastKnownName="Finishing"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c7f1e403-cda4-4bb8-bb9c-270ce9dde66b"
+            name="Finishing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a586bf4a-2c9c-47f8-bfc1-9ce338e17eaf"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="518c2975-07ab-4910-9723-82b77055cc02"
+                  LastKnownName="Ready"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2afb261c-b351-4595-9485-7e6bfd93d030"
+            name="Canceling"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2114ce1a-ac52-4fb0-85a4-ee647190caf6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="518c2975-07ab-4910-9723-82b77055cc02"
+                  LastKnownName="Ready"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode
+            Id="dad9d6c4-8786-4688-8f58-a1d6e7dc7102"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4530a728-5e17-48d2-8763-af67795e7216"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b6c414fd-b40b-4582-9761-82d840aef18a"
+                  LastKnownName="Unused"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="3cd4a6fb-7b61-423f-99a6-5f313e510a12"
+            name="Used"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="af46a636-cd4c-4be8-b176-b027c040fb7d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="518c2975-07ab-4910-9723-82b77055cc02"
+                  LastKnownName="Ready"
+                  LastKnownLocation="UML.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
