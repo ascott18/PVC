@@ -46,7 +46,7 @@ namespace Project
 				PopulateContainers(heroContainers, null);
 				PopulateContainers(monsterContainers, null);
 				if (_combatSession != null)
-					_combatSession.PauseCombat();
+					_combatSession.EndCombat();
 
 				// Wire in the new session.
 				_combatSession = value;

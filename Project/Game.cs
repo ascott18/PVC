@@ -44,17 +44,17 @@ namespace Project
 			if (InCombat)
 				throw new InvalidOperationException("Can't enter combat while in combat");
 
-			currentSession = new CombatSession(Party, enemy);
+			currentSession = new CombatSession(this, Party, enemy);
 			Window.dungeonContainer.Hide();
 			Window.combatArena.Show();
 			Window.combatArena.CombatSession = currentSession;
 
-			currentSession.Ended += currentSession_Ended;
+			currentSession.StateChanged += Session_StateChanged;
 
 			currentSession.StartCombat();
 		}
 
-		void currentSession_Ended(CombatSession sender)
+		void Session_StateChanged(CombatSession sender)
 		{
 			Window.dungeonContainer.Show();
 			Window.combatArena.Hide();

@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,15 +14,35 @@ namespace Project
 {
 	class CombatSession
 	{
+		/// <summary>
+		/// Determines the amount of time that the combat loop will sleep for
+		/// before running again. Prevents unnecessary CPU churn.
+		/// </summary>
+		const int UpdateFrequency = 10;
+
+		/// <summary>
+		/// The Party participating in this combat.
+		/// </summary>
 		public readonly Party Party;
+
+		/// <summary>
+		/// The MonsterPack participating in this combat.
+		/// </summary>
 		public readonly MonsterPack MonsterPack;
 
+		/// <summary>
+		/// A collection of all the CombatSprites from both the Party and the MonsterPack.
+		/// </summary>
 		private readonly IEnumerable<CombatSprite> AllSprites;
 
-		public readonly Dictionary<CombatSprite, CombatSprite> Targets = new Dictionary<CombatSprite, CombatSprite>(); 
+		/// <summary>
+		/// Maps each CombatSprite to the sprite that it is currently targeting.
+		/// </summary>
+		private readonly Dictionary<CombatSprite, CombatSprite> Targets = new Dictionary<CombatSprite, CombatSprite>(); 
 
-		public CombatSession(Party party, MonsterPack monsterPack)
+		public CombatSession(Game game, Party party, MonsterPack monsterPack)
 		{
+			Game = game;
 			State = CombatState.New;
 			
 			Party = party;
@@ -30,13 +51,11 @@ namespace Project
 			AllSprites = Party.Members.Concat(MonsterPack.Members);
 		}
 
+		private readonly Game Game;
 		private readonly Stopwatch _gameTimer = new Stopwatch();
-		private readonly Timer _combatTimer = new Timer();
+		private Thread _combatLoop;
 
-		public event CombatEvent Started;
-		public event CombatEvent Paused;
-		public event CombatEvent Resumed;
-		public event CombatEvent Ended;
+		public event CombatEvent StateChanged;
 
 		public CombatState State { get; private set; }
 
@@ -55,9 +74,11 @@ namespace Project
 
 			AutoAcquireTargets();
 			_gameTimer.Restart();
-			_combatTimer.Interval = 10;
-			_combatTimer.Tick += CombatTimerOnTick;
-			_combatTimer.Start();
+
+			// Start the thread for the game loop.
+			// This will drive the update cycles for checking spell cast completion, etc.
+			_combatLoop = new Thread(CombatLoop);
+			_combatLoop.Start(this);
 
 			foreach (var sprite in AllSprites)
 			{
@@ -66,7 +87,40 @@ namespace Project
 
 			State = CombatState.Acitve;
 
-			if (Started != null) Started(this);
+			if (StateChanged != null) StateChanged(this);
+		}
+
+		private void CombatLoop(object session)
+		{
+			var sess = session as CombatSession;
+			var timer = new Stopwatch();
+			timer.Start();
+			var handler = new MethodInvoker(CombatTimerOnTick);
+
+			while (sess.State != CombatState.Ended)
+			{
+				var start = timer.ElapsedMilliseconds;
+
+				// Don't bother invoking if we're paused.
+				// There is checking for this in the handler, too,
+				// but check here as well so we don't waste time.
+				if (sess.State == CombatState.Acitve)
+				{
+					// This throws errors if we try and invoke on the window
+					// after it has been disposed (e.g. the user closed it).
+					if (Game.Window.IsDisposed)
+						return;
+
+					// We must call Invoke on something from the main thread.
+					Game.Window.Invoke(handler);
+				}
+
+				// We wait here so we aren't updating any more than we need to.
+				var elapsed = timer.ElapsedMilliseconds - start;
+				var wait = UpdateFrequency - (int)elapsed;
+				if (wait > 0)
+					Thread.Sleep(wait);
+			}
 		}
 
 		private void sprite_HealthChanged(CombatSprite sender)
@@ -86,11 +140,10 @@ namespace Project
 		public void PauseCombat()
 		{
 			_gameTimer.Stop();
-			_combatTimer.Stop();
 
 			State = CombatState.Paused;
 
-			if (Paused != null) Paused(this);
+			if (StateChanged != null) StateChanged(this);
 		}
 
 		public void ResumeCombat()
@@ -99,11 +152,10 @@ namespace Project
 				return;
 
 			_gameTimer.Start();
-			_combatTimer.Start();
 
 			State = CombatState.Acitve;
 
-			if (Resumed != null) Resumed(this);
+			if (StateChanged != null) StateChanged(this);
 		}
 
 		public void EndCombat()
@@ -114,13 +166,12 @@ namespace Project
 				return;
 
 			_gameTimer.Stop();
-			_combatTimer.Stop();
-
-			_combatTimer.Tick -= CombatTimerOnTick;
 
 			State = CombatState.Ended;
 
-			if (Ended != null) Ended(this);
+			_combatLoop.Join();
+
+			if (StateChanged != null) StateChanged(this);
 		}
 
 
@@ -185,8 +236,13 @@ namespace Project
 		}
 
 
-		private void CombatTimerOnTick(object sender, EventArgs eventArgs)
+		private void CombatTimerOnTick()
 		{
+			// Make sure the game in in progress before trying to update here.
+			// Don't update if paused, or if ended.
+			if (State != CombatState.Acitve)
+				return;
+
 			if (Update != null) Update(this);
 
 			foreach (var monster in MonsterPack.Members)

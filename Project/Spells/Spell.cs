@@ -126,21 +126,21 @@ namespace Project
 
 				case CastState.Ready:
 					CastStartTime = 0;
-					Session.Update -= session_Update;
+					Session.Update -= Session_Update;
 					break;
 
 				case CastState.Started:
 					CastStartTime = Session.GetTime();
-					Session.Update += session_Update;
+					Session.Update += Session_Update;
 					break;
 
 				case CastState.Used:
-					Session.Ended += session_Ended;
+					Session.StateChanged += Session_StateChanged;
 					break;
 
 				case CastState.Unused:
 					LastCastTime = 0;
-					Session.Ended -= session_Ended;
+					Session.StateChanged -= Session_StateChanged;
 					Session = null;
 					Caster = null;
 					break;
@@ -178,7 +178,7 @@ namespace Project
 			return parserMethod(spellElement);
 		}
 
-		private void session_Update(CombatSession sender)
+		private void Session_Update(CombatSession sender)
 		{
 			if (State == CastState.Started)
 			{
@@ -196,8 +196,11 @@ namespace Project
 			}
 		}
 
-		private void session_Ended(CombatSession sender)
+		private void Session_StateChanged(CombatSession sender)
 		{
+			if (sender.State != CombatSession.CombatState.Ended)
+				return;
+
 			if (State == CastState.Finishing)
 				StateChanged += SetUnusedUponReady;
 			else
@@ -208,7 +211,7 @@ namespace Project
 			}
 		}
 
-		void SetUnusedUponReady(Spell sender)
+		private void SetUnusedUponReady(Spell sender)
 		{
 			if (State == CastState.Ready)
 			{
