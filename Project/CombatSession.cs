@@ -165,7 +165,7 @@ namespace Project
 
 			State = CombatState.Ended;
 
-			combatLoop.Join();
+			//combatLoop.Join();
 
 			if (StateChanged != null) StateChanged(this);
 		}

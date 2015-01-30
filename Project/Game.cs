@@ -56,6 +56,9 @@ namespace Project
 
 		void Session_StateChanged(CombatSession sender)
 		{
+			if (sender.State != CombatSession.CombatState.Ended)
+				return;
+
 			Window.dungeonContainer.Show();
 			Window.combatArena.Hide();
 
