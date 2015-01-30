@@ -3,10 +3,10 @@
   <Hero id="1" texture="milton" name="Milton">
 	<Attributes stamina="14" strength="14" intellect="8" dexterity="9"/>
 	<Item id="1"/>
-	<Spell/>
+	<Spell id="1"/>
   </Hero>
   <Hero id="2" texture="stu" name="Stu Steiner">
 	<Attributes stamina="11" strength="12" intellect="15" dexterity="7"/>
-	<Spell/>
+	<Spell id="1"/>
   </Hero>
 </Heroes>

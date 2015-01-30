@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
+﻿using System.Drawing;
 using System.Xml.Linq;
+using Project.Data;
 
-namespace Project
+namespace Project.Dungeon
 {
 	/// <summary>
 	/// Represents a door in a dungeon. When the player interacts with a door,

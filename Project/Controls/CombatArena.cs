@@ -1,19 +1,14 @@
-﻿using System;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using Project.Combat;
+using Project.Sprites;
 
-namespace Project
+namespace Project.Controls
 {
 	public partial class CombatArena : UserControl
 	{
 		private readonly CombatSpriteContainer[] heroContainers = new CombatSpriteContainer[Party.MaxHeroes];
 		private readonly CombatSpriteContainer[] monsterContainers = new CombatSpriteContainer[MonsterPack.MaxMonsters];
-		private CombatSession _combatSession;
+		private CombatSession combatSession;
 
 		public CombatArena()
 		{
@@ -39,19 +34,19 @@ namespace Project
 
 		internal CombatSession CombatSession
 		{
-			get { return _combatSession; }
+			get { return combatSession; }
 			set
 			{
 				// Stop old session if there was one
 				PopulateContainers(heroContainers, null);
 				PopulateContainers(monsterContainers, null);
-				if (_combatSession != null)
-					_combatSession.PauseCombat();
+				if (combatSession != null)
+					combatSession.EndCombat();
 
 				// Wire in the new session.
-				_combatSession = value;
-				PopulateContainers(heroContainers, _combatSession.Party);
-				PopulateContainers(monsterContainers, _combatSession.MonsterPack);
+				combatSession = value;
+				PopulateContainers(heroContainers, combatSession.Party);
+				PopulateContainers(monsterContainers, combatSession.MonsterPack);
 			}
 		}
 

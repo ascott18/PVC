@@ -1,4 +1,4 @@
-﻿namespace Project
+﻿namespace Project.Controls
 {
 	partial class MainWindow
 	{
@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dungeonContainer = new Project.DungeonContainer();
-			this.combatArena = new Project.CombatArena();
+			this.dungeonContainer = new DungeonContainer();
+			this.combatArena = new CombatArena();
 			this.SuspendLayout();
 			// 
 			// dungeonContainer
@@ -39,12 +39,13 @@
 			this.dungeonContainer.Size = new System.Drawing.Size(700, 700);
 			this.dungeonContainer.TabIndex = 0;
 			// 
-			// combatArena1
+			// combatArena
 			// 
-			this.combatArena.Location = new System.Drawing.Point(777, 96);
+			this.combatArena.Location = new System.Drawing.Point(193, 62);
 			this.combatArena.Name = "combatArena";
 			this.combatArena.Size = new System.Drawing.Size(386, 424);
 			this.combatArena.TabIndex = 1;
+			this.combatArena.Visible = false;
 			// 
 			// MainWindow
 			// 

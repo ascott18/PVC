@@ -1,17 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.XPath;
+using Project.Data;
+using Project.Items;
 
-namespace Project
+namespace Project.Sprites
 {
 	class Hero : CombatSprite
 	{
 		public readonly int HeroID;
+
+		public override int MinHealth { get { return 1; } }
+
+		public bool IsRetreated { get { return Health == 1; } }
+
+		public override bool IsActive { get { return !IsRetreated; } }
 
 		public Hero(int heroId)
 		{

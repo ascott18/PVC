@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="b81fc400-a829-47b0-9fb4-3c89b048e5c8" name="CastStates" linkedPackageId="96c908ea-8abd-4e34-8c12-41394c99c03d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="f0989b0b-5616-4487-8cbb-d03a49875137">
+      <elementDefinition Id="6920d1f2-214d-4257-bbfb-55fe5ff4c1f1" />
+      <body>Represents the possible state transitions for Cast.State</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="f368c6e8-9c80-4e73-a3ec-32494c8ec869" name="CastStates" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="74288c62-1872-41a1-8c84-37c4ee024d02" />
+        <nodes>
+          <opaqueAction Id="f07ed97a-42fb-470b-9f89-3947d20a8824" name="Unused" isLeaf="false">
+            <elementDefinition Id="b6c414fd-b40b-4582-9761-82d840aef18a" />
+            <flowNodeTargets>
+              <controlFlow Id="89a76fc9-7add-492d-84d8-622df25777c2" guard="Start() (Session == null)" isLeaf="false">
+                <opaqueActionMoniker Id="1443616e-c4ff-4554-b750-19a39f0cc126" LastKnownName="Used" />
+                <elementDefinition Id="f5fb89aa-fa2e-413f-8437-2b576445d0c4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a037c897-23dc-4b95-9d24-41bc68c0d5d2" name="Ready" isLeaf="false">
+            <elementDefinition Id="518c2975-07ab-4910-9723-82b77055cc02" />
+            <flowNodeTargets>
+              <controlFlow Id="0d110404-7348-4d45-964f-e8009ad192a8" guard="Session.Ended()" isLeaf="false">
+                <opaqueActionMoniker Id="f07ed97a-42fb-470b-9f89-3947d20a8824" LastKnownName="Unused" />
+                <elementDefinition Id="907c91b6-4a66-4c0b-94e6-40cd9d33595d" />
+              </controlFlow>
+              <controlFlow Id="211815cb-c6a4-4b16-98a2-f0a564ed22ba" guard="Start()" isLeaf="false">
+                <opaqueActionMoniker Id="05631a14-aacf-4413-bfa0-fdc6be56d18b" LastKnownName="Starting" />
+                <elementDefinition Id="472ff1ac-f277-4aa9-8722-82c49f984540" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="05631a14-aacf-4413-bfa0-fdc6be56d18b" name="Starting" isLeaf="false">
+            <elementDefinition Id="04a4ff2c-cb1d-4a5a-86fe-6e5d4414874a" />
+            <flowNodeTargets>
+              <controlFlow Id="31bbfc34-1e0b-411e-9823-476d442dbd1b" isLeaf="false">
+                <opaqueActionMoniker Id="d2c99ded-b693-4523-ab50-f49f3fa69339" LastKnownName="Started" />
+                <elementDefinition Id="78478b46-3b2b-4bb0-b1e6-19d01e2ff6ad" />
+              </controlFlow>
+              <controlFlow Id="d009b3dd-784c-45e4-98cf-4089e813a934" guard="Cancel()" isLeaf="false">
+                <opaqueActionMoniker Id="f89dfb87-2f0c-4493-a0f9-6666c4257d28" LastKnownName="Canceling" />
+                <elementDefinition Id="e126a56c-ab82-4e80-a40d-27afeb28b44a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="d2c99ded-b693-4523-ab50-f49f3fa69339" name="Started" isLeaf="false">
+            <elementDefinition Id="e86e75c3-9ace-4af0-9699-28017f79122f" />
+            <flowNodeTargets>
+              <controlFlow Id="8f59d33b-10d3-4e81-bac6-ff976724b7b8" guard="Cancel()" isLeaf="false">
+                <opaqueActionMoniker Id="f89dfb87-2f0c-4493-a0f9-6666c4257d28" LastKnownName="Canceling" />
+                <elementDefinition Id="da73664f-a356-4fab-abad-0af52cdbba82" />
+              </controlFlow>
+              <controlFlow Id="ef532852-c2d0-46c5-87c3-490351f9a3ce" guard="Cast Completes" isLeaf="false">
+                <opaqueActionMoniker Id="b59f21f7-3153-445a-b4eb-4b2a327df048" LastKnownName="Finishing" />
+                <elementDefinition Id="d714529c-1d46-4eda-9a45-f34d6cde5513" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b59f21f7-3153-445a-b4eb-4b2a327df048" name="Finishing" isLeaf="false">
+            <elementDefinition Id="c7f1e403-cda4-4bb8-bb9c-270ce9dde66b" />
+            <flowNodeTargets>
+              <controlFlow Id="6c667d3a-b361-4cb8-b504-68f3bf3180c3" isLeaf="false">
+                <opaqueActionMoniker Id="a037c897-23dc-4b95-9d24-41bc68c0d5d2" LastKnownName="Ready" />
+                <elementDefinition Id="a586bf4a-2c9c-47f8-bfc1-9ce338e17eaf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f89dfb87-2f0c-4493-a0f9-6666c4257d28" name="Canceling" isLeaf="false">
+            <elementDefinition Id="2afb261c-b351-4595-9485-7e6bfd93d030" />
+            <flowNodeTargets>
+              <controlFlow Id="b489f332-18cd-4947-b9cb-32ed4d475f1d" isLeaf="false">
+                <opaqueActionMoniker Id="a037c897-23dc-4b95-9d24-41bc68c0d5d2" LastKnownName="Ready" />
+                <elementDefinition Id="2114ce1a-ac52-4fb0-85a4-ee647190caf6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode Id="ecdff8b8-cce1-486a-99d2-55991a877d34" name="Initial1" isLeaf="false">
+            <elementDefinition Id="dad9d6c4-8786-4688-8f58-a1d6e7dc7102" />
+            <flowNodeTargets>
+              <controlFlow Id="ee45c423-dcfb-425c-8ee7-cba38e502d4b" isLeaf="false">
+                <opaqueActionMoniker Id="f07ed97a-42fb-470b-9f89-3947d20a8824" LastKnownName="Unused" />
+                <elementDefinition Id="4530a728-5e17-48d2-8763-af67795e7216" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="1443616e-c4ff-4554-b750-19a39f0cc126" name="Used" isLeaf="false">
+            <elementDefinition Id="3cd4a6fb-7b61-423f-99a6-5f313e510a12" />
+            <flowNodeTargets>
+              <controlFlow Id="aec342f7-d1c4-4558-ae1c-c9a9f54e0c39" isLeaf="false">
+                <opaqueActionMoniker Id="a037c897-23dc-4b95-9d24-41bc68c0d5d2" LastKnownName="Ready" />
+                <elementDefinition Id="af46a636-cd4c-4be8-b176-b027c040fb7d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+    <packageHasNamedElement>
+      <referencedType Id="f6bc867a-dcea-4518-a4b5-b4ab3cc46d62" name="UserControl" isAbstract="false" isLeaf="false" cachedFullName="UML::System::Windows::Forms::UserControl">
+        <elementDefinition Id="64d86e66-487b-43d2-b082-2b485b2f80e6" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="96c908ea-8abd-4e34-8c12-41394c99c03d" name="UML">
+    <elementDefinition Id="9f96fb70-1629-4bad-908e-383f924aff7d" />
+    <profileInstances>
+      <packageHasProfileInstances Id="a127d1e6-5429-405b-93ae-6cbf524f5e5d">
+        <profileInstance Id="d99a4289-95a1-42e2-9529-25cff42eee92" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="25f0a9d3-e745-48d4-84f5-d47a1cdd44ec">
+        <profileInstance Id="d5827a3d-d30b-4f51-8afd-71e6981c2686" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6fceb169-92f4-4848-aa6e-145e2bce6991">
+        <profileInstance Id="bde777fb-5865-4457-8f1a-179ba43272d9" name="CSharpProfile">
+          <elementDefinition Id="89172921-1ed1-48af-a40b-5e74160cbbca" />
+        </profileInstance>
+        <elementDefinition Id="ea3a2215-4d84-4078-9d7d-94a4990c02e5" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

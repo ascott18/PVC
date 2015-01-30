@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.XPath;
+using Project.Data;
 
-namespace Project
+namespace Project.Sprites
 {
 	class Monster : CombatSprite
 	{
@@ -20,14 +16,21 @@ namespace Project
 			var monsterElement = xDoc.XPathSelectElement(String.Format("Monsters/Monster[@id='{0}']", monsterId));
 
 			ParseCommonAttributes(monsterElement);
+
+			RecalculateAttributes();
 		}
 
-		public void DoAction(CombatSession arena, Stopwatch gameTimer)
+		public void DoAction(CombatSession arena)
 		{
-			var target = arena.AutoAcquireTarget(this);
-			if (target == null) return;
+			if (CurrentCast == null)
+			{
+				foreach (var spell in Spells)
+				{
+					if (spell.Start(arena, this))
+						return;
+				}
 
-			target.Health -= 5;
+			}
 		}
 	}
 }

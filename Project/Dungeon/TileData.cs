@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.XPath;
+using Project.Data;
 using Project.Properties;
 
-namespace Project
+namespace Project.Dungeon
 {
 	/// <summary>
 	/// TileData is an immutable class that represents the static information about a tile

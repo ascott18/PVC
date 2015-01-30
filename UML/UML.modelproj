@@ -25,10 +25,23 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="CastStates.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CastStates.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>CastStates.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package1_1921.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package1_2110.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_2219.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_2229.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package2_1921.uml">
@@ -37,16 +50,25 @@
     <Content Include="ModelDefinition\Package2_2110.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package2_2219.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package3_1921.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package3_2110.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package3_2219.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package4_1921.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package4_2110.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package4_2219.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package5_1921.uml">
@@ -59,6 +81,18 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_2112.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2219.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2225.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2229.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2234.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="UMLClassDiagram.classdiagram">

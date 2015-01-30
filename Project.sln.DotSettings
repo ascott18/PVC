@@ -1,0 +1,7 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=ID/@EntryIndexedValue">ID</s:String>
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=5957A712F439D74EBE419BA92B074A1D/AbsolutePath/@EntryValue">C:\Users\Andrew\Desktop\PVC\Project\Project.csproj.DotSettings</s:String>
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=5957A712F439D74EBE419BA92B074A1D/RelativePath/@EntryValue">..\Project\Project.csproj.DotSettings</s:String>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=5957A712F439D74EBE419BA92B074A1D/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File5957A712F439D74EBE419BA92B074A1D/@KeyIndexDefined">True</s:Boolean>
+	<s:Double x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File5957A712F439D74EBE419BA92B074A1D/RelativePriority/@EntryValue">1</s:Double></wpf:ResourceDictionary>

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Project.Dungeon;
 
-namespace Project
+namespace Project.Sprites
 {
 	abstract class DungeonSprite : TileObject
 	{
@@ -16,7 +14,7 @@ namespace Project
 			throw new NotImplementedException();
 		}
 
-		public DungeonSprite(Point loc) : base(loc)
+		protected DungeonSprite(Point loc) : base(loc)
 		{
 			
 		}

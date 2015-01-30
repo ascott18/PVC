@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using Project.Sprites;
 
-namespace Project.Combat
+namespace Project.Controls
 {
 	public partial class CombatSpriteContainer : UserControl
 	{
@@ -33,6 +34,7 @@ namespace Project.Combat
 					image.Image = sprite.Image;
 					nameText.Text = sprite.Name;
 					sprite.HealthChanged += sprite_HealthChanged;
+					sprite_HealthChanged(sprite);
 				}
 			}
 		}

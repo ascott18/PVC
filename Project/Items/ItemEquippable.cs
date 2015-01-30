@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
+using Project.Data;
+using Project.Sprites;
 
-namespace Project
+namespace Project.Items
 {
 	class ItemEquippable : Item
 	{

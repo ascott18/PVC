@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using System.Xml.XPath;
+using Project.Data;
 
-namespace Project
+namespace Project.Items
 {
 	abstract class Item
 	{
 		public readonly int ItemID;
 
-		public Item(int itemId)
+		protected Item(int itemId)
 		{
 			ItemID = itemId;
 		}
@@ -33,7 +28,7 @@ namespace Project
 
 			var parserMethod = methods[elementName];
 
-			return parserMethod(itemElement); ;
+			return parserMethod(itemElement);
 		}
 	}
 }

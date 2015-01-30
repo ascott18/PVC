@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project.Properties;
+using Project.Controls;
+using Project.Dungeon;
+using Project.Sprites;
 
 namespace Project
 {
@@ -15,6 +15,8 @@ namespace Project
 
 		public readonly Party Party;
 		private readonly Dictionary<int, DungeonMap> maps = new Dictionary<int, DungeonMap>();
+
+		private CombatSession currentSession;
 
 		internal DungeonMap CurrentMap { get; private set; }
 
@@ -39,10 +41,39 @@ namespace Project
 
 		public void EnterCombat(MonsterPack enemy)
 		{
-			var session = new CombatSession(Party, enemy);
-			Window.combatArena.CombatSession = session;
-			session.StartCombat();
+			if (InCombat)
+				throw new InvalidOperationException("Can't enter combat while in combat");
+
+			currentSession = new CombatSession(this, Party, enemy);
+			Window.dungeonContainer.Hide();
+			Window.combatArena.Show();
+			Window.combatArena.CombatSession = currentSession;
+
+			currentSession.StateChanged += Session_StateChanged;
+
+			currentSession.StartCombat();
 		}
+
+		void Session_StateChanged(CombatSession sender)
+		{
+			if (sender.State != CombatSession.CombatState.Ended)
+				return;
+
+			Window.dungeonContainer.Show();
+			Window.combatArena.Hide();
+
+			foreach (var hero in Party.Members.Cast<Hero>())
+			{
+				if (hero.IsRetreated)
+					hero.Health = hero.MaxHealth/10;
+			}
+		}
+
+		public bool InCombat
+		{
+			get { return (currentSession != null && currentSession.State != CombatSession.CombatState.Ended); }
+		}
+
 
 		internal Game(MainWindow window)
 		{
@@ -58,6 +89,9 @@ namespace Project
 
 		public bool ProcessKey(Keys keyData)
 		{
+			if (InCombat)
+				return false;
+
 			switch (keyData)
 			{
 				case Keys.Up:
@@ -94,9 +128,9 @@ namespace Project
 				if (location.X < 0)
 				{
 					dir = "W";
-					location.X = MapData.DIM_X-1;
+					location.X = MapData.DimX-1;
 				}
-				else if (location.X >= MapData.DIM_X)
+				else if (location.X >= MapData.DimX)
 				{
 					dir = "E";
 					location.X = 0;
@@ -104,9 +138,9 @@ namespace Project
 				else if (location.Y < 0)
 				{
 					dir = "N";
-					location.Y = MapData.DIM_Y-1;
+					location.Y = MapData.DimY-1;
 				}
-				else if (location.Y >= MapData.DIM_Y)
+				else if (location.Y >= MapData.DimY)
 				{
 					dir = "S";
 					location.Y = 0;

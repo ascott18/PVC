@@ -5,11 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Project.Properties;
 
-namespace Project
+namespace Project.Data
 {
 	/// <summary>
 	/// XmlData is a utility class for parsing data from XML.
