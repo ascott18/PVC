@@ -1,4 +1,4 @@
-﻿namespace Project.Combat
+﻿namespace Project.Controls
 {
 	partial class CombatSpriteContainer
 	{

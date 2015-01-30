@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Project.Data;
+using Project.Spells;
 
-namespace Project
+namespace Project.Sprites
 {
 	class CombatSprite
 	{
@@ -22,9 +21,9 @@ namespace Project
 			get { return Spells.FirstOrDefault(spell => spell.IsCasting); }
 		}
 
-		private int _health = 1;
-		private Attributes _attributes;
-		private int _maxHealth = 1;
+		private int health = 1;
+		private int maxHealth = 1;
+		private Attributes attributes;
 
 		public virtual int MinHealth
 		{
@@ -33,10 +32,10 @@ namespace Project
 
 		public int Health
 		{
-			get { return _health; }
+			get { return health; }
 			set
 			{
-				_health = Math.Max(value, MinHealth); // Health can't be < MinHealth
+				health = Math.Max(value, MinHealth); // Health can't be < MinHealth
 				if (HealthChanged != null) HealthChanged(this);
 			}
 		}
@@ -48,13 +47,13 @@ namespace Project
 
 		public int MaxHealth
 		{
-			get { return _maxHealth; }
+			get { return maxHealth; }
 			private set
 			{
 				if (value < 1)
 					throw new ArgumentOutOfRangeException("value", value, "MaxHealth cannot be less than 1");
 
-				_maxHealth = value;
+				maxHealth = value;
 				if (HealthChanged != null) HealthChanged(this);
 			}
 		}
@@ -63,15 +62,15 @@ namespace Project
 
 		public Attributes Attributes
 		{
-			get { return _attributes; }
+			get { return attributes; }
 			protected set
 			{
-				_attributes = value;
+				attributes = value;
 				const int healthPerStamina = 10;
 
 				// Scale up the current health so that the percent health remains the same
 				// before and after the adjustment to it.
-				var newMaxHealth = _attributes.Stamina*healthPerStamina;
+				var newMaxHealth = attributes.Stamina*healthPerStamina;
 				var healthScaleFactor = (double)newMaxHealth/MaxHealth;
 				Health = (int)(Health * healthScaleFactor);
 
@@ -114,7 +113,7 @@ namespace Project
 
 		public static Attributes operator +(Attributes a1, Attributes a2)
 		{
-			return new Attributes()
+			return new Attributes
 			{
 				Stamina = a1.Stamina + a2.Stamina,
 				Strength = a1.Strength + a2.Strength,
@@ -127,7 +126,7 @@ namespace Project
 		{
 			if (element == null) throw new ArgumentNullException("element");
 
-			return new Attributes()
+			return new Attributes
 			{
 				Stamina = int.Parse(element.Attribute("stamina").Value),
 				Strength = int.Parse(element.Attribute("strength").Value),

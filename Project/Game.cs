@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project.Properties;
+using Project.Controls;
+using Project.Dungeon;
+using Project.Sprites;
 
 namespace Project
 {
@@ -125,9 +125,9 @@ namespace Project
 				if (location.X < 0)
 				{
 					dir = "W";
-					location.X = MapData.DIM_X-1;
+					location.X = MapData.DimX-1;
 				}
-				else if (location.X >= MapData.DIM_X)
+				else if (location.X >= MapData.DimX)
 				{
 					dir = "E";
 					location.X = 0;
@@ -135,9 +135,9 @@ namespace Project
 				else if (location.Y < 0)
 				{
 					dir = "N";
-					location.Y = MapData.DIM_Y-1;
+					location.Y = MapData.DimY-1;
 				}
-				else if (location.Y >= MapData.DIM_Y)
+				else if (location.Y >= MapData.DimY)
 				{
 					dir = "S";
 					location.Y = 0;

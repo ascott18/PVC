@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Project.Data;
 
-namespace Project
+namespace Project.Dungeon
 {
 	/// <summary>
 	/// MapData represents a complete Map element parsed from Maps.xml.
@@ -19,12 +18,12 @@ namespace Project
 		/// <summary>
 		/// The number of tiles in a map in the horizonal direction.
 		/// </summary>
-		public const int DIM_X = 14;
+		public const int DimX = 14;
 
 		/// <summary>
 		/// The number of tiles in a map in the vertical direction.
 		/// </summary>
-		public const int DIM_Y = 14;
+		public const int DimY = 14;
 
 		/// <summary>
 		/// Holds cached MapData instances, keyed by their mapID.
@@ -42,7 +41,7 @@ namespace Project
 		/// The TileData objects that represent the base data of each tile of this map,
 		/// pased from the Tiles element of this MapData's corresponding Map element.
 		/// </summary>
-		private readonly TileData[,] tiles = new TileData[DIM_X, DIM_Y];
+		private readonly TileData[,] tiles = new TileData[DimX, DimY];
 
 		private XElement mapElement;
 
@@ -143,15 +142,15 @@ namespace Project
 			int index = 0;
 			foreach (Match match in Regex.Matches(tileDataRaw, @"[0-9]+"))
 			{
-				if (index >= DIM_X * DIM_Y)
+				if (index >= DimX * DimY)
 					throw new IndexOutOfRangeException(String.Format("Too many tiles defined for map ID {0}", mapID));
 
-				mapData.tiles[index % DIM_X, index / DIM_X] = TileData.GetTileData(int.Parse(match.Value));
+				mapData.tiles[index % DimX, index / DimX] = TileData.GetTileData(int.Parse(match.Value));
 
 				index++;
 			}
 
-			if (index != DIM_X * DIM_Y)
+			if (index != DimX * DimY)
 				throw new IndexOutOfRangeException(String.Format("Not enough tiles defined for map ID {0}", mapID));
 
 

@@ -1,6 +1,4 @@
-﻿using Project.Combat;
-
-namespace Project
+﻿namespace Project.Controls
 {
 	partial class CombatArena
 	{

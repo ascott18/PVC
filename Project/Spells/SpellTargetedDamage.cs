@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
+using Project.Data;
+using Project.Sprites;
 
 namespace Project.Spells
 {
 	internal class SpellTargetedDamage : Spell
 	{
 		private CombatSprite target;
-		private int damage;
+		private readonly int damage;
 
 		protected SpellTargetedDamage(XElement data) : base(data)
 		{

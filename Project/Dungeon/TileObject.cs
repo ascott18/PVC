@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using Project.Properties;
 
-namespace Project
+namespace Project.Dungeon
 {
 	/// <summary>
 	/// TileObject represends some entity that can occupy a Tile of a Map.
@@ -45,26 +40,6 @@ namespace Project
 			if (tile != null)
 			{
 				tile.TileObject = this;
-			}
-		}
-
-		/// <summary>
-		/// An attribute to be used on methods that will parse an incoming
-		/// XElement with name elementName that is a child of an Object element
-		/// in Maps.xml. The method must return a new TileObject based on the data
-		/// in the XElement.
-		/// </summary>
-		public class TileObjectXmlParserAttribute : Attribute
-		{
-			public readonly string ElementName;
-			/// <summary>
-			/// Declare a method as one that will take an incoming XElement, parse it,
-			/// and return a new TileObject instance.
-			/// </summary>
-			/// <param name="elementName">The XElement.Name that this method will parse.</param>
-			public TileObjectXmlParserAttribute(string elementName)
-			{
-				ElementName = elementName;
 			}
 		}
 	}

@@ -1,27 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
-namespace Project
+namespace Project.Dungeon
 {
 	/// <summary>
 	/// DungeonMap represents a single map in a dungeon.
 	/// For our purposes, the whole game is a single dungeon.
 	/// Maps are 14x14 grids of Tiles.
 	/// </summary>
-	//(TODO: Consider renaming the Dungeon class?)
 	class DungeonMap
 	{
-		public const int DIM_X = 14;
-		public const int DIM_Y = 14;
 		public readonly int MapID;
 		public readonly MapData MapData;
 		public readonly Game Game;
 
-		private readonly Tile[,] tiles = new Tile[DIM_X,DIM_Y];
+		private readonly Tile[,] tiles = new Tile[MapData.DimX, MapData.DimY];
 
 		public DungeonMap(int mapId, Game game)
 		{
@@ -30,9 +22,9 @@ namespace Project
 
 			MapData = MapData.GetMapData(mapId);
 
-			for (int x = 0; x < DIM_X; x++)
+			for (int x = 0; x < MapData.DimX; x++)
 			{
-				for (int y = 0; y < DIM_Y; y++)
+				for (int y = 0; y < MapData.DimY; y++)
 				{
 					var tile = new Tile(this, new Point(x, y));
 					tiles[x, y] = tile;
@@ -58,7 +50,7 @@ namespace Project
 
 		public Tile GetTile(Point point)
 		{
-			if (point.X >= 0 && point.Y >= 0 && point.X < DIM_X && point.Y < DIM_Y)
+			if (point.X >= 0 && point.Y >= 0 && point.X < MapData.DimX && point.Y < MapData.DimY)
 				return tiles[point.X, point.Y];
 
 			return null;

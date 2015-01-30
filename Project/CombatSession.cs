@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Deployment.Application;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project.Sprites;
 
 namespace Project
 {
@@ -33,27 +29,27 @@ namespace Project
 		/// <summary>
 		/// A collection of all the CombatSprites from both the Party and the MonsterPack.
 		/// </summary>
-		private readonly IEnumerable<CombatSprite> AllSprites;
+		private readonly IEnumerable<CombatSprite> allSprites;
 
 		/// <summary>
 		/// Maps each CombatSprite to the sprite that it is currently targeting.
 		/// </summary>
-		private readonly Dictionary<CombatSprite, CombatSprite> Targets = new Dictionary<CombatSprite, CombatSprite>(); 
+		private readonly Dictionary<CombatSprite, CombatSprite> targets = new Dictionary<CombatSprite, CombatSprite>(); 
 
 		public CombatSession(Game game, Party party, MonsterPack monsterPack)
 		{
-			Game = game;
+			this.game = game;
 			State = CombatState.New;
 			
 			Party = party;
 			MonsterPack = monsterPack;
 
-			AllSprites = Party.Members.Concat(MonsterPack.Members);
+			allSprites = Party.Members.Concat(MonsterPack.Members);
 		}
 
-		private readonly Game Game;
-		private readonly Stopwatch _gameTimer = new Stopwatch();
-		private Thread _combatLoop;
+		private readonly Game game;
+		private readonly Stopwatch gameTimer = new Stopwatch();
+		private Thread combatLoop;
 
 		public event CombatEvent StateChanged;
 
@@ -73,14 +69,14 @@ namespace Project
 				throw new InvalidOperationException("Can't start an already-started combat session.");
 
 			AutoAcquireTargets();
-			_gameTimer.Restart();
+			gameTimer.Restart();
 
 			// Start the thread for the game loop.
 			// This will drive the update cycles for checking spell cast completion, etc.
-			_combatLoop = new Thread(CombatLoop);
-			_combatLoop.Start(this);
+			combatLoop = new Thread(CombatLoop);
+			combatLoop.Start(this);
 
-			foreach (var sprite in AllSprites)
+			foreach (var sprite in allSprites)
 			{
 				sprite.HealthChanged += sprite_HealthChanged;
 			}
@@ -108,11 +104,11 @@ namespace Project
 				{
 					// This throws errors if we try and invoke on the window
 					// after it has been disposed (e.g. the user closed it).
-					if (Game.Window.IsDisposed)
+					if (game.Window.IsDisposed)
 						return;
 
 					// We must call Invoke on something from the main thread.
-					Game.Window.Invoke(handler);
+					game.Window.Invoke(handler);
 				}
 
 				// We wait here so we aren't updating any more than we need to.
@@ -139,7 +135,7 @@ namespace Project
 
 		public void PauseCombat()
 		{
-			_gameTimer.Stop();
+			gameTimer.Stop();
 
 			State = CombatState.Paused;
 
@@ -151,7 +147,7 @@ namespace Project
 			if (State != CombatState.Paused)
 				return;
 
-			_gameTimer.Start();
+			gameTimer.Start();
 
 			State = CombatState.Acitve;
 
@@ -165,11 +161,11 @@ namespace Project
 			if (State != CombatState.Acitve && State != CombatState.Paused)
 				return;
 
-			_gameTimer.Stop();
+			gameTimer.Stop();
 
 			State = CombatState.Ended;
 
-			_combatLoop.Join();
+			combatLoop.Join();
 
 			if (StateChanged != null) StateChanged(this);
 		}
@@ -177,12 +173,12 @@ namespace Project
 
 		public double GetTime()
 		{
-			return (double)_gameTimer.ElapsedMilliseconds / 1000;
+			return (double)gameTimer.ElapsedMilliseconds / 1000;
 		}
 
 		public void AutoAcquireTargets()
 		{
-			foreach (var sprite in AllSprites)
+			foreach (var sprite in allSprites)
 			{
 				AutoAcquireTarget(sprite);
 			}
@@ -202,7 +198,7 @@ namespace Project
 		private CombatSprite AutoAcquireTarget(CombatSprite sprite, DungeonSprite allies, DungeonSprite enemies)
 		{
 			CombatSprite target;
-			Targets.TryGetValue(sprite, out target);
+			targets.TryGetValue(sprite, out target);
 
 			if (target == null || !target.IsActive)
 			{
@@ -229,7 +225,7 @@ namespace Project
 					target = aliveEnemies.ElementAt(targetIndex);
 				}
 
-				Targets[sprite] = target;
+				targets[sprite] = target;
 			}
 
 			return target;

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Project.Data;
+using Project.Sprites;
 
-namespace Project
+namespace Project.Spells
 {
 	internal abstract class Spell
 	{
@@ -20,8 +17,8 @@ namespace Project
 		public double CastStartTime { get; protected set; }
 		public double CastDuration { get; protected set; }
 
-		public CombatSession Session { get; protected set; }
-		public CombatSprite Caster { get; protected set; }
+		public CombatSession Session { get; private set; }
+		public CombatSprite Caster { get; private set; }
 
 		public virtual bool CanCast
 		{

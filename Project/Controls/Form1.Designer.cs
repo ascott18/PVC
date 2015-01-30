@@ -1,4 +1,4 @@
-﻿namespace Project
+﻿namespace Project.Controls
 {
 	partial class MainWindow
 	{
@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dungeonContainer = new Project.DungeonContainer();
-			this.combatArena = new Project.CombatArena();
+			this.dungeonContainer = new DungeonContainer();
+			this.combatArena = new CombatArena();
 			this.SuspendLayout();
 			// 
 			// dungeonContainer
