@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using Project.Controls;
 using Project.Sprites;
 
 namespace Project
@@ -36,9 +37,8 @@ namespace Project
 		/// </summary>
 		private readonly Dictionary<CombatSprite, CombatSprite> targets = new Dictionary<CombatSprite, CombatSprite>(); 
 
-		public CombatSession(Game game, Party party, MonsterPack monsterPack)
+		public CombatSession(Party party, MonsterPack monsterPack)
 		{
-			this.game = game;
 			State = CombatState.New;
 			
 			Party = party;
@@ -47,7 +47,6 @@ namespace Project
 			allSprites = Party.Members.Concat(MonsterPack.Members);
 		}
 
-		private readonly Game game;
 		private readonly Stopwatch gameTimer = new Stopwatch();
 		private Thread combatLoop;
 
@@ -104,11 +103,21 @@ namespace Project
 				{
 					// This throws errors if we try and invoke on the window
 					// after it has been disposed (e.g. the user closed it).
-					if (game.Window.IsDisposed)
+					if (MainWindow.Window.IsDisposed)
 						return;
 
 					// We must call Invoke on something from the main thread.
-					game.Window.Invoke(handler);
+					try
+					{
+						MainWindow.Window.Invoke(handler);
+					}
+					catch (ObjectDisposedException)
+					{
+						// If its already disposed, return and let the thread die.
+						// Checking for Window.IsDisposed seems to accomplish nothing,
+						// because this exception always still happens. An always-occuring race condition?
+						return;
+					}
 				}
 
 				// We wait here so we aren't updating any more than we need to.

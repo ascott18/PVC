@@ -28,9 +28,20 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dungeonContainer = new DungeonContainer();
-			this.combatArena = new CombatArena();
+			this.combatArena = new Project.Controls.CombatArena();
+			this.dungeonContainer = new Project.Controls.DungeonContainer();
 			this.SuspendLayout();
+			// 
+			// combatArena
+			// 
+			this.combatArena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.combatArena.Location = new System.Drawing.Point(156, 98);
+			this.combatArena.Name = "combatArena";
+			this.combatArena.Size = new System.Drawing.Size(386, 424);
+			this.combatArena.TabIndex = 1;
+			this.combatArena.Visible = false;
 			// 
 			// dungeonContainer
 			// 
@@ -39,19 +50,11 @@
 			this.dungeonContainer.Size = new System.Drawing.Size(700, 700);
 			this.dungeonContainer.TabIndex = 0;
 			// 
-			// combatArena
-			// 
-			this.combatArena.Location = new System.Drawing.Point(193, 62);
-			this.combatArena.Name = "combatArena";
-			this.combatArena.Size = new System.Drawing.Size(386, 424);
-			this.combatArena.TabIndex = 1;
-			this.combatArena.Visible = false;
-			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1200, 705);
+			this.ClientSize = new System.Drawing.Size(704, 705);
 			this.Controls.Add(this.combatArena);
 			this.Controls.Add(this.dungeonContainer);
 			this.KeyPreview = true;

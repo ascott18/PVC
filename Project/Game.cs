@@ -9,16 +9,32 @@ using Project.Sprites;
 
 namespace Project
 {
-	class Game
+	internal class Game
 	{
-		public readonly MainWindow Window;
-
 		public readonly Party Party;
+		public readonly MainWindow Window;
 		private readonly Dictionary<int, DungeonMap> maps = new Dictionary<int, DungeonMap>();
 
 		private CombatSession currentSession;
 
+		internal Game(MainWindow window)
+		{
+			Window = window;
+
+			// TODO: Temp code
+			Party = new Party(new Point(7, 7));
+			Party.AddHero(new Hero(1));
+			Party.AddHero(new Hero(2));
+
+			SetPartyLocation(1, Party.InitialLocation);
+		}
+
 		internal DungeonMap CurrentMap { get; private set; }
+
+		public bool InCombat
+		{
+			get { return (currentSession != null && currentSession.State != CombatSession.CombatState.Ended); }
+		}
 
 		private DungeonMap LoadDungeonMap(int mapID)
 		{
@@ -44,7 +60,7 @@ namespace Project
 			if (InCombat)
 				throw new InvalidOperationException("Can't enter combat while in combat");
 
-			currentSession = new CombatSession(this, Party, enemy);
+			currentSession = new CombatSession(Party, enemy);
 			Window.dungeonContainer.Hide();
 			Window.combatArena.Show();
 			Window.combatArena.CombatSession = currentSession;
@@ -54,7 +70,7 @@ namespace Project
 			currentSession.StartCombat();
 		}
 
-		void Session_StateChanged(CombatSession sender)
+		private void Session_StateChanged(CombatSession sender)
 		{
 			if (sender.State != CombatSession.CombatState.Ended)
 				return;
@@ -65,26 +81,8 @@ namespace Project
 			foreach (var hero in Party.Members.Cast<Hero>())
 			{
 				if (hero.IsRetreated)
-					hero.Health = hero.MaxHealth/10;
+					hero.Health = hero.MaxHealth / 10;
 			}
-		}
-
-		public bool InCombat
-		{
-			get { return (currentSession != null && currentSession.State != CombatSession.CombatState.Ended); }
-		}
-
-
-		internal Game(MainWindow window)
-		{
-			Window = window;
-
-			// TODO: Temp code
-			Party = new Party(new Point(7, 7));
-			Party.AddHero(new Hero(1));
-			Party.AddHero(new Hero(2));
-
-			SetPartyLocation(1, Party.InitialLocation);
 		}
 
 		public bool ProcessKey(Keys keyData)
@@ -128,7 +126,7 @@ namespace Project
 				if (location.X < 0)
 				{
 					dir = "W";
-					location.X = MapData.DimX-1;
+					location.X = MapData.DimX - 1;
 				}
 				else if (location.X >= MapData.DimX)
 				{
@@ -138,7 +136,7 @@ namespace Project
 				else if (location.Y < 0)
 				{
 					dir = "N";
-					location.Y = MapData.DimY-1;
+					location.Y = MapData.DimY - 1;
 				}
 				else if (location.Y >= MapData.DimY)
 				{
