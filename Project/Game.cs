@@ -12,15 +12,12 @@ namespace Project
 	internal class Game
 	{
 		public readonly Party Party;
-		public readonly MainWindow Window;
 		private readonly Dictionary<int, DungeonMap> maps = new Dictionary<int, DungeonMap>();
 
 		private CombatSession currentSession;
 
-		internal Game(MainWindow window)
+		internal Game()
 		{
-			Window = window;
-
 			// TODO: Temp code
 			Party = new Party(new Point(7, 7));
 			Party.AddHero(new Hero(1));
@@ -61,9 +58,9 @@ namespace Project
 				throw new InvalidOperationException("Can't enter combat while in combat");
 
 			currentSession = new CombatSession(Party, enemy);
-			Window.dungeonContainer.Hide();
-			Window.combatArena.Show();
-			Window.combatArena.CombatSession = currentSession;
+			MainWindow.Window.dungeonContainer.Hide();
+			MainWindow.Window.combatArena.Show();
+			MainWindow.Window.combatArena.CombatSession = currentSession;
 
 			currentSession.StateChanged += Session_StateChanged;
 
@@ -75,8 +72,8 @@ namespace Project
 			if (sender.State != CombatSession.CombatState.Ended)
 				return;
 
-			Window.dungeonContainer.Show();
-			Window.combatArena.Hide();
+			MainWindow.Window.dungeonContainer.Show();
+			MainWindow.Window.combatArena.Hide();
 
 			foreach (var hero in Party.Members.Cast<Hero>())
 			{
@@ -170,7 +167,7 @@ namespace Project
 
 		public void Redraw()
 		{
-			Window.dungeonContainer.Invalidate();
+			MainWindow.Window.dungeonContainer.Invalidate();
 		}
 	}
 }

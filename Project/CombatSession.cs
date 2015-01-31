@@ -130,14 +130,11 @@ namespace Project
 
 		private void sprite_HealthChanged(CombatSprite sender)
 		{
-			if (Party.Members.Cast<Hero>().All(sprite => sprite.IsRetreated))
-			{
+			if (Party.Members.Any(sprite => sprite.IsActive))
 				EndCombat();
-			}
-			if (MonsterPack.Members.All(sprite => sprite.IsDead))
-			{
+
+			if (MonsterPack.Members.Any(sprite => sprite.IsActive))
 				EndCombat();
-			}
 
 
 		}
@@ -196,12 +193,13 @@ namespace Project
 		
 		public CombatSprite AutoAcquireTarget(CombatSprite sprite)
 		{
-			if (sprite is Monster)
+			if (MonsterPack.Members.Contains(sprite))
 				return AutoAcquireTarget(sprite, MonsterPack, Party);
-			if (sprite is Hero)
+
+			if (Party.Members.Contains(sprite))
 				return AutoAcquireTarget(sprite, Party, MonsterPack);
 
-			return null;
+			throw new Exception("Couldn't find the sprite in either group of combatants.");
 		}
 
 		private CombatSprite AutoAcquireTarget(CombatSprite sprite, DungeonSprite allies, DungeonSprite enemies)
