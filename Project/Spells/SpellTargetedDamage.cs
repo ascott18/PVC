@@ -6,7 +6,6 @@ namespace Project.Spells
 {
 	internal class SpellTargetedDamage : Spell
 	{
-		private CombatSprite target;
 		private readonly int damage;
 
 		protected SpellTargetedDamage(XElement data) : base(data)
@@ -18,17 +17,18 @@ namespace Project.Spells
 
 		void SpellTargetedDamage_StateChanged(Spell sender)
 		{
+			var target = Session.AutoAcquireTarget(Caster);
+
 			switch (State)
 			{
 				case CastState.Starting:
-					target = Session.AutoAcquireTarget(Caster);
-					if (target == null)
+					if (target == null) // if target is null, there are no valid targets.
 						Cancel();
 					break;
 
 				case CastState.Finishing:
-					target.Health -= damage;
-					target = null;
+					if (target != null)
+						target.Health -= damage;
 					break;
 			}
 		}

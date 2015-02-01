@@ -16,6 +16,7 @@ namespace Project.Sprites
 
 		public readonly List<Spell> Spells = new List<Spell>();
 
+		
 		public Spell CurrentCast
 		{
 			get { return Spells.FirstOrDefault(spell => spell.IsCasting); }
