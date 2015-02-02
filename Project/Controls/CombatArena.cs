@@ -54,7 +54,7 @@ namespace Project.Controls
 					CombatSession.QueueSpell(container.Spell);
 					break;
 				case MouseButtons.Right:
-					container.Spell.ToggleAutoCast();
+					container.Spell.IsAutoCast = !container.Spell.IsAutoCast;
 					break;
 			}
 		}

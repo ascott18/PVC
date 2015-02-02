@@ -51,6 +51,7 @@ namespace Project.Spells
 		}
 
 		private readonly int spellID;
+		private bool isAutoCast;
 		private CastState state = CastState.Unused;
 
 		/// <summary>
@@ -59,46 +60,74 @@ namespace Project.Spells
 		/// <param name="data">The XElement to parse data from.</param>
 		protected Spell(XElement data)
 		{
-			Name = (string)data.Attribute("name");
-			spellID = (int)data.Attribute("id");
-			CastDuration = (double)data.Attribute("castTime");
-			CooldownDuration = (double)data.Attribute("cooldown");
+			Name = (string) data.Attribute("name");
+			spellID = (int) data.Attribute("id");
+			CastDuration = (double) data.Attribute("castTime");
+			CooldownDuration = (double) data.Attribute("cooldown");
 
 			StateChanging += Spell_StateStateChanging;
 			StateChanged += Spell_StateStateChanged;
 		}
 
+		/// <summary>
+		///     The last time that this spell was cast,
+		///     relative to the current combat session's timer.
+		/// </summary>
 		public double LastCastTime { get; protected set; }
+
+		/// <summary>
+		///     The length of the spell's cooldown, in seconds,
+		///     from the time that the spell is last cast.
+		///     This is not the remaining time on the cooldown.
+		/// </summary>
 		public double CooldownDuration { get; protected set; }
 
+		/// <summary>
+		///     The time at which this spell began casting,
+		///     reltiave to the current combat session's timer.
+		/// </summary>
 		public double CastStartTime { get; protected set; }
+
+		/// <summary>
+		///     The length of the spell's cast, in seconds.
+		///     This is not the remaining time left on the current cast.
+		/// </summary>
 		public double CastDuration { get; protected set; }
 
+		/// <summary>
+		///     The current combat session that the spell is used in.
+		///     This will be null if the spell has not yet been cast,
+		///     or if the spell has not been cast since the last combat session
+		///     it was associated with ended.
+		/// </summary>
 		public CombatSession Session { get; private set; }
+
+		/// <summary>
+		///     The CombatSprite that owns this spell, and who will be casting it.
+		/// </summary>
 		public CombatSprite Owner { get; private set; }
 
+		/// <summary>
+		///     Whether or not the spell is ready to be cast,
+		///     based on its current cooldown.
+		/// </summary>
 		public virtual bool CanCast
 		{
-			get
-			{
-				if (Session == null)
-					return true; // hasn't been cast at all yet.
-
-				if (LastCastTime > 0 && LastCastTime + CooldownDuration > Session.GetTime())
-					return false;
-
-				return true;
-			}
+			get { return RemainingCooldown == 0; }
 		}
 
 		/// <summary>
-		///     Returns whether or not this spell in in progress.
+		///     Returns whether or not this spell is currently casting.
 		/// </summary>
 		public bool IsCasting
 		{
 			get { return State == CastState.Started; }
 		}
 
+		/// <summary>
+		///     The time, in seconds, remaining on the cast of this spell.
+		///     This value is 0 if the spell is not currently casting.
+		/// </summary>
 		public double RemainingCastTime
 		{
 			get
@@ -110,6 +139,10 @@ namespace Project.Spells
 			}
 		}
 
+		/// <summary>
+		///     Returns the time remaining until this spell is able to be cast again.
+		///     This value is 0 if it can be cast immediately.
+		/// </summary>
 		public double RemainingCooldown
 		{
 			get
@@ -131,20 +164,45 @@ namespace Project.Spells
 			{
 				if (state == value) return;
 
+				if (StateChanging != null) StateChanging(this, value);
+
+				var oldState = state;
 				state = value;
 
-				if (StateChanging != null) StateChanging(this);
-
-				if (StateChanged != null) StateChanged(this);
+				if (StateChanged != null) StateChanged(this, oldState);
 			}
 		}
 
+		/// <summary>
+		///     The name of this spell.
+		/// </summary>
 		public string Name { get; private set; }
-		public bool IsAutoCast { get; private set; }
 
-		private void Spell_StateStateChanging(Spell sender)
+		/// <summary>
+		///     Whether or not the owner of this spell should attempt to auto-cast this spell.
+		/// </summary>
+		public bool IsAutoCast
 		{
-			switch (State)
+			get { return isAutoCast; }
+			set
+			{
+				isAutoCast = value;
+				if (AutoCastChanged != null) AutoCastChanged(this);
+			}
+		}
+
+		/// <summary>
+		///     Fires when the autocast property of this spell is set.
+		/// </summary>
+		public event SpellEvent AutoCastChanged;
+
+
+		private void Spell_StateStateChanging(Spell sender, CastState newState)
+		{
+			// Handles baseline state changes for all spell types,
+			// like recording the last cast time, and registering events
+			// to watch for cast completions.
+			switch (newState)
 			{
 				case CastState.Finishing:
 					LastCastTime = Session.GetTime();
@@ -171,8 +229,12 @@ namespace Project.Spells
 			}
 		}
 
-		private void Spell_StateStateChanged(Spell sender)
+		private void Spell_StateStateChanged(Spell sender, CastState oldState)
 		{
+			// This is handled in the StateChanged event instead of
+			// the StateChanging event because we need to allow other interested
+			// parties to have accesss to the current combat session before it
+			// gets set null (they may need to unregister events from it, for e.g.).
 			switch (State)
 			{
 				case CastState.Unused:
@@ -182,14 +244,16 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		///     Fires when the State of the spell changes. Fires before StateChanged.
+		///     Fires when the State of the spell is about to change. Fires before StateChanged.
+		///     The second parameter is the state that it is changing to.
 		/// </summary>
-		public event SpellEvent StateChanging;
+		public event SpellStateEvent StateChanging;
 
 		/// <summary>
 		///     Fires when the State of the spell changes. Fires after StateChanging.
+		///     The second parameter is the state that it changed from.
 		/// </summary>
-		public event SpellEvent StateChanged;
+		public event SpellStateEvent StateChanged;
 
 
 		/// <summary>
@@ -200,8 +264,7 @@ namespace Project.Spells
 		/// <returns>A new instance of Spell.</returns>
 		public static Spell GetSpell(CombatSprite owner, int spellID)
 		{
-			var methods = XmlData.XmlParsable<Spell>.GetParsers();
-
+			// Get the XElement for the spell.
 			var itemsDoc = XmlData.GetDocument("Spells");
 			var spellElement = itemsDoc.XPathSelectElement(String.Format("Spells/*[@id={0}]", spellID));
 
@@ -209,6 +272,10 @@ namespace Project.Spells
 				throw new InvalidDataException("No spell found with ID " + spellID);
 
 			var elementName = spellElement.Name.ToString();
+
+
+			// Now parse the XElement into a Spell.
+			var methods = XmlData.XmlParsable<Spell>.GetParsers();
 
 			if (!methods.ContainsKey(elementName))
 				throw new Exception("Missing parser for spell type " + elementName);
@@ -245,17 +312,30 @@ namespace Project.Spells
 				return;
 
 			if (State == CastState.Finishing)
+			{
+				// The combat session has ended, but the spell is currently finishing.
+				// So, we need to wait to set the spell unused until the spell is ready,
+				// since Finishing -> Unused is not a valid transition.
+
+				// This happens when a spell finishing triggers the end of a combat session
+				// by dealing fatal damage to one of the combatants. The state will end while the spell is 
+				// still processing its Finishing state change.
 				StateChanged += SetUnusedUponReady;
+			}
 			else
 			{
+				// If we aren't currently finishing a cast, attempt to cancel,
+				// and then set unused. All possible state transitions here are valid.
 				Cancel();
 
 				State = CastState.Unused;
 			}
 		}
 
-		private void SetUnusedUponReady(Spell sender)
+		private void SetUnusedUponReady(Spell sender, CastState oldState)
 		{
+			// See the Session_StateChanged method for an explanation of why this exists.
+
 			if (State == CastState.Ready)
 			{
 				StateChanged -= SetUnusedUponReady;
@@ -311,7 +391,6 @@ namespace Project.Spells
 				return false;
 
 
-
 			State = CastState.Starting;
 
 			// Check the state again, to make sure it wasn't canceled.
@@ -323,15 +402,23 @@ namespace Project.Spells
 
 			return false;
 		}
-
-		public event SpellEvent AutoCastChanged;
-		public void ToggleAutoCast()
-		{
-			IsAutoCast = !IsAutoCast;
-
-			if (AutoCastChanged != null) AutoCastChanged(this);
-		}
 	}
 
+	/// <summary>
+	///     A generic spell event.
+	/// </summary>
+	/// <param name="sender">The spell for which the event is firing.</param>
 	internal delegate void SpellEvent(Spell sender);
+
+	/// <summary>
+	///     A state change event for a spell. The state parameter varies per event
+	///     implementation - refer to the docs for each event that uses this delegate
+	///     for details.
+	/// </summary>
+	/// <param name="sender">The spell for which the state is changing.</param>
+	/// <param name="state">
+	///     Associated extra state information.
+	///     See individual event implementations for detail.
+	/// </param>
+	internal delegate void SpellStateEvent(Spell sender, Spell.CastState state);
 }

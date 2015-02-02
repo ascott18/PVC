@@ -93,7 +93,7 @@ namespace Project.Controls
 			Invalidate();
 		}
 
-		void Spell_StateChanging(Spell sender)
+		void Spell_StateChanging(Spell sender, Spell.CastState newState)
 		{
 			switch (sender.State)
 			{

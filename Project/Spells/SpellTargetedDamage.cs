@@ -15,7 +15,7 @@ namespace Project.Spells
 			StateChanged += SpellTargetedDamage_StateChanged;
 		}
 
-		void SpellTargetedDamage_StateChanged(Spell sender)
+		void SpellTargetedDamage_StateChanged(Spell sender, CastState oldState)
 		{
 			CombatSprite target;
 			switch (State)
