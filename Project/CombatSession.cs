@@ -10,59 +10,91 @@ using Project.Sprites;
 
 namespace Project
 {
-	class CombatSession
+	internal class CombatSession
 	{
-		/// <summary>
-		/// Determines the amount of time that the combat loop will sleep for
-		/// before running again. Prevents unnecessary CPU churn.
-		/// </summary>
-		const int UpdateFrequency = 10;
+		public enum CombatState
+		{
+			/// <summary>
+			///     The CombatSession has not yet started.
+			/// </summary>
+			New,
+
+			/// <summary>
+			///     The CombatSession is in progress.
+			/// </summary>
+			Acitve,
+
+			/// <summary>
+			///     The CombatSessions is paused, but not ended.
+			/// </summary>
+			Paused,
+
+			/// <summary>
+			///     Combat has concluded.
+			/// </summary>
+			Ended
+		}
 
 		/// <summary>
-		/// The Party participating in this combat.
+		///     Determines the amount of time that the combat loop will sleep for
+		///     before running again. Prevents unnecessary CPU churn.
 		/// </summary>
-		public readonly Party Party;
+		private const int UpdateFrequency = 10;
 
 		/// <summary>
-		/// The MonsterPack participating in this combat.
+		///     The MonsterPack participating in this combat.
 		/// </summary>
 		public readonly MonsterPack MonsterPack;
 
 		/// <summary>
-		/// A collection of all the CombatSprites from both the Party and the MonsterPack.
+		///     The Party participating in this combat.
+		/// </summary>
+		public readonly Party Party;
+
+		/// <summary>
+		///     A collection of all the CombatSprites from both the Party and the MonsterPack.
 		/// </summary>
 		private readonly IEnumerable<CombatSprite> allSprites;
 
-		/// <summary>
-		/// Maps each CombatSprite to the sprite that it is currently targeting.
-		/// </summary>
-		private readonly Dictionary<CombatSprite, CombatSprite> targets = new Dictionary<CombatSprite, CombatSprite>(); 
+		private readonly Stopwatch gameTimer = new Stopwatch();
+		private readonly List<Spell> spellQueue = new List<Spell>();
 
+		/// <summary>
+		///     Maps each CombatSprite to the sprite that it is currently targeting.
+		/// </summary>
+		private readonly Dictionary<CombatSprite, CombatSprite> targets = new Dictionary<CombatSprite, CombatSprite>();
+
+		private Thread combatLoop;
+
+		/// <summary>
+		///     Creates a new CombatSession with the given Party and MonsterPack as combatants.
+		/// </summary>
+		/// <param name="party">The Party that is fighting</param>
+		/// <param name="monsterPack">The MonsterPack being fought.</param>
 		public CombatSession(Party party, MonsterPack monsterPack)
 		{
 			State = CombatState.New;
-			
+
 			Party = party;
 			MonsterPack = monsterPack;
 
 			allSprites = Party.Members.Concat(MonsterPack.Members);
 		}
 
-		private readonly Stopwatch gameTimer = new Stopwatch();
-		private Thread combatLoop;
-
-		public event CombatEvent StateChanged;
-
+		/// <summary>
+		///     The state of the CombatSession.
+		/// </summary>
 		public CombatState State { get; private set; }
 
-		public enum CombatState
-		{
-			New,
-			Acitve,
-			Paused,
-			Ended
-		}
+		/// <summary>
+		///     Fires when the state of the CombatSession changes.
+		/// </summary>
+		public event CombatEvent StateChanged;
 
+		/// <summary>
+		///     Start the CombatSession, starting the game timer and initiating the combat loop.
+		///     Can only ever be called once on a given CombatSession.
+		/// </summary>
 		public void StartCombat()
 		{
 			if (State != CombatState.New)
@@ -74,6 +106,7 @@ namespace Project
 			// Start the thread for the game loop.
 			// This will drive the update cycles for checking spell cast completion, etc.
 			combatLoop = new Thread(CombatLoop);
+			combatLoop.Name = "combatLoop";
 			combatLoop.Start(this);
 
 			foreach (var sprite in allSprites)
@@ -121,9 +154,9 @@ namespace Project
 					}
 				}
 
-				// We wait here so we aren't updating any more than we need to.
+				// We sleep here so we aren't updating any more than we need to.
 				var elapsed = timer.ElapsedMilliseconds - start;
-				var wait = UpdateFrequency - (int)elapsed;
+				var wait = UpdateFrequency - (int) elapsed;
 				if (wait > 0)
 					Thread.Sleep(wait);
 			}
@@ -131,15 +164,20 @@ namespace Project
 
 		private void sprite_HealthChanged(CombatSprite sender)
 		{
+			// If all party members are no longer active, the player lost.
 			if (!Party.Members.Any(sprite => sprite.IsActive))
 				EndCombat();
 
+			// If all monsters are no longer active, the player won.
 			if (!MonsterPack.Members.Any(sprite => sprite.IsActive))
 				EndCombat();
 
-
+			//TODO: Pass something into EndCombat to signify the outcome.
 		}
 
+		/// <summary>
+		///     Pause the CombatSession.
+		/// </summary>
 		public void PauseCombat()
 		{
 			gameTimer.Stop();
@@ -149,6 +187,9 @@ namespace Project
 			if (StateChanged != null) StateChanged(this);
 		}
 
+		/// <summary>
+		///     Resume the CombatSession from a paused state.
+		/// </summary>
 		public void ResumeCombat()
 		{
 			if (State != CombatState.Paused)
@@ -161,6 +202,9 @@ namespace Project
 			if (StateChanged != null) StateChanged(this);
 		}
 
+		/// <summary>
+		///     End the combat session.
+		/// </summary>
 		public void EndCombat()
 		{
 			Debug.WriteLine("Combat Ended");
@@ -172,17 +216,21 @@ namespace Project
 
 			State = CombatState.Ended;
 
-			//combatLoop.Join();
-
 			if (StateChanged != null) StateChanged(this);
 		}
 
-
+		/// <summary>
+		///     Gets the current value of the game timer, in seconds.
+		/// </summary>
+		/// <returns>The current game time, in seconds.</returns>
 		public double GetTime()
 		{
-			return (double)gameTimer.ElapsedMilliseconds / 1000;
+			return (double) gameTimer.ElapsedMilliseconds/1000;
 		}
 
+		/// <summary>
+		///     Acquire a target for all actors in the CombatSession.
+		/// </summary>
 		public void AutoAcquireTargets()
 		{
 			foreach (var sprite in allSprites)
@@ -191,7 +239,14 @@ namespace Project
 			}
 		}
 
-		
+
+		/// <summary>
+		///     Attempt to acquire a target for the given CombatSprite.
+		///     If the CombatSprite already has a valid target, that target is returned.
+		///     Otherwise, a new target is chosen and returned.
+		/// </summary>
+		/// <param name="sprite">The sprite to acquire a target for.</param>
+		/// <returns>The target of the given sprite. Returns null if there are no valid targets.</returns>
 		public CombatSprite AutoAcquireTarget(CombatSprite sprite)
 		{
 			if (MonsterPack.Members.Contains(sprite))
@@ -200,7 +255,7 @@ namespace Project
 			if (Party.Members.Contains(sprite))
 				return AutoAcquireTarget(sprite, Party, MonsterPack);
 
-			throw new Exception("Couldn't find the sprite in either group of combatants.");
+			throw new ArgumentException("Couldn't find the sprite in either group of combatants.", "sprite");
 		}
 
 		private CombatSprite AutoAcquireTarget(CombatSprite sprite, DungeonSprite allies, DungeonSprite enemies)
@@ -229,7 +284,7 @@ namespace Project
 				}
 				else
 				{
-					var targetIndex = index % aliveEnemies.Count();
+					var targetIndex = index%aliveEnemies.Count();
 					target = aliveEnemies.ElementAt(targetIndex);
 				}
 
@@ -249,7 +304,7 @@ namespace Project
 
 			if (Update != null) Update(this);
 
-			for (int i = 0; i < spellQueue.Count; )
+			for (int i = 0; i < spellQueue.Count;)
 			{
 				var spell = spellQueue[i];
 
@@ -274,10 +329,18 @@ namespace Project
 			}
 		}
 
+		/// <summary>
+		///     Fires each time a game update is performed.
+		///     This should happen approximately every CombatSession.UpdateFrequency milliseconds.
+		/// </summary>
 		public event CombatEvent Update;
 
 
-		private readonly List<Spell> spellQueue = new List<Spell>(); 
+		/// <summary>
+		///     Queues a spell to be cast automatically.
+		///     If the spell is already queued, it moves the spell to the top of the queue.
+		/// </summary>
+		/// <param name="spell">The spell to queue.</param>
 		public void QueueSpell(Spell spell)
 		{
 			if (spellQueue.Contains(spell))
@@ -291,6 +354,12 @@ namespace Project
 			}
 		}
 
+		/// <summary>
+		///     Immediately casts a spell, canceling the spell owner's current cast
+		///     and starting the given spell immediately, if possible.
+		///     If the given spell can't be cast due to its cooldown, no action is taken.
+		/// </summary>
+		/// <param name="spell">The spell to cast.</param>
 		public void CastSpellImmediately(Spell spell)
 		{
 			if (!spell.CanCast)
@@ -303,11 +372,21 @@ namespace Project
 			spell.Start(this);
 		}
 
+		/// <summary>
+		///     Returns all of the spells queued that are owned by a given CombatSprite,
+		///     in the order that they are queued in.
+		/// </summary>
+		/// <param name="owner">The spell owner to query for.</param>
+		/// <returns>An IEnumerable of spells queued for the given owner.</returns>
 		public IEnumerable<Spell> GetQueuedSpells(CombatSprite owner)
 		{
 			return spellQueue.Where(spell => spell.Owner == owner);
 		}
 	}
 
+	/// <summary>
+	///     Represents a generic event for a CombatSession.
+	/// </summary>
+	/// <param name="sender">The CombatSession for which the event fired.</param>
 	internal delegate void CombatEvent(CombatSession sender);
 }
