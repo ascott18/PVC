@@ -304,6 +304,9 @@ namespace Project
 
 			if (Update != null) Update(this);
 
+			Debug.WriteLine(GetTime());
+
+			// Attempt to cast any queued spells.
 			for (int i = 0; i < spellQueue.Count;)
 			{
 				var spell = spellQueue[i];
@@ -314,6 +317,7 @@ namespace Project
 					i++;
 			}
 
+			// Attempt to cast any autocasting spells.
 			foreach (var sprite in allSprites)
 			{
 				foreach (var spell in sprite.Spells)
@@ -323,6 +327,7 @@ namespace Project
 				}
 			}
 
+			// Delegate out to each monster to let them decide what to do.
 			foreach (var monster in MonsterPack.Members)
 			{
 				(monster as Monster).DoAction(this);

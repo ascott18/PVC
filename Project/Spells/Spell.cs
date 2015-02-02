@@ -135,7 +135,7 @@ namespace Project.Spells
 				if (state != CastState.Started)
 					return 0;
 
-				return CastDuration - (Session.GetTime() - CastStartTime);
+				return Math.Max(0, CastDuration - (Session.GetTime() - CastStartTime));
 			}
 		}
 
@@ -150,7 +150,7 @@ namespace Project.Spells
 				if (state == CastState.Unused || LastCastTime == 0)
 					return 0;
 
-				return CooldownDuration - (Session.GetTime() - LastCastTime);
+				return Math.Max(0, CooldownDuration - (Session.GetTime() - LastCastTime));
 			}
 		}
 
