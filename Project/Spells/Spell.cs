@@ -15,12 +15,12 @@ namespace Project.Spells
 		public enum CastState
 		{
 			/// <summary>
-			///     Spell is not attached to a CombatSession or Caster.
+			///     Spell is not attached to a CombatSession.
 			/// </summary>
 			Unused,
 
 			/// <summary>
-			///     Spell is attached to a CombatSession and Caster. Will immediately transition to Ready.
+			///     Spell is attached to a CombatSession. Will immediately transition to Ready.
 			/// </summary>
 			Used,
 
@@ -367,7 +367,6 @@ namespace Project.Spells
 		///     Starts the spell casting for the given CombatSession and casting CombatSprite.
 		/// </summary>
 		/// <param name="session">The CombatSession that the cast exists in.</param>
-		/// <param name="caster">The caster of the spell.</param>
 		/// <returns>True if the spell successfully started, otherwise false.</returns>
 		public bool Start(CombatSession session)
 		{
