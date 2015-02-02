@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Spells>
-  <TargetedDamage name="Basic Spell" id="1" damage="5" castTime="1" cooldown="0"/>
-  <TargetedDamage name="DOOOOOOMMMM" id="2" damage="150" castTime="2" cooldown="5"/>
+  <TargetedDamage name="Basic Spell" id="1" damage="5" castTime="2" cooldown="0"/>
+  <TargetedDamage name="DOOOOOOMMMM" id="2" damage="150" castTime="3" cooldown="5"/>
 </Spells>

@@ -20,16 +20,6 @@ namespace Project.Controls
 			InitializeSpellContainers(12);
 
 			AttributesContainer.Dock = DockStyle.Right;
-
-			foreach (var spellContainer in SpellContainers)
-			{
-				spellContainer.Click += SpellContainer_Click;
-			}
-		}
-
-		void SpellContainer_Click(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

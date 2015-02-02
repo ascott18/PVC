@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project.Spells;
 using Project.Sprites;
 
 namespace Project.Controls
 {
 	internal partial class CombatSpriteContainer : UserControl
 	{
-		protected readonly List<SpellContainer> SpellContainers = new List<SpellContainer>();
+		private readonly List<SpellContainer> spellContainers = new List<SpellContainer>();
+		public IReadOnlyList<SpellContainer> SpellContainers { get; private set; }
+
 		private CombatSprite sprite;
 
 		internal CombatSprite Sprite
@@ -64,8 +67,9 @@ namespace Project.Controls
 				};
 
 				Controls.Add(container);
-				SpellContainers.Add(container);
+				spellContainers.Add(container);
 			}
+			SpellContainers = spellContainers.AsReadOnly();
 			AttributesContainer.SendToBack();
 		}
 	}

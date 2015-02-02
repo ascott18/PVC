@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Project.Sprites;
 
@@ -21,6 +22,11 @@ namespace Project.Controls
 			{
 				var container = heroContainers[i] = new HeroContainer();
 				container.Location = new Point(padding, padding + i * container.Size.Height);
+
+				foreach (var spellContainer in container.SpellContainers)
+				{
+					spellContainer.Click += spellContainer_Click;
+				}
 			}
 			Controls.AddRange(heroContainers);
 
@@ -30,6 +36,17 @@ namespace Project.Controls
 				container.Location = new Point(Size.Width - padding - container.Size.Width, padding + i * container.Size.Height);
 			}
 			Controls.AddRange(monsterContainers);
+		}
+
+		void spellContainer_Click(object sender, System.EventArgs e)
+		{
+			var container = sender as SpellContainer;
+			if (container == null) throw new InvalidCastException("sender was not SpellContainer");
+
+			var parent = container.Parent as HeroContainer;
+			if (parent == null) throw new ArgumentNullException("parent was not HeroContainer");
+
+			container.Spell.Start(CombatSession, parent.Sprite);
 		}
 
 		internal CombatSession CombatSession
