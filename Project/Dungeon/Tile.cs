@@ -50,7 +50,7 @@ namespace Project.Dungeon
 
 				tileObject = value;
 
-				DungeonMap.Game.Redraw();
+				DungeonMap.Game.RedrawDungeon();
 			}
 		}
 

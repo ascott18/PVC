@@ -10,6 +10,13 @@ using Project.Sprites;
 
 namespace Project
 {
+	/// <summary>
+	/// CombatSession represents a single fight between one Party and one MonsterPack.
+	/// 
+	/// It holds state information that is specific to the battle, like targeting,
+	/// timing control, and spell queueing. It acts as the controller for the Monster "AI",
+	/// and for performing the actual casts of queued spells and autocasting spells for Heroes.
+	/// </summary>
 	internal class CombatSession
 	{
 		public enum CombatState
