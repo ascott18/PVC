@@ -26,6 +26,7 @@ namespace Project.Controls
 			{
 				if (sprite != null)
 				{
+					sprite.HealthChanged -= sprite_HealthChanged;
 					foreach (var spellContainer in SpellContainers)
 						spellContainer.Spell = null;
 				}
@@ -39,6 +40,7 @@ namespace Project.Controls
 				{
 					Show();
 					AttributesContainer.Sprite = sprite;
+					sprite.HealthChanged += sprite_HealthChanged;
 
 					for (int i = 0; i < Math.Min(SpellContainers.Count, sprite.Spells.Count); i++)
 					{
@@ -48,6 +50,11 @@ namespace Project.Controls
 					}
 				}
 			}
+		}
+
+		void sprite_HealthChanged(CombatSprite sender)
+		{
+			Enabled = Sprite.IsActive;
 		}
 
 

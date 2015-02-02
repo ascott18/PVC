@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.image = new System.Windows.Forms.PictureBox();
-			this.healthText = new System.Windows.Forms.Label();
 			this.nameText = new System.Windows.Forms.Label();
+			this.healthBar = new System.Windows.Forms.Panel();
 			((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -38,23 +38,12 @@
 			// 
 			this.image.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.image.Image = global::Project.Properties.Resources.stu;
 			this.image.Location = new System.Drawing.Point(25, 13);
 			this.image.Name = "image";
 			this.image.Size = new System.Drawing.Size(50, 50);
 			this.image.TabIndex = 0;
 			this.image.TabStop = false;
-			// 
-			// healthText
-			// 
-			this.healthText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.healthText.BackColor = System.Drawing.Color.Transparent;
-			this.healthText.Location = new System.Drawing.Point(3, 0);
-			this.healthText.Name = "healthText";
-			this.healthText.Size = new System.Drawing.Size(94, 13);
-			this.healthText.TabIndex = 1;
-			this.healthText.Text = "0/0";
-			this.healthText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.image.Paint += new System.Windows.Forms.PaintEventHandler(this.image_Paint);
 			// 
 			// nameText
 			// 
@@ -66,13 +55,21 @@
 			this.nameText.Text = "Stu Steiner";
 			this.nameText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
+			// healthBar
+			// 
+			this.healthBar.Location = new System.Drawing.Point(25, 0);
+			this.healthBar.Name = "healthBar";
+			this.healthBar.Size = new System.Drawing.Size(50, 12);
+			this.healthBar.TabIndex = 3;
+			this.healthBar.Paint += new System.Windows.Forms.PaintEventHandler(this.healthBar_Paint);
+			// 
 			// CombatSpriteAttributesContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.healthBar);
 			this.Controls.Add(this.nameText);
-			this.Controls.Add(this.healthText);
 			this.Controls.Add(this.image);
 			this.Name = "CombatSpriteAttributesContainer";
 			this.Size = new System.Drawing.Size(100, 95);
@@ -84,7 +81,7 @@
 		#endregion
 
 		private System.Windows.Forms.PictureBox image;
-		private System.Windows.Forms.Label healthText;
 		private System.Windows.Forms.Label nameText;
+		private System.Windows.Forms.Panel healthBar;
 	}
 }

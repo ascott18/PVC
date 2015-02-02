@@ -310,9 +310,7 @@ namespace Project
 				return;
 
 			if (Update != null) Update(this);
-
-			Debug.WriteLine(GetTime());
-
+			
 			// Attempt to cast any queued spells.
 			for (int i = 0; i < spellQueue.Count;)
 			{

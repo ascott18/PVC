@@ -9,14 +9,24 @@ using Project.Spells;
 
 namespace Project.Sprites
 {
-	class CombatSprite
+	abstract class CombatSprite
 	{
 		public Image Image { get; protected set; }
 		public string Name { get; protected set; }
 
 		public readonly List<Spell> Spells = new List<Spell>();
 
-		
+		protected CombatSprite()
+		{
+			HealthChanged += CombatSprite_HealthChanged;
+		}
+
+		void CombatSprite_HealthChanged(CombatSprite sender)
+		{
+			if (!IsActive && CurrentCast != null)
+				CurrentCast.Cancel();
+		}
+
 		public Spell CurrentCast
 		{
 			get { return Spells.FirstOrDefault(spell => spell.IsCasting); }

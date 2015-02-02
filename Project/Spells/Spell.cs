@@ -397,6 +397,9 @@ namespace Project.Spells
 			if (Owner.CurrentCast != null)
 				return false;
 
+			if (!Owner.IsActive)
+				return false;
+
 
 			State = CastState.Starting;
 
