@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Project.Controls;
+using Project.Spells;
 using Project.Sprites;
 
 namespace Project
@@ -248,6 +249,25 @@ namespace Project
 
 			if (Update != null) Update(this);
 
+			for (int i = 0; i < spellQueue.Count; )
+			{
+				var spell = spellQueue[i];
+
+				if (spell.CanCast && spell.Start(this))
+					spellQueue.RemoveAt(i);
+				else
+					i++;
+			}
+
+			foreach (var sprite in allSprites)
+			{
+				foreach (var spell in sprite.Spells)
+				{
+					if (spell.IsAutoCast)
+						spell.Start(this);
+				}
+			}
+
 			foreach (var monster in MonsterPack.Members)
 			{
 				(monster as Monster).DoAction(this);
@@ -255,6 +275,38 @@ namespace Project
 		}
 
 		public event CombatEvent Update;
+
+
+		private readonly List<Spell> spellQueue = new List<Spell>(); 
+		public void QueueSpell(Spell spell)
+		{
+			if (spellQueue.Contains(spell))
+			{
+				spellQueue.Remove(spell);
+				spellQueue.Insert(0, spell);
+			}
+			else
+			{
+				spellQueue.Add(spell);
+			}
+		}
+
+		public void CastSpellImmediately(Spell spell)
+		{
+			if (!spell.CanCast)
+				return;
+
+			var owner = spell.Owner;
+			if (owner.CurrentCast != null)
+				owner.CurrentCast.Cancel();
+
+			spell.Start(this);
+		}
+
+		public IEnumerable<Spell> GetQueuedSpells(CombatSprite owner)
+		{
+			return spellQueue.Where(spell => spell.Owner == owner);
+		}
 	}
 
 	internal delegate void CombatEvent(CombatSession sender);

@@ -100,7 +100,7 @@ namespace Project.Sprites
 
 			foreach (var spellElement in element.XPathSelectElements("Spell"))
 			{
-				Spells.Add(Spell.GetSpell((int)spellElement.Attribute("id")));
+				Spells.Add(Spell.GetSpell(this, (int)spellElement.Attribute("id")));
 			}
 		}
 	}

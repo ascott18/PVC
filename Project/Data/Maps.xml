@@ -32,6 +32,9 @@
 	  <MonsterPack id="000102" x="6" y="2">
 		<Monster id="2"/>
 	  </MonsterPack>
+	  <MonsterPack id="000103" x="7" y="6">
+		<Monster id="3"/>
+	  </MonsterPack>
 	</Objects>
 	
   </Map>

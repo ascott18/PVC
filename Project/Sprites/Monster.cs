@@ -20,13 +20,13 @@ namespace Project.Sprites
 			RecalculateAttributes();
 		}
 
-		public void DoAction(CombatSession arena)
+		public void DoAction(CombatSession session)
 		{
 			if (CurrentCast == null)
 			{
 				foreach (var spell in Spells)
 				{
-					if (spell.Start(arena, this))
+					if (spell.Start(session))
 						return;
 				}
 

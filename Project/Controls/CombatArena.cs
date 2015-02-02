@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Project.Spells;
 using Project.Sprites;
 
 namespace Project.Controls
@@ -25,7 +28,8 @@ namespace Project.Controls
 
 				foreach (var spellContainer in container.SpellContainers)
 				{
-					spellContainer.Click += spellContainer_Click;
+					spellContainer.MouseClick += spellContainer_MouseClick;
+					spellContainer.MouseDoubleClick += spellContainer_MouseDoubleClick;
 				}
 			}
 			Controls.AddRange(heroContainers);
@@ -38,15 +42,28 @@ namespace Project.Controls
 			Controls.AddRange(monsterContainers);
 		}
 
-		void spellContainer_Click(object sender, System.EventArgs e)
+
+		void spellContainer_MouseClick(object sender, MouseEventArgs e)
 		{
 			var container = sender as SpellContainer;
-			if (container == null) throw new InvalidCastException("sender was not SpellContainer");
+			if (container == null) throw new InvalidCastException("sender was not a SpellContainer");
 
-			var parent = container.Parent as HeroContainer;
-			if (parent == null) throw new ArgumentNullException("parent was not HeroContainer");
+			switch (e.Button)
+			{
+				case MouseButtons.Left:
+					CombatSession.QueueSpell(container.Spell);
+					break;
+				case MouseButtons.Right:
+					container.Spell.ToggleAutoCast();
+					break;
+			}
+		}
+		void spellContainer_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			var container = sender as SpellContainer;
+			if (container == null) throw new InvalidCastException("sender was not a SpellContainer");
 
-			container.Spell.Start(CombatSession, parent.Sprite);
+			CombatSession.CastSpellImmediately(container.Spell);
 		}
 
 		internal CombatSession CombatSession

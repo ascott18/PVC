@@ -28,25 +28,38 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label = new System.Windows.Forms.Label();
+			this.spellName = new System.Windows.Forms.Label();
+			this.castControlLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
-			// label
+			// spellName
 			// 
-			this.label.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label.Location = new System.Drawing.Point(0, 0);
-			this.label.Name = "label";
-			this.label.Size = new System.Drawing.Size(120, 16);
-			this.label.TabIndex = 0;
-			this.label.Text = "<Spell>";
-			this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.spellName.BackColor = System.Drawing.Color.Transparent;
+			this.spellName.Dock = System.Windows.Forms.DockStyle.Right;
+			this.spellName.Location = new System.Drawing.Point(14, 0);
+			this.spellName.Name = "spellName";
+			this.spellName.Size = new System.Drawing.Size(106, 16);
+			this.spellName.TabIndex = 0;
+			this.spellName.Text = "<Spell>";
+			this.spellName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// castControlLabel
+			// 
+			this.castControlLabel.BackColor = System.Drawing.Color.Transparent;
+			this.castControlLabel.Dock = System.Windows.Forms.DockStyle.Left;
+			this.castControlLabel.Location = new System.Drawing.Point(0, 0);
+			this.castControlLabel.Name = "castControlLabel";
+			this.castControlLabel.Size = new System.Drawing.Size(12, 16);
+			this.castControlLabel.TabIndex = 1;
+			this.castControlLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// SpellContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.Controls.Add(this.label);
+			this.Controls.Add(this.castControlLabel);
+			this.Controls.Add(this.spellName);
 			this.Name = "SpellContainer";
 			this.Size = new System.Drawing.Size(120, 16);
 			this.ResumeLayout(false);
@@ -55,6 +68,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label;
+		private System.Windows.Forms.Label spellName;
+		private System.Windows.Forms.Label castControlLabel;
 	}
 }

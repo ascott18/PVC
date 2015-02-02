@@ -9,7 +9,64 @@ namespace Project.Spells
 {
 	internal abstract class Spell
 	{
+		/// <summary>
+		///     Represents the states that a spell can be in.
+		/// </summary>
+		public enum CastState
+		{
+			/// <summary>
+			///     Spell is not attached to a CombatSession or Caster.
+			/// </summary>
+			Unused,
+
+			/// <summary>
+			///     Spell is attached to a CombatSession and Caster. Will immediately transition to Ready.
+			/// </summary>
+			Used,
+
+			/// <summary>
+			///     Spell is ready to start casting. Call Start().
+			/// </summary>
+			Ready,
+
+			/// <summary>
+			///     Spell has started casting, and is processing events before transitioning to Started (unless Cancel() is called).
+			/// </summary>
+			Starting,
+
+			/// <summary>
+			///     Spell is currently casting. Will continue until complete, or until Cancel() is called.
+			/// </summary>
+			Started,
+
+			/// <summary>
+			///     Spell finished casting, and is processing events before transitioning to Ready.
+			/// </summary>
+			Finishing,
+
+			/// <summary>
+			///     Cancel() was called. Spell is processing events before transitioning to Ready.
+			/// </summary>
+			Canceling,
+		}
+
 		private readonly int spellID;
+		private CastState state = CastState.Unused;
+
+		/// <summary>
+		///     Constructs a spell, parsing base information that all spells have.
+		/// </summary>
+		/// <param name="data">The XElement to parse data from.</param>
+		protected Spell(XElement data)
+		{
+			Name = (string)data.Attribute("name");
+			spellID = (int)data.Attribute("id");
+			CastDuration = (double)data.Attribute("castTime");
+			CooldownDuration = (double)data.Attribute("cooldown");
+
+			StateChanging += Spell_StateStateChanging;
+			StateChanged += Spell_StateStateChanged;
+		}
 
 		public double LastCastTime { get; protected set; }
 		public double CooldownDuration { get; protected set; }
@@ -18,7 +75,7 @@ namespace Project.Spells
 		public double CastDuration { get; protected set; }
 
 		public CombatSession Session { get; private set; }
-		public CombatSprite Caster { get; private set; }
+		public CombatSprite Owner { get; private set; }
 
 		public virtual bool CanCast
 		{
@@ -35,7 +92,7 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Returns whether or not this spell in in progress.
+		///     Returns whether or not this spell in in progress.
 		/// </summary>
 		public bool IsCasting
 		{
@@ -57,7 +114,7 @@ namespace Project.Spells
 		{
 			get
 			{
-				if (state == CastState.Unused)
+				if (state == CastState.Unused || LastCastTime == 0)
 					return 0;
 
 				return CooldownDuration - (Session.GetTime() - LastCastTime);
@@ -65,50 +122,7 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Represents the states that a spell can be in.
-		/// </summary>
-		public enum CastState
-		{
-			/// <summary>
-			/// Spell is not attached to a CombatSession or Caster.
-			/// </summary>
-			Unused,
-
-			/// <summary>
-			/// Spell is attached to a CombatSession and Caster. Will immediately transition to Ready.
-			/// </summary>
-			Used,
-
-			/// <summary>
-			/// Spell is ready to start casting. Call Start().
-			/// </summary>
-			Ready,
-
-			/// <summary>
-			/// Spell has started casting, and is processing events before transitioning to Started (unless Cancel() is called).
-			/// </summary>
-			Starting,
-
-			/// <summary>
-			/// Spell is currently casting. Will continue until complete, or until Cancel() is called.
-			/// </summary>
-			Started,
-
-			/// <summary>
-			/// Spell finished casting, and is processing events before transitioning to Ready.
-			/// </summary>
-			Finishing,
-
-			/// <summary>
-			/// Cancel() was called. Spell is processing events before transitioning to Ready.
-			/// </summary>
-			Canceling,
-		}
-
-		private CastState state = CastState.Unused;
-
-		/// <summary>
-		/// Represents the current state of the spell.
+		///     Represents the current state of the spell.
 		/// </summary>
 		public CastState State
 		{
@@ -126,21 +140,7 @@ namespace Project.Spells
 		}
 
 		public string Name { get; private set; }
-
-		/// <summary>
-		/// Constructs a spell, parsing base information that all spells have.
-		/// </summary>
-		/// <param name="data">The XElement to parse data from.</param>
-		protected Spell(XElement data)
-		{
-			Name = (string)data.Attribute("name");
-			spellID = (int)data.Attribute("id");
-			CastDuration = (int)data.Attribute("castTime");
-			CooldownDuration = (int)data.Attribute("cooldown");
-
-			StateChanging += Spell_StateStateChanging;
-			StateChanged += Spell_StateStateChanged;
-		}
+		public bool IsAutoCast { get; private set; }
 
 		private void Spell_StateStateChanging(Spell sender)
 		{
@@ -177,28 +177,28 @@ namespace Project.Spells
 			{
 				case CastState.Unused:
 					Session = null;
-					Caster = null;
 					break;
 			}
 		}
 
 		/// <summary>
-		/// Fires when the State of the spell changes. Fires before StateChanged.
+		///     Fires when the State of the spell changes. Fires before StateChanged.
 		/// </summary>
 		public event SpellEvent StateChanging;
 
 		/// <summary>
-		/// Fires when the State of the spell changes. Fires after StateChanging.
+		///     Fires when the State of the spell changes. Fires after StateChanging.
 		/// </summary>
 		public event SpellEvent StateChanged;
 
 
 		/// <summary>
-		/// Constructs an appropriate subclass of Spell based on the spellID recieved.
+		///     Constructs an appropriate subclass of Spell based on the spellID recieved.
 		/// </summary>
+		/// <param name="owner">The CombatSprite that owns the spell.</param>
 		/// <param name="spellID">The spellID of the spell to parse from Spells.xml and create.</param>
 		/// <returns>A new instance of Spell.</returns>
-		public static Spell GetSpell(int spellID)
+		public static Spell GetSpell(CombatSprite owner, int spellID)
 		{
 			var methods = XmlData.XmlParsable<Spell>.GetParsers();
 
@@ -215,7 +215,10 @@ namespace Project.Spells
 
 			var parserMethod = methods[elementName];
 
-			return parserMethod(spellElement);
+			var spell = parserMethod(spellElement);
+			spell.Owner = owner;
+
+			return spell;
 		}
 
 		private void Session_Update(CombatSession sender)
@@ -262,12 +265,10 @@ namespace Project.Spells
 			{
 				throw new Exception("Expected state change from finishing to ready");
 			}
-
-
 		}
 
 		/// <summary>
-		/// Cancels a spellcast that is starting or started.
+		///     Cancels a spellcast that is starting or started.
 		/// </summary>
 		public void Cancel()
 		{
@@ -278,17 +279,17 @@ namespace Project.Spells
 
 			if (State != CastState.Canceling)
 				throw new Exception("Invalid state transition from Canceling to " + State);
-			
+
 			State = CastState.Ready;
 		}
 
 		/// <summary>
-		/// Starts the spell casting for the given CombatSession and casting CombatSprite.
+		///     Starts the spell casting for the given CombatSession and casting CombatSprite.
 		/// </summary>
 		/// <param name="session">The CombatSession that the cast exists in.</param>
 		/// <param name="caster">The caster of the spell.</param>
 		/// <returns>True if the spell successfully started, otherwise false.</returns>
-		public bool Start(CombatSession session, CombatSprite caster)
+		public bool Start(CombatSession session)
 		{
 			if (session.State == CombatSession.CombatState.Ended)
 				return false;
@@ -296,7 +297,6 @@ namespace Project.Spells
 			if (State == CastState.Unused)
 			{
 				Session = session;
-				Caster = caster;
 				State = CastState.Used;
 				State = CastState.Ready;
 			}
@@ -307,13 +307,13 @@ namespace Project.Spells
 			if (!CanCast)
 				return false;
 
-			if (caster.CurrentCast != null)
+			if (Owner.CurrentCast != null)
 				return false;
 
 
 
 			State = CastState.Starting;
-			
+
 			// Check the state again, to make sure it wasn't canceled.
 			if (State == CastState.Starting)
 			{
@@ -322,6 +322,14 @@ namespace Project.Spells
 			}
 
 			return false;
+		}
+
+		public event SpellEvent AutoCastChanged;
+		public void ToggleAutoCast()
+		{
+			IsAutoCast = !IsAutoCast;
+
+			if (AutoCastChanged != null) AutoCastChanged(this);
 		}
 	}
 

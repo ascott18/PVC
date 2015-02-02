@@ -5,7 +5,7 @@
 	<Item id="1"/>
 	<Spell id="1"/>
 	<Spell id="2"/>
-	<Spell id="2"/>
+	<Spell id="3"/>
   </Hero>
   <Hero id="2" texture="stu" name="Stu Steiner">
 	<Attributes stamina="11" strength="12" intellect="15" dexterity="7"/>

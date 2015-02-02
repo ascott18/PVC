@@ -21,15 +21,22 @@ namespace Project.Controls
 			InitializeComponent();
 
 			SetStyle(ControlStyles.StandardClick, true);
+			SetStyle(ControlStyles.StandardDoubleClick, true);
 
-			label.Click += label_Click;
+			spellName.MouseClick += label_Click;
+			spellName.MouseDoubleClick += label_DoubleClick;
 			Paint += SpellContainer_Paint;
 			Hide();
 		}
 
-		void label_Click(object sender, EventArgs e)
+		void label_DoubleClick(object sender, MouseEventArgs e)
 		{
-			OnClick(e);
+			OnMouseDoubleClick(e);
+		}
+
+		void label_Click(object sender, MouseEventArgs e)
+		{
+			OnMouseClick(e);
 		}
 
 		void SpellContainer_Paint(object sender, PaintEventArgs e)
@@ -62,7 +69,9 @@ namespace Project.Controls
 			{
 				if (spell != null)
 				{
-					
+					spell.StateChanging -= Spell_StateChanging;
+					spell.AutoCastChanged -= spell_AutoCastChanged;
+					castControlLabel.Text = "";
 				}
 				spell = value;
 				if (spell == null)
@@ -71,11 +80,17 @@ namespace Project.Controls
 				}
 				else
 				{
-					label.Text = spell.Name;
+					spellName.Text = spell.Name;
 					spell.StateChanging += Spell_StateChanging;
+					spell.AutoCastChanged += spell_AutoCastChanged;
 					Show();
 				}
 			}
+		}
+
+		void spell_AutoCastChanged(Spell sender)
+		{
+			Invalidate();
 		}
 
 		void Spell_StateChanging(Spell sender)
@@ -94,6 +109,23 @@ namespace Project.Controls
 
 		void Session_Update(CombatSession sender)
 		{
+			castControlLabel.Text = "";
+
+			if (spell.IsAutoCast)
+			{
+				castControlLabel.Text = "*";
+			}
+			else if (spell.Session != null)
+			{
+				var queuedSpells = spell.Session.GetQueuedSpells(spell.Owner);
+				if (queuedSpells.Contains(spell))
+				{
+					var queueIndex = queuedSpells.TakeWhile(x => x != spell).Count() + 1;
+
+					castControlLabel.Text = queueIndex.ToString();
+				}
+			}
+
 			if (spell.State != Spell.CastState.Unused)
 				Invalidate();
 		}

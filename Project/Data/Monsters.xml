@@ -11,4 +11,8 @@
 	<Spell id="2"/>
 	<Spell id="1"/>
   </Monster>
+  
+  <Monster id="3" texture="dummy" name="Dummy">
+	<Attributes stamina="9999999" strength="9" intellect="16" dexterity="9"/>
+  </Monster>
 </Monsters>
