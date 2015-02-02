@@ -130,10 +130,10 @@ namespace Project
 
 		private void sprite_HealthChanged(CombatSprite sender)
 		{
-			if (Party.Members.Any(sprite => sprite.IsActive))
+			if (!Party.Members.Any(sprite => sprite.IsActive))
 				EndCombat();
 
-			if (MonsterPack.Members.Any(sprite => sprite.IsActive))
+			if (!MonsterPack.Members.Any(sprite => sprite.IsActive))
 				EndCombat();
 
 

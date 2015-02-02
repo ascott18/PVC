@@ -10701,7 +10701,7 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="7a450552-a000-42c5-8452-ff11ba4a1a2d"
+            Id="633e041c-5b11-4434-b66c-28ad5cad4a55"
             isDerived="false"
             sourceEndRoleName="CombatSession"
             targetEndRoleName="Party"
@@ -10714,20 +10714,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="f69d8cff-dacc-4561-85d9-2f5fb075f21d"
+                  Id="36728396-4641-4379-b0a3-06b81be1875a"
                   name="CombatSession"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="a905b269-f6bf-42f5-b22f-4c2a0cfbc0f8"
+                  Id="b413a331-17c7-4cee-aa18-f4c8966b938d"
                   name="Party"
                   isLeaf="false"
                   isStatic="false"
@@ -10735,12 +10735,12 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="5928e8fc-5cc5-442d-9006-934667c5d0b1"
+            Id="02dd9e3a-9a23-4047-b0cc-3d9a6f7e947c"
             isDerived="false"
             sourceEndRoleName="CombatSession"
             targetEndRoleName="MonsterPack"
@@ -10753,20 +10753,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="16dd0d9a-c166-4c94-99bb-7e6868d541ad"
+                  Id="7d7f0cd8-9fcb-4f48-beac-e653cd424d9e"
                   name="CombatSession"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="fc326435-bdd9-463b-a3e4-255c85d4fe1b"
+                  Id="6cf539a2-e1a6-414a-ae29-fed6eb9c8e90"
                   name="MonsterPack"
                   isLeaf="false"
                   isStatic="false"
@@ -10774,7 +10774,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>

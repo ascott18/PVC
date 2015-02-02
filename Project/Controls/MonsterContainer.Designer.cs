@@ -1,6 +1,6 @@
 ﻿namespace Project.Controls
 {
-	partial class CombatSpriteContainer
+	partial class MonsterContainer
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,33 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.AttributesContainer = new Project.Controls.CombatSpriteAttributesContainer();
 			this.SuspendLayout();
 			// 
-			// AttributesContainer
-			// 
-			this.AttributesContainer.BackColor = System.Drawing.Color.Transparent;
-			this.AttributesContainer.Dock = System.Windows.Forms.DockStyle.Right;
-			this.AttributesContainer.Location = new System.Drawing.Point(109, 0);
-			this.AttributesContainer.Name = "AttributesContainer";
-			this.AttributesContainer.Size = new System.Drawing.Size(100, 95);
-			this.AttributesContainer.TabIndex = 0;
-			// 
-			// CombatSpriteContainer
+			// MonsterContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
-			this.Controls.Add(this.AttributesContainer);
-			this.Name = "CombatSpriteContainer";
-			this.Size = new System.Drawing.Size(209, 95);
+			this.Name = "MonsterContainer";
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-
-		protected CombatSpriteAttributesContainer AttributesContainer;
 	}
 }

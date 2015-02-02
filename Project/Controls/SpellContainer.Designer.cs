@@ -1,6 +1,6 @@
 ﻿namespace Project.Controls
 {
-	partial class CombatSpriteContainer
+	partial class SpellContainer
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,33 +28,33 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.AttributesContainer = new Project.Controls.CombatSpriteAttributesContainer();
+			this.label = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
-			// AttributesContainer
+			// label
 			// 
-			this.AttributesContainer.BackColor = System.Drawing.Color.Transparent;
-			this.AttributesContainer.Dock = System.Windows.Forms.DockStyle.Right;
-			this.AttributesContainer.Location = new System.Drawing.Point(109, 0);
-			this.AttributesContainer.Name = "AttributesContainer";
-			this.AttributesContainer.Size = new System.Drawing.Size(100, 95);
-			this.AttributesContainer.TabIndex = 0;
+			this.label.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label.Location = new System.Drawing.Point(0, 0);
+			this.label.Name = "label";
+			this.label.Size = new System.Drawing.Size(120, 16);
+			this.label.TabIndex = 0;
+			this.label.Text = "<Spell>";
+			this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// CombatSpriteContainer
+			// SpellContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Transparent;
-			this.Controls.Add(this.AttributesContainer);
-			this.Name = "CombatSpriteContainer";
-			this.Size = new System.Drawing.Size(209, 95);
+			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.Controls.Add(this.label);
+			this.Name = "SpellContainer";
+			this.Size = new System.Drawing.Size(120, 16);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-
-		protected CombatSpriteAttributesContainer AttributesContainer;
+		private System.Windows.Forms.Label label;
 	}
 }

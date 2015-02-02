@@ -6,8 +6,8 @@ namespace Project.Controls
 {
 	public partial class CombatArena : UserControl
 	{
-		private readonly CombatSpriteContainer[] heroContainers = new CombatSpriteContainer[Party.MaxHeroes];
-		private readonly CombatSpriteContainer[] monsterContainers = new CombatSpriteContainer[MonsterPack.MaxMonsters];
+		private readonly HeroContainer[] heroContainers = new HeroContainer[Party.MaxHeroes];
+		private readonly MonsterContainer[] monsterContainers = new MonsterContainer[MonsterPack.MaxMonsters];
 		private CombatSession combatSession;
 
 		public CombatArena()
@@ -19,14 +19,14 @@ namespace Project.Controls
 
 			for (int i = 0; i < heroContainers.Length; i++)
 			{
-				var container = heroContainers[i] = new CombatSpriteContainer();
+				var container = heroContainers[i] = new HeroContainer();
 				container.Location = new Point(padding, padding + i * container.Size.Height);
 			}
 			Controls.AddRange(heroContainers);
 
 			for (int i = 0; i < monsterContainers.Length; i++)
 			{
-				var container = monsterContainers[i] = new CombatSpriteContainer();
+				var container = monsterContainers[i] = new MonsterContainer();
 				container.Location = new Point(Size.Width - padding - container.Size.Width, padding + i * container.Size.Height);
 			}
 			Controls.AddRange(monsterContainers);

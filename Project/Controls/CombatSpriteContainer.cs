@@ -1,17 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project.Sprites;
 
 namespace Project.Controls
 {
-	public partial class CombatSpriteContainer : UserControl
+	internal partial class CombatSpriteContainer : UserControl
 	{
+		protected readonly List<SpellContainer> SpellContainers = new List<SpellContainer>();
 		private CombatSprite sprite;
-
-		public CombatSpriteContainer()
-		{
-			InitializeComponent();
-		}
 
 		internal CombatSprite Sprite
 		{
@@ -20,7 +23,8 @@ namespace Project.Controls
 			{
 				if (sprite != null)
 				{
-					sprite.HealthChanged -= sprite_HealthChanged;
+					foreach (var spellContainer in SpellContainers)
+						spellContainer.Spell = null;
 				}
 
 				sprite = value;
@@ -31,17 +35,38 @@ namespace Project.Controls
 				else
 				{
 					Show();
-					image.Image = sprite.Image;
-					nameText.Text = sprite.Name;
-					sprite.HealthChanged += sprite_HealthChanged;
-					sprite_HealthChanged(sprite);
+					AttributesContainer.Sprite = sprite;
+
+					for (int i = 0; i < Math.Min(SpellContainers.Count, sprite.Spells.Count); i++)
+					{
+						var spellContainer = SpellContainers[i];
+
+						spellContainer.Spell = sprite.Spells[i];
+					}
 				}
 			}
 		}
 
-		void sprite_HealthChanged(CombatSprite sender)
+
+		public CombatSpriteContainer()
 		{
-			healthText.Text = String.Format("{0}/{1}", sender.Health, sender.MaxHealth);
+			InitializeComponent();
+		}
+
+		protected void InitializeSpellContainers(int x)
+		{
+			for (int i = 0; i < 3; i++)
+			{
+				var container = new SpellContainer
+				{
+					Location = new Point(x, 13 + (i * 17)),
+					Name = "spellContainer" + i,
+				};
+
+				Controls.Add(container);
+				SpellContainers.Add(container);
+			}
+			AttributesContainer.SendToBack();
 		}
 	}
 }

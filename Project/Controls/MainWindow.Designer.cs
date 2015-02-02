@@ -37,9 +37,10 @@
 			this.combatArena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.combatArena.Location = new System.Drawing.Point(156, 98);
+			this.combatArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.combatArena.Location = new System.Drawing.Point(12, 115);
 			this.combatArena.Name = "combatArena";
-			this.combatArena.Size = new System.Drawing.Size(386, 424);
+			this.combatArena.Size = new System.Drawing.Size(680, 424);
 			this.combatArena.TabIndex = 1;
 			this.combatArena.Visible = false;
 			// 
@@ -54,7 +55,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(704, 705);
+			this.ClientSize = new System.Drawing.Size(704, 701);
 			this.Controls.Add(this.combatArena);
 			this.Controls.Add(this.dungeonContainer);
 			this.KeyPreview = true;

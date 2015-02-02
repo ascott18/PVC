@@ -17,16 +17,17 @@ namespace Project.Spells
 
 		void SpellTargetedDamage_StateChanged(Spell sender)
 		{
-			var target = Session.AutoAcquireTarget(Caster);
-
+			CombatSprite target;
 			switch (State)
 			{
 				case CastState.Starting:
+					target = Session.AutoAcquireTarget(Caster);
 					if (target == null) // if target is null, there are no valid targets.
 						Cancel();
 					break;
 
 				case CastState.Finishing:
+					target = Session.AutoAcquireTarget(Caster);
 					if (target != null)
 						target.Health -= damage;
 					break;

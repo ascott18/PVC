@@ -21,9 +21,15 @@ namespace Project.Controls
 
 		private MainWindow()
 		{
+			// We must set the instance inside the constructor so that
+			// if the singleton object is accessed before the constructor
+			// completes, we won't stack overflow (the variable won't normally
+			// be set until after the constructor is done).
+			instance = this;
+
 			InitializeComponent();
 
-			Game = new Game(this);
+			Game = new Game();
 		}
 		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 		{

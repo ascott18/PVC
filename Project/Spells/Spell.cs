@@ -42,6 +42,28 @@ namespace Project.Spells
 			get { return State == CastState.Started; }
 		}
 
+		public double RemainingCastTime
+		{
+			get
+			{
+				if (state != CastState.Started)
+					return 0;
+
+				return CastDuration - (Session.GetTime() - CastStartTime);
+			}
+		}
+
+		public double RemainingCooldown
+		{
+			get
+			{
+				if (state == CastState.Unused)
+					return 0;
+
+				return CooldownDuration - (Session.GetTime() - LastCastTime);
+			}
+		}
+
 		/// <summary>
 		/// Represents the states that a spell can be in.
 		/// </summary>
@@ -96,9 +118,14 @@ namespace Project.Spells
 				if (state == value) return;
 
 				state = value;
+
+				if (StateChanging != null) StateChanging(this);
+
 				if (StateChanged != null) StateChanged(this);
 			}
 		}
+
+		public string Name { get; private set; }
 
 		/// <summary>
 		/// Constructs a spell, parsing base information that all spells have.
@@ -106,14 +133,16 @@ namespace Project.Spells
 		/// <param name="data">The XElement to parse data from.</param>
 		protected Spell(XElement data)
 		{
+			Name = (string)data.Attribute("name");
 			spellID = (int)data.Attribute("id");
 			CastDuration = (int)data.Attribute("castTime");
 			CooldownDuration = (int)data.Attribute("cooldown");
 
-			StateChanged += Spell_StateChanged;
+			StateChanging += Spell_StateStateChanging;
+			StateChanged += Spell_StateStateChanged;
 		}
 
-		private void Spell_StateChanged(Spell sender)
+		private void Spell_StateStateChanging(Spell sender)
 		{
 			switch (State)
 			{
@@ -138,6 +167,15 @@ namespace Project.Spells
 				case CastState.Unused:
 					LastCastTime = 0;
 					Session.StateChanged -= Session_StateChanged;
+					break;
+			}
+		}
+
+		private void Spell_StateStateChanged(Spell sender)
+		{
+			switch (State)
+			{
+				case CastState.Unused:
 					Session = null;
 					Caster = null;
 					break;
@@ -145,7 +183,12 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Fires when the State of the spell changes.
+		/// Fires when the State of the spell changes. Fires before StateChanged.
+		/// </summary>
+		public event SpellEvent StateChanging;
+
+		/// <summary>
+		/// Fires when the State of the spell changes. Fires after StateChanging.
 		/// </summary>
 		public event SpellEvent StateChanged;
 

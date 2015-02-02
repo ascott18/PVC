@@ -1,6 +1,6 @@
 ﻿namespace Project.Controls
 {
-	partial class CombatArena
+	partial class HeroContainer
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,23 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// CombatArena
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			components = new System.ComponentModel.Container();
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.Name = "CombatArena";
-			this.Size = new System.Drawing.Size(680, 424);
-			this.ResumeLayout(false);
-
 		}
 
 		#endregion
-
-
-
-
 	}
 }
