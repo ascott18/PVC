@@ -227,13 +227,21 @@ namespace Project
 
 			Winner = partyVictory ? (DungeonSprite) Party : MonsterPack;
 
+			var loot = new List<Item>();
 			foreach (var monster in MonsterPack.Members.Cast<Monster>())
 			{
 				if (partyVictory)
-					Party.AddInventoryItemRange(monster.GetLoot());
+					loot.AddRange(monster.GetLoot());
 				else
 					monster.Health = monster.MaxHealth;
 			}
+
+			Party.AddInventoryItemRange(loot);
+
+			var endingDialog = new CombatCompleteDialog(this);
+			endingDialog.SetItems(loot);
+			endingDialog.Owner = MainWindow.Window;
+			endingDialog.ShowDialog();
 
 			State = CombatState.Ended;
 
