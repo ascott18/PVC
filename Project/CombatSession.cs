@@ -219,12 +219,12 @@ namespace Project
 
 			gameTimer.Stop();
 
-			if (partyVictory)
+			foreach (var monster in MonsterPack.Members.Cast<Monster>())
 			{
-				foreach (var monster in MonsterPack.Members.Cast<Monster>())
-				{
+				if (partyVictory)
 					Party.AddInventoryItemRange(monster.GetLoot());
-				}
+				else
+					monster.Health = monster.MaxHealth;
 			}
 
 			State = CombatState.Ended;

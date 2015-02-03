@@ -101,16 +101,19 @@ namespace Project
 
 		private void Session_StateChanged(CombatSession sender)
 		{
-			if (sender.State != CombatSession.CombatState.Ended)
-				return;
+			if (sender.State == CombatSession.CombatState.Ended)
+			{
+				sender.MonsterPack.CurrentTile.TileObject = null;
 
-			// Combat has ended. Restore the dungeon.
-			MainWindow.Window.dungeonContainer.Show();
-			MainWindow.Window.combatArena.Hide();
 
-			// Restore 10% health to each hero.
-			foreach (var hero in Party.Members.Cast<Hero>())
-				hero.Health += hero.MaxHealth / 10;
+				// Combat has ended. Restore the dungeon.
+				MainWindow.Window.dungeonContainer.Show();
+				MainWindow.Window.combatArena.Hide();
+
+				// Restore 10% health to each hero.
+				foreach (var hero in Party.Members.Cast<Hero>())
+					hero.Health += hero.MaxHealth / 10;
+			}
 		}
 
 		/// <summary>
