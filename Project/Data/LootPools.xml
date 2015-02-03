@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LootPools>
+  <LootPool id="1">
+	<Item id="1" chance="1.0"/>
+	<Item id="2" chance=".5"/>
+  </LootPool>
+</LootPools>

@@ -5,6 +5,11 @@ using Project.Spells;
 
 namespace Project.Controls
 {
+	/// <summary>
+	/// Displays information about the current cast time and cooldown time of a spell.
+	/// 
+	/// Use the controls events to cast the associated spell.
+	/// </summary>
 	internal partial class SpellContainer : UserControl
 	{
 		private Spell spell;
@@ -22,6 +27,9 @@ namespace Project.Controls
 			Hide();
 		}
 
+		/// <summary>
+		/// Gets and sets the spell displayed by this SpellContainer.
+		/// </summary>
 		public Spell Spell
 		{
 			get { return spell; }
@@ -62,6 +70,7 @@ namespace Project.Controls
 		{
 			if (spell.RemainingCastTime > 0)
 			{
+				// Draw the castbar if the spell is being cast.
 				e.Graphics.FillRectangle(new SolidBrush(Color.Orange),
 				                         new Rectangle(
 					                         0, 0,
@@ -71,6 +80,7 @@ namespace Project.Controls
 			}
 			else if (spell.RemainingCooldown > 0)
 			{
+				// Draw the cooldown bar if the spell is on cooldown.
 				e.Graphics.FillRectangle(new SolidBrush(Color.DarkGray),
 				                         new Rectangle(
 					                         0, 0,
@@ -87,6 +97,8 @@ namespace Project.Controls
 
 		private void Spell_StateChanging(Spell sender, Spell.CastState newState)
 		{
+			// Listen to the combat session's Update event to
+			// redraw the control while the spell is in use.
 			switch (sender.State)
 			{
 				case Spell.CastState.Used:
@@ -101,8 +113,8 @@ namespace Project.Controls
 
 		private void Session_Update(CombatSession sender)
 		{
+			// Set the labels on the spell bar for its queue position/autocast state.
 			castControlLabel.Text = "";
-
 			if (spell.IsAutoCast)
 			{
 				castControlLabel.Text = "*";

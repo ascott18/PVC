@@ -46,6 +46,12 @@ namespace Project.Sprites
 			if (InventoryChanged != null) InventoryChanged(this);
 		}
 
+		public void AddInventoryItemRange(IEnumerable<Item> items)
+		{
+			inventory.AddRange(items);
+			if (InventoryChanged != null) InventoryChanged(this);
+		}
+
 		public event PartyEvent InventoryChanged;
 	}
 

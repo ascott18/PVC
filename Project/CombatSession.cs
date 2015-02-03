@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Project.Controls;
+using Project.Items;
 using Project.Spells;
 using Project.Sprites;
 
@@ -172,13 +173,11 @@ namespace Project
 		{
 			// If all party members are no longer active, the player lost.
 			if (!Party.Members.Any(sprite => sprite.IsActive))
-				EndCombat();
+				EndCombat(false);
 
 			// If all monsters are no longer active, the player won.
 			if (!MonsterPack.Members.Any(sprite => sprite.IsActive))
-				EndCombat();
-
-			//TODO: Pass something into EndCombat to signify the outcome.
+				EndCombat(true);
 		}
 
 		/// <summary>
@@ -211,7 +210,7 @@ namespace Project
 		/// <summary>
 		///     End the combat session.
 		/// </summary>
-		public void EndCombat()
+		public void EndCombat(bool partyVictory)
 		{
 			Debug.WriteLine("Combat Ended");
 
@@ -219,6 +218,14 @@ namespace Project
 				return;
 
 			gameTimer.Stop();
+
+			if (partyVictory)
+			{
+				foreach (var monster in MonsterPack.Members.Cast<Monster>())
+				{
+					Party.AddInventoryItemRange(monster.GetLoot());
+				}
+			}
 
 			State = CombatState.Ended;
 

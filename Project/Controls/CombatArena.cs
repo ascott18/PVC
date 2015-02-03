@@ -33,6 +33,7 @@ namespace Project.Controls
 			}
 			Controls.AddRange(heroContainers);
 
+
 			for (int i = 0; i < monsterContainers.Length; i++)
 			{
 				var container = monsterContainers[i] = new MonsterContainer();
@@ -52,7 +53,7 @@ namespace Project.Controls
 					PopulateContainers(heroContainers, null);
 					PopulateContainers(monsterContainers, null);
 					combatSession.TargetsChanged -= combatSession_TargetsChanged;
-					combatSession.EndCombat();
+					combatSession.EndCombat(false);
 				}
 
 				combatSession = value;
@@ -72,6 +73,7 @@ namespace Project.Controls
 
 		void combatSession_TargetsChanged(CombatSession sender)
 		{
+			// Update the portraits that show each unit's target.
 			var containers = Controls.OfType<CombatSpriteContainer>();
 			foreach (var container in containers)
 			{
@@ -93,9 +95,12 @@ namespace Project.Controls
 			switch (e.Button)
 			{
 				case MouseButtons.Left:
-					CombatSession.QueueSpell(container.Spell);
+					// Queue the spell to be cast.
+					if (!container.Spell.IsAutoCast) // don't queue spells that are autocasting.
+						CombatSession.QueueSpell(container.Spell);
 					break;
 				case MouseButtons.Right:
+					// Toggle autocast.
 					container.Spell.IsAutoCast = !container.Spell.IsAutoCast;
 					break;
 			}

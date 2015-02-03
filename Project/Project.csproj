@@ -97,6 +97,7 @@
     <Compile Include="Controls\SpellContainer.Designer.cs">
       <DependentUpon>SpellContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\LootPool.cs" />
     <Compile Include="Spells\SpellTargetedDamage.cs" />
     <Compile Include="Sprites\CombatSprite.cs" />
     <Compile Include="Dungeon\Door.cs" />
@@ -199,6 +200,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\LootPools.xml" />
     <Content Include="Data\Heroes.xml" />
     <Content Include="Data\Monsters.xml" />
     <Content Include="Data\Maps.xml">
