@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Project.Sprites;
 
@@ -27,6 +28,7 @@ namespace Project.Controls
 				{
 					spellContainer.MouseClick += spellContainer_MouseClick;
 					spellContainer.MouseDoubleClick += spellContainer_MouseDoubleClick;
+					
 				}
 			}
 			Controls.AddRange(heroContainers);
@@ -44,16 +46,41 @@ namespace Project.Controls
 			get { return combatSession; }
 			set
 			{
-				// Stop old session if there was one
-				PopulateContainers(heroContainers, null);
-				PopulateContainers(monsterContainers, null);
 				if (combatSession != null)
+				{
+					// Stop old session if there was one
+					PopulateContainers(heroContainers, null);
+					PopulateContainers(monsterContainers, null);
+					combatSession.TargetsChanged -= combatSession_TargetsChanged;
 					combatSession.EndCombat();
+				}
 
-				// Wire in the new session.
 				combatSession = value;
-				PopulateContainers(heroContainers, combatSession.Party);
-				PopulateContainers(monsterContainers, combatSession.MonsterPack);
+				if (combatSession == null)
+				{
+					// nothing for now.
+				}
+				else
+				{
+					// Wire in the new session.
+					PopulateContainers(heroContainers, combatSession.Party);
+					PopulateContainers(monsterContainers, combatSession.MonsterPack);
+					combatSession.TargetsChanged += combatSession_TargetsChanged;
+				}
+			}
+		}
+
+		void combatSession_TargetsChanged(CombatSession sender)
+		{
+			var containers = Controls.OfType<CombatSpriteContainer>();
+			foreach (var container in containers)
+			{
+				var sprite = container.Sprite;
+				if (sprite == null) continue;
+
+				var target = CombatSession.GetTarget(sprite);
+
+				container.targetImage.Image = target != null ? target.Image : null;
 			}
 		}
 

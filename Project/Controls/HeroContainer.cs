@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace Project.Controls
 {
@@ -9,6 +10,8 @@ namespace Project.Controls
 			InitializeComponent();
 
 			InitializeSpellContainers(12);
+
+			targetImage.Location = new Point(185, 13);
 
 			AttributesContainer.Dock = DockStyle.Right;
 		}

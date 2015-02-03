@@ -80,6 +80,9 @@ namespace Project.Controls
 
 		private void healthBar_Paint(object sender, PaintEventArgs e)
 		{
+			if (sprite == null)
+				return;
+
 			var healthPct = ((double)sprite.Health / sprite.MaxHealth);
 			var greenWidth = (int)(healthBar.Width * healthPct);
 			var redWidth = healthBar.Width - greenWidth;
@@ -101,6 +104,9 @@ namespace Project.Controls
 
 		private void image_Paint(object sender, PaintEventArgs e)
 		{
+			if (sprite == null)
+				return;
+
 			if (Enabled)
 				e.Graphics.DrawImage(sprite.Image, 0, 0, Tile.DimPixels, Tile.DimPixels);
 			else

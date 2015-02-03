@@ -241,10 +241,9 @@ namespace Project
 		{
 			foreach (var sprite in allSprites)
 			{
-				AutoAcquireTarget(sprite);
+				GetTarget(sprite);
 			}
 		}
-
 
 		/// <summary>
 		///     Attempt to acquire a target for the given CombatSprite.
@@ -253,24 +252,26 @@ namespace Project
 		/// </summary>
 		/// <param name="sprite">The sprite to acquire a target for.</param>
 		/// <returns>The target of the given sprite. Returns null if there are no valid targets.</returns>
-		public CombatSprite AutoAcquireTarget(CombatSprite sprite)
+		public CombatSprite GetTarget(CombatSprite sprite)
 		{
 			if (MonsterPack.Members.Contains(sprite))
-				return AutoAcquireTarget(sprite, MonsterPack, Party);
+				return GetTarget(sprite, MonsterPack, Party);
 
 			if (Party.Members.Contains(sprite))
-				return AutoAcquireTarget(sprite, Party, MonsterPack);
+				return GetTarget(sprite, Party, MonsterPack);
 
 			throw new ArgumentException("Couldn't find the sprite in either group of combatants.", "sprite");
 		}
 
-		private CombatSprite AutoAcquireTarget(CombatSprite sprite, DungeonSprite allies, DungeonSprite enemies)
+		private CombatSprite GetTarget(CombatSprite sprite, DungeonSprite allies, DungeonSprite enemies)
 		{
 			CombatSprite target;
 			targets.TryGetValue(sprite, out target);
 
 			if (target == null || !target.IsActive)
 			{
+				var oldTarget = target;
+
 				// We have to do IndexOf manually for IReadOnlyLists.
 				var index = -1;
 				for (int i = 0; i < allies.Members.Count; i++)
@@ -295,10 +296,18 @@ namespace Project
 				}
 
 				targets[sprite] = target;
+
+				if (target != oldTarget && TargetsChanged != null)
+					TargetsChanged(this);
 			}
 
 			return target;
 		}
+
+		/// <summary>
+		/// Fires when the target of one of the combatants in this CombatSession changes.
+		/// </summary>
+		public event CombatEvent TargetsChanged;
 
 
 		private void CombatTimerOnTick()

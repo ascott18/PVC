@@ -40,7 +40,7 @@
 			this.combatArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.combatArena.Location = new System.Drawing.Point(12, 115);
 			this.combatArena.Name = "combatArena";
-			this.combatArena.Size = new System.Drawing.Size(680, 424);
+			this.combatArena.Size = new System.Drawing.Size(600, 424);
 			this.combatArena.TabIndex = 1;
 			this.combatArena.Visible = false;
 			// 

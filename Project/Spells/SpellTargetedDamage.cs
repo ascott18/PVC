@@ -21,13 +21,13 @@ namespace Project.Spells
 			switch (State)
 			{
 				case CastState.Starting:
-					target = Session.AutoAcquireTarget(Owner);
+					target = Session.GetTarget(Owner);
 					if (target == null) // if target is null, there are no valid targets.
 						Cancel();
 					break;
 
 				case CastState.Finishing:
-					target = Session.AutoAcquireTarget(Owner);
+					target = Session.GetTarget(Owner);
 					if (target != null)
 						target.Health -= damage;
 					break;

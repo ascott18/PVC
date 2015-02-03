@@ -74,5 +74,10 @@ namespace Project.Controls
 			SpellContainers = spellContainers.AsReadOnly();
 			AttributesContainer.SendToBack();
 		}
+
+		private void targetImage_EnabledChanged(object sender, EventArgs e)
+		{
+			targetImage.Visible = Enabled;
+		}
 	}
 }

@@ -36,7 +36,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.Name = "CombatArena";
-			this.Size = new System.Drawing.Size(680, 424);
+			this.Size = new System.Drawing.Size(600, 424);
 			this.ResumeLayout(false);
 
 		}
