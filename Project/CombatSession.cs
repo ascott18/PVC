@@ -368,6 +368,8 @@ namespace Project
 			{
 				(monster as Monster).DoAction(this);
 			}
+
+			//MainWindow.Window.combatArena.Refresh();
 		}
 
 		/// <summary>

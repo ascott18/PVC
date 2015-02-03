@@ -92,7 +92,7 @@ namespace Project.Controls
 
 		private void spell_AutoCastChanged(Spell sender)
 		{
-			Invalidate();
+			Refresh();
 		}
 
 		private void Spell_StateChanging(Spell sender, Spell.CastState newState)
@@ -106,7 +106,7 @@ namespace Project.Controls
 					break;
 				case Spell.CastState.Unused:
 					sender.Session.Update -= Session_Update;
-					Invalidate();
+					Refresh();
 					break;
 			}
 		}
@@ -131,7 +131,7 @@ namespace Project.Controls
 			}
 
 			if (spell.State != Spell.CastState.Unused)
-				Invalidate();
+				Refresh();
 		}
 	}
 }

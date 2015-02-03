@@ -75,7 +75,7 @@ namespace Project.Controls
 
 		private void sprite_HealthChanged(CombatSprite sender)
 		{
-			healthBar.Invalidate();
+			healthBar.Refresh();
 		}
 
 		private void healthBar_Paint(object sender, PaintEventArgs e)

@@ -40,8 +40,11 @@ namespace Project.Sprites
 			get { return health; }
 			set
 			{
+				var oldHealth = health;
 				health = Math.Max(value, MinHealth); // Health can't be < MinHealth
-				if (HealthChanged != null) HealthChanged(this);
+				
+				if (HealthChanged != null && oldHealth != health) 
+					HealthChanged(this);
 			}
 		}
 
