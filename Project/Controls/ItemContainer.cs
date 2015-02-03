@@ -15,6 +15,7 @@ namespace Project.Controls
 	internal partial class ItemContainer : UserControl
 	{
 		private Item item;
+		private string noItemLabel;
 
 		public ItemContainer()
 		{
@@ -22,7 +23,7 @@ namespace Project.Controls
 
 			SetStyle(ControlStyles.StandardClick, true);
 
-			label1.MouseDown += label_MouseDown;
+			nameLabel.MouseDown += label_MouseDown;
 		}
 
 		private void label_MouseDown(object sender, MouseEventArgs e)
@@ -35,20 +36,43 @@ namespace Project.Controls
 			get { return item; }
 			set
 			{
-				if (item != null)
-				{
-					label1.Text = null;
-				}
 				item = value;
-				if (item == null)
+
+				UpdateLabel();
+			}
+		}
+
+		public string NoItemLabel
+		{
+			get { return noItemLabel; }
+			set
+			{
+				noItemLabel = value;
+
+				UpdateLabel();
+			}
+		}
+
+		private void UpdateLabel()
+		{
+			if (Item == null)
+			{
+				if (string.IsNullOrEmpty(NoItemLabel))
 				{
 					Hide();
 				}
 				else
 				{
 					Show();
-					label1.Text = item.Name;
+					nameLabel.Text = NoItemLabel;
+					nameLabel.ForeColor = Color.Gray;
 				}
+			}
+			else
+			{
+				Show();
+				nameLabel.Text = Item.Name;
+				nameLabel.ForeColor = Color.Black;
 			}
 		}
 	}

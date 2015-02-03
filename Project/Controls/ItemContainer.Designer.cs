@@ -28,24 +28,24 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
+			this.nameLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
 			// 
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(200, 15);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "label1";
+			this.nameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.nameLabel.Location = new System.Drawing.Point(0, 0);
+			this.nameLabel.Name = "nameLabel";
+			this.nameLabel.Size = new System.Drawing.Size(200, 15);
+			this.nameLabel.TabIndex = 0;
+			this.nameLabel.Text = "label1";
 			// 
 			// ItemContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.nameLabel);
 			this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 0);
 			this.Name = "ItemContainer";
 			this.Size = new System.Drawing.Size(200, 15);
@@ -55,6 +55,6 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label nameLabel;
 	}
 }

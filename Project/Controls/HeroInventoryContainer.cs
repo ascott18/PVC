@@ -28,6 +28,9 @@ namespace Project.Controls
 				equipmentFlow.Controls.Add(itemContainer);
 				itemContainers.Add(itemContainer);
 				itemContainer.MouseDown += itemContainer_MouseDown;
+
+				var slotName = Enum.GetName(typeof(ItemEquippable.SlotID), i);
+				itemContainer.NoItemLabel = String.Format("<No {0}>", slotName);
 			}
 
 			AllowDrop = true;
@@ -39,7 +42,12 @@ namespace Project.Controls
 		{
 			// Handles dragging items out of a hero's inventory.
 			var container = sender as ItemContainer;
-			var result = DoDragDrop(container.Item, DragDropEffects.Move);
+			var item = container.Item;
+
+			if (item == null)
+				return;
+
+			var result = DoDragDrop(item, DragDropEffects.Move);
 
 			if (result == DragDropEffects.Move)
 			{
