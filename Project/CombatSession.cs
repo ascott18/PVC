@@ -99,6 +99,12 @@ namespace Project
 		public event CombatEvent StateChanged;
 
 		/// <summary>
+		/// Gets the winner of this CombatSession.
+		/// Will be null until the session is ended.
+		/// </summary>
+		public DungeonSprite Winner { get; private set; }
+
+		/// <summary>
 		///     Start the CombatSession, starting the game timer and initiating the combat loop.
 		///     Can only ever be called once on a given CombatSession.
 		/// </summary>
@@ -218,6 +224,8 @@ namespace Project
 				return;
 
 			gameTimer.Stop();
+
+			Winner = partyVictory ? (DungeonSprite) Party : MonsterPack;
 
 			foreach (var monster in MonsterPack.Members.Cast<Monster>())
 			{

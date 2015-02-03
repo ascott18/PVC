@@ -103,7 +103,8 @@ namespace Project
 		{
 			if (sender.State == CombatSession.CombatState.Ended)
 			{
-				sender.MonsterPack.CurrentTile.TileObject = null;
+				if (sender.Winner == Party)
+					sender.MonsterPack.CurrentTile.TileObject = null;
 
 
 				// Combat has ended. Restore the dungeon.
