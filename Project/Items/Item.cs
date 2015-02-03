@@ -6,10 +6,12 @@ namespace Project.Items
 {
 	internal abstract class Item
 	{
+		public readonly string Name;
 		public readonly int ItemID;
 
-		protected Item(int itemId)
+		protected Item(int itemId, string name)
 		{
+			Name = name;
 			ItemID = itemId;
 		}
 

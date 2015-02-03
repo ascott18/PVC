@@ -17,15 +17,12 @@ namespace Project.Items
 			Feet,
 		}
 
-		public const int MaxSlotId = 4;
+		public static readonly int NumSlots = Enum.GetValues(typeof(SlotID)).Length;
 
-		public readonly string Name;
 		public readonly SlotID Slot;
 
-		public ItemEquippable(int itemId, string slotName, string name) : base(itemId)
+		public ItemEquippable(int itemId, string name, string slotName) : base(itemId, name)
 		{
-			Name = name;
-
 			if (!Enum.TryParse(slotName, true, out Slot))
 				throw new InvalidDataException("Invalid slot for itemID " + itemId);
 		}
@@ -39,7 +36,7 @@ namespace Project.Items
 			var name = itemElement.Attribute("name").Value;
 			var slot = itemElement.Attribute("slot").Value;
 
-			return new ItemEquippable(id, slot, name)
+			return new ItemEquippable(id, name, slot)
 			{
 				Attributes = Attributes.ParseAttributes(itemElement.Element("Attributes"))
 			};

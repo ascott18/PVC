@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Project.Controls
 {
@@ -18,6 +20,7 @@ namespace Project.Controls
 			InitializeComponent();
 
 			Game = new Game();
+			inventoryScreen1.Party = Game.Party; //TODO: Temp
 		}
 
 		internal Game Game { get; private set; }

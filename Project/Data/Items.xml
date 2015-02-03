@@ -1,6 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Items>
-  <Equippable id="1" name="Amazing Thing" slot="Body">
+  <!--SlotIDs:
+	  Weapon,
+	  Head,
+	  Body,
+	  Hands,
+	  Feet,
+  -->
+  <Equippable id="1" name="Amazing Body" slot="Body">
+	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+  </Equippable>
+  <Equippable id="2" name="Amazing Hat" slot="Head">
+	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+  </Equippable>
+  <Equippable id="3" name="Amazing Gloves" slot="Hands">
+	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+  </Equippable>
+  <Equippable id="4" name="Amazing Boots" slot="Feet">
+	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+  </Equippable>
+  <Equippable id="5" name="Amazing Weapon" slot="Weapon">
 	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
   </Equippable>
 </Items>

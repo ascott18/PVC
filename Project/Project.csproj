@@ -67,6 +67,24 @@
     <Compile Include="Controls\HeroContainer.Designer.cs">
       <DependentUpon>HeroContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\HeroInventoryContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HeroInventoryContainer.Designer.cs">
+      <DependentUpon>HeroInventoryContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InventoryScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InventoryScreen.Designer.cs">
+      <DependentUpon>InventoryScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ItemContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ItemContainer.Designer.cs">
+      <DependentUpon>ItemContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MonsterContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +144,18 @@
     <Compile Include="Dungeon\Tile.cs" />
     <EmbeddedResource Include="Controls\DungeonContainer.resx">
       <DependentUpon>DungeonContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HeroContainer.resx">
+      <DependentUpon>HeroContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HeroInventoryContainer.resx">
+      <DependentUpon>HeroInventoryContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\InventoryScreen.resx">
+      <DependentUpon>InventoryScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ItemContainer.resx">
+      <DependentUpon>ItemContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

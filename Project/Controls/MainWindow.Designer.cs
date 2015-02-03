@@ -28,15 +28,21 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.inventoryScreen1 = new Project.Controls.InventoryScreen();
 			this.combatArena = new Project.Controls.CombatArena();
 			this.dungeonContainer = new Project.Controls.DungeonContainer();
 			this.SuspendLayout();
 			// 
+			// inventoryScreen1
+			// 
+			this.inventoryScreen1.Location = new System.Drawing.Point(706, 12);
+			this.inventoryScreen1.Name = "inventoryScreen1";
+			this.inventoryScreen1.Party = null;
+			this.inventoryScreen1.Size = new System.Drawing.Size(349, 677);
+			this.inventoryScreen1.TabIndex = 2;
+			// 
 			// combatArena
 			// 
-			this.combatArena.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.combatArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.combatArena.Location = new System.Drawing.Point(47, 121);
 			this.combatArena.Name = "combatArena";
@@ -55,7 +61,8 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(704, 701);
+			this.ClientSize = new System.Drawing.Size(1095, 701);
+			this.Controls.Add(this.inventoryScreen1);
 			this.Controls.Add(this.combatArena);
 			this.Controls.Add(this.dungeonContainer);
 			this.KeyPreview = true;
@@ -69,6 +76,7 @@
 
 		internal DungeonContainer dungeonContainer;
 		internal CombatArena combatArena;
+		private InventoryScreen inventoryScreen1;
 
 
 

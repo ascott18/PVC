@@ -3,6 +3,10 @@
   <Hero id="1" texture="milton" name="Milton">
 	<Attributes stamina="14" strength="14" intellect="8" dexterity="9"/>
 	<Item id="1"/>
+	<Item id="2"/>
+	<Item id="3"/>
+	<Item id="4"/>
+	<Item id="5"/>
 	<Spell id="1"/>
 	<Spell id="2"/>
 	<Spell id="3"/>

@@ -40,7 +40,7 @@ namespace Project.Sprites
 		/// <summary>
 		///     Holds the items that the hero has equipped. Each index is the integer representation of a ItemEquippable.SlotId.
 		/// </summary>
-		private readonly ItemEquippable[] equipment = new ItemEquippable[ItemEquippable.MaxSlotId];
+		private readonly ItemEquippable[] equipment = new ItemEquippable[ItemEquippable.NumSlots];
 
 		private void Hero_EquipmentChanged(CombatSprite sender)
 		{
@@ -75,6 +75,11 @@ namespace Project.Sprites
 			if (EquipmentChanged != null) EquipmentChanged(this);
 
 			return oldItem;
+		}
+
+		public ItemEquippable GetEquippedItem(ItemEquippable.SlotID slot)
+		{
+			return equipment[(int)slot];
 		}
 
 		public event SpriteEvent EquipmentChanged;
