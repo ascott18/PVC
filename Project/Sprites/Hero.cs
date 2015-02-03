@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Xml.XPath;
 using Project.Data;
 using Project.Items;
@@ -8,10 +9,12 @@ namespace Project.Sprites
 {
 	internal class Hero : CombatSprite
 	{
+		public Party Party { get; private set; }
 		public readonly int HeroID;
 
-		public Hero(int heroId)
+		public Hero(Party party, int heroId)
 		{
+			Party = party;
 			HeroID = heroId;
 
 			var xDoc = XmlData.GetDocument("Heroes");
@@ -77,6 +80,28 @@ namespace Project.Sprites
 			return oldItem;
 		}
 
+		/// <summary>
+		///     Unequips the item, returning true if successful.
+		/// </summary>
+		/// <param name="item">The item to unequip.</param>
+		/// <returns>True if the requested item was unequipped, otherwise false.</returns>
+		public bool Unequip(ItemEquippable item)
+		{
+			var index = Array.IndexOf(equipment, item);
+
+			if (index == -1) return false;
+
+			equipment[index] = null;
+			if (EquipmentChanged != null) EquipmentChanged(this);
+
+			return true;
+		}
+
+		/// <summary>
+		/// Gets the item equipped in the given slot.
+		/// </summary>
+		/// <param name="slot">The slot to query.</param>
+		/// <returns>The item equipped in that slot.</returns>
 		public ItemEquippable GetEquippedItem(ItemEquippable.SlotID slot)
 		{
 			return equipment[(int)slot];

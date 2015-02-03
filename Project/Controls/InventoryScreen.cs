@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project.Items;
 using Project.Sprites;
 
 namespace Project.Controls
@@ -30,6 +32,28 @@ namespace Project.Controls
 				hiContainers.Add(heroInventory);
 				Controls.Add(heroInventory);
 			}
+
+			inventoryFlow.AllowDrop = true;
+			inventoryFlow.DragEnter += inventoryFlow_DragEnter;
+			inventoryFlow.DragDrop += inventoryFlow_DragDrop;
+		}
+
+		void inventoryFlow_DragDrop(object sender, DragEventArgs e)
+		{
+			// Handles the recieve of a drag of an ItemEquippable 
+			var item = e.Data.GetData(typeof(ItemEquippable)) as ItemEquippable;
+			if (item != null)
+			{
+				Party.AddInventoryItem(item);
+			}
+		}
+
+		void inventoryFlow_DragEnter(object sender, DragEventArgs e)
+		{
+			// Notify that we can accept drags of ItemEquippable.
+			var data = e.Data.GetData(typeof(ItemEquippable));
+			if (data is ItemEquippable)
+				e.Effect = DragDropEffects.Move;
 		}
 
 
@@ -97,8 +121,23 @@ namespace Project.Controls
 			};
 			inventoryFlow.Controls.Add(itemContainer);
 			inventoryItemContainers.Add(itemContainer);
+			itemContainer.MouseDown += InventoryItemContainer_MouseDown;
 
 			return itemContainer;
+		}
+
+		void InventoryItemContainer_MouseDown(object sender, MouseEventArgs e)
+		{
+			// Handles dragging items out of our inventory.
+
+			var container = sender as ItemContainer;
+			var result = DoDragDrop(container.Item, DragDropEffects.Move);
+
+			if (result == DragDropEffects.Move)
+			{
+				// We moved the item to somewhere. Remove it from our inventory.
+				Party.RemoveInventoryItem(container.Item);
+			}
 		}
 	}
 }

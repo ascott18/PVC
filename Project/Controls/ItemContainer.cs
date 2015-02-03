@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Data;
 using System.Linq;
@@ -18,6 +19,15 @@ namespace Project.Controls
 		public ItemContainer()
 		{
 			InitializeComponent();
+
+			SetStyle(ControlStyles.StandardClick, true);
+
+			label1.MouseDown += label_MouseDown;
+		}
+
+		private void label_MouseDown(object sender, MouseEventArgs e)
+		{
+			OnMouseDown(e);
 		}
 
 		public Item Item

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -26,7 +27,45 @@ namespace Project.Controls
 				};
 				equipmentFlow.Controls.Add(itemContainer);
 				itemContainers.Add(itemContainer);
+				itemContainer.MouseDown += itemContainer_MouseDown;
 			}
+
+			AllowDrop = true;
+			DragEnter += HeroInventoryContainer_DragEnter;
+			DragDrop += HeroInventoryContainer_DragDrop;
+		}
+
+		void itemContainer_MouseDown(object sender, MouseEventArgs e)
+		{
+			// Handles dragging items out of a hero's inventory.
+			var container = sender as ItemContainer;
+			var result = DoDragDrop(container.Item, DragDropEffects.Move);
+
+			if (result == DragDropEffects.Move)
+			{
+				// We moved the item to somewhere. Remove it from our equipment.
+				Hero.Unequip(container.Item as ItemEquippable);
+			}
+		}
+
+		void HeroInventoryContainer_DragDrop(object sender, DragEventArgs e)
+		{
+			// Handles the recieve of a drag of an ItemEquippable 
+			var item = e.Data.GetData(typeof(ItemEquippable)) as ItemEquippable;
+			if (item != null)
+			{
+				var oldItem = hero.Equip(item);
+				if (oldItem != null)
+					hero.Party.AddInventoryItem(oldItem);
+			}
+		}
+
+		void HeroInventoryContainer_DragEnter(object sender, DragEventArgs e)
+		{
+			// Notify that we can accept drags of ItemEquippable.
+			var data = e.Data.GetData(typeof(ItemEquippable));
+			if (data is ItemEquippable)
+				e.Effect = DragDropEffects.Move;
 		}
 
 		public Hero Hero
