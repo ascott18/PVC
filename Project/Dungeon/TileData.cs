@@ -8,29 +8,29 @@ using Project.Properties;
 namespace Project.Dungeon
 {
 	/// <summary>
-	/// TileData is an immutable class that represents the static information about a tile
-	/// that was parsed from XML. A single TileData instance will be used for all Tiles that
-	/// use that tileID.
+	///     TileData is an immutable class that represents the static information about a tile
+	///     that was parsed from XML. A single TileData instance will be used for all Tiles that
+	///     use that tileID.
 	/// </summary>
-	class TileData
+	internal class TileData
 	{
 		private static TileData[] data = new TileData[128];
 
 		/// <summary>
-		/// The tileID of this TileData, as defined by the "id" attribute in Tiles.xml
+		///     The background image to be used by tiles that use this TileData. Can be thought of
+		///     as a foreground image if IsObstacle is true.
 		/// </summary>
-		public readonly int TileID;
+		public readonly Image Image;
 
 		/// <summary>
-		/// Whether or not tiles that use this TileData can be occupied by a TileObject.
+		///     Whether or not tiles that use this TileData can be occupied by a TileObject.
 		/// </summary>
 		public readonly bool IsObstable;
 
 		/// <summary>
-		/// The background image to be used by tiles that use this TileData. Can be thought of 
-		/// as a foreground image if IsObstacle is true.
+		///     The tileID of this TileData, as defined by the "id" attribute in Tiles.xml
 		/// </summary>
-		public readonly Image Image;
+		public readonly int TileID;
 
 		private TileData(int id, bool isObstable, string imageName)
 		{
@@ -53,8 +53,8 @@ namespace Project.Dungeon
 		}
 
 		/// <summary>
-		/// Gets the TileData for the requested tileID. Data will be parsed from Tiles.xml
-		/// if it has not already been parsed. Otherwise, a cached instance will be returned.
+		///     Gets the TileData for the requested tileID. Data will be parsed from Tiles.xml
+		///     if it has not already been parsed. Otherwise, a cached instance will be returned.
 		/// </summary>
 		/// <param name="tileID">The ID of the type of tile.</param>
 		/// <returns>The requested TileData instance for the tileID.</returns>
@@ -76,7 +76,8 @@ namespace Project.Dungeon
 			if (tileElement == null)
 				throw new Exception(String.Format("No Tile with id {0} found", tileID));
 
-			TileData tileData = new TileData(tileID, bool.Parse(tileElement.Attribute("obstacle").Value), tileElement.Attribute("texture").Value);
+			TileData tileData = new TileData(tileID, bool.Parse(tileElement.Attribute("obstacle").Value),
+			                                 tileElement.Attribute("texture").Value);
 
 			return data[tileID] = tileData;
 		}

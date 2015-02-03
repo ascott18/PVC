@@ -3,14 +3,14 @@
 namespace Project.Controls
 {
 	/// <summary>
-	/// DungeonContainer is the UserControl that contains the dungeon itself.
+	///     DungeonContainer is the UserControl that contains the dungeon itself.
 	/// </summary>
 	public partial class DungeonContainer : UserControl
 	{
 		public DungeonContainer()
 		{
 			InitializeComponent();
-			
+
 			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
 		}
 

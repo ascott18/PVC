@@ -9,32 +9,26 @@ using Project.Spells;
 
 namespace Project.Sprites
 {
-	abstract class CombatSprite
+	internal abstract class CombatSprite
 	{
-		public Image Image { get; protected set; }
-		public string Name { get; protected set; }
-
 		public readonly List<Spell> Spells = new List<Spell>();
+		private Attributes attributes;
+
+		private int health = 1;
+		private int maxHealth = 1;
 
 		protected CombatSprite()
 		{
 			HealthChanged += CombatSprite_HealthChanged;
 		}
 
-		void CombatSprite_HealthChanged(CombatSprite sender)
-		{
-			if (!IsActive && CurrentCast != null)
-				CurrentCast.Cancel();
-		}
+		public Image Image { get; protected set; }
+		public string Name { get; protected set; }
 
 		public Spell CurrentCast
 		{
 			get { return Spells.FirstOrDefault(spell => spell.IsCasting); }
 		}
-
-		private int health = 1;
-		private int maxHealth = 1;
-		private Attributes attributes;
 
 		public virtual int MinHealth
 		{
@@ -50,11 +44,16 @@ namespace Project.Sprites
 				if (HealthChanged != null) HealthChanged(this);
 			}
 		}
-		public event SpriteEvent HealthChanged;
 
-		public bool IsDead { get { return Health == 0; } }
+		public bool IsDead
+		{
+			get { return Health == 0; }
+		}
 
-		public virtual bool IsActive { get { return !IsDead; } }
+		public virtual bool IsActive
+		{
+			get { return !IsDead; }
+		}
 
 		public int MaxHealth
 		{
@@ -81,16 +80,24 @@ namespace Project.Sprites
 
 				// Scale up the current health so that the percent health remains the same
 				// before and after the adjustment to it.
-				var newMaxHealth = attributes.Stamina*healthPerStamina;
-				var healthScaleFactor = (double)newMaxHealth/MaxHealth;
+				var newMaxHealth = attributes.Stamina * healthPerStamina;
+				var healthScaleFactor = (double)newMaxHealth / MaxHealth;
 				Health = (int)(Health * healthScaleFactor);
 
 				MaxHealth = newMaxHealth;
 			}
 		}
 
+		private void CombatSprite_HealthChanged(CombatSprite sender)
+		{
+			if (!IsActive && CurrentCast != null)
+				CurrentCast.Cancel();
+		}
+
+		public event SpriteEvent HealthChanged;
+
 		/// <summary>
-		/// Recalculates the attributes of the sprite. Should be overridden by subclasses.
+		///     Recalculates the attributes of the sprite. Should be overridden by subclasses.
 		/// </summary>
 		public virtual void RecalculateAttributes()
 		{
@@ -98,7 +105,7 @@ namespace Project.Sprites
 		}
 
 		/// <summary>
-		/// Parses data from an XElement that are shared between all CombatSprite subclasses.
+		///     Parses data from an XElement that are shared between all CombatSprite subclasses.
 		/// </summary>
 		/// <param name="element">The XElement to parse the shared data from.</param>
 		protected void ParseCommonAttributes(XElement element)
@@ -117,10 +124,10 @@ namespace Project.Sprites
 
 	public struct Attributes
 	{
+		public int Dexterity;
+		public int Intellect;
 		public int Stamina;
 		public int Strength;
-		public int Intellect;
-		public int Dexterity;
 
 		public static Attributes operator +(Attributes a1, Attributes a2)
 		{

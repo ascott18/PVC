@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using Project.Dungeon;
@@ -9,8 +8,40 @@ namespace Project.Controls
 {
 	public partial class CombatSpriteAttributesContainer : UserControl
 	{
+		private static readonly ImageAttributes grayscaleAttributes;
 		private CombatSprite sprite;
-		private static ImageAttributes grayscaleAttributes;
+
+		static CombatSpriteAttributesContainer()
+		{
+			// From http://www.codeproject.com/Questions/147234/Converting-Bitmap-to-grayscale
+
+			grayscaleAttributes = new ImageAttributes();
+			var matrix = new ColorMatrix(
+				new[]
+				{
+					new[]
+					{
+						.3f, .3f, .3f, 0, 0
+					},
+					new[]
+					{
+						.59f, .59f, .59f, 0, 0
+					},
+					new[]
+					{
+						.11f, .11f, .11f, 0, 0
+					},
+					new float[]
+					{
+						0, 0, 0, 1, 0
+					},
+					new float[]
+					{
+						0, 0, 0, 0, 1
+					}
+				});
+			grayscaleAttributes.SetColorMatrix(matrix);
+		}
 
 		public CombatSpriteAttributesContainer()
 		{
@@ -42,7 +73,7 @@ namespace Project.Controls
 			}
 		}
 
-		void sprite_HealthChanged(CombatSprite sender)
+		private void sprite_HealthChanged(CombatSprite sender)
 		{
 			healthBar.Invalidate();
 		}
@@ -54,10 +85,10 @@ namespace Project.Controls
 			var redWidth = healthBar.Width - greenWidth;
 
 			e.Graphics.FillRectangle(new SolidBrush(Color.LightGreen),
-									 new Rectangle(0, 0, greenWidth, healthBar.Height));
+			                         new Rectangle(0, 0, greenWidth, healthBar.Height));
 
 			e.Graphics.FillRectangle(new SolidBrush(Color.LightCoral),
-									 new Rectangle(greenWidth, 0, redWidth, healthBar.Height));
+			                         new Rectangle(greenWidth, 0, redWidth, healthBar.Height));
 
 			var format = new StringFormat
 			{
@@ -66,24 +97,6 @@ namespace Project.Controls
 			};
 
 			e.Graphics.DrawString(sprite.Health.ToString(), Font, Brushes.Black, healthBar.ClientRectangle, format);
-
-		}
-
-		static CombatSpriteAttributesContainer()
-		{
-			// From http://www.codeproject.com/Questions/147234/Converting-Bitmap-to-grayscale
-
-			grayscaleAttributes = new ImageAttributes();
-			var matrix = new ColorMatrix(
-			   new float[][]
-              {
-                 new float[] {.3f, .3f, .3f, 0, 0},
-                 new float[] {.59f, .59f, .59f, 0, 0},
-                 new float[] {.11f, .11f, .11f, 0, 0},
-                 new float[] {0, 0, 0, 1, 0},
-                 new float[] {0, 0, 0, 0, 1}
-              });
-			grayscaleAttributes.SetColorMatrix(matrix);
 		}
 
 		private void image_Paint(object sender, PaintEventArgs e)
@@ -91,7 +104,8 @@ namespace Project.Controls
 			if (Enabled)
 				e.Graphics.DrawImage(sprite.Image, 0, 0, Tile.DimPixels, Tile.DimPixels);
 			else
-				e.Graphics.DrawImage(sprite.Image, new Rectangle(0, 0, 50, 50), 0, 0, Tile.DimPixels, Tile.DimPixels, GraphicsUnit.Pixel, grayscaleAttributes);
+				e.Graphics.DrawImage(sprite.Image, new Rectangle(0, 0, 50, 50), 0, 0, Tile.DimPixels, Tile.DimPixels,
+				                     GraphicsUnit.Pixel, grayscaleAttributes);
 		}
 	}
 }

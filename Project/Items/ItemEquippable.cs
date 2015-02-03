@@ -6,10 +6,8 @@ using Project.Sprites;
 
 namespace Project.Items
 {
-	class ItemEquippable : Item
+	internal class ItemEquippable : Item
 	{
-		public const int MaxSlotId = 4;
-
 		public enum SlotID
 		{
 			Weapon,
@@ -19,30 +17,32 @@ namespace Project.Items
 			Feet,
 		}
 
-		public readonly SlotID Slot;
+		public const int MaxSlotId = 4;
+
 		public readonly string Name;
+		public readonly SlotID Slot;
 
 		public ItemEquippable(int itemId, string slotName, string name) : base(itemId)
 		{
 			Name = name;
 
-			if(!Enum.TryParse(slotName, true, out Slot))
+			if (!Enum.TryParse(slotName, true, out Slot))
 				throw new InvalidDataException("Invalid slot for itemID " + itemId);
 		}
 
 		public Attributes Attributes { get; private set; }
 
-		[XmlData.XmlParser("Equippable")]
+		[XmlData.XmlParserAttribute("Equippable")]
 		public static Item ParseItem(XElement itemElement)
 		{
-            var id = int.Parse(itemElement.Attribute("id").Value);
-            var name = itemElement.Attribute("name").Value;
-            var slot = itemElement.Attribute("slot").Value;
+			var id = int.Parse(itemElement.Attribute("id").Value);
+			var name = itemElement.Attribute("name").Value;
+			var slot = itemElement.Attribute("slot").Value;
 
-            return new ItemEquippable(id, slot, name)
-            {
-	            Attributes = Attributes.ParseAttributes(itemElement.Element("Attributes"))
-            };
+			return new ItemEquippable(id, slot, name)
+			{
+				Attributes = Attributes.ParseAttributes(itemElement.Element("Attributes"))
+			};
 		}
 	}
 }

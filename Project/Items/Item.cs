@@ -4,7 +4,7 @@ using Project.Data;
 
 namespace Project.Items
 {
-	abstract class Item
+	internal abstract class Item
 	{
 		public readonly int ItemID;
 

@@ -5,14 +5,14 @@ using Project.Items;
 
 namespace Project.Sprites
 {
-	class Party : DungeonSprite
+	internal class Party : DungeonSprite
 	{
 		public const int MaxHeroes = 3;
+		public readonly IReadOnlyList<Item> Inventory;
 
 		private readonly List<Hero> heroes = new List<Hero>(MaxHeroes);
 
 		private readonly List<Item> inventory = new List<Item>();
-		public readonly IReadOnlyList<Item> Inventory;
 
 
 		public Party(Point loc) : base(loc)

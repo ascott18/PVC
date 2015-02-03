@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Project.Spells;
 using Project.Sprites;
 
 namespace Project.Controls
@@ -42,30 +39,6 @@ namespace Project.Controls
 			Controls.AddRange(monsterContainers);
 		}
 
-
-		void spellContainer_MouseClick(object sender, MouseEventArgs e)
-		{
-			var container = sender as SpellContainer;
-			if (container == null) throw new InvalidCastException("sender was not a SpellContainer");
-
-			switch (e.Button)
-			{
-				case MouseButtons.Left:
-					CombatSession.QueueSpell(container.Spell);
-					break;
-				case MouseButtons.Right:
-					container.Spell.IsAutoCast = !container.Spell.IsAutoCast;
-					break;
-			}
-		}
-		void spellContainer_MouseDoubleClick(object sender, MouseEventArgs e)
-		{
-			var container = sender as SpellContainer;
-			if (container == null) throw new InvalidCastException("sender was not a SpellContainer");
-
-			CombatSession.CastSpellImmediately(container.Spell);
-		}
-
 		internal CombatSession CombatSession
 		{
 			get { return combatSession; }
@@ -82,6 +55,31 @@ namespace Project.Controls
 				PopulateContainers(heroContainers, combatSession.Party);
 				PopulateContainers(monsterContainers, combatSession.MonsterPack);
 			}
+		}
+
+
+		private void spellContainer_MouseClick(object sender, MouseEventArgs e)
+		{
+			var container = sender as SpellContainer;
+			if (container == null) throw new InvalidCastException("sender was not a SpellContainer");
+
+			switch (e.Button)
+			{
+				case MouseButtons.Left:
+					CombatSession.QueueSpell(container.Spell);
+					break;
+				case MouseButtons.Right:
+					container.Spell.IsAutoCast = !container.Spell.IsAutoCast;
+					break;
+			}
+		}
+
+		private void spellContainer_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			var container = sender as SpellContainer;
+			if (container == null) throw new InvalidCastException("sender was not a SpellContainer");
+
+			CombatSession.CastSpellImmediately(container.Spell);
 		}
 
 		private static void PopulateContainers(CombatSpriteContainer[] containers, DungeonSprite parent)

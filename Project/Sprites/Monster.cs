@@ -4,7 +4,7 @@ using Project.Data;
 
 namespace Project.Sprites
 {
-	class Monster : CombatSprite
+	internal class Monster : CombatSprite
 	{
 		public readonly int MonsterID;
 
@@ -29,7 +29,6 @@ namespace Project.Sprites
 					if (spell.Start(session))
 						return;
 				}
-
 			}
 		}
 	}

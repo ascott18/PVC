@@ -15,7 +15,7 @@ namespace Project.Spells
 			StateChanged += SpellTargetedDamage_StateChanged;
 		}
 
-		void SpellTargetedDamage_StateChanged(Spell sender, CastState oldState)
+		private void SpellTargetedDamage_StateChanged(Spell sender, CastState oldState)
 		{
 			CombatSprite target;
 			switch (State)
@@ -35,7 +35,7 @@ namespace Project.Spells
 		}
 
 
-		[XmlData.XmlParser("TargetedDamage")]
+		[XmlData.XmlParserAttribute("TargetedDamage")]
 		public static Spell Create(XElement data)
 		{
 			return new SpellTargetedDamage(data);

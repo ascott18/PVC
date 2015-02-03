@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project.Spells;
 using Project.Sprites;
 
 namespace Project.Controls
@@ -15,9 +9,15 @@ namespace Project.Controls
 	internal partial class CombatSpriteContainer : UserControl
 	{
 		private readonly List<SpellContainer> spellContainers = new List<SpellContainer>();
-		public IReadOnlyList<SpellContainer> SpellContainers { get; private set; }
 
 		private CombatSprite sprite;
+
+		public CombatSpriteContainer()
+		{
+			InitializeComponent();
+		}
+
+		public IReadOnlyList<SpellContainer> SpellContainers { get; private set; }
 
 		internal CombatSprite Sprite
 		{
@@ -52,16 +52,11 @@ namespace Project.Controls
 			}
 		}
 
-		void sprite_HealthChanged(CombatSprite sender)
+		private void sprite_HealthChanged(CombatSprite sender)
 		{
 			Enabled = Sprite.IsActive;
 		}
 
-
-		public CombatSpriteContainer()
-		{
-			InitializeComponent();
-		}
 
 		protected void InitializeSpellContainers(int x)
 		{

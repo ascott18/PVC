@@ -5,18 +5,17 @@ using Project.Dungeon;
 
 namespace Project.Sprites
 {
-	abstract class DungeonSprite : TileObject
+	internal abstract class DungeonSprite : TileObject
 	{
-		public IReadOnlyList<CombatSprite> Members { get; protected set; } 
+		protected DungeonSprite(Point loc) : base(loc)
+		{
+		}
+
+		public IReadOnlyList<CombatSprite> Members { get; protected set; }
 
 		public override void Interact(Game game)
 		{
 			throw new NotImplementedException();
-		}
-
-		protected DungeonSprite(Point loc) : base(loc)
-		{
-			
 		}
 	}
 }

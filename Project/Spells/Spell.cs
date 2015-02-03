@@ -8,12 +8,11 @@ using Project.Sprites;
 namespace Project.Spells
 {
 	/// <summary>
-	/// Spell is an abstract class that acts as a base for all spells in the game.
-	/// 
-	/// Spell instances are owned by a single CombatSprite, and are shared between
-	/// all CombatSessions that the owner participates in. Spells are represented as
-	/// finite state machines with well-defined state transitions. A diagram
-	/// of possible state transitions is located in UML/CastStates.activitydiagram.
+	///     Spell is an abstract class that acts as a base for all spells in the game.
+	///     Spell instances are owned by a single CombatSprite, and are shared between
+	///     all CombatSessions that the owner participates in. Spells are represented as
+	///     finite state machines with well-defined state transitions. A diagram
+	///     of possible state transitions is located in UML/CastStates.activitydiagram.
 	/// </summary>
 	internal abstract class Spell
 	{
@@ -68,10 +67,10 @@ namespace Project.Spells
 		/// <param name="data">The XElement to parse data from.</param>
 		protected Spell(XElement data)
 		{
-			Name = (string) data.Attribute("name");
-			spellID = (int) data.Attribute("id");
-			CastDuration = (double) data.Attribute("castTime");
-			CooldownDuration = (double) data.Attribute("cooldown");
+			Name = (string)data.Attribute("name");
+			spellID = (int)data.Attribute("id");
+			CastDuration = (double)data.Attribute("castTime");
+			CooldownDuration = (double)data.Attribute("cooldown");
 
 			StateChanging += Spell_StateStateChanging;
 			StateChanged += Spell_StateStateChanged;

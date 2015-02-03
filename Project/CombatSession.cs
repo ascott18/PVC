@@ -11,11 +11,10 @@ using Project.Sprites;
 namespace Project
 {
 	/// <summary>
-	/// CombatSession represents a single fight between one Party and one MonsterPack.
-	/// 
-	/// It holds state information that is specific to the battle, like targeting,
-	/// timing control, and spell queueing. It acts as the controller for the Monster "AI",
-	/// and for performing the actual casts of queued spells and autocasting spells for Heroes.
+	///     CombatSession represents a single fight between one Party and one MonsterPack.
+	///     It holds state information that is specific to the battle, like targeting,
+	///     timing control, and spell queueing. It acts as the controller for the Monster "AI",
+	///     and for performing the actual casts of queued spells and autocasting spells for Heroes.
 	/// </summary>
 	internal class CombatSession
 	{
@@ -163,7 +162,7 @@ namespace Project
 
 				// We sleep here so we aren't updating any more than we need to.
 				var elapsed = timer.ElapsedMilliseconds - start;
-				var wait = UpdateFrequency - (int) elapsed;
+				var wait = UpdateFrequency - (int)elapsed;
 				if (wait > 0)
 					Thread.Sleep(wait);
 			}
@@ -232,7 +231,7 @@ namespace Project
 		/// <returns>The current game time, in seconds.</returns>
 		public double GetTime()
 		{
-			return (double) gameTimer.ElapsedMilliseconds/1000;
+			return (double)gameTimer.ElapsedMilliseconds / 1000;
 		}
 
 		/// <summary>
@@ -291,7 +290,7 @@ namespace Project
 				}
 				else
 				{
-					var targetIndex = index%aliveEnemies.Count();
+					var targetIndex = index % aliveEnemies.Count();
 					target = aliveEnemies.ElementAt(targetIndex);
 				}
 
@@ -310,7 +309,7 @@ namespace Project
 				return;
 
 			if (Update != null) Update(this);
-			
+
 			// Attempt to cast any queued spells.
 			for (int i = 0; i < spellQueue.Count;)
 			{

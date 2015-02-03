@@ -110,7 +110,7 @@ namespace Project
 
 			// Restore 10% health to each hero.
 			foreach (var hero in Party.Members.Cast<Hero>())
-				hero.Health += hero.MaxHealth/10;
+				hero.Health += hero.MaxHealth / 10;
 		}
 
 		/// <summary>
@@ -190,11 +190,11 @@ namespace Project
 				if (newMapID == null) return;
 
 				// Peek at the adjacent map and see if we can actually go to that spot.
-				var newMap = LoadDungeonMap((int) newMapID);
+				var newMap = LoadDungeonMap((int)newMapID);
 				destination = newMap.GetTile(location);
 
 				if (destination.CanBeOccupied())
-					SetPartyLocation((int) newMapID, location);
+					SetPartyLocation((int)newMapID, location);
 
 				return;
 			}

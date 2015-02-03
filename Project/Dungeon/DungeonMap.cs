@@ -3,15 +3,15 @@
 namespace Project.Dungeon
 {
 	/// <summary>
-	/// DungeonMap represents a single map in a dungeon.
-	/// For our purposes, the whole game is a single dungeon.
-	/// Maps are 14x14 grids of Tiles.
+	///     DungeonMap represents a single map in a dungeon.
+	///     For our purposes, the whole game is a single dungeon.
+	///     Maps are 14x14 grids of Tiles.
 	/// </summary>
-	class DungeonMap
+	internal class DungeonMap
 	{
-		public readonly int MapID;
-		public readonly MapData MapData;
 		public readonly Game Game;
+		public readonly MapData MapData;
+		public readonly int MapID;
 
 		private readonly Tile[,] tiles = new Tile[MapData.DimX, MapData.DimY];
 
