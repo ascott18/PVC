@@ -38,7 +38,7 @@
 			this.spellName.Dock = System.Windows.Forms.DockStyle.Right;
 			this.spellName.Location = new System.Drawing.Point(14, 0);
 			this.spellName.Name = "spellName";
-			this.spellName.Size = new System.Drawing.Size(106, 16);
+			this.spellName.Size = new System.Drawing.Size(116, 16);
 			this.spellName.TabIndex = 0;
 			this.spellName.Text = "<Spell>";
 			this.spellName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -61,7 +61,7 @@
 			this.Controls.Add(this.castControlLabel);
 			this.Controls.Add(this.spellName);
 			this.Name = "SpellContainer";
-			this.Size = new System.Drawing.Size(120, 16);
+			this.Size = new System.Drawing.Size(130, 16);
 			this.ResumeLayout(false);
 
 		}

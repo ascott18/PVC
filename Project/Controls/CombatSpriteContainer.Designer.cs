@@ -28,19 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.AttributesContainer = new Project.Controls.CombatSpriteAttributesContainer();
 			this.targetImage = new System.Windows.Forms.PictureBox();
+			this.AttributesContainer = new Project.Controls.CombatSpriteAttributesContainer();
 			((System.ComponentModel.ISupportInitialize)(this.targetImage)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// AttributesContainer
-			// 
-			this.AttributesContainer.BackColor = System.Drawing.Color.Transparent;
-			this.AttributesContainer.Dock = System.Windows.Forms.DockStyle.Right;
-			this.AttributesContainer.Location = new System.Drawing.Point(109, 0);
-			this.AttributesContainer.Name = "AttributesContainer";
-			this.AttributesContainer.Size = new System.Drawing.Size(100, 95);
-			this.AttributesContainer.TabIndex = 0;
 			// 
 			// targetImage
 			// 
@@ -53,6 +44,15 @@
 			this.targetImage.TabStop = false;
 			this.targetImage.EnabledChanged += new System.EventHandler(this.targetImage_EnabledChanged);
 			// 
+			// AttributesContainer
+			// 
+			this.AttributesContainer.BackColor = System.Drawing.Color.Transparent;
+			this.AttributesContainer.Dock = System.Windows.Forms.DockStyle.Right;
+			this.AttributesContainer.Location = new System.Drawing.Point(120, 0);
+			this.AttributesContainer.Name = "AttributesContainer";
+			this.AttributesContainer.Size = new System.Drawing.Size(100, 95);
+			this.AttributesContainer.TabIndex = 0;
+			// 
 			// CombatSpriteContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -61,7 +61,7 @@
 			this.Controls.Add(this.targetImage);
 			this.Controls.Add(this.AttributesContainer);
 			this.Name = "CombatSpriteContainer";
-			this.Size = new System.Drawing.Size(209, 95);
+			this.Size = new System.Drawing.Size(220, 95);
 			((System.ComponentModel.ISupportInitialize)(this.targetImage)).EndInit();
 			this.ResumeLayout(false);
 

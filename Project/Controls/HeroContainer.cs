@@ -11,7 +11,7 @@ namespace Project.Controls
 
 			InitializeSpellContainers(12);
 
-			targetImage.Location = new Point(185, 13);
+			targetImage.Location = new Point(196, 13);
 
 			AttributesContainer.Dock = DockStyle.Right;
 		}

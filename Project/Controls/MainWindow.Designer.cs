@@ -38,7 +38,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.combatArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.combatArena.Location = new System.Drawing.Point(12, 115);
+			this.combatArena.Location = new System.Drawing.Point(47, 121);
 			this.combatArena.Name = "combatArena";
 			this.combatArena.Size = new System.Drawing.Size(600, 424);
 			this.combatArena.TabIndex = 1;
