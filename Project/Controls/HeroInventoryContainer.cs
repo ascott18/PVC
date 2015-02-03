@@ -19,9 +19,11 @@ namespace Project.Controls
 
 			for (int i = 0; i < ItemEquippable.NumSlots; i++)
 			{
-				var itemContainer = new ItemContainer();
-				itemContainer.Width = equipmentFlow.Width - 2;
-				itemContainer.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+				var itemContainer = new ItemContainer
+				{
+					Width = equipmentFlow.Width - 2,
+					Anchor = AnchorStyles.Left | AnchorStyles.Top
+				};
 				equipmentFlow.Controls.Add(itemContainer);
 				itemContainers.Add(itemContainer);
 			}

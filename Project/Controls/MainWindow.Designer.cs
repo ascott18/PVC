@@ -38,7 +38,7 @@
 			this.inventoryScreen1.Location = new System.Drawing.Point(706, 12);
 			this.inventoryScreen1.Name = "inventoryScreen1";
 			this.inventoryScreen1.Party = null;
-			this.inventoryScreen1.Size = new System.Drawing.Size(349, 677);
+			this.inventoryScreen1.Size = new System.Drawing.Size(700, 677);
 			this.inventoryScreen1.TabIndex = 2;
 			// 
 			// combatArena
@@ -61,7 +61,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1095, 701);
+			this.ClientSize = new System.Drawing.Size(1446, 701);
 			this.Controls.Add(this.inventoryScreen1);
 			this.Controls.Add(this.combatArena);
 			this.Controls.Add(this.dungeonContainer);
