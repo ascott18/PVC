@@ -41,5 +41,10 @@ namespace Project.Items
 				Attributes = Attributes.ParseAttributes(itemElement.Element("Attributes"))
 			};
 		}
+
+	    public void Use(Hero hero)
+	    {
+	        hero.Equip(this);
+	    }
 	}
 }

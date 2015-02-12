@@ -109,6 +109,8 @@
     <Compile Include="Controls\SpellContainer.Designer.cs">
       <DependentUpon>SpellContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dungeon\Chest.cs" />
+    <Compile Include="Items\ItemFood.cs" />
     <Compile Include="Items\LootPool.cs" />
     <Compile Include="Spells\SpellAreaDamage.cs" />
     <Compile Include="Spells\SpellTargetedDamage.cs" />

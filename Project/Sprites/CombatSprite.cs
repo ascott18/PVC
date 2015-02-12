@@ -42,6 +42,7 @@ namespace Project.Sprites
 			{
 				var oldHealth = health;
 				health = Math.Max(value, MinHealth); // Health can't be < MinHealth
+			    health = Math.Min(health, MaxHealth);
 				
 				if (HealthChanged != null && oldHealth != health) 
 					HealthChanged(this);
@@ -85,9 +86,9 @@ namespace Project.Sprites
 				// before and after the adjustment to it.
 				var newMaxHealth = attributes.Stamina * healthPerStamina;
 				var healthScaleFactor = (double)newMaxHealth / MaxHealth;
-				Health = (int)(Health * healthScaleFactor);
 
 				MaxHealth = newMaxHealth;
+				Health = (int)(Health * healthScaleFactor);
 			}
 		}
 

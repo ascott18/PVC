@@ -35,6 +35,9 @@
 	  <MonsterPack id="000103" x="7" y="6">
 		<Monster id="3"/>
 	  </MonsterPack>
+    <Chest x="10" y="10" texture ="fancydoor">
+      <LootPool id="1"/>
+    </Chest>
 	</Objects>
 	
   </Map>
