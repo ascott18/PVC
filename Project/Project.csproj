@@ -110,7 +110,10 @@
       <DependentUpon>SpellContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="Items\LootPool.cs" />
+    <Compile Include="Spells\SpellAreaDamage.cs" />
     <Compile Include="Spells\SpellTargetedDamage.cs" />
+    <Compile Include="Spells\SpellSelfHealing.cs" />
+    <Compile Include="Spells\SpellAreaHealing.cs" />
     <Compile Include="Sprites\CombatSprite.cs" />
     <Compile Include="Dungeon\Door.cs" />
     <Compile Include="Game.cs" />
