@@ -90,7 +90,7 @@ namespace Project
 				throw new InvalidOperationException("Can't enter combat while in combat");
 
 			currentSession = new CombatSession(Party, enemy);
-			MainWindow.Window.dungeonContainer.Hide();
+		//	MainWindow.Window.dungeonContainer.Hide();
 			MainWindow.Window.combatArena.Show();
 			MainWindow.Window.combatArena.CombatSession = currentSession;
 
@@ -108,7 +108,7 @@ namespace Project
 
 
 				// Combat has ended. Restore the dungeon.
-				MainWindow.Window.dungeonContainer.Show();
+				//MainWindow.Window.dungeonContainer.Show();
 				MainWindow.Window.combatArena.Hide();
 
 				// Restore 10% health to each hero.

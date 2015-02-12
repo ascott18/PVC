@@ -238,10 +238,13 @@ namespace Project
 
 			Party.AddInventoryItemRange(loot);
 
-			var endingDialog = new CombatCompleteDialog(this);
-			endingDialog.SetItems(loot);
-			endingDialog.Owner = MainWindow.Window;
-			endingDialog.ShowDialog();
+			if (partyVictory)
+			{
+				var endingDialog = new CombatCompleteDialog(this);
+				endingDialog.SetItems(loot);
+				endingDialog.Owner = MainWindow.Window;
+				endingDialog.ShowDialog();
+			}
 
 			State = CombatState.Ended;
 
