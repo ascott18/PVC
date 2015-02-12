@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="67e21df4-491d-47ad-8b19-94c4363af116"
   name="Project"
@@ -9131,7 +9131,7 @@
         <referencesInternal>
           <reference
             Id="97b33744-5a81-4b95-8b77-4ad132b7857d"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -10587,7 +10587,7 @@
         <referencesInternal>
           <reference
             Id="3a543633-c8a5-4235-a88a-bef64b8984f5"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -10701,46 +10701,7 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="603e1baf-eeea-48ef-860d-48ceb7994cfd"
-            isDerived="false"
-            sourceEndRoleName="CombatSession"
-            targetEndRoleName="Game"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="c5c6cccc-107b-40fc-9a52-4dc98498e678"
-              LastKnownName="Game"
-              LastKnownLocation="Package_1921.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e5b11900-80b4-490d-a430-e5bcd5f43530"
-                  name="CombatSession"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b0361333-da2f-4f81-bc42-6eeedac52572"
-                  name="Game"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="7a450552-a000-42c5-8452-ff11ba4a1a2d"
+            Id="633e041c-5b11-4434-b66c-28ad5cad4a55"
             isDerived="false"
             sourceEndRoleName="CombatSession"
             targetEndRoleName="Party"
@@ -10753,20 +10714,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="f69d8cff-dacc-4561-85d9-2f5fb075f21d"
+                  Id="36728396-4641-4379-b0a3-06b81be1875a"
                   name="CombatSession"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="a905b269-f6bf-42f5-b22f-4c2a0cfbc0f8"
+                  Id="b413a331-17c7-4cee-aa18-f4c8966b938d"
                   name="Party"
                   isLeaf="false"
                   isStatic="false"
@@ -10774,12 +10735,12 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="5928e8fc-5cc5-442d-9006-934667c5d0b1"
+            Id="02dd9e3a-9a23-4047-b0cc-3d9a6f7e947c"
             isDerived="false"
             sourceEndRoleName="CombatSession"
             targetEndRoleName="MonsterPack"
@@ -10792,20 +10753,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="16dd0d9a-c166-4c94-99bb-7e6868d541ad"
+                  Id="7d7f0cd8-9fcb-4f48-beac-e653cd424d9e"
                   name="CombatSession"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="fc326435-bdd9-463b-a3e4-255c85d4fe1b"
+                  Id="6cf539a2-e1a6-414a-ae29-fed6eb9c8e90"
                   name="MonsterPack"
                   isLeaf="false"
                   isStatic="false"
@@ -10813,7 +10774,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -11356,73 +11317,6 @@
                 Id="7a310ac5-9fe0-47da-8dcd-9edd097e9bed"
                 LastKnownName="Thread"
                 LastKnownLocation="Package1_2219.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="a3200853-4a87-4691-b816-2cd1cef51150"
-            name="game"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <referencesInternal>
-              <reference
-                Id="f85267a5-8dc8-4b22-8277-20a76a1f1c16"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession Member%3Dgame"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="2a5aaf0f-d049-4507-822e-eaae3671b44c"
-                name="field"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="cbf8100f-ffe7-48bb-8c10-0598a9e675d4">
-                    <propertyInstance
-                      Id="dce99836-e75f-4ad6-ba1a-2608f467f0f9"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d125e55d-a0d7-47fe-b793-55148c7829f7">
-                    <propertyInstance
-                      Id="e09a910d-145c-4ec3-87ec-008dd122ecbd"
-                      name="IsConst"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="61e63d9e-8a07-492e-abf3-83434e537536">
-                    <propertyInstance
-                      Id="68b2209c-d105-46f0-b2fc-7fa017d2cdb4"
-                      name="IsNullable"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="570d028a-c77f-42f4-be5b-5b41bfb56707">
-                    <propertyInstance
-                      Id="9a4304cd-4634-4b7e-b7dc-36a5d21c9563"
-                      name="IsVolatile"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="0c19cdea-f4aa-45f2-9b6a-b1e3870d8116">
-                    <propertyInstance
-                      Id="d9799161-28f4-4946-8e79-58a4b9b58d0c"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <classMoniker
-                Id="c5c6cccc-107b-40fc-9a52-4dc98498e678"
-                LastKnownName="Game"
-                LastKnownLocation="Package_1921.uml" />
             </type_NamedElement>
           </property>
           <property

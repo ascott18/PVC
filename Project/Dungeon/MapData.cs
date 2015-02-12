@@ -9,37 +9,39 @@ using Project.Data;
 namespace Project.Dungeon
 {
 	/// <summary>
-	/// MapData represents a complete Map element parsed from Maps.xml.
-	/// It is immutable, but the TileObjects that it contains may be modified as needed
-	/// as gameplay progresses.
+	///     MapData represents a complete Map element parsed from Maps.xml.
+	///     It is immutable, but the TileObjects that it contains may be modified as needed
+	///     as gameplay progresses.
 	/// </summary>
 	internal class MapData
 	{
 		/// <summary>
-		/// The number of tiles in a map in the horizonal direction.
+		///     The number of tiles in a map in the horizonal direction.
 		/// </summary>
 		public const int DimX = 14;
 
 		/// <summary>
-		/// The number of tiles in a map in the vertical direction.
+		///     The number of tiles in a map in the vertical direction.
 		/// </summary>
 		public const int DimY = 14;
 
 		/// <summary>
-		/// Holds cached MapData instances, keyed by their mapID.
-		/// This array is dynamically resized as needed.
+		///     Holds cached MapData instances, keyed by their mapID.
+		///     This array is dynamically resized as needed.
 		/// </summary>
 		private static MapData[] data = new MapData[128];
 
 
 		/// <summary>
-		/// The mapID that uniquely identifies this MapData from all other maps.
+		///     The mapID that uniquely identifies this MapData from all other maps.
 		/// </summary>
 		public readonly int MapID;
 
+		private readonly Dictionary<string, int> adjacencies = new Dictionary<string, int>();
+
 		/// <summary>
-		/// The TileData objects that represent the base data of each tile of this map,
-		/// pased from the Tiles element of this MapData's corresponding Map element.
+		///     The TileData objects that represent the base data of each tile of this map,
+		///     pased from the Tiles element of this MapData's corresponding Map element.
 		/// </summary>
 		private readonly TileData[,] tiles = new TileData[DimX, DimY];
 
@@ -81,8 +83,8 @@ namespace Project.Dungeon
 		}
 
 		/// <summary>
-		/// Parses the XML data for the map and creates a new set of TileObjects
-		/// as defined by the children of the Objects XMl element.
+		///     Parses the XML data for the map and creates a new set of TileObjects
+		///     as defined by the children of the Objects XMl element.
 		/// </summary>
 		/// <returns>A list of the created TileObjects. They are not cached.</returns>
 		public List<TileObject> GetTileObjects()
@@ -113,7 +115,7 @@ namespace Project.Dungeon
 			}
 
 			return objects;
-		} 
+		}
 
 		/// <summary>
 		///     Parses the XML document and creates a MapData object.
@@ -159,14 +161,12 @@ namespace Project.Dungeon
 			{
 				mapData.adjacencies[xElement.Attribute("dir").Value] = int.Parse(xElement.Attribute("id").Value);
 			}
-			
+
 			return data[mapID] = mapData;
 		}
 
-		private readonly Dictionary<string, int> adjacencies = new Dictionary<string, int>();
-
 		/// <summary>
-		/// Returns the id of the adjacent map to this map in the indicated direction.
+		///     Returns the id of the adjacent map to this map in the indicated direction.
 		/// </summary>
 		/// <param name="direction">The direction, either "N", "S", "E", or "W".</param>
 		/// <returns>The mapID of the adjacent map.</returns>

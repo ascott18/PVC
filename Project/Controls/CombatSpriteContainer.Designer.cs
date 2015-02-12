@@ -28,61 +28,49 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.image = new System.Windows.Forms.PictureBox();
-			this.healthText = new System.Windows.Forms.Label();
-			this.nameText = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
+			this.targetImage = new System.Windows.Forms.PictureBox();
+			this.AttributesContainer = new Project.Controls.CombatSpriteAttributesContainer();
+			((System.ComponentModel.ISupportInitialize)(this.targetImage)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// image
+			// targetImage
 			// 
-			this.image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.image.Image = global::Project.Properties.Resources.stu;
-			this.image.Location = new System.Drawing.Point(25, 13);
-			this.image.Name = "image";
-			this.image.Size = new System.Drawing.Size(50, 50);
-			this.image.TabIndex = 0;
-			this.image.TabStop = false;
+			this.targetImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.targetImage.Location = new System.Drawing.Point(62, 15);
+			this.targetImage.Name = "targetImage";
+			this.targetImage.Size = new System.Drawing.Size(24, 24);
+			this.targetImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.targetImage.TabIndex = 1;
+			this.targetImage.TabStop = false;
+			this.targetImage.EnabledChanged += new System.EventHandler(this.targetImage_EnabledChanged);
 			// 
-			// healthText
+			// AttributesContainer
 			// 
-			this.healthText.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.healthText.BackColor = System.Drawing.Color.Transparent;
-			this.healthText.Location = new System.Drawing.Point(3, 0);
-			this.healthText.Name = "healthText";
-			this.healthText.Size = new System.Drawing.Size(94, 13);
-			this.healthText.TabIndex = 1;
-			this.healthText.Text = "0/0";
-			this.healthText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// nameText
-			// 
-			this.nameText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.nameText.Location = new System.Drawing.Point(3, 65);
-			this.nameText.Name = "nameText";
-			this.nameText.Size = new System.Drawing.Size(94, 27);
-			this.nameText.TabIndex = 2;
-			this.nameText.Text = "Stu Steiner";
-			this.nameText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.AttributesContainer.BackColor = System.Drawing.Color.Transparent;
+			this.AttributesContainer.Dock = System.Windows.Forms.DockStyle.Right;
+			this.AttributesContainer.Location = new System.Drawing.Point(120, 0);
+			this.AttributesContainer.Name = "AttributesContainer";
+			this.AttributesContainer.Size = new System.Drawing.Size(100, 95);
+			this.AttributesContainer.TabIndex = 0;
 			// 
 			// CombatSpriteContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.nameText);
-			this.Controls.Add(this.healthText);
-			this.Controls.Add(this.image);
+			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.targetImage);
+			this.Controls.Add(this.AttributesContainer);
 			this.Name = "CombatSpriteContainer";
-			this.Size = new System.Drawing.Size(100, 95);
-			((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
+			this.Size = new System.Drawing.Size(220, 95);
+			((System.ComponentModel.ISupportInitialize)(this.targetImage)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.PictureBox image;
-		private System.Windows.Forms.Label healthText;
-		private System.Windows.Forms.Label nameText;
+
+		protected CombatSpriteAttributesContainer AttributesContainer;
+		protected internal System.Windows.Forms.PictureBox targetImage;
 	}
 }

@@ -4,12 +4,14 @@ using Project.Data;
 
 namespace Project.Items
 {
-	abstract class Item
+	internal abstract class Item
 	{
+		public readonly string Name;
 		public readonly int ItemID;
 
-		protected Item(int itemId)
+		protected Item(int itemId, string name)
 		{
+			Name = name;
 			ItemID = itemId;
 		}
 

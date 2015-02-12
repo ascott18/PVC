@@ -1,8 +1,8 @@
 ﻿namespace Project.Items
 {
-	class ItemBook : Item
+	internal class ItemBook : Item
 	{
-		public ItemBook(int itemId) : base(itemId)
+		public ItemBook(int itemId, string name) : base(itemId, name)
 		{
 		}
 	}

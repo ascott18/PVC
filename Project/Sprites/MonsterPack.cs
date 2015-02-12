@@ -8,12 +8,12 @@ using Project.Data;
 
 namespace Project.Sprites
 {
-	class MonsterPack : DungeonSprite
+	internal class MonsterPack : DungeonSprite
 	{
+		public const int MaxMonsters = 3;
 		public readonly int UniqueID;
 
 		private readonly List<Monster> monsters = new List<Monster>();
-		public const int MaxMonsters = 3;
 
 		public MonsterPack(Point loc, int uniqueId) : base(loc)
 		{
@@ -28,14 +28,13 @@ namespace Project.Sprites
 		}
 
 		/// <summary>
-		/// Parses an XML element and returns a MonsterPack object that represents it.	
+		///     Parses an XML element and returns a MonsterPack object that represents it.
 		/// </summary>
 		/// <param name="mpElement">The XElement to parse</param>
 		/// <returns>The MonsterPack object parsed from the XML.</returns>
-		[XmlData.XmlParser("MonsterPack")]
+		[XmlData.XmlParserAttribute("MonsterPack")]
 		public static MonsterPack XmlParser(XElement mpElement)
 		{
-
 			var loc = new Point(int.Parse(mpElement.Attribute("x").Value), int.Parse(mpElement.Attribute("y").Value));
 			var uniqueID = int.Parse(mpElement.Attribute("id").Value);
 

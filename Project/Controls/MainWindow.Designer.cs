@@ -28,30 +28,43 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dungeonContainer = new DungeonContainer();
-			this.combatArena = new CombatArena();
+			this.inventoryScreen1 = new Project.Controls.InventoryScreen();
+			this.combatArena = new Project.Controls.CombatArena();
+			this.dungeonContainer = new Project.Controls.DungeonContainer();
 			this.SuspendLayout();
+			// 
+			// inventoryScreen1
+			// 
+			this.inventoryScreen1.Location = new System.Drawing.Point(706, 12);
+			this.inventoryScreen1.Name = "inventoryScreen1";
+			this.inventoryScreen1.Party = null;
+			this.inventoryScreen1.Size = new System.Drawing.Size(597, 677);
+			this.inventoryScreen1.TabIndex = 2;
+			// 
+			// combatArena
+			// 
+			this.combatArena.BackColor = System.Drawing.Color.White;
+			this.combatArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.combatArena.Location = new System.Drawing.Point(47, 121);
+			this.combatArena.Name = "combatArena";
+			this.combatArena.Size = new System.Drawing.Size(600, 424);
+			this.combatArena.TabIndex = 1;
+			this.combatArena.Visible = false;
 			// 
 			// dungeonContainer
 			// 
+			this.dungeonContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.dungeonContainer.Location = new System.Drawing.Point(0, 0);
 			this.dungeonContainer.Name = "dungeonContainer";
 			this.dungeonContainer.Size = new System.Drawing.Size(700, 700);
 			this.dungeonContainer.TabIndex = 0;
 			// 
-			// combatArena
-			// 
-			this.combatArena.Location = new System.Drawing.Point(193, 62);
-			this.combatArena.Name = "combatArena";
-			this.combatArena.Size = new System.Drawing.Size(386, 424);
-			this.combatArena.TabIndex = 1;
-			this.combatArena.Visible = false;
-			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1200, 705);
+			this.ClientSize = new System.Drawing.Size(1309, 701);
+			this.Controls.Add(this.inventoryScreen1);
 			this.Controls.Add(this.combatArena);
 			this.Controls.Add(this.dungeonContainer);
 			this.KeyPreview = true;
@@ -65,6 +78,7 @@
 
 		internal DungeonContainer dungeonContainer;
 		internal CombatArena combatArena;
+		private InventoryScreen inventoryScreen1;
 
 
 

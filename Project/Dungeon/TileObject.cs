@@ -5,13 +5,19 @@ using Project.Properties;
 namespace Project.Dungeon
 {
 	/// <summary>
-	/// TileObject represends some entity that can occupy a Tile of a Map.
-	/// This might include the player, an enemy, or a door, and can be extended to be anthing else.
-	/// TileObjects are represented in Maps.xml inside the Objects element, and are constructed from XML
-	/// using methods that are marked with XmlParserAttribute.
+	///     TileObject represends some entity that can occupy a Tile of a Map.
+	///     This might include the player, an enemy, or a door, and can be extended to be anthing else.
+	///     TileObjects are represented in Maps.xml inside the Objects element, and are constructed from XML
+	///     using methods that are marked with XmlParserAttribute.
 	/// </summary>
-	class TileObject
+	internal class TileObject
 	{
+		protected TileObject(Point loc)
+		{
+			Image = Resources.lumbergh; // TODO: temp
+			InitialLocation = loc;
+		}
+
 		public Tile CurrentTile { get; private set; }
 		public Point InitialLocation { get; private set; }
 
@@ -22,12 +28,6 @@ namespace Project.Dungeon
 			throw new NotImplementedException();
 		}
 
-
-		protected TileObject(Point loc)
-		{
-			Image = Resources.lumbergh; // TODO: temp
-			InitialLocation = loc;
-		}
 
 		public void SetLocation(Tile tile)
 		{

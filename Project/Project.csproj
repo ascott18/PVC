@@ -54,7 +54,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CombatCompleteDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\CombatCompleteDialog.Designer.cs">
+      <DependentUpon>CombatCompleteDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="CombatSession.cs" />
+    <Compile Include="Controls\CombatSpriteContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CombatSpriteContainer.Designer.cs">
+      <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HeroContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HeroContainer.Designer.cs">
+      <DependentUpon>HeroContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HeroInventoryContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HeroInventoryContainer.Designer.cs">
+      <DependentUpon>HeroInventoryContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InventoryScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InventoryScreen.Designer.cs">
+      <DependentUpon>InventoryScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ItemContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ItemContainer.Designer.cs">
+      <DependentUpon>ItemContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ItemFlowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ItemFlowPanel.Designer.cs">
+      <DependentUpon>ItemFlowPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MonsterContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MonsterContainer.Designer.cs">
+      <DependentUpon>MonsterContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SpellContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SpellContainer.Designer.cs">
+      <DependentUpon>SpellContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\LootPool.cs" />
     <Compile Include="Spells\SpellTargetedDamage.cs" />
     <Compile Include="Sprites\CombatSprite.cs" />
     <Compile Include="Dungeon\Door.cs" />
@@ -70,11 +125,11 @@
     <Compile Include="Dungeon\TileData.cs" />
     <Compile Include="Dungeon\TileObject.cs" />
     <Compile Include="Data\XMLData.cs" />
-    <Compile Include="Controls\Form1.cs">
+    <Compile Include="Controls\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Controls\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Sprites\Hero.cs" />
     <Compile Include="Controls\CombatArena.cs">
@@ -83,11 +138,11 @@
     <Compile Include="Controls\CombatArena.Designer.cs">
       <DependentUpon>CombatArena.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CombatSpriteContainer.cs">
+    <Compile Include="Controls\CombatSpriteAttributesContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CombatSpriteContainer.Designer.cs">
-      <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
+    <Compile Include="Controls\CombatSpriteAttributesContainer.Designer.cs">
+      <DependentUpon>CombatSpriteAttributesContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\ItemBook.cs" />
@@ -100,11 +155,35 @@
     <Compile Include="Spells\Spell.cs" />
     <Compile Include="Sprites\DungeonSprite.cs" />
     <Compile Include="Dungeon\Tile.cs" />
+    <EmbeddedResource Include="Controls\CombatCompleteDialog.resx">
+      <DependentUpon>CombatCompleteDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\DungeonContainer.resx">
       <DependentUpon>DungeonContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\HeroContainer.resx">
+      <DependentUpon>HeroContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HeroInventoryContainer.resx">
+      <DependentUpon>HeroInventoryContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\InventoryScreen.resx">
+      <DependentUpon>InventoryScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ItemContainer.resx">
+      <DependentUpon>ItemContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CombatSpriteContainer.resx">
+      <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MonsterContainer.resx">
+      <DependentUpon>MonsterContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SpellContainer.resx">
+      <DependentUpon>SpellContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,8 +198,8 @@
     <EmbeddedResource Include="Controls\CombatArena.resx">
       <DependentUpon>CombatArena.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CombatSpriteContainer.resx">
-      <DependentUpon>CombatSpriteContainer.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CombatSpriteAttributesContainer.resx">
+      <DependentUpon>CombatSpriteAttributesContainer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,11 +215,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\LootPools.xml" />
     <Content Include="Data\Heroes.xml" />
     <Content Include="Data\Monsters.xml" />
     <Content Include="Data\Maps.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Resources\dummy.png" />
     <None Include="Resources\stu.png" />
     <None Include="Resources\shoerner.png" />
     <None Include="Resources\milton.png" />

@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using Project.Items;
 
 namespace Project.Sprites
 {
-	class Party : DungeonSprite
+	internal class Party : DungeonSprite
 	{
 		public const int MaxHeroes = 3;
+		public readonly IReadOnlyList<Item> Inventory;
 
 		private readonly List<Hero> heroes = new List<Hero>(MaxHeroes);
-
 		private readonly List<Item> inventory = new List<Item>();
-		public readonly IReadOnlyList<Item> Inventory;
 
 
 		public Party(Point loc) : base(loc)
 		{
 			Members = heroes.AsReadOnly();
 			Inventory = inventory.AsReadOnly();
+
+			AddInventoryItem(Item.GetItem(2)); // TODO: Temp.
 		}
 
 		public void AddHero(Hero hero)
@@ -31,5 +33,27 @@ namespace Project.Sprites
 
 			heroes.Add(hero);
 		}
+
+		public void RemoveInventoryItem(Item item)
+		{
+			if (inventory.Remove(item))
+				if (InventoryChanged != null) InventoryChanged(this);
+		}
+
+		public void AddInventoryItem(Item item)
+		{
+			inventory.Add(item);
+			if (InventoryChanged != null) InventoryChanged(this);
+		}
+
+		public void AddInventoryItemRange(IEnumerable<Item> items)
+		{
+			inventory.AddRange(items);
+			if (InventoryChanged != null) InventoryChanged(this);
+		}
+
+		public event PartyEvent InventoryChanged;
 	}
+
+	internal delegate void PartyEvent(Party party);
 }
