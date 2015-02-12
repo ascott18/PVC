@@ -22,4 +22,7 @@
   <Equippable id="5" name="Amazing Weapon" slot="Weapon">
 	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
   </Equippable>
+
+  <Food id ="100" name="Amazing food" amount="100"/>
+  <Food id ="101" name="Amazing potion" amount="200"/>
 </Items>

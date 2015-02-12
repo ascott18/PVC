@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml.XPath;
 using Project.Data;
+using Project.Sprites;
 
 namespace Project.Items
 {
@@ -32,5 +33,10 @@ namespace Project.Items
 
 			return parserMethod(itemElement);
 		}
+
+	    public virtual void Use(Hero hero)
+	    {
+	        throw new NotImplementedException();
+	    }
 	}
 }

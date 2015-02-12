@@ -12,5 +12,6 @@
 	<Item id="4" chance="1.0"/>
 	<Item id="3" chance="1.0"/>
 	<Item id="2" chance=".5"/>
+  <Item id ="100" chance="1"/>
   </LootPool>
 </LootPools>

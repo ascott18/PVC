@@ -65,15 +65,31 @@ namespace Project.Controls
 				var oldItem = hero.Equip(item);
 				if (oldItem != null)
 					hero.Party.AddInventoryItem(oldItem);
-			}
+			    return;
+            }
+
+            var itemfood = e.Data.GetData(typeof(ItemFood)) as ItemFood;
+            if (itemfood != null)
+            {
+                hero.Health += itemfood.Amount;
+                return;
+            }
 		}
 
 		void HeroInventoryContainer_DragEnter(object sender, DragEventArgs e)
 		{
-			// Notify that we can accept drags of ItemEquippable.
+			// Notify that we can accept drags of Items.
 			var data = e.Data.GetData(typeof(ItemEquippable));
-			if (data is ItemEquippable)
-				e.Effect = DragDropEffects.Move;
+            var datafood = e.Data.GetData(typeof(ItemFood));
+
+		    if (data is ItemEquippable)
+		        e.Effect = DragDropEffects.Move;
+            else if (datafood is ItemFood)
+                e.Effect = DragDropEffects.Move;
+		    else
+                e.Effect = DragDropEffects.None;
+
+
 		}
 
 		public Hero Hero
