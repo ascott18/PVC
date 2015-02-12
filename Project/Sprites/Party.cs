@@ -19,8 +19,6 @@ namespace Project.Sprites
 		{
 			Members = heroes.AsReadOnly();
 			Inventory = inventory.AsReadOnly();
-
-			AddInventoryItem(Item.GetItem(2)); // TODO: Temp.
 		}
 
 		public void AddHero(Hero hero)

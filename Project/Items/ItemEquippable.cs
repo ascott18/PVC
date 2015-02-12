@@ -42,7 +42,7 @@ namespace Project.Items
 			};
 		}
 
-	    public void Use(Hero hero)
+	    public override void Use(Hero hero)
 	    {
 	        hero.Equip(this);
 	    }

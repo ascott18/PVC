@@ -52,7 +52,9 @@ namespace Project.Controls
 		{
 			// Notify that we can accept drags of ItemEquippable.
 			var data = e.Data.GetData(typeof(ItemEquippable));
-			if (data is ItemEquippable)
+			if (party.Inventory.Contains(data))
+				e.Effect =  DragDropEffects.None;
+			else if (data is ItemEquippable)
 				e.Effect = DragDropEffects.Move;
 		}
 
