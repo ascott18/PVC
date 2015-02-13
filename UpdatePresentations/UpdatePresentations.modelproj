@@ -22,6 +22,20 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="Dungeon.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Dungeon.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Dungeon.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Flyweight.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Flyweight.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Flyweight.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Package1_1034.uml">
       <SubType>Content</SubType>
     </Content>
@@ -48,6 +62,26 @@
     </Content>
     <Content Include="ModelDefinition\Package_1034.uml">
       <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1042.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1201.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Singleton.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Singleton.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Singleton.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Sprites.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sprites.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sprites.classdiagram</DependentUpon>
     </Content>
     <Content Include="Strategy.classdiagram">
       <SubType>Content</SubType>

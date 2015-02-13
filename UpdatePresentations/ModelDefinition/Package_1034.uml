@@ -34,7 +34,7 @@
         <referencesInternal>
           <reference
             Id="d73eb245-c260-426b-b320-b188b092cbd6"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -81,6 +81,77 @@
           </stereotypeInstance>
         </appliedStereotypesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a503e746-b4e8-4c3d-a235-cf38001a0505"
+        LastKnownName="Dungeon"
+        LastKnownLocation="Package_1042.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aa44d2d3-7970-443a-b609-09d53e74c6fe"
+        name="Game"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0df2573a-109a-49ad-b7cb-b6caf96a9c56"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FElise%2FDocuments%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b7650600-d975-49eb-8b2c-f56b126bf5ee"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fc0a5e95-762d-403d-98eb-6d9f62eb89ac">
+                <propertyInstance
+                  Id="2ae7d7a3-b85f-41b5-bfd7-9468977f0a71"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f02f60c3-e084-4215-9a9f-000df2141f57">
+                <propertyInstance
+                  Id="61e611bc-77db-492c-bf60-b77641e51315"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="03dc7308-a78a-4fdf-9f41-ac6345cdbc7f">
+                <propertyInstance
+                  Id="d4a1b465-b832-4588-a6da-96f51899327b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="978d45b6-b7b2-49a1-b71f-2c6c5bde0b3b">
+                <propertyInstance
+                  Id="f24046a6-98be-45fc-be9b-51ba9f70edd8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="72f6a495-21f0-4623-bb44-88cc88e17de7">
+                <propertyInstance
+                  Id="012e304c-1f1f-4baa-8c3b-7e5ce23bfb81"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="60e8b5f4-bff3-4aa7-b56a-d4b7dd53c281"
+        LastKnownName="Items"
+        LastKnownLocation="Package_1201.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
