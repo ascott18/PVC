@@ -9131,7 +9131,7 @@
         <referencesInternal>
           <reference
             Id="97b33744-5a81-4b95-8b77-4ad132b7857d"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -10587,7 +10587,7 @@
         <referencesInternal>
           <reference
             Id="3a543633-c8a5-4235-a88a-bef64b8984f5"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>

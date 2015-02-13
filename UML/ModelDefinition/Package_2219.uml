@@ -1184,13 +1184,13 @@
         Id="31f0634b-6d67-4c4e-bdb4-5f89698495aa"
         name="CombatSprite"
         visibility="Package"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>
           <reference
             Id="aaf6cf8b-4670-42a5-af7c-9d70f10efbc7"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -2790,7 +2790,7 @@
         <referencesInternal>
           <reference
             Id="12906554-a044-4421-acfb-c71df247d5bc"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FProject%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DDungeonSprite"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DDungeonSprite"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -3336,6 +3336,60 @@
               LastKnownLocation="Package_2219.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="c9d56a51-5fc8-439a-8ea2-b35ed70bb316"
+            isDerived="false"
+            sourceEndRoleName="Monster"
+            targetEndRoleName="LootPool"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4fd56e3e-2514-4c4d-a53e-7e03655557b1"
+              LastKnownName="LootPool"
+              LastKnownLocation="Package_2229.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8d9dc215-ed65-4a0d-933d-dc66cdb42746"
+                  name="Monster"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="536fde34-cf33-43ed-aed0-35c4f5d71215"
+                  name="LootPool"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4b965232-82da-49c6-b9f5-9e8acc21f527"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="254c2051-0356-4fae-b5fb-0bfd5ce1f8e9"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="77d862bb-a965-4335-848f-6e9599aeb2a3"
@@ -3401,6 +3455,73 @@
                 Id="220a3521-e091-4221-bae9-3ef9018e845c"
                 LastKnownName="Integer"
                 LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c26b5952-bc5f-4526-b6e0-3aac9eef322b"
+            name="lootPools"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="49357703-f8a0-43d2-86c0-8d0aa5fc2190"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DMonster Member%3DlootPools"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="89329aca-02c8-4927-8af4-74d45da324a3"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c13d2867-c61f-4ccf-b8cb-b37e7d789002">
+                    <propertyInstance
+                      Id="ab0ac913-7402-41e3-8299-14cea99e2f4c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a9b812d7-c731-4935-b310-7b3bfcfdb939">
+                    <propertyInstance
+                      Id="11a73531-93c4-4a6d-9b65-71f33b466072"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f6133d1-85e3-4f27-b505-0db21836660b">
+                    <propertyInstance
+                      Id="61507f34-ada5-4f14-abff-54c81e0cb4d3"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e1792b7-8890-450a-8df1-60e921ac80d4">
+                    <propertyInstance
+                      Id="5a2d0bb3-6439-429b-aad1-1e83daba254a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b190880-35fd-4687-a19a-69af21533ebf">
+                    <propertyInstance
+                      Id="0b8174c2-c1ee-4c63-b74d-f0efc30183b7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="63413398-a53c-4f03-b6f8-9ccbc79d2e64"
+                LastKnownName="List&lt;LootPool‎&gt;"
+                LastKnownLocation="Package3_2110.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -3558,13 +3679,13 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="5d058bf8-82ee-4c45-a33d-5b2a04ade7d2"
-                  name="arena"
+                  Id="3837cdb0-1342-4219-9e73-6620689e5c0b"
+                  name="session"
                   direction="In">
                   <referencesInternal>
                     <reference
-                      Id="d45cb0f7-422f-41b4-a7a6-54deca55390c"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DMonster Member%3D(Name%3DDoAction OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession)]) ParameterIdentifier%3Darena"
+                      Id="bacf58b8-e26c-413d-875d-bedf3d153ee9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DMonster Member%3D(Name%3DDoAction OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession)]) ParameterIdentifier%3Dsession"
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
@@ -3572,6 +3693,85 @@
                       Id="26992fc5-78de-4bc6-90bd-56fb0139a2c7"
                       LastKnownName="CombatSession"
                       LastKnownLocation="Package_1921.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="59f9d8f1-978f-4eb1-82ad-f31c12457fef"
+            name="GetLoot"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bb63ee70-7a63-4b47-95e0-efab12f82c01"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DMonster Member%3DGetLoot"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9278a0fc-f627-410a-b773-a4dae4f31ae8"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a47dbf4-7ce1-4cff-86a0-47c6001597dd">
+                    <propertyInstance
+                      Id="032fc21f-0546-45ca-be3a-0e3153db436f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0c1f55f7-8125-44ed-ad88-e93ddc16adac">
+                    <propertyInstance
+                      Id="f80c8a3c-df4e-4ca5-a204-b6176d336c85"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2600b8d2-6ec1-46a7-85b4-eb98f1b74018">
+                    <propertyInstance
+                      Id="9a2c02a5-c755-473d-8edc-b89f8db2828d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="42b6f183-085e-4c61-b709-28742cb06597">
+                    <propertyInstance
+                      Id="30d539ac-7c45-40d6-81f4-bb308c29e9e8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b2674adc-a274-44d2-8f93-a779aa71e064">
+                    <propertyInstance
+                      Id="4c5fe8fd-16be-48fd-8508-79f0d2fbecf7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d1a6409-e1e1-4ce5-a186-8e50e63ce042">
+                    <propertyInstance
+                      Id="f70cbd72-fd82-47e6-8b13-9b05f4d01808"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="13e2a946-8837-45c6-82ed-ca7da09ce703"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="23c35feb-ba7b-4416-a5ad-73dd1f84621e"
+                      LastKnownName="List&lt;Item‎&gt;"
+                      LastKnownLocation="Package3_2110.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

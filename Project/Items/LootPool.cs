@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Project.Data;
 using Project.Items;
 
-namespace Project.Data
+namespace Project.Items
 {
 	/// <summary>
 	///     Represents a pool of possible loot that can drop from a monster.
