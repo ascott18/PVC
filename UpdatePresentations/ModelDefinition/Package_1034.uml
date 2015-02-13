@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d20a80e2-29ef-42ef-9298-917e0761352d"
+  name="Project"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="4a0ea7a5-917f-42dd-9053-5bc46ef564d7"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DProject"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c067582f-e14c-4243-8e6a-5234e3fdd8be"
+        LastKnownName="Sprites"
+        LastKnownLocation="Package1_1034.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="689b01a9-e4cc-4558-9bc5-ad7626d842fa"
+        LastKnownName="Spells"
+        LastKnownLocation="Package6_1034.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="31fefdb7-1290-4c82-861c-c15a704a3f6d"
+        name="CombatSession"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d73eb245-c260-426b-b320-b188b092cbd6"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="437f60b9-a1f9-4c8f-acd4-ea9dc9cfacde"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4d4cbde0-05d5-49af-8eb0-7e71a3129148">
+                <propertyInstance
+                  Id="cd140a15-eb1c-4d92-8c8b-3acb15b45100"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5b4c19e5-1835-44de-a9cf-3fcc477ddd30">
+                <propertyInstance
+                  Id="a5f211b7-8706-4ff9-9fc6-eb1619abcc88"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2ab5a59f-f8cc-4a62-9193-7160983bb91c">
+                <propertyInstance
+                  Id="fbb6a0a8-899c-4698-9cce-43e53ee18f00"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="09c6d278-d5de-4a06-b1bb-5c5b523ab4fd">
+                <propertyInstance
+                  Id="b592d6f4-dfd3-4ae7-b5c4-1b10bb327738"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e96ca635-579f-4261-a11f-414690bf7178">
+                <propertyInstance
+                  Id="99573203-22a2-4830-bac7-5143623e0069"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
