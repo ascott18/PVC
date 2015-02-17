@@ -164,13 +164,13 @@
                     <literalString
                       Id="7a226bb3-bdd6-47da-92f6-a7065761abea"
                       name="Lower"
-                      value="*" />
+                      value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="f95bde9f-d8b7-4649-8c5f-82960b175fd9"
                       name="Upper"
-                      value="*" />
+                      value="1" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>

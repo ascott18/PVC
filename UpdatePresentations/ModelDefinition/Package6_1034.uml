@@ -362,13 +362,13 @@
                     <literalString
                       Id="da6270f9-d146-41a5-bc67-0c1ddba0985a"
                       name="Lower"
-                      value="*" />
+                      value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="f024edbe-de2f-480b-96f8-1f5df8fd4119"
                       name="Upper"
-                      value="*" />
+                      value="1" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>

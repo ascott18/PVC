@@ -74,12 +74,12 @@
               <associationHasOwnedEnds>
                 <memberEnd Id="d12fe251-44a6-4172-bfdf-a449e6dfe337" name="CombatSprite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <lowerValueInternal>
-                    <literalString Id="36376da9-8fd6-406e-8c70-d4976fba7eea" name="Lower" value="*">
+                    <literalString Id="36376da9-8fd6-406e-8c70-d4976fba7eea" name="Lower" value="1">
                       <elementDefinition Id="7a226bb3-bdd6-47da-92f6-a7065761abea" />
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="0f90ba63-1cdc-4941-9390-3841888f832b" name="Upper" value="*">
+                    <literalString Id="0f90ba63-1cdc-4941-9390-3841888f832b" name="Upper" value="1">
                       <elementDefinition Id="f95bde9f-d8b7-4649-8c5f-82960b175fd9" />
                     </literalString>
                   </upperValueInternal>
@@ -2336,12 +2336,12 @@
               <associationHasOwnedEnds>
                 <memberEnd Id="ca86f959-fa80-4b37-a86b-5893c831e86a" name="Spell" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <lowerValueInternal>
-                    <literalString Id="16c17cad-2737-40db-aee1-31060223db92" name="Lower" value="*">
+                    <literalString Id="16c17cad-2737-40db-aee1-31060223db92" name="Lower" value="1">
                       <elementDefinition Id="da6270f9-d146-41a5-bc67-0c1ddba0985a" />
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="8510c338-1549-4be8-b8a8-807da3b4607e" name="Upper" value="*">
+                    <literalString Id="8510c338-1549-4be8-b8a8-807da3b4607e" name="Upper" value="1">
                       <elementDefinition Id="f024edbe-de2f-480b-96f8-1f5df8fd4119" />
                     </literalString>
                   </upperValueInternal>
