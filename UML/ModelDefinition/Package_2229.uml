@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="fb79f118-f4e1-4276-9d88-5d39fcc530a6"
   name="Items"
@@ -22,7 +22,7 @@
         <referencesInternal>
           <reference
             Id="7e81941e-3d48-4905-b09a-5bec53a87aa2"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3DItem"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3DItem"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -68,112 +68,6 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <targetEnds>
-          <association
-            Id="30258a69-8d4a-4ede-94aa-cbefcc929690"
-            isDerived="false"
-            sourceEndRoleName="Item"
-            targetEndRoleName="Party"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="47f8928f-af70-420e-8d52-f7fdba9fc0f5"
-              LastKnownName="Party"
-              LastKnownLocation="Package_2219.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="2ae711bf-5431-456b-8fc8-5ca9bcf239c4"
-                  name="Item"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="06c65939-9ddb-4dba-9813-f5af798adc39"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="338ae6a7-c94c-4778-94ce-df3a0a65064c"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="4503bbef-0b77-446b-92aa-f02fbe29263f"
-                  name="Party"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="1038449b-bdda-4c06-954d-07b82863493e"
-            isDerived="false"
-            sourceEndRoleName="Item"
-            targetEndRoleName="Hero"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="aadd8c99-8ce6-4717-8eff-0cc8314875dc"
-              LastKnownName="Hero"
-              LastKnownLocation="Package_2219.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="ef6a561d-0683-42da-bc10-8e33786e184c"
-                  name="Item"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="1bf7d9da-ed52-4619-8214-35a05c00eebc"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="d7ea27cc-dffe-4acd-9b11-dd0d8eec35cc"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="96681e95-7c67-4ead-b47d-b3640cda663f"
-                  name="Hero"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="15037438-0a86-4f90-b3c9-35bf115f8cee"
@@ -606,14 +500,14 @@
       <class
         Id="aad0438b-10c2-421c-aabf-e7983dc3616b"
         name="ItemEquippable"
-        visibility="Private"
+        visibility="Package"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>
           <reference
             Id="75135940-2edc-48ad-bcea-9572823c9084"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3D(Name%3DItemEquippable ArrayRank%3D1 ParentType%3DItemEquippable)"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3DItemEquippable"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -819,132 +713,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="ff294dd2-932c-4ad7-86a4-22927c4994ad"
-            name="MaxSlotId"
-            isLeaf="false"
-            isStatic="true"
-            isReadOnly="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <referencesInternal>
-              <reference
-                Id="c0b2c63e-e228-4358-8c9c-42e7e34e0543"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3DItemEquippable Member%3DMaxSlotId"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="bb56d5ba-1a40-47b8-98f4-45453a8a0847"
-                name="field"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="a09b07cf-fc4a-48af-9f5b-6411eabcd3f9">
-                    <propertyInstance
-                      Id="cea1087b-d5be-4394-bfa8-e3177804439c"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="52591ce7-8123-480b-ae86-88da2afd70bd">
-                    <propertyInstance
-                      Id="9f2d820d-c400-4282-a2e3-42ec835db975"
-                      name="IsConst"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="dd9dbfe5-b8c9-4ef9-b169-d5c5a40f151f">
-                    <propertyInstance
-                      Id="2be517be-bf71-4454-888e-ae6fd1d48268"
-                      name="IsNullable"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="96311558-32b1-4238-82e5-9c8dace29145">
-                    <propertyInstance
-                      Id="205179f5-fd22-4d81-b987-57b3e01789f0"
-                      name="IsVolatile"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="65c6f8fd-6a95-4345-8fa5-86e46c71b759">
-                    <propertyInstance
-                      Id="1c34fc51-76cd-4338-bf94-9d9e219ac0ee"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </property>
-          <property
-            Id="784f6190-9983-4669-8dda-80d931244983"
-            name="Name"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <referencesInternal>
-              <reference
-                Id="5b501561-5fbe-4ed3-a539-1e1e7277ae13"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3DItemEquippable Member%3DName"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="e803b483-d880-492c-94b6-5405d9a2aaaa"
-                name="field"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e5fd7de2-d828-4592-a359-0789ec1a0619">
-                    <propertyInstance
-                      Id="ff31e026-bb70-4694-b5f4-bcb5a68b82f8"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="706d8511-d195-4bef-a566-161391cc4c14">
-                    <propertyInstance
-                      Id="16c8bb0d-6fad-4669-9ed3-639f2aa89519"
-                      name="IsConst"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="b9183a80-a802-4c29-979e-ad9eb695f896">
-                    <propertyInstance
-                      Id="662ed1a8-0dfc-47f7-9331-38e4fed0c518"
-                      name="IsNullable"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="838631bd-0a9a-4b94-841c-ad50c2b6bde3">
-                    <propertyInstance
-                      Id="42efb704-0329-498d-9b9e-e63b00d54fe1"
-                      name="IsVolatile"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="fde30512-bced-479f-ace1-20ebf7c014db">
-                    <propertyInstance
-                      Id="7c3fef97-cf2a-427e-a6a9-d7032f9d9766"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="d45b0198-84bc-4368-8bf1-41943460ddfd"
             name="Slot"
             isLeaf="false"
@@ -1008,6 +776,72 @@
                 Id="d2c958ce-4de1-4055-88c9-8a0ffba94057"
                 LastKnownName="SlotID"
                 LastKnownLocation="Package_2229.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f7e80ff5-00b8-4423-b198-68b2e0d046d4"
+            name="NumSlots"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="50176b7b-f6a5-496f-8e22-c1e5307eb853"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3DItemEquippable Member%3DNumSlots"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="52aead35-c3d0-4f9f-b6d5-6497360b38d6"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c763d26b-8a80-4f53-a700-16231cdc84fc">
+                    <propertyInstance
+                      Id="bc386f4e-172c-4d14-b8fe-35ef17647897"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88de3ec0-964c-4179-b249-1e838c639ca2">
+                    <propertyInstance
+                      Id="f90e4dc9-9daf-4b70-afd7-a189b34199d1"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66254cb1-916a-4db9-bd4f-0191acf0acee">
+                    <propertyInstance
+                      Id="27624ca4-0995-4eaf-926a-0241de001746"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc5d45d8-13f0-4c34-92f9-81f737e1b575">
+                    <propertyInstance
+                      Id="6842af5b-40e7-4b56-bba9-28863f98d98d"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fad8c9b-0a26-4635-8ce8-44d5c69815e7">
+                    <propertyInstance
+                      Id="fe9bb60f-3ac1-4b3b-b3f1-9aacd32de1db"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1234,6 +1068,92 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="d0f0c62d-db07-4651-922b-35f7842f0fc7"
+            name="Use"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="06269ebd-cb2c-4c30-84f0-98ecd7248eb8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3DItemEquippable Member%3D(Name%3DUse OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DHero)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f691306a-507d-4cd9-903f-a06e29e5c960"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="362ba9b9-41bd-4f3f-9bd0-a9c8f90f1763">
+                    <propertyInstance
+                      Id="68e1bae1-2637-4f92-b3ef-9429ce992af4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e66fc819-1b2f-4ef8-9f1a-acc0a1ba444f">
+                    <propertyInstance
+                      Id="9ae9ad76-67ae-41a3-99de-323b73256ba0"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="628262c1-b7ac-437b-b304-575b46d28864">
+                    <propertyInstance
+                      Id="edbd2ced-36b2-41db-8c6e-7608ae6f6b8a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a338f652-0da5-48f9-96fb-b1f1adb7b0da">
+                    <propertyInstance
+                      Id="05d2bd49-f067-4a69-aaad-a7e8ee0cc4b1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5db57d03-202f-427b-bc02-acaec3ab9cc6">
+                    <propertyInstance
+                      Id="ff5c3429-5ec9-4e02-bc19-9cdc1add2320"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5bbc3ab6-9148-4fd9-9498-48c720882a1c">
+                    <propertyInstance
+                      Id="4231a1c7-8653-455c-a4f8-63256033ca3a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2a08e735-19b7-49ef-93ef-2108b056e18a"
+                  name="hero"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a9ef5c46-4598-41de-b594-5bec60fd2431"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3DItemEquippable Member%3D(Name%3DUse OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DHero)]) ParameterIdentifier%3Dhero"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="aadd8c99-8ce6-4717-8eff-0cc8314875dc"
+                      LastKnownName="Hero"
+                      LastKnownLocation="Package_2219.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1246,7 +1166,7 @@
         <referencesInternal>
           <reference
             Id="8cf221f2-b9c7-4284-a716-701a8f7bbb6f"
-            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3D(Name%3DSlotID ParentType%3DItemEquippable)"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Items Type%3D(Name%3DSlotID ParentType%3DItemEquippable)"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>

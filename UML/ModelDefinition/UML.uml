@@ -524,7 +524,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="85c66a12-413b-42cb-8545-bdaf8fc51b99"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="30d15434-5a30-43fa-b217-5a1b795c8486"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -1639,7 +1652,7 @@
         </generalsInternal>
         <targetEnds>
           <association
-            Id="499b237f-0967-4360-b996-69582e0d323c"
+            Id="fbd9bbc9-baea-4028-88aa-12321ed8e0c1"
             isDerived="false"
             sourceEndRoleName="HeroContainer"
             targetEndRoleName="Hero"
@@ -1652,20 +1665,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="f2027152-0294-4915-9bd4-aadefde31941"
+                  Id="acf75bbf-83fa-42cc-8566-2de554453b9f"
                   name="HeroContainer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="None"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="6bdbc2d0-e460-4c0e-ad0c-7fb8423d8649"
+                  Id="bb68c460-dff4-408e-a46d-c57255ed992a"
                   name="Hero"
                   isLeaf="false"
                   isStatic="false"
@@ -2038,7 +2051,7 @@
         </generalsInternal>
         <targetEnds>
           <association
-            Id="535c288c-76da-4238-b2e1-eed83d5544e1"
+            Id="feab8a4a-4599-48d6-a197-9326e0f2a69d"
             isDerived="false"
             sourceEndRoleName="MonsterContainer"
             targetEndRoleName="Monster"
@@ -2051,20 +2064,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="585f803e-d178-4175-a0f3-5026a16ba6f2"
+                  Id="4e2a3fbc-a04f-4221-85bb-b9a030270dbc"
                   name="MonsterContainer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="None"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="0c5dded6-df4c-493d-9ed3-c715f9ded7ac"
+                  Id="25a04acd-33c1-4d8e-a604-e7a49daa588a"
                   name="Monster"
                   isLeaf="false"
                   isStatic="false"
@@ -2427,7 +2440,7 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="2ef0cce2-37b7-498c-a543-f35dce3d2d0f"
+            Id="49b4fad4-1b71-464f-bee6-642abc248c27"
             isDerived="false"
             sourceEndRoleName="SpellContainer"
             targetEndRoleName="Spell"
@@ -2440,20 +2453,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="602a31b4-f618-4b0d-8460-3f88df8e06e1"
+                  Id="e0f0f868-4f32-4048-b0c0-6f8d984c127d"
                   name="SpellContainer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="50b13453-f7db-4f11-b977-4c7d92823dab"
+                  Id="05008eab-aec0-4585-9bfb-1ccd05054b82"
                   name="Spell"
                   isLeaf="false"
                   isStatic="false"
@@ -2461,7 +2474,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -4822,72 +4835,6 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="cff46e70-5cd3-42ef-98ec-ca8eaeb5b400"
-            isDerived="false"
-            sourceEndRoleName="MainWindow"
-            targetEndRoleName="Window"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="c6d1f697-ff5d-4906-a047-5271a721027d"
-              LastKnownName="MainWindow"
-              LastKnownLocation="UML.uml" />
-            <description>Property Window references type MainWindow.</description>
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="5616ae93-370f-419b-abb8-922473005207"
-                  name="MainWindow"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="8bb952c6-94b4-4083-bef4-4aeb26f4972a"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="d682b995-5986-4dc0-a436-2233c1f5e3a2"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8dfe50fe-6caf-4b15-9b26-2835251ff7a4"
-                  name="Window"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="f475d069-f416-4d36-b53f-1240ea4a2126"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="66123d17-0bce-4c6e-8c5b-846c07112a3a"
-                      name="Upper"
-                      value="1" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="a98a4505-cb3f-41ff-b45a-b88053a2f244"
             isDerived="false"
             sourceEndRoleName="MainWindow"
@@ -6316,59 +6263,7 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="6f4f546f-f3fa-424b-9668-796e5b3d0e0e"
-            isDerived="false"
-            sourceEndRoleName="CombatArena"
-            targetEndRoleName="HeroContainer"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="8564836b-39c3-4c78-9e20-b71a40b8f480"
-              LastKnownName="HeroContainer"
-              LastKnownLocation="UML.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="4e3d4ed5-4e59-4dab-97d7-4e1c3726ce78"
-                  name="CombatArena"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="40bf7476-913f-4a4a-8f8c-f68ec4919de0"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="888b6c8b-5f55-4706-8d4e-4f0ee6c3e4c8"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="7679472d-67fd-4273-881d-3cc0803eaab5"
-                  name="HeroContainer"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="3b91cff1-4aaf-433a-ba4b-88fffa09c06e"
+            Id="d3f2f997-9fc8-48e9-a0fd-550607355ec3"
             isDerived="false"
             sourceEndRoleName="CombatArena"
             targetEndRoleName="MonsterContainer"
@@ -6381,33 +6276,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="141599cd-b264-4c12-bb50-2faebf1508d1"
+                  Id="cb27d7f8-d4ce-429d-bea8-2b78ded3a9cf"
                   name="CombatArena"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Shared"
+                  aggregation="Composite"
                   isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="e4ec80e0-0f66-46ce-90ee-8a25f45213b5"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="557766d4-2faf-45ea-bab6-8be0e4e67793"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="0ea97cf0-a1cd-4889-a7e3-dee9ed69e31b"
+                  Id="d18cce91-5edb-4792-94d6-3206a2824707"
                   name="MonsterContainer"
                   isLeaf="false"
                   isStatic="false"
@@ -6415,7 +6297,46 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1f6b2dba-3814-4171-9f19-bfe24c8122e6"
+            isDerived="false"
+            sourceEndRoleName="CombatArena"
+            targetEndRoleName="HeroContainer"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8564836b-39c3-4c78-9e20-b71a40b8f480"
+              LastKnownName="HeroContainer"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aa0f618b-8934-4f00-971f-4258ad78def1"
+                  name="CombatArena"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8d6e85f7-6d68-429d-91f7-f055f664cf60"
+                  name="HeroContainer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -7524,6 +7445,45 @@
                 <memberEnd
                   Id="9106f1e2-8492-4520-b230-925614925f29"
                   name="ItemFlowPanel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="eab6173c-432c-4132-8bd3-0976ed0d6185"
+            isDerived="false"
+            sourceEndRoleName="HeroInventoryContainer"
+            targetEndRoleName="Hero"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="aadd8c99-8ce6-4717-8eff-0cc8314875dc"
+              LastKnownName="Hero"
+              LastKnownLocation="Package_2219.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ab82f394-1f0f-41a4-988f-67ba4ede86ef"
+                  name="HeroInventoryContainer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fc12c9d4-af63-467e-aabd-f37ae27509af"
+                  name="Hero"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -8772,45 +8732,6 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="2dc78a83-49c9-4ea4-8c59-57e1c544d4e2"
-            isDerived="false"
-            sourceEndRoleName="InventoryScreen"
-            targetEndRoleName="Party"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="47f8928f-af70-420e-8d52-f7fdba9fc0f5"
-              LastKnownName="Party"
-              LastKnownLocation="Package_2219.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="ea9f36f5-0da7-46fe-914f-9af344c0fced"
-                  name="InventoryScreen"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="7cf2f32c-3865-48ca-8c15-6b100b31f3b6"
-                  name="Party"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="ef92f39b-ba94-4c83-b1cb-4fedd1c5f65e"
             isDerived="false"
             sourceEndRoleName="InventoryScreen"
@@ -8846,6 +8767,45 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="97945274-e502-4ea0-8cc4-e8d566902f0f"
+            isDerived="false"
+            sourceEndRoleName="InventoryScreen"
+            targetEndRoleName="Party"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="47f8928f-af70-420e-8d52-f7fdba9fc0f5"
+              LastKnownName="Party"
+              LastKnownLocation="Package_2219.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cb45a971-f80d-46f9-a85d-eabc0ba57b5e"
+                  name="InventoryScreen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bb9bc527-bebc-49ad-92ba-1af94a169279"
+                  name="Party"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -10100,7 +10060,7 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="1edde135-2051-4b63-8c83-7efafb30a634"
+            Id="869f8147-cfe3-48d0-bea0-a2b79bcf6022"
             isDerived="false"
             sourceEndRoleName="ItemContainer"
             targetEndRoleName="Item"
@@ -10113,20 +10073,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="8a0145c1-03c1-47b9-ac65-81cfe156456c"
+                  Id="55904c47-d696-4b80-848a-5bdbbb08b4c6"
                   name="ItemContainer"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="644b8b4c-1fb4-4068-91ad-e4ad8c5c771f"
+                  Id="ef6e2492-c5a9-4cfa-842b-f508930a1369"
                   name="Item"
                   isLeaf="false"
                   isStatic="false"
@@ -10134,7 +10094,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
