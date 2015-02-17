@@ -21,6 +21,10 @@ namespace Project.Controls
 			InitializeComponent();
 
 			ClientSizeChanged += ItemFlowPanel_ClientSizeChanged;
+
+			SetStyle(ControlStyles.UserPaint, true);
+			SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+			SetStyle(ControlStyles.DoubleBuffer, true);
 		}
 
 		void ItemFlowPanel_ClientSizeChanged(object sender, EventArgs e)
@@ -67,6 +71,8 @@ namespace Project.Controls
 
 		public void LoadItems(IEnumerable<Item> items)
 		{
+			SuspendLayout();
+
 			ResetAllItemContainers();
 
 			int index = 0;
@@ -75,6 +81,8 @@ namespace Project.Controls
 				var container = GetInventoryItemContainer(index++);
 				container.Item = item;
 			}
+
+			ResumeLayout(true);
 		}
 	}
 }
