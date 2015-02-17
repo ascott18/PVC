@@ -26,6 +26,11 @@ namespace Project.Dungeon
             {
                 loot.AddRange(lootPool.GenerateLoot());
             }
+
+            var dialog = new ChestLootDialog();
+            dialog.SetItems(loot);
+            dialog.ShowDialog();
+
             game.Party.AddInventoryItemRange(loot);
             CurrentTile.TileObject = null;
         }
