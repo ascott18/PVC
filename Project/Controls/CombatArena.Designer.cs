@@ -42,7 +42,7 @@
 			this.retreatButton.Name = "retreatButton";
 			this.retreatButton.Size = new System.Drawing.Size(117, 34);
 			this.retreatButton.TabIndex = 0;
-			this.retreatButton.Text = "Retreat!";
+			this.retreatButton.Text = "RETREAT!";
 			this.retreatButton.UseVisualStyleBackColor = true;
 			this.retreatButton.Click += new System.EventHandler(this.retreatButton_Click);
 			// 

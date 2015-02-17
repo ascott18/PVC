@@ -251,6 +251,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Resources\dummy.png" />
+    <Content Include="Resources\wall.png" />
     <Content Include="Resources\wood.bmp" />
     <None Include="Resources\stu.png" />
     <None Include="Resources\shoerner.png" />

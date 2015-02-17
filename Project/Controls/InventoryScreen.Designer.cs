@@ -62,7 +62,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(589, 422);
 			this.Controls.Add(this.inventoryContainer);
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "InventoryScreen";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
+			this.Text = "Inventory";
 			this.inventoryContainer.ResumeLayout(false);
 			this.ResumeLayout(false);
 

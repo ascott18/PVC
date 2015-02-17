@@ -2,5 +2,5 @@
 <Tiles>
   <Tile id="0" texture="" obstacle="false"/>
   <Tile id="1" texture="lumbergh" obstacle="false"/>
-  <Tile id="2" texture="shoerner" obstacle="true"/>
+  <Tile id="2" texture="wall" obstacle="true"/>
 </Tiles>

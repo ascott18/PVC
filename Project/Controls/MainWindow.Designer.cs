@@ -44,7 +44,7 @@
 			this.inventoryButton.Name = "inventoryButton";
 			this.inventoryButton.Size = new System.Drawing.Size(119, 30);
 			this.inventoryButton.TabIndex = 3;
-			this.inventoryButton.Text = "Inventory";
+			this.inventoryButton.Text = "INVENTORY";
 			this.inventoryButton.UseVisualStyleBackColor = true;
 			this.inventoryButton.Click += new System.EventHandler(this.inventoryButton_Click);
 			// 
@@ -63,7 +63,7 @@
 			this.dungeonContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.dungeonContainer.Location = new System.Drawing.Point(0, 30);
 			this.dungeonContainer.Name = "dungeonContainer";
-			this.dungeonContainer.Size = new System.Drawing.Size(700, 700);
+			this.dungeonContainer.Size = new System.Drawing.Size(702, 702);
 			this.dungeonContainer.TabIndex = 0;
 			// 
 			// MainWindow

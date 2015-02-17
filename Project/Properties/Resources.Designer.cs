@@ -263,12 +263,22 @@ namespace Project.Properties {
         ///&lt;Tiles&gt;
         ///  &lt;Tile id=&quot;0&quot; texture=&quot;&quot; obstacle=&quot;false&quot;/&gt;
         ///  &lt;Tile id=&quot;1&quot; texture=&quot;lumbergh&quot; obstacle=&quot;false&quot;/&gt;
-        ///  &lt;Tile id=&quot;2&quot; texture=&quot;shoerner&quot; obstacle=&quot;true&quot;/&gt;
+        ///  &lt;Tile id=&quot;2&quot; texture=&quot;wall&quot; obstacle=&quot;true&quot;/&gt;
         ///&lt;/Tiles&gt;.
         /// </summary>
         internal static string Tiles {
             get {
                 return ResourceManager.GetString("Tiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wall {
+            get {
+                object obj = ResourceManager.GetObject("wall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
