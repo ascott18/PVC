@@ -40,19 +40,23 @@ namespace Project.Controls
 			return Game.ProcessKey(keyData) || base.ProcessCmdKey(ref msg, keyData);
 		}
 
+		private InventoryScreen inventoryScreen;
+		private StatsScreen statsScreen;
+
 		private void inventoryButton_Click(object sender, EventArgs e)
 		{
-			var inv = new InventoryScreen();
+			var inv = inventoryScreen = new InventoryScreen();
 			inv.Party = Game.Party;
 			inv.StartPosition = FormStartPosition.Manual;
 			inv.Location = Location + new Size(Width, 0);
-			inv.Show();
+			inv.Show(this);
 
-			var stats = new StatsScreen();
+			var stats = statsScreen = new StatsScreen();
 			stats.Party = Game.Party;
 			stats.StartPosition = FormStartPosition.Manual;
 			stats.Location = Location + new Size(Width, inv.Height);
-			stats.Show();
+			stats.Show(this);
 		}
+
 	}
 }

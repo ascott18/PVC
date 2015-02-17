@@ -48,7 +48,10 @@
 			// 
 			// inventoryFlow
 			// 
-			this.inventoryFlow.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.inventoryFlow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.inventoryFlow.AutoScroll = true;
 			this.inventoryFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.inventoryFlow.Location = new System.Drawing.Point(3, 16);
 			this.inventoryFlow.Name = "inventoryFlow";
