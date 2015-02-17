@@ -7417,45 +7417,6 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="7ab22d32-2acc-4fe8-bfb6-9b48a79f0cb9"
-            isDerived="false"
-            sourceEndRoleName="HeroInventoryContainer"
-            targetEndRoleName="ItemFlowPanel"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="eb968153-27b3-44f4-84a5-5c90a8f7f77b"
-              LastKnownName="ItemFlowPanel"
-              LastKnownLocation="UML.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="40b86acc-bf76-4f9d-ac46-9ba30a2f0a0c"
-                  name="HeroInventoryContainer"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="9106f1e2-8492-4520-b230-925614925f29"
-                  name="ItemFlowPanel"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="eab6173c-432c-4132-8bd3-0976ed0d6185"
             isDerived="false"
             sourceEndRoleName="HeroInventoryContainer"
@@ -7491,6 +7452,45 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="8ca461a2-db81-4a96-8728-86ffffd24136"
+            isDerived="false"
+            sourceEndRoleName="HeroInventoryContainer"
+            targetEndRoleName="ItemFlowPanel"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eb968153-27b3-44f4-84a5-5c90a8f7f77b"
+              LastKnownName="ItemFlowPanel"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0c17a4e9-adbe-425e-9d6a-6cdbc5cfb862"
+                  name="HeroInventoryContainer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2c0f4003-0574-4c8d-8aa0-55037b719b66"
+                  name="ItemFlowPanel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -8766,7 +8766,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e363bb96-a019-4087-b2a9-34e9e4e2ca11"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fc7b7758-5139-4a4b-9fdc-a83e3892342b"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -8806,6 +8819,45 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="52b7f4bd-872d-4442-a5cf-d0c6a45b8d79"
+            isDerived="false"
+            sourceEndRoleName="InventoryScreen"
+            targetEndRoleName="ItemFlowPanel"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eb968153-27b3-44f4-84a5-5c90a8f7f77b"
+              LastKnownName="ItemFlowPanel"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aada05b6-df04-4ca0-9920-632e7db4ca39"
+                  name="InventoryScreen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fcaf8d99-3b18-4b38-b346-39d14c53a7b6"
+                  name="ItemFlowPanel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -10982,7 +11034,7 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="b26d1398-45d3-447d-8c70-0c189489f1e5"
+            Id="6ff5abe8-7865-4331-bb3c-29208938a558"
             isDerived="false"
             sourceEndRoleName="ItemFlowPanel"
             targetEndRoleName="ItemContainer"
@@ -10995,20 +11047,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="56552db0-b0a2-4428-8288-b1204a22797e"
+                  Id="b17a1ccc-fae3-4c0f-92e4-af4f47cab431"
                   name="ItemFlowPanel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="None"
+                  aggregation="Composite"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="50696c17-a5c1-4cbb-8972-9b72067fd383"
+                  Id="ca52ef69-353d-452b-a983-668c35f07e8a"
                   name="ItemContainer"
                   isLeaf="false"
                   isStatic="false"
@@ -11016,7 +11068,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c85bea0a-e4df-404a-a4e2-88f6dc3f683a"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3487c9d7-1d0e-425e-ba91-4e7451e49caf"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
