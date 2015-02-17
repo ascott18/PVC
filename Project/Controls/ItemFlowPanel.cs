@@ -31,7 +31,7 @@ namespace Project.Controls
 			}
 		}
 
-		public ItemContainer GetInventoryItemContainer(int index)
+		private ItemContainer GetInventoryItemContainer(int index)
 		{
 			if (index < itemContainers.Count)
 				return itemContainers[index];
@@ -43,11 +43,20 @@ namespace Project.Controls
 			};
 			Controls.Add(itemContainer);
 			itemContainers.Add(itemContainer);
+			itemContainer.MouseDown += itemContainer_MouseDown;
 
 			return itemContainer;
 		}
 
-		public void ResetAllItemContainers()
+		void itemContainer_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (ContainerMouseDown != null)
+				ContainerMouseDown(sender as ItemContainer, e);
+		}
+
+		public event Action<ItemContainer, MouseEventArgs> ContainerMouseDown;
+
+		private void ResetAllItemContainers()
 		{
 			foreach (var itemContainer in itemContainers)
 			{

@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.inventoryContainer = new System.Windows.Forms.GroupBox();
-			this.inventoryFlow = new System.Windows.Forms.FlowLayoutPanel();
+			this.inventoryFlow = new ItemFlowPanel();
 			this.inventoryContainer.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -71,6 +71,6 @@
 		#endregion
 
 		private System.Windows.Forms.GroupBox inventoryContainer;
-		private System.Windows.Forms.FlowLayoutPanel inventoryFlow;
+		private ItemFlowPanel inventoryFlow;
 	}
 }

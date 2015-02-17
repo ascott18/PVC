@@ -18,7 +18,6 @@ namespace Project.Controls
 		private Party party;
 
 		private readonly List<HeroInventoryContainer> hiContainers = new List<HeroInventoryContainer>();
-		private readonly List<ItemContainer> inventoryItemContainers = new List<ItemContainer>();
 
 		public InventoryScreen()
 		{
@@ -36,6 +35,7 @@ namespace Project.Controls
 			inventoryFlow.AllowDrop = true;
 			inventoryFlow.DragEnter += inventoryFlow_DragEnter;
 			inventoryFlow.DragDrop += inventoryFlow_DragDrop;
+			inventoryFlow.ContainerMouseDown += InventoryItemContainer_MouseDown;
 		}
 
 		void inventoryFlow_DragDrop(object sender, DragEventArgs e)
@@ -92,47 +92,13 @@ namespace Project.Controls
 
 		void Party_InventoryChanged(Party party)
 		{
-			int i;
-			for (i = 0; i < party.Inventory.Count; i++)
-			{
-				var item = party.Inventory[i];
-
-				ItemContainer container;
-				if (i >= inventoryItemContainers.Count)
-					container = CreateInventoryItemContainer();
-				else
-					container = inventoryItemContainers[i];
-
-				container.Item = item;
-			}
-
-			// Clean out item containers that don't have a matching item.
-			for (; i < inventoryItemContainers.Count; i++)
-			{
-				var container = inventoryItemContainers[i];
-				container.Item = null;
-			}
+			inventoryFlow.LoadItems(party.Inventory);
 		}
 
-		private ItemContainer CreateInventoryItemContainer()
-		{
-			var itemContainer = new ItemContainer
-			{
-				Width = inventoryFlow.Width - 2,
-				Anchor = AnchorStyles.Left | AnchorStyles.Top
-			};
-			inventoryFlow.Controls.Add(itemContainer);
-			inventoryItemContainers.Add(itemContainer);
-			itemContainer.MouseDown += InventoryItemContainer_MouseDown;
-
-			return itemContainer;
-		}
-
-		void InventoryItemContainer_MouseDown(object sender, MouseEventArgs e)
+		void InventoryItemContainer_MouseDown(ItemContainer container, MouseEventArgs e)
 		{
 			// Handles dragging items out of our inventory.
 
-			var container = sender as ItemContainer;
 			var result = DoDragDrop(container.Item, DragDropEffects.Move);
 
 			if (result == DragDropEffects.Move)
