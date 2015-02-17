@@ -184,45 +184,6 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="be98e399-a6cc-403e-9941-c7e36d49256b"
-            isDerived="false"
-            sourceEndRoleName="Party"
-            targetEndRoleName="Item"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="1da8ad50-0d4e-4580-8859-003c60cd1d58"
-              LastKnownName="Item"
-              LastKnownLocation="Package_2229.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b91f3ba0-bb66-47d1-b7fb-9f027857e8dc"
-                  name="Party"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="750f91f7-a41f-478d-8746-acb79a107639"
-                  name="Item"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="b57e8492-3602-4a9e-8718-a8a1fb49ef17"
             isDerived="false"
             sourceEndRoleName="Party"

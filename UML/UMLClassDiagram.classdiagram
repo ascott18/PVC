@@ -4252,22 +4252,6 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="3085bc7e-9484-48d6-8f3f-50bc9d3769b7" />
           </association>
-          <association Id="9d0250b2-7c05-43b7-a1fc-00100b7a5a6a" isDerived="false" sourceEndRoleName="Party" targetEndRoleName="Item" isLeaf="false" isAbstract="false">
-            <classMoniker Id="3acdeb21-9097-473a-8db1-6bf6071f6746" LastKnownName="Item" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="e424ccd8-a6dc-4df1-b24c-ee10829e319a" name="Party" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="b91f3ba0-bb66-47d1-b7fb-9f027857e8dc" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="896aea98-1b72-4a24-bc54-c3cae1c690d2" name="Item" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="750f91f7-a41f-478d-8746-acb79a107639" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="be98e399-a6cc-403e-9941-c7e36d49256b" />
-          </association>
           <association Id="d8a5c999-f25a-4b4f-b5ec-9c197e2e4d48" isDerived="false" sourceEndRoleName="Party" targetEndRoleName="Item" isLeaf="false" isAbstract="false">
             <classMoniker Id="3acdeb21-9097-473a-8db1-6bf6071f6746" LastKnownName="Item" />
             <relationshipOwnedElementsInternal>

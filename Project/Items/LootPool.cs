@@ -15,9 +15,15 @@ namespace Project.Items
 	/// </summary>
 	internal class LootPool
 	{
+		private struct LootEvent
+		{
+			public int ItemID;
+			public double Chance;
+		}
+
 		private static readonly Dictionary<int, LootPool> pools = new Dictionary<int, LootPool>();
 
-		private readonly Dictionary<int, double> loot = new Dictionary<int, double>();
+		private readonly List<LootEvent> loot = new List<LootEvent>();
 
 		private LootPool() { }
 
@@ -30,7 +36,8 @@ namespace Project.Items
 			{
 				var itemID = (int) itemElement.Attribute("id");
 				var chance = (double) itemElement.Attribute("chance");
-				pool.loot[itemID] = chance;
+
+				pool.loot.Add(new LootEvent{Chance = chance, ItemID = itemID});
 			}
 
 			return pool;
@@ -67,10 +74,10 @@ namespace Project.Items
 			var items = new List<Item>();
 
 			var random = new Random();
-			foreach (var kvp in loot)
+			foreach (var lootEvent in loot)
 			{
-				var itemID = kvp.Key;
-				var chance = kvp.Value;
+				var itemID = lootEvent.ItemID;
+				var chance = lootEvent.Chance;
 
 				var roll = random.NextDouble();
 				if (roll < chance)
