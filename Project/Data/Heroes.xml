@@ -15,5 +15,6 @@
 	<Attributes stamina="11" strength="12" intellect="15" dexterity="7"/>
 	<Spell id="1"/>
 	<Spell id="2"/>
+  <Spell id="4"/>
   </Hero>
 </Heroes>

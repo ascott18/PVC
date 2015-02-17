@@ -19,17 +19,24 @@ namespace Project.Spells
 
 		private void SpellAreaHealing_StateChanged(Spell sender, CastState oldState)
 		{
-		    if (Session.Party.Members.Contains(Owner))
-		    {
-                HealMembers(Session.Party);
-		    }
-            else if (Session.MonsterPack.Members.Contains(Owner))
+            switch (State)
             {
-                HealMembers(Session.MonsterPack);
-            }
-            else
-            {
-                throw new Exception("Sprite not found");
+                case CastState.Starting:
+                    var target = Session.GetTarget(Owner);
+                    if (target == null) // if target is null, there are no valid targets.
+                        Cancel();
+                    break;
+
+                case CastState.Finishing:
+                    if (Owner.Parent == Session.Party)
+                    {
+                        HealMembers(Session.Party);
+                    }
+                    else
+                    {
+                        HealMembers(Session.MonsterPack);
+                    }
+                    break;
             }
 		}
 

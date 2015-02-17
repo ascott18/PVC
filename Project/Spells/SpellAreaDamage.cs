@@ -19,18 +19,27 @@ namespace Project.Spells
 
         private void SpellAreaDamage_StateChanged(Spell sender, CastState oldState)
         {
-            if (Session.Party.Members.Contains(Owner))
+            switch (State)
             {
-                DamageMembers(Session.Party);
+                case CastState.Starting:
+                    var target = Session.GetTarget(Owner);
+                    if (target == null) // if target is null, there are no valid targets.
+                        Cancel();
+                    break;
+
+                case CastState.Finishing:
+                    if (Owner.Parent == Session.Party)
+                    {
+                        DamageMembers(Session.MonsterPack);
+                    }
+                    else
+                    {
+                        DamageMembers(Session.Party);
+                    }
+                    break;
             }
-            else if (Session.MonsterPack.Members.Contains(Owner))
-            {
-                DamageMembers(Session.MonsterPack);
-            }
-            else
-            {
-                throw new Exception("Sprite not found");
-            }
+            
+           
         }
 
         private void DamageMembers(DungeonSprite sprite)
