@@ -74,7 +74,7 @@ namespace Project.Dungeon
 
 		public bool CanBeOccupied()
 		{
-			return TileObject == null && !TileData.IsObstable;
+			return TileObject == null && !TileData.IsObstacle;
 		}
 	}
 }

@@ -25,17 +25,17 @@ namespace Project.Dungeon
 		/// <summary>
 		///     Whether or not tiles that use this TileData can be occupied by a TileObject.
 		/// </summary>
-		public readonly bool IsObstable;
+		public readonly bool IsObstacle;
 
 		/// <summary>
 		///     The tileID of this TileData, as defined by the "id" attribute in Tiles.xml
 		/// </summary>
 		public readonly int TileID;
 
-		private TileData(int id, bool isObstable, string imageName)
+		private TileData(int id, bool isObstacle, string imageName)
 		{
 			TileID = id;
-			IsObstable = isObstable;
+			IsObstacle = isObstacle;
 
 			if (imageName == "")
 			{
