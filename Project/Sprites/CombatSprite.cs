@@ -106,7 +106,14 @@ namespace Project.Sprites
 		public virtual void RecalculateAttributes()
 		{
 			Attributes = BaseAttributes;
+			OnAttributesChanged();
 		}
+
+		protected void OnAttributesChanged()
+		{
+			if (AttributesChanged != null) AttributesChanged(this);
+		}
+		public event SpriteEvent AttributesChanged;
 
 		/// <summary>
 		///     Parses data from an XElement that are shared between all CombatSprite subclasses.

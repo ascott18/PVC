@@ -142,6 +142,8 @@ namespace Project.Sprites
 			}
 
 			Attributes = attr;
+
+			OnAttributesChanged();
 		}
 	}
 }

@@ -47,6 +47,12 @@ namespace Project.Controls
 			inv.StartPosition = FormStartPosition.Manual;
 			inv.Location = Location + new Size(Width, 0);
 			inv.Show();
+
+			var stats = new StatsScreen();
+			stats.Party = Game.Party;
+			stats.StartPosition = FormStartPosition.Manual;
+			stats.Location = Location + new Size(Width, inv.Height);
+			stats.Show();
 		}
 	}
 }
