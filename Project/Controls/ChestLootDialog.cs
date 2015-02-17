@@ -11,14 +11,11 @@ using Project.Items;
 
 namespace Project
 {
-	internal partial class CombatCompleteDialog : Form
+	internal partial class ChestLootDialog : Form
 	{
-		public CombatCompleteDialog(CombatSession session)
+		public ChestLootDialog()
 		{
 			InitializeComponent();
-
-			partyPortrait.Image = session.Party.Image;
-			monsterPortrait.Image = session.MonsterPack.Image;
 			StartPosition = FormStartPosition.CenterParent;
 		}
 
@@ -30,6 +27,6 @@ namespace Project
 		private void closeButton_Click(object sender, EventArgs e)
 		{
 			Close();
-		}
+        }
 	}
 }

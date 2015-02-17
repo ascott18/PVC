@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ChestLootDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ChestLootDialog.Designer.cs">
+      <DependentUpon>ChestLootDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CombatCompleteDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <Compile Include="Spells\Spell.cs" />
     <Compile Include="Sprites\DungeonSprite.cs" />
     <Compile Include="Dungeon\Tile.cs" />
+    <EmbeddedResource Include="Controls\ChestLootDialog.resx">
+      <DependentUpon>ChestLootDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\CombatCompleteDialog.resx">
       <DependentUpon>CombatCompleteDialog.cs</DependentUpon>
     </EmbeddedResource>
