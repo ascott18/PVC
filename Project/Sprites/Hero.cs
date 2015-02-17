@@ -9,12 +9,10 @@ namespace Project.Sprites
 {
 	internal class Hero : CombatSprite
 	{
-		public Party Party { get; private set; }
 		public readonly int HeroID;
 
-		public Hero(Party party, int heroId)
+		public Hero(Party party, int heroId) : base(party)
 		{
-			Party = party;
 			HeroID = heroId;
 
 			var xDoc = XmlData.GetDocument("Heroes");

@@ -46,7 +46,7 @@ namespace Project.Sprites
 					throw new Exception("Too many monsters for this monster pack");
 
 				var monsterID = int.Parse(monsterElement.Attribute("id").Value);
-				var monster = new Monster(monsterID);
+				var monster = new Monster(mp, monsterID);
 
 				mp.monsters.Add(monster);
 			}

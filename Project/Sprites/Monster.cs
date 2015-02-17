@@ -12,7 +12,7 @@ namespace Project.Sprites
 
 		public readonly int MonsterID;
 
-		public Monster(int monsterId)
+		public Monster(MonsterPack pack, int monsterId) : base (pack)
 		{
 			MonsterID = monsterId;
 

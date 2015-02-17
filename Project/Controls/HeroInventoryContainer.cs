@@ -64,7 +64,7 @@ namespace Project.Controls
 			{
 				var oldItem = hero.Equip(item);
 				if (oldItem != null)
-					hero.Party.AddInventoryItem(oldItem);
+					((Party)hero.Parent).AddInventoryItem(oldItem);
 			    return;
             }
 

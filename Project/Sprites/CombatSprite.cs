@@ -16,10 +16,12 @@ namespace Project.Sprites
 
 		private int health = 1;
 		private int maxHealth = 1;
+	    public readonly DungeonSprite Parent;
 
-		protected CombatSprite()
+		protected CombatSprite(DungeonSprite parent)
 		{
 			HealthChanged += CombatSprite_HealthChanged;
+		    Parent = parent;
 		}
 
 		public Image Image { get; protected set; }
