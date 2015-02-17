@@ -6,38 +6,80 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2015-02-13T11:12:41" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'f5131aaa-01c4-4b8d-b392-816d92484780' -  (ClassifierTemplateParameter)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project' -  (Package)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Game' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites' -  (Package)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::DungeonSprite' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::Monster' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Medium" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack' -  (Class)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::Interact' -  (Operation)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::Interact::game' -  (Parameter)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::MaxMonsters' -  (Property)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::MonsterPack' -  (Operation)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::MonsterPack::loc' -  (Parameter)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::MonsterPack::uniqueId' -  (Parameter)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::monsters' -  (Property)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::UniqueID' -  (Property)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::XmlParser' -  (Operation)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::MonsterPack::XmlParser::mpElement' -  (Parameter)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System' -  (Package)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Collections' -  (Package)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Collections::Generic' -  (Package)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Collections::Generic::List&lt;Monster‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Drawing' -  (Package)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Drawing::Point' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Xml' -  (Package)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Xml::Linq' -  (Package)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Xml::Linq::XElement' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Sprites::MonsterPack to UML::Project::Sprites::DungeonSprite (Generalization)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Sprites::Party to UML::Project::Sprites::DungeonSprite (Generalization)" />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="High" Text="(7) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2015-02-13T11:12:42" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2015-02-13T10:43:22" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project' -  (Package)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::CombatSession' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells' -  (Package)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::CastState' -  (Enumeration)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Medium" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell' -  (Class)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::AutoCastChanged' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::CanCast' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Cancel' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::CastDuration' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::CastStartTime' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::CooldownDuration' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::GetSpell' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::GetSpell::owner' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::GetSpell::spellID' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::isAutoCast' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::IsAutoCast' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::IsCasting' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::LastCastTime' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Name' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Owner' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::RemainingCastTime' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::RemainingCooldown' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Session' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Session_StateChanged' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Session_StateChanged::sender' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Session_Update' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Session_Update::sender' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::SetUnusedUponReady' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::SetUnusedUponReady::oldState' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::SetUnusedUponReady::sender' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Spell' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Spell::data' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Spell_StateStateChanged' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Spell_StateStateChanged::oldState' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Spell_StateStateChanged::sender' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Spell_StateStateChanging' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Spell_StateStateChanging::newState' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Spell_StateStateChanging::sender' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::spellID' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Start' -  (Operation)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::Start::session' -  (Parameter)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::state' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::State' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::StateChanged' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::Spell::StateChanging' -  (Property)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::SpellEvent' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Spells::SpellStateEvent' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites' -  (Package)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::Project::Sprites::CombatSprite' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System' -  (Package)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Double' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Xml' -  (Package)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Xml::Linq' -  (Package)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'UML::System::Xml::Linq::XElement' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::System::Double (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::System::Double (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::System::Double (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::System::Double (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::Project::CombatSession (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::Project::Sprites::CombatSprite (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::System::Double (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::System::Double (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::Spell to UML::Project::Spells::CastState (Association)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::SpellTargetedDamage to UML::Project::Spells::Spell (Generalization)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::SpellAreaDamage to UML::Project::Spells::Spell (Generalization)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::SpellAreaHealing to UML::Project::Spells::Spell (Generalization)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Spells::SpellSelfHealing to UML::Project::Spells::Spell (Generalization)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Sprites::Hero to UML::Project::Sprites::CombatSprite (Generalization)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: UML::Project::Sprites::Monster to UML::Project::Sprites::CombatSprite (Generalization)" />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="High" Text="(7) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-02-13T10:43:25" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>
