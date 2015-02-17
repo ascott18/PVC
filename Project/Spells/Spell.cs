@@ -327,6 +327,9 @@ namespace Project.Spells
 				// This happens when a spell finishing triggers the end of a combat session
 				// by dealing fatal damage to one of the combatants. The state will end while the spell is 
 				// still processing its Finishing state change.
+
+				// Unregister first to make sure its only registered once.
+				StateChanged -= SetUnusedUponReady;
 				StateChanged += SetUnusedUponReady;
 			}
 			else
