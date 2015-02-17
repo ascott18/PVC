@@ -28,22 +28,29 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.inventoryScreen1 = new Project.Controls.InventoryScreen();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+			this.inventoryButton = new Project.Controls.WoodButton();
 			this.combatArena = new Project.Controls.CombatArena();
 			this.dungeonContainer = new Project.Controls.DungeonContainer();
 			this.SuspendLayout();
 			// 
-			// inventoryScreen1
+			// inventoryButton
 			// 
-			this.inventoryScreen1.Location = new System.Drawing.Point(706, 12);
-			this.inventoryScreen1.Name = "inventoryScreen1";
-			this.inventoryScreen1.Party = null;
-			this.inventoryScreen1.Size = new System.Drawing.Size(597, 677);
-			this.inventoryScreen1.TabIndex = 2;
+			this.inventoryButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventoryButton.BackgroundImage")));
+			this.inventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.inventoryButton.Font = new System.Drawing.Font("Arial", 12F);
+			this.inventoryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(164)))));
+			this.inventoryButton.Location = new System.Drawing.Point(581, 0);
+			this.inventoryButton.Name = "inventoryButton";
+			this.inventoryButton.Size = new System.Drawing.Size(119, 30);
+			this.inventoryButton.TabIndex = 3;
+			this.inventoryButton.Text = "Inventory";
+			this.inventoryButton.UseVisualStyleBackColor = true;
+			this.inventoryButton.Click += new System.EventHandler(this.inventoryButton_Click);
 			// 
 			// combatArena
 			// 
-			this.combatArena.BackColor = System.Drawing.Color.White;
+			this.combatArena.BackColor = System.Drawing.Color.Transparent;
 			this.combatArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.combatArena.Location = new System.Drawing.Point(47, 121);
 			this.combatArena.Name = "combatArena";
@@ -54,7 +61,7 @@
 			// dungeonContainer
 			// 
 			this.dungeonContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.dungeonContainer.Location = new System.Drawing.Point(0, 0);
+			this.dungeonContainer.Location = new System.Drawing.Point(0, 30);
 			this.dungeonContainer.Name = "dungeonContainer";
 			this.dungeonContainer.Size = new System.Drawing.Size(700, 700);
 			this.dungeonContainer.TabIndex = 0;
@@ -63,8 +70,8 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1309, 701);
-			this.Controls.Add(this.inventoryScreen1);
+			this.ClientSize = new System.Drawing.Size(704, 731);
+			this.Controls.Add(this.inventoryButton);
 			this.Controls.Add(this.combatArena);
 			this.Controls.Add(this.dungeonContainer);
 			this.KeyPreview = true;
@@ -78,7 +85,7 @@
 
 		internal DungeonContainer dungeonContainer;
 		internal CombatArena combatArena;
-		private InventoryScreen inventoryScreen1;
+		private WoodButton inventoryButton;
 
 
 

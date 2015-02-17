@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.inventoryContainer = new System.Windows.Forms.GroupBox();
-			this.inventoryFlow = new ItemFlowPanel();
+			this.inventoryFlow = new Project.Controls.ItemFlowPanel();
 			this.inventoryContainer.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -39,9 +39,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.inventoryContainer.Controls.Add(this.inventoryFlow);
-			this.inventoryContainer.Location = new System.Drawing.Point(321, 9);
+			this.inventoryContainer.Location = new System.Drawing.Point(338, 0);
 			this.inventoryContainer.Name = "inventoryContainer";
-			this.inventoryContainer.Size = new System.Drawing.Size(231, 375);
+			this.inventoryContainer.Size = new System.Drawing.Size(246, 419);
 			this.inventoryContainer.TabIndex = 3;
 			this.inventoryContainer.TabStop = false;
 			this.inventoryContainer.Text = "Inventory";
@@ -52,7 +52,7 @@
 			this.inventoryFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.inventoryFlow.Location = new System.Drawing.Point(3, 16);
 			this.inventoryFlow.Name = "inventoryFlow";
-			this.inventoryFlow.Size = new System.Drawing.Size(225, 356);
+			this.inventoryFlow.Size = new System.Drawing.Size(240, 400);
 			this.inventoryFlow.TabIndex = 0;
 			this.inventoryFlow.WrapContents = false;
 			// 
@@ -60,9 +60,9 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(589, 422);
 			this.Controls.Add(this.inventoryContainer);
 			this.Name = "InventoryScreen";
-			this.Size = new System.Drawing.Size(555, 392);
 			this.inventoryContainer.ResumeLayout(false);
 			this.ResumeLayout(false);
 

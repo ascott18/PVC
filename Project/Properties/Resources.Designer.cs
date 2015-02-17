@@ -138,7 +138,17 @@ namespace Project.Properties {
         ///&lt;LootPools&gt;
         ///  &lt;LootPool id=&quot;1&quot;&gt;
         ///	&lt;Item id=&quot;1&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;1&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;1&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;1&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;1&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;1&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;1&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;5&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;4&quot; chance=&quot;1.0&quot;/&gt;
+        ///	&lt;Item id=&quot;3&quot; chance=&quot;1.0&quot;/&gt;
         ///	&lt;Item id=&quot;2&quot; chance=&quot;.5&quot;/&gt;
+        ///  &lt;Item id =&quot;100&quot; chance=&quot;1&quot;/&gt;
         ///  &lt;/LootPool&gt;
         ///&lt;/LootPools&gt;.
         /// </summary>
@@ -259,6 +269,16 @@ namespace Project.Properties {
         internal static string Tiles {
             get {
                 return ResourceManager.GetString("Tiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wood {
+            get {
+                object obj = ResourceManager.GetObject("wood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

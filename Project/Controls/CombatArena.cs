@@ -124,5 +124,10 @@ namespace Project.Controls
 					containers[i].Sprite = null;
 			}
 		}
+
+		private void retreatButton_Click(object sender, EventArgs e)
+		{
+			combatSession.EndCombat(false);
+		}
 	}
 }

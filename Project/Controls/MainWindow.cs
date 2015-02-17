@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -20,7 +21,6 @@ namespace Project.Controls
 			InitializeComponent();
 
 			Game = new Game();
-			inventoryScreen1.Party = Game.Party; //TODO: Temp
 		}
 
 		internal Game Game { get; private set; }
@@ -38,6 +38,15 @@ namespace Project.Controls
 		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 		{
 			return Game.ProcessKey(keyData) || base.ProcessCmdKey(ref msg, keyData);
+		}
+
+		private void inventoryButton_Click(object sender, EventArgs e)
+		{
+			var inv = new InventoryScreen();
+			inv.Party = Game.Party;
+			inv.StartPosition = FormStartPosition.Manual;
+			inv.Location = Location + new Size(Width, 0);
+			inv.Show();
 		}
 	}
 }

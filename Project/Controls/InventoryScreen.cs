@@ -13,7 +13,7 @@ using Project.Sprites;
 
 namespace Project.Controls
 {
-	internal partial class InventoryScreen : UserControl
+	internal partial class InventoryScreen : Form
 	{
 		private Party party;
 
