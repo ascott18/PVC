@@ -2,14 +2,15 @@
 <Monsters>
   <Monster id="1" texture="lumbergh" name="Boss">
 	<Attributes stamina="10" strength="11" intellect="8" dexterity="15"/>
-	<Spell id="2"/>
-	<Spell id="2"/>
-	<Spell id="1"/>
+	<Spell id="22"/>
+	<Spell id="21"/>
 	<LootPool id="1"/>
   </Monster>
   <Monster id="2" texture="shoerner" name="Pestering Student">
 	<Attributes stamina="8" strength="9" intellect="16" dexterity="9"/>
-	<Spell id="1"/>
+	<Spell id="31"/>
+	<Spell id="32"/>
+	<Spell id="33"/>
   </Monster>
   
   <Monster id="3" texture="dummy" name="Dummy">

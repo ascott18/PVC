@@ -28,7 +28,16 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
+			this.SuspendLayout();
+			// 
+			// WoodButton
+			// 
+			this.BackgroundImage = global::Project.Properties.Resources.wood;
+			this.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Paint += new System.Windows.Forms.PaintEventHandler(this.WoodButton_Paint);
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion

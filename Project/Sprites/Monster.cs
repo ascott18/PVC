@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.XPath;
 using Project.Data;
 using Project.Items;
@@ -32,11 +33,13 @@ namespace Project.Sprites
 			RecalculateAttributes();
 		}
 
+		static readonly Random random = new Random();
+
 		public void DoAction(CombatSession session)
 		{
 			if (CurrentCast == null)
 			{
-				foreach (var spell in Spells)
+				foreach (var spell in Spells.OrderBy(_ => random.Next()))
 				{
 					if (spell.Start(session))
 						return;

@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LootPools>
   <LootPool id="1">
-	<Item id="1" chance="1.0"/>
-	<Item id="1" chance="1.0"/>
-	<Item id="1" chance="1.0"/>
-	<Item id="1" chance="1.0"/>
-	<Item id="1" chance="1.0"/>
-	<Item id="1" chance="1.0"/>
-	<Item id="1" chance="1.0"/>
-	<Item id="5" chance="1.0"/>
-	<Item id="4" chance="1.0"/>
-	<Item id="3" chance="1.0"/>
-	<Item id="2" chance=".5"/>
-  <Item id ="100" chance="1"/>
+	<Item id="11" chance="0.2"/>
+	<Item id="12" chance="0.2"/>
+	<Item id="14" chance="0.2"/>
+	<Item id="15" chance="0.2"/>
+	<Item id="16" chance="0.2"/>
+	<Item id="17" chance="0.2"/>
+
+	<Item id="101" chance="0.7"/>
+	<Item id="101" chance="0.7"/>
+  </LootPool>
+  
+  <LootPool id="2">
+	<Item id="11" chance="0.9"/>
+	<Item id="14" chance="0.9"/>
   </LootPool>
 </LootPools>

@@ -223,6 +223,9 @@
     <EmbeddedResource Include="Controls\StatsScreen.resx">
       <DependentUpon>StatsScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WoodButton.resx">
+      <DependentUpon>WoodButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -259,6 +262,8 @@
     <Content Include="Data\Maps.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Resources\box.png" />
+    <Content Include="Resources\carpet.png" />
     <Content Include="Resources\dummy.png" />
     <Content Include="Resources\wall.png" />
     <Content Include="Resources\wood.bmp" />

@@ -25,6 +25,8 @@ namespace Project.Items
 
 		private readonly List<LootEvent> loot = new List<LootEvent>();
 
+		static Random random = new Random();
+
 		private LootPool() { }
 
 		private static LootPool Parse(XElement element)
@@ -73,7 +75,6 @@ namespace Project.Items
 		{
 			var items = new List<Item>();
 
-			var random = new Random();
 			foreach (var lootEvent in loot)
 			{
 				var itemID = lootEvent.ItemID;

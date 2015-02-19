@@ -17,12 +17,13 @@ namespace Project.Controls
 			InitializeComponent();
 
 			// Build containers for each type.
-			const int padding = 5;
+			const int paddingX = 5;
+			const int paddingY = 15;
 
 			for (int i = 0; i < heroContainers.Length; i++)
 			{
 				var container = heroContainers[i] = new HeroContainer();
-				container.Location = new Point(padding, padding + i * container.Size.Height);
+				container.Location = new Point(paddingX, paddingY + i * container.Size.Height);
 
 				foreach (var spellContainer in container.SpellContainers)
 				{
@@ -37,7 +38,7 @@ namespace Project.Controls
 			for (int i = 0; i < monsterContainers.Length; i++)
 			{
 				var container = monsterContainers[i] = new MonsterContainer();
-				container.Location = new Point(Size.Width - padding - container.Size.Width, padding + i * container.Size.Height);
+				container.Location = new Point(Size.Width - paddingX - container.Size.Width, paddingY + i * container.Size.Height);
 			}
 			Controls.AddRange(monsterContainers);
 		}

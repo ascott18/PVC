@@ -16,10 +16,12 @@ namespace Project.Controls
 		public WoodButton()
 		{
 			InitializeComponent();
-			BackgroundImage = Resources.wood;
-			Font = new Font("Arial", 12);
-			ForeColor = ColorTranslator.FromHtml("#fbf4a4");
-			FlatStyle = FlatStyle.Flat;
+			ForeColor = Color.Tan;
+		}
+
+		private void WoodButton_Paint(object sender, PaintEventArgs e)
+		{
+			e.Graphics.DrawRectangle(new Pen(ForeColor, 5), ClientRectangle);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Tiles>
-  <Tile id="0" texture="" obstacle="false"/>
+  <Tile id="0" texture="carpet" obstacle="false"/>
   <Tile id="1" texture="lumbergh" obstacle="false"/>
   <Tile id="2" texture="wall" obstacle="true"/>
 </Tiles>

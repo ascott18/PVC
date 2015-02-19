@@ -41,6 +41,7 @@ namespace Project.Controls
 					Show();
 					AttributesContainer.Sprite = sprite;
 					sprite.HealthChanged += sprite_HealthChanged;
+					sprite_HealthChanged(sprite);
 
 					for (int i = 0; i < Math.Min(SpellContainers.Count, sprite.Spells.Count); i++)
 					{

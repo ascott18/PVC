@@ -22,7 +22,29 @@
   <Equippable id="5" name="Amazing Weapon" slot="Weapon">
 	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
   </Equippable>
+  
+  <Equippable id="11" name="Red Swingline" slot="Weapon">
+	<Attributes stamina="3" strength="2" intellect="1" dexterity="0"/>
+  </Equippable>
+  <Equippable id="12" name="Snazzy Suit" slot="Body">
+	<Attributes stamina="2" strength="1" intellect="4" dexterity="1"/>
+  </Equippable>
+  <Equippable id="13" name="Blue Suede Shoes" slot="Feet">
+	<Attributes stamina="2" strength="0" intellect="0" dexterity="3"/>
+  </Equippable>
+  <Equippable id="14" name="Pointy Stick" slot="Weapon">
+	<Attributes stamina="1" strength="2" intellect="2" dexterity="3"/>
+  </Equippable>
+  <Equippable id="15" name="Oversized Specs" slot="Head">
+	<Attributes stamina="1" strength="0" intellect="4" dexterity="2"/>
+  </Equippable>
+  <Equippable id="16" name="Black Oxfords" slot="Feet">
+	<Attributes stamina="2" strength="2" intellect="1" dexterity="0"/>
+  </Equippable>
+  <Equippable id="17" name="Gray Shirt" slot="Body">
+	<Attributes stamina="1" strength="0" intellect="1" dexterity="0"/>
+  </Equippable>
 
-  <Food id ="100" name="Amazing food" amount="100"/>
-  <Food id ="101" name="Amazing potion" amount="200"/>
+  <Food id="100" name="Chotchkie's Blackened Chicken" amount="10"/>
+  <Food id="101" name="Coffee" amount="15"/>
 </Items>

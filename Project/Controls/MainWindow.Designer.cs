@@ -32,17 +32,19 @@
 			this.inventoryButton = new Project.Controls.WoodButton();
 			this.combatArena = new Project.Controls.CombatArena();
 			this.dungeonContainer = new Project.Controls.DungeonContainer();
+			this.woodButton1 = new Project.Controls.WoodButton();
+			this.woodButton2 = new Project.Controls.WoodButton();
 			this.SuspendLayout();
 			// 
 			// inventoryButton
 			// 
 			this.inventoryButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventoryButton.BackgroundImage")));
 			this.inventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.inventoryButton.Font = new System.Drawing.Font("Arial", 12F);
-			this.inventoryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(164)))));
-			this.inventoryButton.Location = new System.Drawing.Point(581, 0);
+			this.inventoryButton.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.inventoryButton.ForeColor = System.Drawing.Color.Tan;
+			this.inventoryButton.Location = new System.Drawing.Point(549, 0);
 			this.inventoryButton.Name = "inventoryButton";
-			this.inventoryButton.Size = new System.Drawing.Size(119, 30);
+			this.inventoryButton.Size = new System.Drawing.Size(151, 30);
 			this.inventoryButton.TabIndex = 3;
 			this.inventoryButton.Text = "INVENTORY";
 			this.inventoryButton.UseVisualStyleBackColor = true;
@@ -50,11 +52,11 @@
 			// 
 			// combatArena
 			// 
-			this.combatArena.BackColor = System.Drawing.Color.Transparent;
+			this.combatArena.BackColor = System.Drawing.SystemColors.Control;
 			this.combatArena.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.combatArena.Location = new System.Drawing.Point(47, 121);
+			this.combatArena.Location = new System.Drawing.Point(50, 166);
 			this.combatArena.Name = "combatArena";
-			this.combatArena.Size = new System.Drawing.Size(600, 424);
+			this.combatArena.Size = new System.Drawing.Size(600, 368);
 			this.combatArena.TabIndex = 1;
 			this.combatArena.Visible = false;
 			// 
@@ -66,17 +68,43 @@
 			this.dungeonContainer.Size = new System.Drawing.Size(702, 702);
 			this.dungeonContainer.TabIndex = 0;
 			// 
+			// woodButton1
+			// 
+			this.woodButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("woodButton1.BackgroundImage")));
+			this.woodButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.woodButton1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.woodButton1.ForeColor = System.Drawing.Color.Tan;
+			this.woodButton1.Location = new System.Drawing.Point(0, 0);
+			this.woodButton1.Name = "woodButton1";
+			this.woodButton1.Size = new System.Drawing.Size(295, 30);
+			this.woodButton1.TabIndex = 4;
+			this.woodButton1.UseVisualStyleBackColor = true;
+			// 
+			// woodButton2
+			// 
+			this.woodButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("woodButton2.BackgroundImage")));
+			this.woodButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.woodButton2.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.woodButton2.ForeColor = System.Drawing.Color.Tan;
+			this.woodButton2.Location = new System.Drawing.Point(295, 0);
+			this.woodButton2.Name = "woodButton2";
+			this.woodButton2.Size = new System.Drawing.Size(254, 30);
+			this.woodButton2.TabIndex = 5;
+			this.woodButton2.UseVisualStyleBackColor = true;
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(704, 731);
+			this.Controls.Add(this.woodButton2);
+			this.Controls.Add(this.woodButton1);
 			this.Controls.Add(this.inventoryButton);
 			this.Controls.Add(this.combatArena);
 			this.Controls.Add(this.dungeonContainer);
 			this.KeyPreview = true;
 			this.Name = "MainWindow";
-			this.Text = "Form1";
+			this.Text = "PVC";
 			this.ResumeLayout(false);
 
 		}
@@ -86,6 +114,8 @@
 		internal DungeonContainer dungeonContainer;
 		internal CombatArena combatArena;
 		private WoodButton inventoryButton;
+		private WoodButton woodButton1;
+		private WoodButton woodButton2;
 
 
 

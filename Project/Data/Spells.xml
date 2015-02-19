@@ -1,8 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Spells>
-  <TargetedDamage name="Basic Spell" id="1" damage="5" castTime="2" cooldown="0"/>
-  <TargetedDamage name="DOOOOOOMMMM" id="2" damage="150" castTime="3" cooldown="5"/>
-  <TargetedDamage name="Rapid Fire" id="3" damage="3" castTime="0.1" cooldown="0"/>
-  <AreaDamage name="Fire Spray" id="4" damage="3" castTime="0.1" cooldown="0"/>
+  <!--Milton-->
+  <TargetedDamage name="Mumble" id="1" damage="5" castTime="2" cooldown="0"/>
+  <TargetedDamage name="Staple Fire" id="2" damage="1" castTime="0.3" cooldown="0"/>
+  <AreaDamage name="Incinerate" id="3" damage="30" castTime="2.5" cooldown="10"/>
+  
+  <!--Stu-->
+  <TargetedDamage name="Booming Voice" id="11" damage="4" castTime="3" cooldown="0"/>
+  <AreaDamage name="Knowledge Bombardment" id="12" damage="5" castTime="4" cooldown="8"/>
+  <AreaHealing name="Advise" id="13" healing="15" castTime="3" cooldown="10"/>
+  
+  <!--Lumbergh-->
+  <TargetedDamage name="Order TPS Reports" id="21" damage="3" castTime="2" cooldown="0"/>
+  <TargetedDamage name="Request Saturday" id="22" damage="10" castTime="3" cooldown="5"/>
+
+  <!--Stephen-->
+  <TargetedDamage name="Pester" id="31" damage="4" castTime="2" cooldown="2"/>
+  <SelfHealing name="Energy Drink" id="32" healing="20" castTime="3" cooldown="15"/>
+  <AreaHealing name="Order Coffee" id="33" healing="8" castTime="4" cooldown="10"/>
+  
   
 </Spells>
