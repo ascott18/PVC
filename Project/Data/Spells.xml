@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Spells>
   <!--Milton-->
-  <TargetedDamage name="Mumble" id="1" damage="5" castTime="2" cooldown="0"/>
+  <TargetedDamage name="Mumble" id="1" damage="9" castTime="2" cooldown="6"/>
   <TargetedDamage name="Staple Fire" id="2" damage="1" castTime="0.3" cooldown="0"/>
   <AreaDamage name="Incinerate" id="3" damage="30" castTime="2.5" cooldown="10"/>
   
   <!--Stu-->
   <TargetedDamage name="Booming Voice" id="11" damage="4" castTime="3" cooldown="0"/>
-  <AreaDamage name="Knowledge Bombardment" id="12" damage="5" castTime="4" cooldown="8"/>
+  <AreaDamage name="Knowledge Blast" id="12" damage="5" castTime="4" cooldown="8"/>
   <AreaHealing name="Advise" id="13" healing="15" castTime="3" cooldown="10"/>
   
   <!--Lumbergh-->
