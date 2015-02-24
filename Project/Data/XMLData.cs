@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
+using Project.Dungeon;
 using Project.Properties;
 
 namespace Project.Data
@@ -46,6 +47,8 @@ namespace Project.Data
 			return Documents[resourceName] = doc;
 		}
 
+		private static Dictionary<string, Image> composites = new Dictionary<string, Image>(); 
+
 		/// <summary>
 		/// Try and get the embedded image represented by the provided name.
 		/// Embedded resources are defined in Resources.resx
@@ -59,11 +62,32 @@ namespace Project.Data
 				return null;
 			}
 
-			var image = Resources.ResourceManager.GetObject(imageName) as Bitmap;
-			if (image == null)
-				throw new FileNotFoundException("Resource not found", imageName);
+			if (imageName.Contains(" "))
+			{
+				// If there are spaces, the imageName is actually a composite of several images.
+				// We need to return it if it exists, or build it if not.
+				Image image;
+				if (composites.TryGetValue(imageName, out image))
+					return image;
 
-			return image;
+				image = new Bitmap(Tile.DimPixels, Tile.DimPixels);
+
+				using (var g = Graphics.FromImage(image))
+				foreach (string subImage in imageName.Split(new []{' '}))
+				{
+					g.DrawImage(LoadImage(subImage), 0, 0, Tile.DimPixels, Tile.DimPixels);
+				}
+
+				return composites[imageName] = image;
+			}
+			else
+			{
+				var image = Resources.ResourceManager.GetObject(imageName) as Bitmap;
+				if (image == null)
+					throw new FileNotFoundException("Resource not found", imageName);
+
+				return image;
+			}
 		}
 
 		[AttributeUsage(AttributeTargets.Method)]
