@@ -68,7 +68,7 @@ namespace Project.Spells
 			sb.Append("Amount: ");
 			sb.AppendLine(damage.ToString());
 
-			return sb.ToString();
+			return TooltipCache = sb.ToString();
 		}
     }
 }

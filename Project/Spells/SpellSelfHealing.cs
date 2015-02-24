@@ -53,7 +53,7 @@ namespace Project.Spells
 			sb.Append("Amount: ");
 			sb.AppendLine(healing.ToString());
 
-			return sb.ToString();
+			return TooltipCache = sb.ToString();
 		}
 	}
 }
