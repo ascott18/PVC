@@ -104,7 +104,7 @@ namespace Project.Controls
 
 			e.Graphics.DrawString(castControlLabel, Font, Brushes.Black, 0, 0);
 
-			e.Graphics.DrawString(Spell.Name, Font, Brushes.Black, 16, 0);
+			e.Graphics.DrawString(Spell.Name, Font, Brushes.Black, 12, 0);
 		}
 
 		private void spell_AutoCastChanged(Spell sender)
