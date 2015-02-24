@@ -37,6 +37,7 @@ namespace Project.Controls
 				{
 					spell.StateChanging -= Spell_StateChanging;
 					spell.AutoCastChanged -= spell_AutoCastChanged;
+					toolTip.SetToolTip(this, null);
 				}
 				spell = value;
 				if (spell == null)
@@ -47,6 +48,7 @@ namespace Project.Controls
 				{
 					spell.StateChanging += Spell_StateChanging;
 					spell.AutoCastChanged += spell_AutoCastChanged;
+					toolTip.SetToolTip(this, spell.GetTooltip());
 					Show();
 				}
 			}

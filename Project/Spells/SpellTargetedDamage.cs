@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Text;
+using System.Xml.Linq;
 using Project.Data;
 using Project.Sprites;
 
@@ -39,6 +40,19 @@ namespace Project.Spells
 		public static Spell Create(XElement data)
 		{
 			return new SpellTargetedDamage(data);
+		}
+
+		public override string GetTooltip()
+		{
+			var s = base.GetTooltip();
+			var sb = new StringBuilder(s);
+
+			sb.AppendLine("");
+			sb.AppendLine("Targeted Damage");
+			sb.Append("Amount: ");
+			sb.AppendLine(damage.ToString());
+
+			return sb.ToString();
 		}
 	}
 }

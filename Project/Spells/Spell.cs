@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Project.Data;
@@ -413,6 +415,21 @@ namespace Project.Spells
 			}
 
 			return false;
+		}
+
+
+		protected string TooltipCache;
+		public virtual string GetTooltip()
+		{
+			if (TooltipCache != null)
+				return TooltipCache;
+
+			var sb = new StringBuilder();
+			sb.AppendLine(Name);
+			sb.AppendLine(String.Format("{0:F1} sec cast", CastDuration));
+			sb.AppendLine(String.Format("{0:F1} sec cooldown", CooldownDuration));
+
+			return TooltipCache = sb.ToString();
 		}
 	}
 

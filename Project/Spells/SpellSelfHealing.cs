@@ -1,4 +1,6 @@
-﻿using System.Xml.Linq;
+﻿using System.Text;
+using System.Windows.Forms;
+using System.Xml.Linq;
 using Project.Data;
 using Project.Sprites;
 
@@ -39,6 +41,19 @@ namespace Project.Spells
 		public static Spell Create(XElement data)
 		{
 			return new SpellSelfHealing(data);
+		}
+
+		public override string GetTooltip()
+		{
+			var s = base.GetTooltip();
+			var sb = new StringBuilder(s);
+
+			sb.AppendLine("");
+			sb.AppendLine("Self Heal");
+			sb.Append("Amount: ");
+			sb.AppendLine(healing.ToString());
+
+			return sb.ToString();
 		}
 	}
 }

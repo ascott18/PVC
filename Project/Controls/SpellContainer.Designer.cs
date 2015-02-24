@@ -28,7 +28,16 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.SuspendLayout();
+			// 
+			// toolTip
+			// 
+			this.toolTip.AutomaticDelay = 50;
+			this.toolTip.AutoPopDelay = 10000;
+			this.toolTip.InitialDelay = 50;
+			this.toolTip.ReshowDelay = 10;
 			// 
 			// SpellContainer
 			// 
@@ -43,6 +52,9 @@
 		}
 
 		#endregion
+
+		private System.Windows.Forms.ToolTip toolTip;
+
 
 	}
 }

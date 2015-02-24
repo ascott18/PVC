@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Xml.Linq;
 using Project.Data;
 using Project.Sprites;
@@ -56,5 +57,18 @@ namespace Project.Spells
         {
             return new SpellAreaDamage(data);
         }
+
+		public override string GetTooltip()
+		{
+			var s = base.GetTooltip();
+			var sb = new StringBuilder(s);
+
+			sb.AppendLine("");
+			sb.AppendLine("Area Damage");
+			sb.Append("Amount: ");
+			sb.AppendLine(damage.ToString());
+
+			return sb.ToString();
+		}
     }
 }
