@@ -85,6 +85,18 @@
     <Compile Include="Controls\HeroInventoryContainer.Designer.cs">
       <DependentUpon>HeroInventoryContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\HeroSelectContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HeroSelectContainer.Designer.cs">
+      <DependentUpon>HeroSelectContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HeroSelectScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\HeroSelectScreen.Designer.cs">
+      <DependentUpon>HeroSelectScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\HeroStatsContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     </Compile>
     <Compile Include="Controls\SpellContainer.Designer.cs">
       <DependentUpon>SpellContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\StatsScreen.cs">
       <SubType>Form</SubType>
@@ -199,6 +217,12 @@
     <EmbeddedResource Include="Controls\HeroInventoryContainer.resx">
       <DependentUpon>HeroInventoryContainer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HeroSelectContainer.resx">
+      <DependentUpon>HeroSelectContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HeroSelectScreen.resx">
+      <DependentUpon>HeroSelectScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\HeroStatsContainer.resx">
       <DependentUpon>HeroStatsContainer.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SpellContainer.resx">
       <DependentUpon>SpellContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatsScreen.resx">
       <DependentUpon>StatsScreen.cs</DependentUpon>

@@ -14,7 +14,7 @@ namespace Project
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(MainWindow.Window);
+			Application.Run(new SplashScreen());
 		}
 	}
 }

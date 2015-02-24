@@ -16,7 +16,7 @@ namespace Project.Sprites
 
 		private int health = 1;
 		private int maxHealth = 1;
-	    public readonly DungeonSprite Parent;
+		public readonly DungeonSprite Parent;
 
 		protected CombatSprite(DungeonSprite parent)
 		{
@@ -26,6 +26,7 @@ namespace Project.Sprites
 
 		public Image Image { get; protected set; }
 		public string Name { get; protected set; }
+		public string Description { get; protected set; }
 
 		public Spell CurrentCast
 		{
@@ -125,6 +126,9 @@ namespace Project.Sprites
 		{
 			Image = XmlData.LoadImage(element.Attribute("texture").Value);
 			Name = element.Attribute("name").Value;
+
+			var description = element.Attribute("desc");
+			if (description != null) Description = description.Value;
 
 			BaseAttributes = Attributes.ParseAttributes(element.Element("Attributes"));
 

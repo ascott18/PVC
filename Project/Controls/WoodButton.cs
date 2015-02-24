@@ -21,7 +21,11 @@ namespace Project.Controls
 
 		private void WoodButton_Paint(object sender, PaintEventArgs e)
 		{
-			e.Graphics.DrawRectangle(new Pen(ForeColor, 5), ClientRectangle);
+			var color = ForeColor;
+			if (!Enabled)
+				color = Color.Gray;
+
+			e.Graphics.DrawRectangle(new Pen(color, 5), ClientRectangle);
 		}
 	}
 }

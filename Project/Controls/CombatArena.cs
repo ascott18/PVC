@@ -82,8 +82,7 @@ namespace Project.Controls
 				if (sprite == null) continue;
 
 				var target = CombatSession.GetTarget(sprite);
-
-				container.targetImage.Image = target != null ? target.Image : null;
+				container.Target = target;
 			}
 		}
 

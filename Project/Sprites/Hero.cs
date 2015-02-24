@@ -16,13 +16,13 @@ namespace Project.Sprites
 			HeroID = heroId;
 
 			var xDoc = XmlData.GetDocument("Heroes");
-			var monsterElement = xDoc.XPathSelectElement(String.Format("Heroes/Hero[@id='{0}']", heroId));
+			var heroElement = xDoc.XPathSelectElement(String.Format("Heroes/Hero[@id='{0}']", heroId));
 
-			ParseCommonAttributes(monsterElement);
+			ParseCommonAttributes(heroElement);
 
 			// Parse the items that the hero is equipped with by default,
 			// and equip them on the hero.
-			foreach (var xElement in monsterElement.Elements("Item"))
+			foreach (var xElement in heroElement.Elements("Item"))
 			{
 				var item = Item.GetItem(int.Parse(xElement.Attribute("id").Value));
 				if (!(item is ItemEquippable))
@@ -42,6 +42,7 @@ namespace Project.Sprites
 		///     Holds the items that the hero has equipped. Each index is the integer representation of a ItemEquippable.SlotId.
 		/// </summary>
 		private readonly ItemEquippable[] equipment = new ItemEquippable[ItemEquippable.NumSlots];
+
 
 		private void Hero_EquipmentChanged(CombatSprite sender)
 		{

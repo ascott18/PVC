@@ -105,6 +105,7 @@
 			this.KeyPreview = true;
 			this.Name = "MainWindow";
 			this.Text = "PVC";
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
 			this.ResumeLayout(false);
 
 		}

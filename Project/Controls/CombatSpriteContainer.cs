@@ -11,10 +11,12 @@ namespace Project.Controls
 		private readonly List<SpellContainer> spellContainers = new List<SpellContainer>();
 
 		private CombatSprite sprite;
+		private CombatSprite target;
 
 		public CombatSpriteContainer()
 		{
 			InitializeComponent();
+			CheckTargetImageEnabled();
 		}
 
 		public IReadOnlyList<SpellContainer> SpellContainers { get; private set; }
@@ -53,6 +55,18 @@ namespace Project.Controls
 			}
 		}
 
+		public CombatSprite Target
+		{
+			get { return target; }
+			set
+			{
+				target = value;
+
+				targetImage.Image = target != null ? target.Image : null;
+				CheckTargetImageEnabled();
+			}
+		}
+
 		private void sprite_HealthChanged(CombatSprite sender)
 		{
 			Enabled = Sprite.IsActive;
@@ -76,9 +90,15 @@ namespace Project.Controls
 			AttributesContainer.SendToBack();
 		}
 
+		private void CheckTargetImageEnabled()
+		{
+			targetImage.Visible = target != null && Enabled;
+
+		}
+
 		private void targetImage_EnabledChanged(object sender, EventArgs e)
 		{
-			targetImage.Visible = Enabled;
+			CheckTargetImageEnabled();
 		}
 	}
 }

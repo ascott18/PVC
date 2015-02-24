@@ -29,8 +29,13 @@ namespace Project
 		{
 			// TODO: Temp code
 			Party = new Party(new Point(7, 7));
-			Party.AddHero(new Hero(Party, 1));
-			Party.AddHero(new Hero(Party, 2));
+
+			var heroIDs = HeroSelectScreen.BuildParty();
+
+			foreach (var heroID in heroIDs)
+			{
+				Party.AddHero(new Hero(Party, heroID));
+			}
 
 			SetPartyLocation(1, Party.InitialLocation);
 		}

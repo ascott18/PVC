@@ -17,7 +17,7 @@ namespace Project.Controls
 		private void DungeonContainer_Paint(object sender, PaintEventArgs e)
 		{
 			var parent = Parent as MainWindow;
-			if (parent != null)
+			if (parent != null && parent.Game != null)
 				parent.Game.CurrentMap.Draw(e.Graphics);
 		}
 	}

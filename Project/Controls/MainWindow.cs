@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Project.Sprites;
 
 namespace Project.Controls
 {
@@ -56,6 +57,11 @@ namespace Project.Controls
 			stats.StartPosition = FormStartPosition.Manual;
 			stats.Location = Location + new Size(Width, inv.Height);
 			stats.Show(this);
+		}
+
+		private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
 		}
 
 	}
