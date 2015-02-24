@@ -169,6 +169,14 @@ namespace Project.Sprites
 				Dexterity = int.Parse(element.Attribute("dexterity").Value)
 			};
 		}
+
+		public override string ToString()
+		{
+			return "Stamina: " + Stamina
+			       + "\nStrength: " + Strength
+			       + "\nIntellect: " + Intellect
+			       + "\nDexterity: " + Dexterity;
+		}
 	}
 
 	internal delegate void SpriteEvent(CombatSprite sender);

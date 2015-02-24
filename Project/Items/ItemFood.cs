@@ -34,6 +34,19 @@ namespace Project.Items
         {
             hero.Health += Amount;
         }
+
+		public override string GetTooltip()
+		{
+			var s = base.GetTooltip();
+			var sb = new StringBuilder(s);
+
+			sb.AppendLine();
+			sb.AppendLine();
+			sb.Append("Healing Amount: ");
+			sb.AppendLine(Amount.ToString());
+
+			return TooltipCache = sb.ToString();
+		}
     }
 
 

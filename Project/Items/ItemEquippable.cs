@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Xml.Linq;
 using Project.Data;
 using Project.Sprites;
@@ -46,5 +47,21 @@ namespace Project.Items
 	    {
 	        hero.Equip(this);
 	    }
+
+		public override string GetTooltip()
+		{
+			var s = base.GetTooltip();
+			var sb = new StringBuilder(s);
+
+			sb.AppendLine();
+			sb.AppendLine();
+			sb.Append("Slot: ");
+			sb.AppendLine(Slot.ToString());
+			sb.AppendLine();
+
+			sb.AppendLine(Attributes.ToString());
+
+			return TooltipCache = sb.ToString();
+		}
 	}
 }
