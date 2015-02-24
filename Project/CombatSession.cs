@@ -46,7 +46,7 @@ namespace Project
 		///     Determines the amount of time that the combat loop will sleep for
 		///     before running again. Prevents unnecessary CPU churn.
 		/// </summary>
-		private const int UpdateFrequency = 10;
+		private const int UpdateFrequency = 16;
 
 		/// <summary>
 		///     The MonsterPack participating in this combat.

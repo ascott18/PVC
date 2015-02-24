@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Heroes>
-  <Hero id="1" texture="milton" name="Milton">
+  <Hero id="1" texture="milton" name="Milton"
+		desc="A master of the incendiary arts, Milton's talents are oft overlooked due to his poor communication skills and affinity for staplers of the red Swingline variety.">
 	<Attributes stamina="14" strength="14" intellect="8" dexterity="9"/>
 	<Item id="11"/>
 	<Item id="15"/>
@@ -11,7 +12,8 @@
 	<Spell id="2"/>
 	<Spell id="3"/>
   </Hero>
-  <Hero id="2" texture="stu" name="Stu Steiner">
+  <Hero id="2" texture="stu" name="Stu Steiner"
+		desc="Legend has it that he once deadlocked Chuck Norris with a single thread. All we know is that he's somewhere in the building. Because we hear him.">
 	<Attributes stamina="11" strength="12" intellect="15" dexterity="7"/>
 	<Item id="12"/>
 	<Item id="14"/>
@@ -20,5 +22,16 @@
 	<Spell id="11"/>
 	<Spell id="12"/>
 	<Spell id="13"/>
+  </Hero>
+  <Hero id="3" texture="carty" name="Carty"
+		desc="All you need is love. That, and a big shield. Who ever said gnomes are only for gardens? This one just shattered your femur.">
+	<Attributes stamina="18" strength="16" intellect="7" dexterity="4"/>
+	<Item id="12"/>
+	<Item id="14"/>
+	<Item id="16"/>
+	
+	<Spell id="31"/>
+	<Spell id="32"/>
+	<Spell id="33"/>
   </Hero>
 </Heroes>

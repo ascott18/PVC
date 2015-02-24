@@ -291,6 +291,7 @@
     </Content>
     <Content Include="Resources\box.png" />
     <Content Include="Resources\carpet.png" />
+    <Content Include="Resources\carty.png" />
     <Content Include="Resources\dummy.png" />
     <Content Include="Resources\wall.png" />
     <Content Include="Resources\wood.bmp" />
