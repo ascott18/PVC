@@ -67,7 +67,7 @@ namespace Project.Controls
 			if (spell.RemainingCastTime > 0)
 			{
 				// Draw the castbar if the spell is being cast.
-				e.Graphics.FillRectangle(new SolidBrush(Color.Orange),
+				e.Graphics.FillRectangle(Brushes.Orange,
 				                         new Rectangle(
 					                         0, 0,
 					                         Width - (int)(Width * (spell.RemainingCastTime / spell.CastDuration)),
@@ -77,7 +77,7 @@ namespace Project.Controls
 			else if (spell.RemainingCooldown > 0)
 			{
 				// Draw the cooldown bar if the spell is on cooldown.
-				e.Graphics.FillRectangle(new SolidBrush(Color.DarkGray),
+				e.Graphics.FillRectangle(Brushes.DarkGray, 
 				                         new Rectangle(
 					                         0, 0,
 					                         (int)(Width * (spell.RemainingCooldown / spell.CooldownDuration)),
