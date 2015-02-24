@@ -41,7 +41,6 @@
 			this.desc.Name = "desc";
 			this.desc.Size = new System.Drawing.Size(170, 90);
 			this.desc.TabIndex = 1;
-			this.desc.Text = "test\r\n\r\ntest";
 			this.desc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// heroContainer

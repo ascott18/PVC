@@ -39,6 +39,13 @@ namespace Project.Controls
 		{
 			var chosen = GetSelectedHeroIDs();
 
+			int index = 0;
+			foreach (var heroSelectContainer in containers.OrderBy(c => c.ChosenTime))
+			{
+				if (heroSelectContainer.Chosen)
+					heroSelectContainer.ChosenIndex = ++index;
+			}
+
 			finishedButton.Enabled = chosen.Any() && chosen.Count() <= 3;
 		}
 
@@ -54,6 +61,7 @@ namespace Project.Controls
 		{
 			return (from heroSelectContainer in containers
 					where heroSelectContainer.Chosen
+					orderby heroSelectContainer.ChosenIndex
 					select heroSelectContainer.Hero.HeroID);
 		}
 
