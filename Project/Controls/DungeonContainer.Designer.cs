@@ -35,7 +35,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Name = "DungeonContainer";
-			this.Size = new System.Drawing.Size(700, 700);
+			this.Size = new System.Drawing.Size(650, 650);
 			this.Paint += new System.Windows.Forms.PaintEventHandler(this.DungeonContainer_Paint);
 			this.ResumeLayout(false);
 

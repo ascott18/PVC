@@ -18,12 +18,12 @@ namespace Project.Dungeon
 		/// <summary>
 		///     The number of tiles in a map in the horizonal direction.
 		/// </summary>
-		public const int DimX = 14;
+		public const int DimX = 13;
 
 		/// <summary>
 		///     The number of tiles in a map in the vertical direction.
 		/// </summary>
-		public const int DimY = 14;
+		public const int DimY = 13;
 
 		/// <summary>
 		///     Holds cached MapData instances, keyed by their mapID.
