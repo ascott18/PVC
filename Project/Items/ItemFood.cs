@@ -45,7 +45,7 @@ namespace Project.Items
 			sb.Append("Healing Amount: ");
 			sb.AppendLine(Amount.ToString());
 
-			return TooltipCache = sb.ToString();
+			return sb.ToString();
 		}
     }
 

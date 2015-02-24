@@ -40,13 +40,9 @@ namespace Project.Items
 	        throw new NotImplementedException();
 	    }
 
-		protected string TooltipCache;
 		public virtual string GetTooltip()
 		{
-			if (TooltipCache != null)
-				return TooltipCache;
-
-			return TooltipCache = Name;
+			return Name;
 		}
 	}
 }

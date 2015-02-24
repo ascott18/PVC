@@ -61,7 +61,7 @@ namespace Project.Items
 
 			sb.AppendLine(Attributes.ToString());
 
-			return TooltipCache = sb.ToString();
+			return sb.ToString();
 		}
 	}
 }
