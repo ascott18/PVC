@@ -28,10 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.nameLabel = new System.Windows.Forms.Label();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.SuspendLayout();
 			// 
-			// label1
+			// nameLabel
 			// 
 			this.nameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.nameLabel.Location = new System.Drawing.Point(0, 0);
@@ -39,6 +41,14 @@
 			this.nameLabel.Size = new System.Drawing.Size(200, 15);
 			this.nameLabel.TabIndex = 0;
 			this.nameLabel.Text = "label1";
+			// 
+			// toolTip
+			// 
+			this.toolTip.AutomaticDelay = 50;
+			this.toolTip.AutoPopDelay = 10000;
+			this.toolTip.InitialDelay = 50;
+			this.toolTip.ReshowDelay = 10;
+			this.toolTip.ShowAlways = true;
 			// 
 			// ItemContainer
 			// 
@@ -56,5 +66,6 @@
 		#endregion
 
 		private System.Windows.Forms.Label nameLabel;
+		private System.Windows.Forms.ToolTip toolTip;
 	}
 }

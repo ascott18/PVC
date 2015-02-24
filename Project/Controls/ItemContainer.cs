@@ -66,6 +66,7 @@ namespace Project.Controls
 					Show();
 					nameLabel.Text = NoItemLabel;
 					nameLabel.ForeColor = Color.Gray;
+					toolTip.SetToolTip(nameLabel, NoItemLabel);
 				}
 			}
 			else
@@ -73,6 +74,7 @@ namespace Project.Controls
 				Show();
 				nameLabel.Text = Item.Name;
 				nameLabel.ForeColor = Color.Black;
+				toolTip.SetToolTip(nameLabel, Item.GetTooltip());
 			}
 		}
 	}

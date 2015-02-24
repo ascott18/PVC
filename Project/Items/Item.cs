@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Xml.XPath;
 using Project.Data;
 using Project.Sprites;
@@ -38,5 +39,14 @@ namespace Project.Items
 	    {
 	        throw new NotImplementedException();
 	    }
+
+		protected string TooltipCache;
+		public virtual string GetTooltip()
+		{
+			if (TooltipCache != null)
+				return TooltipCache;
+
+			return TooltipCache = Name;
+		}
 	}
 }
