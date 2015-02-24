@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Project.Spells;
@@ -6,9 +7,8 @@ using Project.Spells;
 namespace Project.Controls
 {
 	/// <summary>
-	/// Displays information about the current cast time and cooldown time of a spell.
-	/// 
-	/// Use the controls events to cast the associated spell.
+	///     Displays information about the current cast time and cooldown time of a spell.
+	///     Use the controls events to cast the associated spell.
 	/// </summary>
 	internal partial class SpellContainer : UserControl
 	{
@@ -21,14 +21,12 @@ namespace Project.Controls
 			SetStyle(ControlStyles.StandardClick, true);
 			SetStyle(ControlStyles.StandardDoubleClick, true);
 
-			spellName.MouseClick += label_Click;
-			spellName.MouseDoubleClick += label_DoubleClick;
 			Paint += SpellContainer_Paint;
 			Hide();
 		}
 
 		/// <summary>
-		/// Gets and sets the spell displayed by this SpellContainer.
+		///     Gets and sets the spell displayed by this SpellContainer.
 		/// </summary>
 		public Spell Spell
 		{
@@ -39,7 +37,6 @@ namespace Project.Controls
 				{
 					spell.StateChanging -= Spell_StateChanging;
 					spell.AutoCastChanged -= spell_AutoCastChanged;
-					castControlLabel.Text = "";
 				}
 				spell = value;
 				if (spell == null)
@@ -48,7 +45,6 @@ namespace Project.Controls
 				}
 				else
 				{
-					spellName.Text = spell.Name;
 					spell.StateChanging += Spell_StateChanging;
 					spell.AutoCastChanged += spell_AutoCastChanged;
 					Show();
@@ -88,6 +84,27 @@ namespace Project.Controls
 					                         Height)
 					);
 			}
+
+			// Set the labels on the spell bar for its queue position/autocast state.
+			var castControlLabel = "";
+			if (spell.IsAutoCast)
+			{
+				castControlLabel = "*";
+			}
+			else if (spell.Session != null)
+			{
+				var queuedSpells = spell.Session.GetQueuedSpells(spell.Owner);
+				if (queuedSpells.Contains(spell))
+				{
+					var queueIndex = queuedSpells.TakeWhile(x => x != spell).Count() + 1;
+
+					castControlLabel = queueIndex.ToString();
+				}
+			}
+
+			e.Graphics.DrawString(castControlLabel, Font, Brushes.Black, 0, 0);
+
+			e.Graphics.DrawString(Spell.Name, Font, Brushes.Black, 16, 0);
 		}
 
 		private void spell_AutoCastChanged(Spell sender)
@@ -113,23 +130,6 @@ namespace Project.Controls
 
 		private void Session_Update(CombatSession sender)
 		{
-			// Set the labels on the spell bar for its queue position/autocast state.
-			castControlLabel.Text = "";
-			if (spell.IsAutoCast)
-			{
-				castControlLabel.Text = "*";
-			}
-			else if (spell.Session != null)
-			{
-				var queuedSpells = spell.Session.GetQueuedSpells(spell.Owner);
-				if (queuedSpells.Contains(spell))
-				{
-					var queueIndex = queuedSpells.TakeWhile(x => x != spell).Count() + 1;
-
-					castControlLabel.Text = queueIndex.ToString();
-				}
-			}
-
 			if (spell.State != Spell.CastState.Unused)
 				Refresh();
 		}
