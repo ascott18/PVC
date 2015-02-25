@@ -45,7 +45,7 @@ namespace Project.Spells
 	    {
 	        foreach (var member in sprite.Members)
 	        {
-	            member.Health += healing;
+	            ComboAction(DealHealth, Owner, member, healing);
 	        }
 	    }
 

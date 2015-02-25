@@ -435,6 +435,23 @@ namespace Project.Spells
 			return TooltipCache = sb.ToString();
 		}
 
+	    internal void ComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
+	    {
+	        int combo = caster.Attributes.Combo;
+            int chance = rand.Next(0, 101);
+            // will combo only allow x2 hit?
+            // need logic for more than 2 hits
+
+            method(target, hp);
+	        if (chance < combo)
+	            method(target, hp);
+	    }
+
+	    internal void DealHealth(CombatSprite receiver, int health)
+	    {
+	        receiver.Health += health;
+	    }
+
         internal void DealDamage(CombatSprite receiver, int damage)
         {
             int block = receiver.Attributes.Block;

@@ -30,7 +30,7 @@ namespace Project.Spells
 
                 case CastState.Finishing:
                     if (Owner.Parent == Session.Party)
-                    {
+                    {                        
                         DamageMembers(Session.MonsterPack);
                     }
                     else
@@ -45,7 +45,7 @@ namespace Project.Spells
         {
             foreach (var member in sprite.Members)
             {
-                DealDamage(member, damage);
+                ComboAction(DealDamage, Owner, member, damage);
             }
         }
 
