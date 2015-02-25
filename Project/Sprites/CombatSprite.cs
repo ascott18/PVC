@@ -139,21 +139,20 @@ namespace Project.Sprites
 		}
 	}
 
+    // change this stuff elise
 	public struct Attributes
 	{
-		public int Dexterity;
-		public int Intellect;
+		public int Combo;
 		public int Stamina;
-		public int Strength;
+		public int Block;
 
 		public static Attributes operator +(Attributes a1, Attributes a2)
 		{
 			return new Attributes
 			{
 				Stamina = a1.Stamina + a2.Stamina,
-				Strength = a1.Strength + a2.Strength,
-				Intellect = a1.Intellect + a2.Intellect,
-				Dexterity = a1.Dexterity + a2.Dexterity
+				Block = a1.Block + a2.Block,
+				Combo = a1.Combo + a2.Combo,
 			};
 		}
 

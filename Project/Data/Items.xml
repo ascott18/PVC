@@ -8,41 +8,41 @@
 	  Feet,
   -->
   <Equippable id="1" name="Amazing Body" slot="Body">
-	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+	<Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   <Equippable id="2" name="Amazing Hat" slot="Head">
-	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+	<Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   <Equippable id="3" name="Amazing Gloves" slot="Hands">
-	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+	<Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   <Equippable id="4" name="Amazing Boots" slot="Feet">
-	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+	<Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   <Equippable id="5" name="Amazing Weapon" slot="Weapon">
-	<Attributes stamina="100" strength="100" intellect="100" dexterity="100"/>
+	<Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   
   <Equippable id="11" name="Red Swingline" slot="Weapon">
-	<Attributes stamina="3" strength="2" intellect="1" dexterity="0"/>
+	<Attributes stamina="3" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="12" name="Snazzy Suit" slot="Body">
-	<Attributes stamina="2" strength="1" intellect="4" dexterity="1"/>
+	<Attributes stamina="2" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="13" name="Blue Suede Shoes" slot="Feet">
-	<Attributes stamina="2" strength="0" intellect="0" dexterity="3"/>
+	<Attributes stamina="2" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="14" name="Pointy Stick" slot="Weapon">
-	<Attributes stamina="1" strength="2" intellect="2" dexterity="3"/>
+	<Attributes stamina="1" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="15" name="Oversized Specs" slot="Head">
-	<Attributes stamina="1" strength="0" intellect="4" dexterity="2"/>
+	<Attributes stamina="1" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="16" name="Black Oxfords" slot="Feet">
-	<Attributes stamina="2" strength="2" intellect="1" dexterity="0"/>
+	<Attributes stamina="2" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="17" name="Gray Shirt" slot="Body">
-	<Attributes stamina="1" strength="0" intellect="1" dexterity="0"/>
+	<Attributes stamina="1" block ="10" combo ="10"/>
   </Equippable>
 
   <Food id="100" name="Chotchkie's Blackened Chicken" amount="10"/>
