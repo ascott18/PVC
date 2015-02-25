@@ -163,18 +163,16 @@ namespace Project.Sprites
 			return new Attributes
 			{
 				Stamina = int.Parse(element.Attribute("stamina").Value),
-				Strength = int.Parse(element.Attribute("strength").Value),
-				Intellect = int.Parse(element.Attribute("intellect").Value),
-				Dexterity = int.Parse(element.Attribute("dexterity").Value)
+				Block = int.Parse(element.Attribute("block").Value),
+				Combo = int.Parse(element.Attribute("combo").Value)
 			};
 		}
 
 		public override string ToString()
 		{
 			return "Stamina: " + Stamina
-			       + "\nStrength: " + Strength
-			       + "\nIntellect: " + Intellect
-			       + "\nDexterity: " + Dexterity;
+			       + "\nStrength: " + Block
+			       + "\nIntellect: " + Combo;
 		}
 	}
 

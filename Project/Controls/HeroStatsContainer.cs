@@ -48,11 +48,10 @@ namespace Project.Controls
 
 		void HeroAttributesChanged(CombatSprite sender)
 		{
-			statsLabel.Text = String.Format("Stamina: {0}\nStrength: {1}\nIntellect: {2}\nDexterity: {3}",
+			statsLabel.Text = String.Format("Stamina: {0}\nBlock: {1}\nCombo: {2}",
 				sender.Attributes.Stamina,
-				sender.Attributes.Strength,
-				sender.Attributes.Intellect,
-				sender.Attributes.Dexterity
+				sender.Attributes.Block,
+				sender.Attributes.Combo
 			);
 		}
 	}

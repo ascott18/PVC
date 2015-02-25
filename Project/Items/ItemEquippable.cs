@@ -14,7 +14,6 @@ namespace Project.Items
 			Weapon,
 			Head,
 			Body,
-			Hands,
 			Feet,
 		}
 
