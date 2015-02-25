@@ -2,7 +2,7 @@
 <Heroes>
   <Hero id="1" texture="milton" name="Milton"
 		desc="A master of the incendiary arts, Milton's talents are oft overlooked due to his poor communication skills and affinity for staplers of the red Swingline variety.">
-	<Attributes stamina="14" block ="10" combo ="10"/>
+	<Attributes stamina="14" block ="60" combo ="10"/>
 	<Item id="11"/>
 	<Item id="15"/>
 	<Item id="16"/>

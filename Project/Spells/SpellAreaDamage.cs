@@ -38,19 +38,16 @@ namespace Project.Spells
                         DamageMembers(Session.Party);
                     }
                     break;
-            }
-            
-           
+            } 
         }
 
         private void DamageMembers(DungeonSprite sprite)
         {
             foreach (var member in sprite.Members)
             {
-                member.Health -= damage;
+                DealDamage(member, damage);
             }
         }
-
 
         [XmlData.XmlParserAttribute("AreaDamage")]
         public static Spell Create(XElement data)

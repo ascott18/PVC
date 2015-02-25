@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.ExceptionServices;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -18,6 +20,7 @@ namespace Project.Spells
 	/// </summary>
 	internal abstract class Spell
 	{
+        Random rand = new Random();
 		/// <summary>
 		///     Represents the states that a spell can be in.
 		/// </summary>
@@ -431,6 +434,18 @@ namespace Project.Spells
 
 			return TooltipCache = sb.ToString();
 		}
+
+        internal void DealDamage(CombatSprite receiver, int damage)
+        {
+            int block = receiver.Attributes.Block;
+            int chance = rand.Next(0, 101);
+            if (chance < block) // attack was blocked
+                return;
+
+            receiver.Health -= damage;
+
+        }
+
 	}
 
 	/// <summary>
@@ -450,4 +465,5 @@ namespace Project.Spells
 	///     See individual event implementations for detail.
 	/// </param>
 	internal delegate void SpellStateEvent(Spell sender, Spell.CastState state);
+
 }
