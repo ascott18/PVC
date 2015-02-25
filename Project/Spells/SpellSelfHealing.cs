@@ -31,7 +31,7 @@ namespace Project.Spells
 				case CastState.Finishing:
 					target = Owner;
 					if (target != null)
-						ComboAction(DealDamage, Owner, target, healing);
+						ComboAction(Heal, Owner, target, healing);
 					break;
 			}
 		}

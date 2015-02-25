@@ -447,21 +447,25 @@ namespace Project.Spells
 	            method(target, hp);
 	    }
 
-	    internal void DealHealth(CombatSprite receiver, int health)
+	    internal void Heal(CombatSprite receiver, int health)
 	    {
 	        receiver.Health += health;
 	    }
 
-        internal void DealDamage(CombatSprite receiver, int damage)
+        internal void DealBlockableDamage(CombatSprite target, int damage)
         {
-            int block = receiver.Attributes.Block;
+            int block = target.Attributes.Block;
             int chance = rand.Next(0, 101);
             if (chance < block) // attack was blocked
                 return;
 
-            receiver.Health -= damage;
-
+            DealUnblockableDamage(target, damage);
         }
+
+	    internal void DealUnblockableDamage(CombatSprite target, int damage)
+	    {
+	        target.Health -= damage;
+	    }
 
 	}
 

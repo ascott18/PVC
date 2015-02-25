@@ -30,7 +30,7 @@ namespace Project.Spells
 				case CastState.Finishing:
 					target = Session.GetTarget(Owner);
 					if (target != null)
-                        ComboAction(DealDamage, Owner, target, damage);
+                        ComboAction(DealBlockableDamage, Owner, target, damage);
 					break;
 			}
 		}
