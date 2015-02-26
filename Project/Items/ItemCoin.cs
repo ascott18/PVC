@@ -9,25 +9,28 @@ using Project.Sprites;
 
 namespace Project.Items
 {
-    internal class ItemQuest : Item
+    internal class ItemCoin : Item
     {
-        public ItemQuest(int itemId, string name) : base(itemId, name)
-		{
+        private readonly int value;
+        
+        public ItemCoin(int itemId, string name,int value) : base(itemId, name)
+        {
+            this.value = value;
+        }
 
-		}
-
-        [XmlData.XmlParserAttribute("Quest")]
+        [XmlData.XmlParserAttribute("Coin")]
         public static Item ParseItem(XElement itemElement)
         {
             var id = int.Parse(itemElement.Attribute("id").Value);
             var name = itemElement.Attribute("name").Value;
-            return new ItemQuest(id, name);
+            var value = int.Parse(itemElement.Attribute("value").Value);
+            return new ItemCoin(id, name, value);
         }
 
         public override string GetTooltip()
         {
             var s = base.GetTooltip();
-            s += "\nQuest Item";
+            s += "\nCoin Item";
 
             return s;
         }

@@ -4,47 +4,51 @@
 	  Weapon,
 	  Head,
 	  Body,
-	  Hands,
 	  Feet,
   -->
   <Equippable id="1" name="Amazing Body" slot="Body">
-	<Attributes stamina="100" block ="100" combo ="100"/>
+    <Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   <Equippable id="2" name="Amazing Hat" slot="Head">
-	<Attributes stamina="100" block ="100" combo ="100"/>
+    <Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   <Equippable id="3" name="Amazing Gloves" slot="Hands">
-	<Attributes stamina="100" block ="100" combo ="100"/>
+    <Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   <Equippable id="4" name="Amazing Boots" slot="Feet">
-	<Attributes stamina="100" block ="100" combo ="100"/>
+    <Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
   <Equippable id="5" name="Amazing Weapon" slot="Weapon">
-	<Attributes stamina="100" block ="100" combo ="100"/>
+    <Attributes stamina="100" block ="100" combo ="100"/>
   </Equippable>
-  
+
   <Equippable id="11" name="Red Swingline" slot="Weapon">
-	<Attributes stamina="3" block ="10" combo ="10"/>
+    <Attributes stamina="3" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="12" name="Snazzy Suit" slot="Body">
-	<Attributes stamina="2" block ="10" combo ="10"/>
+    <Attributes stamina="2" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="13" name="Blue Suede Shoes" slot="Feet">
-	<Attributes stamina="2" block ="10" combo ="10"/>
+    <Attributes stamina="2" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="14" name="Pointy Stick" slot="Weapon">
-	<Attributes stamina="1" block ="10" combo ="10"/>
+    <Attributes stamina="1" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="15" name="Oversized Specs" slot="Head">
-	<Attributes stamina="1" block ="10" combo ="10"/>
+    <Attributes stamina="1" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="16" name="Black Oxfords" slot="Feet">
-	<Attributes stamina="2" block ="10" combo ="10"/>
+    <Attributes stamina="2" block ="10" combo ="10"/>
   </Equippable>
   <Equippable id="17" name="Gray Shirt" slot="Body">
-	<Attributes stamina="1" block ="10" combo ="10"/>
+    <Attributes stamina="1" block ="10" combo ="10"/>
   </Equippable>
 
   <Food id="100" name="Chotchkie's Blackened Chicken" amount="10"/>
   <Food id="101" name="Coffee" amount="15"/>
+
+  <Coin id="200" name="Quarter" value="25"/>
+  <Coin id="201" name="Nickel" value="5"/>
+  <Coin id="202" name="Dime" value="10"/>
+  <Coin id="203" name="Dollar" value="100"/>
 </Items>
