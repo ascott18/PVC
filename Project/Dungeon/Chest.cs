@@ -18,7 +18,6 @@ namespace Project.Dungeon
         {
         }
 
-
         public override void Interact(Game game)
         {
             var loot = new List<Item>();

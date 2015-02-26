@@ -152,6 +152,7 @@
       <DependentUpon>WoodButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Dungeon\Chest.cs" />
+    <Compile Include="Dungeon\VendingMachine.cs" />
     <Compile Include="Items\ItemFood.cs" />
     <Compile Include="Items\ItemCoin.cs" />
     <Compile Include="Items\LootPool.cs" />

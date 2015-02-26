@@ -11,11 +11,11 @@ namespace Project.Items
 {
     internal class ItemCoin : Item
     {
-        private readonly int value;
+        public readonly int Value;
         
         public ItemCoin(int itemId, string name,int value) : base(itemId, name)
         {
-            this.value = value;
+            this.Value = value;
         }
 
         [XmlData.XmlParserAttribute("Coin")]
