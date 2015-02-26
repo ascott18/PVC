@@ -292,7 +292,13 @@
     <Content Include="Resources\box.png" />
     <Content Include="Resources\carpet.png" />
     <Content Include="Resources\carty.png" />
+    <Content Include="Resources\desk.png" />
+    <None Include="Resources\deskdark.png" />
+    <None Include="Resources\deskmed.png" />
     <Content Include="Resources\dummy.png" />
+    <None Include="Resources\medbox.png" />
+    <Content Include="Resources\plant1.png" />
+    <None Include="Resources\smallbox.png" />
     <Content Include="Resources\wall.png" />
     <Content Include="Resources\wood.bmp" />
     <None Include="Resources\stu.png" />

@@ -37,19 +37,7 @@ namespace Project.Dungeon
 			TileID = id;
 			IsObstacle = isObstacle;
 
-			if (imageName == "")
-			{
-				// A blank image if no image is defined.
-				Image = new Bitmap(Tile.DimPixels, Tile.DimPixels);
-			}
-			else
-			{
-				// Try and get the embedded resource represented by the provided name.
-				// Embedded resources are defined in Resources.resx
-				Image = Resources.ResourceManager.GetObject(imageName) as Bitmap;
-				if (Image == null)
-					throw new FileNotFoundException("Resource not found", imageName);
-			}
+			Image = XmlData.LoadImage(imageName);
 		}
 
 		/// <summary>
