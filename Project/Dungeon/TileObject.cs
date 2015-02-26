@@ -42,5 +42,12 @@ namespace Project.Dungeon
 				tile.TileObject = this;
 			}
 		}
+
+		public virtual void Draw(Graphics graphics)
+		{
+			var loc = CurrentTile.Location;
+
+			graphics.DrawImage(Image, loc.X * Tile.DimPixels, loc.Y * Tile.DimPixels, Tile.DimPixels, Tile.DimPixels);
+		}
 	}
 }

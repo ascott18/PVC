@@ -50,7 +50,7 @@ namespace Project.Dungeon
 
 				tileObject = value;
 
-				DungeonMap.Game.RedrawDungeon();
+				Invalidate();
 			}
 		}
 
@@ -69,7 +69,12 @@ namespace Project.Dungeon
 			graphics.DrawImage(TileData.Image, Location.X * DimPixels, Location.Y * DimPixels, DimPixels, DimPixels);
 
 			if (TileObject != null)
-				graphics.DrawImage(TileObject.Image, Location.X * DimPixels, Location.Y * DimPixels, DimPixels, DimPixels);
+				TileObject.Draw(graphics);
+		}
+
+		public void Invalidate()
+		{
+			DungeonMap.Game.RedrawDungeon();
 		}
 
 		public bool CanBeOccupied()
