@@ -39,6 +39,7 @@
 		<LootPool id="1"/>
 		<LootPool id="2"/>
 	  </Chest>
+	  <Watercooler x="2" y="9" texture="watercooler"/>
 	</Objects>
 	
   </Map>

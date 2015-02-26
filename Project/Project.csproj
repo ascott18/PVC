@@ -301,6 +301,8 @@
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <Content Include="Resources\wall.png" />
+    <None Include="Resources\watercoolerEmpty.png" />
+    <None Include="Resources\watercooler.png" />
     <Content Include="Resources\wood.bmp" />
     <None Include="Resources\stu.png" />
     <None Include="Resources\shoerner.png" />
