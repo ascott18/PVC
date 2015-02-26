@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.ExceptionServices;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -18,6 +20,7 @@ namespace Project.Spells
 	/// </summary>
 	internal abstract class Spell
 	{
+        Random rand = new Random();
 		/// <summary>
 		///     Represents the states that a spell can be in.
 		/// </summary>
@@ -431,6 +434,39 @@ namespace Project.Spells
 
 			return TooltipCache = sb.ToString();
 		}
+
+	    internal void ComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
+	    {
+	        int combo = caster.Attributes.Combo;
+            int chance = rand.Next(0, 101);
+            // will combo only allow x2 hit?
+            // need logic for more than 2 hits
+
+            method(target, hp);
+	        if (chance < combo)
+	            method(target, hp);
+	    }
+
+	    internal void Heal(CombatSprite receiver, int health)
+	    {
+	        receiver.Health += health;
+	    }
+
+        internal void DealBlockableDamage(CombatSprite target, int damage)
+        {
+            int block = target.Attributes.Block;
+            int chance = rand.Next(0, 101);
+            if (chance < block) // attack was blocked
+                return;
+
+            DealUnblockableDamage(target, damage);
+        }
+
+	    internal void DealUnblockableDamage(CombatSprite target, int damage)
+	    {
+	        target.Health -= damage;
+	    }
+
 	}
 
 	/// <summary>
@@ -450,4 +486,5 @@ namespace Project.Spells
 	///     See individual event implementations for detail.
 	/// </param>
 	internal delegate void SpellStateEvent(Spell sender, Spell.CastState state);
+
 }

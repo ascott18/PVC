@@ -2,7 +2,7 @@
 <Heroes>
   <Hero id="1" texture="milton" name="Milton"
 		desc="A master of the incendiary arts, Milton's talents are oft overlooked due to his poor communication skills and affinity for staplers of the red Swingline variety.">
-	<Attributes stamina="14" strength="14" intellect="8" dexterity="9"/>
+	<Attributes stamina="14" block ="60" combo ="10"/>
 	<Item id="11"/>
 	<Item id="15"/>
 	<Item id="16"/>
@@ -14,7 +14,7 @@
   </Hero>
   <Hero id="2" texture="stu" name="Stu Steiner"
 		desc="Legend has it that he once deadlocked Chuck Norris with a single thread. All we know is that he's somewhere in the building. Because we hear him.">
-	<Attributes stamina="11" strength="12" intellect="15" dexterity="7"/>
+	<Attributes stamina="11" block ="10" combo ="10"/>
 	<Item id="12"/>
 	<Item id="14"/>
 	<Item id="16"/>
@@ -25,7 +25,7 @@
   </Hero>
   <Hero id="3" texture="carty" name="Carty"
 		desc="All you need is love. That, and a big shield. Who ever said gnomes are only for gardens? This one just shattered your femur.">
-	<Attributes stamina="18" strength="16" intellect="7" dexterity="4"/>
+	<Attributes stamina="18" block ="10" combo ="10"/>
 	<Item id="12"/>
 	<Item id="14"/>
 	<Item id="16"/>

@@ -30,7 +30,7 @@ namespace Project.Spells
 
                 case CastState.Finishing:
                     if (Owner.Parent == Session.Party)
-                    {
+                    {                        
                         DamageMembers(Session.MonsterPack);
                     }
                     else
@@ -38,19 +38,16 @@ namespace Project.Spells
                         DamageMembers(Session.Party);
                     }
                     break;
-            }
-            
-           
+            } 
         }
 
         private void DamageMembers(DungeonSprite sprite)
         {
             foreach (var member in sprite.Members)
             {
-                member.Health -= damage;
+                ComboAction(DealBlockableDamage, Owner, member, damage);
             }
         }
-
 
         [XmlData.XmlParserAttribute("AreaDamage")]
         public static Spell Create(XElement data)

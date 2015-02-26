@@ -139,21 +139,20 @@ namespace Project.Sprites
 		}
 	}
 
+    // change this stuff elise
 	public struct Attributes
 	{
-		public int Dexterity;
-		public int Intellect;
+		public int Combo;
 		public int Stamina;
-		public int Strength;
+		public int Block;
 
 		public static Attributes operator +(Attributes a1, Attributes a2)
 		{
 			return new Attributes
 			{
 				Stamina = a1.Stamina + a2.Stamina,
-				Strength = a1.Strength + a2.Strength,
-				Intellect = a1.Intellect + a2.Intellect,
-				Dexterity = a1.Dexterity + a2.Dexterity
+				Block = a1.Block + a2.Block,
+				Combo = a1.Combo + a2.Combo,
 			};
 		}
 
@@ -164,18 +163,16 @@ namespace Project.Sprites
 			return new Attributes
 			{
 				Stamina = int.Parse(element.Attribute("stamina").Value),
-				Strength = int.Parse(element.Attribute("strength").Value),
-				Intellect = int.Parse(element.Attribute("intellect").Value),
-				Dexterity = int.Parse(element.Attribute("dexterity").Value)
+				Block = int.Parse(element.Attribute("block").Value),
+				Combo = int.Parse(element.Attribute("combo").Value)
 			};
 		}
 
 		public override string ToString()
 		{
 			return "Stamina: " + Stamina
-			       + "\nStrength: " + Strength
-			       + "\nIntellect: " + Intellect
-			       + "\nDexterity: " + Dexterity;
+			       + "\nStrength: " + Block
+			       + "\nIntellect: " + Combo;
 		}
 	}
 
