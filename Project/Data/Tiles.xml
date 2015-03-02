@@ -5,4 +5,5 @@
   <Tile id="2" texture="wall" obstacle="true"/>
   <Tile id="3" texture="carpet plant1" obstacle="true"/>
   <Tile id="4" texture="carpet deskmed" obstacle="true"/>
+  <Tile id="5" texture="carpet plant2" obstacle="true"/>
 </Tiles>
