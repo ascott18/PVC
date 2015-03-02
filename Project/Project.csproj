@@ -301,6 +301,7 @@
     <None Include="Resources\medbox.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
+    <None Include="Resources\printer.png" />
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />

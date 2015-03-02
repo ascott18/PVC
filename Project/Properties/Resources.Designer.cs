@@ -296,8 +296,8 @@ namespace Project.Properties {
         ///	&lt;Spell id=&quot;33&quot;/&gt;
         ///  &lt;/Monster&gt;
         ///  
-        ///  &lt;Monster id=&quot;3&quot; texture=&quot;dummy&quot; name=&quot;Dummy&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;9999999&quot; block =&quot;10&quot; [rest of string was truncated]&quot;;.
+        ///  &lt;Monster id=&quot;4&quot; texture=&quot;deskevil&quot; name=&quot;Cryptolocked Box&quot;&gt;
+        ///	&lt;Attributes stamina=&quot;8&quot; blo [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Monsters {
             get {
@@ -311,6 +311,16 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap plant1 {
             get {
                 object obj = ResourceManager.GetObject("plant1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

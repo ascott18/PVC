@@ -1,13 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Monsters>
+
+  <Monster id="3" texture="dummy" name="Dummy">
+	<Attributes stamina="9999999" block ="10" combo ="10"/>
+  </Monster>
+  
+  
+  
   <Monster id="1" texture="lumbergh" name="Boss">
-	<Attributes stamina="10" block ="10" combo ="10"/>
+	<Attributes stamina="10" block="10" combo="10"/>
 	<Spell id="22"/>
 	<Spell id="21"/>
 	<LootPool id="1"/>
   </Monster>
   <Monster id="2" texture="shoerner" name="Pestering Student">
-	<Attributes stamina="8" block ="10" combo ="10"/>
+	<Attributes stamina="8" block="10" combo="10"/>
 	<Spell id="31"/>
 	<Spell id="32"/>
 	<Spell id="33"/>
@@ -19,7 +26,8 @@
 	<Spell id="42"/>
   </Monster>
   
-  <Monster id="3" texture="dummy" name="Dummy">
-	<Attributes stamina="9999999" block ="10" combo ="10"/>
+  <Monster id="5" texture="printer" name="Jammed Printer">
+	<Attributes stamina="20" block="50" combo="5"/>
+	<Spell id="51"/>
   </Monster>
 </Monsters>
