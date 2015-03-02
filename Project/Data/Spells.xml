@@ -18,6 +18,10 @@
   <TargetedDamage id="31" name="Pester" damage="5" castTime="2" cooldown="2"/>
   <SelfHealing	  id="32" name="Energy Drink" healing="20" castTime="3" cooldown="15"/>
   <AreaHealing	  id="33" name="Order Coffee" healing="8" castTime="4" cooldown="10"/>
+
+  <!--Evil Computer-->
+  <TargetedDamage id="41" name="Encrypt Files" damage="5" castTime="1.5" cooldown="0"/>
+  <AreaDamage id="42" name="Ultimatum" damage="25" castTime="4" cooldown="15"/>
   
   
 </Spells>

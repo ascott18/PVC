@@ -13,6 +13,12 @@
 	<Spell id="33"/>
   </Monster>
   
+  <Monster id="4" texture="deskevil" name="Cryptolocked Box">
+	<Attributes stamina="8" block="10" combo="400"/>
+	<Spell id="41"/>
+	<Spell id="42"/>
+  </Monster>
+  
   <Monster id="3" texture="dummy" name="Dummy">
 	<Attributes stamina="9999999" block ="10" combo ="10"/>
   </Monster>

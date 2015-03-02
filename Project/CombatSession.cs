@@ -220,6 +220,11 @@ namespace Project
 		{
 			Debug.WriteLine("Combat Ended");
 
+			foreach (var sprite in allSprites)
+			{
+				sprite.HealthChanged -= sprite_HealthChanged;
+			}
+
 			if (State != CombatState.Acitve && State != CombatState.Paused)
 				return;
 

@@ -296,6 +296,7 @@
     <Content Include="Resources\desk.png" />
     <None Include="Resources\deskdark.png" />
     <None Include="Resources\deskmed.png" />
+    <None Include="Resources\deskevil.png" />
     <Content Include="Resources\dummy.png" />
     <None Include="Resources\medbox.png" />
     <Content Include="Resources\plant1.png" />

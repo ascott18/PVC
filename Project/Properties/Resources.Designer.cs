@@ -113,6 +113,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deskevil {
+            get {
+                object obj = ResourceManager.GetObject("deskevil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap deskmed {
             get {
                 object obj = ResourceManager.GetObject("deskmed", resourceCulture);
@@ -145,7 +155,7 @@ namespace Project.Properties {
         ///&lt;Heroes&gt;
         ///  &lt;Hero id=&quot;1&quot; texture=&quot;milton&quot; name=&quot;Milton&quot;
         ///		desc=&quot;A master of the incendiary arts, Milton&apos;s talents are oft overlooked due to his poor communication skills and affinity for staplers of the red Swingline variety.&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;14&quot; strength=&quot;14&quot; intellect=&quot;8&quot; dexterity=&quot;9&quot;/&gt;
+        ///	&lt;Attributes stamina=&quot;14&quot; block =&quot;60&quot; combo =&quot;10&quot;/&gt;
         ///	&lt;Item id=&quot;11&quot;/&gt;
         ///	&lt;Item id=&quot;15&quot;/&gt;
         ///	&lt;Item id=&quot;16&quot;/&gt;
@@ -155,7 +165,7 @@ namespace Project.Properties {
         ///	&lt;Spell id=&quot;2&quot;/&gt;
         ///	&lt;Spell id=&quot;3&quot;/&gt;
         ///  &lt;/Hero&gt;
-        ///  &lt;Hero id=&quot;2&quot; texture=&quot;stu&quot; n [rest of string was truncated]&quot;;.
+        ///  &lt;Hero id=&quot;2&quot; texture=&quot;stu&quot; name=&quot;Stu Steiner&quot;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Heroes {
             get {
@@ -174,13 +184,15 @@ namespace Project.Properties {
         ///	  Feet,
         ///  --&gt;
         ///  &lt;Equippable id=&quot;1&quot; name=&quot;Amazing Body&quot; slot=&quot;Body&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;100&quot; strength=&quot;100&quot; intellect=&quot;100&quot; dexterity=&quot;100&quot;/&gt;
+        ///	&lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
         ///  &lt;/Equippable&gt;
         ///  &lt;Equippable id=&quot;2&quot; name=&quot;Amazing Hat&quot; slot=&quot;Head&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;100&quot; strength=&quot;100&quot; intellect=&quot;100&quot; dexterity=&quot;100&quot;/&gt;
+        ///	&lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
         ///  &lt;/Equippable&gt;
         ///  &lt;Equippable id=&quot;3&quot; name=&quot;Amazing Gloves&quot; slot=&quot;Hands&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;100&quot; stre [rest of string was truncated]&quot;;.
+        ///	&lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
+        ///  &lt;/Equippable&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Items {
             get {
@@ -272,20 +284,20 @@ namespace Project.Properties {
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Monsters&gt;
         ///  &lt;Monster id=&quot;1&quot; texture=&quot;lumbergh&quot; name=&quot;Boss&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;10&quot; strength=&quot;11&quot; intellect=&quot;8&quot; dexterity=&quot;15&quot;/&gt;
+        ///	&lt;Attributes stamina=&quot;10&quot; block =&quot;10&quot; combo =&quot;10&quot;/&gt;
         ///	&lt;Spell id=&quot;22&quot;/&gt;
         ///	&lt;Spell id=&quot;21&quot;/&gt;
         ///	&lt;LootPool id=&quot;1&quot;/&gt;
         ///  &lt;/Monster&gt;
         ///  &lt;Monster id=&quot;2&quot; texture=&quot;shoerner&quot; name=&quot;Pestering Student&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;8&quot; strength=&quot;9&quot; intellect=&quot;16&quot; dexterity=&quot;9&quot;/&gt;
+        ///	&lt;Attributes stamina=&quot;8&quot; block =&quot;10&quot; combo =&quot;10&quot;/&gt;
         ///	&lt;Spell id=&quot;31&quot;/&gt;
         ///	&lt;Spell id=&quot;32&quot;/&gt;
         ///	&lt;Spell id=&quot;33&quot;/&gt;
         ///  &lt;/Monster&gt;
         ///  
         ///  &lt;Monster id=&quot;3&quot; texture=&quot;dummy&quot; name=&quot;Dummy&quot;&gt;
-        ///	&lt;Att [rest of string was truncated]&quot;;.
+        ///	&lt;Attributes stamina=&quot;9999999&quot; block =&quot;10&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Monsters {
             get {

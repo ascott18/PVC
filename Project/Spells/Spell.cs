@@ -438,13 +438,19 @@ namespace Project.Spells
 	    internal void ComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
 	    {
 	        int combo = caster.Attributes.Combo;
-            int chance = rand.Next(0, 101);
             // will combo only allow x2 hit?
             // need logic for more than 2 hits
 
             method(target, hp);
-	        if (chance < combo)
-	            method(target, hp);
+		    while (combo > 0)
+			{
+				int chance = rand.Next(0, 101);
+			    if (chance < combo)
+			    {
+				    method(target, hp);
+				}
+				combo -= 100;
+		    }
 	    }
 
 	    internal void Heal(CombatSprite receiver, int health)
