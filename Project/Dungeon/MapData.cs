@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -112,6 +115,33 @@ namespace Project.Dungeon
 
 
 				objects.Add(parsedTileObject);
+			}
+
+			// Create TileObjects for the TileData's static objects.
+			for (int x = 0; x < tiles.GetLength(0); x++)
+			for (int y = 0; y < tiles.GetLength(1); y++)
+			{
+				var tileData = tiles[x, y];
+
+				var objTileData = tileData as TileDataWithObject;
+				if (objTileData == null) continue;
+
+				try
+				{
+					var a = Assembly
+						.GetExecutingAssembly()
+						;var s =a 	.GetTypes()
+						; var type = s.First(t => t.Name == objTileData.TileObjectName && typeof(TileObject).IsAssignableFrom(t));
+						
+					var ctor = type.GetConstructor(new[] { typeof(Point) });
+					var obj = (TileObject)ctor.Invoke(new object[] { new Point(x, y) });
+					objects.Add(obj);
+
+				}
+				catch (Exception)
+				{
+					throw new ApplicationException("TileObject " + objTileData.TileObjectName + " couldn't be created.");
+				}
 			}
 
 			return objects;

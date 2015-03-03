@@ -21,7 +21,7 @@ namespace Project.Dungeon
 		private readonly Image baseImage = XmlData.LoadImage("serverBase");
 		private Bitmap currentImage;
 
-		protected Server(Point loc)
+		public Server(Point loc)
 			: base(loc)
 		{
 			timer = new Timer(TimerCallback, null, 0, 500);
@@ -83,12 +83,12 @@ namespace Project.Dungeon
 		/// <summary>
 		///     Parses an XML element and returns a Watercooler object that represents it.
 		/// </summary>
-		/// <param name="coolerElement">The XElement to parse</param>
+		/// <param name="xElement">The XElement to parse</param>
 		/// <returns>The Watercooler object parsed from the XML.</returns>
 		[XmlData.XmlParserAttribute("Server")]
-		public static TileObject XmlParser(XElement coolerElement)
+		public static TileObject XmlParser(XElement xElement)
 		{
-			var loc = new Point(int.Parse(coolerElement.Attribute("x").Value), int.Parse(coolerElement.Attribute("y").Value));
+			var loc = new Point(int.Parse(xElement.Attribute("x").Value), int.Parse(xElement.Attribute("y").Value));
 
 			var watercooler = new Server(loc);
 			return watercooler;

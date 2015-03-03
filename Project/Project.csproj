@@ -152,6 +152,7 @@
       <DependentUpon>WoodButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Dungeon\Server.cs" />
+    <Compile Include="Dungeon\TileDataWithObject.cs" />
     <Compile Include="Dungeon\Watercooler.cs" />
     <Compile Include="Dungeon\Chest.cs" />
     <Compile Include="Dungeon\VendingMachine.cs" />

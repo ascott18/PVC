@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Xml.Linq;
 using System.Xml.XPath;
 using Project.Data;
 using Project.Properties;
@@ -14,7 +16,7 @@ namespace Project.Dungeon
 	/// </summary>
 	internal class TileData
 	{
-		private static TileData[] data = new TileData[128];
+		private static readonly Dictionary<int, TileData> Data = new Dictionary<int, TileData>();
 
 		/// <summary>
 		///     The background image to be used by tiles that use this TileData. Can be thought of
@@ -27,14 +29,8 @@ namespace Project.Dungeon
 		/// </summary>
 		public readonly bool IsObstacle;
 
-		/// <summary>
-		///     The tileID of this TileData, as defined by the "id" attribute in Tiles.xml
-		/// </summary>
-		public readonly int TileID;
-
-		private TileData(int id, bool isObstacle, string imageName)
+		protected TileData(bool isObstacle, string imageName)
 		{
-			TileID = id;
 			IsObstacle = isObstacle;
 
 			Image = XmlData.LoadImage(imageName);
@@ -48,26 +44,39 @@ namespace Project.Dungeon
 		/// <returns>The requested TileData instance for the tileID.</returns>
 		public static TileData GetTileData(int tileID)
 		{
-			// Check if a TileData object already has been created for this ID.
-			if (tileID < data.Length && data[tileID] != null)
-				return data[tileID];
+			TileData ret;
+			if (Data.TryGetValue(tileID, out ret))
+				return ret;
 
-			// Resize the holding array if needed.
-			if (tileID >= data.Length)
-				Array.Resize(ref data, tileID + 50);
+			var doc = XmlData.GetDocument("Tiles");
 
 
-			var xml = XmlData.GetDocument("Tiles");
+			var methods = XmlData.XmlParsable<TileData>.GetParsers();
 
-			// Get the XML element that holds the data for the requested tileID.
-			var tileElement = xml.XPathSelectElement(String.Format("Tiles/Tile[@id='{0}']", tileID));
-			if (tileElement == null)
-				throw new Exception(String.Format("No Tile with id {0} found", tileID));
+			var element = doc.XPathSelectElement(String.Format("Tiles/*[@id={0}]", tileID));
 
-			TileData tileData = new TileData(tileID, bool.Parse(tileElement.Attribute("obstacle").Value),
-			                                 tileElement.Attribute("texture").Value);
+			var elementName = element.Name.ToString();
 
-			return data[tileID] = tileData;
+			if (!methods.ContainsKey(elementName))
+				throw new Exception("Missing parser for item type " + elementName);
+
+			var parserMethod = methods[elementName];
+
+			return Data[tileID] = parserMethod(element);
 		}
+
+
+
+		[XmlData.XmlParserAttribute("Tile")]
+		public static TileData Parser(XElement tileElement)
+		{
+			var texture = tileElement.Attribute("texture").Value;
+			var isObstacle = (bool)tileElement.Attribute("obstacle");
+
+			var tileData = new TileData(isObstacle, texture);
+
+			return tileData;
+		}
+
 	}
 }
