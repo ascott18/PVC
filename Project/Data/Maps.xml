@@ -23,7 +23,7 @@
 	
 	<Objects>
 	  <Door x="1" y="1" toMap="2" toX="9" toY="10" texture="wall fancydoor"/>
-    <Door x="5" y="5" toMap="111" toX="9" toY="10" texture="wall fancydoor"/>
+      <Door x="5" y="5" toMap="111" toX="9" toY="10" texture="wall fancydoor"/>
 	  <MonsterPack id="000101" x="10" y="3">
 		<Monster id="1"/>
 		<Monster id="1"/>
