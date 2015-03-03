@@ -75,7 +75,7 @@ namespace Project.Dungeon
 		/// <param name="graphics">The Graphics object of a DungeonContainer instance to draw to.</param>
 		public void Draw(Graphics graphics)
 		{
-			graphics.DrawImage(TileData.Image, Location.X * DimPixels, Location.Y * DimPixels, DimPixels, DimPixels);
+			graphics.DrawImage(TileData.Image, Rectangle);
 
 			if (TileObject != null)
 				TileObject.Draw(graphics);
