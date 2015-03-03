@@ -24,6 +24,7 @@ namespace Project
 
 		private readonly Dictionary<int, DungeonMap> maps = new Dictionary<int, DungeonMap>();
 		private CombatSession currentSession;
+		private DungeonMap currentMap;
 
 		internal Game()
 		{
@@ -40,11 +41,27 @@ namespace Project
 			SetPartyLocation(1, Party.InitialLocation);
 		}
 
+		internal Game(Party party, int mapID)
+		{
+			Party = party;
+
+			SetPartyLocation(mapID, Party.InitialLocation);
+		}
+
 		/// <summary>
 		///     The DungeonMap that the Party is currently located in,
 		///     and thus is being drawn to MainWindow's DungeonContainer.
 		/// </summary>
-		internal DungeonMap CurrentMap { get; private set; }
+		internal DungeonMap CurrentMap
+		{
+			get { return currentMap; }
+			private set
+			{
+				currentMap = value;
+				if (MainWindow.Window.IsDebug)
+					MainWindow.Window.Text = "PVC - MapID " + currentMap.MapID;
+			}
+		}
 
 		/// <summary>
 		///     True if the game has a CombatSession that is currently in progress.

@@ -6,8 +6,11 @@ using Project.Sprites;
 
 namespace Project.Controls
 {
-	public partial class MainWindow : Form
+	internal partial class MainWindow : Form
 	{
+
+		public bool IsDebug;
+
 		// Implements Singleton.
 		private static MainWindow instance;
 
@@ -20,8 +23,16 @@ namespace Project.Controls
 			instance = this;
 
 			InitializeComponent();
+		}
 
+		public void CreateGame()
+		{
 			Game = new Game();
+		}
+
+		public void CreateGame(Party party, int mapID)
+		{
+			Game = new Game(party, mapID);
 		}
 
 		internal Game Game { get; private set; }
