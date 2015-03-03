@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
+using Project.Dungeon;
 using Project.Sprites;
+using Timer = System.Threading.Timer;
 
 namespace Project.Controls
 {
@@ -23,6 +26,21 @@ namespace Project.Controls
 			instance = this;
 
 			InitializeComponent();
+
+
+			dungeonTimer = new Timer(DungeonTimerCallback, null, 0, 10);
+		}
+
+		private void DungeonTimerCallback(object state)
+		{
+			if (Game != null && Game.CurrentMap != null)
+			{
+				foreach (var tile in Game.CurrentMap.Tiles.Where(tile => tile.NeedsRedraw))
+				{
+					dungeonContainer.Invalidate(tile.Rectangle);
+					tile.NeedsRedraw = false;
+				}
+			}
 		}
 
 		public void CreateGame()
@@ -54,6 +72,7 @@ namespace Project.Controls
 
 		private InventoryScreen inventoryScreen;
 		private StatsScreen statsScreen;
+		private Timer dungeonTimer;
 
 		private void inventoryButton_Click(object sender, EventArgs e)
 		{

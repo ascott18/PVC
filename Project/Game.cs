@@ -230,13 +230,5 @@ namespace Project
 			else if (destination.TileObject != null)
 				destination.TileObject.Interact(this);
 		}
-
-		/// <summary>
-		///     Request a redraw of the current dungeon.
-		/// </summary>
-		public void RedrawDungeon()
-		{
-			MainWindow.Window.dungeonContainer.Invalidate();
-		}
 	}
 }

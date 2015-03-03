@@ -54,8 +54,8 @@ namespace Project.Dungeon
 				const int basePixels = 34;
 				pixelsFilled = (int) (basePixels + (Tile.DimPixels - basePixels)*percent);
 			}
-			
-			CurrentTile.Invalidate();
+
+			CurrentTile.NeedsRedraw = true;
 		}
 
 		public override void Draw(Graphics graphics)

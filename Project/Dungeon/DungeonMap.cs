@@ -1,4 +1,7 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Drawing;
+using System.Threading;
 
 namespace Project.Dungeon
 {
@@ -14,6 +17,7 @@ namespace Project.Dungeon
 		public readonly int MapID;
 
 		private readonly Tile[,] tiles = new Tile[MapData.DimX, MapData.DimY];
+		public readonly ReadOnlyCollection<Tile> Tiles;
 
 		public DungeonMap(int mapId, Game game)
 		{
@@ -22,15 +26,21 @@ namespace Project.Dungeon
 
 			MapData = MapData.GetMapData(mapId);
 
+			var tilesList = new List<Tile>();
+
 			for (int x = 0; x < MapData.DimX; x++)
 			{
 				for (int y = 0; y < MapData.DimY; y++)
 				{
 					var tile = new Tile(this, new Point(x, y));
 					tiles[x, y] = tile;
+					tilesList.Add(tile);
 				}
 			}
 
+			Tiles = tilesList.AsReadOnly();
+
+			
 			// Create a new set of initial TileObjects from the XML,
 			// and place them where they need to be.
 			foreach (var tileObject in MapData.GetTileObjects())

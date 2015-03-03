@@ -22,6 +22,12 @@ namespace Project.Dungeon
 		/// </summary>
 		public readonly Point Location;
 
+		/// <summary>
+		/// The rectangle that represents the draw location of the tile
+		/// within the DungeonMap.
+		/// </summary>
+		public readonly Rectangle Rectangle;
+
 		private TileObject tileObject;
 
 		/// <summary>
@@ -35,6 +41,7 @@ namespace Project.Dungeon
 
 			DungeonMap = dungeonMap;
 			TileData = DungeonMap.MapData.GetTileData(loc);
+			Rectangle = new Rectangle(Location.X*DimPixels, Location.Y*DimPixels, DimPixels, DimPixels);
 		}
 
 		/// <summary>
@@ -50,7 +57,7 @@ namespace Project.Dungeon
 
 				tileObject = value;
 
-				Invalidate();
+				NeedsRedraw = true;
 			}
 		}
 
@@ -58,6 +65,8 @@ namespace Project.Dungeon
 		///     The TileData instance that represents static information about this tile.
 		/// </summary>
 		public TileData TileData { get; private set; }
+
+		public bool NeedsRedraw { get; set; }
 
 		/// <summary>
 		///     Draws this tile, including its background image and that of the TileObject
@@ -70,11 +79,6 @@ namespace Project.Dungeon
 
 			if (TileObject != null)
 				TileObject.Draw(graphics);
-		}
-
-		public void Invalidate()
-		{
-			DungeonMap.Game.RedrawDungeon();
 		}
 
 		public bool CanBeOccupied()

@@ -31,7 +31,8 @@ namespace Project.Dungeon
 
 		private void TimerCallback(object state)
 		{
-			CurrentTile.Invalidate();
+			if (CurrentTile != null)
+				CurrentTile.NeedsRedraw = true;
 		}
 
 		public override void Draw(Graphics graphics)
