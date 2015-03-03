@@ -30,9 +30,11 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
 			this.titleLabel = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.debugStart = new System.Windows.Forms.Button();
+			this.debugStartMapID = new System.Windows.Forms.TextBox();
 			this.exitButton = new Project.Controls.WoodButton();
 			this.newGameButton = new Project.Controls.WoodButton();
-			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// titleLabel
@@ -45,6 +47,36 @@
 			this.titleLabel.Size = new System.Drawing.Size(123, 55);
 			this.titleLabel.TabIndex = 1;
 			this.titleLabel.Text = "PVC";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(67, 64);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(156, 13);
+			this.label1.TabIndex = 2;
+			this.label1.Text = "(no relation to polyvinyl chloride)";
+			// 
+			// debugStart
+			// 
+			this.debugStart.Location = new System.Drawing.Point(49, 108);
+			this.debugStart.Name = "debugStart";
+			this.debugStart.Size = new System.Drawing.Size(100, 23);
+			this.debugStart.TabIndex = 3;
+			this.debugStart.Text = "Just testing, boss!";
+			this.debugStart.UseVisualStyleBackColor = true;
+			this.debugStart.Visible = false;
+			this.debugStart.Click += new System.EventHandler(this.debugStart_Click);
+			// 
+			// debugStartMapID
+			// 
+			this.debugStartMapID.Location = new System.Drawing.Point(156, 110);
+			this.debugStartMapID.Name = "debugStartMapID";
+			this.debugStartMapID.Size = new System.Drawing.Size(86, 20);
+			this.debugStartMapID.TabIndex = 4;
+			this.debugStartMapID.Text = "111";
+			this.debugStartMapID.Visible = false;
 			// 
 			// exitButton
 			// 
@@ -74,21 +106,13 @@
 			this.newGameButton.UseVisualStyleBackColor = true;
 			this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(67, 64);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(156, 13);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "(no relation to polyvinyl chloride)";
-			// 
 			// SplashScreen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 261);
+			this.Controls.Add(this.debugStartMapID);
+			this.Controls.Add(this.debugStart);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.titleLabel);
 			this.Controls.Add(this.exitButton);
@@ -108,5 +132,7 @@
 		private System.Windows.Forms.Label titleLabel;
 		private WoodButton exitButton;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button debugStart;
+		private System.Windows.Forms.TextBox debugStartMapID;
 	}
 }
