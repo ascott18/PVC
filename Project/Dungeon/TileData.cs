@@ -53,7 +53,7 @@ namespace Project.Dungeon
 
 			var methods = XmlData.XmlParsable<TileData>.GetParsers();
 
-			var element = doc.XPathSelectElement(String.Format("Tiles/*[@id={0}]", tileID));
+			var element = doc.XPathSelectElement(String.Format("Tiles/*[number(@id)={0}]", tileID));
 
 			var elementName = element.Name.ToString();
 

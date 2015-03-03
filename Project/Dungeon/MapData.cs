@@ -157,7 +157,7 @@ namespace Project.Dungeon
 			XDocument xml = XmlData.GetDocument("Maps");
 
 			// Get the XML element for the requested mapID.
-			XElement mapElement = xml.XPathSelectElement(String.Format("Maps/Map[@id='{0}']", mapID));
+			XElement mapElement = xml.XPathSelectElement(String.Format("Maps/Map[number(@id)='{0}']", mapID));
 			if (mapElement == null)
 				throw new Exception(String.Format("No Map with id {0} found", mapID));
 

@@ -58,7 +58,7 @@ namespace Project.Items
 				return pool;
 
 			var itemsDoc = XmlData.GetDocument("LootPools");
-			var itemElement = itemsDoc.XPathSelectElement(String.Format("LootPools/*[@id={0}]", id));
+			var itemElement = itemsDoc.XPathSelectElement(String.Format("LootPools/*[number(@id)={0}]", id));
 
 			if (itemElement == null)
 				throw new Exception("Could not find loot pool with id " + id);

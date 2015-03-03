@@ -278,7 +278,7 @@ namespace Project.Spells
 		{
 			// Get the XElement for the spell.
 			var itemsDoc = XmlData.GetDocument("Spells");
-			var spellElement = itemsDoc.XPathSelectElement(String.Format("Spells/*[@id={0}]", spellID));
+			var spellElement = itemsDoc.XPathSelectElement(String.Format("Spells/*[number(@id)={0}]", spellID));
 
 			if (spellElement == null)
 				throw new InvalidDataException("No spell found with ID " + spellID);

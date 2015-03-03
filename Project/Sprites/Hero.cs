@@ -16,7 +16,7 @@ namespace Project.Sprites
 			HeroID = heroId;
 
 			var xDoc = XmlData.GetDocument("Heroes");
-			var heroElement = xDoc.XPathSelectElement(String.Format("Heroes/Hero[@id='{0}']", heroId));
+			var heroElement = xDoc.XPathSelectElement(String.Format("Heroes/Hero[number(@id)='{0}']", heroId));
 
 			ParseCommonAttributes(heroElement);
 

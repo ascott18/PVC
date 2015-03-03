@@ -23,7 +23,7 @@ namespace Project.Items
 			var methods = XmlData.XmlParsable<Item>.GetParsers();
 
 			var itemsDoc = XmlData.GetDocument("Items");
-			var itemElement = itemsDoc.XPathSelectElement(String.Format("Items/*[@id={0}]", itemID));
+			var itemElement = itemsDoc.XPathSelectElement(String.Format("Items/*[number(@id)={0}]", itemID));
 
 			var elementName = itemElement.Name.ToString();
 
