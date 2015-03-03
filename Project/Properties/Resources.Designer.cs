@@ -200,19 +200,18 @@ namespace Project.Properties {
         ///	  Weapon,
         ///	  Head,
         ///	  Body,
-        ///	  Hands,
         ///	  Feet,
         ///  --&gt;
         ///  &lt;Equippable id=&quot;1&quot; name=&quot;Amazing Body&quot; slot=&quot;Body&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
+        ///    &lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
         ///  &lt;/Equippable&gt;
         ///  &lt;Equippable id=&quot;2&quot; name=&quot;Amazing Hat&quot; slot=&quot;Head&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
+        ///    &lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
         ///  &lt;/Equippable&gt;
         ///  &lt;Equippable id=&quot;3&quot; name=&quot;Amazing Gloves&quot; slot=&quot;Hands&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
+        ///    &lt;Attributes stamina=&quot;100&quot; block =&quot;100&quot; combo =&quot;100&quot;/&gt;
         ///  &lt;/Equippable&gt;
-        /// [rest of string was truncated]&quot;;.
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Items {
             get {
@@ -230,6 +229,7 @@ namespace Project.Properties {
         ///	&lt;Item id=&quot;15&quot; chance=&quot;0.2&quot;/&gt;
         ///	&lt;Item id=&quot;16&quot; chance=&quot;0.2&quot;/&gt;
         ///	&lt;Item id=&quot;17&quot; chance=&quot;0.2&quot;/&gt;
+        ///  &lt;Item id=&quot;203&quot; chance=&quot;1&quot;/&gt;
         ///
         ///	&lt;Item id=&quot;101&quot; chance=&quot;0.7&quot;/&gt;
         ///	&lt;Item id=&quot;101&quot; chance=&quot;0.7&quot;/&gt;
@@ -353,6 +353,26 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap printer {
             get {
                 object obj = ResourceManager.GetObject("printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap serverBase {
+            get {
+                object obj = ResourceManager.GetObject("serverBase", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap serverLights {
+            get {
+                object obj = ResourceManager.GetObject("serverLights", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
