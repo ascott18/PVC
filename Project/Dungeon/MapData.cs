@@ -154,10 +154,8 @@ namespace Project.Dungeon
 		/// <returns>The parsed MapData</returns>
 		private static MapData ParseMapData(int mapID)
 		{
-			XDocument xml = XmlData.GetDocument("Maps");
-
 			// Get the XML element for the requested mapID.
-			XElement mapElement = xml.XPathSelectElement(String.Format("Maps/Map[number(@id)='{0}']", mapID));
+			var mapElement = XmlData.GetXElementByID("Maps", mapID);
 			if (mapElement == null)
 				throw new Exception(String.Format("No Map with id {0} found", mapID));
 
@@ -166,8 +164,6 @@ namespace Project.Dungeon
 			{
 				mapElement = mapElement
 			};
-
-
 
 			// Populate mapData.tiles with the TileData objects for this map.
 			string tileDataRaw = mapElement.Element("Tiles").Value;

@@ -11,12 +11,11 @@ namespace Project.Sprites
 	{
 		public readonly int HeroID;
 
-		public Hero(Party party, int heroId) : base(party)
+		public Hero(Party party, int heroID) : base(party)
 		{
-			HeroID = heroId;
+			HeroID = heroID;
 
-			var xDoc = XmlData.GetDocument("Heroes");
-			var heroElement = xDoc.XPathSelectElement(String.Format("Heroes/Hero[number(@id)='{0}']", heroId));
+			var heroElement = XmlData.GetXElementByID("Heroes", heroID);
 
 			ParseCommonAttributes(heroElement);
 

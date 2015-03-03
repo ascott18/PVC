@@ -48,21 +48,9 @@ namespace Project.Dungeon
 			if (Data.TryGetValue(tileID, out ret))
 				return ret;
 
-			var doc = XmlData.GetDocument("Tiles");
-
-
-			var methods = XmlData.XmlParsable<TileData>.GetParsers();
-
-			var element = doc.XPathSelectElement(String.Format("Tiles/*[number(@id)={0}]", tileID));
-
-			var elementName = element.Name.ToString();
-
-			if (!methods.ContainsKey(elementName))
-				throw new Exception("Missing parser for item type " + elementName);
-
-			var parserMethod = methods[elementName];
-
-			return Data[tileID] = parserMethod(element);
+			var tileData = XmlData.XmlParserParseByID<TileData>("Tiles", tileID);
+			
+			return Data[tileID] = tileData;
 		}
 
 

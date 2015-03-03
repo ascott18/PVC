@@ -17,8 +17,8 @@ namespace Project.Sprites
 		{
 			MonsterID = monsterId;
 
-			var xDoc = XmlData.GetDocument("Monsters");
-			var monsterElement = xDoc.XPathSelectElement(String.Format("Monsters/Monster[number(@id)='{0}']", monsterId));
+			
+			var monsterElement = XmlData.GetXElementByID("Monsters", monsterId);
 
 			ParseCommonAttributes(monsterElement);
 

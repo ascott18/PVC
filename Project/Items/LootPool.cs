@@ -57,14 +57,13 @@ namespace Project.Items
 			if (pools.TryGetValue(id, out pool))
 				return pool;
 
-			var itemsDoc = XmlData.GetDocument("LootPools");
-			var itemElement = itemsDoc.XPathSelectElement(String.Format("LootPools/*[number(@id)={0}]", id));
+			var xElement = XmlData.GetXElementByID("LootPools", id);
 
-			if (itemElement == null)
+			if (xElement == null)
 				throw new Exception("Could not find loot pool with id " + id);
 
 
-			return pools[id] = Parse(itemElement);
+			return pools[id] = Parse(xElement);
 		}
 
 		/// <summary>

@@ -20,19 +20,7 @@ namespace Project.Items
 
 		public static Item GetItem(int itemID)
 		{
-			var methods = XmlData.XmlParsable<Item>.GetParsers();
-
-			var itemsDoc = XmlData.GetDocument("Items");
-			var itemElement = itemsDoc.XPathSelectElement(String.Format("Items/*[number(@id)={0}]", itemID));
-
-			var elementName = itemElement.Name.ToString();
-
-			if (!methods.ContainsKey(elementName))
-				throw new Exception("Missing parser for item type " + elementName);
-
-			var parserMethod = methods[elementName];
-
-			return parserMethod(itemElement);
+			return XmlData.XmlParserParseByID<Item>("Items", itemID);
 		}
 
 	    public virtual void Use(Hero hero)

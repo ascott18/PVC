@@ -276,25 +276,7 @@ namespace Project.Spells
 		/// <returns>A new instance of Spell.</returns>
 		public static Spell GetSpell(CombatSprite owner, int spellID)
 		{
-			// Get the XElement for the spell.
-			var itemsDoc = XmlData.GetDocument("Spells");
-			var spellElement = itemsDoc.XPathSelectElement(String.Format("Spells/*[number(@id)={0}]", spellID));
-
-			if (spellElement == null)
-				throw new InvalidDataException("No spell found with ID " + spellID);
-
-			var elementName = spellElement.Name.ToString();
-
-
-			// Now parse the XElement into a Spell.
-			var methods = XmlData.XmlParsable<Spell>.GetParsers();
-
-			if (!methods.ContainsKey(elementName))
-				throw new Exception("Missing parser for spell type " + elementName);
-
-			var parserMethod = methods[elementName];
-
-			var spell = parserMethod(spellElement);
+			var spell = XmlData.XmlParserParseByID<Spell>("Spells", spellID);
 			spell.Owner = owner;
 
 			return spell;

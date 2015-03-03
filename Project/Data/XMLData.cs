@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
+using System.Xml.XPath;
 using Project.Dungeon;
 using Project.Properties;
 
@@ -45,6 +46,47 @@ namespace Project.Data
 
 			// Save it, and return it.
 			return Documents[resourceName] = doc;
+		}
+
+		/// <summary>
+		/// Returns an xElement with the specified id attribute from a document.
+		/// </summary>
+		/// <param name="documentRootName">The document name and root element name.</param>
+		/// <param name="id">The ID of the element to find.</param>
+		/// <returns>The matched XElement.</returns>
+		internal static XElement GetXElementByID(string documentRootName, int id)
+		{
+			return GetXElementByID(documentRootName, documentRootName, id);
+		}
+
+
+		/// <summary>
+		/// Returns an xElement with the specified id attribute from a document.
+		/// </summary>
+		/// <param name="documentName">The document name.</param>
+		/// <param name="rootElement">The root element name.</param>
+		/// <param name="id">The ID of the element to find.</param>
+		/// <returns>The matched XElement.</returns>
+		internal static XElement GetXElementByID(string documentName, string rootElement, int id)
+		{
+			var doc = GetDocument(documentName);
+			return doc.XPathSelectElement(String.Format("{0}/*[number(@id)={1}]", rootElement, id));
+		}
+
+		internal static T XmlParserParseByID<T>(string documentRootName, int ID)
+		{
+			var methods = XmlParsable<T>.GetParsers();
+
+			var xElement = GetXElementByID(documentRootName, ID);
+
+			var elementName = xElement.Name.ToString();
+
+			if (!methods.ContainsKey(elementName))
+				throw new Exception("Missing parser for element " + elementName);
+
+			var parserMethod = methods[elementName];
+
+			return parserMethod(xElement);
 		}
 
 		private static Dictionary<string, Image> composites = new Dictionary<string, Image>(); 
