@@ -7,6 +7,7 @@
 	<Item id="15" chance="0.2"/>
 	<Item id="16" chance="0.2"/>
 	<Item id="17" chance="0.2"/>
+  <Item id="203" chance="1"/>
 
 	<Item id="101" chance="0.7"/>
 	<Item id="101" chance="0.7"/>

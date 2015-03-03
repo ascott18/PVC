@@ -153,7 +153,9 @@
     </Compile>
     <Compile Include="Dungeon\Watercooler.cs" />
     <Compile Include="Dungeon\Chest.cs" />
+    <Compile Include="Dungeon\VendingMachine.cs" />
     <Compile Include="Items\ItemFood.cs" />
+    <Compile Include="Items\ItemCoin.cs" />
     <Compile Include="Items\LootPool.cs" />
     <Compile Include="Spells\SpellAreaDamage.cs" />
     <Compile Include="Spells\SpellTargetedDamage.cs" />
