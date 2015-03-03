@@ -299,8 +299,12 @@
     <None Include="Resources\deskevil.png" />
     <Content Include="Resources\dummy.png" />
     <None Include="Resources\medbox.png" />
+    <None Include="Resources\elevatorUp.png" />
+    <None Include="Resources\elevatorDown.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\plant2.png" />
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />

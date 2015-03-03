@@ -22,6 +22,9 @@
   <!--Evil Computer-->
   <TargetedDamage id="41" name="Encrypt Files" damage="5" castTime="1.5" cooldown="0"/>
   <AreaDamage id="42" name="Ultimatum" damage="25" castTime="4" cooldown="15"/>
+
+  <!--Printer-->
+  <TargetedDamage id="51" name="PC Load Letter" damage="15" castTime="4" cooldown="0"/>
   
   
 </Spells>

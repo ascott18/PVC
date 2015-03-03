@@ -143,6 +143,26 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap elevatorDown {
+            get {
+                object obj = ResourceManager.GetObject("elevatorDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elevatorUp {
+            get {
+                object obj = ResourceManager.GetObject("elevatorUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fancydoor {
             get {
                 object obj = ResourceManager.GetObject("fancydoor", resourceCulture);
@@ -283,21 +303,23 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Monsters&gt;
+        ///
+        ///  &lt;Monster id=&quot;3&quot; texture=&quot;dummy&quot; name=&quot;Dummy&quot;&gt;
+        ///	&lt;Attributes stamina=&quot;9999999&quot; block =&quot;10&quot; combo =&quot;10&quot;/&gt;
+        ///  &lt;/Monster&gt;
+        ///  
+        ///  
+        ///  
         ///  &lt;Monster id=&quot;1&quot; texture=&quot;lumbergh&quot; name=&quot;Boss&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;10&quot; block =&quot;10&quot; combo =&quot;10&quot;/&gt;
+        ///	&lt;Attributes stamina=&quot;10&quot; block=&quot;10&quot; combo=&quot;10&quot;/&gt;
         ///	&lt;Spell id=&quot;22&quot;/&gt;
         ///	&lt;Spell id=&quot;21&quot;/&gt;
         ///	&lt;LootPool id=&quot;1&quot;/&gt;
         ///  &lt;/Monster&gt;
         ///  &lt;Monster id=&quot;2&quot; texture=&quot;shoerner&quot; name=&quot;Pestering Student&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;8&quot; block =&quot;10&quot; combo =&quot;10&quot;/&gt;
+        ///	&lt;Attributes stamina=&quot;8&quot; block=&quot;10&quot; combo=&quot;10&quot;/&gt;
         ///	&lt;Spell id=&quot;31&quot;/&gt;
-        ///	&lt;Spell id=&quot;32&quot;/&gt;
-        ///	&lt;Spell id=&quot;33&quot;/&gt;
-        ///  &lt;/Monster&gt;
-        ///  
-        ///  &lt;Monster id=&quot;3&quot; texture=&quot;dummy&quot; name=&quot;Dummy&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;9999999&quot; block =&quot;10&quot; [rest of string was truncated]&quot;;.
+        ///	&lt;Spell id=&quot;32&quot;/ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Monsters {
             get {
@@ -311,6 +333,26 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap plant1 {
             get {
                 object obj = ResourceManager.GetObject("plant1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plant2 {
+            get {
+                object obj = ResourceManager.GetObject("plant2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -372,6 +414,7 @@ namespace Project.Properties {
         ///  &lt;Tile id=&quot;2&quot; texture=&quot;wall&quot; obstacle=&quot;true&quot;/&gt;
         ///  &lt;Tile id=&quot;3&quot; texture=&quot;carpet plant1&quot; obstacle=&quot;true&quot;/&gt;
         ///  &lt;Tile id=&quot;4&quot; texture=&quot;carpet deskmed&quot; obstacle=&quot;true&quot;/&gt;
+        ///  &lt;Tile id=&quot;5&quot; texture=&quot;carpet plant2&quot; obstacle=&quot;true&quot;/&gt;
         ///&lt;/Tiles&gt;.
         /// </summary>
         internal static string Tiles {
