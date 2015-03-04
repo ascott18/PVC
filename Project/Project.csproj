@@ -295,9 +295,12 @@
     <Content Include="Data\Maps.xml">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Resources\black.png" />
     <Content Include="Resources\box.png" />
     <Content Include="Resources\carpet.png" />
     <Content Include="Resources\carty.png" />
+    <None Include="Resources\darkwall.png" />
+    <None Include="Resources\darktile.png" />
     <Content Include="Resources\desk.png" />
     <None Include="Resources\deskdark.png" />
     <None Include="Resources\deskmed.png" />
@@ -306,12 +309,14 @@
     <None Include="Resources\medbox.png" />
     <None Include="Resources\elevatorUp.png" />
     <None Include="Resources\elevatorDown.png" />
+    <None Include="Resources\medtile.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\plant2.png" />
     <None Include="Resources\serverLights.png" />
     <None Include="Resources\serverBase.png" />
+    <None Include="Resources\verydarkwall.png" />
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />

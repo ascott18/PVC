@@ -217,4 +217,19 @@
   <data name="serverLights" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\serverLights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darktile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\darktile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darkwall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\darkwall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medtile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medtile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="verydarkwall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\verydarkwall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

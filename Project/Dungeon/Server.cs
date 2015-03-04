@@ -37,10 +37,13 @@ namespace Project.Dungeon
 			lock (currentImageLock)
 			{
 				// from http://stackoverflow.com/questions/6020406/travel-through-pixels-in-bmp
-				if (currentImage != null)
-					currentImage.Dispose();
 
-				var bmp = currentImage = new Bitmap(lightsImage);
+
+				var bmp = currentImage;
+				if (bmp == null)
+				{
+					bmp = currentImage = new Bitmap(lightsImage);
+				}
 
 				for (int i = 0; i < bmp.Height*bmp.Width; ++i)
 				{
@@ -49,13 +52,18 @@ namespace Project.Dungeon
 					if (row%2 != 0) col = bmp.Width - col - 1;
 
 					var pixel = bmp.GetPixel(col, row);
-					if (pixel.A > 0)
+					if (pixel.A > 0 && random.Next(100) < 2)
 					{
 						var color = colors[random.Next(colors.Length)];
 						bmp.SetPixel(col, row, color);
 					}
 				}
+
+				//if (currentImage != null)
+				//	currentImage.Dispose();
 			}
+
+			timer.Change(random.Next(100, 200), 500);
 
 			CurrentTile.NeedsRedraw = true;
 		}
@@ -63,13 +71,17 @@ namespace Project.Dungeon
 		public override void Draw(Graphics graphics)
 		{
 			graphics.DrawImage(baseImage, CurrentTile.Rectangle);
+
 			lock(currentImageLock)
+			if (currentImage != null)
 				graphics.DrawImage(currentImage, CurrentTile.Rectangle);
 		}
 
 		private static readonly Color[] colors =
 		{
 			Color.Red, Color.Blue, Color.Orange, 
+			Color.Black, Color.Black, Color.Black, Color.Black, Color.Black, Color.Black,
+			Color.Black, Color.Black, Color.Black, Color.Black, Color.Black, Color.Black,
 			Color.Black, Color.Black, Color.Black, Color.Black, Color.Black, Color.Black,
 			Color.LimeGreen, Color.LimeGreen,
 		};

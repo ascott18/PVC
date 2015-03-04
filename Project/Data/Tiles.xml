@@ -6,5 +6,8 @@
   <Tile id="3" texture="carpet plant1" obstacle="true"/>
   <Tile id="4" texture="carpet deskmed" obstacle="true"/>
   <Tile id="5" texture="carpet plant2" obstacle="true"/>
-  <Object id="20" texture="carpet" object="Server"/>
+  <Object id="20" texture="darktile" object="Server"/>
+  <Tile id="21" texture="verydarkwall" obstacle="true"/>
+  <Tile id="22" texture="darktile" obstacle="false"/>
+  <Tile id="23" texture="medtile" obstacle="false"/>
 </Tiles>

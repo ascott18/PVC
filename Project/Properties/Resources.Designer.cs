@@ -63,6 +63,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap black {
+            get {
+                object obj = ResourceManager.GetObject("black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box {
             get {
                 object obj = ResourceManager.GetObject("box", resourceCulture);
@@ -86,6 +96,26 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap carty {
             get {
                 object obj = ResourceManager.GetObject("carty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap darktile {
+            get {
+                object obj = ResourceManager.GetObject("darktile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap darkwall {
+            get {
+                object obj = ResourceManager.GetObject("darkwall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -271,7 +301,7 @@ namespace Project.Properties {
         ///	  02 00 00 00 00 00 00 00 00 00 00 00 02
         ///	  02 03 00 00 00 00 00 00 00 00 00 00 02
         ///	  02 02 02 02 00 00 00 00 00 00 00 00 02
-        ///	  02 00 00 02 00 00 00 00 00 00 00 00 02
+        ///	  02 20 00 02 00 00 00 00 00 00 00 00 02
         ///	  02 0 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Maps {
@@ -286,6 +316,16 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap medbox {
             get {
                 object obj = ResourceManager.GetObject("medbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medtile {
+            get {
+                object obj = ResourceManager.GetObject("medtile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -435,11 +475,23 @@ namespace Project.Properties {
         ///  &lt;Tile id=&quot;3&quot; texture=&quot;carpet plant1&quot; obstacle=&quot;true&quot;/&gt;
         ///  &lt;Tile id=&quot;4&quot; texture=&quot;carpet deskmed&quot; obstacle=&quot;true&quot;/&gt;
         ///  &lt;Tile id=&quot;5&quot; texture=&quot;carpet plant2&quot; obstacle=&quot;true&quot;/&gt;
-        ///&lt;/Tiles&gt;.
+        ///  &lt;Object id=&quot;20&quot; texture=&quot;darktile&quot; object=&quot;Server&quot;/&gt;
+        ///  &lt;Tile id=&quot;21&quot; texture=&quot;verydarkwall&quot; obstacle=&quot;true&quot;/&gt;
+        ///  &lt;Tile id=&quot;22&quot; te [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Tiles {
             get {
                 return ResourceManager.GetString("Tiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap verydarkwall {
+            get {
+                object obj = ResourceManager.GetObject("verydarkwall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
