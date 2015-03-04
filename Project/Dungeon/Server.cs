@@ -29,8 +29,6 @@ namespace Project.Dungeon
 
 		private void TimerCallback(object state)
 		{
-			Debug.WriteLine("draw server");
-
 			if (CurrentTile == null)
 				return;
 
@@ -40,6 +38,7 @@ namespace Project.Dungeon
 
 			var bmp = currentImage = new Bitmap(lightsImage);
 
+			lock (currentImage)
 			for (int i = 0; i < bmp.Height * bmp.Width; ++i)
 			{
 				int row = i / bmp.Height;
@@ -60,7 +59,8 @@ namespace Project.Dungeon
 		public override void Draw(Graphics graphics)
 		{
 			graphics.DrawImage(baseImage, CurrentTile.Rectangle);
-			graphics.DrawImage(currentImage, CurrentTile.Rectangle);
+			lock(currentImage)
+				graphics.DrawImage(currentImage, CurrentTile.Rectangle);
 		}
 
 		private static readonly Color[] colors =

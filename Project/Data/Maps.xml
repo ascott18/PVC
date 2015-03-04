@@ -41,7 +41,7 @@
 		<LootPool id="1"/>
 		<LootPool id="2"/>
 	  </Chest>
-	  <Watercooler x="2" y="9" texture="watercooler"/>
+	  <Watercooler x="2" y="9"/>
 	</Objects>
 	
   </Map>
@@ -288,7 +288,7 @@
 	</AdjacentMaps>
 
     <Objects>
-      <Watercooler x="8" y="1" texture="watercooler"/>
+      <Watercooler x="8" y="1"/>
       <Door x="12" y="4" toMap="201" toX="6" toY="4" texture="wall fancydoor"/>
     </Objects>
 	
@@ -319,7 +319,7 @@
 	<Objects>
 
     <Door x="5" y="4" toMap="200" toX="11" toY="4" texture="wall fancydoor"/>
-    <Watercooler x="1" y="1" texture="watercooler"/>
+    <Watercooler x="1" y="1"/>
    
 	</Objects>
 	

@@ -99,6 +99,7 @@ namespace Project
 
 			Party.SetLocation(map.GetTile(point));
 			CurrentMap = map;
+			MainWindow.Window.dungeonContainer.Invalidate();
 		}
 
 		/// <summary>

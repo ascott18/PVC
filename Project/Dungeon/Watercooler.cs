@@ -103,10 +103,7 @@ namespace Project.Dungeon
 		{
 			var loc = new Point(int.Parse(coolerElement.Attribute("x").Value), int.Parse(coolerElement.Attribute("y").Value));
 
-			var watercooler = new Watercooler(loc)
-            {
-				Image = XmlData.LoadImage(coolerElement.Attribute("texture").Value)
-            };
+			var watercooler = new Watercooler(loc);
 
 		    return watercooler;
 		}
