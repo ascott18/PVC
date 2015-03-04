@@ -21,6 +21,8 @@ namespace Project.Dungeon
 		private readonly Image baseImage = XmlData.LoadImage("serverBase");
 		private Bitmap currentImage;
 
+		private readonly object currentImageLock = new object();
+
 		public Server(Point loc)
 			: base(loc)
 		{
@@ -32,24 +34,26 @@ namespace Project.Dungeon
 			if (CurrentTile == null)
 				return;
 
-			// from http://stackoverflow.com/questions/6020406/travel-through-pixels-in-bmp
-			if (currentImage != null)
-				currentImage.Dispose();
-
-			var bmp = currentImage = new Bitmap(lightsImage);
-
-			lock (currentImage)
-			for (int i = 0; i < bmp.Height * bmp.Width; ++i)
+			lock (currentImageLock)
 			{
-				int row = i / bmp.Height;
-				int col = i % bmp.Width;
-				if (row % 2 != 0) col = bmp.Width - col - 1;
+				// from http://stackoverflow.com/questions/6020406/travel-through-pixels-in-bmp
+				if (currentImage != null)
+					currentImage.Dispose();
 
-				var pixel = bmp.GetPixel(col, row);
-				if (pixel.A > 0)
+				var bmp = currentImage = new Bitmap(lightsImage);
+
+				for (int i = 0; i < bmp.Height*bmp.Width; ++i)
 				{
-					var color = colors[random.Next(colors.Length)];
-					bmp.SetPixel(col, row, color);
+					int row = i/bmp.Height;
+					int col = i%bmp.Width;
+					if (row%2 != 0) col = bmp.Width - col - 1;
+
+					var pixel = bmp.GetPixel(col, row);
+					if (pixel.A > 0)
+					{
+						var color = colors[random.Next(colors.Length)];
+						bmp.SetPixel(col, row, color);
+					}
 				}
 			}
 
@@ -59,7 +63,7 @@ namespace Project.Dungeon
 		public override void Draw(Graphics graphics)
 		{
 			graphics.DrawImage(baseImage, CurrentTile.Rectangle);
-			lock(currentImage)
+			lock(currentImageLock)
 				graphics.DrawImage(currentImage, CurrentTile.Rectangle);
 		}
 
