@@ -61,6 +61,11 @@ namespace Project.Dungeon
 			}
 		}
 
+		public bool IsInCurrentMap
+		{
+			get { return DungeonMap.Game.CurrentMap == DungeonMap; }
+		}
+
 		/// <summary>
 		///     The TileData instance that represents static information about this tile.
 		/// </summary>

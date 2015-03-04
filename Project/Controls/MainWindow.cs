@@ -33,14 +33,18 @@ namespace Project.Controls
 
 		private void DungeonTimerCallback(object state)
 		{
+			var needRedraw = false;
 			if (Game != null && Game.CurrentMap != null)
 			{
 				foreach (var tile in Game.CurrentMap.Tiles.Where(tile => tile.NeedsRedraw))
 				{
-					dungeonContainer.Invalidate(tile.Rectangle);
 					tile.NeedsRedraw = false;
+					needRedraw = true;
 				}
 			}
+
+			if (needRedraw)
+				dungeonContainer.Invalidate();
 		}
 
 		public void CreateGame()

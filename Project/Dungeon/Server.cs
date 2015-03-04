@@ -26,46 +26,75 @@ namespace Project.Dungeon
 		public Server(Point loc)
 			: base(loc)
 		{
-			timer = new Timer(TimerCallback, null, 0, 500);
+			timer = new Timer(TimerCallback, false, 0, 500);
+			TimerCallback(true);
 		}
 
 		private void TimerCallback(object state)
 		{
-			if (CurrentTile == null)
-				return;
+			var forceDraw = state as bool?;
 
+			if (forceDraw == true || (CurrentTile != null && CurrentTile.IsInCurrentMap))
 			lock (currentImageLock)
 			{
-				// from http://stackoverflow.com/questions/6020406/travel-through-pixels-in-bmp
-
-
-				var bmp = currentImage;
-				if (bmp == null)
+				bool isFirstGen = false;
+				if (currentImage == null)
 				{
-					bmp = currentImage = new Bitmap(lightsImage);
+					isFirstGen = true;
+					currentImage = new Bitmap(lightsImage);
 				}
 
-				for (int i = 0; i < bmp.Height*bmp.Width; ++i)
+				for (int i = 0; i < currentImage.Height * currentImage.Width; ++i)
 				{
-					int row = i/bmp.Height;
-					int col = i%bmp.Width;
-					if (row%2 != 0) col = bmp.Width - col - 1;
 
-					var pixel = bmp.GetPixel(col, row);
-					if (pixel.A > 0 && random.Next(100) < 2)
+					int shouldChangeRandom;
+					lock(random)
+						shouldChangeRandom = !isFirstGen ? random.Next(101) : 0;
+
+					const int shouldChangePercent = 2;
+
+					if (isFirstGen || shouldChangeRandom < shouldChangePercent)
 					{
-						var color = colors[random.Next(colors.Length)];
-						bmp.SetPixel(col, row, color);
+						int row = i / currentImage.Height;
+						int col = i % currentImage.Width;
+						if (row % 2 != 0) col = currentImage.Width - col - 1;
+
+						var pixel = currentImage.GetPixel(col, row);
+						if (pixel.A > 0)
+						{
+							const int blackPercent = 95;
+							int colorRandom;
+							lock (random)
+								colorRandom = random.Next(101);
+
+							Color color;
+							if (colorRandom < blackPercent)
+								color = Color.Black;
+							else
+							{
+								lock (random)
+									colorRandom = random.Next(colors.Length);
+								color = colors[colorRandom];
+							}
+
+							if (pixel != color)
+							{
+								currentImage.SetPixel(col, row, color);
+								
+								if (CurrentTile != null)
+									CurrentTile.NeedsRedraw = true;
+							}
+						}
 					}
 				}
-
-				//if (currentImage != null)
-				//	currentImage.Dispose();
+				lock (random)
+					timer.Change(random.Next(50, 100), 50000);
 			}
+			else
+				lock (random)
+					timer.Change(random.Next(1000, 2000), 50000);
 
-			timer.Change(random.Next(100, 200), 500);
 
-			CurrentTile.NeedsRedraw = true;
 		}
 
 		public override void Draw(Graphics graphics)
@@ -80,9 +109,6 @@ namespace Project.Dungeon
 		private static readonly Color[] colors =
 		{
 			Color.Red, Color.Blue, Color.Orange, 
-			Color.Black, Color.Black, Color.Black, Color.Black, Color.Black, Color.Black,
-			Color.Black, Color.Black, Color.Black, Color.Black, Color.Black, Color.Black,
-			Color.Black, Color.Black, Color.Black, Color.Black, Color.Black, Color.Black,
 			Color.LimeGreen, Color.LimeGreen,
 		};
 
