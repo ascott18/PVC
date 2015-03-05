@@ -8,7 +8,7 @@ namespace Project.Dungeon
 	///     It contains information about what occupies that spot on the map,
 	///     and it draws anything that occupies that tile.
 	/// </summary>
-	internal class Tile
+	public class Tile
 	{
 		public const int DimPixels = 50;
 
@@ -53,7 +53,7 @@ namespace Project.Dungeon
 			set
 			{
 				if (tileObject != null && value != null)
-					throw new InvalidOperationException("Clobbered a TileObject");
+					throw new InvalidOperationException("Clobbered a TileObject - " + value.GetType() + " with a " + tileObject.GetType());
 
 				tileObject = value;
 
@@ -63,7 +63,7 @@ namespace Project.Dungeon
 
 		public bool IsInCurrentMap
 		{
-			get { return DungeonMap.Game.CurrentMap == DungeonMap; }
+			get { return DungeonMap.Controller.CurrentMap == DungeonMap; }
 		}
 
 		/// <summary>

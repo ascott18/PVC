@@ -18,7 +18,7 @@ namespace Project.Spells
 	///     finite state machines with well-defined state transitions. A diagram
 	///     of possible state transitions is located in UML/CastStates.activitydiagram.
 	/// </summary>
-	internal abstract class Spell
+	public abstract class Spell
 	{
         Random rand = new Random();
 		/// <summary>
@@ -461,7 +461,7 @@ namespace Project.Spells
 	///     A generic spell event.
 	/// </summary>
 	/// <param name="sender">The spell for which the event is firing.</param>
-	internal delegate void SpellEvent(Spell sender);
+	public delegate void SpellEvent(Spell sender);
 
 	/// <summary>
 	///     A state change event for a spell. The state parameter varies per event
@@ -473,6 +473,6 @@ namespace Project.Spells
 	///     Associated extra state information.
 	///     See individual event implementations for detail.
 	/// </param>
-	internal delegate void SpellStateEvent(Spell sender, Spell.CastState state);
+	public delegate void SpellStateEvent(Spell sender, Spell.CastState state);
 
 }

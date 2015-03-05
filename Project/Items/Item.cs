@@ -6,7 +6,7 @@ using Project.Sprites;
 
 namespace Project.Items
 {
-	internal abstract class Item
+	public abstract class Item
 	{
 		public readonly string Name;
 		public readonly int ItemID;

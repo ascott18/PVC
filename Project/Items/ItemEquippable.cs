@@ -7,7 +7,7 @@ using Project.Sprites;
 
 namespace Project.Items
 {
-	internal class ItemEquippable : Item
+	public class ItemEquippable : Item
 	{
 		public enum SlotID
 		{

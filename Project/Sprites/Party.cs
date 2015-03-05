@@ -6,7 +6,7 @@ using Project.Items;
 
 namespace Project.Sprites
 {
-	internal class Party : DungeonSprite
+	public class Party : DungeonSprite
 	{
 		public const int MaxHeroes = 3;
 		public readonly IReadOnlyList<Item> Inventory;
@@ -53,5 +53,5 @@ namespace Project.Sprites
 		public event PartyEvent InventoryChanged;
 	}
 
-	internal delegate void PartyEvent(Party party);
+	public delegate void PartyEvent(Party party);
 }

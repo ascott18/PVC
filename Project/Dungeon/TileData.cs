@@ -14,7 +14,7 @@ namespace Project.Dungeon
 	///     that was parsed from XML. A single TileData instance will be used for all Tiles that
 	///     use that tileID.
 	/// </summary>
-	internal class TileData
+	public class TileData
 	{
 		private static readonly Dictionary<int, TileData> Data = new Dictionary<int, TileData>();
 

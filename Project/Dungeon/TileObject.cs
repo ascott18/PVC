@@ -10,7 +10,7 @@ namespace Project.Dungeon
 	///     TileObjects are represented in Maps.xml inside the Objects element, and are constructed from XML
 	///     using methods that are marked with XmlParserAttribute.
 	/// </summary>
-	internal class TileObject
+	public class TileObject
 	{
 		protected TileObject(Point loc)
 		{

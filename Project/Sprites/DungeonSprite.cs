@@ -5,7 +5,7 @@ using Project.Dungeon;
 
 namespace Project.Sprites
 {
-	internal abstract class DungeonSprite : TileObject
+	public abstract class DungeonSprite : TileObject
 	{
 		protected DungeonSprite(Point loc) : base(loc)
 		{

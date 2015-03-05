@@ -21,10 +21,19 @@
 
   <!--Evil Computer-->
   <TargetedDamage id="41" name="Encrypt Files" damage="5" castTime="1.5" cooldown="0"/>
-  <AreaDamage id="42" name="Ultimatum" damage="25" castTime="4" cooldown="15"/>
+  <AreaDamage	  id="42" name="Ultimatum" damage="25" castTime="4" cooldown="15"/>
 
   <!--Printer-->
   <TargetedDamage id="51" name="PC Load Letter" damage="15" castTime="4" cooldown="0"/>
+
+  <!--Tangled Cables-->
+  <AreaDamage     id="61" name="Trip" damage="15" castTime="4" cooldown="0"/>
+  <TargetedDamage id="62" name="Strangle" damage="25" castTime="4" cooldown="13"/>
+  <SelfHealing	  id="63" name="Tangle" healing="20" castTime="2" cooldown="10"/>
+  
+  <!--Overheated Server-->
+  <AreaDamage     id="71" name="Release Magic Smoke" damage="10" castTime="2" cooldown="0"/>
+  <SelfHealing	  id="72" name="Overvolt Fans" healing="5" castTime="1" cooldown="7"/>
   
   
 </Spells>

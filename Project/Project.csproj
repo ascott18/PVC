@@ -41,6 +41,16 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LevelEdit|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\LevelEdit\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -151,6 +161,7 @@
     <Compile Include="Controls\WoodButton.Designer.cs">
       <DependentUpon>WoodButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="DungeonController.cs" />
     <Compile Include="Dungeon\VanishingWall.cs" />
     <Compile Include="Dungeon\Server.cs" />
     <Compile Include="Dungeon\TileDataWithObject.cs" />
@@ -297,6 +308,7 @@
     </Content>
     <None Include="Resources\black.png" />
     <Content Include="Resources\box.png" />
+    <None Include="Resources\cables.png" />
     <Content Include="Resources\carpet.png" />
     <Content Include="Resources\carty.png" />
     <None Include="Resources\darkwall.png" />
@@ -317,6 +329,7 @@
     <None Include="Resources\serverLights.png" />
     <None Include="Resources\serverBase.png" />
     <None Include="Resources\verydarkwall.png" />
+    <None Include="Resources\serverRed.png" />
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />

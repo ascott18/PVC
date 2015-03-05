@@ -7,7 +7,7 @@ using Project.Items;
 
 namespace Project.Sprites
 {
-	internal class Hero : CombatSprite
+	public class Hero : CombatSprite
 	{
 		public readonly int HeroID;
 
