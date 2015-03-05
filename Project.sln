@@ -9,7 +9,7 @@ Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML", "UML\UML.modelproj", 
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UpdatePresentations", "UpdatePresentations\UpdatePresentations.modelproj", "{184CF7F8-7B56-4575-8A36-6B28884FF4E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelEdit", "LevelEdit\LevelEdit.csproj", "{86BC1E42-2877-43DF-BDA5-40E1012406DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapEdit", "MapEdit\MapEdit.csproj", "{181E66A6-F9A2-4671-BCFD-850EE63C992C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{184CF7F8-7B56-4575-8A36-6B28884FF4E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{184CF7F8-7B56-4575-8A36-6B28884FF4E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{184CF7F8-7B56-4575-8A36-6B28884FF4E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86BC1E42-2877-43DF-BDA5-40E1012406DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86BC1E42-2877-43DF-BDA5-40E1012406DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86BC1E42-2877-43DF-BDA5-40E1012406DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86BC1E42-2877-43DF-BDA5-40E1012406DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{181E66A6-F9A2-4671-BCFD-850EE63C992C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{181E66A6-F9A2-4671-BCFD-850EE63C992C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{181E66A6-F9A2-4671-BCFD-850EE63C992C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{181E66A6-F9A2-4671-BCFD-850EE63C992C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

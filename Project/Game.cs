@@ -15,14 +15,13 @@ namespace Project
 	///     as well as the Party that the user is playing as.
 	///     It acts as the controller for party movement, and for initiating combat.
 	/// </summary>
-	public class Game
+	public class Game : DungeonController
 	{
 		/// <summary>
 		///     The party that is playing through this Game.
 		/// </summary>
 		public readonly Party Party;
 
-		private readonly Dictionary<int, DungeonMap> maps = new Dictionary<int, DungeonMap>();
 		private CombatSession currentSession;
 		private DungeonMap currentMap;
 
@@ -52,10 +51,10 @@ namespace Project
 		///     The DungeonMap that the Party is currently located in,
 		///     and thus is being drawn to MainWindow's DungeonContainer.
 		/// </summary>
-		internal DungeonMap CurrentMap
+		public override DungeonMap CurrentMap
 		{
 			get { return currentMap; }
-			private set
+			protected set
 			{
 				currentMap = value;
 				if (MainWindow.Window.IsDebug)
@@ -69,23 +68,6 @@ namespace Project
 		public bool InCombat
 		{
 			get { return (currentSession != null && currentSession.State != CombatSession.CombatState.Ended); }
-		}
-
-		/// <summary>
-		///     Gets a DungeonMap by ID. Loads it from XML if it has not
-		///     already bene created for this Game.
-		/// </summary>
-		/// <param name="mapID">The ID of the map to get.</param>
-		/// <returns>The requested DungeonMap.</returns>
-		private DungeonMap LoadDungeonMap(int mapID)
-		{
-			DungeonMap map;
-
-			if (!maps.TryGetValue(mapID, out map))
-			{
-				map = maps[mapID] = new DungeonMap(mapID, this);
-			}
-			return map;
 		}
 
 		/// <summary>

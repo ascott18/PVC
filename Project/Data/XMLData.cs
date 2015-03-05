@@ -17,7 +17,7 @@ namespace Project.Data
 	/// It contains functionality for loading XML files from the project's resx
 	/// file and storing these as XDocuments for repeated use.
 	/// </summary>
-	static class XmlData
+	public static class XmlData
 	{
 		private static readonly Dictionary<string, XDocument> Documents = new Dictionary<string, XDocument>();
 
@@ -26,7 +26,7 @@ namespace Project.Data
 		/// Loads it if it isn't already loaded.
 		/// </summary>
 		/// <returns>The XDocument representing the requested resources.</returns>
-		internal static XDocument GetDocument(string resourceName)
+		public static XDocument GetDocument(string resourceName)
 		{
 			XDocument doc;
 
@@ -70,7 +70,20 @@ namespace Project.Data
 		internal static XElement GetXElementByID(string documentName, string rootElement, int id)
 		{
 			var doc = GetDocument(documentName);
-			return doc.XPathSelectElement(String.Format("{0}/*[number(@id)={1}]", rootElement, id));
+			return GetXElementByID(doc, rootElement, id);
+		}
+
+
+		/// <summary>
+		/// Returns an xElement with the specified id attribute from a document.
+		/// </summary>
+		/// <param name="document">The document to read from.</param>
+		/// <param name="rootElement">The root element name.</param>
+		/// <param name="id">The ID of the element to find.</param>
+		/// <returns>The matched XElement.</returns>
+		public static XElement GetXElementByID(XDocument document, string rootElement, int id)
+		{
+			return document.XPathSelectElement(String.Format("{0}/*[number(@id)={1}]", rootElement, id));
 		}
 
 		internal static T XmlParserParseByID<T>(string documentRootName, int ID)

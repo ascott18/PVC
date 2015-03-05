@@ -12,20 +12,35 @@ namespace Project.Dungeon
 	/// </summary>
 	public class DungeonMap
 	{
-		public readonly Game Game;
+		public readonly DungeonController Controller;
 		public readonly MapData MapData;
 		public readonly int MapID;
 
 		private readonly Tile[,] tiles = new Tile[MapData.DimX, MapData.DimY];
-		public readonly ReadOnlyCollection<Tile> Tiles;
+		public ReadOnlyCollection<Tile> Tiles { get; private set; }
 
-		public DungeonMap(int mapId, Game game)
+		public DungeonMap(int mapId, MapData data, DungeonController game)
 		{
 			MapID = mapId;
-			Game = game;
+			Controller = game;
+
+			MapData = data;
+
+			BuildMap();
+		}
+
+		public DungeonMap(int mapId, DungeonController game)
+		{
+			MapID = mapId;
+			Controller = game;
 
 			MapData = MapData.GetMapData(mapId);
 
+			BuildMap();
+		}
+
+		private void BuildMap()
+		{
 			var tilesList = new List<Tile>();
 
 			for (int x = 0; x < MapData.DimX; x++)
@@ -40,7 +55,6 @@ namespace Project.Dungeon
 
 			Tiles = tilesList.AsReadOnly();
 
-			
 			// Create a new set of initial TileObjects from the XML,
 			// and place them where they need to be.
 			foreach (var tileObject in MapData.GetTileObjects())

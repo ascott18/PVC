@@ -161,6 +161,7 @@
     <Compile Include="Controls\WoodButton.Designer.cs">
       <DependentUpon>WoodButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="DungeonController.cs" />
     <Compile Include="Dungeon\VanishingWall.cs" />
     <Compile Include="Dungeon\Server.cs" />
     <Compile Include="Dungeon\TileDataWithObject.cs" />

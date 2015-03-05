@@ -97,7 +97,9 @@ namespace Project.Dungeon
 			var objects = new List<TileObject>();
 
 			// Create TileObjects for all the map's objects
-			foreach (XElement objectElement in mapElement.Element("Objects").Elements())
+			var objectsElement = mapElement.Element("Objects");
+			if (objectsElement != null)
+			foreach (XElement objectElement in objectsElement.Elements())
 			{
 				string elementName = objectElement.Name.ToString();
 
@@ -128,10 +130,10 @@ namespace Project.Dungeon
 
 				try
 				{
-					var a = Assembly
+					var type = Assembly
 						.GetExecutingAssembly()
-						;var s =a 	.GetTypes()
-						; var type = s.First(t => t.Name == objTileData.TileObjectName && typeof(TileObject).IsAssignableFrom(t));
+						.GetTypes()
+						.First(t => t.Name == objTileData.TileObjectName && typeof(TileObject).IsAssignableFrom(t));
 						
 					var ctor = type.GetConstructor(new[] { typeof(Point) });
 					var obj = (TileObject)ctor.Invoke(new object[] { new Point(x, y) });
@@ -148,7 +150,7 @@ namespace Project.Dungeon
 		}
 
 		/// <summary>
-		///     Parses the XML document and creates a MapData object.
+		///     Parses Maps.xml and creates a MapData object.
 		/// </summary>
 		/// <param name="mapID">The MapID to parse from the XML document.</param>
 		/// <returns>The parsed MapData</returns>
@@ -159,6 +161,16 @@ namespace Project.Dungeon
 			if (mapElement == null)
 				throw new Exception(String.Format("No Map with id {0} found", mapID));
 
+			return data[mapID] = ParseMapData(mapID, mapElement);
+		}
+
+		/// <summary>
+		///     Parses the given mapElement and creates a MapData object.
+		/// </summary>
+		/// <param name="mapID">The MapID to parse.</param>
+		/// <returns>The parsed MapData</returns>
+		public static MapData ParseMapData(int mapID, XElement mapElement)
+		{
 			// Create the new MapData if one didn't already exist.
 			var mapData = new MapData(mapID)
 			{
@@ -166,7 +178,11 @@ namespace Project.Dungeon
 			};
 
 			// Populate mapData.tiles with the TileData objects for this map.
-			string tileDataRaw = mapElement.Element("Tiles").Value;
+			var tilesElement = mapElement.Element("Tiles");
+			if (tilesElement == null)
+				throw new ApplicationException("Map element missing Tiles element.");
+
+			string tileDataRaw = tilesElement.Value;
 			int index = 0;
 			foreach (Match match in Regex.Matches(tileDataRaw, @"[0-9]+"))
 			{
@@ -188,8 +204,9 @@ namespace Project.Dungeon
 				mapData.adjacencies[xElement.Attribute("dir").Value] = int.Parse(xElement.Attribute("id").Value);
 			}
 
-			return data[mapID] = mapData;
+			return mapData;
 		}
+		
 
 		/// <summary>
 		///     Returns the id of the adjacent map to this map in the indicated direction.

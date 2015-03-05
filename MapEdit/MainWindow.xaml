@@ -1,0 +1,49 @@
+﻿<Window x:Class="MapEdit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PVC Map Edit" Height="700" Width="1113" Loaded="Window_Loaded">
+	<Grid x:Name="Grid">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="650"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid Grid.Column="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="20"/>
+				<RowDefinition Height="25"/>
+				<RowDefinition/>
+				<RowDefinition Height="50"/>
+			</Grid.RowDefinitions>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="47"/>
+					<ColumnDefinition Width="49"/>
+				</Grid.ColumnDefinitions>
+				<TextBox x:Name="FilePathBox" Grid.Column="0" Text="../../../Project/Data/Maps.xml"/>
+				<Button Content="Open" Grid.Column="1" Click="LoadButton_Click" />
+				<Button Content="Save" Grid.Column="2" />
+			</Grid>
+			<Grid Grid.Row="1" Margin="0,5,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50"/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Label Content="MapID:" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" Padding="0,0,5,0" />
+				<TextBox x:Name="MapSelectBox" Grid.Column="1" Text="111"/>
+			</Grid>
+			<Border Name="TextEditorBorder" BorderBrush="Black" BorderThickness="2" Margin="0,5,0,0" Grid.Row="2" >
+				<avalonEdit:TextEditor
+				xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+				Name="TextEditor"
+				FontFamily="Consolas"
+				SyntaxHighlighting="XML"
+				FontSize="10pt" >
+				</avalonEdit:TextEditor>
+			</Border>
+			<TextBlock x:Name="ErrorText" Grid.Row="3">
+					
+			</TextBlock>
+		</Grid>
+	</Grid>
+</Window>

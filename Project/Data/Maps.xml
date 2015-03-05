@@ -16,14 +16,14 @@
 	  00 00 00 02 03 00 00 00 00 00 05 00 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="W" id="2"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
 	  <Door x="1" y="1" toMap="2" toX="9" toY="10" texture="wall fancydoor"/>
-      <Door x="5" y="5" toMap="111" toX="9" toY="10" texture="wall fancydoor"/>
+	  <Door x="5" y="5" toMap="111" toX="9" toY="10" texture="wall fancydoor"/>
 	  <MonsterPack id="000101" x="10" y="3">
 		<Monster id="1"/>
 		<Monster id="1"/>
@@ -43,9 +43,9 @@
 	  </Chest>
 	  <Watercooler x="2" y="9"/>
 	</Objects>
-	
+
   </Map>
-  
+
   <Map id="2">
 	<Tiles>
 	  21 21 21 21 21 21 21 21 21 21 21 21 21
@@ -101,23 +101,23 @@
 	  02 00 00 05 02 00 00 00 02 00 00 00 02
 	  02 02 02 02 02 00 00 00 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="S" id="110"/>
-  	<AdjacentMap dir="E" id="101"/>
+	  <AdjacentMap dir="E" id="101"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
 	  <Chest x="11" y="1" texture="medbox">
 		<LootPool id="1"/>
 		<LootPool id="2"/>
 	  </Chest>
-    <MonsterPack id="000101" x="6" y="11">
-      <Monster id="2"/>
-      <Monster id="2"/>
-    </MonsterPack>
+	  <MonsterPack id="000101" x="6" y="11">
+		<Monster id="2"/>
+		<Monster id="2"/>
+	  </MonsterPack>
 	</Objects>
-	
+
   </Map>
 
   <Map id="101">
@@ -136,19 +136,19 @@
 	  02 00 00 00 02 04 00 03 02 00 00 00 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
-	  	<AdjacentMap dir="W" id="100"/>
-	  	<AdjacentMap dir="E" id="102"/>
+	  <AdjacentMap dir="W" id="100"/>
+	  <AdjacentMap dir="E" id="102"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
 	  <Chest x="5" y="1" texture="medbox">
 		<LootPool id="1"/>
 		<LootPool id="2"/>
 	  </Chest>
 	</Objects>
-	
+
   </Map>
 
   <Map id="102">
@@ -167,27 +167,27 @@
 	  02 00 00 00 02 00 00 00 02 03 00 00 02
 	  02 00 00 00 02 00 00 00 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="W" id="101"/>
-    <AdjacentMap dir="S" id="112"/>
+	  <AdjacentMap dir="S" id="112"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
 	  <Chest x="11" y="1" texture="medbox">
-		  <LootPool id="1"/>
-		  <LootPool id="2"/>
+		<LootPool id="1"/>
+		<LootPool id="2"/>
 	  </Chest>
-    <Chest x="1" y="10" texture="medbox">
-      <LootPool id="1"/>
-      <LootPool id="2"/>
-    </Chest>
-    <MonsterPack id="000103" x="10" y="1">
-      <Monster id="4"/>
-      <Monster id="5"/>
-    </MonsterPack>
+	  <Chest x="1" y="10" texture="medbox">
+		<LootPool id="1"/>
+		<LootPool id="2"/>
+	  </Chest>
+	  <MonsterPack id="000103" x="10" y="1">
+		<Monster id="4"/>
+		<Monster id="5"/>
+	  </MonsterPack>
 	</Objects>
-	
+
   </Map>
 
   <Map id="110">
@@ -206,19 +206,19 @@
 	  02 00 00 00 02 00 00 00 00 00 00 00 00
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="E" id="111"/>
-  	 <AdjacentMap dir="N" id="100"/>
+	  <AdjacentMap dir="N" id="100"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
 	  <Chest x="11" y="1" texture="medbox">
 		<LootPool id="1"/>
 		<LootPool id="2"/>
 	  </Chest>
 	</Objects>
-	
+
   </Map>
 
 
@@ -239,24 +239,24 @@
 	  00 00 00 00 02 00 00 00 02 00 00 05 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="W" id="110"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
-    <Chest x="11" y="1" texture="medbox">
+	  <Chest x="11" y="1" texture="medbox">
 		<LootPool id="1"/>
 		<LootPool id="2"/>
 	  </Chest>
-    <MonsterPack id="000101" x="4" y="10">
-      <Monster id="1"/>
-    </MonsterPack>
+	  <MonsterPack id="000101" x="4" y="10">
+		<Monster id="1"/>
+	  </MonsterPack>
 	</Objects>
-	
+
   </Map>
 
- <Map id="112">
+  <Map id="112">
 	<Tiles>
 	  02 00 00 00 02 00 00 00 02 02 02 02 02
 	  02 00 00 00 02 00 00 00 02 00 00 00 02
@@ -272,18 +272,18 @@
 	  02 00 00 00 02 00 00 00 00 00 00 00 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="N" id="102"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
-    <Watercooler x="11" y="11"/>
-    <Door x="12" y="10" toMap="212" toX="11" toY="10" texture="wall elevatorUp"/>
+	  <Watercooler x="11" y="11"/>
+	  <Door x="12" y="10" toMap="212" toX="11" toY="10" texture="wall elevatorUp"/>
 	</Objects>
-	
+
   </Map>
-  
+
   <Map id="200">
 	<Tiles>
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
@@ -300,19 +300,19 @@
 	  02 00 00 00 02 00 00 00 00 00 00 00 02
 	  02 02 02 02 02 00 00 00 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="S" id="210"/>
 	</AdjacentMaps>
 
-    <Objects>
-      <Watercooler x="8" y="1"/>
-      <Door x="12" y="4" toMap="201" toX="6" toY="4" texture="wall fancydoor"/>
-    </Objects>
-	
+	<Objects>
+	  <Watercooler x="8" y="1"/>
+	  <Door x="12" y="4" toMap="201" toX="6" toY="4" texture="wall fancydoor"/>
+	</Objects>
+
   </Map>
 
- <Map id="201">
+  <Map id="201">
 	<Tiles>
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	  02 00 00 00 00 00 00 00 00 00 00 00 00
@@ -328,22 +328,22 @@
 	  02 00 00 00 00 00 00 00 00 00 00 00 00
 	  02 02 02 02 02 00 00 00 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
-	  	<AdjacentMap dir="E" id="202"/>
-	  	<AdjacentMap dir="S" id="211"/>
+	  <AdjacentMap dir="E" id="202"/>
+	  <AdjacentMap dir="S" id="211"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
 
-    <Door x="0" y="4" toMap="200" toX="11" toY="4" texture="wall fancydoor"/>
+	  <Door x="0" y="4" toMap="200" toX="11" toY="4" texture="wall fancydoor"/>
 
 
-  </Objects>
-	
+	</Objects>
+
   </Map>
 
- <Map id="202">
+  <Map id="202">
 	<Tiles>
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	  00 00 00 00 02 00 00 00 00 00 00 00 02
@@ -359,27 +359,27 @@
 	  00 00 00 00 00 00 00 00 00 00 00 00 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="W" id="201"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
-    <Door x="12" y="10" toMap="1" toX="11" toY="4" texture="wall fancydoor"/>
+	  <Door x="12" y="10" toMap="1" toX="11" toY="4" texture="wall fancydoor"/>
 
-    <MonsterPack id="000101" x="4" y="2">
-      <Monster id="1"/>
-      <Monster id="2"/>
-    </MonsterPack>
+	  <MonsterPack id="000101" x="4" y="2">
+		<Monster id="1"/>
+		<Monster id="2"/>
+	  </MonsterPack>
 
 
 
-    <Chest x="11" y="1" texture="medbox">
+	  <Chest x="11" y="1" texture="medbox">
 		<LootPool id="1"/>
 		<LootPool id="2"/>
 	  </Chest>
 	</Objects>
-	
+
   </Map>
 
 
@@ -399,23 +399,23 @@
 	  02 00 00 00 00 00 00 00 00 00 00 03 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="E" id="211"/>
-  	 <AdjacentMap dir="N" id="200"/>
+	  <AdjacentMap dir="N" id="200"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
-    <Door x="12" y="10" toMap="1" toX="11" toY="4" texture="wall fancydoor"/>
-    
+	  <Door x="12" y="10" toMap="1" toX="11" toY="4" texture="wall fancydoor"/>
+
 	  <Chest x="11" y="1" texture="medbox">
 		<LootPool id="1"/>
 		<LootPool id="2"/>
 	  </Chest>
 	</Objects>
-	
+
   </Map>
-  
+
   <Map id="211">
 	<Tiles>
 	  02 02 02 02 02 00 00 00 02 02 02 02 02
@@ -432,46 +432,46 @@
 	  02 03 00 00 00 00 00 00 00 00 00 00 02
 	  02 02 02 02 02 00 00 00 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="N" id="201"/>
-  	<AdjacentMap dir="S" id="221"/>
-    <AdjacentMap dir="E" id="212"/>
-    <AdjacentMap dir="W" id="210"/>
+	  <AdjacentMap dir="S" id="221"/>
+	  <AdjacentMap dir="E" id="212"/>
+	  <AdjacentMap dir="W" id="210"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
-    <Door x="6" y="6" toMap="1" toX="11" toY="4" texture="wall fancydoor"/>
-    <VanishingWall x="3" y="8" texture="wall"/>
-    <VanishingWall x="9" y="4" texture="wall"/>
-    <VanishingWall x="8" y="9" texture="wall"/>
-    <VanishingWall x="4" y="3" texture="wall"/>
+	  <Door x="6" y="6" toMap="1" toX="11" toY="4" texture="wall fancydoor"/>
+	  <VanishingWall x="3" y="8" texture="wall"/>
+	  <VanishingWall x="9" y="4" texture="wall"/>
+	  <VanishingWall x="8" y="9" texture="wall"/>
+	  <VanishingWall x="4" y="3" texture="wall"/>
 
-    <MonsterPack id="000101" x="6" y="7">
-      <Monster id="1"/>
-      <Monster id="2"/>
-    </MonsterPack>
+	  <MonsterPack id="000101" x="6" y="7">
+		<Monster id="1"/>
+		<Monster id="2"/>
+	  </MonsterPack>
 
-    <MonsterPack id="000101" x="6" y="5">
-      <Monster id="2"/>
-      <Monster id="2"/>
-    </MonsterPack>
+	  <MonsterPack id="000101" x="6" y="5">
+		<Monster id="2"/>
+		<Monster id="2"/>
+	  </MonsterPack>
 
-    <MonsterPack id="000101" x="5" y="6">
-      <Monster id="3"/>
-      <Monster id="2"/>
-    </MonsterPack>
+	  <MonsterPack id="000101" x="5" y="6">
+		<Monster id="3"/>
+		<Monster id="2"/>
+	  </MonsterPack>
 
-    <MonsterPack id="000101" x="7" y="6">
-      <Monster id="1"/>
-      <Monster id="2"/>
-    </MonsterPack>
-    
+	  <MonsterPack id="000101" x="7" y="6">
+		<Monster id="1"/>
+		<Monster id="2"/>
+	  </MonsterPack>
+
 	</Objects>
-	
+
   </Map>
 
- <Map id="212">
+  <Map id="212">
 	<Tiles>
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	  02 00 00 00 02 00 00 02 00 00 00 00 02
@@ -487,39 +487,39 @@
 	  02 00 00 00 00 00 00 00 00 00 02 00 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="W" id="211"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
-    <Door x="12" y="10" toMap="1" toX="11" toY="10" texture="wall fancydoor"/>
+	  <Door x="12" y="10" toMap="1" toX="11" toY="10" texture="wall fancydoor"/>
 
-    <MonsterPack id="000101" x="2" y="1">
-      <Monster id="1"/>
-      <Monster id="2"/>
-    </MonsterPack>
-    <MonsterPack id="000101" x="4" y="3">
-      <Monster id="1"/>
-      <Monster id="2"/>
-    </MonsterPack>
+	  <MonsterPack id="000101" x="2" y="1">
+		<Monster id="1"/>
+		<Monster id="2"/>
+	  </MonsterPack>
+	  <MonsterPack id="000101" x="4" y="3">
+		<Monster id="1"/>
+		<Monster id="2"/>
+	  </MonsterPack>
 
-    <MonsterPack id="000101" x="4" y="11">
-      <Monster id="1"/>
-      <Monster id="2"/>
-    </MonsterPack>
+	  <MonsterPack id="000101" x="4" y="11">
+		<Monster id="1"/>
+		<Monster id="2"/>
+	  </MonsterPack>
 
 
-    <Chest x="6" y="1" texture="medbox">
-      <LootPool id="1"/>
-      <LootPool id="2"/>
-    </Chest>
+	  <Chest x="6" y="1" texture="medbox">
+		<LootPool id="1"/>
+		<LootPool id="2"/>
+	  </Chest>
 
-  </Objects>
-	
+	</Objects>
+
   </Map>
 
- <Map id="220">
+  <Map id="220">
 	<Tiles>
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	  02 00 00 00 00 00 00 00 00 00 00 00 02
@@ -535,18 +535,18 @@
 	  02 00 00 00 03 00 00 00 00 00 00 00 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="E" id="221"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
-    <Door x="12" y="10" toMap="111" toX="11" toY="10" texture="wall fancydoor"/>
+	  <Door x="12" y="10" toMap="111" toX="11" toY="10" texture="wall fancydoor"/>
 	</Objects>
-	
+
   </Map>
-  
- <Map id="221">
+
+  <Map id="221">
 	<Tiles>
 	  02 02 02 02 02 00 00 00 02 02 02 02 02
 	  02 03 00 00 00 00 00 00 00 00 00 00 02
@@ -562,19 +562,19 @@
 	  02 00 00 00 00 00 00 00 00 00 00 00 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="W" id="220"/>
-    <AdjacentMap dir="E" id="222"/>
-    <AdjacentMap dir="N" id="211"/>
+	  <AdjacentMap dir="E" id="222"/>
+	  <AdjacentMap dir="N" id="211"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
 	</Objects>
-	
+
   </Map>
-  
- <Map id="222">
+
+  <Map id="222">
 	<Tiles>
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	  02 00 00 00 00 00 00 00 00 00 00 00 02
@@ -590,14 +590,14 @@
 	  02 00 00 00 03 00 00 00 00 00 00 00 02
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
 	</Tiles>
-	
+
 	<AdjacentMaps>
 	  <AdjacentMap dir="W" id="221"/>
 	</AdjacentMaps>
-	
+
 	<Objects>
 	</Objects>
-	
+
   </Map>
 
 </Maps>

@@ -63,7 +63,7 @@ namespace Project.Dungeon
 
 		public bool IsInCurrentMap
 		{
-			get { return DungeonMap.Game.CurrentMap == DungeonMap; }
+			get { return DungeonMap.Controller.CurrentMap == DungeonMap; }
 		}
 
 		/// <summary>
