@@ -50,6 +50,8 @@ namespace MapEdit
 		private XmlFoldingStrategy foldingStrategy = new XmlFoldingStrategy(){ShowAttributesWhenFolded = true};
 		private string currentFile;
 
+		private string lastSavedText = "";
+
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -174,9 +176,17 @@ namespace MapEdit
 
 		private void LoadButton_Click(object sender, RoutedEventArgs e)
 		{
+			if (lastSavedText != TextEditor.Text)
+			{
+				var result = MessageBox.Show("You have unsaved changes. Are you sure you want to reload?", "Unsaved changes", MessageBoxButton.OKCancel);
+				if (result == MessageBoxResult.Cancel)
+					return;
+			}
+
 			try
 			{
 				var text = File.ReadAllText(FilePathBox.Text);
+				lastSavedText = text;
 				TextEditor.Text = text;
 				currentFile = FilePathBox.Text;
 				ErrorText.Text = "Loaded " + new FileInfo(currentFile).FullName;
@@ -205,10 +215,21 @@ namespace MapEdit
 				fout.Write(TextEditor.Text);
 				ErrorText.Text = "Saved to " + new FileInfo(currentFile).FullName;
 				fout.Close();
+				lastSavedText = TextEditor.Text;
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			if (lastSavedText != TextEditor.Text)
+			{
+				var result = MessageBox.Show("You have unsaved changes. Are you sure you want to exit?", "Unsaved changes", MessageBoxButton.OKCancel);
+				if (result == MessageBoxResult.Cancel)
+					e.Cancel = true;
 			}
 		}
 	}

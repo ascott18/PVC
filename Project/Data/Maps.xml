@@ -85,6 +85,7 @@
   </Map>
 
 
+
   <Map id="100">
 	<Tiles>
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
@@ -190,6 +191,7 @@
 
   </Map>
 
+
   <Map id="110">
 	<Tiles>
 	  02 02 02 02 02 00 00 00 02 02 02 02 02
@@ -220,8 +222,6 @@
 	</Objects>
 
   </Map>
-
-
 
   <Map id="111">
 	<Tiles>
@@ -283,6 +283,9 @@
 	</Objects>
 
   </Map>
+
+
+
 
   <Map id="200">
 	<Tiles>
@@ -519,6 +522,7 @@
 
   </Map>
 
+
   <Map id="220">
 	<Tiles>
 	  02 02 02 02 02 02 02 02 02 02 02 02 02
@@ -592,7 +596,7 @@
 	</Tiles>
 
 	<AdjacentMaps>
-      <AdjacentMap dir="W" id="221"/>
+	  <AdjacentMap dir="W" id="221"/>
 	</AdjacentMaps>
 
 	<Objects>
