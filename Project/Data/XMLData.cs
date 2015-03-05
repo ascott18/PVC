@@ -194,7 +194,20 @@ namespace Project.Data
 						info => info.GetCustomAttributes<XmlParserAttribute>().First().ElementName,
 
 						// Create a Func<XElement, TileObject> as the value of the dictionary.
-						info => element => (T)info.Invoke(null, new object[] { element })
+						info => element =>
+						{
+							T result;
+							try
+							{
+								result = (T) info.Invoke(null, new object[] {element});
+							}
+							catch (TargetInvocationException ex)
+							{
+								throw ex.InnerException;
+							}
+
+							return result;
+						}
 					);
 
 				return parsers = methods;
