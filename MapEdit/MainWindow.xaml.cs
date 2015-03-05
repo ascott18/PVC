@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,9 +36,15 @@ namespace MapEdit
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		public static int[] Columns = new[]
+		{
+			0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+		};
+
 		private DungeonContainer container;
 		private Controller controller = new Controller();
 		private Timer dungeonTimer;
+		private Timer updateTimer;
 
 		private FoldingManager foldingManager;
 		private XmlFoldingStrategy foldingStrategy = new XmlFoldingStrategy(){ShowAttributesWhenFolded = true};
@@ -48,6 +55,7 @@ namespace MapEdit
 			InitializeComponent();
 
 			dungeonTimer = new Timer(DungeonTimerCallback, null, 0, 10);
+			updateTimer = new Timer(UpdateCallback, null, Timeout.Infinite, Timeout.Infinite);
 		}
 
 		private void DungeonTimerCallback(object state)
@@ -66,21 +74,23 @@ namespace MapEdit
 				container.Invalidate();
 		}
 
+		private void UpdateCallback(object state)
+		{
+			updateTimer.Change(Timeout.Infinite, Timeout.Infinite);
+
+			Dispatcher.Invoke(Update);
+		}
+
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			// Create the interop host control.
-			var host = new System.Windows.Forms.Integration.WindowsFormsHost();
-
 			// Create the MaskedTextBox control.
-			container = new DungeonContainer
+			Host.Child = container = new DungeonContainer
 			{
 				Location = new System.Drawing.Point(0, 0)
 			};
 
 			container.Paint += container_Paint;
 			controller.SetMap(1);
-			host.Child = container;
-			Grid.Children.Add(host);
 
 			TextEditor.TextChanged += TextEditor_TextChanged;
 			TextEditor.TextArea.Caret.PositionChanged += Caret_PositionChanged;
@@ -91,8 +101,7 @@ namespace MapEdit
 			foldingManager = FoldingManager.Install(TextEditor.TextArea);
 		}
 
-
-		void Caret_PositionChanged(object sender, EventArgs e)
+		void Update()
 		{
 			TextEditorBorder.BorderBrush = Brushes.Black;
 			ErrorText.Text = "";
@@ -128,6 +137,16 @@ namespace MapEdit
 			}
 		}
 
+		void QueueUpdate()
+		{
+			updateTimer.Change(200, Timeout.Infinite);
+		}
+
+		void Caret_PositionChanged(object sender, EventArgs e)
+		{
+			QueueUpdate();
+		}
+
 		void TextEditor_TextChanged(object sender, EventArgs e)
 		{
 			foldingStrategy = new XmlFoldingStrategy()
@@ -135,6 +154,8 @@ namespace MapEdit
 				ShowAttributesWhenFolded = true
 			};
 			foldingStrategy.UpdateFoldings(foldingManager, TextEditor.Document);
+
+			QueueUpdate();
 		}
 
 		void container_Paint(object sender, PaintEventArgs e)
