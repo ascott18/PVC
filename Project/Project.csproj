@@ -309,6 +309,7 @@
     <None Include="Resources\black.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\cables.png" />
+    <None Include="Resources\bug.png" />
     <Content Include="Resources\carpet.png" />
     <Content Include="Resources\carty.png" />
     <None Include="Resources\darkwall.png" />

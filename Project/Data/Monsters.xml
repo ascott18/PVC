@@ -31,6 +31,12 @@
 	<Spell id="51"/>
   </Monster>
   
+  <Monster id="6" texture="bug" name="Bug">
+	<Attributes stamina="3" block="90" combo="120"/>
+	<Spell id="81"/>
+	<Spell id="82"/>
+  </Monster>
+  
   <Monster id="21" texture="cables" name="Tangled Cables">
 	<Attributes stamina="25" block="5" combo="50"/>
 	<Spell id="61"/>
