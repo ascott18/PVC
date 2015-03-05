@@ -53,7 +53,7 @@ namespace Project.Dungeon
 			set
 			{
 				if (tileObject != null && value != null)
-					throw new InvalidOperationException("Clobbered a TileObject");
+					throw new InvalidOperationException("Clobbered a TileObject - " + value.GetType() + " with a " + tileObject.GetType());
 
 				tileObject = value;
 

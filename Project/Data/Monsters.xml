@@ -30,4 +30,17 @@
 	<Attributes stamina="20" block="50" combo="5"/>
 	<Spell id="51"/>
   </Monster>
+  
+  <Monster id="21" texture="cables" name="Tangled Cables">
+	<Attributes stamina="25" block="5" combo="50"/>
+	<Spell id="61"/>
+	<Spell id="62"/>
+	<Spell id="63"/>
+  </Monster>
+  
+  <Monster id="22" texture="serverRed" name="Overheated Rack">
+	<Attributes stamina="15" block="25" combo="180"/>
+	<Spell id="71"/>
+	<Spell id="72"/>
+  </Monster>
 </Monsters>

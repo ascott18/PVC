@@ -297,6 +297,7 @@
     </Content>
     <None Include="Resources\black.png" />
     <Content Include="Resources\box.png" />
+    <None Include="Resources\cables.png" />
     <Content Include="Resources\carpet.png" />
     <Content Include="Resources\carty.png" />
     <None Include="Resources\darkwall.png" />
@@ -317,6 +318,7 @@
     <None Include="Resources\serverLights.png" />
     <None Include="Resources\serverBase.png" />
     <None Include="Resources\verydarkwall.png" />
+    <None Include="Resources\serverRed.png" />
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />
