@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Maps>
   <Map id="1">
 	<Tiles>
@@ -592,7 +592,7 @@
 	</Tiles>
 
 	<AdjacentMaps>
-	  <AdjacentMap dir="W" id="221"/>
+      <AdjacentMap dir="W" id="221"/>
 	</AdjacentMaps>
 
 	<Objects>

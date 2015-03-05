@@ -41,6 +41,7 @@ namespace MapEdit
 
 		private FoldingManager foldingManager;
 		private XmlFoldingStrategy foldingStrategy = new XmlFoldingStrategy(){ShowAttributesWhenFolded = true};
+		private string currentFile;
 
 		public MainWindow()
 		{
@@ -156,18 +157,29 @@ namespace MapEdit
 			{
 				var text = File.ReadAllText(FilePathBox.Text);
 				TextEditor.Text = text;
+				currentFile = FilePathBox.Text;
+				SaveButton.IsEnabled = true;
 
 				foreach (FoldingSection fm in foldingManager.AllFoldings)
 				{
 					if (fm.Title.StartsWith("<Map "))
 						fm.IsFolded = true;
 				}
-
 			}
 			catch (Exception)
 			{
 				MessageBox.Show("File not found");
 			}
+		}
+
+		private void SaveButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (String.IsNullOrEmpty(currentFile))
+				return;
+
+			var fout = new StreamWriter(File.OpenWrite(currentFile));
+			fout.Write(TextEditor.Text);
+			ErrorText.Text = "Saved to " + new FileInfo(currentFile).FullName;
 		}
 	}
 }
