@@ -193,6 +193,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dwight {
+            get {
+                object obj = ResourceManager.GetObject("dwight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap elevatorDown {
             get {
                 object obj = ResourceManager.GetObject("elevatorDown", resourceCulture);
@@ -523,6 +533,16 @@ namespace Project.Properties {
         internal static string Tiles {
             get {
                 return ResourceManager.GetString("Tiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vendo {
+            get {
+                object obj = ResourceManager.GetObject("vendo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

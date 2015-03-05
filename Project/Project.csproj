@@ -324,6 +324,7 @@
     <None Include="Resources\elevatorDown.png" />
     <None Include="Resources\medtile.png" />
     <None Include="Resources\laggy.png" />
+    <None Include="Resources\dwight.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />
@@ -332,6 +333,7 @@
     <None Include="Resources\serverBase.png" />
     <None Include="Resources\verydarkwall.png" />
     <None Include="Resources\serverRed.png" />
+    <None Include="Resources\vendo.png" />
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />
