@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mapedit="clr-namespace:MapEdit"
         Title="PVC Map Edit" Height="720" Width="1113" Loaded="Window_Loaded" Closing="Window_Closing">
-	<Grid x:Name="Grid">
+	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="670"/>
 			<ColumnDefinition/>
@@ -48,7 +48,6 @@
 		<Grid Grid.Column="1">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="20"/>
-				<RowDefinition Height="25"/>
 				<RowDefinition/>
 				<RowDefinition Height="50"/>
 			</Grid.RowDefinitions>
@@ -62,15 +61,7 @@
 				<Button Content="Open" Grid.Column="1" Click="LoadButton_Click" />
 				<Button x:Name="SaveButton" Content="Save" Grid.Column="2" IsEnabled="False" Click="SaveButton_Click"/>
 			</Grid>
-			<Grid Grid.Row="1" Margin="0,5,0,0">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="50"/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Label Content="MapID:" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" Padding="0,0,5,0" />
-				<TextBox x:Name="MapSelectBox" Grid.Column="1" Text="111"/>
-			</Grid>
-			<Border Name="TextEditorBorder" BorderBrush="Black" BorderThickness="2" Margin="0,5,0,0" Grid.Row="2" >
+			<Border Name="TextEditorBorder" BorderBrush="Black" BorderThickness="2" Margin="0,5,0,0" Grid.Row="1" >
 				<avalonEdit:TextEditor
 				xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
 				Name="TextEditor"
@@ -79,7 +70,7 @@
 				FontSize="10pt" >
 				</avalonEdit:TextEditor>
 			</Border>
-			<TextBlock x:Name="ErrorText" Grid.Row="3">
+			<TextBlock x:Name="ErrorText" Grid.Row="2">
 
 			</TextBlock>
 		</Grid>
