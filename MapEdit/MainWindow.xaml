@@ -70,7 +70,7 @@
 				FontSize="10pt" >
 				</avalonEdit:TextEditor>
 			</Border>
-			<TextBlock x:Name="ErrorText" Grid.Row="2">
+			<TextBlock x:Name="ErrorText" Grid.Row="2" TextWrapping="Wrap">
 
 			</TextBlock>
 		</Grid>
