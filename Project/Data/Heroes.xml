@@ -36,4 +36,13 @@
 	<Spell id="92"/>
 	<Spell id="93"/>
   </Hero>
+  
+  <Hero id="4" texture="laggy" name="Alice"
+		desc="Don't let her sweet demeanor and adorable mews fool you - there's not a cat fiercer when you make her mad. With claws painstakingly honed into needles for hours on end, not much can stand up to her and live.">
+	<Attributes stamina="30" block="10" combo="10"/>
+	
+	<Spell id="101"/>
+	<Spell id="102"/>
+	<Spell id="103"/>
+  </Hero>
 </Heroes>

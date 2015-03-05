@@ -323,6 +323,7 @@
     <None Include="Resources\elevatorUp.png" />
     <None Include="Resources\elevatorDown.png" />
     <None Include="Resources\medtile.png" />
+    <None Include="Resources\laggy.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />

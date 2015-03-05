@@ -235,7 +235,8 @@ namespace Project.Properties {
         ///	&lt;Spell id=&quot;2&quot;/&gt;
         ///	&lt;Spell id=&quot;3&quot;/&gt;
         ///  &lt;/Hero&gt;
-        ///  &lt;Hero id=&quot;2&quot; texture=&quot;stu&quot; name=&quot;Stu Steiner&quot;        /// [rest of string was truncated]&quot;;.
+        ///  
+        ///  &lt;Hero id=&quot;2&quot; texture=&quot;stu&quot; name=&quot;Stu Stein [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Heroes {
             get {
@@ -266,6 +267,16 @@ namespace Project.Properties {
         internal static string Items {
             get {
                 return ResourceManager.GetString("Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap laggy {
+            get {
+                object obj = ResourceManager.GetObject("laggy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

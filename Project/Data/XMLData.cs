@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -91,6 +92,9 @@ namespace Project.Data
 			var methods = XmlParsable<T>.GetParsers();
 
 			var xElement = GetXElementByID(documentRootName, ID);
+
+			if (xElement == null)
+				throw new Exception("Missing " + documentRootName + " element with ID " + ID);
 
 			var elementName = xElement.Name.ToString();
 
