@@ -8,7 +8,7 @@ namespace Project.Dungeon
 	///     It contains information about what occupies that spot on the map,
 	///     and it draws anything that occupies that tile.
 	/// </summary>
-	internal class Tile
+	public class Tile
 	{
 		public const int DimPixels = 50;
 

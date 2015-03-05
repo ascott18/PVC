@@ -8,7 +8,7 @@ using Project.Data;
 
 namespace Project.Sprites
 {
-	internal class MonsterPack : DungeonSprite
+	public class MonsterPack : DungeonSprite
 	{
 		public const int MaxMonsters = 3;
 		public readonly int UniqueID;

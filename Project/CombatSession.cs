@@ -17,7 +17,7 @@ namespace Project
 	///     timing control, and spell queueing. It acts as the controller for the Monster "AI",
 	///     and for performing the actual casts of queued spells and autocasting spells for Heroes.
 	/// </summary>
-	internal class CombatSession
+	public class CombatSession
 	{
 		public enum CombatState
 		{
@@ -439,5 +439,5 @@ namespace Project
 	///     Represents a generic event for a CombatSession.
 	/// </summary>
 	/// <param name="sender">The CombatSession for which the event fired.</param>
-	internal delegate void CombatEvent(CombatSession sender);
+	public delegate void CombatEvent(CombatSession sender);
 }

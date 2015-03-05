@@ -15,7 +15,7 @@ namespace Project
 	///     as well as the Party that the user is playing as.
 	///     It acts as the controller for party movement, and for initiating combat.
 	/// </summary>
-	internal class Game
+	public class Game
 	{
 		/// <summary>
 		///     The party that is playing through this Game.
@@ -26,7 +26,7 @@ namespace Project
 		private CombatSession currentSession;
 		private DungeonMap currentMap;
 
-		internal Game()
+		public Game()
 		{
 			// TODO: Temp code
 			Party = new Party(new Point(7, 7));
@@ -41,7 +41,7 @@ namespace Project
 			SetPartyLocation(1, Party.InitialLocation);
 		}
 
-		internal Game(Party party, int mapID)
+		public Game(Party party, int mapID)
 		{
 			Party = party;
 

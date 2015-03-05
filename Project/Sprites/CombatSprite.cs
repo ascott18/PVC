@@ -9,7 +9,7 @@ using Project.Spells;
 
 namespace Project.Sprites
 {
-	internal abstract class CombatSprite
+	public abstract class CombatSprite
 	{
 		public readonly List<Spell> Spells = new List<Spell>();
 		private Attributes attributes;
@@ -176,5 +176,5 @@ namespace Project.Sprites
 		}
 	}
 
-	internal delegate void SpriteEvent(CombatSprite sender);
+	public delegate void SpriteEvent(CombatSprite sender);
 }

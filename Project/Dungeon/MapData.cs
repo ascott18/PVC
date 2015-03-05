@@ -16,7 +16,7 @@ namespace Project.Dungeon
 	///     It is immutable, but the TileObjects that it contains may be modified as needed
 	///     as gameplay progresses.
 	/// </summary>
-	internal class MapData
+	public class MapData
 	{
 		/// <summary>
 		///     The number of tiles in a map in the horizonal direction.

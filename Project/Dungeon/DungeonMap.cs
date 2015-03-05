@@ -10,7 +10,7 @@ namespace Project.Dungeon
 	///     For our purposes, the whole game is a single dungeon.
 	///     Maps are 14x14 grids of Tiles.
 	/// </summary>
-	internal class DungeonMap
+	public class DungeonMap
 	{
 		public readonly Game Game;
 		public readonly MapData MapData;
