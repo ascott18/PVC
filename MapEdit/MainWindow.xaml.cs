@@ -179,6 +179,7 @@ namespace MapEdit
 				var text = File.ReadAllText(FilePathBox.Text);
 				TextEditor.Text = text;
 				currentFile = FilePathBox.Text;
+				ErrorText.Text = "Loaded " + new FileInfo(currentFile).FullName;
 				SaveButton.IsEnabled = true;
 
 				foreach (FoldingSection fm in foldingManager.AllFoldings)
@@ -187,20 +188,28 @@ namespace MapEdit
 						fm.IsFolded = true;
 				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				MessageBox.Show("File not found");
+				MessageBox.Show(ex.Message);
 			}
 		}
 
 		private void SaveButton_Click(object sender, RoutedEventArgs e)
 		{
-			if (String.IsNullOrEmpty(currentFile))
-				return;
+			try
+			{
+				if (String.IsNullOrEmpty(currentFile))
+					return;
 
-			var fout = new StreamWriter(File.OpenWrite(currentFile));
-			fout.Write(TextEditor.Text);
-			ErrorText.Text = "Saved to " + new FileInfo(currentFile).FullName;
+				var fout = new StreamWriter(File.OpenWrite(currentFile));
+				fout.Write(TextEditor.Text);
+				ErrorText.Text = "Saved to " + new FileInfo(currentFile).FullName;
+				fout.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 }
