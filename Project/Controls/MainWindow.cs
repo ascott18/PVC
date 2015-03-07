@@ -76,22 +76,32 @@ namespace Project.Controls
 		}
 
 		private Timer dungeonTimer;
+		private InventoryScreen inventoryScreen;
+		private StatsScreen statsScreen;
 
 		private void inventoryButton_Click(object sender, EventArgs e)
 		{
-			var inv = InventoryScreen.Instance;
-			inv.Party = Game.Party;
-			inv.StartPosition = FormStartPosition.Manual;
-			inv.Location = Location + new Size(Width, 0);
-			if (!inv.Visible)
+			if (inventoryScreen == null || inventoryScreen.IsDisposed)
+			{
+				var inv = inventoryScreen = new InventoryScreen
+				{
+					Party = Game.Party,
+					StartPosition = FormStartPosition.Manual,
+					Location = Location + new Size(Width, 0)
+				};
 				inv.Show(this);
+			}
 
-			var stats = StatsScreen.Instance;
-			stats.Party = Game.Party;
-			stats.StartPosition = FormStartPosition.Manual;
-			stats.Location = Location + new Size(Width, inv.Height);
-			if (!stats.Visible)
+			if (statsScreen == null || statsScreen.IsDisposed)
+			{
+				var stats = statsScreen = new StatsScreen
+				{
+					Party = Game.Party,
+					StartPosition = FormStartPosition.Manual,
+					Location = Location + new Size(Width, 415)
+				};
 				stats.Show(this);
+			}
 		}
 
 		private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)

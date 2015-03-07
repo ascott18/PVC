@@ -18,27 +18,10 @@ namespace Project.Controls
 		private Party party;
 
 		private readonly List<HeroInventoryContainer> hiContainers = new List<HeroInventoryContainer>();
-		
 
-		// Implements Singleton.
-		private static InventoryScreen instance;
 
-		/// <summary>
-		/// Gets the singleton instance of InventoryScreen.
-		/// </summary>
-		public static InventoryScreen Instance
+		public InventoryScreen()
 		{
-			get
-			{
-				if (instance != null)
-					return instance;
-				return instance = new InventoryScreen();
-			}
-		}
-
-		private InventoryScreen()
-		{
-			instance = this;
 			InitializeComponent();
 
 			//TODO: magic number right here needs to be a constant in the Party class.
