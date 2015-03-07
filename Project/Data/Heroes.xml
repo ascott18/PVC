@@ -45,4 +45,13 @@
 	<Spell id="102"/>
 	<Spell id="103"/>
   </Hero>
+  
+  <Hero id="5" texture="dwight" name="Dwight"
+		desc="Dwight needs a bio.">
+	<Attributes stamina="30" block="10" combo="10"/>
+	
+	<Spell id="111"/>
+	<Spell id="112"/>
+	<Spell id="113"/>
+  </Hero>
 </Heroes>

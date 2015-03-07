@@ -49,5 +49,10 @@
   <TargetedDamage id="102" name="Crook Dance" damage="24" castTime="3" cooldown="15"/>
   <AreaDamage	  id="103" name="Projectile Vomit" damage="8" castTime="1" cooldown="12"/>
   
+  <!--Dwight-->
+  <TargetedDamage id="111" name="Dwight Sp1" damage="12" castTime="1.5" cooldown="0"/>
+  <TargetedDamage id="112" name="Dwight Sp2" damage="24" castTime="3" cooldown="15"/>
+  <AreaDamage	  id="113" name="Dwight Sp3" damage="8" castTime="1" cooldown="12"/>
+  
   
 </Spells>
