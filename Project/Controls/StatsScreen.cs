@@ -17,8 +17,25 @@ namespace Project.Controls
 		private Party party;
 		private List<HeroStatsContainer> hsContainers = new List<HeroStatsContainer>();
 
-		public StatsScreen()
+		// Implements Singleton.
+		private static StatsScreen instance;
+
+		/// <summary>
+		/// Gets the singleton instance of StatsScreen.
+		/// </summary>
+		public static StatsScreen Instance
 		{
+			get
+			{
+				if (instance != null)
+					return instance;
+				return instance = new StatsScreen();
+			}
+		}
+
+		private StatsScreen()
+		{
+			instance = this;
 			InitializeComponent();
 			
 			//TODO: magic number right here needs to be a constant in the Party class.

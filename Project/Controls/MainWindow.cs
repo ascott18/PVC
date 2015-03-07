@@ -17,6 +17,16 @@ namespace Project.Controls
 		// Implements Singleton.
 		private static MainWindow instance;
 
+		public static MainWindow Window
+		{
+			get
+			{
+				if (instance != null)
+					return instance;
+				return instance = new MainWindow();
+			}
+		}
+
 		private MainWindow()
 		{
 			// We must set the instance inside the constructor so that
@@ -59,38 +69,29 @@ namespace Project.Controls
 
 		internal Game Game { get; private set; }
 
-		public static MainWindow Window
-		{
-			get
-			{
-				if (instance != null)
-					return instance;
-				return instance = new MainWindow();
-			}
-		}
 
 		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 		{
 			return Game.ProcessKey(keyData) || base.ProcessCmdKey(ref msg, keyData);
 		}
 
-		private InventoryScreen inventoryScreen;
-		private StatsScreen statsScreen;
 		private Timer dungeonTimer;
 
 		private void inventoryButton_Click(object sender, EventArgs e)
 		{
-			var inv = inventoryScreen = new InventoryScreen();
+			var inv = InventoryScreen.Instance;
 			inv.Party = Game.Party;
 			inv.StartPosition = FormStartPosition.Manual;
 			inv.Location = Location + new Size(Width, 0);
-			inv.Show(this);
+			if (!inv.Visible)
+				inv.Show(this);
 
-			var stats = statsScreen = new StatsScreen();
+			var stats = StatsScreen.Instance;
 			stats.Party = Game.Party;
 			stats.StartPosition = FormStartPosition.Manual;
 			stats.Location = Location + new Size(Width, inv.Height);
-			stats.Show(this);
+			if (!stats.Visible)
+				stats.Show(this);
 		}
 
 		private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
