@@ -421,7 +421,7 @@ namespace Project.Spells
 			return TooltipCache = sb.ToString();
 		}
 
-		protected static void ComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
+		protected static void DoComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
 		{
 			int combo = caster.Attributes.Combo;
 			// will combo only allow x2 hit?
@@ -437,6 +437,16 @@ namespace Project.Spells
 				}
 				combo -= 100;
 			}
+		}
+
+		protected static void DoBlockableAction(Action<CombatSprite> method, CombatSprite target)
+		{
+			int block = target.Attributes.Block;
+			int chance = rand.Next(0, 101);
+			if (chance < block) // attack was blocked
+				return;
+
+			method(target);
 		}
 
 		protected static void Heal(CombatSprite receiver, int health)
@@ -479,7 +489,10 @@ namespace Project.Spells
 		{
 			foreach (var aura in GenerateAuras())
 			{
-				aura.Apply(target);
+				if (aura.IsBlockable)
+					DoBlockableAction(aura.Apply, target);
+				else
+					aura.Apply(target);
 			}
 		}
 	}

@@ -93,6 +93,8 @@ namespace Project.Sprites
 
 				MaxHealth = newMaxHealth;
 				Health = (int)(Health * healthScaleFactor);
+
+				OnAttributesChanged();
 			}
 		}
 
@@ -105,13 +107,26 @@ namespace Project.Sprites
 		public event SpriteEvent HealthChanged;
 
 		/// <summary>
-		///     Recalculates the attributes of the sprite. Should be overridden by subclasses.
+		///     Recalculates the attributes of the sprite.
 		/// </summary>
-		public virtual void RecalculateAttributes()
+		public void RecalculateAttributes()
 		{
-			Attributes = BaseAttributes;
-			OnAttributesChanged();
+			var args = new SpriteAttributesRecalcEventArgs
+			{
+				Attributes = BaseAttributes
+			};
+
+			if (RecalculatingAttributes != null)
+				RecalculatingAttributes(this, args);
+
+			Attributes = args.Attributes * args.AttributesMultiplier;
 		}
+
+		/// <summary>
+		/// Fires when the Sprite is recalculating its attibutes.
+		/// Modify the event args to modify the sprite's stats.
+		/// </summary>
+		public event SpriteAttributesRecalcEvent RecalculatingAttributes;
 
 		protected void OnAttributesChanged()
 		{
@@ -131,7 +146,7 @@ namespace Project.Sprites
 			var description = element.Attribute("desc");
 			if (description != null) Description = description.Value;
 
-			BaseAttributes = Attributes.ParseAttributes(element.Element("Attributes"));
+			BaseAttributes = Attributes.Parse(element.Element("Attributes"));
 
 			foreach (var spellElement in element.XPathSelectElements("Spell"))
 			{
@@ -140,41 +155,12 @@ namespace Project.Sprites
 		}
 	}
 
-    // change this stuff elise
-	public struct Attributes
+	public delegate void SpriteAttributesRecalcEvent(CombatSprite sender, SpriteAttributesRecalcEventArgs args);
+
+	public class SpriteAttributesRecalcEventArgs
 	{
-		public int Combo;
-		public int Stamina;
-		public int Block;
-
-		public static Attributes operator +(Attributes a1, Attributes a2)
-		{
-			return new Attributes
-			{
-				Stamina = a1.Stamina + a2.Stamina,
-				Block = a1.Block + a2.Block,
-				Combo = a1.Combo + a2.Combo,
-			};
-		}
-
-		public static Attributes ParseAttributes(XElement element)
-		{
-			if (element == null) throw new ArgumentNullException("element");
-
-			return new Attributes
-			{
-				Stamina = int.Parse(element.Attribute("stamina").Value),
-				Block = int.Parse(element.Attribute("block").Value),
-				Combo = int.Parse(element.Attribute("combo").Value)
-			};
-		}
-
-		public override string ToString()
-		{
-			return "Stamina: " + Stamina
-			       + "\nStrength: " + Block
-			       + "\nIntellect: " + Combo;
-		}
+		public Attributes Attributes = new Attributes();
+		public AttributesMultiplier AttributesMultiplier = new AttributesMultiplier(1, 1, 1);
 	}
 
 	public delegate void SpriteEvent(CombatSprite sender);

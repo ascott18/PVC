@@ -196,10 +196,22 @@ namespace Project.Data
 					// Filter out only methods that are marked with [XmlParserAttribute]
 					// that return the requested type.
 				                      .Where(info => info.GetCustomAttributes<XmlParserAttribute>().Count() == 1
-				                                     && typeof(T).IsAssignableFrom(info.ReturnType))
+				                                     && typeof(T).IsAssignableFrom(info.ReturnType));
 
-					// Create a Dictionary from the methods that were marked with this attribute.
-				                      .ToDictionary
+
+				// Find duplicates and throw an exception if there are any.
+				var duplicates = methods
+					.Select(info => info.GetCustomAttributes<XmlParserAttribute>().First().ElementName)
+					.GroupBy(name => name)
+					.Where(group => group.Count() > 1)
+					.Select(group => group.Key)
+					.FirstOrDefault();
+				if (!String.IsNullOrEmpty(duplicates))
+					throw new ApplicationException("Duplicate parsers with elementName " + duplicates);
+
+
+				// Create a Dictionary from the methods that were marked with this attribute.
+				var methodsDict = methods.ToDictionary
 					<MethodInfo, string, Func<XElement, T>>(
 						// The key to the Dictionary should be the elementName defined by the attribute.
 						info => info.GetCustomAttributes<XmlParserAttribute>().First().ElementName,
@@ -224,7 +236,7 @@ namespace Project.Data
 						}
 					);
 
-				return parsers = methods;
+				return parsers = methodsDict;
 			}
 		}
 

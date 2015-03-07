@@ -171,7 +171,9 @@
     <Compile Include="Items\ItemFood.cs" />
     <Compile Include="Items\ItemCoin.cs" />
     <Compile Include="Items\LootPool.cs" />
+    <Compile Include="Spells\Attributes.cs" />
     <Compile Include="Spells\Aura.cs" />
+    <Compile Include="Spells\AuraStatMult.cs" />
     <Compile Include="Spells\AuraStun.cs" />
     <Compile Include="Spells\SpellAreaDamage.cs" />
     <Compile Include="Spells\SpellTargetedDamage.cs" />

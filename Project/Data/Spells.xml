@@ -44,7 +44,10 @@
 	<TargetedDamage id="91" name="Shield Slam" damage="6" castTime="0.5" cooldown="1" />
 	<AreaDamage id="92" name="Shockwave" damage="8" castTime="1" cooldown="15">
 		<Auras>
-			<Stun duration="2" />
+			<Stun duration="2" blockable="false"/>
+			<StatMult duration="5" blockable="false">
+			  <Multiplier stamina="-50" block="0" combo="0"/>
+			</StatMult>
 		</Auras>
 	</AreaDamage>
 	<AreaHealing id="93" name="Rallying Cry" healing="14" castTime="3" cooldown="9" />

@@ -11,6 +11,7 @@ namespace Project.Spells
 		protected Aura(XElement data)
 		{
 			Duration = (double)data.Attribute("duration");
+			IsBlockable = (bool)data.Attribute("blockable");
 		}
 
 		/// <summary>
@@ -54,17 +55,22 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Occurs when the aura is applied to a target.
+		///     Determines whether or not the application of the aura can be blocked.
+		/// </summary>
+		public bool IsBlockable { get; protected set; }
+
+		/// <summary>
+		///     Occurs when the aura is applied to a target.
 		/// </summary>
 		public event EventHandler Applied;
 
 		/// <summary>
-		/// Occurs when the aura is removed from a target.
+		///     Occurs when the aura is removed from a target.
 		/// </summary>
 		public event EventHandler Removed;
 
 		/// <summary>
-		/// Apply the aura to a target. This may only be called once per instance.
+		///     Apply the aura to a target. This may only be called once per instance.
 		/// </summary>
 		/// <param name="target">The target of the aura.</param>
 		public void Apply(CombatSprite target)
@@ -92,7 +98,7 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Override in subclasses to provide behavior each time the CombatSession updates.
+		///     Override in subclasses to provide behavior each time the CombatSession updates.
 		/// </summary>
 		protected virtual void OnUpdate()
 		{
@@ -100,7 +106,7 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Remove the aura from its target.
+		///     Remove the aura from its target.
 		/// </summary>
 		public void Remove()
 		{
