@@ -46,6 +46,7 @@ namespace Project.Spells
 	        foreach (var member in sprite.Members)
 	        {
 	            DoComboAction(Heal, Owner, member, healing);
+				ApplyAuras(member);
 	        }
 	    }
 

@@ -4,7 +4,11 @@
 	<!--Milton-->
 	<TargetedDamage id="1" name="Mumble" damage="9" castTime="2" cooldown="6" />
 	<TargetedDamage id="2" name="Staple Fire" damage="1" castTime="0.3" cooldown="0" />
-	<AreaDamage id="3" name="Incinerate" damage="20" castTime="2.5" cooldown="10" />
+	<AreaDamage id="3" name="Incinerate" damage="5" castTime="2.5" cooldown="10">
+	  <Auras>
+		<DamageOverTime blockable="false" duration="6" damage="15"/>
+	  </Auras>
+	</AreaDamage>
 
 	<!--Stu-->
 	<TargetedDamage id="11" name="Booming Voice" damage="6" castTime="3" cooldown="0" />

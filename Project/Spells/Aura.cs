@@ -6,7 +6,7 @@ using Project.Sprites;
 
 namespace Project.Spells
 {
-	public class Aura
+	public abstract class Aura
 	{
 		protected Aura(XElement data)
 		{

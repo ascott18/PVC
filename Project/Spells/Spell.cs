@@ -421,7 +421,7 @@ namespace Project.Spells
 			return TooltipCache = sb.ToString();
 		}
 
-		protected static void DoComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
+		internal static void DoComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
 		{
 			int combo = caster.Attributes.Combo;
 			// will combo only allow x2 hit?
@@ -439,7 +439,7 @@ namespace Project.Spells
 			}
 		}
 
-		protected static void DoBlockableAction(Action<CombatSprite> method, CombatSprite target)
+		internal static void DoBlockableAction(Action<CombatSprite> method, CombatSprite target)
 		{
 			int block = target.Attributes.Block;
 			int chance = rand.Next(0, 101);
@@ -449,12 +449,12 @@ namespace Project.Spells
 			method(target);
 		}
 
-		protected static void Heal(CombatSprite receiver, int health)
+		internal static void Heal(CombatSprite receiver, int health)
 		{
 			receiver.Health += health;
 		}
 
-		protected static void DealBlockableDamage(CombatSprite target, int damage)
+		internal static void DealBlockableDamage(CombatSprite target, int damage)
 		{
 			int block = target.Attributes.Block;
 			int chance = rand.Next(0, 101);
@@ -464,7 +464,7 @@ namespace Project.Spells
 			DealUnblockableDamage(target, damage);
 		}
 
-		protected static void DealUnblockableDamage(CombatSprite target, int damage)
+		internal static void DealUnblockableDamage(CombatSprite target, int damage)
 		{
 			target.Health -= damage;
 		}

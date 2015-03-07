@@ -30,7 +30,10 @@ namespace Project.Spells
 				case CastState.Finishing:
 					target = Session.GetTarget(Owner);
 					if (target != null)
-                        DoComboAction(DealBlockableDamage, Owner, target, damage);
+					{
+						DoComboAction(DealBlockableDamage, Owner, target, damage);
+						ApplyAuras(target);
+					}
 					break;
 			}
 		}
