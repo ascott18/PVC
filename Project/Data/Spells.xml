@@ -1,58 +1,63 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Spells>
-  <!--Milton-->
-  <TargetedDamage id="1" name="Mumble" damage="9" castTime="2" cooldown="6"/>
-  <TargetedDamage id="2" name="Staple Fire" damage="1" castTime="0.3" cooldown="0"/>
-  <AreaDamage	  id="3" name="Incinerate" damage="20" castTime="2.5" cooldown="10"/>
-  
-  <!--Stu-->
-  <TargetedDamage id="11" name="Booming Voice" damage="6" castTime="3" cooldown="0"/>
-  <AreaDamage	  id="12" name="Knowledge Blast" damage="18" castTime="4" cooldown="8"/>
-  <AreaHealing	  id="13" name="Advise" healing="15" castTime="3" cooldown="10"/>
-  
-  <!--Lumbergh-->
-  <TargetedDamage id="21" name="Order TPS Reports" damage="4" castTime="2" cooldown="0"/>
-  <TargetedDamage id="22" name="Request Saturday" damage="10" castTime="3" cooldown="5"/>
+	<!--Milton-->
+	<TargetedDamage id="1" name="Mumble" damage="9" castTime="2" cooldown="6" />
+	<TargetedDamage id="2" name="Staple Fire" damage="1" castTime="0.3" cooldown="0" />
+	<AreaDamage id="3" name="Incinerate" damage="20" castTime="2.5" cooldown="10" />
 
-  <!--Stephen-->
-  <TargetedDamage id="31" name="Pester" damage="5" castTime="2" cooldown="2"/>
-  <SelfHealing	  id="32" name="Energy Drink" healing="20" castTime="3" cooldown="15"/>
-  <AreaHealing	  id="33" name="Order Coffee" healing="8" castTime="4" cooldown="10"/>
+	<!--Stu-->
+	<TargetedDamage id="11" name="Booming Voice" damage="6" castTime="3" cooldown="0" />
+	<AreaDamage id="12" name="Knowledge Blast" damage="18" castTime="4" cooldown="8" />
+	<AreaHealing id="13" name="Advise" healing="15" castTime="3" cooldown="10" />
 
-  <!--Evil Computer-->
-  <TargetedDamage id="41" name="Encrypt Files" damage="5" castTime="1.5" cooldown="0"/>
-  <AreaDamage	  id="42" name="Ultimatum" damage="25" castTime="4" cooldown="15"/>
+	<!--Lumbergh-->
+	<TargetedDamage id="21" name="Order TPS Reports" damage="4" castTime="2" cooldown="0" />
+	<TargetedDamage id="22" name="Request Saturday" damage="10" castTime="3" cooldown="5" />
 
-  <!--Printer-->
-  <TargetedDamage id="51" name="PC Load Letter" damage="15" castTime="4" cooldown="0"/>
+	<!--Stephen-->
+	<TargetedDamage id="31" name="Pester" damage="5" castTime="2" cooldown="2" />
+	<SelfHealing id="32" name="Energy Drink" healing="20" castTime="3" cooldown="15" />
+	<AreaHealing id="33" name="Order Coffee" healing="8" castTime="4" cooldown="10" />
 
-  <!--Tangled Cables-->
-  <AreaDamage     id="61" name="Trip" damage="15" castTime="4" cooldown="0"/>
-  <TargetedDamage id="62" name="Strangle" damage="25" castTime="4" cooldown="13"/>
-  <SelfHealing	  id="63" name="Tangle" healing="20" castTime="2" cooldown="10"/>
-  
-  <!--Overheated Server-->
-  <AreaDamage     id="71" name="Release Magic Smoke" damage="10" castTime="2" cooldown="0"/>
-  <SelfHealing	  id="72" name="Overvolt Fans" healing="5" castTime="1" cooldown="7"/>
-  
-  <!--Bu.g-->
-  <TargetedDamage id="81" name="Throw Exception" damage="12" castTime="1.5" cooldown="0"/>
-  <SelfHealing	  id="82" name="Evade" healing="8" castTime="2" cooldown="9"/>
-  
-  <!--Carty-->
-  <TargetedDamage id="91" name="Shield Slam" damage="6" castTime="0.5" cooldown="1"/>
-  <AreaDamage	  id="92" name="Shockwave" damage="8" castTime="1" cooldown="15"/>
-  <AreaHealing	  id="93" name="Rallying Cry" healing="14" castTime="3" cooldown="9"/>
-  
-  <!--Laggy-->
-  <TargetedDamage id="101" name="Shred" damage="12" castTime="1.5" cooldown="0"/>
-  <TargetedDamage id="102" name="Crook Dance" damage="24" castTime="3" cooldown="15"/>
-  <AreaDamage	  id="103" name="Projectile Vomit" damage="8" castTime="1" cooldown="12"/>
-  
-  <!--Dwight-->
-  <TargetedDamage id="111" name="Dwight Sp1" damage="12" castTime="1.5" cooldown="0"/>
-  <TargetedDamage id="112" name="Dwight Sp2" damage="24" castTime="3" cooldown="15"/>
-  <AreaDamage	  id="113" name="Dwight Sp3" damage="8" castTime="1" cooldown="12"/>
-  
-  
+	<!--Evil Computer-->
+	<TargetedDamage id="41" name="Encrypt Files" damage="5" castTime="1.5" cooldown="0" />
+	<AreaDamage id="42" name="Ultimatum" damage="25" castTime="4" cooldown="15" />
+
+	<!--Printer-->
+	<TargetedDamage id="51" name="PC Load Letter" damage="15" castTime="4" cooldown="0" />
+
+	<!--Tangled Cables-->
+	<AreaDamage id="61" name="Trip" damage="15" castTime="4" cooldown="0" />
+	<TargetedDamage id="62" name="Strangle" damage="25" castTime="4" cooldown="13" />
+	<SelfHealing id="63" name="Tangle" healing="20" castTime="2" cooldown="10" />
+
+	<!--Overheated Server-->
+	<AreaDamage id="71" name="Release Magic Smoke" damage="10" castTime="2" cooldown="0" />
+	<SelfHealing id="72" name="Overvolt Fans" healing="5" castTime="1" cooldown="7" />
+
+	<!--Bu.g-->
+	<TargetedDamage id="81" name="Throw Exception" damage="12" castTime="1.5" cooldown="0" />
+	<SelfHealing id="82" name="Evade" healing="8" castTime="2" cooldown="9" />
+
+	<!--Carty-->
+	<TargetedDamage id="91" name="Shield Slam" damage="6" castTime="0.5" cooldown="1" />
+	<AreaDamage id="92" name="Shockwave" damage="8" castTime="1" cooldown="15">
+		<Auras>
+			<Stun duration="2" />
+		</Auras>
+	</AreaDamage>
+	<AreaHealing id="93" name="Rallying Cry" healing="14" castTime="3" cooldown="9" />
+
+	<!--Laggy-->
+	<TargetedDamage id="101" name="Shred" damage="12" castTime="1.5" cooldown="0" />
+	<TargetedDamage id="102" name="Crook Dance" damage="24" castTime="3" cooldown="15" />
+	<AreaDamage id="103" name="Projectile Vomit" damage="8" castTime="1" cooldown="12" />
+
+	<!--Dwight-->
+	<TargetedDamage id="111" name="Dwight Sp1" damage="12" castTime="1.5" cooldown="0" />
+	<TargetedDamage id="112" name="Dwight Sp2" damage="24" castTime="3" cooldown="15" />
+	<AreaDamage id="113" name="Dwight Sp3" damage="8" castTime="1" cooldown="12" />
+
+
 </Spells>

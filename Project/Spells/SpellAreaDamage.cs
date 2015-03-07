@@ -46,6 +46,7 @@ namespace Project.Spells
             foreach (var member in sprite.Members)
             {
                 ComboAction(DealBlockableDamage, Owner, member, damage);
+				ApplyAuras(member);
             }
         }
 

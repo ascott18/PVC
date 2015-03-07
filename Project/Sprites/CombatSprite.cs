@@ -17,6 +17,7 @@ namespace Project.Sprites
 		private int health = 1;
 		private int maxHealth = 1;
 		public readonly DungeonSprite Parent;
+		public List<Aura> Auras = new List<Aura>();
 
 		protected CombatSprite(DungeonSprite parent)
 		{
