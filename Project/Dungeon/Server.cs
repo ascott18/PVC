@@ -26,8 +26,15 @@ namespace Project.Dungeon
 		public Server(Point loc)
 			: base(loc)
 		{
-			timer = new Timer(TimerCallback, false, 0, 500);
-			TimerCallback(true);
+			// Make a random for this class (to prevent excessive locking on a shared random),
+			// and seed it with a shared random (to prevent all instance randoms from having the same seed).
+			lock (randomSeeder)
+				random = new Random(randomSeeder.Next());
+
+			timer = new Timer(TimerCallback, false, Timeout.Infinite, Timeout.Infinite);
+
+			// Do an update asap.
+			Task.Run(() => TimerCallback(true));
 		}
 
 		private void TimerCallback(object state)
@@ -87,12 +94,19 @@ namespace Project.Dungeon
 						}
 					}
 				}
+
+				// Queue another update for a random amount of time in the future.
 				lock (random)
-					timer.Change(random.Next(50, 100), 50000);
+					timer.Change(random.Next(100, 200), Timeout.Infinite);
 			}
 			else
+			{
+				// Sleep for an extended amount of time while it doesn't need to be redrawn.
+				// Still keep it random so it looks more natural when the player enters 
+				// the room again.
 				lock (random)
-					timer.Change(random.Next(1000, 2000), 50000);
+					timer.Change(random.Next(1000, 2000), Timeout.Infinite);
+			}
 
 
 		}
@@ -112,7 +126,8 @@ namespace Project.Dungeon
 			Color.LimeGreen, Color.LimeGreen,
 		};
 
-		private static readonly Random random = new Random();
+		private static readonly Random randomSeeder = new Random();
+		private readonly Random random;
 
 
 
