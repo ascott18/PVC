@@ -92,6 +92,15 @@ namespace Project.Controls
 				inv.Show(this);
 			}
 
+		}
+
+		private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+
+		private void statsButton_Click(object sender, EventArgs e)
+		{
 			if (statsScreen == null || statsScreen.IsDisposed)
 			{
 				var stats = statsScreen = new StatsScreen
@@ -102,11 +111,6 @@ namespace Project.Controls
 				};
 				stats.Show(this);
 			}
-		}
-
-		private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
-		{
-			Application.Exit();
 		}
 
 	}
