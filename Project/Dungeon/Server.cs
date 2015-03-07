@@ -31,13 +31,13 @@ namespace Project.Dungeon
 			lock (randomSeeder)
 				random = new Random(randomSeeder.Next());
 
-			timer = new Timer(TimerCallback, false, Timeout.Infinite, Timeout.Infinite);
+			timer = new Timer(Render, false, Timeout.Infinite, Timeout.Infinite);
 
 			// Do an update asap.
-			Task.Run(() => TimerCallback(true));
+			Task.Run(() => Render(true));
 		}
 
-		private void TimerCallback(object state)
+		private void Render(object state)
 		{
 			var forceDraw = state as bool?;
 
@@ -54,12 +54,11 @@ namespace Project.Dungeon
 				for (int i = 0; i < currentImage.Height * currentImage.Width; ++i)
 				{
 
-					int shouldChangeRandom;
-					lock(random)
-						shouldChangeRandom = !isFirstGen ? random.Next(101) : 0;
+					int shouldChangeRandom = !isFirstGen ? random.Next(101) : 0;
 
 					const int shouldChangePercent = 2;
 
+					// Only change a pixel 2% of the time (or if this is the first render).
 					if (isFirstGen || shouldChangeRandom < shouldChangePercent)
 					{
 						int row = i / currentImage.Height;
@@ -69,20 +68,14 @@ namespace Project.Dungeon
 						var pixel = currentImage.GetPixel(col, row);
 						if (pixel.A > 0)
 						{
+							// We want it to be 95% black.
 							const int blackPercent = 95;
-							int colorRandom;
-							lock (random)
-								colorRandom = random.Next(101);
 
 							Color color;
-							if (colorRandom < blackPercent)
-								color = Color.Black;
+							if (random.Next(101) < blackPercent)
+								color = Color.DimGray;
 							else
-							{
-								lock (random)
-									colorRandom = random.Next(colors.Length);
-								color = colors[colorRandom];
-							}
+								color = colors[random.Next(colors.Length)];
 
 							if (pixel != color)
 							{
@@ -96,16 +89,14 @@ namespace Project.Dungeon
 				}
 
 				// Queue another update for a random amount of time in the future.
-				lock (random)
-					timer.Change(random.Next(100, 200), Timeout.Infinite);
+				timer.Change(random.Next(100, 200), Timeout.Infinite);
 			}
 			else
 			{
 				// Sleep for an extended amount of time while it doesn't need to be redrawn.
 				// Still keep it random so it looks more natural when the player enters 
 				// the room again.
-				lock (random)
-					timer.Change(random.Next(1000, 2000), Timeout.Infinite);
+				timer.Change(random.Next(1000, 2000), Timeout.Infinite);
 			}
 
 
@@ -122,7 +113,7 @@ namespace Project.Dungeon
 
 		private static readonly Color[] colors =
 		{
-			Color.Red, Color.Blue, Color.Orange, 
+			Color.Red, Color.Cyan, Color.Orange, 
 			Color.LimeGreen, Color.LimeGreen,
 		};
 
