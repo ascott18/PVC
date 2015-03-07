@@ -337,6 +337,7 @@
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />
+    <None Include="Resources\wayBetterWires.png" />
     <Content Include="Resources\wood.bmp" />
     <None Include="Resources\stu.png" />
     <None Include="Resources\shoerner.png" />

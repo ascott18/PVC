@@ -37,7 +37,7 @@
 	<Spell id="82"/>
   </Monster>
   
-  <Monster id="21" texture="cables" name="Tangled Cables">
+  <Monster id="21" texture="wayBetterWires" name="Tangled Cables">
 	<Attributes stamina="25" block="5" combo="50"/>
 	<Spell id="61"/>
 	<Spell id="62"/>
