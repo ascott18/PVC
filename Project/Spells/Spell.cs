@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Runtime.ExceptionServices;
-using System.Runtime.Remoting.Channels;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -20,7 +18,6 @@ namespace Project.Spells
 	/// </summary>
 	public abstract class Spell
 	{
-        Random rand = new Random();
 		/// <summary>
 		///     Represents the states that a spell can be in.
 		/// </summary>
@@ -62,7 +59,11 @@ namespace Project.Spells
 			Canceling,
 		}
 
+		private readonly IReadOnlyList<XElement> AuraElements;
+		private readonly static Random rand = new Random();
+
 		private readonly int spellID;
+		protected string TooltipCache;
 		private bool isAutoCast;
 		private CastState state = CastState.Unused;
 
@@ -76,6 +77,7 @@ namespace Project.Spells
 			spellID = (int)data.Attribute("id");
 			CastDuration = (double)data.Attribute("castTime");
 			CooldownDuration = (double)data.Attribute("cooldown");
+			AuraElements = data.XPathSelectElements("Auras/*").ToList().AsReadOnly();
 
 			StateChanging += Spell_StateStateChanging;
 			StateChanged += Spell_StateStateChanged;
@@ -389,6 +391,9 @@ namespace Project.Spells
 			if (!Owner.IsActive)
 				return false;
 
+			if (Owner.Auras.OfType<AuraStun>().Any(aura => aura.Remaining > 0))
+				return false;
+
 
 			State = CastState.Starting;
 
@@ -403,7 +408,6 @@ namespace Project.Spells
 		}
 
 
-		protected string TooltipCache;
 		public virtual string GetTooltip()
 		{
 			if (TooltipCache != null)
@@ -417,44 +421,80 @@ namespace Project.Spells
 			return TooltipCache = sb.ToString();
 		}
 
-	    internal void ComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
-	    {
-	        int combo = caster.Attributes.Combo;
-            // will combo only allow x2 hit?
-            // need logic for more than 2 hits
+		internal static void DoComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
+		{
+			int combo = caster.Attributes.Combo;
+			// will combo only allow x2 hit?
+			// need logic for more than 2 hits
 
-            method(target, hp);
-		    while (combo > 0)
+			method(target, hp);
+			while (combo > 0)
 			{
 				int chance = rand.Next(0, 101);
-			    if (chance < combo)
-			    {
-				    method(target, hp);
+				if (chance < combo)
+				{
+					method(target, hp);
 				}
 				combo -= 100;
-		    }
-	    }
+			}
+		}
 
-	    internal void Heal(CombatSprite receiver, int health)
-	    {
-	        receiver.Health += health;
-	    }
+		internal static void DoBlockableAction(Action<CombatSprite> method, CombatSprite target)
+		{
+			int block = target.Attributes.Block;
+			int chance = rand.Next(0, 101);
+			if (chance < block) // attack was blocked
+				return;
 
-        internal void DealBlockableDamage(CombatSprite target, int damage)
-        {
-            int block = target.Attributes.Block;
-            int chance = rand.Next(0, 101);
-            if (chance < block) // attack was blocked
-                return;
+			method(target);
+		}
 
-            DealUnblockableDamage(target, damage);
-        }
+		internal static void Heal(CombatSprite receiver, int health)
+		{
+			receiver.Health += health;
+		}
 
-	    internal void DealUnblockableDamage(CombatSprite target, int damage)
-	    {
-	        target.Health -= damage;
-	    }
+		internal static void DealBlockableDamage(CombatSprite target, int damage)
+		{
+			int block = target.Attributes.Block;
+			int chance = rand.Next(0, 101);
+			if (chance < block) // attack was blocked
+				return;
 
+			DealUnblockableDamage(target, damage);
+		}
+
+		internal static void DealUnblockableDamage(CombatSprite target, int damage)
+		{
+			target.Health -= damage;
+		}
+
+		/// <summary>
+		/// Generate aura instances for the spell.
+		/// </summary>
+		/// <returns></returns>
+		protected IEnumerable<Aura> GenerateAuras()
+		{
+			if (State == CastState.Unused)
+				throw new InvalidOperationException("Can't generate auras on an unused spell");
+
+			return AuraElements.Select(auraElement => Aura.CreateAura(Session, Owner, auraElement));
+		}
+
+		/// <summary>
+		/// Apply all of the auras associated with the spell to a target.
+		/// </summary>
+		/// <param name="target"></param>
+		protected void ApplyAuras(CombatSprite target)
+		{
+			foreach (var aura in GenerateAuras())
+			{
+				if (aura.IsBlockable)
+					DoBlockableAction(aura.Apply, target);
+				else
+					aura.Apply(target);
+			}
+		}
 	}
 
 	/// <summary>
@@ -474,5 +514,4 @@ namespace Project.Spells
 	///     See individual event implementations for detail.
 	/// </param>
 	public delegate void SpellStateEvent(Spell sender, Spell.CastState state);
-
 }

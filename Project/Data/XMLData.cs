@@ -13,17 +13,18 @@ using Project.Properties;
 namespace Project.Data
 {
 	/// <summary>
-	/// XmlData is a utility class for parsing data from XML.
-	/// It contains functionality for loading XML files from the project's resx
-	/// file and storing these as XDocuments for repeated use.
+	///     XmlData is a utility class for parsing data from XML.
+	///     It contains functionality for loading XML files from the project's resx
+	///     file and storing these as XDocuments for repeated use.
 	/// </summary>
 	public static class XmlData
 	{
 		private static readonly Dictionary<string, XDocument> Documents = new Dictionary<string, XDocument>();
+		private static readonly Dictionary<string, Image> composites = new Dictionary<string, Image>();
 
 		/// <summary>
-		/// Gets the XML Document for the specified embedded resource.
-		/// Loads it if it isn't already loaded.
+		///     Gets the XML Document for the specified embedded resource.
+		///     Loads it if it isn't already loaded.
 		/// </summary>
 		/// <returns>The XDocument representing the requested resources.</returns>
 		public static XDocument GetDocument(string resourceName)
@@ -49,7 +50,7 @@ namespace Project.Data
 		}
 
 		/// <summary>
-		/// Returns an xElement with the specified id attribute from a document.
+		///     Returns an xElement with the specified id attribute from a document.
 		/// </summary>
 		/// <param name="documentRootName">The document name and root element name.</param>
 		/// <param name="id">The ID of the element to find.</param>
@@ -61,7 +62,7 @@ namespace Project.Data
 
 
 		/// <summary>
-		/// Returns an xElement with the specified id attribute from a document.
+		///     Returns an xElement with the specified id attribute from a document.
 		/// </summary>
 		/// <param name="documentName">The document name.</param>
 		/// <param name="rootElement">The root element name.</param>
@@ -75,7 +76,7 @@ namespace Project.Data
 
 
 		/// <summary>
-		/// Returns an xElement with the specified id attribute from a document.
+		///     Returns an xElement with the specified id attribute from a document.
 		/// </summary>
 		/// <param name="document">The document to read from.</param>
 		/// <param name="rootElement">The root element name.</param>
@@ -86,11 +87,38 @@ namespace Project.Data
 			return document.XPathSelectElement(String.Format("{0}/*[number(@id)={1}]", rootElement, id));
 		}
 
+		/// <summary>
+		///     Parses an XElement from the given document with given "id" attribute
+		///     into an object of the secified type using
+		///     an appropriate parser that was marked with [XmlParsableAttribute].
+		/// </summary>
+		/// <typeparam name="T">The type of object to parse</typeparam>
+		/// <param name="documentRootName">The name of the document, which must match the name of the document's root element.</param>
+		/// <param name="ID">
+		///     The "id" attribute to match an XElement with. The matched XElement must be a child of the document's
+		///     root element.
+		/// </param>
+		/// <returns></returns>
 		internal static T XmlParserParseByID<T>(string documentRootName, int ID)
 		{
-			var methods = XmlParsable<T>.GetParsers();
-
 			var xElement = GetXElementByID(documentRootName, ID);
+
+			if (xElement == null)
+				throw new Exception("Missing " + documentRootName + " element with ID " + ID);
+
+			return XmlParserParseElement<T>(xElement);
+		}
+
+		/// <summary>
+		///     Parses the given XElement into an object of the secified type using
+		///     an appropriate parser that was marked with [XmlParsableAttribute].
+		/// </summary>
+		/// <typeparam name="T">The type of object to parse</typeparam>
+		/// <param name="xElement">The XElement to parse it from.</param>
+		/// <returns>The parsed object.</returns>
+		internal static T XmlParserParseElement<T>(XElement xElement)
+		{
+			var methods = XmlParsable<T>.GetParsers();
 
 			var elementName = xElement.Name.ToString();
 
@@ -102,11 +130,9 @@ namespace Project.Data
 			return parserMethod(xElement);
 		}
 
-		private static Dictionary<string, Image> composites = new Dictionary<string, Image>(); 
-
 		/// <summary>
-		/// Try and get the embedded image represented by the provided name.
-		/// Embedded resources are defined in Resources.resx
+		///     Try and get the embedded image represented by the provided name.
+		///     Embedded resources are defined in Resources.resx
 		/// </summary>
 		/// <param name="imageName">The name of the embedded image to retrive</param>
 		/// <returns>The image, or null if the input parameter was the empty string.</returns>
@@ -128,10 +154,10 @@ namespace Project.Data
 				image = new Bitmap(Tile.DimPixels, Tile.DimPixels);
 
 				using (var g = Graphics.FromImage(image))
-				foreach (string subImage in imageName.Split(new []{' '}))
-				{
-					g.DrawImage(LoadImage(subImage), 0, 0, Tile.DimPixels, Tile.DimPixels);
-				}
+					foreach (string subImage in imageName.Split(new[]{' '}))
+					{
+						g.DrawImage(LoadImage(subImage), 0, 0, Tile.DimPixels, Tile.DimPixels);
+					}
 
 				return composites[imageName] = image;
 			}
@@ -145,28 +171,13 @@ namespace Project.Data
 			}
 		}
 
-		[AttributeUsage(AttributeTargets.Method)]
-		internal class XmlParserAttribute : Attribute
-		{
-			public readonly string ElementName;
-
-			/// <summary>
-			/// Declare a method as one that will take an incoming XElement, parse it,
-			/// and return a new instance of an appropriate type.
-			/// </summary>
-			/// <param name="elementName">The XElement.Name that this method will parse.</param>
-			public XmlParserAttribute(string elementName)
-			{
-				ElementName = elementName;
-			}
-		}
-
 		internal static class XmlParsable<T>
-		{ 
+		{
 			private static Dictionary<string, Func<XElement, T>> parsers;
+
 			/// <summary>
 			///     Gets a dictionary of all methods that have been marked with
-			///		[XmlParserAttribute(elementName)] and have return type T,
+			///     [XmlParserAttribute(elementName)] and have return type T,
 			///     with the keys of the dictionary as elementName and the values as Func&lt;XElement, T&gt;
 			/// </summary>
 			/// <returns>The dictionary of XML pasing methods</returns>
@@ -179,16 +190,28 @@ namespace Project.Data
 
 				// Inspired by http://stackoverflow.com/questions/3467765/get-method-details-using-reflection-and-decorated-attribute
 				var methods = Assembly.GetExecutingAssembly()
-									  .GetTypes()
-									  .SelectMany(type => type.GetMethods())
+				                      .GetTypes()
+				                      .SelectMany(type => type.GetMethods())
 
-									  // Filter out only methods that are marked with [XmlParserAttribute]
-									  // that return the requested type.
-									  .Where(info => info.GetCustomAttributes<XmlParserAttribute>().Count() == 1
-										&& typeof(T).IsAssignableFrom(info.ReturnType))
+					// Filter out only methods that are marked with [XmlParserAttribute]
+					// that return the requested type.
+				                      .Where(info => info.GetCustomAttributes<XmlParserAttribute>().Count() == 1
+				                                     && typeof(T).IsAssignableFrom(info.ReturnType));
 
-									  // Create a Dictionary from the methods that were marked with this attribute.
-									  .ToDictionary
+
+				// Find duplicates and throw an exception if there are any.
+				var duplicates = methods
+					.Select(info => info.GetCustomAttributes<XmlParserAttribute>().First().ElementName)
+					.GroupBy(name => name)
+					.Where(group => group.Count() > 1)
+					.Select(group => group.Key)
+					.FirstOrDefault();
+				if (!String.IsNullOrEmpty(duplicates))
+					throw new ApplicationException("Duplicate parsers with elementName " + duplicates);
+
+
+				// Create a Dictionary from the methods that were marked with this attribute.
+				var methodsDict = methods.ToDictionary
 					<MethodInfo, string, Func<XElement, T>>(
 						// The key to the Dictionary should be the elementName defined by the attribute.
 						info => info.GetCustomAttributes<XmlParserAttribute>().First().ElementName,
@@ -199,7 +222,10 @@ namespace Project.Data
 							T result;
 							try
 							{
-								result = (T) info.Invoke(null, new object[] {element});
+								result = (T)info.Invoke(null, new object[]
+								{
+									element
+								});
 							}
 							catch (TargetInvocationException ex)
 							{
@@ -210,7 +236,23 @@ namespace Project.Data
 						}
 					);
 
-				return parsers = methods;
+				return parsers = methodsDict;
+			}
+		}
+
+		[AttributeUsage(AttributeTargets.Method)]
+		internal class XmlParserAttribute : Attribute
+		{
+			public readonly string ElementName;
+
+			/// <summary>
+			///     Declare a method as one that will take an incoming XElement, parse it,
+			///     and return a new instance of an appropriate type.
+			/// </summary>
+			/// <param name="elementName">The XElement.Name that this method will parse.</param>
+			public XmlParserAttribute(string elementName)
+			{
+				ElementName = elementName;
 			}
 		}
 	}

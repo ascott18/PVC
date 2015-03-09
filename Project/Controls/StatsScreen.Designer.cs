@@ -40,7 +40,7 @@
 			this.Name = "StatsScreen";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
-			this.Text = "StatsScreen";
+			this.Text = "Stats";
 			this.ResumeLayout(false);
 
 		}

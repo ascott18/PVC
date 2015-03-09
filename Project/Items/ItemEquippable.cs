@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using System.Xml.Linq;
 using Project.Data;
+using Project.Spells;
 using Project.Sprites;
 
 namespace Project.Items
@@ -38,7 +39,7 @@ namespace Project.Items
 
 			return new ItemEquippable(id, name, slot)
 			{
-				Attributes = Attributes.ParseAttributes(itemElement.Element("Attributes"))
+				Attributes = Attributes.Parse(itemElement.Element("Attributes"))
 			};
 		}
 

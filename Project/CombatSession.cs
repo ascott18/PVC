@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading;
 using System.Windows.Forms;
 using Project.Controls;
@@ -137,7 +138,6 @@ namespace Project
 			var sess = session as CombatSession;
 			var timer = new Stopwatch();
 			timer.Start();
-			var handler = new MethodInvoker(CombatTimerOnTick);
 
 			while (sess.State != CombatState.Ended)
 			{
@@ -156,6 +156,21 @@ namespace Project
 					// We must call Invoke on something from the main thread.
 					try
 					{
+						var handler = new MethodInvoker(() =>
+						{
+							try
+							{
+								CombatTimerOnTick();
+							}
+							catch (Exception ex)
+							{
+								if (Debugger.IsAttached)
+									Debugger.Break();
+								else
+									throw ex;
+							}
+						});
+
 						MainWindow.Window.Invoke(handler);
 					}
 					catch (ObjectDisposedException)
@@ -230,7 +245,7 @@ namespace Project
 
 			gameTimer.Stop();
 
-			Winner = partyVictory ? (DungeonSprite) Party : MonsterPack;
+			Winner = partyVictory ? (DungeonSprite)Party : MonsterPack;
 
 			var loot = new List<Item>();
 			foreach (var monster in MonsterPack.Members.Cast<Monster>())
@@ -351,7 +366,7 @@ namespace Project
 			if (Update != null) Update(this);
 
 			// Attempt to cast any queued spells.
-			for (int i = 0; i < spellQueue.Count;)
+			for (int i = 0; i < spellQueue.Count; )
 			{
 				var spell = spellQueue[i];
 
@@ -376,8 +391,6 @@ namespace Project
 			{
 				(monster as Monster).DoAction(this);
 			}
-
-			//MainWindow.Window.combatArena.Refresh();
 		}
 
 		/// <summary>

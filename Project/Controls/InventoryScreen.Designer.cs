@@ -41,7 +41,7 @@
 			this.inventoryContainer.Controls.Add(this.inventoryFlow);
 			this.inventoryContainer.Location = new System.Drawing.Point(338, 0);
 			this.inventoryContainer.Name = "inventoryContainer";
-			this.inventoryContainer.Size = new System.Drawing.Size(246, 419);
+			this.inventoryContainer.Size = new System.Drawing.Size(246, 373);
 			this.inventoryContainer.TabIndex = 3;
 			this.inventoryContainer.TabStop = false;
 			this.inventoryContainer.Text = "Inventory";
@@ -55,7 +55,7 @@
 			this.inventoryFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.inventoryFlow.Location = new System.Drawing.Point(3, 16);
 			this.inventoryFlow.Name = "inventoryFlow";
-			this.inventoryFlow.Size = new System.Drawing.Size(240, 400);
+			this.inventoryFlow.Size = new System.Drawing.Size(240, 354);
 			this.inventoryFlow.TabIndex = 0;
 			this.inventoryFlow.WrapContents = false;
 			// 
@@ -63,7 +63,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(589, 422);
+			this.ClientSize = new System.Drawing.Size(589, 376);
 			this.Controls.Add(this.inventoryContainer);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;

@@ -19,6 +19,7 @@ namespace Project.Controls
 
 		private readonly List<HeroInventoryContainer> hiContainers = new List<HeroInventoryContainer>();
 
+
 		public InventoryScreen()
 		{
 			InitializeComponent();
