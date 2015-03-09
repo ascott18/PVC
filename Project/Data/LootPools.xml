@@ -1,20 +1,104 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LootPools>
-  <LootPool id="1">
-	<Item id="11" chance="0.2"/>
-	<Item id="12" chance="0.2"/>
-	<Item id="14" chance="0.2"/>
-	<Item id="15" chance="0.2"/>
-	<Item id="16" chance="0.2"/>
-	<Item id="17" chance="0.2"/>
-  <Item id="203" chance="1"/>
 
-	<Item id="101" chance="0.7"/>
-	<Item id="101" chance="0.7"/>
+  <LootPool id="1">
+    <Item id="100" chance="0.1"/>
+    <Item id="112" chance="0.1"/>
+    <Item id="114" chance="0.1"/>
+    <Item id="115" chance="0.1"/>
+    <Item id="116" chance="0.1"/>
+    <Item id="117" chance="0.1"/>
+  </LootPool>
+
+  <LootPool id="2">
+    <Item id="11" chance="1"/>
+    <Item id="12" chance="1"/>
+    <Item id="14" chance="1"/>
+    <Item id="15" chance="1"/>
+    <Item id="16" chance="1"/>
+    <Item id="17" chance="1"/>
+  </LootPool>
+
+  <!-- Tier 1-->
+
+  <LootPool id="101">
+    <Item id="100" chance="0.1"/>
+    <Item id="112" chance="0.1"/>
+    <Item id="114" chance="0.1"/>
+    <Item id="115" chance="0.1"/>
+    <Item id="116" chance="0.1"/>
+    <Item id="117" chance="0.1"/>
+  </LootPool>
+
+  <LootPool id="102" limit="1">
+    <Item id="11" chance="1"/>
+    <Item id="12" chance="1"/>
+    <Item id="14" chance="1"/>
+    <Item id="15" chance="1"/>
+    <Item id="16" chance="1"/>
+    <Item id="17" chance="1"/>
+  </LootPool>
+
+  <LootPool id="150" limit="1">
+    <Item id="50" chance="1"/>
+    <Item id="150" chance="1"/>
+  </LootPool>
+
+
+
+  <!-- Tier 2-->
+
+  <LootPool id="201">
+    <Item id="200" chance="0.1"/>
+    <Item id="212" chance="0.1"/>
+    <Item id="214" chance="0.1"/>
+    <Item id="215" chance="0.1"/>
+    <Item id="216" chance="0.1"/>
+    <Item id="217" chance="0.1"/>
+  </LootPool>
+
+  <LootPool id="202" limit="1">
+    <Item id="200" chance="1"/>
+    <Item id="212" chance="1"/>
+    <Item id="214" chance="1"/>
+    <Item id="215" chance="1"/>
+    <Item id="216" chance="1"/>
+    <Item id="217" chance="1"/>
+  </LootPool>
+
+  <LootPool id="250" limit="1">
+    <Item id="150" chance="1"/>
+    <Item id="250" chance="1"/>
+  </LootPool>
+
+
+  <!-- Tier 3-->
+
+  <LootPool id="301">
+    <Item id="300" chance="0.1"/>
+    <Item id="301" chance="0.1"/>
+    <Item id="312" chance="0.1"/>
+    <Item id="314" chance="0.1"/>
+    <Item id="315" chance="0.1"/>
+    <Item id="316" chance="0.1"/>
+    <Item id="317" chance="0.1"/>
+  </LootPool>
+
+  <LootPool id="302" limit="1">
+    <Item id="301" chance="1"/>
+    <Item id="311" chance="1"/>
+    <Item id="312" chance="1"/>
+    <Item id="314" chance="1"/>
+    <Item id="315" chance="1"/>
+    <Item id="316" chance="1"/>
+    <Item id="317" chance="1"/>
+  </LootPool>
+
+  <LootPool id="350" limit="1">
+    <Item id="250" chance="1"/>
+    <Item id="350" chance="1"/>
   </LootPool>
   
-  <LootPool id="2">
-	<Item id="11" chance="0.9"/>
-	<Item id="14" chance="0.9"/>
-  </LootPool>
+  
+  
 </LootPools>
