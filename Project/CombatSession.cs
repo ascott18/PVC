@@ -247,23 +247,20 @@ namespace Project
 
 			Winner = partyVictory ? (DungeonSprite)Party : MonsterPack;
 
-			var loot = new List<Item>();
-			foreach (var monster in MonsterPack.Members.Cast<Monster>())
-			{
-				if (partyVictory)
-					loot.AddRange(monster.GetLoot());
-				else
-					monster.Health = monster.MaxHealth;
-			}
-
-			Party.AddInventoryItemRange(loot);
-
 			if (partyVictory)
 			{
+				var loot = MonsterPack.GetLoot().ToList();
+				Party.AddInventoryItemRange(loot);
+
 				var endingDialog = new CombatCompleteDialog(this);
 				endingDialog.SetItems(loot);
 				endingDialog.Owner = MainWindow.Window;
 				endingDialog.ShowDialog();
+			}
+			else
+			{
+				foreach (var monster in MonsterPack)
+					monster.Health = monster.MaxHealth;
 			}
 
 			State = CombatState.Ended;
@@ -300,10 +297,10 @@ namespace Project
 		/// <returns>The target of the given sprite. Returns null if there are no valid targets.</returns>
 		public CombatSprite GetTarget(CombatSprite sprite)
 		{
-			if (MonsterPack.Members.Contains(sprite))
+			if (MonsterPack.Contains(sprite))
 				return GetTarget(sprite, MonsterPack, Party);
 
-			if (Party.Members.Contains(sprite))
+			if (Party.Contains(sprite))
 				return GetTarget(sprite, Party, MonsterPack);
 
 			throw new ArgumentException("Couldn't find the sprite in either group of combatants.", "sprite");
@@ -320,7 +317,7 @@ namespace Project
 
 				// We have to do IndexOf manually for IReadOnlyLists.
 				var index = -1;
-				for (int i = 0; i < allies.Members.Count; i++)
+				for (int i = 0; i < allies.Count(); i++)
 				{
 					if (allies.Members[i] == sprite)
 					{
@@ -329,7 +326,7 @@ namespace Project
 					}
 				}
 
-				var aliveEnemies = enemies.Members.Where(enemy => enemy.IsActive);
+				var aliveEnemies = enemies.Where(enemy => enemy.IsActive);
 
 				if (!aliveEnemies.Any())
 				{
@@ -387,9 +384,9 @@ namespace Project
 			}
 
 			// Delegate out to each monster to let them decide what to do.
-			foreach (var monster in MonsterPack.Members)
+			foreach (var monster in MonsterPack)
 			{
-				(monster as Monster).DoAction(this);
+				monster.DoAction(this);
 			}
 		}
 

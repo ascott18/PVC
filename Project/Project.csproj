@@ -334,6 +334,9 @@
     <None Include="Resources\dwight.png" />
     <None Include="Resources\lawyer.png" />
     <None Include="Resources\frank.png" />
+    <None Include="Resources\leslie.png" />
+    <None Include="Resources\jamm.png" />
+    <None Include="Resources\lebowski.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />
@@ -346,6 +349,7 @@
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />
+    <None Include="Resources\walter.png" />
     <None Include="Resources\wayBetterWires.png" />
     <Content Include="Resources\wood.bmp" />
     <None Include="Resources\stu.png" />

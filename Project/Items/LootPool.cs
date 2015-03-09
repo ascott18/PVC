@@ -27,6 +27,8 @@ namespace Project.Items
 
 		static Random random = new Random();
 
+		public int Limit { get; private set; }
+
 		private LootPool() { }
 
 		private static LootPool Parse(XElement element)
@@ -34,6 +36,13 @@ namespace Project.Items
 			var pool = new LootPool();
 
 			var itemElements = element.Elements("Item");
+			
+			var limitAttribute = element.Attribute("limit");
+			if (limitAttribute != null)
+				pool.Limit = (int) limitAttribute;
+			else
+				pool.Limit = 0;
+
 			foreach (var itemElement in itemElements)
 			{
 				var itemID = (int) itemElement.Attribute("id");
@@ -84,7 +93,51 @@ namespace Project.Items
 					items.Add(Item.GetItem(itemID));
 			}
 
+			if (Limit > 0)
+			{
+				items = items.OrderBy(_ => random.Next()).Take(Limit).ToList();
+			}
+
 			return items;
 		}
+
+		/// <summary>
+		/// Parses all LootPool child elements of the given xelement.
+		/// </summary>
+		/// <param name="element">The parent element to parse loot pools from.</param>
+		/// <returns>The list of LootPool objects parsed.</returns>
+		public static List<LootPool> ParseLootPools(XElement element)
+		{
+			var lootPools = new List<LootPool>();
+
+			var lootPoolElements = element.Elements("LootPool");
+			foreach (var lootPoolElement in lootPoolElements)
+			{
+				var poolID = (int)lootPoolElement.Attribute("id");
+				var pool = GetLootPool(poolID);
+				lootPools.Add(pool);
+			}
+
+			return lootPools;
+		}
+
+
+
+		/// <summary>
+		/// Generates the loot dropped by a set of LootPools.
+		/// </summary>
+		/// <returns>A List of Items dropped by the LootPools.</returns>
+		public static List<Item> GetLoot(IEnumerable<LootPool> lootPools)
+		{
+			var items = new List<Item>();
+
+			foreach (var lootPool in lootPools)
+			{
+				var loot = lootPool.GenerateLoot();
+				items.AddRange(loot);
+			}
+
+			return items;
+		} 
 	}
 }

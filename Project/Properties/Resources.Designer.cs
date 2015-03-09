@@ -83,16 +83,6 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bug {
-            get {
-                object obj = ResourceManager.GetObject("bug", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cables {
             get {
                 object obj = ResourceManager.GetObject("cables", resourceCulture);
@@ -193,16 +183,6 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dwight {
-            get {
-                object obj = ResourceManager.GetObject("dwight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap elevatorDown {
             get {
                 object obj = ResourceManager.GetObject("elevatorDown", resourceCulture);
@@ -231,16 +211,6 @@ namespace Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap frank {
-            get {
-                object obj = ResourceManager.GetObject("frank", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Heroes&gt;
         ///  &lt;Hero id=&quot;1&quot; texture=&quot;milton&quot; name=&quot;Milton&quot;
@@ -255,8 +225,7 @@ namespace Project.Properties {
         ///	&lt;Spell id=&quot;2&quot;/&gt;
         ///	&lt;Spell id=&quot;3&quot;/&gt;
         ///  &lt;/Hero&gt;
-        ///  
-        ///  &lt;Hero id=&quot;2&quot; texture=&quot;stu&quot; name=&quot;Stu Stein [rest of string was truncated]&quot;;.
+        ///  &lt;Hero id=&quot;2&quot; texture=&quot;stu&quot; name=&quot;Stu Steiner&quot;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Heroes {
             get {
@@ -293,9 +262,9 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap laggy {
+        internal static System.Drawing.Bitmap jamm {
             get {
-                object obj = ResourceManager.GetObject("laggy", resourceCulture);
+                object obj = ResourceManager.GetObject("jamm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +272,19 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lawyer {
+        internal static System.Drawing.Bitmap lebowski {
             get {
-                object obj = ResourceManager.GetObject("lawyer", resourceCulture);
+                object obj = ResourceManager.GetObject("lebowski", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leslie {
+            get {
+                object obj = ResourceManager.GetObject("leslie", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -509,18 +488,17 @@ namespace Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Spells&gt;
-        ///	&lt;!--Milton--&gt;
-        ///	&lt;TargetedDamage id=&quot;1&quot; name=&quot;Mumble&quot; damage=&quot;9&quot; castTime=&quot;2&quot; cooldown=&quot;6&quot; /&gt;
-        ///	&lt;TargetedDamage id=&quot;2&quot; name=&quot;Staple Fire&quot; damage=&quot;1&quot; castTime=&quot;0.3&quot; cooldown=&quot;0&quot; /&gt;
-        ///	&lt;AreaDamage id=&quot;3&quot; name=&quot;Incinerate&quot; damage=&quot;20&quot; castTime=&quot;2.5&quot; cooldown=&quot;10&quot; /&gt;
-        ///
-        ///	&lt;!--Stu--&gt;
-        ///	&lt;TargetedDamage id=&quot;11&quot; name=&quot;Booming Voice&quot; damage=&quot;6&quot; castTime=&quot;3&quot; cooldown=&quot;0&quot; /&gt;
-        ///	&lt;AreaDamage id=&quot;12&quot; name=&quot;Knowledge Blast&quot; damage=&quot;18&quot; castTime=&quot;4&quot; cooldown=&quot;8&quot; /&gt;
-        ///	&lt;AreaHe [rest of string was truncated]&quot;;.
+        ///  &lt;!--Milton--&gt;
+        ///  &lt;TargetedDamage id=&quot;1&quot; name=&quot;Mumble&quot; damage=&quot;9&quot; castTime=&quot;2&quot; cooldown=&quot;6&quot;/&gt;
+        ///  &lt;TargetedDamage id=&quot;2&quot; name=&quot;Staple Fire&quot; damage=&quot;1&quot; castTime=&quot;0.3&quot; cooldown=&quot;0&quot;/&gt;
+        ///  &lt;AreaDamage	  id=&quot;3&quot; name=&quot;Incinerate&quot; damage=&quot;20&quot; castTime=&quot;2.5&quot; cooldown=&quot;10&quot;/&gt;
+        ///  
+        ///  &lt;!--Stu--&gt;
+        ///  &lt;TargetedDamage id=&quot;11&quot; name=&quot;Booming Voice&quot; damage=&quot;6&quot; castTime=&quot;3&quot; cooldown=&quot;0&quot;/&gt;
+        ///  &lt;AreaDamage	  id=&quot;12&quot; name=&quot;Knowledge Blast&quot; damage=&quot;18&quot; castTime=&quot;4&quot; cooldown=&quot;8&quot;/&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Spells {
             get {
@@ -560,16 +538,6 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vendo {
-            get {
-                object obj = ResourceManager.GetObject("vendo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap verydarkwall {
             get {
                 object obj = ResourceManager.GetObject("verydarkwall", resourceCulture);
@@ -590,6 +558,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap walter {
+            get {
+                object obj = ResourceManager.GetObject("walter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap watercooler {
             get {
                 object obj = ResourceManager.GetObject("watercooler", resourceCulture);
@@ -603,16 +581,6 @@ namespace Project.Properties {
         internal static System.Drawing.Bitmap watercoolerEmpty {
             get {
                 object obj = ResourceManager.GetObject("watercoolerEmpty", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap wayBetterWires {
-            get {
-                object obj = ResourceManager.GetObject("wayBetterWires", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
