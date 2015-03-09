@@ -332,6 +332,8 @@
     <None Include="Resources\medtile.png" />
     <None Include="Resources\laggy.png" />
     <None Include="Resources\dwight.png" />
+    <None Include="Resources\lawyer.png" />
+    <None Include="Resources\frank.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />
