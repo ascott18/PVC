@@ -396,7 +396,7 @@
 	</AdjacentMaps>
 
 	<Objects>
-	  <Door x="12" y="10" toMap="1" toX="11" toY="4" texture="wall fancydoor"/>
+	  <Door x="12" y="10" toMap="412" toX="6" toY="11" texture="wall fancydoor"/>
 
 	  <MonsterPack id="000101" x="11" y="5">
 		<Monster id="5"/>
@@ -531,7 +531,7 @@
 	</AdjacentMaps>
 
 	<Objects>
-	  <Door x="12" y="10" toMap="1" toX="11" toY="10" texture="wall fancydoor"/>
+	  <Door x="12" y="10" toMap="312" toX="6" toY="11" texture="wall fancydoor"/>
 
 	  <MonsterPack id="000101" x="2" y="1">
 		<Monster id="1"/>
@@ -791,7 +791,7 @@
 	</AdjacentMaps>
 
 	<Objects>
-	  <Door x="12" y="10" toMap="302" toX="11" toY="10" texture="wall elevatorDown"/>
+	  <Door x="12" y="10" toMap="112" toX="11" toY="10" texture="wall elevatorDown"/>
 	 
 	  <MonsterPack id="000101" x="3" y="5">
 		<Monster id="01"/>
@@ -923,7 +923,7 @@
 	</AdjacentMaps>
 
 	<Objects>
-    <Door x="6" y="12" toMap="412" toX="6" toY="11" texture="elevatorUp"/>
+    <Door x="6" y="12" toMap="212" toX="11" toY="10" texture="elevatorUp"/>
 	</Objects>
 
   </Map>
@@ -979,7 +979,7 @@
 	</AdjacentMaps>
 
 	<Objects>
-    <Door x="6" y="12" toMap="313" toX="6" toY="11" texture="elevatorDown"/>
+    <Door x="6" y="12" toMap="202" toX="11" toY="10" texture="elevatorDown"/>
     <VendingMachine x="6" y="6" texture="elevatorUp"/>
 	</Objects>
 
