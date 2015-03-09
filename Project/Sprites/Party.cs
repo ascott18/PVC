@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -6,7 +7,7 @@ using Project.Items;
 
 namespace Project.Sprites
 {
-	public class Party : DungeonSprite
+	public class Party : DungeonSprite, IEnumerable<Hero>
 	{
 		public const int MaxHeroes = 3;
 		public readonly IReadOnlyList<Item> Inventory;
@@ -51,6 +52,17 @@ namespace Project.Sprites
 		}
 
 		public event PartyEvent InventoryChanged;
+
+
+		public IEnumerator<Hero> GetEnumerator()
+		{
+			return heroes.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return ((IEnumerable) heroes).GetEnumerator();
+		}
 	}
 
 	public delegate void PartyEvent(Party party);

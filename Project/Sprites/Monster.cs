@@ -7,7 +7,7 @@ using Project.Items;
 
 namespace Project.Sprites
 {
-	internal class Monster : CombatSprite
+	public class Monster : CombatSprite
 	{
 		private readonly List<LootPool> lootPools = new List<LootPool>(); 
 

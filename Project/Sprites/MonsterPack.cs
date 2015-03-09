@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -69,6 +70,17 @@ namespace Project.Sprites
 			IEnumerable<Item> loot = LootPool.GetLoot(lootPools);
 
 			return monsters.Aggregate(loot, (current, monster) => current.Concat(monster.GetLoot()));
+		}
+
+
+		public IEnumerator<Monster> GetEnumerator()
+		{
+			return monsters.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return ((IEnumerable) monsters).GetEnumerator();
 		}
 	}
 }
