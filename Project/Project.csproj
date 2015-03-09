@@ -322,6 +322,9 @@
     <None Include="Resources\elevatorUp.png" />
     <None Include="Resources\elevatorDown.png" />
     <None Include="Resources\medtile.png" />
+    <None Include="Resources\leslie.png" />
+    <None Include="Resources\jamm.png" />
+    <None Include="Resources\lebowski.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />
@@ -333,6 +336,7 @@
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />
+    <None Include="Resources\walter.png" />
     <Content Include="Resources\wood.bmp" />
     <None Include="Resources\stu.png" />
     <None Include="Resources\shoerner.png" />

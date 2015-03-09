@@ -238,4 +238,16 @@
   <data name="serverRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\serverRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jamm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jamm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lebowski" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lebowski.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leslie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leslie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="walter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\walter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

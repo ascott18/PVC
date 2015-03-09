@@ -27,6 +27,8 @@ namespace Project.Items
 
 		static Random random = new Random();
 
+		public int Limit { get; private set; }
+
 		private LootPool() { }
 
 		private static LootPool Parse(XElement element)
@@ -34,6 +36,13 @@ namespace Project.Items
 			var pool = new LootPool();
 
 			var itemElements = element.Elements("Item");
+			
+			var limitAttribute = element.Attribute("limit");
+			if (limitAttribute != null)
+				pool.Limit = (int) limitAttribute;
+			else
+				pool.Limit = 0;
+
 			foreach (var itemElement in itemElements)
 			{
 				var itemID = (int) itemElement.Attribute("id");
@@ -82,6 +91,11 @@ namespace Project.Items
 				var roll = random.NextDouble();
 				if (roll < chance)
 					items.Add(Item.GetItem(itemID));
+			}
+
+			if (Limit > 0)
+			{
+				items = items.OrderBy(_ => random.Next()).Take(Limit).ToList();
 			}
 
 			return items;
