@@ -279,7 +279,7 @@
 
 	<Objects>
 	  <Watercooler x="11" y="11"/>
-	  <Door x="12" y="10" toMap="212" toX="11" toY="10" texture="wall elevatorUp"/>
+	  <Door x="12" y="10" toMap="302" toX="11" toY="10" texture="wall elevatorUp"/>
 	</Objects>
 
   </Map>
@@ -400,10 +400,6 @@
 	  <MonsterPack id="000101" x="7" y="3">
 		<Monster id="1"/>
 		<Monster id="2"/>
-	  </MonsterPack>
-
-<MonsterPack id="000101" x="11" y="10">
-		<Monster id="3"/>
 	  </MonsterPack>
 	  
 	  <Chest x="11" y="1" texture="medbox">
@@ -607,13 +603,13 @@
   <Map id="221">
 	<Tiles>
 	  02 02 02 02 02 00 00 00 02 02 02 02 02
-	  02 03 00 00 00 00 00 00 00 00 00 00 02
-	  02 00 00 00 00 00 00 00 00 00 00 00 02
-	  02 00 00 00 00 00 00 00 00 00 00 00 02
-	  02 00 00 00 00 00 00 00 00 00 00 00 02
-	  02 00 00 00 00 00 00 00 00 00 00 00 00
-	  02 00 00 00 00 00 00 00 00 00 00 00 00
-	  02 00 00 00 00 00 00 00 02 02 02 02 02
+	  02 03 00 00 00 00 00 00 02 00 00 00 02
+	  02 00 00 00 00 00 00 00 02 00 02 00 02
+	  02 00 00 00 00 00 00 00 02 00 02 00 02
+	  02 00 00 00 00 00 00 00 02 00 02 00 02
+	  02 00 02 02 02 02 02 02 02 00 02 00 00
+	  02 00 00 00 00 00 00 00 00 00 02 00 00
+	  02 02 02 02 02 00 02 02 02 02 02 02 02
 	  02 00 00 00 00 00 00 00 02 00 00 00 00
 	  02 00 00 00 00 00 00 00 02 00 00 00 00
 	  02 00 00 00 00 00 00 00 02 04 00 00 00
@@ -627,6 +623,20 @@
 	</AdjacentMaps>
 
 	<Objects>
+	
+	<MonsterPack id="000101" x="1" y="5">
+		<Monster id="2"/>
+		<Monster id="5"/>
+	  </MonsterPack>
+	  
+	  <MonsterPack id="000101" x="5" y="7">
+		<Monster id="2"/>
+		<Monster id="5"/>
+	  </MonsterPack>
+	  
+	  <MonsterPack id="000101" x="3" y="8">
+		<Monster id="4"/>
+	  </MonsterPack>
 	
 	<Chest x="9" y="11" texture="medbox">
 		<LootPool id="1"/>
