@@ -100,5 +100,44 @@ namespace Project.Items
 
 			return items;
 		}
+
+		/// <summary>
+		/// Parses all LootPool child elements of the given xelement.
+		/// </summary>
+		/// <param name="element">The parent element to parse loot pools from.</param>
+		/// <returns>The list of LootPool objects parsed.</returns>
+		public static List<LootPool> ParseLootPools(XElement element)
+		{
+			var lootPools = new List<LootPool>();
+
+			var lootPoolElements = element.Elements("LootPool");
+			foreach (var lootPoolElement in lootPoolElements)
+			{
+				var poolID = (int)lootPoolElement.Attribute("id");
+				var pool = GetLootPool(poolID);
+				lootPools.Add(pool);
+			}
+
+			return lootPools;
+		}
+
+
+
+		/// <summary>
+		/// Generates the loot dropped by a set of LootPools.
+		/// </summary>
+		/// <returns>A List of Items dropped by the LootPools.</returns>
+		public static List<Item> GetLoot(IEnumerable<LootPool> lootPools)
+		{
+			var items = new List<Item>();
+
+			foreach (var lootPool in lootPools)
+			{
+				var loot = lootPool.GenerateLoot();
+				items.AddRange(loot);
+			}
+
+			return items;
+		} 
 	}
 }

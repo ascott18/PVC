@@ -47,18 +47,11 @@ namespace Project.Dungeon
 
             var chest = new Chest(loc)
             {
-                Image = XmlData.LoadImage(chestElement.Attribute("texture").Value)
+	            Image = XmlData.LoadImage(chestElement.Attribute("texture").Value),
+	            lootPools = LootPool.ParseLootPools(chestElement)
             };
 
-            var lootPoolElements = chestElement.Elements("LootPool");
-            foreach (var lootPoolElement in lootPoolElements)
-            {
-                var poolID = (int)lootPoolElement.Attribute("id");
-                var pool = LootPool.GetLootPool(poolID);
-                chest.lootPools.Add(pool);
-            }
-
-		    return chest;
+			return chest;
 		}
     }
 }

@@ -9,7 +9,7 @@ namespace Project.Sprites
 {
 	internal class Monster : CombatSprite
 	{
-		private List<LootPool> lootPools = new List<LootPool>(); 
+		private readonly List<LootPool> lootPools = new List<LootPool>(); 
 
 		public readonly int MonsterID;
 
@@ -21,14 +21,8 @@ namespace Project.Sprites
 			var monsterElement = XmlData.GetXElementByID("Monsters", monsterId);
 
 			ParseCommonAttributes(monsterElement);
-
-			var lootPoolElements = monsterElement.Elements("LootPool");
-			foreach (var lootPoolElement in lootPoolElements)
-			{
-				var poolID = (int)lootPoolElement.Attribute("id");
-				var pool = LootPool.GetLootPool(poolID);
-				lootPools.Add(pool);
-			}
+			
+			lootPools = LootPool.ParseLootPools(monsterElement);
 
 			RecalculateAttributes();
 		}
@@ -47,22 +41,15 @@ namespace Project.Sprites
 			}
 		}
 
+
 		/// <summary>
 		/// Generates the loot dropped by this monster based on the LootPool
 		/// elements defined for it in XML.
 		/// </summary>
 		/// <returns>A List of Items dropped by this monster.</returns>
-		public List<Item> GetLoot()
+		public IEnumerable<Item> GetLoot()
 		{
-			var items = new List<Item>();
-
-			foreach (var lootPool in lootPools)
-			{
-				var loot = lootPool.GenerateLoot();
-				items.AddRange(loot);
-			}
-
-			return items;
+			return LootPool.GetLoot(lootPools);
 		}
 	}
 }
