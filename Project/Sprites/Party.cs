@@ -54,7 +54,7 @@ namespace Project.Sprites
 		public event PartyEvent InventoryChanged;
 
 
-		public IEnumerator<Hero> GetEnumerator()
+		public new IEnumerator<Hero> GetEnumerator()
 		{
 			return heroes.GetEnumerator();
 		}

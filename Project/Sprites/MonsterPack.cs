@@ -73,14 +73,14 @@ namespace Project.Sprites
 		}
 
 
-		public IEnumerator<Monster> GetEnumerator()
+		public new IEnumerator<Monster> GetEnumerator()
 		{
 			return monsters.GetEnumerator();
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			return ((IEnumerable) monsters).GetEnumerator();
+			return ((IEnumerable)monsters).GetEnumerator();
 		}
 	}
 }
