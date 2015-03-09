@@ -12,6 +12,7 @@
 	<Spell id="2"/>
 	<Spell id="3"/>
   </Hero>
+  
   <Hero id="2" texture="stu" name="Stu Steiner"
 		desc="Legend has it that he once deadlocked Chuck Norris with a single thread. All we know is that he's somewhere in the building. Because we hear him.">
 	<Attributes stamina="11" block ="10" combo ="10"/>
@@ -23,6 +24,7 @@
 	<Spell id="12"/>
 	<Spell id="13"/>
   </Hero>
+  
   <Hero id="3" texture="carty" name="Carty"
 		desc="All you need is love. That, and a big shield. Who ever said gnomes are only for gardens? This one just shattered your femur.">
 	<Attributes stamina="18" block ="10" combo ="10"/>
@@ -30,8 +32,26 @@
 	<Item id="14"/>
 	<Item id="16"/>
 	
-	<Spell id="31"/>
-	<Spell id="32"/>
-	<Spell id="33"/>
+	<Spell id="91"/>
+	<Spell id="92"/>
+	<Spell id="93"/>
+  </Hero>
+  
+  <Hero id="4" texture="laggy" name="Alice"
+		desc="Don't let her sweet demeanor and adorable mews fool you - there's not a cat fiercer. With claws painstakingly honed into needles for hours on end, not much can stand up to her... and live.">
+	<Attributes stamina="30" block="10" combo="10"/>
+	
+	<Spell id="101"/>
+	<Spell id="102"/>
+	<Spell id="103"/>
+  </Hero>
+  
+  <Hero id="5" texture="dwight" name="Dwight"
+		desc="Dwight needs a bio.">
+	<Attributes stamina="30" block="10" combo="10"/>
+	
+	<Spell id="111"/>
+	<Spell id="112"/>
+	<Spell id="113"/>
   </Hero>
 </Heroes>

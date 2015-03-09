@@ -19,19 +19,15 @@ namespace Project.Spells
 
 		private void SpellTargetedHealing_StateChanged(Spell sender, CastState oldState)
 		{
-			CombatSprite target;
 			switch (State)
 			{
 				case CastState.Starting:
-					target = Owner;
-					if (target == null) // if target is null, there are no valid targets.
-						Cancel();
 					break;
 
 				case CastState.Finishing:
-					target = Owner;
-					if (target != null)
-						ComboAction(Heal, Owner, target, healing);
+					DoComboAction(Heal, Owner, Owner, healing);
+					ApplyAuras(Owner);
+
 					break;
 			}
 		}

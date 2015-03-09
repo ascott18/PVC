@@ -31,6 +31,7 @@ namespace Project.Sprites
 			}
 
 			EquipmentChanged += Hero_EquipmentChanged;
+			RecalculatingAttributes += Hero_RecalculatingAttributes;
 			RecalculateAttributes();
 		}
 
@@ -126,22 +127,13 @@ namespace Project.Sprites
 		}
 
 
-		/// <summary>
-		///     Recalculates the hero's current attributes,
-		///     taking into account base attributes and attributes from equipment.
-		/// </summary>
-		public override sealed void RecalculateAttributes()
+		void Hero_RecalculatingAttributes(CombatSprite sender, SpriteAttributesRecalcEventArgs args)
 		{
-			var attr = BaseAttributes;
 			foreach (var itemEquippable in equipment)
 			{
 				if (itemEquippable != null)
-					attr = attr + itemEquippable.Attributes;
+					args.Attributes += itemEquippable.Attributes;
 			}
-
-			Attributes = attr;
-
-			OnAttributesChanged();
 		}
 	}
 }

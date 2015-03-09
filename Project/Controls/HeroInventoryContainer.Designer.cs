@@ -61,7 +61,7 @@
 			this.equipmentContainer.Controls.Add(this.equipmentFlow);
 			this.equipmentContainer.Location = new System.Drawing.Point(63, 4);
 			this.equipmentContainer.Name = "equipmentContainer";
-			this.equipmentContainer.Size = new System.Drawing.Size(242, 102);
+			this.equipmentContainer.Size = new System.Drawing.Size(242, 88);
 			this.equipmentContainer.TabIndex = 2;
 			this.equipmentContainer.TabStop = false;
 			this.equipmentContainer.Text = "Equipment";
@@ -72,7 +72,7 @@
 			this.equipmentFlow.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.equipmentFlow.Location = new System.Drawing.Point(3, 16);
 			this.equipmentFlow.Name = "equipmentFlow";
-			this.equipmentFlow.Size = new System.Drawing.Size(236, 83);
+			this.equipmentFlow.Size = new System.Drawing.Size(236, 69);
 			this.equipmentFlow.TabIndex = 0;
 			this.equipmentFlow.WrapContents = false;
 			// 
@@ -84,7 +84,7 @@
 			this.Controls.Add(this.image);
 			this.Controls.Add(this.name);
 			this.Name = "HeroInventoryContainer";
-			this.Size = new System.Drawing.Size(308, 121);
+			this.Size = new System.Drawing.Size(308, 100);
 			((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
 			this.equipmentContainer.ResumeLayout(false);
 			this.ResumeLayout(false);

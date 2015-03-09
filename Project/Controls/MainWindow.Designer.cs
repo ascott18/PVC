@@ -34,6 +34,7 @@
 			this.inventoryButton = new Project.Controls.WoodButton();
 			this.combatArena = new Project.Controls.CombatArena();
 			this.dungeonContainer = new Project.Controls.DungeonContainer();
+			this.statsButton = new Project.Controls.WoodButton();
 			this.SuspendLayout();
 			// 
 			// woodButton2
@@ -44,7 +45,7 @@
 			this.woodButton2.ForeColor = System.Drawing.Color.Tan;
 			this.woodButton2.Location = new System.Drawing.Point(249, 0);
 			this.woodButton2.Name = "woodButton2";
-			this.woodButton2.Size = new System.Drawing.Size(252, 30);
+			this.woodButton2.Size = new System.Drawing.Size(128, 30);
 			this.woodButton2.TabIndex = 5;
 			this.woodButton2.UseVisualStyleBackColor = true;
 			// 
@@ -92,11 +93,26 @@
 			this.dungeonContainer.Size = new System.Drawing.Size(652, 652);
 			this.dungeonContainer.TabIndex = 0;
 			// 
+			// statsButton
+			// 
+			this.statsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("statsButton.BackgroundImage")));
+			this.statsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.statsButton.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.statsButton.ForeColor = System.Drawing.Color.Tan;
+			this.statsButton.Location = new System.Drawing.Point(377, 0);
+			this.statsButton.Name = "statsButton";
+			this.statsButton.Size = new System.Drawing.Size(124, 30);
+			this.statsButton.TabIndex = 5;
+			this.statsButton.Text = "STATS";
+			this.statsButton.UseVisualStyleBackColor = true;
+			this.statsButton.Click += new System.EventHandler(this.statsButton_Click);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(652, 681);
+			this.Controls.Add(this.statsButton);
 			this.Controls.Add(this.woodButton2);
 			this.Controls.Add(this.woodButton1);
 			this.Controls.Add(this.inventoryButton);
@@ -120,6 +136,7 @@
 		private WoodButton inventoryButton;
 		private WoodButton woodButton1;
 		private WoodButton woodButton2;
+		private WoodButton statsButton;
 
 
 
