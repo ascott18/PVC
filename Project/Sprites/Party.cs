@@ -58,11 +58,6 @@ namespace Project.Sprites
 		{
 			return heroes.GetEnumerator();
 		}
-
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return ((IEnumerable) heroes).GetEnumerator();
-		}
 	}
 
 	public delegate void PartyEvent(Party party);
