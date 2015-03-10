@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Xml.Linq;
 using Project.Data;
 using Project.Sprites;
@@ -75,6 +76,9 @@ namespace Project.Spells
 		/// <param name="target">The target of the aura.</param>
 		public void Apply(CombatSprite target)
 		{
+			if (Session == null)
+				throw new InvalidOperationException("Can't apply an aura that wasn't created for a CombatSession.");
+
 			if (Target != null)
 				throw new InvalidOperationException("Can't apply an aura more than once");
 
@@ -133,5 +137,19 @@ namespace Project.Spells
 			aura.Source = caster;
 			return aura;
 		}
+
+
+		/// <summary>
+		///     Constructs an aura from the given XElement.
+		/// </summary>
+		/// <param name="auraElement">The element to parse the aura from.</param>
+		/// <returns>A new instance of Aura.</returns>
+		public static Aura CreateAura(XElement auraElement)
+		{
+			var aura = XmlData.XmlParserParseElement<Aura>(auraElement);
+			return aura;
+		}
+
+		public abstract void GetTooltip(StringBuilder sb);
 	}
 }

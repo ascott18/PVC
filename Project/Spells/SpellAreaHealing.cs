@@ -57,17 +57,11 @@ namespace Project.Spells
 			return new SpellAreaHealing(data);
 		}
 
-		public override string GetTooltip()
+		protected override void GetTooltip(StringBuilder sb)
 		{
-			var s = base.GetTooltip();
-			var sb = new StringBuilder(s);
-
 			sb.AppendLine("");
-			sb.AppendLine("Group Heal");
-			sb.Append("Amount: ");
+			sb.Append("Group Heal: ");
 			sb.AppendLine(healing.ToString());
-
-			return TooltipCache = sb.ToString();
 		}
 	}
 }

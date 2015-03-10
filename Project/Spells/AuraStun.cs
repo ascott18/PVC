@@ -26,5 +26,10 @@ namespace Project.Spells
 		{
 			return new AuraStun(data);
 		}
+
+		public override void GetTooltip(StringBuilder sb)
+		{
+			sb.AppendLine(String.Format("Stun: {0:F1} sec", Duration));
+		}
 	}
 }

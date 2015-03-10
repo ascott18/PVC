@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using Project.Data;
 using Project.Sprites;
@@ -42,6 +43,28 @@ namespace Project.Spells
 		public static Aura Create(XElement data)
 		{
 			return new AuraStatMult(data);
+		}
+
+		public override void GetTooltip(StringBuilder sb)
+		{
+			sb.Append("Stats: ");
+			
+			bool appendComma = false;
+			Action<int, string> fmt = (val, name) =>
+			{
+				if (val == 0) return;
+
+				if (appendComma)
+					sb.Append(", ");
+				sb.Append(String.Format("{0:D1}% {1}", val, name));
+				appendComma = true;
+			};
+
+			fmt(Multiplier.StaminaPercent, "Stamina");
+			fmt(Multiplier.BlockPercent, "Block");
+			fmt(Multiplier.ComboPercent, "Combo");
+
+			sb.AppendLine();
 		}
 	}
 }

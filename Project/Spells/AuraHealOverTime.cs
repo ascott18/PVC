@@ -22,5 +22,10 @@ namespace Project.Spells
 		{
 			return new AuraHealOverTime(data);
 		}
+
+		public override void GetTooltip(StringBuilder sb)
+		{
+			sb.AppendLine(String.Format("Heal: {0:D1} over {1:F1} sec", AmountTotal, Duration));
+		}
 	}
 }

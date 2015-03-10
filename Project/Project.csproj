@@ -216,7 +216,6 @@
       <DependentUpon>CombatSpriteAttributesContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="Items\Item.cs" />
-    <Compile Include="Items\ItemBook.cs" />
     <Compile Include="Items\ItemEquippable.cs" />
     <Compile Include="Sprites\Monster.cs" />
     <Compile Include="Sprites\MonsterPack.cs" />

@@ -45,17 +45,11 @@ namespace Project.Spells
 			return new SpellTargetedDamage(data);
 		}
 
-		public override string GetTooltip()
+		protected override void GetTooltip(StringBuilder sb)
 		{
-			var s = base.GetTooltip();
-			var sb = new StringBuilder(s);
-
 			sb.AppendLine("");
-			sb.AppendLine("Targeted Damage");
-			sb.Append("Amount: ");
+			sb.Append("Damage: ");
 			sb.AppendLine(damage.ToString());
-
-			return TooltipCache = sb.ToString();
 		}
 	}
 }

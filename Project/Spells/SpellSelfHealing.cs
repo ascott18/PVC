@@ -38,18 +38,11 @@ namespace Project.Spells
 		{
 			return new SpellSelfHealing(data);
 		}
-
-		public override string GetTooltip()
+		protected override void GetTooltip(StringBuilder sb)
 		{
-			var s = base.GetTooltip();
-			var sb = new StringBuilder(s);
-
 			sb.AppendLine("");
-			sb.AppendLine("Self Heal");
-			sb.Append("Amount: ");
+			sb.Append("Self Heal: ");
 			sb.AppendLine(healing.ToString());
-
-			return TooltipCache = sb.ToString();
 		}
 	}
 }

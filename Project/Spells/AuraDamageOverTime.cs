@@ -21,5 +21,10 @@ namespace Project.Spells
 		{
 			return new AuraDamageOverTime(data);
 		}
+
+		public override void GetTooltip(StringBuilder sb)
+		{
+			sb.AppendLine(String.Format("Damage: {0:D1} over {1:F1} sec", AmountTotal, Duration));
+		}
 	}
 }

@@ -12,7 +12,7 @@ namespace Project.Dungeon
 {
     class Chest : TileObject
     {
-        private List<LootPool> lootPools = new List<LootPool>(); 
+        private List<LootPool> lootPools; 
 
         protected Chest(Point loc) : base(loc)
         {

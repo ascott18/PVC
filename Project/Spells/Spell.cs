@@ -59,7 +59,7 @@ namespace Project.Spells
 			Canceling,
 		}
 
-		private readonly IReadOnlyList<XElement> AuraElements;
+		public readonly IReadOnlyList<XElement> AuraElements;
 		private readonly static Random rand = new Random();
 
 		private readonly int spellID;
@@ -408,7 +408,7 @@ namespace Project.Spells
 		}
 
 
-		public virtual string GetTooltip()
+		public string GetTooltip()
 		{
 			if (TooltipCache != null)
 				return TooltipCache;
@@ -418,8 +418,21 @@ namespace Project.Spells
 			sb.AppendLine(String.Format("{0:F1} sec cast", CastDuration));
 			sb.AppendLine(String.Format("{0:F1} sec cooldown", CooldownDuration));
 
+			GetTooltip(sb);
+
+			foreach (var aura in AuraElements.Select(Aura.CreateAura))
+			{
+				aura.GetTooltip(sb);
+			}
+
 			return TooltipCache = sb.ToString();
 		}
+
+		/// <summary>
+		/// Populates the tooltip with spell-specific information.
+		/// </summary>
+		/// <param name="sb"></param>
+		protected abstract void GetTooltip(StringBuilder sb);
 
 		internal static void DoComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
 		{
@@ -470,24 +483,13 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Generate aura instances for the spell.
-		/// </summary>
-		/// <returns>New instances of Aura for each of the spell's Auras.</returns>
-		protected IEnumerable<Aura> GenerateAuras()
-		{
-			if (State == CastState.Unused)
-				throw new InvalidOperationException("Can't generate auras on an unused spell");
-
-			return AuraElements.Select(auraElement => Aura.CreateAura(Session, Owner, auraElement));
-		}
-
-		/// <summary>
 		/// Apply all of the auras associated with the spell to a target.
 		/// </summary>
 		/// <param name="target">The target to apply the auras to.</param>
 		protected void ApplyAuras(CombatSprite target)
 		{
-			foreach (var aura in GenerateAuras())
+			var auras = AuraElements.Select(auraElement => Aura.CreateAura(Session, Owner, auraElement));
+			foreach (var aura in auras)
 			{
 				if (aura.IsBlockable)
 					DoBlockableAction(aura.Apply, target);
