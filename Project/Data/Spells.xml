@@ -106,7 +106,7 @@
 	</AreaHealing>
 
 	<!--Laggy-->
-	<TargetedDamage id="101" name="Shred" damage="12" castTime="1.5" cooldown="0" />
+	<TargetedDamage id="101" name="Shred" damage="7" castTime="1.5" cooldown="0" />
 	<SelfHealing id="102" name="Crook Dance" healing="10" castTime="3" cooldown="15">
 	  <Auras>
 		<StatMod duration="4" blockable="false">

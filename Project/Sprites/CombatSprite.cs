@@ -150,7 +150,14 @@ namespace Project.Sprites
 
 			foreach (var spellElement in element.XPathSelectElements("Spell"))
 			{
-				Spells.Add(Spell.GetSpell(this, (int)spellElement.Attribute("id")));
+				var autocastElement = spellElement.Attribute("auto");
+				bool autocast = false;
+				if (autocastElement != null)
+					autocast = (bool)autocastElement;
+
+				var spell = Spell.GetSpell(this, (int)spellElement.Attribute("id"));
+				spell.IsAutoCast = autocast;
+				Spells.Add(spell);
 			}
 		}
 	}

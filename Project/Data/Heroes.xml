@@ -7,10 +7,10 @@
 	<Item id="15"/>
 	<Item id="16"/>
 	<Item id="17"/>
-	
+
+	<Spell id="2" auto="true"/>
 	<Spell id="1"/>
 	<Spell id="3"/>
-	<Spell id="2"/>
   </Hero>
   
   <Hero id="2" texture="stu" name="Stu Steiner"
@@ -20,7 +20,7 @@
 	<Item id="14"/>
 	<Item id="16"/>
 	
-	<Spell id="11"/>
+	<Spell id="11" auto="true"/>
 	<Spell id="12"/>
 	<Spell id="13"/>
   </Hero>
@@ -32,7 +32,7 @@
 	<Item id="14"/>
 	<Item id="16"/>
 	
-	<Spell id="91"/>
+	<Spell id="91" auto="true"/>
 	<Spell id="92"/>
 	<Spell id="93"/>
   </Hero>
@@ -41,9 +41,9 @@
 		desc="Don't let her sweet demeanor and adorable mews fool you - there's not a cat fiercer. With claws honed into needles, not much can stand up to her... and live.">
 	<Attributes stamina="15" block="5" combo="10"/>
 	
-	<Spell id="101"/>
+	<Spell id="101" auto="true"/>
 	<Spell id="103"/>
-	<Spell id="102"/>s
+	<Spell id="102"/>
   </Hero>
   
   <Hero id="5" texture="dwight" name="Dwight"
