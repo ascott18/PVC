@@ -123,9 +123,37 @@
 	</AreaDamage>
 
 	<!--Dwight-->
-	<TargetedDamage id="111" name="Dwight Sp1" damage="12" castTime="1.5" cooldown="0" />
-	<TargetedDamage id="112" name="Dwight Sp2" damage="24" castTime="3" cooldown="15" />
-	<AreaDamage id="113" name="Dwight Sp3" damage="8" castTime="1" cooldown="12" />
+  <TargetedDamage id="200" name="Sell Paper" damage="10" castTime="3" cooldown="15"/>
+	<TargetedDamage id="201" name="Wield Nunchucks" damage="24" castTime="3" cooldown="15" />
+	<AreaDamage id="202" name="Shout in Megaphone" damage="8" castTime="1" cooldown="12" />
+
+  <!--Leslie-->
+  <SelfHealing id="300" name="Eat Waffles" healing="10" castTime="3" cooldown="15">
+    <Auras>
+      <StatMod duration="4" blockable="false">
+        <Attributes stamina="0" block="30" combo="100" />
+      </StatMod>
+    </Auras>
+  </SelfHealing>
+  <TargetedDamage id="301" name="Crush With Binders" damage="24" castTime="3" cooldown="15" />
+  <AreaHealing id="302" name="Host Open Forum" healing="14" castTime="3" cooldown="9">
+    <Auras>
+      <StatMod duration="5" blockable="false">
+        <Attributes stamina="0" block="30" combo="30" />
+      </StatMod>
+    </Auras>
+  </AreaHealing>
+
+  <!--Walter-->
+  <SelfHealing id="400" name="s1" healing="10" castTime="3" cooldown="15">
+    <Auras>
+      <StatMod duration="4" blockable="false">
+        <Attributes stamina="0" block="30" combo="100" />
+      </StatMod>
+    </Auras>
+  </SelfHealing>
+  <TargetedDamage id="401" name="s2" damage="24" castTime="3" cooldown="15" />
+  <AreaDamage id="402" name="s3" damage="8" castTime="1" cooldown="12" />
 
 
 </Spells>
