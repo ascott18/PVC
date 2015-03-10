@@ -11,29 +11,34 @@
 		<Attributes stamina="10" block="10" combo="10" />
 		<Spell id="22" />
 		<Spell id="21" />
-		<LootPool id="1" />
+		<LootPool id="101" />
 	</Monster>
+  
 	<Monster id="2" texture="shoerner" name="Pestering Intern">
 		<Attributes stamina="8" block="10" combo="10" />
 		<Spell id="31" />
 		<Spell id="33" />
+    <LootPool id="201" />
 	</Monster>
 
 	<Monster id="4" texture="deskevil" name="Cryptolocked Box">
 		<Attributes stamina="8" block="10" combo="400" />
 		<Spell id="41" />
 		<Spell id="42" />
+    <LootPool id="101" />
 	</Monster>
 
 	<Monster id="5" texture="printer" name="Jammed Printer">
 		<Attributes stamina="20" block="50" combo="5" />
 		<Spell id="51" />
+    <LootPool id="101" />
 	</Monster>
 
 	<Monster id="6" texture="bug" name="Bug">
 		<Attributes stamina="3" block="90" combo="120" />
 		<Spell id="81" />
 		<Spell id="82" />
+    <LootPool id="201" />
 	</Monster>
 
 	<Monster id="21" texture="wayBetterWires" name="Tangled Cables">
@@ -41,11 +46,53 @@
 		<Spell id="61" />
 		<Spell id="62" />
 		<Spell id="63" />
+    <LootPool id="201" />
 	</Monster>
 
 	<Monster id="22" texture="serverRed" name="Overheated Rack">
 		<Attributes stamina="15" block="25" combo="180" />
 		<Spell id="71" />
 		<Spell id="72" />
+    <LootPool id="201" />
 	</Monster>
+
+  <Monster id="7" texture="jamm" name="City Councilman">
+    <Attributes stamina="20" block="10" combo="10" />
+    <Spell id="117"/>
+    <Spell id="118"/>
+    <Spell id="119"/>
+    <LootPool id="301" />
+  </Monster>
+
+  <Monster id="8" texture="lebowski" name="Big Lebowski">
+    <Attributes stamina="30" block="20" combo="30" />
+    <Spell id="120"/>
+    <Spell id="121"/>
+    <Spell id="122"/>
+    <LootPool id="301" />
+  </Monster>
+
+  <Monster id="9" texture="lawyer" name="Lawyer">
+    <Attributes stamina="25" block="30" combo="10" />
+    <Spell id="114"/>
+    <Spell id="115"/>
+    <Spell id="116"/>
+    <LootPool id="301" />
+  </Monster>
+
+  <Monster id="10" texture="lawyer" name="Sysadmin">
+    <Attributes stamina="25" block="30" combo="10" />
+    <Spell id="126"/>
+    <Spell id="127"/>
+    <Spell id="128"/>
+    <LootPool id="201" />
+  </Monster>
+
+  <Monster id="11" texture="frank" name="Disgruntled Employee">
+    <Attributes stamina="25" block="30" combo="10" />
+    <Spell id="123"/>
+    <Spell id="124"/>
+    <Spell id="125"/>
+    <LootPool id="101" />
+  </Monster>
 </Monsters>
