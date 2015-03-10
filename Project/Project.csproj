@@ -325,6 +325,7 @@
     <None Include="Resources\deskdark.png" />
     <None Include="Resources\deskmed.png" />
     <None Include="Resources\deskevil.png" />
+    <None Include="Resources\desk2.png" />
     <Content Include="Resources\dummy.png" />
     <None Include="Resources\medbox.png" />
     <None Include="Resources\elevatorUp.png" />
@@ -337,6 +338,7 @@
     <None Include="Resources\leslie.png" />
     <None Include="Resources\jamm.png" />
     <None Include="Resources\lebowski.png" />
+    <None Include="Resources\leslieBetter.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />
@@ -346,6 +348,8 @@
     <None Include="Resources\verydarkwall.png" />
     <None Include="Resources\serverRed.png" />
     <None Include="Resources\vendo.png" />
+    <None Include="Resources\plant4.png" />
+    <None Include="Resources\plant3.png" />
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />
