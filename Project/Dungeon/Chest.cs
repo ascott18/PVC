@@ -33,7 +33,7 @@ namespace Project.Dungeon
             }
 
             var dialog = new ChestLootDialog();
-            dialog.SetItems(loot);
+            dialog.SetItems(Image, loot);
             dialog.ShowDialog();
 
             game.Party.AddInventoryItemRange(loot);

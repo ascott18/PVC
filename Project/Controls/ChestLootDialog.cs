@@ -19,8 +19,9 @@ namespace Project
 			StartPosition = FormStartPosition.CenterParent;
 		}
 
-		public void SetItems(IEnumerable<Item> items)
+		public void SetItems(Image image, IEnumerable<Item> items)
 		{
+			chestImage.Image = image;
 			itemFlowPanel.LoadItems(items);
 		}
 
