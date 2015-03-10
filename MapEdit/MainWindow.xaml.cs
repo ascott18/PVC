@@ -88,7 +88,7 @@ namespace MapEdit
 			{
 				controller.SetMap(1);
 			}
-			catch (Exception exception)
+			catch (Exception)
 			{
 				MessageBox.Show("Couldn't load default mapID 1.");
 			}
