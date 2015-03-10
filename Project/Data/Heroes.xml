@@ -42,8 +42,8 @@
 	<Attributes stamina="15" block="5" combo="10"/>
 	
 	<Spell id="101"/>
-	<Spell id="102"/>
 	<Spell id="103"/>
+	<Spell id="102"/>s
   </Hero>
   
   <Hero id="5" texture="dwight" name="Dwight"

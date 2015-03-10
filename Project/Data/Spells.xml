@@ -31,7 +31,7 @@
 
 	<!--Lumbergh-->
 	<TargetedDamage id="21" name="Order TPS Reports" damage="4" castTime="2" cooldown="0" />
-	<TargetedDamage id="22" name="Request Saturday" damage="14" castTime="3" cooldown="7">
+	<TargetedDamage id="22" name="Request Saturday" damage="14" castTime="3" cooldown="10">
 	  <Auras>
 		<Stun duration="1" blockable="false"/>
 	  </Auras>
@@ -41,7 +41,7 @@
 	<TargetedDamage id="31" name="Pester" damage="5" castTime="2" cooldown="2" />
 	<AreaHealing id="33" name="Order Coffee" healing="2" castTime="4" cooldown="10">
 	  <Auras>
-		<HealingOverTime blockable="false" duration="4" damage="8"/>
+		<HealOverTime blockable="false" duration="4" healing="8"/>
 	  </Auras>
 	</AreaHealing>
 
@@ -81,9 +81,9 @@
 	<TargetedDamage id="81" name="Throw Exception" damage="12" castTime="1.5" cooldown="0" />
 	<SelfHealing id="82" name="Evade" healing="8" castTime="2" cooldown="9">
 	  <Auras>
-		<StatMult duration="2" blockable="false">
-		  <Multiplier block="200"/>
-		</StatMult>
+		<StatMod duration="2" blockable="false">
+		  <Attributes block="100"/>
+		</StatMod>
 	  </Auras>
 	</SelfHealing>
 
@@ -91,18 +91,36 @@
 	<TargetedDamage id="91" name="Shield Slam" damage="6" castTime="0.5" cooldown="1" />
 	<AreaDamage id="92" name="Shockwave" damage="8" castTime="1" cooldown="15">
 		<Auras>
-			<Stun duration="2" blockable="false"/>
-			<StatMult duration="5" blockable="false">
-			  <Multiplier stamina="-50" block="0" combo="0"/>
-			</StatMult>
+			<Stun duration="3" blockable="false"/>
 		</Auras>
 	</AreaDamage>
-	<AreaHealing id="93" name="Rallying Cry" healing="14" castTime="3" cooldown="9" />
+	<AreaHealing id="93" name="Rallying Cry" healing="14" castTime="3" cooldown="9">
+	  <Auras>
+		<StatMult duration="5" blockable="false">
+		  <Multiplier stamina="30" block="0" combo="0"/>
+		</StatMult>
+		<StatMod duration="5" blockable="false">
+		  <Attributes stamina="0" block="30" combo="30"/>
+		</StatMod>
+	  </Auras>
+	</AreaHealing>
 
 	<!--Laggy-->
 	<TargetedDamage id="101" name="Shred" damage="12" castTime="1.5" cooldown="0" />
-	<TargetedDamage id="102" name="Crook Dance" damage="24" castTime="3" cooldown="15" />
-	<AreaDamage id="103" name="Projectile Vomit" damage="8" castTime="1" cooldown="12" />
+	<SelfHealing id="102" name="Crook Dance" healing="10" castTime="3" cooldown="15">
+	  <Auras>
+		<StatMod duration="4" blockable="false">
+		  <Attributes stamina="0" block="30" combo="100"/>
+		</StatMod>
+	  </Auras>
+	</SelfHealing>
+	<AreaDamage id="103" name="Projectile Vomit" damage="8" castTime="1" cooldown="12">
+	  <Auras>
+		<StatMult duration="3" blockable="true">
+		  <Multiplier stamina="-20" block="0" combo="0"/>
+		</StatMult>
+	  </Auras>
+	</AreaDamage>
 
 	<!--Dwight-->
 	<TargetedDamage id="111" name="Dwight Sp1" damage="12" castTime="1.5" cooldown="0" />
