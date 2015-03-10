@@ -1,54 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Forms;
+using System.Windows.Media;
 using System.Xml;
 using System.Xml.Linq;
-using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.Folding;
-using ICSharpCode.AvalonEdit.Highlighting;
-
-using Project;
 using Project.Controls;
 using Project.Data;
 using MessageBox = System.Windows.MessageBox;
+using Point = System.Drawing.Point;
 using Timer = System.Threading.Timer;
 
 namespace MapEdit
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	///     Interaction logic for MainWindow.xaml
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		public static int[] Columns = new[]
+		public static int[] Columns =
 		{
 			0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 		};
 
+		private readonly Controller controller = new Controller();
+		private readonly Timer updateTimer;
 		private DungeonContainer container;
-		private Controller controller = new Controller();
+		private string currentFile;
 		private Timer dungeonTimer;
-		private Timer updateTimer;
 
 		private FoldingManager foldingManager;
-		private XmlFoldingStrategy foldingStrategy = new XmlFoldingStrategy(){ShowAttributesWhenFolded = true};
-		private string currentFile;
+
+		private XmlFoldingStrategy foldingStrategy = new XmlFoldingStrategy
+		{
+			ShowAttributesWhenFolded = true
+		};
 
 		private string lastSavedText = "";
 
@@ -88,7 +79,7 @@ namespace MapEdit
 			// Create the MaskedTextBox control.
 			Host.Child = container = new DungeonContainer
 			{
-				Location = new System.Drawing.Point(0, 0)
+				Location = new Point(0, 0)
 			};
 
 			container.Paint += container_Paint;
@@ -96,14 +87,14 @@ namespace MapEdit
 
 			TextEditor.TextChanged += TextEditor_TextChanged;
 			TextEditor.TextArea.Caret.PositionChanged += Caret_PositionChanged;
-			TextEditor.Options.ConvertTabsToSpaces = true;
+			//TextEditor.Options.ConvertTabsToSpaces = true;
 			TextEditor.Options.ShowTabs = true;
-			TextEditor.Options.IndentationSize = 2;
-			
+			TextEditor.Options.IndentationSize = 4;
+
 			foldingManager = FoldingManager.Install(TextEditor.TextArea);
 		}
 
-		void Update()
+		private void Update()
 		{
 			TextEditorBorder.BorderBrush = Brushes.Black;
 			ErrorText.Text = "";
@@ -139,19 +130,19 @@ namespace MapEdit
 			}
 		}
 
-		void QueueUpdate()
+		private void QueueUpdate()
 		{
 			updateTimer.Change(200, Timeout.Infinite);
 		}
 
-		void Caret_PositionChanged(object sender, EventArgs e)
+		private void Caret_PositionChanged(object sender, EventArgs e)
 		{
 			QueueUpdate();
 		}
 
-		void TextEditor_TextChanged(object sender, EventArgs e)
+		private void TextEditor_TextChanged(object sender, EventArgs e)
 		{
-			foldingStrategy = new XmlFoldingStrategy()
+			foldingStrategy = new XmlFoldingStrategy
 			{
 				ShowAttributesWhenFolded = true
 			};
@@ -160,13 +151,13 @@ namespace MapEdit
 			QueueUpdate();
 		}
 
-		void container_Paint(object sender, PaintEventArgs e)
+		private void container_Paint(object sender, PaintEventArgs e)
 		{
 			if (controller != null && controller.CurrentMap != null)
 				controller.CurrentMap.Draw(e.Graphics);
 		}
 
-		void LoadMap(int mapID)
+		private void LoadMap(int mapID)
 		{
 			var doc = XDocument.Load(new StringReader(TextEditor.Text));
 			var element = XmlData.GetXElementByID(doc, "Maps", mapID);
@@ -178,7 +169,8 @@ namespace MapEdit
 		{
 			if (lastSavedText != TextEditor.Text)
 			{
-				var result = MessageBox.Show("You have unsaved changes. Are you sure you want to reload?", "Unsaved changes", MessageBoxButton.OKCancel);
+				var result = MessageBox.Show("You have unsaved changes. Are you sure you want to reload?", "Unsaved changes",
+				                             MessageBoxButton.OKCancel);
 				if (result == MessageBoxResult.Cancel)
 					return;
 			}
@@ -223,11 +215,12 @@ namespace MapEdit
 			}
 		}
 
-		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		private void Window_Closing(object sender, CancelEventArgs e)
 		{
 			if (lastSavedText != TextEditor.Text)
 			{
-				var result = MessageBox.Show("You have unsaved changes. Are you sure you want to exit?", "Unsaved changes", MessageBoxButton.OKCancel);
+				var result = MessageBox.Show("You have unsaved changes. Are you sure you want to exit?", "Unsaved changes",
+				                             MessageBoxButton.OKCancel);
 				if (result == MessageBoxResult.Cancel)
 					e.Cancel = true;
 			}
