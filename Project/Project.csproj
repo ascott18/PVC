@@ -176,6 +176,7 @@
     <Compile Include="Spells\AuraDamageOverTime.cs" />
     <Compile Include="Spells\AuraHealOverTime.cs" />
     <Compile Include="Spells\AuraHealthOverTime.cs" />
+    <Compile Include="Spells\AuraStatMod.cs" />
     <Compile Include="Spells\AuraStatMult.cs" />
     <Compile Include="Spells\AuraStun.cs" />
     <Compile Include="Spells\SpellAreaDamage.cs" />

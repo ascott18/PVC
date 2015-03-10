@@ -10,13 +10,14 @@ using Project.Sprites;
 
 namespace Project.Spells
 {
-	class AuraStatMult : Aura
+	class AuraStatMod : Aura
 	{
-		public readonly AttributesMultiplier Multiplier;
+		public readonly Attributes Mod;
 
-		protected AuraStatMult(XElement data) : base(data)
+		protected AuraStatMod(XElement data)
+			: base(data)
 		{
-			Multiplier = AttributesMultiplier.Parse(data.Element("Multiplier"));
+			Mod = Attributes.Parse(data.Element("Attributes"));
 
 			Applied += AuraStatMult_Applied;
 			Removed += AuraStatMult_Removed;
@@ -30,7 +31,7 @@ namespace Project.Spells
 
 		void Target_RecalculatingAttributes(CombatSprite sender, SpriteAttributesRecalcEventArgs args)
 		{
-			args.AttributesMultiplier += Multiplier;
+			args.Attributes += Mod;
 		}
 
 		void AuraStatMult_Removed(object sender, EventArgs e)
@@ -39,10 +40,10 @@ namespace Project.Spells
 			Target.RecalculateAttributes();
 		}
 
-		[XmlData.XmlParserAttribute("StatMult")]
+		[XmlData.XmlParserAttribute("StatMod")]
 		public static Aura Create(XElement data)
 		{
-			return new AuraStatMult(data);
+			return new AuraStatMod(data);
 		}
 
 		public override void GetTooltip(StringBuilder sb)
@@ -56,13 +57,13 @@ namespace Project.Spells
 
 				if (appendComma)
 					sb.Append(", ");
-				sb.Append((val > 0 ? "+" : "") + String.Format("{0:D1}% {1}", val, name));
+				sb.Append((val > 0 ? "+" : "") + String.Format("{0:D1} {1}", val, name));
 				appendComma = true;
 			};
 
-			fmt(Multiplier.StaminaPercent, "Stamina");
-			fmt(Multiplier.BlockPercent, "Block");
-			fmt(Multiplier.ComboPercent, "Combo");
+			fmt(Mod.Stamina, "Stamina");
+			fmt(Mod.Block, "Block");
+			fmt(Mod.Combo, "Combo");
 
 			sb.AppendLine();
 		}
