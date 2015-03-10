@@ -83,7 +83,15 @@ namespace MapEdit
 			};
 
 			container.Paint += container_Paint;
-			controller.SetMap(1);
+
+			try
+			{
+				controller.SetMap(1);
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show("Couldn't load default mapID 1.");
+			}
 
 			TextEditor.TextChanged += TextEditor_TextChanged;
 			TextEditor.TextArea.Caret.PositionChanged += Caret_PositionChanged;
