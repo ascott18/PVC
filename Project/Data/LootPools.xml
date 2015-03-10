@@ -99,5 +99,18 @@
 		<Item id="350" chance="1" />
 	</LootPool>
 
+  <!-- Coins -->
+
+   <LootPool id="505">
+    <Item id="502" chance="1" />
+  </LootPool> 
+  
+  <LootPool id="510">
+    <Item id="501" chance="1" />
+  </LootPool>
+
+  <LootPool id="525">
+    <Item id="500" chance="1" />
+  </LootPool>
 
 </LootPools>
