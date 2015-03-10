@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Text;
-using System.Xml.XPath;
+using System.Linq;
 using Project.Data;
 using Project.Sprites;
 
@@ -8,8 +7,8 @@ namespace Project.Items
 {
 	public abstract class Item
 	{
-		public readonly string Name;
 		public readonly int ItemID;
+		public readonly string Name;
 
 		protected Item(int itemId, string name)
 		{
@@ -23,10 +22,10 @@ namespace Project.Items
 			return XmlData.XmlParserParseByID<Item>("Items", itemID);
 		}
 
-	    public virtual void Use(Hero hero)
-	    {
-	        throw new NotImplementedException();
-	    }
+		public virtual void Use(Hero hero)
+		{
+			throw new NotImplementedException();
+		}
 
 		public virtual string GetTooltip()
 		{

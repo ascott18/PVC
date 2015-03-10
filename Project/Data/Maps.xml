@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Maps>
 	<Map id="1">
@@ -810,14 +810,14 @@
 
 		<Objects>
 			<MonsterPack id="000101" x="10" y="6">
-				<Monster id="22"/>
+				<Monster id="22" />
 			</MonsterPack>
 
 			<Chest x="6" y="6" texture="medbox">
-				<LootPool id="1"/>
-				<LootPool id="2"/>
+				<LootPool id="1" />
+				<LootPool id="2" />
 			</Chest>
-			
+
 		</Objects>
 
 	</Map>
@@ -846,7 +846,7 @@
 		</AdjacentMaps>
 
 		<Objects>
-			<Door x="12" y="10" toMap="112" toX="11" toY="10" texture="verydarkwall elevatorDown"/>
+			<Door x="12" y="10" toMap="112" toX="11" toY="10" texture="verydarkwall elevatorDown" />
 
 			<MonsterPack id="000101" x="3" y="5">
 				<Monster id="01" />
@@ -950,14 +950,14 @@
 
 		<Objects>
 			<MonsterPack id="000101" x="7" y="8">
-				<Monster id="22"/>
+				<Monster id="22" />
 			</MonsterPack>
 
 			<Chest x="7" y="5" texture="medbox">
-				<LootPool id="1"/>
-				<LootPool id="2"/>
+				<LootPool id="1" />
+				<LootPool id="2" />
 			</Chest>
-			
+
 		</Objects>
 
 	</Map>
@@ -987,7 +987,7 @@
 
 		<Objects>
 			<Door x="6" y="12" toMap="412" toX="6" toY="11" texture="elevatorUp" />
-			<Watercooler x="1" y="11"/>
+			<Watercooler x="1" y="11" />
 		</Objects>
 
 	</Map>
@@ -1016,8 +1016,8 @@
 
 		<Objects>
 			<Chest x="5" y="11" texture="smallbox">
-				<LootPool id="1"/>
-				<LootPool id="2"/>
+				<LootPool id="1" />
+				<LootPool id="2" />
 			</Chest>
 
 		</Objects>

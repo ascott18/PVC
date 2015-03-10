@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Drawing;
-using Project.Properties;
+using System.Linq;
 
 namespace Project.Dungeon
 {
@@ -14,7 +14,6 @@ namespace Project.Dungeon
 	{
 		protected TileObject(Point loc)
 		{
-			Image = Resources.lumbergh; // TODO: temp
 			InitialLocation = loc;
 		}
 

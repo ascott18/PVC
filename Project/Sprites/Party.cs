@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -20,6 +19,11 @@ namespace Project.Sprites
 		{
 			Members = heroes.AsReadOnly();
 			Inventory = inventory.AsReadOnly();
+		}
+
+		public new IEnumerator<Hero> GetEnumerator()
+		{
+			return heroes.GetEnumerator();
 		}
 
 		public void AddHero(Hero hero)
@@ -52,12 +56,6 @@ namespace Project.Sprites
 		}
 
 		public event PartyEvent InventoryChanged;
-
-
-		public new IEnumerator<Hero> GetEnumerator()
-		{
-			return heroes.GetEnumerator();
-		}
 	}
 
 	public delegate void PartyEvent(Party party);

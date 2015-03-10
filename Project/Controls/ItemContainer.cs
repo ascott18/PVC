@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project.Items;
 
@@ -24,11 +18,6 @@ namespace Project.Controls
 			SetStyle(ControlStyles.StandardClick, true);
 
 			nameLabel.MouseDown += label_MouseDown;
-		}
-
-		private void label_MouseDown(object sender, MouseEventArgs e)
-		{
-			OnMouseDown(e);
 		}
 
 		public Item Item
@@ -51,6 +40,11 @@ namespace Project.Controls
 
 				UpdateLabel();
 			}
+		}
+
+		private void label_MouseDown(object sender, MouseEventArgs e)
+		{
+			OnMouseDown(e);
 		}
 
 		private void UpdateLabel()

@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using System.Xml.XPath;
 using Project.Data;
-using Project.Items;
 
 namespace Project.Items
 {
@@ -15,40 +13,35 @@ namespace Project.Items
 	/// </summary>
 	internal class LootPool
 	{
-		private struct LootEvent
-		{
-			public int ItemID;
-			public double Chance;
-		}
-
 		private static readonly Dictionary<int, LootPool> pools = new Dictionary<int, LootPool>();
 
+		private static readonly Random random = new Random();
 		private readonly List<LootEvent> loot = new List<LootEvent>();
 
-		static Random random = new Random();
+		private LootPool()
+		{
+		}
 
 		public int Limit { get; private set; }
-
-		private LootPool() { }
 
 		private static LootPool Parse(XElement element)
 		{
 			var pool = new LootPool();
 
 			var itemElements = element.Elements("Item");
-			
+
 			var limitAttribute = element.Attribute("limit");
 			if (limitAttribute != null)
-				pool.Limit = (int) limitAttribute;
+				pool.Limit = (int)limitAttribute;
 			else
 				pool.Limit = 0;
 
 			foreach (var itemElement in itemElements)
 			{
-				var itemID = (int) itemElement.Attribute("id");
-				var chance = (double) itemElement.Attribute("chance");
+				var itemID = (int)itemElement.Attribute("id");
+				var chance = (double)itemElement.Attribute("chance");
 
-				pool.loot.Add(new LootEvent{Chance = chance, ItemID = itemID});
+				pool.loot.Add(new LootEvent {Chance = chance, ItemID = itemID});
 			}
 
 			return pool;
@@ -102,7 +95,7 @@ namespace Project.Items
 		}
 
 		/// <summary>
-		/// Parses all LootPool child elements of the given xelement.
+		///     Parses all LootPool child elements of the given xelement.
 		/// </summary>
 		/// <param name="element">The parent element to parse loot pools from.</param>
 		/// <returns>The list of LootPool objects parsed.</returns>
@@ -122,9 +115,8 @@ namespace Project.Items
 		}
 
 
-
 		/// <summary>
-		/// Generates the loot dropped by a set of LootPools.
+		///     Generates the loot dropped by a set of LootPools.
 		/// </summary>
 		/// <returns>A List of Items dropped by the LootPools.</returns>
 		public static List<Item> GetLoot(IEnumerable<LootPool> lootPools)
@@ -138,6 +130,12 @@ namespace Project.Items
 			}
 
 			return items;
-		} 
+		}
+
+		private struct LootEvent
+		{
+			public double Chance;
+			public int ItemID;
+		}
 	}
 }

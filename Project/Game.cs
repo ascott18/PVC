@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -22,8 +21,8 @@ namespace Project
 		/// </summary>
 		public readonly Party Party;
 
-		private CombatSession currentSession;
 		private DungeonMap currentMap;
+		private CombatSession currentSession;
 
 		public Game()
 		{
@@ -95,7 +94,7 @@ namespace Project
 				throw new InvalidOperationException("Can't enter combat while in combat");
 
 			currentSession = new CombatSession(Party, enemy);
-		//	MainWindow.Window.dungeonContainer.Hide();
+			//	MainWindow.Window.dungeonContainer.Hide();
 			MainWindow.Window.combatArena.Show();
 			MainWindow.Window.combatArena.CombatSession = currentSession;
 

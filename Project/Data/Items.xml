@@ -1,138 +1,129 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Items>
-  <!--SlotIDs:
+	<!--SlotIDs:
 	  Weapon,
 	  Head,
 	  Body,
 	  Feet,
   -->
 
-  <!-- Tier 0-->
+	<!-- Tier 0-->
 
-  <Equippable id="11" name="Clipboard" slot="Weapon">
-    <Attributes stamina="3" block ="2" combo ="5"/>
-  </Equippable>
-  <Equippable id="12" name="Tattered Band T-shirt" slot="Body">
-    <Attributes stamina="2" block ="3" combo ="2"/>
-  </Equippable>
-  <Equippable id="13" name="Broken Flip Flops" slot="Feet">
-    <Attributes stamina="2" block ="1" combo ="3"/>
-  </Equippable>
-  <Equippable id="14" name="Broken Stick" slot="Weapon">
-    <Attributes stamina="1" block ="3" combo ="4"/>
-  </Equippable>
-  <Equippable id="15" name="Faded Sweat Band" slot="Head">
-    <Attributes stamina="1" block ="2" combo ="1"/>
-  </Equippable>
-  <Equippable id="16" name="Dirty Socks" slot="Feet">
-    <Attributes stamina="2" block ="2" combo ="2"/>
-  </Equippable>
-  <Equippable id="17" name="Wife-beater" slot="Body">
-    <Attributes stamina="1" block ="2" combo ="1"/>
-  </Equippable>
+	<Equippable id="11" name="Clipboard" slot="Weapon">
+		<Attributes stamina="3" block="2" combo="5" />
+	</Equippable>
+	<Equippable id="12" name="Tattered Band T-shirt" slot="Body">
+		<Attributes stamina="2" block="3" combo="2" />
+	</Equippable>
+	<Equippable id="13" name="Broken Flip Flops" slot="Feet">
+		<Attributes stamina="2" block="1" combo="3" />
+	</Equippable>
+	<Equippable id="14" name="Broken Stick" slot="Weapon">
+		<Attributes stamina="1" block="3" combo="4" />
+	</Equippable>
+	<Equippable id="15" name="Faded Sweat Band" slot="Head">
+		<Attributes stamina="1" block="2" combo="1" />
+	</Equippable>
+	<Equippable id="16" name="Dirty Socks" slot="Feet">
+		<Attributes stamina="2" block="2" combo="2" />
+	</Equippable>
+	<Equippable id="17" name="Wife-beater" slot="Body">
+		<Attributes stamina="1" block="2" combo="1" />
+	</Equippable>
 
-  <Food id="50" name="Coffee" amount="25"/>
-  
-  
-  <!-- Tier 1-->
-
-  <Equippable id="100" name="Butter Knife" slot="Weapon">
-    <Attributes stamina="3" block ="2" combo ="5"/>
-  </Equippable>
-  <Equippable id="112" name="Hawaiian Shirt" slot="Body">
-    <Attributes stamina="2" block ="3" combo ="2"/>
-  </Equippable>
-  <Equippable id="113" name="Sneakers" slot="Feet">
-    <Attributes stamina="2" block ="1" combo ="3"/>
-  </Equippable>
-  <Equippable id="114" name="Not-So-Pointy Stick" slot="Weapon">
-    <Attributes stamina="1" block ="3" combo ="4"/>
-  </Equippable>
-  <Equippable id="115" name="Propeller Hat" slot="Head">
-    <Attributes stamina="1" block ="2" combo ="1"/>
-  </Equippable>
-  <Equippable id="116" name="Crocs" slot="Feet">
-    <Attributes stamina="2" block ="2" combo ="2"/>
-  </Equippable>
-  <Equippable id="117" name="Stained Khakis" slot="Body">
-    <Attributes stamina="1" block ="2" combo ="1"/>
-  </Equippable>
+	<Food id="50" name="Coffee" amount="25" />
 
 
+	<!-- Tier 1-->
 
-  <Food id="150" name="Latte" amount="55"/>
-  
-  <!-- Tier 2-->
-
-  <Equippable id="200" name="Scissors" slot="Weapon">
-    <Attributes stamina="3" block ="2" combo ="5"/>
-  </Equippable>
-  <Equippable id="212" name="Grey Shirt" slot="Body">
-    <Attributes stamina="2" block ="3" combo ="2"/>
-  </Equippable>
-  <Equippable id="213" name="Loafers" slot="Feet">
-    <Attributes stamina="2" block ="1" combo ="3"/>
-  </Equippable>
-  <Equippable id="214" name="Pointy Stick" slot="Weapon">
-    <Attributes stamina="1" block ="3" combo ="4"/>
-  </Equippable>
-  <Equippable id="215" name="Oversized Specs" slot="Head">
-    <Attributes stamina="1" block ="2" combo ="1"/>
-  </Equippable>
-  <Equippable id="216" name="Pumps" slot="Feet">
-    <Attributes stamina="2" block ="2" combo ="2"/>
-  </Equippable>
-  <Equippable id="217" name="Slacks" slot="Body">
-    <Attributes stamina="1" block ="2" combo ="1"/>
-  </Equippable>
+	<Equippable id="100" name="Butter Knife" slot="Weapon">
+		<Attributes stamina="3" block="2" combo="5" />
+	</Equippable>
+	<Equippable id="112" name="Hawaiian Shirt" slot="Body">
+		<Attributes stamina="2" block="3" combo="2" />
+	</Equippable>
+	<Equippable id="113" name="Sneakers" slot="Feet">
+		<Attributes stamina="2" block="1" combo="3" />
+	</Equippable>
+	<Equippable id="114" name="Not-So-Pointy Stick" slot="Weapon">
+		<Attributes stamina="1" block="3" combo="4" />
+	</Equippable>
+	<Equippable id="115" name="Propeller Hat" slot="Head">
+		<Attributes stamina="1" block="2" combo="1" />
+	</Equippable>
+	<Equippable id="116" name="Crocs" slot="Feet">
+		<Attributes stamina="2" block="2" combo="2" />
+	</Equippable>
+	<Equippable id="117" name="Stained Khakis" slot="Body">
+		<Attributes stamina="1" block="2" combo="1" />
+	</Equippable>
 
 
+	<Food id="150" name="Latte" amount="55" />
 
-  <Food id="250" name="Cappuccino" amount="85"/>
-  
-  
-  <!-- Tier 3-->
+	<!-- Tier 2-->
 
-  <Equippable id="300" name="Stapler" slot="Weapon">
-    <Attributes stamina="3" block ="2" combo ="5"/>
-  </Equippable>
-  <Equippable id="301" name="Swiss Army Knife" slot="Weapon">
-  <Attributes stamina="3" block ="2" combo ="5"/>
-  </Equippable>
-  <Equippable id="312" name="Snazzy Suit" slot="Body">
-    <Attributes stamina="2" block ="3" combo ="2"/>
-  </Equippable>
-  <Equippable id="313" name="Black Oxfords" slot="Feet">
-    <Attributes stamina="2" block ="1" combo ="3"/>
-  </Equippable>
-  <Equippable id="314" name="Spiky Pointy Stick" slot="Weapon">
-    <Attributes stamina="1" block ="3" combo ="4"/>
-  </Equippable>
-  <Equippable id="315" name="Thrifty Shades" slot="Head">
-    <Attributes stamina="1" block ="2" combo ="1"/>
-  </Equippable>
-  <Equippable id="316" name="Stilettos" slot="Feet">
-    <Attributes stamina="2" block ="2" combo ="2"/>
-  </Equippable>
-  <Equippable id="317" name="Tux" slot="Body">
-    <Attributes stamina="1" block ="2" combo ="1"/>
-  </Equippable>
- 
-  
-  
-  <Food id="350" name="Espresso" amount="115"/>
-
-  
-  
+	<Equippable id="200" name="Scissors" slot="Weapon">
+		<Attributes stamina="3" block="2" combo="5" />
+	</Equippable>
+	<Equippable id="212" name="Grey Shirt" slot="Body">
+		<Attributes stamina="2" block="3" combo="2" />
+	</Equippable>
+	<Equippable id="213" name="Loafers" slot="Feet">
+		<Attributes stamina="2" block="1" combo="3" />
+	</Equippable>
+	<Equippable id="214" name="Pointy Stick" slot="Weapon">
+		<Attributes stamina="1" block="3" combo="4" />
+	</Equippable>
+	<Equippable id="215" name="Oversized Specs" slot="Head">
+		<Attributes stamina="1" block="2" combo="1" />
+	</Equippable>
+	<Equippable id="216" name="Pumps" slot="Feet">
+		<Attributes stamina="2" block="2" combo="2" />
+	</Equippable>
+	<Equippable id="217" name="Slacks" slot="Body">
+		<Attributes stamina="1" block="2" combo="1" />
+	</Equippable>
 
 
+	<Food id="250" name="Cappuccino" amount="85" />
 
 
+	<!-- Tier 3-->
+
+	<Equippable id="300" name="Stapler" slot="Weapon">
+		<Attributes stamina="3" block="2" combo="5" />
+	</Equippable>
+	<Equippable id="301" name="Swiss Army Knife" slot="Weapon">
+		<Attributes stamina="3" block="2" combo="5" />
+	</Equippable>
+	<Equippable id="312" name="Snazzy Suit" slot="Body">
+		<Attributes stamina="2" block="3" combo="2" />
+	</Equippable>
+	<Equippable id="313" name="Black Oxfords" slot="Feet">
+		<Attributes stamina="2" block="1" combo="3" />
+	</Equippable>
+	<Equippable id="314" name="Spiky Pointy Stick" slot="Weapon">
+		<Attributes stamina="1" block="3" combo="4" />
+	</Equippable>
+	<Equippable id="315" name="Thrifty Shades" slot="Head">
+		<Attributes stamina="1" block="2" combo="1" />
+	</Equippable>
+	<Equippable id="316" name="Stilettos" slot="Feet">
+		<Attributes stamina="2" block="2" combo="2" />
+	</Equippable>
+	<Equippable id="317" name="Tux" slot="Body">
+		<Attributes stamina="1" block="2" combo="1" />
+	</Equippable>
 
 
-  <!-- Coins-->
-  <Coin id="500" name="Quarter" value="25"/>
-  <Coin id="501" name="Nickel" value="5"/>
-  <Coin id="502" name="Dime" value="10"/>
-  <Coin id="503" name="Dollar" value="100"/>
+	<Food id="350" name="Espresso" amount="115" />
+
+
+	<!-- Coins-->
+	<Coin id="500" name="Quarter" value="25" />
+	<Coin id="501" name="Nickel" value="5" />
+	<Coin id="502" name="Dime" value="10" />
+	<Coin id="503" name="Dollar" value="100" />
 </Items>

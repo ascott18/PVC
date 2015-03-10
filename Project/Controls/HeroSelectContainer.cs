@@ -30,7 +30,7 @@ namespace Project.Controls
 			get { return chosenIndex; }
 			set
 			{
-				chosenIndex = value; 
+				chosenIndex = value;
 				Invalidate();
 			}
 		}

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project.Sprites;
 
@@ -46,13 +40,13 @@ namespace Project.Controls
 			}
 		}
 
-		void HeroAttributesChanged(CombatSprite sender)
+		private void HeroAttributesChanged(CombatSprite sender)
 		{
 			statsLabel.Text = String.Format("Stamina: {0}\nBlock: {1}\nCombo: {2}",
-				sender.Attributes.Stamina,
-				sender.Attributes.Block,
-				sender.Attributes.Combo
-			);
+			                                sender.Attributes.Stamina,
+			                                sender.Attributes.Block,
+			                                sender.Attributes.Combo
+				);
 		}
 	}
 }

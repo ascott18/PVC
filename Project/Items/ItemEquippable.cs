@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using Project.Data;
@@ -43,10 +44,10 @@ namespace Project.Items
 			};
 		}
 
-	    public override void Use(Hero hero)
-	    {
-	        hero.Equip(this);
-	    }
+		public override void Use(Hero hero)
+		{
+			hero.Equip(this);
+		}
 
 		public override string GetTooltip()
 		{

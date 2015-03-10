@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -99,52 +98,51 @@ namespace Project.Dungeon
 			// Create TileObjects for all the map's objects
 			var objectsElement = mapElement.Element("Objects");
 			if (objectsElement != null)
-			foreach (XElement objectElement in objectsElement.Elements())
-			{
-				string elementName = objectElement.Name.ToString();
+				foreach (XElement objectElement in objectsElement.Elements())
+				{
+					string elementName = objectElement.Name.ToString();
 
-				// Check to see if there is a parser method defined for this element name.
-				if (!parserMethods.ContainsKey(elementName))
-					throw new Exception(String.Format("No parser for element {0}", elementName));
+					// Check to see if there is a parser method defined for this element name.
+					if (!parserMethods.ContainsKey(elementName))
+						throw new Exception(String.Format("No parser for element {0}", elementName));
 
-				// Attempt to parse it, delegating out to the method declared for this
-				// element name using the [XmlParserAttribute(elementName)] attribute.
-				TileObject parsedTileObject = parserMethods[elementName](objectElement);
+					// Attempt to parse it, delegating out to the method declared for this
+					// element name using the [XmlParserAttribute(elementName)] attribute.
+					TileObject parsedTileObject = parserMethods[elementName](objectElement);
 
-				// If null was returned by the parser, something must have gone wrong.
-				if (parsedTileObject == null)
-					throw new Exception(String.Format("Could not parse element {0}", elementName));
+					// If null was returned by the parser, something must have gone wrong.
+					if (parsedTileObject == null)
+						throw new Exception(String.Format("Could not parse element {0}", elementName));
 
 
-				objects.Add(parsedTileObject);
-			}
+					objects.Add(parsedTileObject);
+				}
 
 			// Create TileObjects for the TileData's static objects.
 			for (int x = 0; x < tiles.GetLength(0); x++)
-			for (int y = 0; y < tiles.GetLength(1); y++)
-			{
-				var tileData = tiles[x, y];
-
-				var objTileData = tileData as TileDataWithObject;
-				if (objTileData == null) continue;
-
-				try
+				for (int y = 0; y < tiles.GetLength(1); y++)
 				{
-					var type = Assembly
-						.GetExecutingAssembly()
-						.GetTypes()
-						.First(t => t.Name == objTileData.TileObjectName && typeof(TileObject).IsAssignableFrom(t));
-						
-					var ctor = type.GetConstructor(new[] { typeof(Point) });
-					var obj = (TileObject)ctor.Invoke(new object[] { new Point(x, y) });
-					objects.Add(obj);
+					var tileData = tiles[x, y];
 
+					var objTileData = tileData as TileDataWithObject;
+					if (objTileData == null) continue;
+
+					try
+					{
+						var type = Assembly
+							.GetExecutingAssembly()
+							.GetTypes()
+							.First(t => t.Name == objTileData.TileObjectName && typeof(TileObject).IsAssignableFrom(t));
+
+						var ctor = type.GetConstructor(new[] {typeof(Point)});
+						var obj = (TileObject)ctor.Invoke(new object[] {new Point(x, y)});
+						objects.Add(obj);
+					}
+					catch (Exception)
+					{
+						throw new ApplicationException("TileObject " + objTileData.TileObjectName + " couldn't be created.");
+					}
 				}
-				catch (Exception)
-				{
-					throw new ApplicationException("TileObject " + objTileData.TileObjectName + " couldn't be created.");
-				}
-			}
 
 			return objects;
 		}
@@ -206,7 +204,7 @@ namespace Project.Dungeon
 
 			return mapData;
 		}
-		
+
 
 		/// <summary>
 		///     Returns the id of the adjacent map to this map in the indicated direction.

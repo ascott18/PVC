@@ -2,45 +2,44 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Project.Data;
 using Project.Items;
 
 namespace Project.Dungeon
 {
-    class Chest : TileObject
-    {
-        private List<LootPool> lootPools;
+	internal class Chest : TileObject
+	{
+		private List<LootPool> lootPools;
+
+		protected Chest(Point loc) : base(loc)
+		{
+		}
+
 		public bool ShouldDespawn { get; private set; }
 		public bool Looted { get; private set; }
 
 
-        protected Chest(Point loc) : base(loc)
-        {
-        }
+		public override void Interact(Game game)
+		{
+			if (Looted) return;
+			Looted = true;
 
-        public override void Interact(Game game)
-        {
-	        if (Looted) return;
-	        Looted = true;
+			var loot = new List<Item>();
+			foreach (var lootPool in lootPools)
+			{
+				loot.AddRange(lootPool.GenerateLoot());
+			}
 
-            var loot = new List<Item>();
-            foreach (var lootPool in lootPools)
-            {
-                loot.AddRange(lootPool.GenerateLoot());
-            }
+			var dialog = new ChestLootDialog();
+			dialog.SetItems(Image, loot);
+			dialog.ShowDialog();
 
-            var dialog = new ChestLootDialog();
-            dialog.SetItems(Image, loot);
-            dialog.ShowDialog();
-
-            game.Party.AddInventoryItemRange(loot);
+			game.Party.AddInventoryItemRange(loot);
 
 			if (ShouldDespawn)
-			   CurrentTile.TileObject = null;
-        }
+				CurrentTile.TileObject = null;
+		}
 
 
 		/// <summary>
@@ -55,14 +54,14 @@ namespace Project.Dungeon
 
 			var despawnElement = chestElement.Attribute("despawn");
 
-            var chest = new Chest(loc)
-            {
-	            Image = XmlData.LoadImage(chestElement.Attribute("texture").Value),
-	            lootPools = LootPool.ParseLootPools(chestElement),
+			var chest = new Chest(loc)
+			{
+				Image = XmlData.LoadImage(chestElement.Attribute("texture").Value),
+				lootPools = LootPool.ParseLootPools(chestElement),
 				ShouldDespawn = despawnElement == null || (bool)despawnElement
-            };
+			};
 
 			return chest;
 		}
-    }
+	}
 }

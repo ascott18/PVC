@@ -1,8 +1,8 @@
-﻿using System.Text;
-using System.Windows.Forms;
+﻿using System;
+using System.Linq;
+using System.Text;
 using System.Xml.Linq;
 using Project.Data;
-using Project.Sprites;
 
 namespace Project.Spells
 {
@@ -38,6 +38,7 @@ namespace Project.Spells
 		{
 			return new SpellSelfHealing(data);
 		}
+
 		protected override void GetTooltip(StringBuilder sb)
 		{
 			sb.AppendLine("");

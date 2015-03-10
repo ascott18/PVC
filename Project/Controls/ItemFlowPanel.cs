@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project.Items;
 
@@ -27,7 +22,7 @@ namespace Project.Controls
 			SetStyle(ControlStyles.DoubleBuffer, true);
 		}
 
-		void ItemFlowPanel_ClientSizeChanged(object sender, EventArgs e)
+		private void ItemFlowPanel_ClientSizeChanged(object sender, EventArgs e)
 		{
 			foreach (var itemContainer in itemContainers)
 			{
@@ -52,7 +47,7 @@ namespace Project.Controls
 			return itemContainer;
 		}
 
-		void itemContainer_MouseDown(object sender, MouseEventArgs e)
+		private void itemContainer_MouseDown(object sender, MouseEventArgs e)
 		{
 			if (ContainerMouseDown != null)
 				ContainerMouseDown(sender as ItemContainer, e);

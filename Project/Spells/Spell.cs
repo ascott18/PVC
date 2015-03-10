@@ -59,8 +59,8 @@ namespace Project.Spells
 			Canceling,
 		}
 
+		private static readonly Random rand = new Random();
 		public readonly IReadOnlyList<XElement> AuraElements;
-		private readonly static Random rand = new Random();
 
 		private readonly int spellID;
 		protected string TooltipCache;
@@ -429,7 +429,7 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Populates the tooltip with spell-specific information.
+		///     Populates the tooltip with spell-specific information.
 		/// </summary>
 		/// <param name="sb"></param>
 		protected abstract void GetTooltip(StringBuilder sb);
@@ -483,7 +483,7 @@ namespace Project.Spells
 		}
 
 		/// <summary>
-		/// Apply all of the auras associated with the spell to a target.
+		///     Apply all of the auras associated with the spell to a target.
 		/// </summary>
 		/// <param name="target">The target to apply the auras to.</param>
 		protected void ApplyAuras(CombatSprite target)

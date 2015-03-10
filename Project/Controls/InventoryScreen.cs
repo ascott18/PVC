@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project.Items;
 using Project.Sprites;
@@ -15,9 +10,8 @@ namespace Project.Controls
 {
 	internal partial class InventoryScreen : Form
 	{
-		private Party party;
-
 		private readonly List<HeroInventoryContainer> hiContainers = new List<HeroInventoryContainer>();
+		private Party party;
 
 
 		public InventoryScreen()
@@ -38,27 +32,6 @@ namespace Project.Controls
 			inventoryFlow.DragDrop += inventoryFlow_DragDrop;
 			inventoryFlow.ContainerMouseDown += InventoryItemContainer_MouseDown;
 		}
-
-		void inventoryFlow_DragDrop(object sender, DragEventArgs e)
-		{
-			// Handles the recieve of a drag of an ItemEquippable 
-			var item = e.Data.GetData(typeof(ItemEquippable)) as ItemEquippable;
-			if (item != null)
-			{
-				Party.AddInventoryItem(item);
-			}
-		}
-
-		void inventoryFlow_DragEnter(object sender, DragEventArgs e)
-		{
-			// Notify that we can accept drags of ItemEquippable.
-			var data = e.Data.GetData(typeof(ItemEquippable));
-			if (party.Inventory.Contains(data))
-				e.Effect =  DragDropEffects.None;
-			else if (data is ItemEquippable)
-				e.Effect = DragDropEffects.Move;
-		}
-
 
 		public Party Party
 		{
@@ -87,16 +60,36 @@ namespace Project.Controls
 					party.InventoryChanged += Party_InventoryChanged;
 					Party_InventoryChanged(party);
 				}
-				
 			}
 		}
 
-		void Party_InventoryChanged(Party party)
+		private void inventoryFlow_DragDrop(object sender, DragEventArgs e)
+		{
+			// Handles the recieve of a drag of an ItemEquippable 
+			var item = e.Data.GetData(typeof(ItemEquippable)) as ItemEquippable;
+			if (item != null)
+			{
+				Party.AddInventoryItem(item);
+			}
+		}
+
+		private void inventoryFlow_DragEnter(object sender, DragEventArgs e)
+		{
+			// Notify that we can accept drags of ItemEquippable.
+			var data = e.Data.GetData(typeof(ItemEquippable));
+			if (party.Inventory.Contains(data))
+				e.Effect = DragDropEffects.None;
+			else if (data is ItemEquippable)
+				e.Effect = DragDropEffects.Move;
+		}
+
+
+		private void Party_InventoryChanged(Party party)
 		{
 			inventoryFlow.LoadItems(party.Inventory);
 		}
 
-		void InventoryItemContainer_MouseDown(ItemContainer container, MouseEventArgs e)
+		private void InventoryItemContainer_MouseDown(ItemContainer container, MouseEventArgs e)
 		{
 			// Handles dragging items out of our inventory.
 

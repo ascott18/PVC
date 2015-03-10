@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Project.Data;
 
 namespace Project.Dungeon
 {
-	class TileDataWithObject : TileData
+	internal class TileDataWithObject : TileData
 	{
 		public readonly string TileObjectName;
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Project.Sprites;
 
@@ -93,7 +94,6 @@ namespace Project.Controls
 		private void CheckTargetImageEnabled()
 		{
 			targetImage.Visible = target != null && Enabled;
-
 		}
 
 		private void targetImage_EnabledChanged(object sender, EventArgs e)

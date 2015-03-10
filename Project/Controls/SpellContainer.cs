@@ -79,7 +79,7 @@ namespace Project.Controls
 			else if (spell.RemainingCooldown > 0)
 			{
 				// Draw the cooldown bar if the spell is on cooldown.
-				e.Graphics.FillRectangle(Brushes.DarkGray, 
+				e.Graphics.FillRectangle(Brushes.DarkGray,
 				                         new Rectangle(
 					                         0, 0,
 					                         (int)(Width * (spell.RemainingCooldown / spell.CooldownDuration)),

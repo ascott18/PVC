@@ -29,7 +29,6 @@ namespace Project.Controls
 				{
 					spellContainer.MouseClick += spellContainer_MouseClick;
 					spellContainer.MouseDoubleClick += spellContainer_MouseDoubleClick;
-					
 				}
 			}
 			Controls.AddRange(heroContainers);
@@ -72,7 +71,7 @@ namespace Project.Controls
 			}
 		}
 
-		void combatSession_TargetsChanged(CombatSession sender)
+		private void combatSession_TargetsChanged(CombatSession sender)
 		{
 			// Update the portraits that show each unit's target.
 			var containers = Controls.OfType<CombatSpriteContainer>();

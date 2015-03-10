@@ -154,7 +154,7 @@ namespace Project.Data
 				image = new Bitmap(Tile.DimPixels, Tile.DimPixels);
 
 				using (var g = Graphics.FromImage(image))
-					foreach (string subImage in imageName.Split(new[]{' '}))
+					foreach (string subImage in imageName.Split(new[] {' '}))
 					{
 						g.DrawImage(LoadImage(subImage), 0, 0, Tile.DimPixels, Tile.DimPixels);
 					}

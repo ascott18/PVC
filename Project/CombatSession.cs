@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading;
 using System.Windows.Forms;
 using Project.Controls;
-using Project.Items;
 using Project.Spells;
 using Project.Sprites;
 
@@ -95,15 +93,15 @@ namespace Project
 		public CombatState State { get; private set; }
 
 		/// <summary>
+		///     Gets the winner of this CombatSession.
+		///     Will be null until the session is ended.
+		/// </summary>
+		public DungeonSprite Winner { get; private set; }
+
+		/// <summary>
 		///     Fires when the state of the CombatSession changes.
 		/// </summary>
 		public event CombatEvent StateChanged;
-
-		/// <summary>
-		/// Gets the winner of this CombatSession.
-		/// Will be null until the session is ended.
-		/// </summary>
-		public DungeonSprite Winner { get; private set; }
 
 		/// <summary>
 		///     Start the CombatSession, starting the game timer and initiating the combat loop.
@@ -348,7 +346,7 @@ namespace Project
 		}
 
 		/// <summary>
-		/// Fires when the target of one of the combatants in this CombatSession changes.
+		///     Fires when the target of one of the combatants in this CombatSession changes.
 		/// </summary>
 		public event CombatEvent TargetsChanged;
 
@@ -363,7 +361,7 @@ namespace Project
 			if (Update != null) Update(this);
 
 			// Attempt to cast any queued spells.
-			for (int i = 0; i < spellQueue.Count; )
+			for (int i = 0; i < spellQueue.Count;)
 			{
 				var spell = spellQueue[i];
 

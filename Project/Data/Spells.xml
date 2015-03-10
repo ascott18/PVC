@@ -3,27 +3,27 @@
 <Spells>
 	<!--Milton-->
 	<TargetedDamage id="1" name="Mumble" damage="9" castTime="2" cooldown="6">
-	  <Auras>
-		<Stun duration="1" blockable="true"/>
-	  </Auras>
+		<Auras>
+			<Stun duration="1" blockable="true" />
+		</Auras>
 	</TargetedDamage>
-  
+
 	<TargetedDamage id="2" name="Staple Fire" damage="1" castTime="0.3" cooldown="0" />
-  
+
 	<AreaDamage id="3" name="Incinerate" damage="5" castTime="2.5" cooldown="10">
-	  <Auras>
-		<DamageOverTime blockable="false" duration="6" damage="15"/>
-	  </Auras>
+		<Auras>
+			<DamageOverTime blockable="false" duration="6" damage="15" />
+		</Auras>
 	</AreaDamage>
-  
+
 
 	<!--Stu-->
 	<TargetedDamage id="11" name="Booming Voice" damage="6" castTime="3" cooldown="0">
-	  <Auras>
-		<StatMult duration="5" blockable="false">
-		  <Multiplier stamina="-10" block="-10" combo="-10"/>
-		</StatMult>
-	  </Auras>
+		<Auras>
+			<StatMult duration="5" blockable="false">
+				<Multiplier stamina="-10" block="-10" combo="-10" />
+			</StatMult>
+		</Auras>
 	</TargetedDamage>
 	<AreaDamage id="12" name="Knowledge Blast" damage="18" castTime="4" cooldown="8" />
 	<AreaHealing id="13" name="Advise" healing="15" castTime="3" cooldown="10">
@@ -32,27 +32,27 @@
 	<!--Lumbergh-->
 	<TargetedDamage id="21" name="Order TPS Reports" damage="4" castTime="2" cooldown="0" />
 	<TargetedDamage id="22" name="Request Saturday" damage="14" castTime="3" cooldown="10">
-	  <Auras>
-		<Stun duration="1" blockable="false"/>
-	  </Auras>
+		<Auras>
+			<Stun duration="1" blockable="false" />
+		</Auras>
 	</TargetedDamage>
 
 	<!--Stephen-->
 	<TargetedDamage id="31" name="Pester" damage="5" castTime="2" cooldown="2" />
 	<AreaHealing id="33" name="Order Coffee" healing="2" castTime="4" cooldown="10">
-	  <Auras>
-		<HealOverTime blockable="false" duration="4" healing="8"/>
-	  </Auras>
+		<Auras>
+			<HealOverTime blockable="false" duration="4" healing="8" />
+		</Auras>
 	</AreaHealing>
 
 	<!--Evil Computer-->
 	<TargetedDamage id="41" name="Encrypt Files" damage="5" castTime="1.5" cooldown="0" />
 	<AreaDamage id="42" name="Ultimatum" damage="25" castTime="4" cooldown="15">
-	  <Auras>
-		<StatMult duration="4" blockable="false">
-		  <Multiplier stamina="-30" combo="-20"/>
-		</StatMult>
-	  </Auras>
+		<Auras>
+			<StatMult duration="4" blockable="false">
+				<Multiplier stamina="-30" combo="-20" />
+			</StatMult>
+		</Auras>
 	</AreaDamage>
 
 	<!--Printer-->
@@ -61,65 +61,65 @@
 	<!--Tangled Cables-->
 	<AreaDamage id="61" name="Trip" damage="15" castTime="4" cooldown="0" />
 	<TargetedDamage id="62" name="Strangle" damage="25" castTime="4" cooldown="16">
-	  <Auras>
-		<Stun duration="3" blockable="true"/>
-	  </Auras>
+		<Auras>
+			<Stun duration="3" blockable="true" />
+		</Auras>
 	</TargetedDamage>
 	<SelfHealing id="63" name="Tangle" healing="20" castTime="2" cooldown="10" />
 
 	<!--Overheated Server-->
 	<AreaDamage id="71" name="Release Magic Smoke" damage="8" castTime="2" cooldown="0">
-	  <Auras>
-		<StatMult duration="4" blockable="false">
-		  <Multiplier block="-20" combo="-20"/>
-		</StatMult>
-	  </Auras>
+		<Auras>
+			<StatMult duration="4" blockable="false">
+				<Multiplier block="-20" combo="-20" />
+			</StatMult>
+		</Auras>
 	</AreaDamage>
 	<SelfHealing id="72" name="Overvolt Fans" healing="8" castTime="1" cooldown="7" />
 
 	<!--Bu.g-->
 	<TargetedDamage id="81" name="Throw Exception" damage="12" castTime="1.5" cooldown="0" />
 	<SelfHealing id="82" name="Evade" healing="8" castTime="2" cooldown="9">
-	  <Auras>
-		<StatMod duration="2" blockable="false">
-		  <Attributes block="100"/>
-		</StatMod>
-	  </Auras>
+		<Auras>
+			<StatMod duration="2" blockable="false">
+				<Attributes block="100" />
+			</StatMod>
+		</Auras>
 	</SelfHealing>
 
 	<!--Carty-->
 	<TargetedDamage id="91" name="Shield Slam" damage="6" castTime="0.5" cooldown="1" />
 	<AreaDamage id="92" name="Shockwave" damage="8" castTime="1" cooldown="15">
 		<Auras>
-			<Stun duration="3" blockable="false"/>
+			<Stun duration="3" blockable="false" />
 		</Auras>
 	</AreaDamage>
 	<AreaHealing id="93" name="Rallying Cry" healing="14" castTime="3" cooldown="9">
-	  <Auras>
-		<StatMult duration="5" blockable="false">
-		  <Multiplier stamina="30" block="0" combo="0"/>
-		</StatMult>
-		<StatMod duration="5" blockable="false">
-		  <Attributes stamina="0" block="30" combo="30"/>
-		</StatMod>
-	  </Auras>
+		<Auras>
+			<StatMult duration="5" blockable="false">
+				<Multiplier stamina="30" block="0" combo="0" />
+			</StatMult>
+			<StatMod duration="5" blockable="false">
+				<Attributes stamina="0" block="30" combo="30" />
+			</StatMod>
+		</Auras>
 	</AreaHealing>
 
 	<!--Laggy-->
 	<TargetedDamage id="101" name="Shred" damage="7" castTime="1.5" cooldown="0" />
 	<SelfHealing id="102" name="Crook Dance" healing="10" castTime="3" cooldown="15">
-	  <Auras>
-		<StatMod duration="4" blockable="false">
-		  <Attributes stamina="0" block="30" combo="100"/>
-		</StatMod>
-	  </Auras>
+		<Auras>
+			<StatMod duration="4" blockable="false">
+				<Attributes stamina="0" block="30" combo="100" />
+			</StatMod>
+		</Auras>
 	</SelfHealing>
 	<AreaDamage id="103" name="Projectile Vomit" damage="8" castTime="1" cooldown="12">
-	  <Auras>
-		<StatMult duration="3" blockable="true">
-		  <Multiplier stamina="-20" block="0" combo="0"/>
-		</StatMult>
-	  </Auras>
+		<Auras>
+			<StatMult duration="3" blockable="true">
+				<Multiplier stamina="-20" block="0" combo="0" />
+			</StatMult>
+		</Auras>
 	</AreaDamage>
 
 	<!--Dwight-->

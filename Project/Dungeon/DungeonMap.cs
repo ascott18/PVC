@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
-using System.Threading;
+using System.Linq;
 
 namespace Project.Dungeon
 {
@@ -17,7 +18,6 @@ namespace Project.Dungeon
 		public readonly int MapID;
 
 		private readonly Tile[,] tiles = new Tile[MapData.DimX, MapData.DimY];
-		public ReadOnlyCollection<Tile> Tiles { get; private set; }
 
 		public DungeonMap(int mapId, MapData data, DungeonController game)
 		{
@@ -38,6 +38,8 @@ namespace Project.Dungeon
 
 			BuildMap();
 		}
+
+		public ReadOnlyCollection<Tile> Tiles { get; private set; }
 
 		private void BuildMap()
 		{

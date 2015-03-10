@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using Project.Dungeon;
 
 namespace Project.Sprites
@@ -14,11 +15,6 @@ namespace Project.Sprites
 
 		public IReadOnlyList<CombatSprite> Members { get; protected set; }
 
-		public override void Interact(Game game)
-		{
-			throw new NotImplementedException();
-		}
-
 
 		public IEnumerator<CombatSprite> GetEnumerator()
 		{
@@ -27,7 +23,12 @@ namespace Project.Sprites
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			return ((IEnumerable) Members).GetEnumerator();
+			return ((IEnumerable)Members).GetEnumerator();
+		}
+
+		public override void Interact(Game game)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

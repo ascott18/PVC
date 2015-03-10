@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Project.Data;
 
 namespace Project.Spells
 {
-	class AuraHealOverTime : AuraHealthOverTime
+	internal class AuraHealOverTime : AuraHealthOverTime
 	{
 		public AuraHealOverTime(XElement data)
 			: base(data)

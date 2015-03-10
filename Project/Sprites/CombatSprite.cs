@@ -11,18 +11,18 @@ namespace Project.Sprites
 {
 	public abstract class CombatSprite
 	{
+		public readonly DungeonSprite Parent;
 		public readonly List<Spell> Spells = new List<Spell>();
+		public List<Aura> Auras = new List<Aura>();
 		private Attributes attributes;
 
 		private int health = 1;
 		private int maxHealth = 1;
-		public readonly DungeonSprite Parent;
-		public List<Aura> Auras = new List<Aura>();
 
 		protected CombatSprite(DungeonSprite parent)
 		{
 			HealthChanged += CombatSprite_HealthChanged;
-		    Parent = parent;
+			Parent = parent;
 		}
 
 		public Image Image { get; protected set; }
@@ -46,9 +46,9 @@ namespace Project.Sprites
 			{
 				var oldHealth = health;
 				health = Math.Max(value, MinHealth); // Health can't be < MinHealth
-			    health = Math.Min(health, MaxHealth);
-				
-				if (HealthChanged != null && oldHealth != health) 
+				health = Math.Min(health, MaxHealth);
+
+				if (HealthChanged != null && oldHealth != health)
 					HealthChanged(this);
 			}
 		}
@@ -123,8 +123,8 @@ namespace Project.Sprites
 		}
 
 		/// <summary>
-		/// Fires when the Sprite is recalculating its attibutes.
-		/// Modify the event args to modify the sprite's stats.
+		///     Fires when the Sprite is recalculating its attibutes.
+		///     Modify the event args to modify the sprite's stats.
 		/// </summary>
 		public event SpriteAttributesRecalcEvent RecalculatingAttributes;
 
@@ -132,6 +132,7 @@ namespace Project.Sprites
 		{
 			if (AttributesChanged != null) AttributesChanged(this);
 		}
+
 		public event SpriteEvent AttributesChanged;
 
 		/// <summary>

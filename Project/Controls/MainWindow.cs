@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
-using Project.Dungeon;
 using Project.Sprites;
 using Timer = System.Threading.Timer;
 
@@ -11,21 +9,12 @@ namespace Project.Controls
 {
 	internal partial class MainWindow : Form
 	{
-
-		public bool IsDebug;
-
 		// Implements Singleton.
 		private static MainWindow instance;
-
-		public static MainWindow Window
-		{
-			get
-			{
-				if (instance != null)
-					return instance;
-				return instance = new MainWindow();
-			}
-		}
+		public bool IsDebug;
+		private Timer dungeonTimer;
+		private InventoryScreen inventoryScreen;
+		private StatsScreen statsScreen;
 
 		private MainWindow()
 		{
@@ -40,6 +29,18 @@ namespace Project.Controls
 
 			dungeonTimer = new Timer(DungeonTimerCallback, null, 0, 10);
 		}
+
+		public static MainWindow Window
+		{
+			get
+			{
+				if (instance != null)
+					return instance;
+				return instance = new MainWindow();
+			}
+		}
+
+		internal Game Game { get; private set; }
 
 		private void DungeonTimerCallback(object state)
 		{
@@ -67,17 +68,11 @@ namespace Project.Controls
 			Game = new Game(party, mapID);
 		}
 
-		internal Game Game { get; private set; }
-
 
 		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 		{
 			return Game.ProcessKey(keyData) || base.ProcessCmdKey(ref msg, keyData);
 		}
-
-		private Timer dungeonTimer;
-		private InventoryScreen inventoryScreen;
-		private StatsScreen statsScreen;
 
 		private void inventoryButton_Click(object sender, EventArgs e)
 		{
@@ -91,7 +86,6 @@ namespace Project.Controls
 				};
 				inv.Show(this);
 			}
-
 		}
 
 		private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
@@ -112,6 +106,5 @@ namespace Project.Controls
 				stats.Show(this);
 			}
 		}
-
 	}
 }

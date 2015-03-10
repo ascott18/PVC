@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Xml.Linq;
 using Project.Data;
 using Project.Sprites;
 
 namespace Project.Spells
 {
-	class AuraStatMult : Aura
+	internal class AuraStatMult : Aura
 	{
 		public readonly AttributesMultiplier Multiplier;
 
@@ -22,18 +19,18 @@ namespace Project.Spells
 			Removed += AuraStatMult_Removed;
 		}
 
-		void AuraStatMult_Applied(object sender, EventArgs e)
+		private void AuraStatMult_Applied(object sender, EventArgs e)
 		{
 			Target.RecalculatingAttributes += Target_RecalculatingAttributes;
 			Target.RecalculateAttributes();
 		}
 
-		void Target_RecalculatingAttributes(CombatSprite sender, SpriteAttributesRecalcEventArgs args)
+		private void Target_RecalculatingAttributes(CombatSprite sender, SpriteAttributesRecalcEventArgs args)
 		{
 			args.AttributesMultiplier += Multiplier;
 		}
 
-		void AuraStatMult_Removed(object sender, EventArgs e)
+		private void AuraStatMult_Removed(object sender, EventArgs e)
 		{
 			Target.RecalculatingAttributes -= Target_RecalculatingAttributes;
 			Target.RecalculateAttributes();
@@ -48,7 +45,7 @@ namespace Project.Spells
 		public override void GetTooltip(StringBuilder sb)
 		{
 			sb.Append("Stats: ");
-			
+
 			bool appendComma = false;
 			Action<int, string> fmt = (val, name) =>
 			{

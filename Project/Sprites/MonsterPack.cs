@@ -15,7 +15,7 @@ namespace Project.Sprites
 		public const int MaxMonsters = 3;
 		public readonly int UniqueID;
 
-		private readonly List<LootPool> lootPools = new List<LootPool>(); 
+		private readonly List<LootPool> lootPools = new List<LootPool>();
 		private readonly List<Monster> monsters = new List<Monster>();
 
 		public MonsterPack(Point loc, int uniqueId) : base(loc)
@@ -23,6 +23,16 @@ namespace Project.Sprites
 			Members = monsters.AsReadOnly();
 
 			UniqueID = uniqueId;
+		}
+
+		public new IEnumerator<Monster> GetEnumerator()
+		{
+			return monsters.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return ((IEnumerable)monsters).GetEnumerator();
 		}
 
 		public override void Interact(Game game)
@@ -61,8 +71,8 @@ namespace Project.Sprites
 
 
 		/// <summary>
-		/// Generates the loot dropped by this monster based on the LootPool
-		/// elements defined for it in XML.
+		///     Generates the loot dropped by this monster based on the LootPool
+		///     elements defined for it in XML.
 		/// </summary>
 		/// <returns>A List of Items dropped by this monster.</returns>
 		public IEnumerable<Item> GetLoot()
@@ -70,17 +80,6 @@ namespace Project.Sprites
 			IEnumerable<Item> loot = LootPool.GetLoot(lootPools);
 
 			return monsters.Aggregate(loot, (current, monster) => current.Concat(monster.GetLoot()));
-		}
-
-
-		public new IEnumerator<Monster> GetEnumerator()
-		{
-			return monsters.GetEnumerator();
-		}
-
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return ((IEnumerable)monsters).GetEnumerator();
 		}
 	}
 }

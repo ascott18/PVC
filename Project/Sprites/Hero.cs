@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Xml.XPath;
 using Project.Data;
 using Project.Items;
 
@@ -34,7 +33,6 @@ namespace Project.Sprites
 			RecalculatingAttributes += Hero_RecalculatingAttributes;
 			RecalculateAttributes();
 		}
-
 
 		#region Equipment
 
@@ -97,7 +95,7 @@ namespace Project.Sprites
 		}
 
 		/// <summary>
-		/// Gets the item equipped in the given slot.
+		///     Gets the item equipped in the given slot.
 		/// </summary>
 		/// <param name="slot">The slot to query.</param>
 		/// <returns>The item equipped in that slot.</returns>
@@ -109,7 +107,6 @@ namespace Project.Sprites
 		public event SpriteEvent EquipmentChanged;
 
 		#endregion
-
 
 		public override int MinHealth
 		{
@@ -127,7 +124,7 @@ namespace Project.Sprites
 		}
 
 
-		void Hero_RecalculatingAttributes(CombatSprite sender, SpriteAttributesRecalcEventArgs args)
+		private void Hero_RecalculatingAttributes(CombatSprite sender, SpriteAttributesRecalcEventArgs args)
 		{
 			foreach (var itemEquippable in equipment)
 			{

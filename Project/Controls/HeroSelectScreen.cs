@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.XPath;
 using Project.Data;
@@ -15,7 +10,7 @@ namespace Project.Controls
 {
 	internal partial class HeroSelectScreen : Form
 	{
-		private readonly List<HeroSelectContainer> containers = new List<HeroSelectContainer>(); 
+		private readonly List<HeroSelectContainer> containers = new List<HeroSelectContainer>();
 
 		private HeroSelectScreen()
 		{
@@ -35,7 +30,7 @@ namespace Project.Controls
 			}
 		}
 
-		void container_ChosenChanged(HeroSelectContainer obj)
+		private void container_ChosenChanged(HeroSelectContainer obj)
 		{
 			var chosen = GetSelectedHeroIDs();
 
@@ -60,9 +55,9 @@ namespace Project.Controls
 		private IEnumerable<int> GetSelectedHeroIDs()
 		{
 			return (from heroSelectContainer in containers
-					where heroSelectContainer.Chosen
-					orderby heroSelectContainer.ChosenIndex
-					select heroSelectContainer.Hero.HeroID);
+			        where heroSelectContainer.Chosen
+			        orderby heroSelectContainer.ChosenIndex
+			        select heroSelectContainer.Hero.HeroID);
 		}
 
 		private void finishedButton_Click(object sender, EventArgs e)

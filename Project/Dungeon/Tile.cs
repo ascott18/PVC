@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 
 namespace Project.Dungeon
 {
@@ -23,8 +24,8 @@ namespace Project.Dungeon
 		public readonly Point Location;
 
 		/// <summary>
-		/// The rectangle that represents the draw location of the tile
-		/// within the DungeonMap.
+		///     The rectangle that represents the draw location of the tile
+		///     within the DungeonMap.
 		/// </summary>
 		public readonly Rectangle Rectangle;
 
@@ -41,7 +42,7 @@ namespace Project.Dungeon
 
 			DungeonMap = dungeonMap;
 			TileData = DungeonMap.MapData.GetTileData(loc);
-			Rectangle = new Rectangle(Location.X*DimPixels, Location.Y*DimPixels, DimPixels, DimPixels);
+			Rectangle = new Rectangle(Location.X * DimPixels, Location.Y * DimPixels, DimPixels, DimPixels);
 		}
 
 		/// <summary>
@@ -53,7 +54,8 @@ namespace Project.Dungeon
 			set
 			{
 				if (tileObject != null && value != null)
-					throw new InvalidOperationException("Clobbered a TileObject - " + value.GetType() + " with a " + tileObject.GetType());
+					throw new InvalidOperationException("Clobbered a TileObject - " + value.GetType() + " with a " +
+					                                    tileObject.GetType());
 
 				tileObject = value;
 

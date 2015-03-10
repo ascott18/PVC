@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
+using System.Linq;
 using System.Xml.Linq;
-using System.Xml.XPath;
 using Project.Data;
-using Project.Properties;
 
 namespace Project.Dungeon
 {
@@ -49,10 +47,9 @@ namespace Project.Dungeon
 				return ret;
 
 			var tileData = XmlData.XmlParserParseByID<TileData>("Tiles", tileID);
-			
+
 			return Data[tileID] = tileData;
 		}
-
 
 
 		[XmlData.XmlParserAttribute("Tile")]
@@ -65,6 +62,5 @@ namespace Project.Dungeon
 
 			return tileData;
 		}
-
 	}
 }
