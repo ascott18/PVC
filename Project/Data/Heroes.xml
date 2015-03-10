@@ -2,20 +2,20 @@
 <Heroes>
   <Hero id="1" texture="milton" name="Milton"
 		desc="A master of the incendiary arts, Milton's talents are oft overlooked due to his poor communication skills and affinity for staplers of the red Swingline variety.">
-	<Attributes stamina="14" block ="60" combo ="10"/>
+	<Attributes stamina="20" block="0" combo="10"/>
 	<Item id="11"/>
 	<Item id="15"/>
 	<Item id="16"/>
 	<Item id="17"/>
 	
 	<Spell id="1"/>
-	<Spell id="2"/>
 	<Spell id="3"/>
+	<Spell id="2"/>
   </Hero>
   
   <Hero id="2" texture="stu" name="Stu Steiner"
 		desc="Legend has it that he once deadlocked Chuck Norris with a single thread. All we know is that he's somewhere in the building. Because we hear him.">
-	<Attributes stamina="11" block ="10" combo ="10"/>
+	<Attributes stamina="14" block="8" combo="8"/>
 	<Item id="12"/>
 	<Item id="14"/>
 	<Item id="16"/>
@@ -27,7 +27,7 @@
   
   <Hero id="3" texture="carty" name="Carty"
 		desc="All you need is love. That, and a big shield. Who ever said gnomes are only for gardens? This one just shattered your femur.">
-	<Attributes stamina="18" block ="10" combo ="10"/>
+	<Attributes stamina="15" block="15" combo="0"/>
 	<Item id="12"/>
 	<Item id="14"/>
 	<Item id="16"/>
@@ -38,8 +38,8 @@
   </Hero>
   
   <Hero id="4" texture="laggy" name="Alice"
-		desc="Don't let her sweet demeanor and adorable mews fool you - there's not a cat fiercer. With claws painstakingly honed into needles for hours on end, not much can stand up to her... and live.">
-	<Attributes stamina="30" block="10" combo="10"/>
+		desc="Don't let her sweet demeanor and adorable mews fool you - there's not a cat fiercer. With claws honed into needles, not much can stand up to her... and live.">
+	<Attributes stamina="15" block="5" combo="10"/>
 	
 	<Spell id="101"/>
 	<Spell id="102"/>

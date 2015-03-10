@@ -13,10 +13,9 @@
 	<Spell id="21"/>
 	<LootPool id="1"/>
   </Monster>
-  <Monster id="2" texture="shoerner" name="Pestering Student">
+  <Monster id="2" texture="shoerner" name="Pestering Intern">
 	<Attributes stamina="8" block="10" combo="10"/>
 	<Spell id="31"/>
-	<Spell id="32"/>
 	<Spell id="33"/>
   </Monster>
   
