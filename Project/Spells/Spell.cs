@@ -424,8 +424,6 @@ namespace Project.Spells
 		internal static void DoComboAction(Action<CombatSprite, int> method, CombatSprite caster, CombatSprite target, int hp)
 		{
 			int combo = caster.Attributes.Combo;
-			// will combo only allow x2 hit?
-			// need logic for more than 2 hits
 
 			method(target, hp);
 			while (combo > 0)
@@ -449,9 +447,10 @@ namespace Project.Spells
 			method(target);
 		}
 
-		internal static void Heal(CombatSprite receiver, int health)
+		internal static void Heal(CombatSprite target, int health)
 		{
-			receiver.Health += health;
+			if (target.IsActive)
+				target.Health += health;
 		}
 
 		internal static void DealBlockableDamage(CombatSprite target, int damage)
@@ -466,13 +465,14 @@ namespace Project.Spells
 
 		internal static void DealUnblockableDamage(CombatSprite target, int damage)
 		{
-			target.Health -= damage;
+			if (target.IsActive)
+				target.Health -= damage;
 		}
 
 		/// <summary>
 		/// Generate aura instances for the spell.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns>New instances of Aura for each of the spell's Auras.</returns>
 		protected IEnumerable<Aura> GenerateAuras()
 		{
 			if (State == CastState.Unused)
@@ -484,7 +484,7 @@ namespace Project.Spells
 		/// <summary>
 		/// Apply all of the auras associated with the spell to a target.
 		/// </summary>
-		/// <param name="target"></param>
+		/// <param name="target">The target to apply the auras to.</param>
 		protected void ApplyAuras(CombatSprite target)
 		{
 			foreach (var aura in GenerateAuras())
