@@ -175,5 +175,27 @@
       <DamageOverTime blockable="false" duration="2" damage="10" />
     </Auras>
   </AreaDamage>
+
+  <!--Auditor-->
+  <TargetedDamage id="129" name="Request Receipts" damage="15" castTime="2" cooldown="6">
+    <Auras>
+      <Stun duration="3" blockable="false" />
+    </Auras>
+  </TargetedDamage>
+  <AreaDamage id="130" name="Lecture" damage="7" castTime="1" cooldown="1" />
+  <AreaDamage id="131" name="Audit" damage="20" castTime="5" cooldown="10">
+    <Auras>
+      <DamageOverTime blockable="false" duration="2" damage="10" />
+    </Auras>
+  </AreaDamage>
+  
+  <!--Secretary-->
+  <TargetedDamage id="132" name="Mis-file Paperwork" damage="15" castTime="2" cooldown="6" />
+  <AreaDamage id="133" name="Lose Messages" damage="7" castTime="1" cooldown="1" />
+  <AreaDamage id="134" name="Download Virus" damage="20" castTime="5" cooldown="10">
+    <Auras>
+      <DamageOverTime blockable="false" duration="2" damage="10" />
+    </Auras>
+  </AreaDamage>
   
 </Spells>

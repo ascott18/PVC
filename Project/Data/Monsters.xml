@@ -95,4 +95,21 @@
     <Spell id="125"/>
     <LootPool id="101" />
   </Monster>
+
+  <Monster id="12" texture="lawyer" name="Auditor">
+    <Attributes stamina="25" block="30" combo="10" />
+    <Spell id="129"/>
+    <Spell id="130"/>
+    <Spell id="131"/>
+    <LootPool id="301" />
+  </Monster>
+
+  <Monster id="13" texture="lawyer" name="Secretary">
+    <Attributes stamina="25" block="30" combo="10" />
+    <Spell id="132"/>
+    <Spell id="133"/>
+    <Spell id="134"/>
+    <LootPool id="301" />
+  </Monster>
+
 </Monsters>
