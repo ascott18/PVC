@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Maps>
 	<Map id="1">
@@ -440,13 +440,11 @@
 
 
 			<Chest x="1" y="11" texture="smallbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="301" />
 			</Chest>
 			
 			<Chest x="5" y="1" texture="medbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="302" />
 			</Chest>
 
 		</Objects>
@@ -491,8 +489,7 @@
 			</MonsterPack>
 
 			<Chest x="11" y="1" texture="medbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="350" />
 			</Chest>
 		</Objects>
 
@@ -533,11 +530,12 @@
 			<MonsterPack id="000101" x="11" y="4">
 				<Monster id="1" />
 				<Monster id="2" />
+				<Monster id="2" />
 			</MonsterPack>
 
 			<Chest x="11" y="1" texture="box">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="302" />
+				<LootPool id="350" />
 			</Chest>
 		</Objects>
 
@@ -575,28 +573,24 @@
 			<VanishingWall x="4" y="3" texture="wall" />
 
 			<Chest x="6" y="6" texture="box">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="302" />
+				<LootPool id="301" />
 			</Chest>
 
 			<Chest x="5" y="7" texture="smallbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="301" />
 			</Chest>
 
 			<Chest x="7" y="7" texture="medbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="301" />
 			</Chest>
 
 			<Chest x="7" y="5" texture="smallbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="301" />
 			</Chest>
 
 			<Chest x="5" y="5" texture="medbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="350" />
 			</Chest>
 
 			<MonsterPack id="000101" x="6" y="7">
@@ -664,13 +658,11 @@
 
 
 			<Chest x="6" y="1" texture="medbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="301" />
 			</Chest>
 
 			<Chest x="7" y="9" texture="smallbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="350" />
 			</Chest>
 
 		</Objects>
@@ -718,8 +710,7 @@
 			</MonsterPack>
 
 			<Chest x="5" y="11" texture="smallbox">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="350" />
 			</Chest>
 
 
@@ -799,7 +790,7 @@
 			<VanishingWall x="11" y="9" texture="wall" />
 
 			<Chest x="10" y="8" texture="medbox">
-				<LootPool id="1" />
+				<LootPool id="302" />
 			</Chest>
 
 			<MonsterPack id="000101" x="11" y="3">
@@ -1200,6 +1191,16 @@
 		<AdjacentMaps>
 
 		</AdjacentMaps>
+
+		<Objects>
+			<Door x="6" y="12" toMap="313" toX="6" toY="11" texture="elevatorDown" />
+			<VendingMachine x="6" y="6" texture="elevatorUp" />
+		</Objects>
+
+	</Map>
+
+
+</Maps>djacentMaps>
 
 		<Objects>
 			<Door x="6" y="12" toMap="313" toX="6" toY="11" texture="elevatorDown" />
