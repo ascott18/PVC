@@ -57,7 +57,7 @@
 	</Hero>
 
   <Hero id="6" texture="leslie" name="Leslie"
-	      desc="Leslie needs a bio.">
+	      desc="Although naive at times, Leslie is intellegent, well read, and will destroy her enemies with her enthusiasm.">
     <Attributes stamina="30" block="10" combo="10" />
 
     <Spell id="300" />

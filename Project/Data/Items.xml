@@ -29,7 +29,7 @@
 		<Attributes stamina="2" block="2" combo="2" />
 	</Equippable>
 	<Equippable id="17" name="Wife-beater" slot="Body">
-		<Attributes stamina="1" block="2" combo="1" />
+		<Attributes stamina="2" block="0" combo="1" />
 	</Equippable>
 
 	<Food id="50" name="Coffee" amount="25" />
@@ -38,25 +38,25 @@
 	<!-- Tier 1-->
 
 	<Equippable id="100" name="Butter Knife" slot="Weapon">
-		<Attributes stamina="3" block="2" combo="5" />
+		<Attributes stamina="6" block="4" combo="6" />
 	</Equippable>
 	<Equippable id="112" name="Hawaiian Shirt" slot="Body">
-		<Attributes stamina="2" block="3" combo="2" />
+		<Attributes stamina="2" block="3" combo="8" />
 	</Equippable>
 	<Equippable id="113" name="Sneakers" slot="Feet">
-		<Attributes stamina="2" block="1" combo="3" />
+		<Attributes stamina="5" block="1" combo="7" />
 	</Equippable>
 	<Equippable id="114" name="Not-So-Pointy Stick" slot="Weapon">
-		<Attributes stamina="1" block="3" combo="4" />
+		<Attributes stamina="4" block="5" combo="6" />
 	</Equippable>
 	<Equippable id="115" name="Propeller Hat" slot="Head">
-		<Attributes stamina="1" block="2" combo="1" />
+		<Attributes stamina="1" block="2" combo="6" />
 	</Equippable>
 	<Equippable id="116" name="Crocs" slot="Feet">
-		<Attributes stamina="2" block="2" combo="2" />
+		<Attributes stamina="2" block="4" combo="9" />
 	</Equippable>
 	<Equippable id="117" name="Stained Khakis" slot="Body">
-		<Attributes stamina="1" block="2" combo="1" />
+		<Attributes stamina="3" block="2" combo="7" />
 	</Equippable>
 
 
@@ -65,25 +65,25 @@
 	<!-- Tier 2-->
 
 	<Equippable id="200" name="Scissors" slot="Weapon">
-		<Attributes stamina="3" block="2" combo="5" />
+		<Attributes stamina="7" block="8" combo="11" />
 	</Equippable>
 	<Equippable id="212" name="Grey Shirt" slot="Body">
-		<Attributes stamina="2" block="3" combo="2" />
+		<Attributes stamina="8" block="4" combo="12" />
 	</Equippable>
 	<Equippable id="213" name="Loafers" slot="Feet">
-		<Attributes stamina="2" block="1" combo="3" />
+		<Attributes stamina="10" block="5" combo="11" />
 	</Equippable>
 	<Equippable id="214" name="Pointy Stick" slot="Weapon">
-		<Attributes stamina="1" block="3" combo="4" />
+		<Attributes stamina="7" block="7" combo="15" />
 	</Equippable>
 	<Equippable id="215" name="Oversized Specs" slot="Head">
-		<Attributes stamina="1" block="2" combo="1" />
+		<Attributes stamina="10" block="3" combo="11" />
 	</Equippable>
 	<Equippable id="216" name="Pumps" slot="Feet">
-		<Attributes stamina="2" block="2" combo="2" />
+		<Attributes stamina="7" block="7" combo="15" />
 	</Equippable>
 	<Equippable id="217" name="Slacks" slot="Body">
-		<Attributes stamina="1" block="2" combo="1" />
+		<Attributes stamina="8" block="6" combo="13" />
 	</Equippable>
 
 
@@ -93,28 +93,28 @@
 	<!-- Tier 3-->
 
 	<Equippable id="300" name="Stapler" slot="Weapon">
-		<Attributes stamina="3" block="2" combo="5" />
+		<Attributes stamina="12" block="10" combo="20" />
 	</Equippable>
 	<Equippable id="301" name="Swiss Army Knife" slot="Weapon">
-		<Attributes stamina="3" block="2" combo="5" />
+		<Attributes stamina="11" block="10" combo="18" />
 	</Equippable>
 	<Equippable id="312" name="Snazzy Suit" slot="Body">
-		<Attributes stamina="2" block="3" combo="2" />
+		<Attributes stamina="12" block="8" combo="12" />
 	</Equippable>
 	<Equippable id="313" name="Black Oxfords" slot="Feet">
-		<Attributes stamina="2" block="1" combo="3" />
+		<Attributes stamina="15" block="6" combo="16" />
 	</Equippable>
 	<Equippable id="314" name="Spiky Pointy Stick" slot="Weapon">
-		<Attributes stamina="1" block="3" combo="4" />
+		<Attributes stamina="11" block="8" combo="20" />
 	</Equippable>
 	<Equippable id="315" name="Thrifty Shades" slot="Head">
-		<Attributes stamina="1" block="2" combo="1" />
+		<Attributes stamina="13" block="5" combo="16" />
 	</Equippable>
 	<Equippable id="316" name="Stilettos" slot="Feet">
-		<Attributes stamina="2" block="2" combo="2" />
+		<Attributes stamina="11" block="8" combo="17" />
 	</Equippable>
 	<Equippable id="317" name="Tux" slot="Body">
-		<Attributes stamina="1" block="2" combo="1" />
+		<Attributes stamina="14" block="7" combo="17" />
 	</Equippable>
 
 
