@@ -26,8 +26,8 @@ namespace Project
 
 		public Game()
 		{
-			// TODO: Temp code
-			Party = new Party(new Point(7, 7));
+			const int startMapID = 111;
+			Party = new Party(new Point(1, 2));
 
 			var heroIDs = HeroSelectScreen.BuildParty();
 
@@ -36,7 +36,7 @@ namespace Project
 				Party.AddHero(new Hero(Party, heroID));
 			}
 
-			SetPartyLocation(1, Party.InitialLocation);
+			SetPartyLocation(startMapID, Party.InitialLocation);
 		}
 
 		public Game(Party party, int mapID)

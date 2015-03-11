@@ -48,11 +48,29 @@
 	</Hero>
 
 	<Hero id="5" texture="dwight" name="Dwight"
-	      desc="Dwight needs a bio.">
+	      desc="A descendent of a long line of fighters, you could not find his equal in ferocity. He also boasts a purple belt in karate.">
 		<Attributes stamina="30" block="10" combo="10" />
 
-		<Spell id="111" />
-		<Spell id="112" />
-		<Spell id="113" />
+		<Spell id="200" />
+		<Spell id="201" />
+		<Spell id="202" />
 	</Hero>
+
+  <Hero id="6" texture="leslie" name="Leslie"
+	      desc="Although naive at times, Leslie is intellegent, well read, and will destroy her enemies with her enthusiasm.">
+    <Attributes stamina="30" block="10" combo="10" />
+
+    <Spell id="300" />
+    <Spell id="301" />
+    <Spell id="302" />
+  </Hero>
+
+  <Hero id="7" texture="walter" name="Walter"
+	      desc="Walter needs a bio.">
+    <Attributes stamina="30" block="10" combo="10" />
+    
+    <Spell id="400" />
+    <Spell id="401" />
+    <Spell id="402" />
+  </Hero>
 </Heroes>

@@ -11,13 +11,13 @@
 		<Item id="117" chance="0.1" />
 	</LootPool>
 
-	<LootPool id="2">
-		<Item id="11" chance="1" />
+	<LootPool id="2" limit="1">
+		<!--<Item id="11" chance="1" />
 		<Item id="12" chance="1" />
 		<Item id="14" chance="1" />
 		<Item id="15" chance="1" />
 		<Item id="16" chance="1" />
-		<Item id="17" chance="1" />
+		<Item id="17" chance="1" />-->
 	</LootPool>
 
 	<!-- Tier 1-->
