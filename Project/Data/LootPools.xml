@@ -12,12 +12,12 @@
 	</LootPool>
 
 	<LootPool id="2" limit="1">
-		<!--<Item id="11" chance="1" />
+		<Item id="11" chance="1" />
 		<Item id="12" chance="1" />
 		<Item id="14" chance="1" />
 		<Item id="15" chance="1" />
 		<Item id="16" chance="1" />
-		<Item id="17" chance="1" />-->
+		<Item id="17" chance="1" />
 	</LootPool>
 
 	<!-- Tier 1-->
@@ -40,9 +40,10 @@
 		<Item id="17" chance="1" />
 	</LootPool>
 
-	<LootPool id="150" limit="1">
-		<Item id="50" chance="1" />
-		<Item id="150" chance="1" />
+	<LootPool id="150" limit="2">
+		<Item id="50" chance="0.3" />
+		<Item id="150" chance="0.8" />
+	  <Item id="150" chance="0.8" />
 	</LootPool>
 
 
@@ -66,9 +67,10 @@
 		<Item id="217" chance="1" />
 	</LootPool>
 
-	<LootPool id="250" limit="1">
-		<Item id="150" chance="1" />
-		<Item id="250" chance="1" />
+	<LootPool id="250" limit="2">
+		<Item id="150" chance="0.3" />
+		<Item id="250" chance="0.8" />
+	  <Item id="250" chance="0.8" />
 	</LootPool>
 
 
@@ -94,9 +96,10 @@
 		<Item id="317" chance="1" />
 	</LootPool>
 
-	<LootPool id="350" limit="1">
-		<Item id="250" chance="1" />
-		<Item id="350" chance="1" />
+	<LootPool id="350" limit="2">
+		<Item id="250" chance="0.3" />
+		<Item id="350" chance="0.8" />
+		 <Item id="350" chance="0.8" />
 	</LootPool>
 
   <!-- Coins -->

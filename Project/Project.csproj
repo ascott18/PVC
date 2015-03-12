@@ -314,6 +314,7 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Resources\black.png" />
+    <None Include="Resources\auditor.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\cables.png" />
     <None Include="Resources\bug.png" />
@@ -339,6 +340,7 @@
     <None Include="Resources\jamm.png" />
     <None Include="Resources\lebowski.png" />
     <None Include="Resources\leslieBetter.png" />
+    <None Include="Resources\lindsay.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />
@@ -350,6 +352,7 @@
     <None Include="Resources\vendo.png" />
     <None Include="Resources\plant4.png" />
     <None Include="Resources\plant3.png" />
+    <None Include="Resources\roy.png" />
     <Content Include="Resources\wall.png" />
     <None Include="Resources\watercoolerEmpty.png" />
     <None Include="Resources\watercooler.png" />
