@@ -363,9 +363,9 @@
 			02 00 00 02 00 00 00 02 00 00 00 00 02
 			02 00 00 02 00 00 00 02 00 00 00 00 02
 			02 00 00 00 00 00 00 02 00 00 00 00 02
-			02 03 00 00 00 00 00 02 07 00 00 06 02
+			02 03 00 00 00 00 00 02 00 00 00 06 02
 			02 02 02 02 02 00 00 02 02 02 02 02 02
-			02 05 00 00 02 00 00 00 00 00 00 00 02
+			02 05 00 04 02 00 00 00 00 00 00 00 02
 			02 00 00 00 02 02 00 00 02 03 00 00 02
 			02 00 00 00 00 02 00 00 02 05 00 00 02
 			02 00 00 00 00 02 00 00 02 06 00 00 02
@@ -382,22 +382,24 @@
 			<Door x="12" y="4" toMap="201" toX="1" toY="4" texture="wall fancydoor" />
 
 			<MonsterPack id="000101" x="8" y="7">
-				<Monster id="1" />
-				<Monster id="2" />
+				<Monster id="9" />
+				<Monster id="12" />
+				<LootPool id="505" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="2" y="11">
-				<Monster id="6" />
+				<Monster id="7" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="4" y="3">
-				<Monster id="2" />
-				<Monster id="2" />
+				<Monster id="13" />
+				<Monster id="13" />
+				<Monster id="13" />
 			</MonsterPack>
-
-			<MonsterPack id="000101" x="3" y="7">
-				<Monster id="4" />
-			</MonsterPack>
+			
+			<Chest x="8" y="5" texture="plant4" despawn="false">
+				<LootPool id="510" />
+			</Chest>
 
 		</Objects>
 
@@ -430,12 +432,18 @@
 			<Door x="0" y="4" toMap="200" toX="11" toY="4" texture="wall fancydoor" />
 
 			<MonsterPack id="000101" x="4" y="3">
-				<Monster id="1" />
-				<Monster id="2" />
+				<Monster id="7" />
+				<Monster id="12" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="3" y="8">
-				<Monster id="2" />
+				<Monster id="13" />
+				<LootPool id="505" />
+			</MonsterPack>
+			
+			<MonsterPack id="000101" x="9" y="1">
+				<Monster id="9" />
+				<LootPool id="302" />
 			</MonsterPack>
 
 
@@ -477,19 +485,27 @@
 
 			<MonsterPack id="000101" x="4" y="1">
 				<Monster id="5" />
+				<Monster id="5" />
+			</MonsterPack>
+			
+			<MonsterPack id="000101" x="3" y="9">
+				<Monster id="13" />
+				<Monster id="12" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="7" y="3">
-				<Monster id="1" />
-				<Monster id="2" />
+				<Monster id="9" />
+				<Monster id="13" />
+				<Monster id="12" />
+				<LootPool id="510" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="7" y="10">
-				<Monster id="2" />
+				<Monster id="7" />
 			</MonsterPack>
 
 			<Chest x="11" y="1" texture="medbox">
-				<LootPool id="350" />
+				<LootPool id="302" />
 			</Chest>
 		</Objects>
 
@@ -523,19 +539,18 @@
 			<Door x="10" y="12" toMap="220" toX="10" toY="1" texture="wall fancydoor" />
 
 			<MonsterPack id="000101" x="8" y="11">
-				<Monster id="1" />
-				<Monster id="2" />
+				<Monster id="13" />
+				<Monster id="7" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="11" y="4">
-				<Monster id="1" />
-				<Monster id="2" />
-				<Monster id="2" />
+				<Monster id="9" />
+				<Monster id="9" />
+				<Monster id="12" />
 			</MonsterPack>
 
 			<Chest x="11" y="1" texture="box">
 				<LootPool id="302" />
-				<LootPool id="350" />
 			</Chest>
 		</Objects>
 
@@ -579,39 +594,24 @@
 
 			<Chest x="5" y="7" texture="smallbox">
 				<LootPool id="301" />
+				<LootPool id="505" />
 			</Chest>
 
 			<Chest x="7" y="7" texture="medbox">
-				<LootPool id="301" />
+				<LootPool id="302" />
 			</Chest>
 
 			<Chest x="7" y="5" texture="smallbox">
 				<LootPool id="301" />
+				<LootPool id="301" />
 			</Chest>
 
 			<Chest x="5" y="5" texture="medbox">
-				<LootPool id="350" />
+				<LootPool id="301" />
+				<LootPool id="301" />
+				<LootPool id="301" />
+				<LootPool id="301" />
 			</Chest>
-
-			<MonsterPack id="000101" x="6" y="7">
-				<Monster id="1" />
-				<Monster id="2" />
-			</MonsterPack>
-
-			<MonsterPack id="000101" x="6" y="5">
-				<Monster id="2" />
-				<Monster id="2" />
-			</MonsterPack>
-
-			<MonsterPack id="000101" x="5" y="6">
-				<Monster id="2" />
-				<Monster id="2" />
-			</MonsterPack>
-
-			<MonsterPack id="000101" x="7" y="6">
-				<Monster id="1" />
-				<Monster id="2" />
-			</MonsterPack>
 
 		</Objects>
 
@@ -642,27 +642,29 @@
 			<Door x="12" y="10" toMap="412" toX="6" toY="9" texture="elevatorDown" />
 
 			<MonsterPack id="000101" x="2" y="1">
-				<Monster id="1" />
-				<Monster id="2" />
+				<Monster id="12" />
+				<Monster id="13" />
 			</MonsterPack>
 
-			<MonsterPack id="000101" x="4" y="3">
-				<Monster id="1" />
-				<Monster id="2" />
-			</MonsterPack>
-
-			<MonsterPack id="000101" x="4" y="11">
-				<Monster id="1" />
-				<Monster id="2" />
+			<MonsterPack id="000101" x="4" y="10">
+				<Monster id="9" />
+				<Monster id="7" />
+				<Monster id="7" />
+				<LootPool id="505" />
 			</MonsterPack>
 
 
 			<Chest x="6" y="1" texture="medbox">
-				<LootPool id="301" />
+				<LootPool id="302" />
 			</Chest>
 
 			<Chest x="7" y="9" texture="smallbox">
-				<LootPool id="350" />
+				<LootPool id="301" />
+				<LootPool id="301" />
+			</Chest>
+			
+			<Chest x="9" y="6" texture="plant4" despawn="false">
+				<LootPool id="505" />
 			</Chest>
 
 		</Objects>
@@ -695,22 +697,23 @@
 			<Door x="10" y="0" toMap="210" toX="10" toY="11" texture="wall fancydoor" />
 
 			<MonsterPack id="000101" x="5" y="8">
-				<Monster id="1" />
-				<Monster id="2" />
+				<Monster id="13" />
+				<Monster id="12" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="4" y="1">
-				<Monster id="1" />
-				<Monster id="2" />
+				<Monster id="7" />
+				<Monster id="7" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="10" y="1">
-				<Monster id="1" />
-				<Monster id="2" />
+				<Monster id="9" />
+				<Monster id="13" />
 			</MonsterPack>
 
 			<Chest x="5" y="11" texture="smallbox">
-				<LootPool id="350" />
+				<LootPool id="301" />
+				<LootPool id="301" />
 			</Chest>
 
 
@@ -744,13 +747,13 @@
 		<Objects>
 
 			<MonsterPack id="000101" x="10" y="4">
-				<Monster id="2" />
-				<Monster id="5" />
+				<Monster id="12" />
+				<Monster id="13" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="5" y="7">
-				<Monster id="2" />
-				<Monster id="5" />
+				<Monster id="9" />
+				<Monster id="9" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="3" y="8">
@@ -758,8 +761,7 @@
 			</MonsterPack>
 
 			<Chest x="9" y="11" texture="plant4" despawn="false">
-				<LootPool id="1" />
-				<LootPool id="2" />
+				<LootPool id="510" />
 			</Chest>
 		</Objects>
 
@@ -794,13 +796,14 @@
 			</Chest>
 
 			<MonsterPack id="000101" x="11" y="3">
-				<Monster id="2" />
-				<Monster id="5" />
+				<Monster id="7" />
+				<Monster id="9" />
 			</MonsterPack>
 
-			<MonsterPack id="000101" x="2" y="11">
-				<Monster id="4" />
-				<Monster id="1" />
+			<MonsterPack id="000101" x="3" y="7">
+				<Monster id="13" />
+				<Monster id="9" />
+				<Monster id="12" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="10" y="6">
@@ -820,15 +823,15 @@
 		<Tiles>
 			21 21 21 21 21 21 21 21 21 21 21 21 21
 			21 22 22 22 22 22 22 22 22 22 22 22 21
+			21 22 20 22 20 20 20 20 20 22 20 22 21
+			21 22 20 22 20 22 22 22 20 22 20 22 21
 			21 22 20 22 20 22 20 22 20 22 20 22 21
-			21 22 22 22 22 22 22 22 22 22 22 22 21
-			21 22 20 22 22 22 22 22 22 22 20 22 21
-			21 22 22 22 22 22 22 22 22 22 22 22 21
-			21 22 20 22 22 22 22 22 22 22 20 22 21
-			21 22 22 22 22 22 22 22 22 22 22 22 21
-			21 22 20 22 22 22 22 22 22 22 20 22 21
-			21 22 22 22 22 22 22 22 22 22 22 22 21
-			21 22 20 22 22 22 22 22 22 22 20 22 21
+			21 22 20 22 20 22 20 22 20 22 20 22 21
+			21 22 20 22 20 22 20 22 20 22 20 22 21
+			21 22 20 22 20 22 20 22 20 22 20 22 21
+			21 22 20 22 20 22 20 22 20 22 20 22 21
+			21 22 20 22 22 22 20 22 20 22 20 22 21
+			21 22 20 20 20 20 20 22 20 22 20 22 21
 			21 22 22 22 22 22 22 22 22 22 22 22 21
 			21 21 21 21 21 21 22 21 21 21 21 21 21
 		</Tiles>
@@ -839,10 +842,33 @@
 		</AdjacentMaps>
 
 		<Objects>
-
-			<Chest x="6" y="6" texture="medbox">
+			<MonsterPack id="000101" x="3" y="2">
+				<Monster id="21" />
+				<Monster id="21" />
+			</MonsterPack>
+			
+			<MonsterPack id="000101" x="7" y="10">
+				<Monster id="22" />
+				<Monster id="22" />
+			</MonsterPack>
+			
+			<MonsterPack id="000101" x="2" y="11">
+				<Monster id="22" />
+			</MonsterPack>
+			
+			<MonsterPack id="000101" x="7" y="3">
+				<Monster id="6" />
+				<Monster id="6" />
+			</MonsterPack>
+			
+			<Chest x="7" y="9" texture="box">
+				<LootPool id="201" />
 				<LootPool id="201" />
 				<LootPool id="202" />
+			</Chest>
+			
+			<Chest x="1" y="11" texture="smallbox">
+				<LootPool id="201" />
 			</Chest>
 		</Objects>
 
@@ -871,7 +897,7 @@
 		</AdjacentMaps>
 
 		<Objects>
-			<MonsterPack id="000101" x="10" y="6">
+			<MonsterPack id="000101" x="11" y="6">
 				<Monster id="22" />
 			</MonsterPack>
 
@@ -977,6 +1003,11 @@
 
 			<MonsterPack id="000101" x="2" y="1">
 				<Monster id="22" />
+				<Monster id="22" />
+			</MonsterPack>
+
+			<MonsterPack id="000101" x="10" y="2">
+				<Monster id="6" />
 			</MonsterPack>
 
 			<MonsterPack id="000101" x="5" y="6">
@@ -996,7 +1027,7 @@
 			21 22 22 22 22 22 22 22 22 22 22 22 21
 			21 20 20 20 22 20 20 20 20 20 22 20 21
 			21 22 22 22 22 22 22 22 22 22 22 20 21
-			21 22 20 20 20 20 20 20 20 20 20 22 22
+			21 22 20 20 20 20 20 20 20 22 20 22 22
 			21 22 22 22 22 22 22 22 22 22 20 22 21
 			21 20 20 20 20 20 20 22 20 20 20 22 21
 			21 22 22 22 22 22 22 22 22 22 20 22 21
@@ -1013,9 +1044,17 @@
 		<Objects>
 			<MonsterPack id="000101" x="7" y="8">
 				<Monster id="21" />
+				<Monster id="21" />
 			</MonsterPack>
+			
 			<MonsterPack id="000101" x="4" y="4">
 				<Monster id="22" />
+				<Monster id="21" />
+			</MonsterPack>
+
+			<MonsterPack id="000101" x="9" y="6">
+				<Monster id="6" />
+				<Monster id="6" />
 			</MonsterPack>
 		</Objects>
 
@@ -1104,6 +1143,10 @@
 				<Monster id="22" />
 			</MonsterPack>
 			
+			<MonsterPack id="000101" x="10" y="1">
+				<Monster id="6" />
+			</MonsterPack>
+			
 			<MonsterPack id="000101" x="10" y="11">
 				<Monster id="10" />
 			</MonsterPack>
@@ -1159,6 +1202,7 @@
 			</MonsterPack>
 			
 			<MonsterPack id="000101" x="11" y="1">
+				<Monster id="6" />
 				<Monster id="21" />
 			</MonsterPack>
 			
@@ -1198,16 +1242,5 @@
 		</Objects>
 
 	</Map>
-
-
-</Maps>djacentMaps>
-
-		<Objects>
-			<Door x="6" y="12" toMap="313" toX="6" toY="11" texture="elevatorDown" />
-			<VendingMachine x="6" y="6" texture="elevatorUp" />
-		</Objects>
-
-	</Map>
-
 
 </Maps>

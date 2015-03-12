@@ -49,27 +49,27 @@
 
 	<Hero id="5" texture="dwight" name="Dwight"
 	      desc="A descendent of a long line of fighters, you could not find his equal in ferocity. He also boasts a purple belt in karate.">
-		<Attributes stamina="30" block="10" combo="10" />
+		<Attributes stamina="14" block="8" combo="8" />
 
-		<Spell id="200" />
+		<Spell id="200" auto="true"/>
 		<Spell id="201" />
 		<Spell id="202" />
 	</Hero>
 
   <Hero id="6" texture="leslie" name="Leslie"
 	      desc="Although naive at times, Leslie is intellegent, well read, and will destroy her enemies with her enthusiasm.">
-    <Attributes stamina="30" block="10" combo="10" />
+    <Attributes stamina="15" block="5" combo="10" />
 
-    <Spell id="300" />
-    <Spell id="301" />
-    <Spell id="302" />
+    <Spell id="301" auto="true" />
+    <Spell id="302" auto="true" />
+	<Spell id="300" />
   </Hero>
 
   <Hero id="7" texture="walter" name="Walter"
-	      desc="Walter needs a bio.">
-    <Attributes stamina="30" block="10" combo="10" />
+	      desc="Don't step over the line against bowling's greatest 'Nam veteran -- he may be the only one around who cares about the rules. Nihilists beware.">
+    <Attributes stamina="23" block="2" combo="5" />
     
-    <Spell id="400" />
+    <Spell id="400" auto="true" />
     <Spell id="401" />
     <Spell id="402" />
   </Hero>

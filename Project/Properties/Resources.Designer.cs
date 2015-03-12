@@ -63,6 +63,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap auditor {
+            get {
+                object obj = ResourceManager.GetObject("auditor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap black {
             get {
                 object obj = ResourceManager.GetObject("black", resourceCulture);
@@ -251,22 +261,23 @@ namespace Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-        ///&lt;Heroes&gt;
-        ///  &lt;Hero id=&quot;1&quot; texture=&quot;milton&quot; name=&quot;Milton&quot;
-        ///		desc=&quot;A master of the incendiary arts, Milton&apos;s talents are oft overlooked due to his poor communication skills and affinity for staplers of the red Swingline variety.&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;20&quot; block=&quot;0&quot; combo=&quot;10&quot;/&gt;
-        ///	&lt;Item id=&quot;11&quot;/&gt;
-        ///	&lt;Item id=&quot;15&quot;/&gt;
-        ///	&lt;Item id=&quot;16&quot;/&gt;
-        ///	&lt;Item id=&quot;17&quot;/&gt;
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///
-        ///	&lt;Spell id=&quot;2&quot; auto=&quot;true&quot;/&gt;
-        ///	&lt;Spell id=&quot;1&quot;/&gt;
-        ///	&lt;Spell id=&quot;3&quot;/&gt;
-        ///  &lt;/Hero&gt;
-        ///  
-        ///  &lt;Hero id=&quot;2&quot; texture=&quot;stu&quot; name=&quot;S [rest of string was truncated]&quot;;.
+        ///&lt;Heroes&gt;
+        ///	&lt;Hero id=&quot;1&quot; texture=&quot;milton&quot; name=&quot;Milton&quot;
+        ///	      desc=&quot;A master of the incendiary arts, Milton&apos;s talents are oft overlooked due to his poor communication skills and affinity for staplers of the red Swingline variety.&quot;&gt;
+        ///		&lt;Attributes stamina=&quot;20&quot; block=&quot;0&quot; combo=&quot;10&quot; /&gt;
+        ///		&lt;Item id=&quot;11&quot; /&gt;
+        ///		&lt;Item id=&quot;15&quot; /&gt;
+        ///		&lt;Item id=&quot;16&quot; /&gt;
+        ///		&lt;Item id=&quot;17&quot; /&gt;
+        ///
+        ///		&lt;Spell id=&quot;2&quot; auto=&quot;true&quot; /&gt;
+        ///		&lt;Spell id=&quot;1&quot; /&gt;
+        ///		&lt;Spell id=&quot;3&quot; /&gt;
+        ///	&lt;/Hero&gt;
+        ///
+        ///	&lt;Hero id=&quot;2&quot; text [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Heroes {
             get {
@@ -275,26 +286,28 @@ namespace Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///
         ///&lt;Items&gt;
-        ///  &lt;!--SlotIDs:
+        ///	&lt;!--SlotIDs:
         ///	  Weapon,
         ///	  Head,
         ///	  Body,
         ///	  Feet,
         ///  --&gt;
         ///
-        ///  &lt;!-- Tier 0--&gt;
+        ///	&lt;!-- Tier 0--&gt;
         ///
-        ///  &lt;Equippable id=&quot;11&quot; name=&quot;Clipboard&quot; slot=&quot;Weapon&quot;&gt;
-        ///    &lt;Attributes stamina=&quot;3&quot; block =&quot;2&quot; combo =&quot;5&quot;/&gt;
-        ///  &lt;/Equippable&gt;
-        ///  &lt;Equippable id=&quot;12&quot; name=&quot;Tattered Band T-shirt&quot; slot=&quot;Body&quot;&gt;
-        ///    &lt;Attributes stamina=&quot;2&quot; block =&quot;3&quot; combo =&quot;2&quot;/&gt;
-        ///  &lt;/Equippable&gt;
-        ///  &lt;Equippable id=&quot;13&quot; name=&quot;Broken Flip Flops&quot; slot=&quot;Feet&quot;&gt;
-        ///    &lt;Attributes stamina=&quot;2&quot; block =&quot;1&quot; combo =&quot;3&quot;/&gt;
-        ///  [rest of string was truncated]&quot;;.
+        ///	&lt;Equippable id=&quot;11&quot; name=&quot;Clipboard&quot; slot=&quot;Weapon&quot;&gt;
+        ///		&lt;Attributes stamina=&quot;3&quot; block=&quot;2&quot; combo=&quot;5&quot; /&gt;
+        ///	&lt;/Equippable&gt;
+        ///	&lt;Equippable id=&quot;12&quot; name=&quot;Tattered Band T-shirt&quot; slot=&quot;Body&quot;&gt;
+        ///		&lt;Attributes stamina=&quot;2&quot; block=&quot;3&quot; combo=&quot;2&quot; /&gt;
+        ///	&lt;/Equippable&gt;
+        ///	&lt;Equippable id=&quot;13&quot; name=&quot;Broken Flip Flops&quot; slot=&quot;Feet&quot;&gt;
+        ///		&lt;Attributes stamina=&quot;2&quot; block=&quot;1&quot; combo=&quot;3&quot; /&gt;
+        ///	&lt;/Equippable&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Items {
             get {
@@ -353,25 +366,36 @@ namespace Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lindsay {
+            get {
+                object obj = ResourceManager.GetObject("lindsay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///
         ///&lt;LootPools&gt;
         ///
-        ///  &lt;LootPool id=&quot;1&quot;&gt;
-        ///    &lt;Item id=&quot;100&quot; chance=&quot;0.1&quot;/&gt;
-        ///    &lt;Item id=&quot;112&quot; chance=&quot;0.1&quot;/&gt;
-        ///    &lt;Item id=&quot;114&quot; chance=&quot;0.1&quot;/&gt;
-        ///    &lt;Item id=&quot;115&quot; chance=&quot;0.1&quot;/&gt;
-        ///    &lt;Item id=&quot;116&quot; chance=&quot;0.1&quot;/&gt;
-        ///    &lt;Item id=&quot;117&quot; chance=&quot;0.1&quot;/&gt;
-        ///  &lt;/LootPool&gt;
+        ///	&lt;LootPool id=&quot;1&quot;&gt;
+        ///		&lt;Item id=&quot;100&quot; chance=&quot;0.1&quot; /&gt;
+        ///		&lt;Item id=&quot;112&quot; chance=&quot;0.1&quot; /&gt;
+        ///		&lt;Item id=&quot;114&quot; chance=&quot;0.1&quot; /&gt;
+        ///		&lt;Item id=&quot;115&quot; chance=&quot;0.1&quot; /&gt;
+        ///		&lt;Item id=&quot;116&quot; chance=&quot;0.1&quot; /&gt;
+        ///		&lt;Item id=&quot;117&quot; chance=&quot;0.1&quot; /&gt;
+        ///	&lt;/LootPool&gt;
         ///
-        ///  &lt;LootPool id=&quot;2&quot;&gt;
-        ///    &lt;Item id=&quot;11&quot; chance=&quot;1&quot;/&gt;
-        ///    &lt;Item id=&quot;12&quot; chance=&quot;1&quot;/&gt;
-        ///    &lt;Item id=&quot;14&quot; chance=&quot;1&quot;/&gt;
-        ///    &lt;Item id=&quot;15&quot; chance=&quot;1&quot;/&gt;
-        ///    &lt;Item id=&quot;16&quot; chance=&quot;1&quot;/&gt;
-        ///    &lt;Item id=&quot;17&quot; chance=&quot;1 [rest of string was truncated]&quot;;.
+        ///	&lt;LootPool id=&quot;2&quot; limit=&quot;1&quot;&gt;
+        ///		&lt;Item id=&quot;11&quot; chance=&quot;1&quot; /&gt;
+        ///		&lt;Item id=&quot;12&quot; chance=&quot;1&quot; /&gt;
+        ///		&lt;Item id=&quot;14&quot; chance=&quot;1&quot; /&gt;
+        ///		&lt;Item id=&quot;15&quot; chance=&quot;1&quot; /&gt;
+        ///		&lt;Item id=&quot;16&quot; chance=&quot;1&quot; /&gt;
+        ///		&lt;Item id=&quot;17&quot; chance=&quot;1&quot; /&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string LootPools {
             get {
@@ -444,25 +468,29 @@ namespace Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///
         ///&lt;Monsters&gt;
         ///
-        ///  &lt;Monster id=&quot;3&quot; texture=&quot;dummy&quot; name=&quot;Dummy&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;9999999&quot; block =&quot;10&quot; combo =&quot;10&quot;/&gt;
-        ///  &lt;/Monster&gt;
-        ///  
-        ///  
-        ///  
-        ///  &lt;Monster id=&quot;1&quot; texture=&quot;lumbergh&quot; name=&quot;Boss&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;10&quot; block=&quot;10&quot; combo=&quot;10&quot;/&gt;
-        ///	&lt;Spell id=&quot;22&quot;/&gt;
-        ///	&lt;Spell id=&quot;21&quot;/&gt;
-        ///	&lt;LootPool id=&quot;1&quot;/&gt;
-        ///  &lt;/Monster&gt;
-        ///  &lt;Monster id=&quot;2&quot; texture=&quot;shoerner&quot; name=&quot;Pestering Intern&quot;&gt;
-        ///	&lt;Attributes stamina=&quot;8&quot; block=&quot;10&quot; combo=&quot;10&quot;/&gt;
-        ///	&lt;Spell id=&quot;31&quot;/&gt;
-        ///	&lt;Spell id=&quot;33&quot;/&gt; [rest of string was truncated]&quot;;.
+        ///	&lt;Monster id=&quot;3&quot; texture=&quot;dummy&quot; name=&quot;Dummy&quot;&gt;
+        ///		&lt;Attributes stamina=&quot;9999999&quot; block=&quot;10&quot; combo=&quot;10&quot; /&gt;
+        ///	&lt;/Monster&gt;
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///	&lt;Monster id=&quot;4&quot; texture=&quot;deskevil&quot; name=&quot;Cryptolocked Box&quot;&gt;
+        ///		&lt;Attributes stamina=&quot;8&quot; block=&quot;10&quot; combo=&quot;400&quot; /&gt;
+        ///		&lt;Spell id=&quot;41&quot; /&gt;
+        ///		&lt;Spell id=&quot;42&quot; /&gt;
+        ///		&lt;LootPool id=&quot;101&quot; /&gt;
+        ///		&lt;LootPool id=&quot;150&quot; /&gt;
+        ///	&lt;/Monster&gt;
+        ///
+        ///	&lt;Monster id=&quot;5&quot; texture=&quot;printer&quot; name=&quot;Jammed Printer&quot;&gt;
+        ///		&lt;Attributes stamina=&quot;20&quot; block=&quot;50&quot; combo= [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Monsters {
             get {
@@ -523,6 +551,16 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap roy {
+            get {
+                object obj = ResourceManager.GetObject("roy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap serverBase {
             get {
                 object obj = ResourceManager.GetObject("serverBase", resourceCulture);
@@ -574,21 +612,20 @@ namespace Project.Properties {
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///
         ///&lt;Spells&gt;
-        ///	&lt;!--Milton--&gt;
-        ///	&lt;TargetedDamage id=&quot;1&quot; name=&quot;Mumble&quot; damage=&quot;9&quot; castTime=&quot;2&quot; cooldown=&quot;6&quot;&gt;
-        ///	  &lt;Auras&gt;
-        ///		&lt;Stun duration=&quot;1&quot; blockable=&quot;true&quot;/&gt;
-        ///	  &lt;/Auras&gt;
-        ///	&lt;/TargetedDamage&gt;
-        ///  
-        ///	&lt;TargetedDamage id=&quot;2&quot; name=&quot;Staple Fire&quot; damage=&quot;1&quot; castTime=&quot;0.3&quot; cooldown=&quot;0&quot; /&gt;
-        ///  
-        ///	&lt;AreaDamage id=&quot;3&quot; name=&quot;Incinerate&quot; damage=&quot;5&quot; castTime=&quot;2.5&quot; cooldown=&quot;10&quot;&gt;
-        ///	  &lt;Auras&gt;
-        ///		&lt;DamageOverTime blockable=&quot;false&quot; duration=&quot;6&quot; damage=&quot;15&quot;/&gt;
-        ///	  &lt;/Auras&gt;
-        ///	&lt;/AreaDamage&gt;
-        ///   [rest of string was truncated]&quot;;.
+        ///  &lt;!--Milton--&gt;
+        ///  &lt;TargetedDamage id=&quot;1&quot; name=&quot;Mumble&quot; damage=&quot;9&quot; castTime=&quot;2&quot; cooldown=&quot;6&quot;&gt;
+        ///    &lt;Auras&gt;
+        ///      &lt;Stun duration=&quot;1&quot; blockable=&quot;true&quot; /&gt;
+        ///    &lt;/Auras&gt;
+        ///  &lt;/TargetedDamage&gt;
+        ///
+        ///  &lt;TargetedDamage id=&quot;2&quot; name=&quot;Staple Fire&quot; damage=&quot;1&quot; castTime=&quot;0.3&quot; cooldown=&quot;0&quot; /&gt;
+        ///
+        ///  &lt;AreaDamage id=&quot;3&quot; name=&quot;Incinerate&quot; damage=&quot;5&quot; castTime=&quot;2.5&quot; cooldown=&quot;10&quot;&gt;
+        ///    &lt;Auras&gt;
+        ///      &lt;DamageOverTime blockable=&quot;false&quot; duration=&quot;6&quot; damage=&quot;15&quot; /&gt;
+        ///    &lt;/Auras&gt;
+        ///  &lt; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Spells {
             get {
@@ -607,17 +644,18 @@ namespace Project.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///
         ///&lt;Tiles&gt;
-        ///  &lt;Tile id=&quot;0&quot; texture=&quot;carpet&quot; obstacle=&quot;false&quot;/&gt;
-        ///  &lt;Tile id=&quot;1&quot; texture=&quot;lumbergh&quot; obstacle=&quot;false&quot;/&gt;
-        ///  &lt;Tile id=&quot;2&quot; texture=&quot;wall&quot; obstacle=&quot;true&quot;/&gt;
-        ///  &lt;Tile id=&quot;3&quot; texture=&quot;carpet plant1&quot; obstacle=&quot;true&quot;/&gt;
-        ///  &lt;Tile id=&quot;4&quot; texture=&quot;carpet deskmed&quot; obstacle=&quot;true&quot;/&gt;
-        ///  &lt;Tile id=&quot;5&quot; texture=&quot;carpet plant2&quot; obstacle=&quot;true&quot;/&gt;
-        ///  &lt;Object id=&quot;20&quot; texture=&quot;darktile&quot; object=&quot;Server&quot;/&gt;
-        ///  &lt;Tile id=&quot;21&quot; texture=&quot;verydarkwall&quot; obstacle=&quot;true&quot;/&gt;
-        ///  &lt;Tile id=&quot;22&quot; te [rest of string was truncated]&quot;;.
+        ///	&lt;Tile id=&quot;0&quot; texture=&quot;carpet&quot; obstacle=&quot;false&quot; /&gt;
+        ///	&lt;Tile id=&quot;1&quot; texture=&quot;lumbergh&quot; obstacle=&quot;false&quot; /&gt;
+        ///	&lt;Tile id=&quot;2&quot; texture=&quot;wall&quot; obstacle=&quot;true&quot; /&gt;
+        ///	&lt;Tile id=&quot;3&quot; texture=&quot;carpet plant1&quot; obstacle=&quot;true&quot; /&gt;
+        ///	&lt;Tile id=&quot;4&quot; texture=&quot;carpet deskmed&quot; obstacle=&quot;true&quot; /&gt;
+        ///	&lt;Tile id=&quot;5&quot; texture=&quot;carpet plant2&quot; obstacle=&quot;true&quot; /&gt;
+        ///	&lt;Tile id=&quot;6&quot; texture=&quot;carpet plant3&quot; obstacle=&quot;true&quot; /&gt;
+        ///	&lt;Tile id=&quot;7&quot; texture=&quot;carpet plant4&quot; obstacle=&quot;true&quot; /&gt;
+        ///	&lt;Tile id=&quot;8&quot; t [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Tiles {
             get {

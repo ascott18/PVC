@@ -30,8 +30,8 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HeroSelectScreen));
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-			this.finishedButton = new Project.Controls.WoodButton();
 			this.instructions = new System.Windows.Forms.Label();
+			this.finishedButton = new Project.Controls.WoodButton();
 			this.SuspendLayout();
 			// 
 			// flowLayoutPanel1
@@ -41,8 +41,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(816, 381);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(816, 427);
 			this.flowLayoutPanel1.TabIndex = 0;
+			// 
+			// instructions
+			// 
+			this.instructions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.instructions.AutoSize = true;
+			this.instructions.Location = new System.Drawing.Point(12, 458);
+			this.instructions.Name = "instructions";
+			this.instructions.Size = new System.Drawing.Size(161, 13);
+			this.instructions.TabIndex = 2;
+			this.instructions.Text = "Select up to three allies to begin.";
 			// 
 			// finishedButton
 			// 
@@ -51,7 +61,7 @@
 			this.finishedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.finishedButton.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.finishedButton.ForeColor = System.Drawing.Color.Tan;
-			this.finishedButton.Location = new System.Drawing.Point(682, 399);
+			this.finishedButton.Location = new System.Drawing.Point(682, 445);
 			this.finishedButton.Name = "finishedButton";
 			this.finishedButton.Size = new System.Drawing.Size(146, 36);
 			this.finishedButton.TabIndex = 1;
@@ -59,21 +69,11 @@
 			this.finishedButton.UseVisualStyleBackColor = true;
 			this.finishedButton.Click += new System.EventHandler(this.finishedButton_Click);
 			// 
-			// instructions
-			// 
-			this.instructions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.instructions.AutoSize = true;
-			this.instructions.Location = new System.Drawing.Point(12, 412);
-			this.instructions.Name = "instructions";
-			this.instructions.Size = new System.Drawing.Size(161, 13);
-			this.instructions.TabIndex = 2;
-			this.instructions.Text = "Select up to three allies to begin.";
-			// 
 			// HeroSelectScreen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(840, 439);
+			this.ClientSize = new System.Drawing.Size(840, 485);
 			this.ControlBox = false;
 			this.Controls.Add(this.instructions);
 			this.Controls.Add(this.finishedButton);

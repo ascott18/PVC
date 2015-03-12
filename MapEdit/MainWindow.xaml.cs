@@ -211,7 +211,7 @@ namespace MapEdit
 				if (String.IsNullOrEmpty(currentFile))
 					return;
 
-				var fout = new StreamWriter(File.OpenWrite(currentFile));
+				var fout = new StreamWriter(currentFile);
 				fout.Write(TextEditor.Text);
 				ErrorText.Text = "Saved to " + new FileInfo(currentFile).FullName;
 				fout.Close();
