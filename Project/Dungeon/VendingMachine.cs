@@ -22,6 +22,10 @@ namespace Project.Dungeon
 
 			if (total >= 100)
 				MessageBox.Show("YOU WIN!!!!!");
+			else
+			{
+			    MessageBox.Show("You do not have enough change!");
+			}
 		}
 
 		/// <summary>
