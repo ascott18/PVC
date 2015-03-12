@@ -35,12 +35,12 @@
   </AreaHealing>
 
   <!--Lumbergh-->
-  <TargetedDamage id="21" name="Order TPS Reports" damage="4" castTime="2" cooldown="0" />
-  <TargetedDamage id="22" name="Request Saturday" damage="14" castTime="3" cooldown="10">
+  <TargetedDamage id="21" name="Order TPS Reports" damage="5" castTime="2" cooldown="0" />
+  <AreaDamage id="22" name="Request Saturday" damage="20" castTime="3" cooldown="10">
     <Auras>
       <Stun duration="1" blockable="false" />
     </Auras>
-  </TargetedDamage>
+  </AreaDamage>
 
   <!--Stephen-->
   <TargetedDamage id="31" name="Pester" damage="5" castTime="2" cooldown="2" />
@@ -185,7 +185,7 @@
   <AreaDamage id="124" name="Gripe" damage="2" castTime="1" cooldown="1" />
   <AreaDamage id="125" name="Rampage" damage="10" castTime="4" cooldown="15">
     <Auras>
-      <DamageOverTime blockable="true" duration="2" damage="10" />
+      <DamageOverTime blockable="true" duration="2" damage="5" />
     </Auras>
   </AreaDamage>
 

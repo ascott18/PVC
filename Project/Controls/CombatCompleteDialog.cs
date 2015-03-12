@@ -19,7 +19,7 @@ namespace Project
 
 		public void SetItems(IEnumerable<Item> items)
 		{
-			itemFlowPanel.LoadItems(items);
+			itemFlowPanel.LoadGroupedItems(items);
 		}
 
 		private void closeButton_Click(object sender, EventArgs e)

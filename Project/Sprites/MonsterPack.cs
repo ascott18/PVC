@@ -15,7 +15,7 @@ namespace Project.Sprites
 		public const int MaxMonsters = 3;
 		public readonly int UniqueID;
 
-		private readonly List<LootPool> lootPools = new List<LootPool>();
+		private List<LootPool> lootPools = new List<LootPool>();
 		private readonly List<Monster> monsters = new List<Monster>();
 
 		public MonsterPack(Point loc, int uniqueId) : base(loc)
@@ -51,7 +51,10 @@ namespace Project.Sprites
 			var loc = new Point(int.Parse(mpElement.Attribute("x").Value), int.Parse(mpElement.Attribute("y").Value));
 			var uniqueID = int.Parse(mpElement.Attribute("id").Value);
 
-			var mp = new MonsterPack(loc, uniqueID);
+			var mp = new MonsterPack(loc, uniqueID)
+			{
+				lootPools = LootPool.ParseLootPools(mpElement)
+			};
 
 			foreach (var monsterElement in mpElement.XPathSelectElements("Monster"))
 			{

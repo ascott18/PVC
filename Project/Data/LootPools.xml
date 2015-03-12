@@ -32,12 +32,12 @@
 	</LootPool>
 
 	<LootPool id="102" limit="1">
-		<Item id="11" chance="1" />
-		<Item id="12" chance="1" />
-		<Item id="14" chance="1" />
-		<Item id="15" chance="1" />
-		<Item id="16" chance="1" />
-		<Item id="17" chance="1" />
+		<Item id="100" chance="1" />
+		<Item id="112" chance="1" />
+		<Item id="114" chance="1" />
+		<Item id="115" chance="1" />
+		<Item id="116" chance="1" />
+		<Item id="117" chance="1" />
 	</LootPool>
 
 	<LootPool id="150" limit="2">

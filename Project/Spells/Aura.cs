@@ -9,6 +9,8 @@ namespace Project.Spells
 {
 	public abstract class Aura
 	{
+		private bool applied;
+
 		protected Aura(XElement data)
 		{
 			Duration = (double)data.Attribute("duration");
@@ -79,12 +81,13 @@ namespace Project.Spells
 			if (Session == null)
 				throw new InvalidOperationException("Can't apply an aura that wasn't created for a CombatSession.");
 
-			if (Target != null)
+			if (applied)
 				throw new InvalidOperationException("Can't apply an aura more than once");
 
 			if (target == null)
 				throw new InvalidOperationException("No target specified");
 
+			applied = true;
 			Target = target;
 			StartTime = Session.GetTime();
 			Session.Update += Session_Update;
@@ -96,6 +99,9 @@ namespace Project.Spells
 
 		private void Session_Update(CombatSession sender)
 		{
+			if (Target == null)
+				return;
+
 			if (Remaining <= 0)
 				Remove();
 			else
@@ -115,7 +121,12 @@ namespace Project.Spells
 		/// </summary>
 		public void Remove()
 		{
+			if (Target == null)
+				return;
+
 			Session.Update -= Session_Update;
+			Session.StateChanged -= Session_StateChanged;
+
 			Target.Auras.Remove(this);
 
 			if (Removed != null) Removed(this, new EventArgs());

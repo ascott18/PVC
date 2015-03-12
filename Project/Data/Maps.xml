@@ -169,7 +169,6 @@
 			<MonsterPack id="000101" x="4" y="3">
 				<Monster id="11" />
 				<Monster id="11" />
-				<Monster id="11" />
 			</MonsterPack>
 		</Objects>
 
@@ -342,12 +341,15 @@
 			
 			<Chest x="3" y="9" texture="plant1" despawn="false">
 				<LootPool id="102" />
-				<LootPool id="102" />
 			</Chest>
 			
 			<MonsterPack id="000101" x="10" y="8">
 				<Monster id="1" />
-				<LootPool id="110" />
+			  <LootPool id="102" />
+			  <LootPool id="102" />
+			  <LootPool id="102" />
+			  <LootPool id="102" />
+			  <LootPool id="102" />
 			</MonsterPack>
 			<MonsterPack id="000101" x="5" y="11">
 				<Monster id="11" />

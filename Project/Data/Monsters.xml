@@ -36,7 +36,7 @@
 	</Monster>
 
 	<Monster id="1" texture="lumbergh" name="Lumbergh">
-		<Attributes stamina="10" block="10" combo="10" />
+		<Attributes stamina="50" block="15" combo="250" />
 		<Spell id="22" />
 		<Spell id="21" />
 		<LootPool id="101" />
