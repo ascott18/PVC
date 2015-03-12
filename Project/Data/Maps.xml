@@ -290,6 +290,7 @@
 		</AdjacentMaps>
 
 		<Objects>
+			<Watercooler x="7" y="11" />
 			<Chest x="11" y="1" texture="medbox">
 				<LootPool id="1" />
 				<LootPool id="505" />

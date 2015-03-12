@@ -79,7 +79,7 @@ namespace Project.Dungeon
 			foreach (var sprite in game.Party.Members)
 			{
 				var hero = sprite as Hero;
-				hero.Health += hero.MaxHealth / 20;
+				hero.Health += hero.MaxHealth / 10;
 			}
 
 			startTime = stopwatch.ElapsedMilliseconds;

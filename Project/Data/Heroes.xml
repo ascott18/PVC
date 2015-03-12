@@ -6,7 +6,6 @@
 		<Attributes stamina="20" block="0" combo="10" />
 		<Item id="11" />
 		<Item id="15" />
-		<Item id="16" />
 		<Item id="17" />
 
 		<Spell id="2" auto="true" />
@@ -29,9 +28,9 @@
 	<Hero id="3" texture="carty" name="Carty"
 	      desc="All you need is love. That, and a big shield. Who ever said gnomes are only for gardens? This one just shattered your femur.">
 		<Attributes stamina="15" block="15" combo="0" />
-		<Item id="12" />
+		<Item id="17" />
 		<Item id="14" />
-		<Item id="16" />
+		<Item id="13" />
 
 		<Spell id="91" auto="true" />
 		<Spell id="92" />
@@ -41,6 +40,10 @@
 	<Hero id="4" texture="laggy" name="Alice"
 	      desc="Don't let her sweet demeanor and adorable mews fool you - there's not a cat fiercer. With claws honed into needles, not much can stand up to her... and live.">
 		<Attributes stamina="15" block="5" combo="10" />
+	  
+	  <Item id="12" />
+	  <Item id="15" />
+	  <Item id="16" />
 
 		<Spell id="101" auto="true" />
 		<Spell id="103" />
@@ -51,6 +54,10 @@
 	      desc="A descendent of a long line of fighters, you could not find his equal in ferocity. He also boasts a purple belt in karate.">
 		<Attributes stamina="14" block="8" combo="8" />
 
+	  <Item id="17" />
+	  <Item id="15" />
+	  <Item id="11" />
+
 		<Spell id="200" auto="true"/>
 		<Spell id="201" />
 		<Spell id="202" />
@@ -60,6 +67,10 @@
 	      desc="Although naive at times, Leslie is intellegent, well read, and will destroy her enemies with her enthusiasm.">
     <Attributes stamina="15" block="5" combo="10" />
 
+	<Item id="11" />
+	<Item id="12" />
+	<Item id="13" />
+
     <Spell id="301" auto="true" />
     <Spell id="302" auto="true" />
 	<Spell id="300" />
@@ -68,6 +79,10 @@
   <Hero id="7" texture="walter" name="Walter"
 	      desc="Don't step over the line against bowling's greatest 'Nam veteran -- he may be the only one around who cares about the rules. Nihilists beware.">
     <Attributes stamina="23" block="2" combo="5" />
+
+	<Item id="15" />
+	<Item id="16" />
+	<Item id="14" />
     
     <Spell id="400" auto="true" />
     <Spell id="401" />

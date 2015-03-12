@@ -27,6 +27,11 @@
   </TargetedDamage>
   <AreaDamage id="12" name="Knowledge Blast" damage="18" castTime="4" cooldown="8" />
   <AreaHealing id="13" name="Advise" healing="15" castTime="3" cooldown="10">
+	<Auras>
+	  <StatMod duration="4" blockable="false">
+		<Attributes stamina="0" block="15" combo="50" />
+	  </StatMod>
+	</Auras>
   </AreaHealing>
 
   <!--Lumbergh-->
@@ -50,13 +55,13 @@
   <AreaDamage id="42" name="Ultimatum" damage="25" castTime="4" cooldown="15">
     <Auras>
       <StatMult duration="4" blockable="false">
-        <Multiplier stamina="-30" combo="-20" />
+        <Multiplier stamina="-30" combo="-20" block="0" />
       </StatMult>
     </Auras>
   </AreaDamage>
 
   <!--Printer-->
-  <TargetedDamage id="51" name="PC Load Letter" damage="15" castTime="4" cooldown="0" />
+  <AreaDamage id="51" name="PC Load Letter" damage="13" castTime="4" cooldown="0" />
 
   <!--Tangled Cables-->
   <AreaDamage id="61" name="Trip" damage="15" castTime="4" cooldown="0" />
@@ -71,7 +76,7 @@
   <AreaDamage id="71" name="Release Magic Smoke" damage="8" castTime="2" cooldown="0">
     <Auras>
       <StatMult duration="4" blockable="false">
-        <Multiplier block="-20" combo="-20" />
+        <Multiplier block="-20" combo="-20" stamina="0"  />
       </StatMult>
     </Auras>
   </AreaDamage>
@@ -82,7 +87,7 @@
   <SelfHealing id="82" name="Evade" healing="8" castTime="2" cooldown="9">
     <Auras>
       <StatMod duration="2" blockable="false">
-        <Attributes block="100" />
+        <Attributes block="100" combo="0" stamina="0" />
       </StatMod>
     </Auras>
   </SelfHealing>
@@ -123,7 +128,7 @@
   </AreaDamage>
 
   <!--Dwight-->
-  <TargetedDamage id="200" name="Sales Pitch" damage="10" castTime="3" cooldown="0"/>
+  <TargetedDamage id="200" name="Sales Pitch" damage="6" castTime="2" cooldown="0"/>
 	<TargetedDamage id="201" name="Nunchuck Strike" damage="24" castTime="3" cooldown="15" />
 	<AreaDamage id="202" name="Shout in Megaphone" damage="8" castTime="1" cooldown="12" />
 
@@ -176,11 +181,11 @@
   </AreaDamage>
 
   <!--Disgruntled Employee-->
-  <TargetedDamage id="123" name="Steal Stapler" damage="15" castTime="2" cooldown="6" />
-  <AreaDamage id="124" name="Gripe" damage="7" castTime="1" cooldown="1" />
-  <AreaDamage id="125" name="Rampage" damage="10" castTime="5" cooldown="10">
+  <TargetedDamage id="123" name="Steal Stapler" damage="11" castTime="2" cooldown="6" />
+  <AreaDamage id="124" name="Gripe" damage="2" castTime="1" cooldown="1" />
+  <AreaDamage id="125" name="Rampage" damage="10" castTime="4" cooldown="15">
     <Auras>
-      <DamageOverTime blockable="false" duration="2" damage="10" />
+      <DamageOverTime blockable="true" duration="2" damage="10" />
     </Auras>
   </AreaDamage>
 
