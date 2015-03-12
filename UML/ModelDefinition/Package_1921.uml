@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="67e21df4-491d-47ad-8b19-94c4363af116"
   name="Project"
@@ -9124,14 +9124,13 @@
       <class
         Id="c5c6cccc-107b-40fc-9a52-4dc98498e678"
         name="Game"
-        visibility="Package"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>
           <reference
             Id="97b33744-5a81-4b95-8b77-4ad132b7857d"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -9177,48 +9176,19 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="6b1246df-3d74-4a52-9fc0-d42a6ebe1cb7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="22c11a97-e939-4b26-8d08-d3fa1755840b"
+              LastKnownName="DungeonController"
+              LastKnownLocation="Package_1921.uml" />
+          </generalization>
+        </generalsInternal>
         <targetEnds>
           <association
-            Id="70a9e34e-b793-4648-8ca3-1fdc8557ca81"
-            isDerived="false"
-            sourceEndRoleName="Game"
-            targetEndRoleName="Party"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="47f8928f-af70-420e-8d52-f7fdba9fc0f5"
-              LastKnownName="Party"
-              LastKnownLocation="Package_2219.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="310f84f4-dca0-40be-9e5c-68028548451d"
-                  name="Game"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="46bdcb21-bec1-4e86-bc92-a5d7ae6acb13"
-                  name="Party"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="3c00bdca-623f-44f2-bf2a-dedac2366006"
+            Id="51747160-3e7c-4cd8-a7c1-cdc6ffa5581e"
             isDerived="false"
             sourceEndRoleName="Game"
             targetEndRoleName="CombatSession"
@@ -9231,7 +9201,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="05495522-1b1d-415e-8856-d67412e179e1"
+                  Id="cbfdd0bd-2428-414d-8e70-ed0db04fee46"
                   name="Game"
                   isLeaf="false"
                   isStatic="false"
@@ -9244,7 +9214,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="6c7d628c-df6d-4617-b09e-066b0de75e47"
+                  Id="da313cf4-f0de-44d2-8d2e-f31ec2b5cd3f"
                   name="CombatSession"
                   isLeaf="false"
                   isStatic="false"
@@ -9257,20 +9227,20 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="39cfa51c-9654-45ea-97e1-3c41598aee7f"
+            Id="0bad5527-fe5e-453b-b5a7-fa7301f74666"
             isDerived="false"
             sourceEndRoleName="Game"
-            targetEndRoleName="DungeonMap"
+            targetEndRoleName="Party"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="10065710-cdcf-4321-91d7-8fab3af37c26"
-              LastKnownName="DungeonMap"
-              LastKnownLocation="Package_2225.uml" />
+              Id="47f8928f-af70-420e-8d52-f7fdba9fc0f5"
+              LastKnownName="Party"
+              LastKnownLocation="Package_2219.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="9931943f-25f3-496a-9654-963ba03e4342"
+                  Id="d84b0c38-31a1-4f92-a6a7-f23667c81673"
                   name="Game"
                   isLeaf="false"
                   isStatic="false"
@@ -9283,7 +9253,46 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="2e5f0bff-7087-4b40-a11c-f951b6218ead"
+                  Id="6a6baadd-d61b-4e8a-a3a9-60ad9ee1c84f"
+                  name="Party"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b2f3f3a5-8267-4ffa-bdf1-3fcf5f9d02d3"
+            isDerived="false"
+            sourceEndRoleName="Game"
+            targetEndRoleName="DungeonMap"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="10065710-cdcf-4321-91d7-8fab3af37c26"
+              LastKnownName="DungeonMap"
+              LastKnownLocation="Package_2225.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="97b313d4-9464-494a-a4e5-c84f592bfad9"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="66152e91-2043-4d72-83da-7514a8d91661"
                   name="DungeonMap"
                   isLeaf="false"
                   isStatic="false"
@@ -9300,7 +9309,6 @@
           <property
             Id="1e66f951-cab5-4f34-8f9b-866d2607d7e3"
             name="CurrentMap"
-            visibility="Package"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -9331,7 +9339,7 @@
                     <propertyInstance
                       Id="6a55d4c8-7a78-488e-87f0-0134114d2fbc"
                       name="Get"
-                      value="package" />
+                      value="public" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
                     Id="d0ce2828-48da-40fa-b77b-80370cbc9952">
@@ -9366,7 +9374,7 @@
                     <propertyInstance
                       Id="b2e35746-0ff6-4303-a002-8d7b497095b7"
                       name="Set"
-                      value="package" />
+                      value="public" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
@@ -9525,72 +9533,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="2f624696-8282-4040-be4d-5c5cb4b8b9fb"
-            name="Window"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <referencesInternal>
-              <reference
-                Id="ba4b4a80-24e9-4d41-8f81-2ae8926fca7e"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3DWindow"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="fec34acd-f925-474d-91d3-7e33c113da65"
-                name="field"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e185431f-f74e-49d6-895f-dbecdd68ec0d">
-                    <propertyInstance
-                      Id="d459c323-8b82-47de-bd46-203d2593ea09"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="7cb7cffd-a01b-4b4d-be9e-3c8e0c549a83">
-                    <propertyInstance
-                      Id="1acfbb18-17b6-4ab8-b014-656e6306f50c"
-                      name="IsConst"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="78d7404e-4d0b-4c1e-bb05-8f2cdf209bb5">
-                    <propertyInstance
-                      Id="a5cdbe0e-8ee2-4a1e-911f-b87eccacc05c"
-                      name="IsNullable"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="474fcd33-600d-47fd-8d50-f67b788b73c1">
-                    <propertyInstance
-                      Id="b5a04664-f6d8-49c6-b020-331bea849390"
-                      name="IsVolatile"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="b924723a-97d9-4d2b-9a15-148a62e34a55">
-                    <propertyInstance
-                      Id="d1f2e777-8a24-493d-a07a-7a8f149a8b6e"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <classMoniker
-                Id="e1ffb939-acca-4021-86a8-21d80b1ba0c4"
-                LastKnownName="MainWindow"
-                LastKnownLocation="Package4_2219.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="88ed8c62-51f0-4b52-be67-2633bb11a19f"
             name="currentSession"
             visibility="Private"
@@ -9658,8 +9600,8 @@
             </type_NamedElement>
           </property>
           <property
-            Id="a2a5d70b-c0ea-4eb6-8fa2-8f0ad6541d0e"
-            name="maps"
+            Id="325278ff-2bdd-41e4-8d4c-6b6be2948da0"
+            name="currentMap"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -9670,47 +9612,47 @@
             isComposite="false">
             <referencesInternal>
               <reference
-                Id="0d8b8962-dcfe-498e-b127-cfa4cf9fa08e"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3Dmaps"
+                Id="eb2ef166-b034-44aa-b47e-48652d26c52c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3DcurrentMap"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="77d37d2b-a496-4f7d-b8ac-46b4383a5731"
+                Id="c11dcc72-c971-4a24-b723-20c490c034ea"
                 name="field"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="a8d5875e-258c-4d7a-b1b8-f6b1bd3a25f9">
+                    Id="e01b1737-556b-4648-baa6-d1935f18dc04">
                     <propertyInstance
-                      Id="ed8e485c-bb1a-4a20-b75b-0718755f751f"
+                      Id="60919549-b626-4720-9e07-6192b5d229d6"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e1d114ba-dd85-46f7-9f4a-60ff7cd25e2d">
+                    Id="dd62258b-1393-42aa-be1f-a7f2b268051e">
                     <propertyInstance
-                      Id="b1d5d90b-00dc-4840-a30a-c09a4c3346bf"
+                      Id="ec4203a6-6c3a-4fc7-8e1a-c1d553bcee52"
                       name="IsConst"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="6e49f26e-3546-4001-8941-2a8d1af1e3ac">
+                    Id="5caad735-b5f9-4942-9f05-e5143ec3d8e1">
                     <propertyInstance
-                      Id="0fa2a8fd-f035-4b85-8f7d-8cda994a8ac7"
+                      Id="feab77e4-306a-4d56-a43d-26e7d4d13922"
                       name="IsNullable"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="85b2afac-bcc5-4414-9b99-c94f3b1d897d">
+                    Id="ae89b6ac-784b-4e22-bb13-e500bf068944">
                     <propertyInstance
-                      Id="c174f30c-2060-4e4b-bbfd-d28a8f7dd06e"
+                      Id="12b88c19-9310-4734-aa27-02de3309e937"
                       name="IsVolatile"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="25efda0e-c526-4767-8c6f-53e5e1b67485">
+                    Id="047c2f31-7d8f-442f-8885-c4cfd505fd49">
                     <propertyInstance
-                      Id="e19f2b86-103c-4d63-bc48-dd370d95072c"
+                      Id="464fb9ac-ad13-4de4-b6b4-6ea64da1936d"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -9719,100 +9661,13 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <classMoniker
-                Id="5a1264e8-0143-4eb6-a7ab-9ddcb472aaa6"
-                LastKnownName="Dictionary&lt;Int32‎, DungeonMap‎&gt;"
-                LastKnownLocation="Package3_2110.uml" />
+                Id="10065710-cdcf-4321-91d7-8fab3af37c26"
+                LastKnownName="DungeonMap"
+                LastKnownLocation="Package_2225.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation
-            Id="ada1c2c8-c369-4df8-9a78-59f9ed452124"
-            name="Game"
-            visibility="Package"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="7f306098-2e31-40f5-bc25-4c83d20a589e"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Controls Type%3DMainWindow)])"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="4eebf247-1a6a-457e-827a-ac5dc325842a"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="938e4ff7-a73a-4cfb-91b2-4b22cd8cb0c0">
-                    <propertyInstance
-                      Id="851285ba-3da5-4167-9fee-135b7b80d0db"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="c6e75f6a-8b18-4499-aa7e-09829410b757">
-                    <propertyInstance
-                      Id="5e140545-f98e-40ca-8574-35752b8f26dd"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="ddca39c8-3e3d-4016-a2c0-24adeef8dd42">
-                    <propertyInstance
-                      Id="11e21692-f7df-43e7-b3f6-3a4879b0ef1f"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="a87c0dc6-00d4-4818-ae58-95d92488c92f">
-                    <propertyInstance
-                      Id="8577bddc-4c12-41eb-bf78-e0cacf0f49cf"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="7447d581-101d-4239-9a6c-61cb6bacb249">
-                    <propertyInstance
-                      Id="37ba5dac-72f3-4b30-95f5-699dbac59352"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="7acbaea2-a48f-4039-bd27-6287769ac2c8">
-                    <propertyInstance
-                      Id="2766dcbe-82cb-4603-837b-63ac31cfe960"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="31040715-ed0f-4d84-b3d1-f71eb70b6f2c"
-                  name="window"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="0c1a24ac-11ff-4443-9dac-5d98ec5874be"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Controls Type%3DMainWindow)]) ParameterIdentifier%3Dwindow"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="e1ffb939-acca-4021-86a8-21d80b1ba0c4"
-                      LastKnownName="MainWindow"
-                      LastKnownLocation="Package4_2219.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
           <operation
             Id="977c7c88-7cf7-4783-af75-8035921bd442"
             name="EnterCombat"
@@ -9894,105 +9749,6 @@
                       Id="e7364251-d3a7-4189-8ce5-2994672c72b0"
                       LastKnownName="MonsterPack"
                       LastKnownLocation="Package_2219.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="f8ef3a70-2a2b-42fb-b93f-156dbd901c7c"
-            name="LoadDungeonMap"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="804ed8a8-0ade-4dc1-b04e-e729a93274c4"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3D(Name%3DLoadDungeonMap OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="005c9e6c-a056-4666-b45b-6404d085ec4c"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="f09d1463-a2c4-48bb-b201-70d773eea128">
-                    <propertyInstance
-                      Id="2ea6b24d-40c9-42b8-89d3-de2f72e25436"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="fd6146a8-1845-4fec-9025-5fa28fdcfa71">
-                    <propertyInstance
-                      Id="4f3dbc63-daaa-46c4-b90d-7c6088641eb3"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="8c0c021f-6dab-4e6a-bbcc-d09a6dbbb153">
-                    <propertyInstance
-                      Id="c99b95f4-6a2e-4975-98c4-ef21c43146ee"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="714663c2-02e0-4751-b9ab-52158d2e5599">
-                    <propertyInstance
-                      Id="bf6cf206-dce6-4be4-8a28-76f092b217c1"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="edb0c578-ae52-47e8-80a3-dcd85ea988b2">
-                    <propertyInstance
-                      Id="10065719-0b4a-40c4-8773-24773470ea3f"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="071ade7c-9e7c-4a4c-9eed-05273cf05dd6">
-                    <propertyInstance
-                      Id="e71cf665-1c6e-42c1-a66a-51900e8964c6"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="6ac65430-0463-4bb2-bcc1-6d07c9349d06"
-                  direction="Return">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="10065710-cdcf-4321-91d7-8fab3af37c26"
-                      LastKnownName="DungeonMap"
-                      LastKnownLocation="Package_2225.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="fa78d88f-a3dd-4837-8337-aebfeef94907"
-                  name="mapID"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="7c35aa52-fd54-434e-b5b4-cdafcd81a400"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3D(Name%3DLoadDungeonMap OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DmapID"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                      LastKnownName="Integer"
-                      LastKnownLocation="UML.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -10376,8 +10132,8 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="01944b54-f83f-43e6-8078-ee007f4448ad"
-            name="Redraw"
+            Id="c9c850eb-de8c-45b4-9ef9-f8592aea4d8e"
+            name="Game"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -10385,60 +10141,165 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="b3fdc6ba-4e98-4a29-aecb-bee5a46852b3"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3DRedraw"
+                Id="5c86a742-99e2-4ede-995a-0130e5da1fc5"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3D.ctor"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="3b571d58-6082-489b-95df-e5ad7298d63a"
+                Id="4fad7c4c-06c8-47f4-ada1-3f30ef61e08c"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="91852564-e336-4c15-8e83-f148d2861194">
+                    Id="0452f2ff-4434-4a6f-a83d-ca60448b6d16">
                     <propertyInstance
-                      Id="395cbab0-3ac6-4b86-a0dd-1a7198ad918d"
+                      Id="1e944d3a-cff5-4d7f-b62c-b3d789ef71a4"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="101e982f-512a-4240-b6c0-63bc110f103a">
+                    Id="14bd2ee7-3c82-4bc1-8ab7-67ce162a64b7">
                     <propertyInstance
-                      Id="223bf980-6d7c-487b-a1e0-381c8794ff63"
+                      Id="c2a2af4d-2135-43c9-a8b2-ca4af502b68e"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="b4a4473d-43a3-4ec5-b56f-048763593ad8">
+                    Id="17dc8b77-a5b2-4884-ac73-a288f7db5aaa">
                     <propertyInstance
-                      Id="04118016-4300-4e04-b636-948b7b9d3c26"
+                      Id="8e160ce2-5f99-43ee-9537-6e1aed9f42ae"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="1a0f89ae-93c3-4e0a-b10d-97d7596e3838">
+                    Id="b1ae90eb-e239-4d42-a143-6f385ac42dd5">
                     <propertyInstance
-                      Id="8321419d-ffcd-4093-b869-254b975eb998"
+                      Id="23d89211-3ff8-43b8-aabb-4c34f1374879"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="6025bb9a-5ab3-409c-b39a-2ad19b0f5641">
+                    Id="daf10502-3bf8-46cf-9985-4d9d62e1bd78">
                     <propertyInstance
-                      Id="8b93051e-0f06-4bd4-b796-b5b8d9cd2fb4"
+                      Id="e8c41a7d-ddc0-4eed-b651-65f19ed202c6"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e760ca43-be63-470b-a970-d0fa0956f9f4">
+                    Id="7bccf7a0-e8ac-403a-a249-bbc9dd34fad0">
                     <propertyInstance
-                      Id="93812c4a-ca55-4fa0-93c4-be4b83104c32"
+                      Id="86f9979e-0fa6-4c3d-98f0-1f765ca95675"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="408b7e06-6b58-4913-bcff-257b317abcaf"
+            name="Game"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a2aa58ec-fbd0-45cb-a99f-6b60a7927ac4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DParty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="63cf4148-6d6a-4d82-8517-d63494ab0cf2"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="320c2ee9-5e48-42d5-81da-ce73549ecae3">
+                    <propertyInstance
+                      Id="b19aeaf8-70ae-4ec6-8e4b-c8172c1bb8b0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5c43d02-1b07-4168-854f-816ffaea21bb">
+                    <propertyInstance
+                      Id="27a22797-c4c2-46a6-8a1b-0d05e473076c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6039f7bc-d677-42f2-94fc-fa1eb01013e6">
+                    <propertyInstance
+                      Id="45aaaae6-eec3-4bc9-93ef-224dca7ed557"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="05bc40fb-eb79-4656-8bc1-ec04b5b5c0ec">
+                    <propertyInstance
+                      Id="74d62958-0dcc-44a8-9e1c-220677dfea53"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d719e110-139b-4ed8-b1f2-7633768abcc3">
+                    <propertyInstance
+                      Id="56ec1825-801f-405a-8f6c-24cd80d7f508"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f980c0f8-07ed-4d4e-94cf-dbb4b42f3eb2">
+                    <propertyInstance
+                      Id="7443949f-688a-446e-b2cf-39b39846735b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1e3e4dce-bc7b-41e5-8999-3fad7be6719c"
+                  name="party"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7533cede-62ac-4bdf-8235-d87bd620fcff"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DParty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dparty"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="47f8928f-af70-420e-8d52-f7fdba9fc0f5"
+                      LastKnownName="Party"
+                      LastKnownLocation="Package_2219.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b1b596e0-807d-4f00-abc2-6eddf598765b"
+                  name="mapID"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="760c976d-7c81-4ebd-91f1-dab6d382404f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DGame Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DParty)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DmapID"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -10580,14 +10441,13 @@
       <class
         Id="26992fc5-78de-4bc6-90bd-56fb0139a2c7"
         name="CombatSession"
-        visibility="Package"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>
           <reference
             Id="3a543633-c8a5-4235-a88a-bef64b8984f5"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DCombatSession"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -10701,45 +10561,6 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="633e041c-5b11-4434-b66c-28ad5cad4a55"
-            isDerived="false"
-            sourceEndRoleName="CombatSession"
-            targetEndRoleName="Party"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="47f8928f-af70-420e-8d52-f7fdba9fc0f5"
-              LastKnownName="Party"
-              LastKnownLocation="Package_2219.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="36728396-4641-4379-b0a3-06b81be1875a"
-                  name="CombatSession"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b413a331-17c7-4cee-aa18-f4c8966b938d"
-                  name="Party"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="02dd9e3a-9a23-4047-b0cc-3d9a6f7e947c"
             isDerived="false"
             sourceEndRoleName="CombatSession"
@@ -10768,6 +10589,45 @@
                 <memberEnd
                   Id="6cf539a2-e1a6-414a-ae29-fed6eb9c8e90"
                   name="MonsterPack"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7e9029aa-92e0-4d39-ad43-63d6e14a7c43"
+            isDerived="false"
+            sourceEndRoleName="CombatSession"
+            targetEndRoleName="Party"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="47f8928f-af70-420e-8d52-f7fdba9fc0f5"
+              LastKnownName="Party"
+              LastKnownLocation="Package_2219.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9ef4eeb6-3b7f-470f-b387-c32faf515a1d"
+                  name="CombatSession"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bfc8b8bf-3234-472b-b0db-38d06bc2470e"
+                  name="Party"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -12533,6 +12393,420 @@
         Id="fb79f118-f4e1-4276-9d88-5d39fcc530a6"
         LastKnownName="Items"
         LastKnownLocation="Package_2229.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="22c11a97-e939-4b26-8d08-d3fa1755840b"
+        name="DungeonController"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="fa6cf53c-14e0-45cc-8a7b-a0976b2fec25"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDungeonController"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="90114095-e358-4352-91e3-128093533132"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="081fc8eb-0379-460b-a3cc-29562ef35626">
+                <propertyInstance
+                  Id="4fb5ecaf-1f1b-4d63-abde-ba747b634260"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="03b916cd-cb63-4be8-b437-aa82eca6af57">
+                <propertyInstance
+                  Id="7db15f85-f14c-48bd-af7f-5a16b4e97f73"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2abf3a00-88e1-4261-bb77-51295de5edf6">
+                <propertyInstance
+                  Id="7c426596-14ff-4063-9077-3aa057777481"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f15d418-2ac0-42c2-b35a-578e305d7d46">
+                <propertyInstance
+                  Id="40848e4b-8cc5-4624-97aa-d0897a0520ed"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="08eabe24-352d-489f-aacc-59e54f66e9a7">
+                <propertyInstance
+                  Id="f6eb0b8c-ce8f-432f-ae90-531b758c75db"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="f2f09ccb-8024-46bf-b7b1-5cee68c610ce"
+            isDerived="false"
+            sourceEndRoleName="DungeonController"
+            targetEndRoleName="DungeonMap"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="10065710-cdcf-4321-91d7-8fab3af37c26"
+              LastKnownName="DungeonMap"
+              LastKnownLocation="Package_2225.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="78b9df51-c251-4df9-a1aa-02036206a30d"
+                  name="DungeonController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c23da407-a2dc-4379-b3e2-54479896d62e"
+                  name="DungeonMap"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="fefb7626-7e89-4db0-b37b-7ae8400f03de"
+            name="CurrentMap"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="22485d72-bb8e-4f0c-8daa-86d2acbe0f82"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDungeonController Member%3DCurrentMap"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="494d8218-6bf9-4e5f-ac61-45558fbdd519"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24efbda8-b8a6-4e60-b62b-9ebe94421296">
+                    <propertyInstance
+                      Id="87de6c80-0f5a-49c7-ac75-6055864ea54b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="527d512b-13bf-4d99-ae6d-d4bd63667dd8">
+                    <propertyInstance
+                      Id="147a515d-9297-460c-9d0f-b05e2ad3fc5c"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b4d4bd0-c433-445c-b8bc-c4c13ea3d9f4">
+                    <propertyInstance
+                      Id="03ff6c71-20c4-4bed-b0b2-2d633cd78012"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3885f0d3-bfa8-450c-85ab-eeeb3edf6646">
+                    <propertyInstance
+                      Id="e365052f-baae-4032-8c37-1bd93040e2c0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="faba70ab-3ad2-4c49-adf5-8ef7d5557345">
+                    <propertyInstance
+                      Id="03e47e44-9ffd-450d-8d73-a4cd3752ddb7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a003202-03dd-4e25-a10e-7d98b470a2ae">
+                    <propertyInstance
+                      Id="633518c3-7aab-4854-9d31-fee0474fa35d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be65e177-24fe-4945-a31b-39e864ee9fa4">
+                    <propertyInstance
+                      Id="f06e420c-00f4-4cfa-9a40-f675a98371bc"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="10065710-cdcf-4321-91d7-8fab3af37c26"
+                LastKnownName="DungeonMap"
+                LastKnownLocation="Package_2225.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="79f9e468-d14b-4c02-a23b-cbc32a68a1f5"
+            name="maps"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="8b9a6368-f931-4ff8-ab64-fd04e167ded9"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDungeonController Member%3Dmaps"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e105729e-7e88-464b-912c-15ca8efaf2ee"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="15c0fcd6-c69b-4346-aafd-43443305eeb2">
+                    <propertyInstance
+                      Id="cb8b2da7-b32a-4459-afc8-5f2be9bdab9f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7862ad2a-c639-4e9d-bc8b-1d2b7a638670">
+                    <propertyInstance
+                      Id="4cd87fb0-756f-4c94-be1c-46a1945af565"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f9c097a-5ea6-4470-a948-96f20d52f85c">
+                    <propertyInstance
+                      Id="38f83606-40c4-4ebd-b4a1-68510f1c5c94"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e4fff14-ef46-4430-aadd-4839dfdd1541">
+                    <propertyInstance
+                      Id="b834a412-ddea-462e-b222-ef2407ac278c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2fbd82b0-ce59-4d7f-87fd-d2524d5456a9">
+                    <propertyInstance
+                      Id="bd4ee43f-ac3b-47dc-8576-a17587c9e05f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="5a1264e8-0143-4eb6-a7ab-9ddcb472aaa6"
+                LastKnownName="Dictionary&lt;Int32‎, DungeonMap‎&gt;"
+                LastKnownLocation="Package3_2110.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="af671de3-7e01-424b-b133-0c49937f7603"
+            name="LoadDungeonMap"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e8c32b95-9863-4648-b3f1-ba64419d9709"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDungeonController Member%3D(Name%3DLoadDungeonMap OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="05bac8fa-11f7-4bc3-b234-7cbf6787d06f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9917159a-fb0b-4ffc-a56c-2b149bff38bf">
+                    <propertyInstance
+                      Id="bc8d1ce1-5c7c-4cba-a95c-cd4129e9d648"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b8bcca4-6ac2-4572-b22c-3814b6c3cabf">
+                    <propertyInstance
+                      Id="677dc330-d6fb-49ad-b44e-9513179acc4f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="471f6f85-cb38-4ad2-bfc4-3f39c1c84602">
+                    <propertyInstance
+                      Id="38368b4b-0179-48c1-b995-58ffcd216328"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c86f857a-2472-4e6c-8243-14f7ff26ad20">
+                    <propertyInstance
+                      Id="8d001c12-035f-4efa-97f2-3580b367dbaa"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a8a8bde-0d86-463f-ac01-e2bc2201f64d">
+                    <propertyInstance
+                      Id="742e3951-4692-4742-a568-3036a008f9db"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4798972-a7b2-496f-9b53-b513fd61efd0">
+                    <propertyInstance
+                      Id="c3973745-860f-4588-9f0e-355c90e43bfc"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bd12e39b-5f1b-45a5-84a2-3262fe0cfacb"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="10065710-cdcf-4321-91d7-8fab3af37c26"
+                      LastKnownName="DungeonMap"
+                      LastKnownLocation="Package_2225.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6ee696fa-352b-4b8e-80e7-e97dbec2c981"
+                  name="mapID"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="590f2cfc-8286-477e-b547-efcaa6a3f682"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDungeonController Member%3D(Name%3DLoadDungeonMap OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DmapID"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="81f0efb1-c0df-40f7-9f77-083f6ce79389"
+            name="DungeonController"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="87e9e30d-7b1d-44c2-bfa4-ccbe6dea66df"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject Type%3DDungeonController Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e2f14a99-4a11-4b4c-b2c6-9d9d4e4e8537"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11f0447a-4cb0-4862-b685-1e9a8879288b">
+                    <propertyInstance
+                      Id="3d747ce7-e0ae-46a9-8d19-422ab82e10fc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03d50133-a128-46a4-a74d-9b21da6c1cd7">
+                    <propertyInstance
+                      Id="e91028ed-228e-4947-ae52-c1db7c2af79a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="290d1cae-34bb-4d23-90e0-a73731375250">
+                    <propertyInstance
+                      Id="c03df5a2-4fc2-4160-b08c-62d47157c46d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5bd74bd3-3f21-42db-bb97-a05e02339307">
+                    <propertyInstance
+                      Id="6ef4a60d-bb74-4dd6-8d63-91cca78ccd50"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2638c206-cd14-46cc-a2d7-b1e2f52837ab">
+                    <propertyInstance
+                      Id="50f6d5ba-5762-4544-a04b-fc0288bc9c73"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="afdfc88e-4e26-4e37-9425-51b1246d6790">
+                    <propertyInstance
+                      Id="0f888210-54d3-4ede-94f7-8833a0150a7b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>

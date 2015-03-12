@@ -87,6 +87,9 @@
     <Content Include="ModelDefinition\Package_1019.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_1112.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_1921.uml">
       <SubType>Content</SubType>
     </Content>
@@ -107,6 +110,34 @@
     </Content>
     <Content Include="ModelDefinition\Package_2234.uml">
       <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sub_Combat.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sub_Combat.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sub_Combat.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Sub_Dungeon.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sub_Dungeon.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sub_Dungeon.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Sub_Spells.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sub_Spells.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sub_Spells.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Sub_Tiles.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sub_Tiles.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sub_Tiles.classdiagram</DependentUpon>
     </Content>
     <Content Include="UMLClassDiagram.classdiagram">
       <SubType>Content</SubType>
