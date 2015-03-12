@@ -1199,15 +1199,4 @@
 
 	</Map>
 
-
-</Maps>djacentMaps>
-
-		<Objects>
-			<Door x="6" y="12" toMap="313" toX="6" toY="11" texture="elevatorDown" />
-			<VendingMachine x="6" y="6" texture="elevatorUp" />
-		</Objects>
-
-	</Map>
-
-
 </Maps>
