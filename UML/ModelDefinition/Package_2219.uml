@@ -1975,72 +1975,6 @@
         </appliedStereotypesInternal>
         <targetEnds>
           <association
-            Id="827ecc20-f13f-4bf4-9f04-3f5ab1b43f57"
-            isDerived="false"
-            sourceEndRoleName="CombatSprite"
-            targetEndRoleName="Attributes"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="78ca4617-3804-4026-ac6f-5425de5d8930"
-              LastKnownName="Attributes"
-              LastKnownLocation="Package_2219.uml" />
-            <description>Property Attributes references type Attributes.</description>
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8433f578-195c-4dd0-8411-9775aa61ee83"
-                  name="CombatSprite"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="c86143bf-dd06-44dc-900a-043555677002"
-                      name="Lower"
-                      value="*" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="4463d65f-89b6-4288-8fb8-4fe92ad82087"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="5b3e12db-e8a9-497f-a7f6-c0cf4caef58c"
-                  name="Attributes"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="246e3762-6a21-4475-a265-f0909d214205"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="d10ab974-8d7e-49c4-aa50-ce3b4ab31d9b"
-                      name="Upper"
-                      value="1" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
             Id="c28ec950-6ff6-4246-924e-7245b39f8d11"
             isDerived="false"
             sourceEndRoleName="CombatSprite"
@@ -2107,7 +2041,7 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="e57de212-3c2f-4e2e-9d82-65922fda7132"
+            Id="1b114619-d38a-4169-a626-3f17c12db4dc"
             isDerived="false"
             sourceEndRoleName="CombatSprite"
             targetEndRoleName="CurrentCast"
@@ -2121,7 +2055,7 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="0382b473-7def-49b1-a24d-5f7e30c15b3c"
+                  Id="b75ae4ae-34eb-487d-b4a2-679018d54863"
                   name="CombatSprite"
                   isLeaf="false"
                   isStatic="false"
@@ -2133,21 +2067,21 @@
                   isNavigableOwned="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="ea1f7707-1c27-400a-8268-6c4a1611bc09"
+                      Id="f2743ef7-f79f-4deb-a16d-f33b5379b221"
                       name="Lower"
-                      value="1" />
+                      value="*" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="7a2c6598-ae1d-4d2a-9cc3-95923269e708"
+                      Id="aedd5aaa-9a53-4cb0-9ecf-a42011029885"
                       name="Upper"
-                      value="1" />
+                      value="*" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="2261f759-bbbe-4ce5-a3c0-44cdb5421b07"
+                  Id="380a2165-34c8-4ba1-9834-493341a3d7bc"
                   name="CurrentCast"
                   isLeaf="false"
                   isStatic="false"
@@ -2158,13 +2092,13 @@
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="69cc540e-215e-4ff7-96de-2c3bcaccff85"
+                      Id="1d7eb0cc-0c85-477f-8535-e6af12d0fcd3"
                       name="Lower"
                       value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="fe0df3e7-cf62-4da9-b584-5a4194404372"
+                      Id="c498a480-a3c5-43b1-a162-719d7888f0b5"
                       name="Upper"
                       value="1" />
                   </upperValueInternal>
@@ -2173,20 +2107,86 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="608eb332-711c-4c6a-b33e-97d0b08910e0"
+            Id="ffde3056-b56d-4a33-9c6e-5c25337cdf5f"
+            isDerived="false"
+            sourceEndRoleName="CombatSprite"
+            targetEndRoleName="Attributes"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="c013dbc7-8f2c-4617-a8a3-eec671cf55b6"
+              LastKnownName="Attributes"
+              LastKnownLocation="Package3_2219.uml" />
+            <description>Property Attributes references type Attributes.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c63061a-06fd-4f73-8866-0048aadb10b8"
+                  name="CombatSprite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="93f0ec5a-7597-4025-829b-ffe6a9375dcd"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9022133a-ed3f-41e7-ba03-3a67ed87b136"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="83a08731-9dde-4798-8fb0-2af711793144"
+                  name="Attributes"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="84fa371c-3e85-4b12-b4d3-d0b4b7b93d6c"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5f34f9d9-8dd9-4280-a05c-bcb1039797c9"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="874673c6-248e-49a0-8912-0d432c3210e9"
             isDerived="false"
             sourceEndRoleName="CombatSprite"
             targetEndRoleName="Aura"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="505f4080-4bce-4a98-9558-ea3f73e7db91"
+              Id="3824d2b9-0034-4ddf-ae42-4853fbffa5b9"
               LastKnownName="Aura"
-              LastKnownLocation="Package3_2219.uml" />
+              LastKnownLocation="UML.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="a576e32c-1733-46a2-81a0-ce51bec2e145"
+                  Id="a59d607b-9f86-429a-b542-cdc9c019d8f6"
                   name="CombatSprite"
                   isLeaf="false"
                   isStatic="false"
@@ -2199,7 +2199,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="7d0e85b1-7a26-4dce-ab8d-dd1c0c9a5a0c"
+                  Id="0125e4ed-ad8c-4c9c-8cec-b688ce11c55d"
                   name="Aura"
                   isLeaf="false"
                   isStatic="false"
@@ -2208,6 +2208,58 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5849c6e4-f44d-4950-86a9-ee90ac513e7d"
+            isDerived="false"
+            sourceEndRoleName="CombatSprite"
+            targetEndRoleName="Spells"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="050eb17d-3be1-4ef9-a7eb-3bf342750b1b"
+              LastKnownName="Spell"
+              LastKnownLocation="UML.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7d884249-7329-4af0-9791-6bddc6a973a6"
+                  name="CombatSprite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="38bd4702-94b3-4a0a-959d-411075525754"
+                  name="Spells"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bb0042b4-0b8c-4217-af69-bd478ca9bda6"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2b777e0d-e99d-466d-954c-f6f3daf631ca"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -2226,7 +2278,7 @@
             <referencesInternal>
               <reference
                 Id="1165b4c2-fbf7-4f62-91a3-272a7576f21b"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DAttributes"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DAttributes"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2288,9 +2340,9 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <classMoniker
-                Id="78ca4617-3804-4026-ac6f-5425de5d8930"
+                Id="c013dbc7-8f2c-4617-a8a3-eec671cf55b6"
                 LastKnownName="Attributes"
-                LastKnownLocation="Package_2219.uml" />
+                LastKnownLocation="Package3_2219.uml" />
             </type_NamedElement>
           </property>
           <property
@@ -2307,7 +2359,7 @@
             <referencesInternal>
               <reference
                 Id="c54675c4-25ea-4823-bc6a-8bf6932a6323"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DBaseAttributes"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DBaseAttributes"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2369,9 +2421,9 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <classMoniker
-                Id="78ca4617-3804-4026-ac6f-5425de5d8930"
+                Id="c013dbc7-8f2c-4617-a8a3-eec671cf55b6"
                 LastKnownName="Attributes"
-                LastKnownLocation="Package_2219.uml" />
+                LastKnownLocation="Package3_2219.uml" />
             </type_NamedElement>
           </property>
           <property
@@ -2387,7 +2439,7 @@
             <referencesInternal>
               <reference
                 Id="ac457cbb-0f1a-44b3-8021-f68f398ab02a"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DCurrentCast"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DCurrentCast"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2467,7 +2519,7 @@
             <referencesInternal>
               <reference
                 Id="a12e5a4f-488b-406c-99f7-3c78b0e78753"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DHealth"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DHealth"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2547,7 +2599,7 @@
             <referencesInternal>
               <reference
                 Id="d69b244e-bcca-4322-8477-4c4254daf041"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DImage"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DImage"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2627,7 +2679,7 @@
             <referencesInternal>
               <reference
                 Id="46a47edd-ff71-47a5-984e-e38b3fc61d10"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DIsActive"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DIsActive"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2707,7 +2759,7 @@
             <referencesInternal>
               <reference
                 Id="b9e3e9d9-80a8-45a0-9727-7facc79644d8"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DIsDead"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DIsDead"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2787,7 +2839,7 @@
             <referencesInternal>
               <reference
                 Id="35bb8524-ceb8-47a4-aa96-74789db63206"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DMaxHealth"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DMaxHealth"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2867,7 +2919,7 @@
             <referencesInternal>
               <reference
                 Id="dc7f067b-9655-41f4-a10a-c91cf44e642e"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DMinHealth"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DMinHealth"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -2947,7 +2999,7 @@
             <referencesInternal>
               <reference
                 Id="04457aa8-9b6a-4a64-8494-ce2451904ed9"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DName"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DName"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3027,7 +3079,7 @@
             <referencesInternal>
               <reference
                 Id="ea669706-1f5c-4eea-8d76-ecf9792681e0"
-                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DHealthChanged"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DHealthChanged"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3093,7 +3145,7 @@
             <referencesInternal>
               <reference
                 Id="04d21bad-00e0-4ae4-b43b-e2320bdf98d6"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DSpells"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DSpells"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3160,7 +3212,7 @@
             <referencesInternal>
               <reference
                 Id="b769a50d-e1fb-40fc-8921-d9a5d87bf490"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3Dattributes"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3Dattributes"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3208,9 +3260,9 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <classMoniker
-                Id="78ca4617-3804-4026-ac6f-5425de5d8930"
+                Id="c013dbc7-8f2c-4617-a8a3-eec671cf55b6"
                 LastKnownName="Attributes"
-                LastKnownLocation="Package_2219.uml" />
+                LastKnownLocation="Package3_2219.uml" />
             </type_NamedElement>
           </property>
           <property
@@ -3227,7 +3279,7 @@
             <referencesInternal>
               <reference
                 Id="87575d57-7032-41a3-bfee-3c28f7693852"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3Dhealth"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3Dhealth"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3294,7 +3346,7 @@
             <referencesInternal>
               <reference
                 Id="7c40879d-15b8-4f92-8cfd-ae9898042b3c"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DmaxHealth"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DmaxHealth"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3347,6 +3399,350 @@
                 LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="bd64d9bf-1def-4986-8930-c12476ac15bc"
+            name="Description"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7d57e7b7-9625-4e52-af99-5b3a2c8d5906"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DDescription"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="043a3b3f-05ce-404f-955f-aac2719b4a69"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a0c114f-14db-454a-810d-88e2df84146d">
+                    <propertyInstance
+                      Id="3214169f-8f84-46f8-aba8-a380ebb15268"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="de7da9a8-409a-4042-ad5b-959b773c0bc2">
+                    <propertyInstance
+                      Id="42542c31-35f0-4a35-b0fb-fd96d960ef52"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02292081-750a-4482-9205-58a229ccf63b">
+                    <propertyInstance
+                      Id="9e50267e-1368-40c9-a581-f4f4509eb87e"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b41c0146-18f3-4817-bf04-bba70f108789">
+                    <propertyInstance
+                      Id="f8d0c065-0c61-4f10-853b-ab243273d738"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5eb13af1-418e-40b5-980d-029a901896c4">
+                    <propertyInstance
+                      Id="1fca70cd-75d7-40dc-bf8a-a9832c500b34"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25bdf101-d38a-40d1-b110-f4a8f3954703">
+                    <propertyInstance
+                      Id="79faaa12-25d4-40bb-be62-8c6cf3466202"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3057b50d-d757-4bd3-bc3c-dba13d6c9814">
+                    <propertyInstance
+                      Id="7775adab-8985-4b33-a6bd-02cac3686ccb"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="604cb94c-593c-4a49-bb91-7dedff0746a6"
+            name="Parent"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="e9bf8449-9e8c-4352-ac9e-8e090a73b76d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DParent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="24684349-8770-4c7e-bd47-ef7f539955dd"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="47aa9954-4d6a-4f3c-a533-944a65d4f6ee">
+                    <propertyInstance
+                      Id="1bfaf22d-c832-4c98-8693-7a02cb4854ab"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="816c279f-542e-4ff8-8808-52fee0e2414a">
+                    <propertyInstance
+                      Id="92aede34-f145-4db9-8ffc-76c8ce45d892"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="173020e9-aa73-4cd6-a214-be47efcc0d7b">
+                    <propertyInstance
+                      Id="dd1e9895-d944-4651-bd01-5622b36505eb"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a7ef46e-272d-4e3a-8eb8-e87c7a550d05">
+                    <propertyInstance
+                      Id="afbe1fad-d538-49f4-8900-81015fa9426a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9145814-e9f1-4697-a139-37fc90c862b2">
+                    <propertyInstance
+                      Id="73b8a1ab-cfc4-446b-bf8e-96392335571d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d8674032-715b-41a6-af00-d2394c5ab033"
+                LastKnownName="DungeonSprite"
+                LastKnownLocation="Package_2219.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d58e3ee4-74f5-41a3-8647-601d3683ae29"
+            name="Auras"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="5e0870e5-8108-4c4e-92b1-9f674a65b39c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DAuras"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a1322f36-8179-41c2-9a2c-f3603f1165e2"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0445550b-5f22-4db5-9a94-218e275a2f2a">
+                    <propertyInstance
+                      Id="b2bd8c53-634b-4343-b233-944e0a6105ba"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3c5ed5c7-d115-45ca-98bd-cfba221f9634">
+                    <propertyInstance
+                      Id="cc57d2b8-9eeb-44e0-82ae-3748ef86c8bd"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f471da50-b763-4468-bc90-701d9b6d3be2">
+                    <propertyInstance
+                      Id="a554d797-83ef-40e1-afee-ea01dc2703f6"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28e25b33-8e4c-47cb-8f4d-47d7d185e2e7">
+                    <propertyInstance
+                      Id="a9ec8910-94ce-4de6-a5ba-55cb44dd22b9"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="574bddb7-0a9b-49d8-9429-e40f8ce68cbb">
+                    <propertyInstance
+                      Id="5381f0d5-34a4-4213-84e5-602c2bd5a84f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="c228ec32-1e63-4f67-9e0a-4ce0f1c72188"
+                LastKnownName="List&lt;Aura‎&gt;"
+                LastKnownLocation="Package3_2110.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ec58ea5d-5f8c-4b77-85f8-e92e1c459301"
+            name="RecalculatingAttributes"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="00dbce16-8214-4eae-be78-6cd68bc00d0d"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DRecalculatingAttributes"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="71b5fcf2-e08d-447e-878e-5966e384902f"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb858d1b-1777-4283-a3ff-a2d5add57c1a">
+                    <propertyInstance
+                      Id="ce165919-fd1d-4dcf-accc-4bedc405bbe6"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b84117b3-92cf-4fab-91eb-eb0839770a63">
+                    <propertyInstance
+                      Id="3388fd3a-8ff7-43c1-80e6-b60b14b69dd4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="030608a1-9c40-4e36-b04d-2121ca5829ea">
+                    <propertyInstance
+                      Id="80b4e60a-7b37-4ec1-8966-28fb353627bc"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f587067-ad91-4ac4-8002-8e29c9b940f5">
+                    <propertyInstance
+                      Id="5e0cc4cb-13f2-4cf5-9be9-8fe6307879bf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84b2702c-a076-45d3-b292-11acd7793e2b">
+                    <propertyInstance
+                      Id="1296c9df-8ff8-4cf1-abd6-8618b678414e"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6601e2a4-4689-4a44-bff5-05a7a196a829"
+                LastKnownName="SpriteAttributesRecalcEvent"
+                LastKnownLocation="Package_2219.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c07891db-4a75-4ae9-85c7-924c68b42a2b"
+            name="AttributesChanged"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7aaa6369-e488-484f-840c-c01703457bcc"
+                handle="viewcode://./CodeSchema_Event?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DAttributesChanged"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3a74bfc6-39b6-45d4-9bb9-445721daa97e"
+                name="event"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa913815-6928-4a58-a787-9607119423d0">
+                    <propertyInstance
+                      Id="b936f6ba-c96e-45f7-83f2-03033eb3bb7b"
+                      name="Add"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="10c7b3db-434d-4c25-add6-59acb770e1f2">
+                    <propertyInstance
+                      Id="44ebe7c1-c302-448c-b3db-f2f6dbbc4dcc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="207c4333-84a4-46e6-8582-1ce94eb686bc">
+                    <propertyInstance
+                      Id="85708bea-171d-4a70-9904-f216be3dc09b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d228384f-7743-447d-b5fa-7803119ec570">
+                    <propertyInstance
+                      Id="0d4b9235-d4f2-4f3b-8fa4-e2b6917bed66"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd0c8f8c-7b6a-46ab-85a9-1d3a32d3b05d">
+                    <propertyInstance
+                      Id="3da5639d-3bc9-4ec5-80a9-b1c3872e1cf3"
+                      name="Remove"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="a459dafc-087d-4354-ac3f-e21a9a643d6b"
+                LastKnownName="SpriteEvent"
+                LastKnownLocation="Package_2219.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -3361,7 +3757,7 @@
             <referencesInternal>
               <reference
                 Id="85acd1c2-8fc5-4a5b-8e3f-37b95e58a6d5"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3DParseCommonAttributes OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.Linq.dll&quot; Namespace%3DSystem.Xml.Linq Type%3DXElement)])"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3DParseCommonAttributes OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.Linq.dll&quot; Namespace%3DSystem.Xml.Linq Type%3DXElement)])"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3423,7 +3819,7 @@
                   <referencesInternal>
                     <reference
                       Id="d584689e-5391-42de-a655-1b5f4681871d"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3DParseCommonAttributes OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.Linq.dll&quot; Namespace%3DSystem.Xml.Linq Type%3DXElement)]) ParameterIdentifier%3Delement"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3DParseCommonAttributes OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.Linq.dll&quot; Namespace%3DSystem.Xml.Linq Type%3DXElement)]) ParameterIdentifier%3Delement"
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
@@ -3447,7 +3843,7 @@
             <referencesInternal>
               <reference
                 Id="0eaa11e8-1880-4139-a9d1-d6af51a1ac8a"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DRecalculateAttributes"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DRecalculateAttributes"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3513,7 +3909,7 @@
             <referencesInternal>
               <reference
                 Id="a36b3297-ce7e-475e-8081-ca24ef59e427"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3DCombatSprite_HealthChanged OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite)])"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3DCombatSprite_HealthChanged OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite)])"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -3575,7 +3971,7 @@
                   <referencesInternal>
                     <reference
                       Id="802e9bca-f80c-4de2-ba0f-73e91cd09046"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3DCombatSprite_HealthChanged OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite)]) ParameterIdentifier%3Dsender"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3DCombatSprite_HealthChanged OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite)]) ParameterIdentifier%3Dsender"
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
@@ -3589,7 +3985,7 @@
             </ownedParameters>
           </operation>
           <operation
-            Id="9f1f6391-c9c7-44f1-a030-85d1049a3ec6"
+            Id="256150ed-4166-47ad-bb7c-7c619dc43501"
             name="CombatSprite"
             visibility="Protected"
             isLeaf="false"
@@ -3599,54 +3995,141 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="fd62d834-6291-4854-b0cc-4b5031558dfb"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D.ctor"
+                Id="5a580619-911b-40a2-92d1-0e2c146b2931"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DDungeonSprite)])"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="467beb5e-927c-43e3-82e0-3b9c49070bdb"
+                Id="ff327d50-f594-406f-9e13-c75fbcaba1f9"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="5c4b9293-10f2-4757-b670-6b3f337cf6a7">
+                    Id="85816100-0505-48dc-82bc-3a1a2ac5a307">
                     <propertyInstance
-                      Id="289f31b0-2632-469b-8add-16b7152c722b"
+                      Id="89016367-281d-4181-a71b-f0e463adb8b6"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="9f3bb857-ca5a-4065-9509-bb933bb93824">
+                    Id="2ac0deb8-4d78-499f-963e-32afbd54f39a">
                     <propertyInstance
-                      Id="d7f62654-8782-4adb-86e0-914a96522dc8"
+                      Id="37666120-3994-4a2f-bab4-a46b94602b08"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="8a7d9509-dca7-415f-85c0-a9ef767917c7">
+                    Id="a7cea998-fcb4-40fe-aaf8-8275464b5272">
                     <propertyInstance
-                      Id="bec6e52e-551f-4708-9ea8-2cd6f09ec6e5"
+                      Id="8588d2f3-c2a1-41a0-b2a3-70064f451bbd"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="f368777d-bfd4-40e5-beb7-f4fc45c00d4c">
+                    Id="b75e1531-ad11-492d-9627-37cd7029eabf">
                     <propertyInstance
-                      Id="14674c50-0217-4d4a-a054-51fba2903ce0"
+                      Id="0069e471-abea-4241-81dd-8954fd5f6674"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="c59584e6-ed67-4d01-8471-288b6efff8ed">
+                    Id="45162185-9463-4690-b076-93f097363a07">
                     <propertyInstance
-                      Id="9282ea45-0c51-4acb-bf2d-28bb24ea954c"
+                      Id="77e64606-b743-4b09-afc9-791f232c5211"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e722fc7f-d709-4e92-8f20-1425d2ee7529">
+                    Id="717e944b-6f8a-459d-b9f9-6e344aa4fcac">
                     <propertyInstance
-                      Id="f83e06ee-2fe8-437b-a679-830594bbdcf1"
+                      Id="4326f11e-0473-4b11-bbfa-5d0c995687f0"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f3a5f151-1824-4fa0-8931-69cbef211e33"
+                  name="parent"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="ae99c4da-f4a3-4fe7-8ac9-bd0efc5e9a27"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DDungeonSprite)]) ParameterIdentifier%3Dparent"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d8674032-715b-41a6-af00-d2394c5ab033"
+                      LastKnownName="DungeonSprite"
+                      LastKnownLocation="Package_2219.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5ffaa002-894e-436f-aea4-63eda52bf73e"
+            name="OnAttributesChanged"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="15eca730-f526-4772-9b55-922b5b3a7e92"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DCombatSprite Member%3DOnAttributesChanged"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4f42cec7-541a-4567-93f9-490ec329c251"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f77432f-d78f-40b7-94c4-307ea8d74554">
+                    <propertyInstance
+                      Id="ca91e464-004b-4842-ba3e-e4661ba0cb5f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="927276ed-9934-4231-9061-21f6fbbd2167">
+                    <propertyInstance
+                      Id="586bd554-d762-4580-81e5-48c74f03ac31"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c89a1c07-7aa4-462a-a778-dece7caa6f87">
+                    <propertyInstance
+                      Id="655936e2-4f7d-489e-af2e-63e83d8581f3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ff4d5845-43cd-474f-9d4b-d3770529e9ad">
+                    <propertyInstance
+                      Id="d5d3e02d-ccce-496e-aecc-793e382a08c5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bcb00ff4-e72e-4de4-9efc-fbc793f98bed">
+                    <propertyInstance
+                      Id="ad3414e9-b197-4034-9e9a-b022d08d3ebe"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e01e50a0-cf62-4a48-b2d1-2b2b701890c3">
+                    <propertyInstance
+                      Id="19baa760-e895-466e-b33b-89fedab9daeb"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
@@ -4142,14 +4625,13 @@
       <class
         Id="a459dafc-087d-4354-ac3f-e21a9a643d6b"
         name="SpriteEvent"
-        visibility="Package"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <referencesInternal>
           <reference
             Id="b97a108f-104b-4e2f-9c0a-3e9aa3c359ca"
-            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMaria%2FSource%2FRepos%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DSpriteEvent"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DSpriteEvent"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -6081,6 +6563,50 @@
                 Id="33a171c2-e893-4239-8091-a30990355f59">
                 <propertyInstance
                   Id="6e292879-4776-4366-b591-a2355e4b1dc6"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6601e2a4-4689-4a44-bff5-05a7a196a829"
+        name="SpriteAttributesRecalcEvent"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="dc6d7422-5b4f-4753-8298-60bc64bebd5e"
+            handle="viewcode://./CodeSchema_Delegate?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FAndrew%2FDesktop%2FPVC%2FProject%2Fbin%2FDebug%2FProject.exe Namespace%3DProject.Sprites Type%3DSpriteAttributesRecalcEvent"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c7073eb2-e670-4fc8-bba7-0fe75168c900"
+            name="delegate"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e7fc4bf0-6d5a-43ce-8d0d-9fa7c6f5b20e">
+                <propertyInstance
+                  Id="1d4d73bd-2f01-4c9f-9997-4a7e25ce4454"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="84bd5313-accd-4cc6-b0e2-4458c8586f2d">
+                <propertyInstance
+                  Id="045837c5-3d64-43c5-865d-04f0a4ba7f56"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48d59f71-fb08-44d2-b7d7-407c1cd807c2">
+                <propertyInstance
+                  Id="cff13b91-6e1c-4250-8242-fce1e7558e32"
                   name="PackageVisibility"
                   value="internal" />
               </stereotypeInstanceHasPropertyInstances>
