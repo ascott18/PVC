@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using Project.Items;
 
@@ -10,6 +11,7 @@ namespace Project.Controls
 	{
 		private Item item;
 		private string noItemLabel;
+		private int count;
 
 		public ItemContainer()
 		{
@@ -26,6 +28,18 @@ namespace Project.Controls
 			set
 			{
 				item = value;
+				count = 0;
+
+				UpdateLabel();
+			}
+		}
+
+		public IGrouping<int, Item> ItemGroup
+		{
+			set
+			{
+				item = value.First();
+				count = value.Count();
 
 				UpdateLabel();
 			}
@@ -66,7 +80,7 @@ namespace Project.Controls
 			else
 			{
 				Show();
-				nameLabel.Text = Item.Name;
+				nameLabel.Text = (count != 0 ? "(" + count + ") " : "") + Item.Name;
 				nameLabel.ForeColor = Color.Black;
 				toolTip.SetToolTip(nameLabel, Item.GetTooltip());
 			}

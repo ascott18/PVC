@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using Project.Items;
@@ -76,6 +77,7 @@ namespace Project.Controls
 
 			if (result == DragDropEffects.Move)
 			{
+				Debug.WriteLine("UnEquip {0}", item);
 				// We moved the item to somewhere. Remove it from our equipment.
 				Hero.Unequip(container.Item as ItemEquippable);
 			}
@@ -88,6 +90,7 @@ namespace Project.Controls
 			if (item != null)
 			{
 				var oldItem = hero.Equip(item);
+				Debug.WriteLine("Equip {0}, Unequip {1}", item, oldItem);
 				if (oldItem != null)
 					((Party)hero.Parent).AddInventoryItem(oldItem);
 				return;

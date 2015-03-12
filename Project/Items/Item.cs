@@ -31,5 +31,10 @@ namespace Project.Items
 		{
 			return Name;
 		}
+
+		public override string ToString()
+		{
+			return Name;
+		}
 	}
 }

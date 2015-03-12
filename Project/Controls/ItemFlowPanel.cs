@@ -71,10 +71,31 @@ namespace Project.Controls
 			ResetAllItemContainers();
 
 			int index = 0;
-			foreach (var item in items)
+			foreach (var item in OrderItems(items))
 			{
 				var container = GetInventoryItemContainer(index++);
 				container.Item = item;
+			}
+
+			ResumeLayout(true);
+		}
+
+		private static IOrderedEnumerable<Item> OrderItems(IEnumerable<Item> items)
+		{
+			return items.OrderBy(item => item.GetType().Name).ThenBy(item => item.Name);
+		}
+
+		public void LoadGroupedItems(IEnumerable<Item> items)
+		{
+			SuspendLayout();
+
+			ResetAllItemContainers();
+
+			int index = 0;
+			foreach (var item in OrderItems(items).GroupBy(item => item.ItemID))
+			{
+				var container = GetInventoryItemContainer(index++);
+				container.ItemGroup = item;
 			}
 
 			ResumeLayout(true);

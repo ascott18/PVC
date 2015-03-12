@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -69,6 +70,7 @@ namespace Project.Controls
 			var item = e.Data.GetData(typeof(ItemEquippable)) as ItemEquippable;
 			if (item != null)
 			{
+				Debug.WriteLine("ToInventory {0}", item);
 				Party.AddInventoryItem(item);
 			}
 		}
@@ -86,19 +88,21 @@ namespace Project.Controls
 
 		private void Party_InventoryChanged(Party party)
 		{
-			inventoryFlow.LoadItems(party.Inventory);
+			inventoryFlow.LoadGroupedItems(party.Inventory);
 		}
 
 		private void InventoryItemContainer_MouseDown(ItemContainer container, MouseEventArgs e)
 		{
 			// Handles dragging items out of our inventory.
+			var item = container.Item;
 
-			var result = DoDragDrop(container.Item, DragDropEffects.Move);
+			var result = DoDragDrop(item, DragDropEffects.Move);
 
 			if (result == DragDropEffects.Move)
 			{
 				// We moved the item to somewhere. Remove it from our inventory.
-				Party.RemoveInventoryItem(container.Item);
+				Debug.WriteLine("FromInventory {0}", item);
+				Party.RemoveInventoryItem(item);
 			}
 		}
 	}
