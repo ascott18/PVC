@@ -88,6 +88,7 @@ namespace Project.Spells
 			Target = target;
 			StartTime = Session.GetTime();
 			Session.Update += Session_Update;
+			Session.StateChanged += Session_StateChanged;
 			Target.Auras.Add(this);
 
 			if (Applied != null) Applied(this, new EventArgs());
@@ -136,6 +137,14 @@ namespace Project.Spells
 			aura.Session = session;
 			aura.Source = caster;
 			return aura;
+		}
+
+		void Session_StateChanged(CombatSession sender)
+		{
+			if (sender.State == CombatSession.CombatState.Ended)
+			{
+				Remove();
+			}
 		}
 
 

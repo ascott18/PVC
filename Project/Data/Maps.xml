@@ -168,6 +168,8 @@
 			</MonsterPack>
 			<MonsterPack id="000101" x="4" y="3">
 				<Monster id="11" />
+				<Monster id="11" />
+				<Monster id="11" />
 			</MonsterPack>
 		</Objects>
 
