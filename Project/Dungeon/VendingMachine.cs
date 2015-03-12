@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Project.Controls;
 using Project.Data;
 using Project.Items;
 
@@ -20,8 +21,16 @@ namespace Project.Dungeon
 			                .OfType<ItemCoin>()
 			                .Aggregate(0, (sum, item) => sum + item.Value);
 
-			if (total >= 100)
-				MessageBox.Show("YOU WIN!!!!!");
+		    if (total >= 100)
+		    {
+		        MessageBox.Show("Congratulations\nYou Win!!");
+                Application.Exit();
+		    }
+		    else
+		    {
+		        MessageBox.Show("You need more change");
+		    }	
+
 		}
 
 		/// <summary>
