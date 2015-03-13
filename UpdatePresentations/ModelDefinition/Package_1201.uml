@@ -15,7 +15,6 @@
       <class
         Id="63dc7efe-9d21-4e34-a01d-4a899ddfbf5a"
         name="Item"
-        visibility="Package"
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">

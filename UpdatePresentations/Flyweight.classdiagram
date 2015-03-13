@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="f9420b60-cff4-492c-92b4-4b1403bd1cb8" name="Flyweight" linkedPackageId="45dae48f-36a6-4ef8-bcd7-a4a9de67d2a1" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="4977bc76-06df-48e7-9edb-53a61820840f">
-      <profileInstance Id="14cca639-896e-4480-b3f8-825939313782" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="8e950830-7299-4fee-8c22-b1cbad8ba4b8">
-      <profileInstance Id="1015e461-5c16-4a93-b045-1745d610afe9" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="180469d7-8736-4ec1-ade1-f176d46253b7">
-      <profileInstance Id="230866ae-5b2a-4c5f-9546-fce3c3469d57" name="CSharpProfile">
-        <elementDefinition Id="4a54500e-5eca-41b7-9f81-8978168b5953" />
-      </profileInstance>
-      <elementDefinition Id="b6866369-8de7-4546-9ec4-23ef2ff6bbf9" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="30bdeefc-9136-4cb7-88e3-14cde16bfc4f" name="TileData" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -67,16 +47,36 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="0604588e-55a6-4820-84de-6f2184c74ff5" />
         <targetEnds>
-          <association Id="891834e8-ee21-4f25-ba8d-8571d23c5a75" isDerived="false" sourceEndRoleName="TileData" targetEndRoleName="TileData" isLeaf="false" isAbstract="false">
+          <association Id="891834e8-ee21-4f25-ba8d-8571d23c5a75" isDerived="false" sourceEndRoleName="data" targetEndRoleName="TileData" isLeaf="false" isAbstract="false">
             <classMoniker Id="30bdeefc-9136-4cb7-88e3-14cde16bfc4f" LastKnownName="TileData" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="36454335-d253-4db8-bb9d-c8501b55e2dd" name="TileData" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="36454335-d253-4db8-bb9d-c8501b55e2dd" name="data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="dc6e5839-f1b0-4042-8c46-a777a5343f43" name="Lower">
+                      <elementDefinition Id="7e8fbb57-92d5-4724-afff-23954003b486" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="d5d2e197-a92d-4d04-ab23-02393e11f777" name="Upper">
+                      <elementDefinition Id="71e3ef26-0a47-4708-b9c5-b2c8178b9ff8" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="01f4ab2b-21f1-4feb-bea4-a1f92928c9b4" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd Id="812619ca-8063-4f4e-8d0c-9da9d3e32db1" name="TileData" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="507a1882-3145-419d-bdfa-d8ece6482985" name="Lower">
+                      <elementDefinition Id="29b74291-f12c-4cce-8429-6666b191758c" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="6820a9d9-0b42-402d-9ca8-5f0aadb007b4" name="Upper">
+                      <elementDefinition Id="ab5f26a3-83e4-4bba-9ed5-d95f629b5dd6" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="2bfc596d-12f2-4b41-a8fa-25c5fa7b19f5" />
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -536,12 +536,12 @@
               <associationHasOwnedEnds>
                 <memberEnd Id="c27c51cf-2293-4f4b-b752-a2efb58f1f6c" name="Tile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <lowerValueInternal>
-                    <literalString Id="184ecfea-b6ec-4e46-884f-7cab8122cd30" name="Lower" value="*">
+                    <literalString Id="184ecfea-b6ec-4e46-884f-7cab8122cd30" name="Lower" value="1">
                       <elementDefinition Id="fa90544d-d480-482b-899a-ea5a1a84c253" />
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="62621e48-59be-4932-8d8b-f3696d425076" name="Upper" value="*">
+                    <literalString Id="62621e48-59be-4932-8d8b-f3696d425076" name="Upper" value="1">
                       <elementDefinition Id="13a03a3b-f83c-40c8-a890-d4a01e081031" />
                     </literalString>
                   </upperValueInternal>
@@ -551,12 +551,12 @@
               <associationHasOwnedEnds>
                 <memberEnd Id="9c2eb3a1-1568-4d9b-b9c0-0616c1a1f08d" name="TileData" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
-                    <literalString Id="fd3aebf7-376a-4de9-bf85-cda8cb7de8dc" name="Lower" value="1">
+                    <literalString Id="fd3aebf7-376a-4de9-bf85-cda8cb7de8dc" name="Lower" value="*">
                       <elementDefinition Id="cfac6366-6c99-4b02-8c54-2e6051b17a23" />
                     </literalString>
                   </lowerValueInternal>
                   <upperValueInternal>
-                    <literalString Id="1dfc126a-fd2f-4f91-a1c3-1e1b3736d16a" name="Upper" value="1">
+                    <literalString Id="1dfc126a-fd2f-4f91-a1c3-1e1b3736d16a" name="Upper" value="*">
                       <elementDefinition Id="6cfa5f87-bcdc-404c-905b-e629ea169f58" />
                     </literalString>
                   </upperValueInternal>
@@ -1111,5 +1111,13 @@
   </packagedElements>
   <package Id="45dae48f-36a6-4ef8-bcd7-a4a9de67d2a1" name="UpdatePresentations">
     <elementDefinition Id="ec8fc277-e093-4e02-9c78-df920bf519e4" />
+    <profileInstances>
+      <packageHasProfileInstances Id="180469d7-8736-4ec1-ade1-f176d46253b7">
+        <profileInstance Id="230866ae-5b2a-4c5f-9546-fce3c3469d57" name="CSharpProfile">
+          <elementDefinition Id="4a54500e-5eca-41b7-9f81-8978168b5953" />
+        </profileInstance>
+        <elementDefinition Id="b6866369-8de7-4546-9ec4-23ef2ff6bbf9" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

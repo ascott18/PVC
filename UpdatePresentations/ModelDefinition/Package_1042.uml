@@ -72,7 +72,7 @@
           <association
             Id="9d975ee8-a2ea-4781-a8ed-cecf4e55f30b"
             isDerived="false"
-            sourceEndRoleName="TileData"
+            sourceEndRoleName="data"
             targetEndRoleName="TileData"
             isLeaf="false"
             isAbstract="false">
@@ -84,7 +84,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="01f4ab2b-21f1-4feb-bea4-a1f92928c9b4"
-                  name="TileData"
+                  name="data"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -92,7 +92,18 @@
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false"
-                  isNavigableOwned="false" />
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7e8fbb57-92d5-4724-afff-23954003b486"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="71e3ef26-0a47-4708-b9c5-b2c8178b9ff8"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -104,7 +115,18 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="29b74291-f12c-4cce-8429-6666b191758c"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ab5f26a3-83e4-4bba-9ed5-d95f629b5dd6"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -703,13 +725,13 @@
                     <literalString
                       Id="fa90544d-d480-482b-899a-ea5a1a84c253"
                       name="Lower"
-                      value="*" />
+                      value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="13a03a3b-f83c-40c8-a890-d4a01e081031"
                       name="Upper"
-                      value="*" />
+                      value="1" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -728,13 +750,13 @@
                     <literalString
                       Id="cfac6366-6c99-4b02-8c54-2e6051b17a23"
                       name="Lower"
-                      value="1" />
+                      value="*" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="6cfa5f87-bcdc-404c-905b-e629ea169f58"
                       name="Upper"
-                      value="1" />
+                      value="*" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>

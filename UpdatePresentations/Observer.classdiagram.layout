@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Observer">
+  <logicalClassDesignerModelMoniker Id="9f0fea0d-c48b-46d1-bddb-5148cdf1dbff" />
+  <nestedChildShapes>
+    <classShape Id="dd0730a9-4478-4ade-bd83-dfe96b23e804" absoluteBounds="0.5, 1.25, 4.875, 1.8284605995814007" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="a5ff8a97-340f-4a9e-af1c-4cb9c1deb3ec" LastKnownName="SpellTargetedDamage" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="e068cd46-477f-4ed2-8a29-03912ce43a37" absoluteBounds="0.515, 1.7653356393178306, 4.8450000000000006, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="464a5487-a44a-414f-aba7-f64c88e5ce00" absoluteBounds="0.515, 2.1366637519001959, 4.8450000000000006, 0.84179684768120455" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

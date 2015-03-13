@@ -27,7 +27,6 @@
       <class
         Id="31fefdb7-1290-4c82-861c-c15a704a3f6d"
         name="CombatSession"
-        visibility="Package"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">

@@ -32,12 +32,26 @@
       <SubType>Content</SubType>
       <DependentUpon>Dungeon.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Factory.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Factory.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Factory.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Flyweight.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Flyweight.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Flyweight.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="IEnumerable.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="IEnumerable.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>IEnumerable.classdiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1034.uml">
       <SubType>Content</SubType>
@@ -71,6 +85,16 @@
     </Content>
     <Content Include="ModelDefinition\Package_1201.uml">
       <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1404.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Observer.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Observer.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Observer.classdiagram</DependentUpon>
     </Content>
     <Content Include="Singleton.classdiagram">
       <SubType>Content</SubType>

@@ -137,12 +137,6 @@
     <Compile Include="Controls\MonsterContainer.Designer.cs">
       <DependentUpon>MonsterContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\NotWinWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\NotWinWindow.Designer.cs">
-      <DependentUpon>NotWinWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\SpellContainer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,12 +154,6 @@
     </Compile>
     <Compile Include="Controls\StatsScreen.Designer.cs">
       <DependentUpon>StatsScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\WinScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\WinScreen.Designer.cs">
-      <DependentUpon>WinScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\WoodButton.cs">
       <SubType>Component</SubType>
@@ -277,9 +265,6 @@
     <EmbeddedResource Include="Controls\MonsterContainer.resx">
       <DependentUpon>MonsterContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\NotWinWindow.resx">
-      <DependentUpon>NotWinWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls\SpellContainer.resx">
       <DependentUpon>SpellContainer.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,9 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatsScreen.resx">
       <DependentUpon>StatsScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\WinScreen.resx">
-      <DependentUpon>WinScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WoodButton.resx">
       <DependentUpon>WoodButton.cs</DependentUpon>

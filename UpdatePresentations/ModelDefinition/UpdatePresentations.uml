@@ -11324,6 +11324,100 @@
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="aa59f827-ee8c-4958-ad78-15e22bb3aaf5"
+        name="IEnumerable"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="482a5c7e-4d89-4b23-9a94-204974cd8e07">
+            <interfaceMoniker
+              Id="2e060712-cff6-4742-9104-5d67c23d7059"
+              LastKnownName="IEnumerator"
+              LastKnownLocation="UpdatePresentations.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperations>
+          <operation
+            Id="46c9d89d-7411-4754-9f06-2fe498d95a7a"
+            name="GetEnumerator"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a20f3738-ace3-4944-8a93-42223129149a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c848e5ba-ff1a-44c2-9b43-8252da4a82be"
+                      LastKnownName="IEnumerator"
+                      LastKnownLocation="UpdatePresentations.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="289184f3-d4a2-4fc2-a7b2-33f9da4c9f36"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c848e5ba-ff1a-44c2-9b43-8252da4a82be"
+        name="IEnumerator" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="2e060712-cff6-4742-9104-5d67c23d7059"
+        name="IEnumerator"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="a6510c96-9123-4209-a3af-7bffb346736b"
+            name="Current"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="79a79105-43e4-4ae0-b950-8d7f0dbc81e7"
+            name="MoveNext"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b364d988-d713-4482-8fbd-cf499830449c"
+            name="Reset"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
