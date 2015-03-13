@@ -30,7 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
 			this.woodButton2 = new Project.Controls.WoodButton();
-			this.woodButton1 = new Project.Controls.WoodButton();
+			this.endButton = new Project.Controls.WoodButton();
 			this.inventoryButton = new Project.Controls.WoodButton();
 			this.combatArena = new Project.Controls.CombatArena();
 			this.dungeonContainer = new Project.Controls.DungeonContainer();
@@ -43,23 +43,25 @@
 			this.woodButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.woodButton2.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.woodButton2.ForeColor = System.Drawing.Color.Tan;
-			this.woodButton2.Location = new System.Drawing.Point(249, 0);
+			this.woodButton2.Location = new System.Drawing.Point(132, 0);
 			this.woodButton2.Name = "woodButton2";
-			this.woodButton2.Size = new System.Drawing.Size(128, 30);
+			this.woodButton2.Size = new System.Drawing.Size(245, 30);
 			this.woodButton2.TabIndex = 5;
 			this.woodButton2.UseVisualStyleBackColor = true;
 			// 
-			// woodButton1
+			// endButton
 			// 
-			this.woodButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("woodButton1.BackgroundImage")));
-			this.woodButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.woodButton1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.woodButton1.ForeColor = System.Drawing.Color.Tan;
-			this.woodButton1.Location = new System.Drawing.Point(0, 0);
-			this.woodButton1.Name = "woodButton1";
-			this.woodButton1.Size = new System.Drawing.Size(249, 30);
-			this.woodButton1.TabIndex = 4;
-			this.woodButton1.UseVisualStyleBackColor = true;
+			this.endButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("endButton.BackgroundImage")));
+			this.endButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.endButton.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.endButton.ForeColor = System.Drawing.Color.Tan;
+			this.endButton.Location = new System.Drawing.Point(0, 0);
+			this.endButton.Name = "endButton";
+			this.endButton.Size = new System.Drawing.Size(132, 30);
+			this.endButton.TabIndex = 4;
+			this.endButton.Text = "END GAME";
+			this.endButton.UseVisualStyleBackColor = true;
+			this.endButton.Click += new System.EventHandler(this.endButton_Click);
 			// 
 			// inventoryButton
 			// 
@@ -114,7 +116,7 @@
 			this.ClientSize = new System.Drawing.Size(652, 681);
 			this.Controls.Add(this.statsButton);
 			this.Controls.Add(this.woodButton2);
-			this.Controls.Add(this.woodButton1);
+			this.Controls.Add(this.endButton);
 			this.Controls.Add(this.inventoryButton);
 			this.Controls.Add(this.combatArena);
 			this.Controls.Add(this.dungeonContainer);
@@ -134,7 +136,7 @@
 		internal DungeonContainer dungeonContainer;
 		internal CombatArena combatArena;
 		private WoodButton inventoryButton;
-		private WoodButton woodButton1;
+		private WoodButton endButton;
 		private WoodButton woodButton2;
 		private WoodButton statsButton;
 

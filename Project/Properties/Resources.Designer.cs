@@ -241,6 +241,15 @@ namespace Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to end the game in progress? You can&apos;t come back!.
+        /// </summary>
+        internal static string EndGameConf {
+            get {
+                return ResourceManager.GetString("EndGameConf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap fancydoor {

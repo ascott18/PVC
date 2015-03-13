@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Project.Properties;
 using Project.Sprites;
 using Timer = System.Threading.Timer;
 
@@ -104,6 +105,18 @@ namespace Project.Controls
 					Location = Location + new Size(Width, 415)
 				};
 				stats.Show(this);
+			}
+		}
+
+		private void endButton_Click(object sender, EventArgs e)
+		{
+			var result = MessageBox.Show(Resources.EndGameConf,
+			                             "Are you sure?", MessageBoxButtons.OKCancel);
+
+			if (result == DialogResult.OK)
+			{
+				Window.Hide();
+				new SplashScreen().Show();
 			}
 		}
 	}
