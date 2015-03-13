@@ -301,7 +301,7 @@
 			<Chest x="9" y="11" texture="smallbox">
 				<LootPool id="1" />
 			</Chest>
-			<Chest x="1" y="7" texture="plant4">
+			<Chest x="1" y="7" texture="plant4" despawn="false">
 				<LootPool id="505" />
 			</Chest>
 			<MonsterPack id="000101" x="0" y="10">
@@ -1110,7 +1110,7 @@
 				<LootPool id="510" />
 			</Chest>
 
-			<Chest x="11" y="11" texture="plant3">
+			<Chest x="11" y="11" texture="plant3" despawn="false">
 				<LootPool id="505" />
 			</Chest>
 
