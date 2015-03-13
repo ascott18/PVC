@@ -128,10 +128,10 @@
   </AreaDamage>
 
   <!--Dwight-->
-  <TargetedDamage id="200" name="Sales Pitch" damage="6" castTime="2" cooldown="0"/>
+  <TargetedDamage id="200" name="Sales Pitch" damage="5" castTime="2" cooldown="0"/>
   <TargetedDamage id="201" name="Nunchuck Strike" damage="19" castTime="3" cooldown="14">
     <Auras>
-      <Stun duration="1.5" blockable="false" />
+      <Stun duration="1.5" blockable="true" />
     </Auras>
   </TargetedDamage>
   <AreaDamage id="202" name="Megaphone Shout" damage="10" castTime="1" cooldown="11">
@@ -154,19 +154,16 @@
   </AreaDamage>
 
   <!--Leslie-->
-  <SelfHealing id="300" name="Eat Waffles" healing="10" castTime="3" cooldown="13">
+  <SelfHealing id="300" name="Eat Waffles" healing="10" castTime="4" cooldown="14">
     <Auras>
       <StatMod duration="4" blockable="false">
         <Attributes stamina="0" block="30" combo="100" />
       </StatMod>
     </Auras>
   </SelfHealing>
-  <TargetedDamage id="301" name="Crush With Binders" damage="6" castTime="2" cooldown="2" >
-     <Auras>
-       <Stun duration="3" blockable="false" />
-     </Auras>
+  <TargetedDamage id="301" name="Crush With Binders" damage="6" castTime="2" cooldown="3" >
   </TargetedDamage>
-  <AreaDamage id="302" name="Host Open Forum" damage="7" castTime="3" cooldown="8">
+  <AreaDamage id="302" name="Host Open Forum" damage="7" castTime="3" cooldown="9">
     <Auras>
       <StatMult duration="4" blockable="false">
         <Multiplier stamina="10" block="20" combo="30" />
@@ -182,11 +179,11 @@
       <Stun duration="3" blockable="false" />
     </Auras>
   </TargetedDamage>
-  <AreaDamage id="119" name="Disaster Drill" damage="30" castTime="3" cooldown="20" />
+  <AreaDamage id="119" name="Disaster Drill" damage="30" castTime="3" cooldown="18" />
 
   <!--Lebowski-->
   <TargetedDamage id="120" name="Deny Rug" damage="20" castTime="3" cooldown="0" />
-  <AreaDamage id="121" name="Budget Slash" damage="15" castTime="3" cooldown="15">
+  <AreaDamage id="121" name="Budget Slash" damage="15" castTime="3" cooldown="14">
     <Auras>
       <DamageOverTime blockable="false" duration="10" damage="30" />
     </Auras>
