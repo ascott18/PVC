@@ -133,9 +133,9 @@
 	<AreaDamage id="202" name="Shout in Megaphone" damage="8" castTime="1" cooldown="12" />
 
   <!--Lawyer-->
-  <TargetedDamage id="114" name="File Paperwork" damage="15" castTime="2" cooldown="6" />
-  <AreaDamage id="115" name="Throw the Book" damage="24" castTime="3" cooldown="15" />
-  <AreaDamage id="116" name="Attorney Fees" damage="8" castTime="1" cooldown="12">
+  <TargetedDamage id="114" name="File Injunction" damage="15" castTime="2" cooldown="4" />
+  <AreaDamage id="115" name="Throw the Book" damage="15" castTime="3" cooldown="10" />
+  <AreaDamage id="116" name="Threaten Lawsuit" damage="8" castTime="1" cooldown="12">
     <Auras>
       <DamageOverTime blockable="false" duration="10" damage="5" />
     </Auras>
