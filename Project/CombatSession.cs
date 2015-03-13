@@ -28,7 +28,7 @@ namespace Project
 			/// <summary>
 			///     The CombatSession is in progress.
 			/// </summary>
-			Acitve,
+			Active,
 
 			/// <summary>
 			///     The CombatSessions is paused, but not ended.
@@ -126,7 +126,7 @@ namespace Project
 				sprite.HealthChanged += sprite_HealthChanged;
 			}
 
-			State = CombatState.Acitve;
+			State = CombatState.Active;
 
 			if (StateChanged != null) StateChanged(this);
 		}
@@ -144,7 +144,7 @@ namespace Project
 				// Don't bother invoking if we're paused.
 				// There is checking for this in the handler, too,
 				// but check here as well so we don't waste time.
-				if (sess.State == CombatState.Acitve)
+				if (sess.State == CombatState.Active)
 				{
 					// This throws errors if we try and invoke on the window
 					// after it has been disposed (e.g. the user closed it).
@@ -192,11 +192,11 @@ namespace Project
 		{
 			// If all party members are no longer active, the player lost.
 			if (!Party.Members.Any(sprite => sprite.IsActive))
-				EndCombat(false);
+				EndCombat(false, false);
 
 			// If all monsters are no longer active, the player won.
 			if (!MonsterPack.Members.Any(sprite => sprite.IsActive))
-				EndCombat(true);
+				EndCombat(true, false);
 		}
 
 		/// <summary>
@@ -221,7 +221,7 @@ namespace Project
 
 			gameTimer.Start();
 
-			State = CombatState.Acitve;
+			State = CombatState.Active;
 
 			if (StateChanged != null) StateChanged(this);
 		}
@@ -229,7 +229,7 @@ namespace Project
 		/// <summary>
 		///     End the combat session.
 		/// </summary>
-		public void EndCombat(bool partyVictory)
+		public void EndCombat(bool partyVictory, bool retreated)
 		{
 			Debug.WriteLine("Combat Ended");
 
@@ -238,7 +238,7 @@ namespace Project
 				sprite.HealthChanged -= sprite_HealthChanged;
 			}
 
-			if (State != CombatState.Acitve && State != CombatState.Paused)
+			if (State != CombatState.Active && State != CombatState.Paused)
 				return;
 
 			gameTimer.Stop();
@@ -260,6 +260,15 @@ namespace Project
 				foreach (var monster in MonsterPack)
 					monster.Health = monster.MaxHealth;
 			}
+
+			if (!retreated)
+			{
+				// Restore 10% health to each hero if combat ended
+				// naturally (user didnt click retreat).
+				foreach (var hero in Party.Members.Cast<Hero>())
+					hero.Health += hero.MaxHealth / 10;
+			}
+
 
 			State = CombatState.Ended;
 
@@ -355,7 +364,7 @@ namespace Project
 		{
 			// Make sure the game in in progress before trying to update here.
 			// Don't update if paused, or if ended.
-			if (State != CombatState.Acitve)
+			if (State != CombatState.Active)
 				return;
 
 			if (Update != null) Update(this);

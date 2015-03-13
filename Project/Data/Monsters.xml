@@ -20,7 +20,7 @@
 	</Monster>
 
 	<Monster id="5" texture="printer" name="Jammed Printer">
-		<Attributes stamina="20" block="50" combo="5" />
+		<Attributes stamina="20" block="50" combo="20" />
 		<Spell id="51" />
 		<LootPool id="101" />
 		<LootPool id="150" />

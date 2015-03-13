@@ -259,10 +259,12 @@
 			
 			<MonsterPack id="000101" x="1" y="7">
 				<Monster id="11" />
+				<Monster id="11" />
 			</MonsterPack>
 			
 			<MonsterPack id="000101" x="8" y="3">
 				<LootPool id="505" />
+				<Monster id="11" />
 				<Monster id="11" />
 			</MonsterPack>
 		</Objects>

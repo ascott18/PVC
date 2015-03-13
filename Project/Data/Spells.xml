@@ -61,7 +61,7 @@
   </AreaDamage>
 
   <!--Printer-->
-  <AreaDamage id="51" name="PC Load Letter" damage="13" castTime="4" cooldown="0" />
+  <AreaDamage id="51" name="PC Load Letter" damage="15" castTime="4" cooldown="0" />
 
   <!--Tangled Cables-->
   <AreaDamage id="61" name="Trip" damage="15" castTime="4" cooldown="0" />

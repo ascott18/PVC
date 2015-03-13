@@ -53,7 +53,7 @@ namespace Project.Controls
 					PopulateContainers(heroContainers, null);
 					PopulateContainers(monsterContainers, null);
 					combatSession.TargetsChanged -= combatSession_TargetsChanged;
-					combatSession.EndCombat(false);
+					combatSession.EndCombat(false, false);
 				}
 
 				combatSession = value;
@@ -126,7 +126,7 @@ namespace Project.Controls
 
 		private void retreatButton_Click(object sender, EventArgs e)
 		{
-			combatSession.EndCombat(false);
+			combatSession.EndCombat(false, true);
 		}
 	}
 }
