@@ -100,7 +100,7 @@
 
 
 
-	<Monster id="7" texture="jamm" name="City Councilman">
+	<Monster id="7" texture="jamm" name="Councilman Jamm">
 		<Attributes stamina="36" block="10" combo="10" />
 		<Spell id="117"/>
 		<Spell id="118"/>

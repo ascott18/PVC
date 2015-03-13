@@ -52,6 +52,7 @@
 	<LootPool id="201">
 		<Item id="200" chance="0.1" />
 		<Item id="212" chance="0.1" />
+    <Item id="213" chance="0.1" />
 		<Item id="214" chance="0.1" />
 		<Item id="215" chance="0.1" />
 		<Item id="216" chance="0.1" />
@@ -61,6 +62,7 @@
 	<LootPool id="202" limit="1">
 		<Item id="200" chance="1" />
 		<Item id="212" chance="1" />
+    <Item id="213" chance="1" />
 		<Item id="214" chance="1" />
 		<Item id="215" chance="1" />
 		<Item id="216" chance="1" />
@@ -80,6 +82,7 @@
 		<Item id="300" chance="0.1" />
 		<Item id="301" chance="0.1" />
 		<Item id="312" chance="0.1" />
+    <Item id="313" chance="0.1" />
 		<Item id="314" chance="0.1" />
 		<Item id="315" chance="0.1" />
 		<Item id="316" chance="0.1" />
@@ -90,6 +93,7 @@
 		<Item id="300" chance="1" />
 		<Item id="301" chance="1" />
 		<Item id="312" chance="1" />
+    <Item id="313" chance="1" />
 		<Item id="314" chance="1" />
 		<Item id="315" chance="1" />
 		<Item id="316" chance="1" />
