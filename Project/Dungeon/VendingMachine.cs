@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using Project.Controls;
 using Project.Data;
 using Project.Items;
+using Project.Properties;
 
 namespace Project.Dungeon
 {
@@ -21,14 +22,16 @@ namespace Project.Dungeon
 			                .OfType<ItemCoin>()
 			                .Aggregate(0, (sum, item) => sum + item.Value);
 
-		    if (total >= 100)
+			const int requiredAmount = 150;
+			if (total >= requiredAmount)
 		    {
-		        MessageBox.Show("Congratulations\nYou Win!!");
-                Application.Exit();
+				MessageBox.Show(Resources.WinCondt_Yes, "Well Done");
+                MainWindow.Window.Hide();
+				new SplashScreen().Show();
 		    }
 		    else
 		    {
-		        MessageBox.Show("You need more change");
+				MessageBox.Show(String.Format(Resources.WinCondt_No, (double)requiredAmount/100), "Relief has not come yet");
 		    }	
 
 		}

@@ -8,9 +8,21 @@ namespace Project.Controls
 {
 	public partial class SplashScreen : Form
 	{
+		private static readonly string[] jokeStrings = 
+		{
+			"(whatever that means)",
+			"(no relation to polyvinyl chloride)",
+			"(perhaps some sort of versus)",
+			"(now with 20% more plasticity)",
+			"(penniless vigilante collective)",
+			"(passive venerable computers)",
+		};
+
 		public SplashScreen()
 		{
 			InitializeComponent();
+
+			jokes.Text = jokeStrings[new Random().Next(jokeStrings.Length)];
 		}
 
 		private void newGameButton_Click(object sender, EventArgs e)

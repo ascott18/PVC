@@ -269,7 +269,6 @@ namespace Project.Properties {
         ///		&lt;Attributes stamina=&quot;20&quot; block=&quot;0&quot; combo=&quot;10&quot; /&gt;
         ///		&lt;Item id=&quot;11&quot; /&gt;
         ///		&lt;Item id=&quot;15&quot; /&gt;
-        ///		&lt;Item id=&quot;16&quot; /&gt;
         ///		&lt;Item id=&quot;17&quot; /&gt;
         ///
         ///		&lt;Spell id=&quot;2&quot; auto=&quot;true&quot; /&gt;
@@ -277,11 +276,21 @@ namespace Project.Properties {
         ///		&lt;Spell id=&quot;3&quot; /&gt;
         ///	&lt;/Hero&gt;
         ///
-        ///	&lt;Hero id=&quot;2&quot; text [rest of string was truncated]&quot;;.
+        ///	&lt;Hero id=&quot;2&quot; texture=&quot;stu&quot; name=&quot;Stu  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Heroes {
             get {
                 return ResourceManager.GetString("Heroes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap intro {
+            get {
+                object obj = ResourceManager.GetObject("intro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -730,6 +739,28 @@ namespace Project.Properties {
             get {
                 object obj = ResourceManager.GetObject("wayBetterWires", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have not yet collected the grand sum of ${0:F2} demanded of you by the snack gods..
+        /// </summary>
+        internal static string WinCondt_No {
+            get {
+                return ResourceManager.GetString("WinCondt_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After a mighty crusade and the massacre of your company&apos;s entire workforce, you have finally scrounged up enough change to appease the snack gods.
+        ///
+        ///In return, they have granted you, from the divine locale of B2, a fun-sized pouch of assorted hard pretzles.
+        ///
+        ///May you go forth from this sacred shrine with your hunger satiated, ready to be productive for your recently departed boss..
+        /// </summary>
+        internal static string WinCondt_Yes {
+            get {
+                return ResourceManager.GetString("WinCondt_Yes", resourceCulture);
             }
         }
         

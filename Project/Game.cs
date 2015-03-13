@@ -30,6 +30,7 @@ namespace Project
 			Party = new Party(new Point(1, 2));
 
 			var heroIDs = HeroSelectScreen.BuildParty();
+			new IntroScreen().ShowDialog();
 
 			foreach (var heroID in heroIDs)
 			{

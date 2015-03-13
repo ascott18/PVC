@@ -1277,6 +1277,19 @@
 
 		<Objects>
 			<VendingMachine x="6" y="6" texture="vendo" />
+		<!--  
+		  <Chest x="6" y="7" texture="medbox">
+			<LootPool id="525" />
+			<LootPool id="525" />
+			<LootPool id="525" />
+			<LootPool id="525" />
+			<LootPool id="525" />
+			<LootPool id="525" />
+			<LootPool id="525" />
+			<LootPool id="525" />
+			<LootPool id="525" />
+			<LootPool id="525" />
+		  </Chest>-->
 		</Objects>
 
 	</Map>

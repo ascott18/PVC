@@ -113,6 +113,12 @@
     <Compile Include="Controls\HeroStatsContainer.Designer.cs">
       <DependentUpon>HeroStatsContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\IntroScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\IntroScreen.Designer.cs">
+      <DependentUpon>IntroScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\InventoryScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     <EmbeddedResource Include="Controls\HeroStatsContainer.resx">
       <DependentUpon>HeroStatsContainer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IntroScreen.resx">
+      <DependentUpon>IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\InventoryScreen.resx">
       <DependentUpon>InventoryScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +350,7 @@
     <None Include="Resources\lebowski.png" />
     <None Include="Resources\leslieBetter.png" />
     <None Include="Resources\lindsay.png" />
+    <None Include="Resources\intro.png" />
     <Content Include="Resources\plant1.png" />
     <None Include="Resources\smallbox.png" />
     <None Include="Resources\printer.png" />
