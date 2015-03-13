@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace Project.Spells
 {
-	public struct Attributes
+	public struct Attributes : IComparable<Attributes>
 	{
 		public readonly int Block;
 		public readonly int Combo;
@@ -43,6 +43,16 @@ namespace Project.Spells
 			return "Stamina: " + Stamina
 			       + "\nBlock: " + Block
 			       + "\nCombo: " + Combo;
+		}
+
+		private int Sum()
+		{
+			return Stamina + Block + Combo;
+		}
+
+		public int CompareTo(Attributes attributes)
+		{
+			return Sum().CompareTo(attributes.Sum());
 		}
 	}
 

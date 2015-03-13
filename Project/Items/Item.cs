@@ -5,7 +5,7 @@ using Project.Sprites;
 
 namespace Project.Items
 {
-	public abstract class Item
+	public abstract class Item : IComparable<Item>
 	{
 		public readonly int ItemID;
 		public readonly string Name;
@@ -30,6 +30,11 @@ namespace Project.Items
 		public virtual string GetTooltip()
 		{
 			return Name;
+		}
+
+		public virtual int CompareTo(Item other)
+		{
+			return GetType().Name.CompareTo(other.GetType().Name);
 		}
 
 		public override string ToString()

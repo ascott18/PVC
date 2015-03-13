@@ -64,5 +64,12 @@ namespace Project.Items
 
 			return sb.ToString();
 		}
+
+		public override int CompareTo(Item other)
+		{
+			if (other is ItemEquippable)
+				return -Attributes.CompareTo((other as ItemEquippable).Attributes);
+			return base.CompareTo(other);
+		}
 	}
 }

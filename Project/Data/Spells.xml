@@ -76,7 +76,7 @@
   <AreaDamage id="71" name="Release Magic Smoke" damage="6" castTime="2" cooldown="0">
     <Auras>
       <StatMult duration="4" blockable="false">
-        <Multiplier block="-20" combo="-20" stamina="0"  />
+        <Multiplier block="-10" combo="-10" stamina="0"  />
       </StatMult>
     </Auras>
   </AreaDamage>
@@ -121,7 +121,7 @@
   </SelfHealing>
   <AreaDamage id="103" name="Projectile Vomit" damage="8" castTime="1" cooldown="12">
     <Auras>
-      <StatMult duration="3" blockable="true">
+      <StatMult duration="3.5" blockable="true">
         <Multiplier stamina="-20" block="0" combo="0" />
       </StatMult>
     </Auras>
@@ -129,15 +129,23 @@
 
   <!--Dwight-->
   <TargetedDamage id="200" name="Sales Pitch" damage="6" castTime="2" cooldown="0"/>
-	<TargetedDamage id="201" name="Nunchuck Strike" damage="24" castTime="3" cooldown="15" />
-	<AreaDamage id="202" name="Shout in Megaphone" damage="8" castTime="1" cooldown="12" />
+	<TargetedDamage id="201" name="Nunchuck Strike" damage="20" castTime="3" cooldown="15">
+	  <Auras>
+		<Stun duration="1.5" blockable="false" />
+	  </Auras>
+	</TargetedDamage>
+	<AreaDamage id="202" name="Megaphone Shout" damage="10" castTime="1" cooldown="12" />
 
   <!--Lawyer-->
-  <TargetedDamage id="114" name="File Injunction" damage="15" castTime="2" cooldown="4" />
-  <AreaDamage id="115" name="Throw the Book" damage="15" castTime="3" cooldown="10" />
+  <TargetedDamage id="114" name="File Injunction" damage="15" castTime="2" cooldown="8">
+	<Auras>
+	  <Stun duration="0.5" blockable="false" />
+	</Auras>
+  </TargetedDamage>
+	<AreaDamage id="115" name="Throw the Book" damage="15" castTime="3" cooldown="10" />
   <AreaDamage id="116" name="Threaten Lawsuit" damage="8" castTime="1" cooldown="12">
     <Auras>
-      <DamageOverTime blockable="false" duration="10" damage="5" />
+      <DamageOverTime blockable="false" duration="10" damage="8" />
     </Auras>
   </AreaDamage>
   
@@ -159,22 +167,23 @@
   </AreaHealing>
 
   <!--Jamm-->
-  <TargetedDamage id="117" name="Swing Vote" damage="12" castTime="2" cooldown="0">
-    <Auras>
-      <Stun duration="3" blockable="false" />
-    </Auras>
+  <TargetedDamage id="117" name="Swing Vote" damage="10" castTime="2" cooldown="0">
     </TargetedDamage>
-  <TargetedDamage id="118" name="You got Jammed" damage="8" castTime="3" cooldown="15" />
-  <AreaDamage id="119" name="Disaster Drill" damage="24" castTime="5" cooldown="20" />
+  <TargetedDamage id="118" name="You got Jammed" damage="20" castTime="3" cooldown="15">
+	<Auras>
+	  <Stun duration="3" blockable="false" />
+	</Auras>
+  </TargetedDamage>
+  <AreaDamage id="119" name="Disaster Drill" damage="30" castTime="3" cooldown="20" />
 
   <!--Lebowski-->
-  <TargetedDamage id="120" name="Deny Rug" damage="20" castTime="2" cooldown="0" />
+  <TargetedDamage id="120" name="Deny Rug" damage="20" castTime="3" cooldown="0" />
   <AreaDamage id="121" name="Budget Slash" damage="15" castTime="3" cooldown="15">
     <Auras>
-      <DamageOverTime blockable="false" duration="7" damage="10" />
+      <DamageOverTime blockable="false" duration="10" damage="30" />
     </Auras>
   </AreaDamage>
-  <AreaDamage id="122" name="Mismanage Company" damage="8" castTime="1" cooldown="12">
+  <AreaDamage id="122" name="Mismanage Company" damage="20" castTime="1" cooldown="12">
     <Auras>
       <Stun duration="3" blockable="false" />
     </Auras>
@@ -189,34 +198,42 @@
     </Auras>
   </AreaDamage>
 
-  <!--Sys Admin-->
-  <TargetedDamage id="126" name="1" damage="15" castTime="2" cooldown="6" />
-  <AreaDamage id="127" name="2" damage="7" castTime="1" cooldown="1" />
-  <AreaDamage id="128" name="3" damage="20" castTime="5" cooldown="10">
+  <!--Sysadmin-->
+  <TargetedDamage id="126" name="Restrict Privileges" damage="30" castTime="2" cooldown="6" />
+  <SelfHealing id="127" name="Firewall" healing="20" castTime="1" cooldown="8">
+	<Auras>
+	  <StatMod duration="3" blockable="false">
+		<Attributes stamina="0" combo="0" block="50"/>
+	  </StatMod>
+	</Auras>
+  </SelfHealing>
+  <AreaDamage id="128" name="Mandate IE Usage" damage="15" castTime="3.1415" cooldown="2">
     <Auras>
-      <DamageOverTime blockable="false" duration="2" damage="10" />
+      <DamageOverTime blockable="true" duration="5" damage="30" />
     </Auras>
   </AreaDamage>
 
   <!--Auditor-->
-  <TargetedDamage id="129" name="Request Receipts" damage="15" castTime="2" cooldown="6">
+  <TargetedDamage id="129" name="Request Receipts" damage="16" castTime="2" cooldown="6">
     <Auras>
-      <Stun duration="3" blockable="false" />
+	  <StatMult duration="4" blockable="true">
+		<Multiplier stamina="-25" block="0" combo="0" />
+	  </StatMult>
     </Auras>
   </TargetedDamage>
-  <AreaDamage id="130" name="Lecture" damage="7" castTime="1" cooldown="1" />
-  <AreaDamage id="131" name="Audit" damage="20" castTime="5" cooldown="10">
+  <TargetedDamage id="130" name="Lecture" damage="9" castTime="1" cooldown="1" />
+  <AreaDamage id="131" name="Audit" damage="30" castTime="5" cooldown="10">
     <Auras>
-      <DamageOverTime blockable="false" duration="2" damage="10" />
+	  <Stun duration="1" blockable="false" />
     </Auras>
   </AreaDamage>
   
   <!--Secretary-->
   <TargetedDamage id="132" name="Mis-file Paperwork" damage="15" castTime="2" cooldown="6" />
-  <AreaDamage id="133" name="Lose Messages" damage="5" castTime="1" cooldown="1" />
+  <AreaDamage id="133" name="Lose Messages" damage="6" castTime="1" cooldown="1" />
   <AreaDamage id="134" name="Download Virus" damage="20" castTime="5" cooldown="10">
     <Auras>
-      <DamageOverTime blockable="false" duration="2" damage="10" />
+      <DamageOverTime blockable="false" duration="2" damage="12" />
     </Auras>
   </AreaDamage>
   

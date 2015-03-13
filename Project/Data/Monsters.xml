@@ -59,7 +59,7 @@
 	</Monster>
 
 	<Monster id="21" texture="wayBetterWires" name="Tangled Cables">
-		<Attributes stamina="30" block="5" combo="150" />
+		<Attributes stamina="30" block="5" combo="80" />
 		<Spell id="61" />
 		<Spell id="62" />
 		<Spell id="63" />
@@ -68,7 +68,7 @@
 	</Monster>
 
 	<Monster id="22" texture="serverRed" name="Overheated Rack">
-		<Attributes stamina="28" block="25" combo="180" />
+		<Attributes stamina="28" block="25" combo="70" />
 		<Spell id="71" />
 		<Spell id="72" />
 		<LootPool id="201" />
@@ -84,7 +84,7 @@
 	</Monster>
 
 	<Monster id="10" texture="roy" name="Sysadmin">
-		<Attributes stamina="100" block="30" combo="50" />
+		<Attributes stamina="100" block="30" combo="10" />
 		<Spell id="126"/>
 		<Spell id="127"/>
 		<Spell id="128"/>
@@ -101,7 +101,7 @@
 
 
 	<Monster id="7" texture="jamm" name="City Councilman">
-		<Attributes stamina="20" block="10" combo="10" />
+		<Attributes stamina="36" block="10" combo="10" />
 		<Spell id="117"/>
 		<Spell id="118"/>
 		<Spell id="119"/>
@@ -110,7 +110,7 @@
 	</Monster>
 
 	<Monster id="9" texture="lawyer" name="Lawyer">
-		<Attributes stamina="25" block="30" combo="10" />
+		<Attributes stamina="39" block="30" combo="10" />
 		<Spell id="114"/>
 		<Spell id="115"/>
 		<Spell id="116"/>
@@ -119,7 +119,7 @@
 	</Monster>
 
 	<Monster id="12" texture="auditor" name="Auditor">
-		<Attributes stamina="25" block="30" combo="10" />
+		<Attributes stamina="32" block="30" combo="10" />
 		<Spell id="129"/>
 		<Spell id="130"/>
 		<Spell id="131"/>
@@ -128,7 +128,7 @@
 	</Monster>
 
 	<Monster id="13" texture="lindsay" name="Secretary">
-		<Attributes stamina="25" block="30" combo="10" />
+		<Attributes stamina="34" block="30" combo="10" />
 		<Spell id="132"/>
 		<Spell id="133"/>
 		<Spell id="134"/>
@@ -137,7 +137,7 @@
 	</Monster>
 
 	<Monster id="8" texture="lebowski" name="Big Lebowski">
-		<Attributes stamina="30" block="20" combo="30" />
+		<Attributes stamina="150" block="20" combo="30" />
 		<Spell id="120"/>
 		<Spell id="121"/>
 		<Spell id="122"/>

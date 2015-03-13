@@ -14,8 +14,8 @@
 	<Tile id="21" texture="verydarkwall" obstacle="true" />
 	<Tile id="22" texture="darktile" obstacle="false" />
 	<Tile id="23" texture="medtile" obstacle="false" />
-	<Tile id="24" texture="darktile plant3" obstacle="false" />
-	<Tile id="25" texture="darktile desk2" obstacle="false" />
+	<Tile id="24" texture="darktile plant3" obstacle="true" />
+	<Tile id="25" texture="darktile desk2" obstacle="true" />
   
   <Tile id="30" texture="black" obstacle="true" />
 </Tiles>

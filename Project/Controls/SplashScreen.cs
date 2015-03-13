@@ -33,9 +33,9 @@ namespace Project.Controls
 
 			Party p = new Party(new Point(7, 7));
 			int mapID = Convert.ToInt32(debugStartMapID.Text);
-			p.AddHero(new Hero(p, 1));
+			p.AddHero(new Hero(p, 7));
+			p.AddHero(new Hero(p, 5));
 			p.AddHero(new Hero(p, 2));
-			p.AddHero(new Hero(p, 3));
 			MainWindow.Window.CreateGame(p, mapID);
 
 

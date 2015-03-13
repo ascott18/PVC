@@ -30,5 +30,12 @@ namespace Project.Items
 
 			return s;
 		}
+
+		public override int CompareTo(Item other)
+		{
+			if (other is ItemCoin)
+				return -Value.CompareTo((other as ItemCoin).Value);
+			return base.CompareTo(other);
+		}
 	}
 }

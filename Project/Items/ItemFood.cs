@@ -45,5 +45,12 @@ namespace Project.Items
 
 			return sb.ToString();
 		}
+
+		public override int CompareTo(Item other)
+		{
+			if (other is ItemFood)
+				return -Amount.CompareTo((other as ItemFood).Amount);
+			return base.CompareTo(other);
+		}
 	}
 }

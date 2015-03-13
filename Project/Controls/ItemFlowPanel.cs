@@ -82,7 +82,8 @@ namespace Project.Controls
 
 		private static IOrderedEnumerable<Item> OrderItems(IEnumerable<Item> items)
 		{
-			return items.OrderBy(item => item.GetType().Name).ThenBy(item => item.Name);
+			//return items.OrderBy(item => item.GetType().Name).ThenBy(item => item.Name);
+			return items.OrderBy(item => item);
 		}
 
 		public void LoadGroupedItems(IEnumerable<Item> items)
