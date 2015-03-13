@@ -43,7 +43,7 @@
   </AreaDamage>
 
   <!--Stephen-->
-  <TargetedDamage id="31" name="Pester" damage="5" castTime="2" cooldown="2" />
+  <TargetedDamage id="31" name="Pester" damage="8" castTime="2" cooldown="2" />
   <AreaHealing id="33" name="Order Coffee" healing="2" castTime="4" cooldown="10">
     <Auras>
       <HealOverTime blockable="false" duration="4" healing="8" />
@@ -73,14 +73,14 @@
   <SelfHealing id="63" name="Tangle" healing="20" castTime="2" cooldown="10" />
 
   <!--Overheated Server-->
-  <AreaDamage id="71" name="Release Magic Smoke" damage="8" castTime="2" cooldown="0">
+  <AreaDamage id="71" name="Release Magic Smoke" damage="6" castTime="2" cooldown="0">
     <Auras>
       <StatMult duration="4" blockable="false">
         <Multiplier block="-20" combo="-20" stamina="0"  />
       </StatMult>
     </Auras>
   </AreaDamage>
-  <SelfHealing id="72" name="Overvolt Fans" healing="8" castTime="1" cooldown="7" />
+  <SelfHealing id="72" name="Overvolt Fans" healing="10" castTime="1" cooldown="7" />
 
   <!--Bu.g-->
   <TargetedDamage id="81" name="Throw Exception" damage="12" castTime="1.5" cooldown="0" />

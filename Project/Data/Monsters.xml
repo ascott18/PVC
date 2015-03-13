@@ -51,7 +51,7 @@
 
 
 	<Monster id="6" texture="bug" name="Bug">
-		<Attributes stamina="3" block="90" combo="120" />
+		<Attributes stamina="4" block="80" combo="120" />
 		<Spell id="81" />
 		<Spell id="82" />
 		<LootPool id="201" />
@@ -59,7 +59,7 @@
 	</Monster>
 
 	<Monster id="21" texture="wayBetterWires" name="Tangled Cables">
-		<Attributes stamina="25" block="5" combo="50" />
+		<Attributes stamina="30" block="5" combo="150" />
 		<Spell id="61" />
 		<Spell id="62" />
 		<Spell id="63" />
@@ -68,7 +68,7 @@
 	</Monster>
 
 	<Monster id="22" texture="serverRed" name="Overheated Rack">
-		<Attributes stamina="15" block="25" combo="180" />
+		<Attributes stamina="28" block="25" combo="180" />
 		<Spell id="71" />
 		<Spell id="72" />
 		<LootPool id="201" />
@@ -76,7 +76,7 @@
 	</Monster>
 
 	<Monster id="2" texture="shoerner" name="Pestering Intern">
-		<Attributes stamina="8" block="10" combo="10" />
+		<Attributes stamina="35" block="10" combo="170" />
 		<Spell id="31" />
 		<Spell id="33" />
 		<LootPool id="201" />
@@ -84,7 +84,7 @@
 	</Monster>
 
 	<Monster id="10" texture="roy" name="Sysadmin">
-		<Attributes stamina="25" block="30" combo="10" />
+		<Attributes stamina="100" block="30" combo="50" />
 		<Spell id="126"/>
 		<Spell id="127"/>
 		<Spell id="128"/>
